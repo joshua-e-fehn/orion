@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  drone_simulation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/amd64
+        - linux/arm64
+    image: autonomous_drone_sim:latest
+    container_name: drone_sim
+    privileged: true
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${HOME}/.Xauthority:/root/.Xauthority:rw
+    command: >
+      bash -c "
+      source /opt/ros/humble/setup.bash &&
+      source /root/ros2_ws/install/setup.bash &&
+      ros2 launch autonomous_drone simulation.launch.py
+      "
+    stdin_open: true
+    tty: true

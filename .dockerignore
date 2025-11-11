@@ -1,0 +1,23 @@
+# Git files
+.git
+.gitignore
+
+# Documentation
+*.md
+!autonomous_drone/README.md
+
+# Build artifacts
+*.pyc
+__pycache__
+*.egg-info
+.pytest_cache
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+*.tmp
