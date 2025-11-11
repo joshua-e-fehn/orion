@@ -8,6 +8,7 @@ FROM ros:${ROS_DISTRO}-ros-base
 ENV DEBIAN_FRONTEND=noninteractive
 ENV ROS_DISTRO=humble
 ENV WORKSPACE=/root/ros2_ws
+ENV PX4_VERSION=v1.14.3
 
 # Install essential tools and dependencies
 RUN apt-get update && apt-get install -y \
@@ -22,6 +23,15 @@ RUN apt-get update && apt-get install -y \
     python3-colcon-common-extensions \
     python3-rosdep \
     python3-vcstool \
+    lsb-release \
+    gnupg2 \
+    software-properties-common \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Gazebo Classic 11 (required for PX4)
+RUN apt-get update && apt-get install -y \
+    gazebo11 \
+    libgazebo11-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Install ROS2 packages
@@ -38,11 +48,6 @@ RUN apt-get update && apt-get install -y \
     ros-${ROS_DISTRO}-tf2-eigen \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Gazebo Garden (latest stable)
-RUN apt-get update && apt-get install -y \
-    ignition-fortress \
-    && rm -rf /var/lib/apt/lists/*
-
 # Install PX4 dependencies
 RUN apt-get update && apt-get install -y \
     libgstreamer1.0-dev \
@@ -55,8 +60,17 @@ RUN apt-get update && apt-get install -y \
     libeigen3-dev \
     libopencv-dev \
     libxml2-utils \
+    libxml2-dev \
     protobuf-compiler \
     geographiclib-tools \
+    libeigen3-dev \
+    libgoogle-glog-dev \
+    libgtest-dev \
+    python3-empy \
+    python3-toml \
+    python3-numpy \
+    python3-yaml \
+    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Install GeographicLib datasets for MAVROS
@@ -67,10 +81,10 @@ RUN wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/
 
 # Clone PX4 Autopilot
 WORKDIR /root
-RUN git clone https://github.com/PX4/PX4-Autopilot.git --recursive --depth 1 --branch v1.14.3
+RUN git clone https://github.com/PX4/PX4-Autopilot.git --recursive --depth 1 --branch ${PX4_VERSION}
 WORKDIR /root/PX4-Autopilot
 
-# Build PX4 for SITL (Software In The Loop)
+# Build PX4 for SITL (Software In The Loop) with Gazebo Classic
 RUN DONT_RUN=1 make px4_sitl_default gazebo-classic
 
 # Create ROS2 workspace

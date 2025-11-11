@@ -1,0 +1,65 @@
+name: Build and Test Docker Images
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-amd64:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build AMD64 image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        platforms: linux/amd64
+        tags: autonomous_drone_sim:amd64
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        load: true
+        
+    - name: Test AMD64 image
+      run: |
+        docker run --rm autonomous_drone_sim:amd64 echo "Container works"
+        docker run --rm autonomous_drone_sim:amd64 bash -c "source /opt/ros/humble/setup.bash && ros2 --version"
+        docker run --rm autonomous_drone_sim:amd64 bash -c "source /root/ros2_ws/install/setup.bash && ros2 pkg list | grep autonomous_drone"
+        docker run --rm autonomous_drone_sim:amd64 test -f /root/PX4-Autopilot/build/px4_sitl_default/bin/px4
+
+  build-arm64:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build ARM64 image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        platforms: linux/arm64
+        tags: autonomous_drone_sim:arm64
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        load: true
+        
+    - name: Test ARM64 image
+      run: |
+        docker run --rm --platform linux/arm64 autonomous_drone_sim:arm64 echo "Container works"
+        docker run --rm --platform linux/arm64 autonomous_drone_sim:arm64 bash -c "source /opt/ros/humble/setup.bash && ros2 --version"
+        docker run --rm --platform linux/arm64 autonomous_drone_sim:arm64 bash -c "source /root/ros2_ws/install/setup.bash && ros2 pkg list | grep autonomous_drone"
