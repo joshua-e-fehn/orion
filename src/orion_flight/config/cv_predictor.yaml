@@ -1,0 +1,24 @@
+/**:
+  ros__parameters:
+    # Target drone namespace
+    target_namespace: "px4_2"
+    
+    # Prediction update rate (Hz)
+    update_rate: 20.0
+    
+    # Prediction horizons (seconds into future)
+    prediction_horizons: [0.5, 1.0, 2.0, 3.0, 5.0]
+    
+    # Process noise parameters (tuning)
+    process_noise:
+      position: 0.1    # Position process noise (m²/s³)
+      velocity: 0.5    # Velocity process noise (m²/s⁵)
+    
+    # Measurement noise parameters (sensor characteristics)
+    measurement_noise:
+      position: 0.05   # Position measurement noise (m²)
+      velocity: 0.1    # Velocity measurement noise (m²/s²)
+    
+    # Visualization
+    publish_markers: true
+    marker_scale: 1.0
