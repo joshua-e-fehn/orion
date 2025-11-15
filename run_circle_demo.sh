@@ -124,7 +124,7 @@ print_info "Launching circular trajectory flight with RViz..."
 echo ""
 
 if [ "$USE_AGENT" = "true" ]; then
-    ros2 launch px4_ros_com circle_trajectory.launch.py \
+    ros2 launch orion_flight circle_trajectory.launch.py \
         circle_radius:=4.0 \
         flight_height:=5.0 \
         angular_velocity:=0.3 \
@@ -132,7 +132,7 @@ if [ "$USE_AGENT" = "true" ]; then
         trail_length:=10 \
         use_micro_ros_agent:=true
 else
-    ros2 launch px4_ros_com circle_trajectory.launch.py \
+    ros2 launch orion_flight circle_trajectory.launch.py \
         circle_radius:=4.0 \
         flight_height:=5.0 \
         angular_velocity:=0.3 \
