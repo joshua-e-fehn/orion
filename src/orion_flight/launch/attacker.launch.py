@@ -135,15 +135,15 @@ def launch_setup(context, *args, **kwargs):
         rviz_config = os.path.join(pkg_orion_flight, 'config', 'circle.rviz')
         
         circle_node = Node(
-            package='attack_drone',
-            executable='circle_node',
+            package='orion_flight',
+            executable='circle_trajectory_node.py',
             name='circle_node',
             namespace=namespace,
             output='screen',
             parameters=[{
                 'namespace': namespace,
-                'radius': float(radius),
-                'altitude': float(altitude),
+                'circle_radius': float(radius),
+                'flight_height': -float(altitude),  # Negative for NED
                 'angular_velocity': float(angular_velocity),
                 'trail_length': int(trail_length),
             }],
