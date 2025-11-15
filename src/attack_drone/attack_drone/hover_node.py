@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Autonomous Hover Flight Node with RViz Visualization
+Autonomous Straight-Line Flight Node with RViz Visualization
 
 This node controls a drone to:
 1. Takeoff to a specified height
-2. Hover at that height
+2. Fly in a straight line along the X-axis
 3. Visualize the positions in RViz
 """
 
@@ -13,20 +13,21 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 from px4_msgs.msg import OffboardControlMode, TrajectorySetpoint, VehicleCommand, VehicleLocalPosition, VehicleStatus, VehicleCommandAck
 from visualization_msgs.msg import Marker, MarkerArray
-from geometry_msgs.msg import Point
 from collections import deque
 
-class HoverNode(Node):
-    """Node for autonomous hover flight with visualization."""
+class StraightLineNode(Node):
+    """Node for autonomous straight-line flight with visualization."""
 
     def __init__(self):
-        super().__init__('hover_node')
+        super().__init__('straight_line_node')
 
         # Parameters
         self.declare_parameter('flight_height', -5.0)  # NED frame (negative = up)
-        self.declare_parameter('trail_length', 10)
+        self.declare_parameter('trail_length', 20)
+        self.declare_parameter('speed', 1.0)  # meters per second
         self.flight_height = self.get_parameter('flight_height').value
         self.trail_length = self.get_parameter('trail_length').value
+        self.speed = self.get_parameter('speed').value
 
         # QoS
         qos_pub = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
@@ -58,17 +59,18 @@ class HoverNode(Node):
         self.last_update_time = self.get_clock().now()
         self.is_armed = False
         self.is_offboard = False
-        self.arm_retry_counter = 0
-        self.max_arm_retries = 10
+
+        # Flight path
+        self.current_x = 0.0
 
         # Timer
         self.timer = self.create_timer(0.1, self.timer_callback)
 
-        self.get_logger().info("HoverNode started!")
+        self.get_logger().info("StraightLineNode started!")
 
     def vehicle_local_position_callback(self, msg):
         self.vehicle_local_position = msg
-        if self.flight_phase in ["HOVER"]:
+        if self.flight_phase == "STRAIGHT_LINE":
             self.position_history.append({'x': msg.x, 'y': msg.y, 'z': msg.z})
 
     def vehicle_status_callback(self, msg):
@@ -86,7 +88,7 @@ class HoverNode(Node):
         msg = VehicleCommand()
         msg.command = VehicleCommand.VEHICLE_CMD_COMPONENT_ARM_DISARM
         msg.param1 = 1.0
-        msg.param2 = 21196.0  # force arm
+        msg.param2 = 21196.0
         msg.target_system = 0
         msg.target_component = 1
         msg.from_external = True
@@ -97,7 +99,7 @@ class HoverNode(Node):
     def engage_offboard_mode(self):
         msg = VehicleCommand()
         msg.command = VehicleCommand.VEHICLE_CMD_DO_SET_MODE
-        msg.param1 = 1.0  # base mode
+        msg.param1 = 1.0
         msg.param2 = 6.0  # OFFBOARD
         msg.target_system = 0
         msg.target_component = 1
@@ -112,10 +114,12 @@ class HoverNode(Node):
         msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
         self.offboard_control_mode_pub.publish(msg)
 
-    def publish_position_setpoint(self, x=0.0, y=0.0, z=None):
-        z = self.flight_height if z is None else z
+    def publish_position_setpoint(self):
+        dt = (self.get_clock().now() - self.last_update_time).nanoseconds / 1e9
+        self.last_update_time = self.get_clock().now()
+        self.current_x += self.speed * dt  # move along X-axis
         msg = TrajectorySetpoint()
-        msg.position = [x, y, z]
+        msg.position = [self.current_x, 0.0, self.flight_height]
         msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
         self.trajectory_setpoint_pub.publish(msg)
 
@@ -145,18 +149,17 @@ class HoverNode(Node):
         self.publish_position_setpoint()
         self.publish_markers()
 
-        # INIT phase
         if self.flight_phase == "INIT":
             self.engage_offboard_mode()
             self.arm()
-            self.flight_phase = "HOVER"
-            self.get_logger().info("✓ Takeoff completed, hovering at target height")
+            self.flight_phase = "STRAIGHT_LINE"
+            self.get_logger().info("✓ Takeoff completed, starting straight-line flight")
 
 def main(args=None):
     rclpy.init(args=args)
-    hover_node = HoverNode()
-    rclpy.spin(hover_node)
-    hover_node.destroy_node()
+    node = StraightLineNode()
+    rclpy.spin(node)
+    node.destroy_node()
     rclpy.shutdown()
 
 if __name__ == "__main__":
