@@ -1,0 +1,1 @@
+/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__struct.h
