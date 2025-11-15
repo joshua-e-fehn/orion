@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'intercept_node = interceptor.intercept_node:main',
         ],
     },
 )

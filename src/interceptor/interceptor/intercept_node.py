@@ -16,11 +16,11 @@ from visualization_msgs.msg import Marker, MarkerArray
 from geometry_msgs.msg import Point
 from collections import deque
 
-class HoverNode(Node):
+class InterceptNode(Node):
     """Node for autonomous hover flight with visualization."""
 
     def __init__(self):
-        super().__init__('hover_node')
+        super().__init__('intercept_node')
 
         # Parameters
         self.declare_parameter('flight_height', -5.0)  # NED frame (negative = up)
@@ -39,15 +39,15 @@ class HoverNode(Node):
                              depth=1)
 
         # Publishers
-        self.offboard_control_mode_pub = self.create_publisher(OffboardControlMode, '/px4_1/fmu/in/offboard_control_mode', qos_pub)
-        self.trajectory_setpoint_pub = self.create_publisher(TrajectorySetpoint, '/px4_1/fmu/in/trajectory_setpoint', qos_pub)
-        self.vehicle_command_pub = self.create_publisher(VehicleCommand, '/px4_1/fmu/in/vehicle_command', qos_pub)
+        self.offboard_control_mode_pub = self.create_publisher(OffboardControlMode, '/px4_2/fmu/in/offboard_control_mode', qos_pub)
+        self.trajectory_setpoint_pub = self.create_publisher(TrajectorySetpoint, '/px4_2/fmu/in/trajectory_setpoint', qos_pub)
+        self.vehicle_command_pub = self.create_publisher(VehicleCommand, '/px4_2/fmu/in/vehicle_command', qos_pub)
         self.marker_pub = self.create_publisher(MarkerArray, '/trajectory_markers', 10)
 
         # Subscribers
-        self.vehicle_pos_sub = self.create_subscription(VehicleLocalPosition, '/px4_1/fmu/out/vehicle_local_position_v1', self.vehicle_local_position_callback, qos_sub)
-        self.vehicle_status_sub = self.create_subscription(VehicleStatus, '/px4_1/fmu/out/vehicle_status_v1', self.vehicle_status_callback, qos_sub)
-        self.vehicle_ack_sub = self.create_subscription(VehicleCommandAck, '/px4_1/fmu/out/vehicle_command_ack', self.vehicle_command_ack_callback, qos_sub)
+        self.vehicle_pos_sub = self.create_subscription(VehicleLocalPosition, '/px4_2/fmu/out/vehicle_local_position_v1', self.vehicle_local_position_callback, qos_sub)
+        self.vehicle_status_sub = self.create_subscription(VehicleStatus, '/px4_2/fmu/out/vehicle_status_v1', self.vehicle_status_callback, qos_sub)
+        self.vehicle_ack_sub = self.create_subscription(VehicleCommandAck, '/px4_2/fmu/out/vehicle_command_ack', self.vehicle_command_ack_callback, qos_sub)
 
         # State
         self.vehicle_local_position = VehicleLocalPosition()
@@ -154,9 +154,9 @@ class HoverNode(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    hover_node = HoverNode()
-    rclpy.spin(hover_node)
-    hover_node.destroy_node()
+    intercept_node = InterceptNode()
+    rclpy.spin(intercept_node)
+    intercept_node.destroy_node()
     rclpy.shutdown()
 
 if __name__ == "__main__":

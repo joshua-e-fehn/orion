@@ -66,7 +66,7 @@ def generate_launch_description():
         output='screen'
     )
     
-    # Circle Trajectory Control Node
+    # Hover Trajectory Control Node
     hover_node = Node(
         package='attack_drone',
         executable='hover_node',
