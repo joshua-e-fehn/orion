@@ -238,19 +238,9 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/event__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_info__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_info__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.h \
@@ -266,30 +256,21 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_report__type_support.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_report__struct.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/cpuload__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/cpuload__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/debug_array__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/debug_array__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.h \
@@ -308,12 +289,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.h \
@@ -363,6 +338,7 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/event__type_support.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/event__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/event__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__struct.h \
@@ -370,27 +346,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.h \
@@ -400,18 +355,12 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/generator_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/generator_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.h \
@@ -436,21 +385,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.h \
@@ -475,9 +409,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/input_rc__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/input_rc__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.h \
@@ -499,9 +430,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.h \
@@ -514,9 +442,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/logger_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/logger_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.h \
@@ -535,12 +460,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mission__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mission__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.h \
@@ -556,15 +475,12 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/neural_control__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/neural_control__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__type_support.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__struct.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.h \
@@ -574,18 +490,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orb_test__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orb_test__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.h \
@@ -598,18 +502,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.h \
@@ -637,9 +529,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.h \
@@ -664,45 +553,9 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rpm__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rpm__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.h \
@@ -715,9 +568,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.h \
@@ -730,9 +580,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.h \
@@ -790,12 +637,15 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__type_support.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__struct.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__type_support.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__struct.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.h \
@@ -814,9 +664,6 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.h \
@@ -892,21 +739,18 @@ CMakeFiles/px4_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_genera
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__type_support.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__struct.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__type_support.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__struct.h \
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wind__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wind__struct.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__type_support.h \
  /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__type_support.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__struct.h \
- /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.h
+ /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.h

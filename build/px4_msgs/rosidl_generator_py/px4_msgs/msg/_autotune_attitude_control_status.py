@@ -29,21 +29,18 @@ class Metaclass_AutotuneAttitudeControlStatus(type):
     __constants = {
         'STATE_IDLE': 0,
         'STATE_INIT': 1,
-        'STATE_ROLL_AMPLITUDE_DETECTION': 2,
-        'STATE_ROLL': 3,
-        'STATE_ROLL_PAUSE': 4,
-        'STATE_PITCH_AMPLITUDE_DETECTION': 5,
-        'STATE_PITCH': 6,
-        'STATE_PITCH_PAUSE': 7,
-        'STATE_YAW_AMPLITUDE_DETECTION': 8,
-        'STATE_YAW': 9,
-        'STATE_YAW_PAUSE': 10,
-        'STATE_VERIFICATION': 11,
-        'STATE_APPLY': 12,
-        'STATE_TEST': 13,
-        'STATE_COMPLETE': 14,
-        'STATE_FAIL': 15,
-        'STATE_WAIT_FOR_DISARM': 16,
+        'STATE_ROLL': 2,
+        'STATE_ROLL_PAUSE': 3,
+        'STATE_PITCH': 4,
+        'STATE_PITCH_PAUSE': 5,
+        'STATE_YAW': 6,
+        'STATE_YAW_PAUSE': 7,
+        'STATE_VERIFICATION': 8,
+        'STATE_APPLY': 9,
+        'STATE_TEST': 10,
+        'STATE_COMPLETE': 11,
+        'STATE_FAIL': 12,
+        'STATE_WAIT_FOR_DISARM': 13,
     }
 
     @classmethod
@@ -74,13 +71,10 @@ class Metaclass_AutotuneAttitudeControlStatus(type):
         return {
             'STATE_IDLE': cls.__constants['STATE_IDLE'],
             'STATE_INIT': cls.__constants['STATE_INIT'],
-            'STATE_ROLL_AMPLITUDE_DETECTION': cls.__constants['STATE_ROLL_AMPLITUDE_DETECTION'],
             'STATE_ROLL': cls.__constants['STATE_ROLL'],
             'STATE_ROLL_PAUSE': cls.__constants['STATE_ROLL_PAUSE'],
-            'STATE_PITCH_AMPLITUDE_DETECTION': cls.__constants['STATE_PITCH_AMPLITUDE_DETECTION'],
             'STATE_PITCH': cls.__constants['STATE_PITCH'],
             'STATE_PITCH_PAUSE': cls.__constants['STATE_PITCH_PAUSE'],
-            'STATE_YAW_AMPLITUDE_DETECTION': cls.__constants['STATE_YAW_AMPLITUDE_DETECTION'],
             'STATE_YAW': cls.__constants['STATE_YAW'],
             'STATE_YAW_PAUSE': cls.__constants['STATE_YAW_PAUSE'],
             'STATE_VERIFICATION': cls.__constants['STATE_VERIFICATION'],
@@ -102,11 +96,6 @@ class Metaclass_AutotuneAttitudeControlStatus(type):
         return Metaclass_AutotuneAttitudeControlStatus.__constants['STATE_INIT']
 
     @property
-    def STATE_ROLL_AMPLITUDE_DETECTION(self):
-        """Message constant 'STATE_ROLL_AMPLITUDE_DETECTION'."""
-        return Metaclass_AutotuneAttitudeControlStatus.__constants['STATE_ROLL_AMPLITUDE_DETECTION']
-
-    @property
     def STATE_ROLL(self):
         """Message constant 'STATE_ROLL'."""
         return Metaclass_AutotuneAttitudeControlStatus.__constants['STATE_ROLL']
@@ -117,11 +106,6 @@ class Metaclass_AutotuneAttitudeControlStatus(type):
         return Metaclass_AutotuneAttitudeControlStatus.__constants['STATE_ROLL_PAUSE']
 
     @property
-    def STATE_PITCH_AMPLITUDE_DETECTION(self):
-        """Message constant 'STATE_PITCH_AMPLITUDE_DETECTION'."""
-        return Metaclass_AutotuneAttitudeControlStatus.__constants['STATE_PITCH_AMPLITUDE_DETECTION']
-
-    @property
     def STATE_PITCH(self):
         """Message constant 'STATE_PITCH'."""
         return Metaclass_AutotuneAttitudeControlStatus.__constants['STATE_PITCH']
@@ -130,11 +114,6 @@ class Metaclass_AutotuneAttitudeControlStatus(type):
     def STATE_PITCH_PAUSE(self):
         """Message constant 'STATE_PITCH_PAUSE'."""
         return Metaclass_AutotuneAttitudeControlStatus.__constants['STATE_PITCH_PAUSE']
-
-    @property
-    def STATE_YAW_AMPLITUDE_DETECTION(self):
-        """Message constant 'STATE_YAW_AMPLITUDE_DETECTION'."""
-        return Metaclass_AutotuneAttitudeControlStatus.__constants['STATE_YAW_AMPLITUDE_DETECTION']
 
     @property
     def STATE_YAW(self):
@@ -184,13 +163,10 @@ class AutotuneAttitudeControlStatus(metaclass=Metaclass_AutotuneAttitudeControlS
     Constants:
       STATE_IDLE
       STATE_INIT
-      STATE_ROLL_AMPLITUDE_DETECTION
       STATE_ROLL
       STATE_ROLL_PAUSE
-      STATE_PITCH_AMPLITUDE_DETECTION
       STATE_PITCH
       STATE_PITCH_PAUSE
-      STATE_YAW_AMPLITUDE_DETECTION
       STATE_YAW
       STATE_YAW_PAUSE
       STATE_VERIFICATION

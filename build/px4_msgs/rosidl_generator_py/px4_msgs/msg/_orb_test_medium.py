@@ -23,7 +23,6 @@ class Metaclass_OrbTestMedium(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'ORB_QUEUE_LENGTH': 16,
     }
 
     @classmethod
@@ -52,22 +51,11 @@ class Metaclass_OrbTestMedium(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'ORB_QUEUE_LENGTH': cls.__constants['ORB_QUEUE_LENGTH'],
         }
-
-    @property
-    def ORB_QUEUE_LENGTH(self):
-        """Message constant 'ORB_QUEUE_LENGTH'."""
-        return Metaclass_OrbTestMedium.__constants['ORB_QUEUE_LENGTH']
 
 
 class OrbTestMedium(metaclass=Metaclass_OrbTestMedium):
-    """
-    Message class 'OrbTestMedium'.
-
-    Constants:
-      ORB_QUEUE_LENGTH
-    """
+    """Message class 'OrbTestMedium'."""
 
     __slots__ = [
         '_timestamp',

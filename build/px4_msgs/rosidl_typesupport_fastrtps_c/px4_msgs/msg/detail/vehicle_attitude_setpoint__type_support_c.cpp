@@ -54,6 +54,21 @@ static bool _VehicleAttitudeSetpoint__cdr_serialize(
     cdr << ros_message->timestamp;
   }
 
+  // Field name: roll_body
+  {
+    cdr << ros_message->roll_body;
+  }
+
+  // Field name: pitch_body
+  {
+    cdr << ros_message->pitch_body;
+  }
+
+  // Field name: yaw_body
+  {
+    cdr << ros_message->yaw_body;
+  }
+
   // Field name: yaw_sp_move_rate
   {
     cdr << ros_message->yaw_sp_move_rate;
@@ -73,6 +88,16 @@ static bool _VehicleAttitudeSetpoint__cdr_serialize(
     cdr.serializeArray(array_ptr, size);
   }
 
+  // Field name: reset_integral
+  {
+    cdr << (ros_message->reset_integral ? true : false);
+  }
+
+  // Field name: fw_control_yaw_wheel
+  {
+    cdr << (ros_message->fw_control_yaw_wheel ? true : false);
+  }
+
   return true;
 }
 
@@ -88,6 +113,21 @@ static bool _VehicleAttitudeSetpoint__cdr_deserialize(
   // Field name: timestamp
   {
     cdr >> ros_message->timestamp;
+  }
+
+  // Field name: roll_body
+  {
+    cdr >> ros_message->roll_body;
+  }
+
+  // Field name: pitch_body
+  {
+    cdr >> ros_message->pitch_body;
+  }
+
+  // Field name: yaw_body
+  {
+    cdr >> ros_message->yaw_body;
   }
 
   // Field name: yaw_sp_move_rate
@@ -107,6 +147,20 @@ static bool _VehicleAttitudeSetpoint__cdr_deserialize(
     size_t size = 3;
     auto array_ptr = ros_message->thrust_body;
     cdr.deserializeArray(array_ptr, size);
+  }
+
+  // Field name: reset_integral
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->reset_integral = tmp ? true : false;
+  }
+
+  // Field name: fw_control_yaw_wheel
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->fw_control_yaw_wheel = tmp ? true : false;
   }
 
   return true;
@@ -132,6 +186,24 @@ size_t get_serialized_size_px4_msgs__msg__VehicleAttitudeSetpoint(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // field.name roll_body
+  {
+    size_t item_size = sizeof(ros_message->roll_body);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name pitch_body
+  {
+    size_t item_size = sizeof(ros_message->pitch_body);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name yaw_body
+  {
+    size_t item_size = sizeof(ros_message->yaw_body);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // field.name yaw_sp_move_rate
   {
     size_t item_size = sizeof(ros_message->yaw_sp_move_rate);
@@ -154,6 +226,18 @@ size_t get_serialized_size_px4_msgs__msg__VehicleAttitudeSetpoint(
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
     current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name reset_integral
+  {
+    size_t item_size = sizeof(ros_message->reset_integral);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name fw_control_yaw_wheel
+  {
+    size_t item_size = sizeof(ros_message->fw_control_yaw_wheel);
+    current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
@@ -193,6 +277,30 @@ size_t max_serialized_size_px4_msgs__msg__VehicleAttitudeSetpoint(
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
+  // member: roll_body
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+  // member: pitch_body
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+  // member: yaw_body
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
   // member: yaw_sp_move_rate
   {
     size_t array_size = 1;
@@ -217,6 +325,20 @@ size_t max_serialized_size_px4_msgs__msg__VehicleAttitudeSetpoint(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
+  // member: reset_integral
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: fw_control_yaw_wheel
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -226,7 +348,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleAttitudeSetpoint(
     using DataType = px4_msgs__msg__VehicleAttitudeSetpoint;
     is_plain =
       (
-      offsetof(DataType, thrust_body) +
+      offsetof(DataType, fw_control_yaw_wheel) +
       last_member_size
       ) == ret_val;
   }

@@ -186,10 +186,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: arming_termination
+  // member: arming_force_failsafe
   {
-    out << "arming_termination: ";
-    rosidl_generator_traits::value_to_yaml(msg.arming_termination, out);
+    out << "arming_force_failsafe: ";
+    rosidl_generator_traits::value_to_yaml(msg.arming_force_failsafe, out);
     out << ", ";
   }
 
@@ -539,13 +539,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: arming_termination
+  // member: arming_force_failsafe
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "arming_termination: ";
-    rosidl_generator_traits::value_to_yaml(msg.arming_termination, out);
+    out << "arming_force_failsafe: ";
+    rosidl_generator_traits::value_to_yaml(msg.arming_force_failsafe, out);
     out << "\n";
   }
 

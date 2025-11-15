@@ -68,7 +68,7 @@ module px4_msgs {
 
       boolean arming_fmu_prearmed;
 
-      boolean arming_termination;
+      boolean arming_force_failsafe;
 
       boolean arming_io_arm_ok;
 

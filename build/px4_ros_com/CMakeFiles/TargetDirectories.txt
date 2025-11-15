@@ -5,9 +5,6 @@
 /home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/CMakeFiles/vehicle_gps_position_listener.dir
 /home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/CMakeFiles/debug_vect_advertiser.dir
 /home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/CMakeFiles/offboard_control.dir
-/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/CMakeFiles/offboard_control_srv.dir
-/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/CMakeFiles/ament_cmake_python_copy_px4_ros_com.dir
-/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/CMakeFiles/ament_cmake_python_build_px4_ros_com_egg.dir
 /home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/CMakeFiles/test.dir
 /home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/CMakeFiles/edit_cache.dir
 /home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/CMakeFiles/rebuild_cache.dir

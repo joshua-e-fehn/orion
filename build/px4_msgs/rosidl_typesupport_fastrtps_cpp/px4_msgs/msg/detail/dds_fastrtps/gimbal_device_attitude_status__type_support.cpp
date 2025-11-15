@@ -52,12 +52,6 @@ cdr_serialize(
   cdr << ros_message.angular_velocity_z;
   // Member: failure_flags
   cdr << ros_message.failure_flags;
-  // Member: delta_yaw
-  cdr << ros_message.delta_yaw;
-  // Member: delta_yaw_velocity
-  cdr << ros_message.delta_yaw_velocity;
-  // Member: gimbal_device_id
-  cdr << ros_message.gimbal_device_id;
   // Member: received_from_mavlink
   cdr << (ros_message.received_from_mavlink ? true : false);
   return true;
@@ -97,15 +91,6 @@ cdr_deserialize(
 
   // Member: failure_flags
   cdr >> ros_message.failure_flags;
-
-  // Member: delta_yaw
-  cdr >> ros_message.delta_yaw;
-
-  // Member: delta_yaw_velocity
-  cdr >> ros_message.delta_yaw_velocity;
-
-  // Member: gimbal_device_id
-  cdr >> ros_message.gimbal_device_id;
 
   // Member: received_from_mavlink
   {
@@ -182,24 +167,6 @@ get_serialized_size(
   // Member: failure_flags
   {
     size_t item_size = sizeof(ros_message.failure_flags);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: delta_yaw
-  {
-    size_t item_size = sizeof(ros_message.delta_yaw);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: delta_yaw_velocity
-  {
-    size_t item_size = sizeof(ros_message.delta_yaw_velocity);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: gimbal_device_id
-  {
-    size_t item_size = sizeof(ros_message.gimbal_device_id);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -310,32 +277,6 @@ max_serialized_size_GimbalDeviceAttitudeStatus(
     last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: delta_yaw
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: delta_yaw_velocity
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: gimbal_device_id
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
   }
 
   // Member: received_from_mavlink

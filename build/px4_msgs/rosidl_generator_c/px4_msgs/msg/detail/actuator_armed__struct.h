@@ -31,9 +31,9 @@ typedef struct px4_msgs__msg__ActuatorArmed
   /// Set to true if actuators are forced to being disabled (due to emergency or HIL)
   bool lockdown;
   /// Set to true if manual throttle kill switch is engaged
-  bool kill;
-  /// Send out failsafe (by default same as disarmed) output
-  bool termination;
+  bool manual_lockdown;
+  /// Set to true if the actuators are forced to the failsafe position
+  bool force_failsafe;
   /// IO/FMU should ignore messages from the actuator controls topics
   bool in_esc_calibration_mode;
 } px4_msgs__msg__ActuatorArmed;

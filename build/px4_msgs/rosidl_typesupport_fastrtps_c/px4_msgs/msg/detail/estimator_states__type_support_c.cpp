@@ -61,7 +61,7 @@ static bool _EstimatorStates__cdr_serialize(
 
   // Field name: states
   {
-    size_t size = 25;
+    size_t size = 24;
     auto array_ptr = ros_message->states;
     cdr.serializeArray(array_ptr, size);
   }
@@ -102,7 +102,7 @@ static bool _EstimatorStates__cdr_deserialize(
 
   // Field name: states
   {
-    size_t size = 25;
+    size_t size = 24;
     auto array_ptr = ros_message->states;
     cdr.deserializeArray(array_ptr, size);
   }
@@ -150,7 +150,7 @@ size_t get_serialized_size_px4_msgs__msg__EstimatorStates(
   }
   // field.name states
   {
-    size_t array_size = 25;
+    size_t array_size = 24;
     auto array_ptr = ros_message->states;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
@@ -219,7 +219,7 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorStates(
   }
   // member: states
   {
-    size_t array_size = 25;
+    size_t array_size = 24;
 
     last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +

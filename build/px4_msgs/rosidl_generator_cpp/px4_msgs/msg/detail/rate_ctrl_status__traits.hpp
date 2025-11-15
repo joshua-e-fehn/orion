@@ -50,6 +50,13 @@ inline void to_flow_style_yaml(
   {
     out << "yawspeed_integ: ";
     rosidl_generator_traits::value_to_yaml(msg.yawspeed_integ, out);
+    out << ", ";
+  }
+
+  // member: wheel_rate_integ
+  {
+    out << "wheel_rate_integ: ";
+    rosidl_generator_traits::value_to_yaml(msg.wheel_rate_integ, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -95,6 +102,16 @@ inline void to_block_style_yaml(
     }
     out << "yawspeed_integ: ";
     rosidl_generator_traits::value_to_yaml(msg.yawspeed_integ, out);
+    out << "\n";
+  }
+
+  // member: wheel_rate_integ
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "wheel_rate_integ: ";
+    rosidl_generator_traits::value_to_yaml(msg.wheel_rate_integ, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

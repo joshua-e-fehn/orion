@@ -95,22 +95,22 @@ bool px4_msgs__msg__actuator_armed__convert_from_py(PyObject * _pymsg, void * _r
     ros_message->lockdown = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // kill
-    PyObject * field = PyObject_GetAttrString(_pymsg, "kill");
+  {  // manual_lockdown
+    PyObject * field = PyObject_GetAttrString(_pymsg, "manual_lockdown");
     if (!field) {
       return false;
     }
     assert(PyBool_Check(field));
-    ros_message->kill = (Py_True == field);
+    ros_message->manual_lockdown = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // termination
-    PyObject * field = PyObject_GetAttrString(_pymsg, "termination");
+  {  // force_failsafe
+    PyObject * field = PyObject_GetAttrString(_pymsg, "force_failsafe");
     if (!field) {
       return false;
     }
     assert(PyBool_Check(field));
-    ros_message->termination = (Py_True == field);
+    ros_message->force_failsafe = (Py_True == field);
     Py_DECREF(field);
   }
   {  // in_esc_calibration_mode
@@ -199,22 +199,22 @@ PyObject * px4_msgs__msg__actuator_armed__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // kill
+  {  // manual_lockdown
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->kill ? 1 : 0);
+    field = PyBool_FromLong(ros_message->manual_lockdown ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "kill", field);
+      int rc = PyObject_SetAttrString(_pymessage, "manual_lockdown", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // termination
+  {  // force_failsafe
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->termination ? 1 : 0);
+    field = PyBool_FromLong(ros_message->force_failsafe ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "termination", field);
+      int rc = PyObject_SetAttrString(_pymessage, "force_failsafe", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -62,6 +62,33 @@ bool px4_msgs__msg__vehicle_attitude_setpoint__convert_from_py(PyObject * _pymsg
     ros_message->timestamp = PyLong_AsUnsignedLongLong(field);
     Py_DECREF(field);
   }
+  {  // roll_body
+    PyObject * field = PyObject_GetAttrString(_pymsg, "roll_body");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->roll_body = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // pitch_body
+    PyObject * field = PyObject_GetAttrString(_pymsg, "pitch_body");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->pitch_body = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // yaw_body
+    PyObject * field = PyObject_GetAttrString(_pymsg, "yaw_body");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->yaw_body = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
   {  // yaw_sp_move_rate
     PyObject * field = PyObject_GetAttrString(_pymsg, "yaw_sp_move_rate");
     if (!field) {
@@ -119,6 +146,24 @@ bool px4_msgs__msg__vehicle_attitude_setpoint__convert_from_py(PyObject * _pymsg
     }
     Py_DECREF(field);
   }
+  {  // reset_integral
+    PyObject * field = PyObject_GetAttrString(_pymsg, "reset_integral");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->reset_integral = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // fw_control_yaw_wheel
+    PyObject * field = PyObject_GetAttrString(_pymsg, "fw_control_yaw_wheel");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->fw_control_yaw_wheel = (Py_True == field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -146,6 +191,39 @@ PyObject * px4_msgs__msg__vehicle_attitude_setpoint__convert_to_py(void * raw_ro
     field = PyLong_FromUnsignedLongLong(ros_message->timestamp);
     {
       int rc = PyObject_SetAttrString(_pymessage, "timestamp", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // roll_body
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->roll_body);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "roll_body", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // pitch_body
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->pitch_body);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "pitch_body", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // yaw_body
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->yaw_body);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "yaw_body", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
@@ -198,6 +276,28 @@ PyObject * px4_msgs__msg__vehicle_attitude_setpoint__convert_to_py(void * raw_ro
     float * src = &(ros_message->thrust_body[0]);
     memcpy(dst, src, 3 * sizeof(float));
     Py_DECREF(field);
+  }
+  {  // reset_integral
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->reset_integral ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "reset_integral", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // fw_control_yaw_wheel
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->fw_control_yaw_wheel ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "fw_control_yaw_wheel", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
   }
 
   // ownership of _pymessage is transferred to the caller

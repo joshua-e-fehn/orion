@@ -121,14 +121,14 @@ void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__a
   *item = *value;
 }
 
-size_t px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__vel_body_filtered(
+size_t px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__flow_uncompensated_integral(
   const void * untyped_member)
 {
   (void)untyped_member;
   return 2;
 }
 
-const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__vel_body_filtered(
+const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_uncompensated_integral(
   const void * untyped_member, size_t index)
 {
   const float * member =
@@ -136,7 +136,7 @@ const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspect
   return &member[index];
 }
 
-void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__vel_body_filtered(
+void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_uncompensated_integral(
   void * untyped_member, size_t index)
 {
   float * member =
@@ -144,36 +144,36 @@ void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c_
   return &member[index];
 }
 
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__vel_body_filtered(
+void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__flow_uncompensated_integral(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const float * item =
     ((const float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__vel_body_filtered(untyped_member, index));
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_uncompensated_integral(untyped_member, index));
   float * value =
     (float *)(untyped_value);
   *value = *item;
 }
 
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__vel_body_filtered(
+void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__flow_uncompensated_integral(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   float * item =
     ((float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__vel_body_filtered(untyped_member, index));
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_uncompensated_integral(untyped_member, index));
   const float * value =
     (const float *)(untyped_value);
   *item = *value;
 }
 
-size_t px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__vel_ne_filtered(
+size_t px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__flow_compensated_integral(
   const void * untyped_member)
 {
   (void)untyped_member;
   return 2;
 }
 
-const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__vel_ne_filtered(
+const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_compensated_integral(
   const void * untyped_member, size_t index)
 {
   const float * member =
@@ -181,7 +181,7 @@ const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspect
   return &member[index];
 }
 
-void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__vel_ne_filtered(
+void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_compensated_integral(
   void * untyped_member, size_t index)
 {
   float * member =
@@ -189,113 +189,23 @@ void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c_
   return &member[index];
 }
 
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__vel_ne_filtered(
+void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__flow_compensated_integral(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const float * item =
     ((const float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__vel_ne_filtered(untyped_member, index));
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_compensated_integral(untyped_member, index));
   float * value =
     (float *)(untyped_value);
   *value = *item;
 }
 
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__vel_ne_filtered(
+void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__flow_compensated_integral(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   float * item =
     ((float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__vel_ne_filtered(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
-  *item = *value;
-}
-
-size_t px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__flow_rate_uncompensated(
-  const void * untyped_member)
-{
-  (void)untyped_member;
-  return 2;
-}
-
-const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_rate_uncompensated(
-  const void * untyped_member, size_t index)
-{
-  const float * member =
-    (const float *)(untyped_member);
-  return &member[index];
-}
-
-void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_rate_uncompensated(
-  void * untyped_member, size_t index)
-{
-  float * member =
-    (float *)(untyped_member);
-  return &member[index];
-}
-
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__flow_rate_uncompensated(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const float * item =
-    ((const float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_rate_uncompensated(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
-  *value = *item;
-}
-
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__flow_rate_uncompensated(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  float * item =
-    ((float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_rate_uncompensated(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
-  *item = *value;
-}
-
-size_t px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__flow_rate_compensated(
-  const void * untyped_member)
-{
-  (void)untyped_member;
-  return 2;
-}
-
-const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_rate_compensated(
-  const void * untyped_member, size_t index)
-{
-  const float * member =
-    (const float *)(untyped_member);
-  return &member[index];
-}
-
-void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_rate_compensated(
-  void * untyped_member, size_t index)
-{
-  float * member =
-    (float *)(untyped_member);
-  return &member[index];
-}
-
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__flow_rate_compensated(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const float * item =
-    ((const float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_rate_compensated(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
-  *value = *item;
-}
-
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__flow_rate_compensated(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  float * item =
-    ((float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_rate_compensated(untyped_member, index));
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_compensated_integral(untyped_member, index));
   const float * value =
     (const float *)(untyped_value);
   *item = *value;
@@ -346,14 +256,14 @@ void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__a
   *item = *value;
 }
 
-size_t px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__gyro_bias(
+size_t px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__gyro_rate_integral(
   const void * untyped_member)
 {
   (void)untyped_member;
   return 3;
 }
 
-const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__gyro_bias(
+const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__gyro_rate_integral(
   const void * untyped_member, size_t index)
 {
   const float * member =
@@ -361,7 +271,7 @@ const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspect
   return &member[index];
 }
 
-void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__gyro_bias(
+void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__gyro_rate_integral(
   void * untyped_member, size_t index)
 {
   float * member =
@@ -369,74 +279,29 @@ void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c_
   return &member[index];
 }
 
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__gyro_bias(
+void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__gyro_rate_integral(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const float * item =
     ((const float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__gyro_bias(untyped_member, index));
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__gyro_rate_integral(untyped_member, index));
   float * value =
     (float *)(untyped_value);
   *value = *item;
 }
 
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__gyro_bias(
+void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__gyro_rate_integral(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   float * item =
     ((float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__gyro_bias(untyped_member, index));
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__gyro_rate_integral(untyped_member, index));
   const float * value =
     (const float *)(untyped_value);
   *item = *value;
 }
 
-size_t px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__ref_gyro(
-  const void * untyped_member)
-{
-  (void)untyped_member;
-  return 3;
-}
-
-const void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__ref_gyro(
-  const void * untyped_member, size_t index)
-{
-  const float * member =
-    (const float *)(untyped_member);
-  return &member[index];
-}
-
-void * px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__ref_gyro(
-  void * untyped_member, size_t index)
-{
-  float * member =
-    (float *)(untyped_member);
-  return &member[index];
-}
-
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__ref_gyro(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const float * item =
-    ((const float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__ref_gyro(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
-  *value = *item;
-}
-
-void px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__ref_gyro(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  float * item =
-    ((float *)
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__ref_gyro(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
-  *item = *value;
-}
-
-static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__VehicleOpticalFlowVel_message_member_array[11] = {
+static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__VehicleOpticalFlowVel_message_member_array[8] = {
   {
     "timestamp",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
@@ -506,71 +371,37 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleO
     NULL  // resize(index) function pointer
   },
   {
-    "vel_body_filtered",  // name
+    "flow_uncompensated_integral",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
     2,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleOpticalFlowVel, vel_body_filtered),  // bytes offset in struct
+    offsetof(px4_msgs__msg__VehicleOpticalFlowVel, flow_uncompensated_integral),  // bytes offset in struct
     NULL,  // default value
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__vel_body_filtered,  // size() function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__vel_body_filtered,  // get_const(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__vel_body_filtered,  // get(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__vel_body_filtered,  // fetch(index, &value) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__vel_body_filtered,  // assign(index, value) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // size() function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // get_const(index) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // get(index) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // fetch(index, &value) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
   },
   {
-    "vel_ne_filtered",  // name
+    "flow_compensated_integral",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
     2,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleOpticalFlowVel, vel_ne_filtered),  // bytes offset in struct
+    offsetof(px4_msgs__msg__VehicleOpticalFlowVel, flow_compensated_integral),  // bytes offset in struct
     NULL,  // default value
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__vel_ne_filtered,  // size() function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__vel_ne_filtered,  // get_const(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__vel_ne_filtered,  // get(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__vel_ne_filtered,  // fetch(index, &value) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__vel_ne_filtered,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "flow_rate_uncompensated",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    2,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleOpticalFlowVel, flow_rate_uncompensated),  // bytes offset in struct
-    NULL,  // default value
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // size() function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // get_const(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // get(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // fetch(index, &value) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "flow_rate_compensated",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    2,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleOpticalFlowVel, flow_rate_compensated),  // bytes offset in struct
-    NULL,  // default value
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__flow_rate_compensated,  // size() function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_rate_compensated,  // get_const(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_rate_compensated,  // get(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__flow_rate_compensated,  // fetch(index, &value) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__flow_rate_compensated,  // assign(index, value) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__flow_compensated_integral,  // size() function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__flow_compensated_integral,  // get_const(index) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__flow_compensated_integral,  // get(index) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__flow_compensated_integral,  // fetch(index, &value) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__flow_compensated_integral,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
   },
   {
@@ -591,37 +422,20 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleO
     NULL  // resize(index) function pointer
   },
   {
-    "gyro_bias",  // name
+    "gyro_rate_integral",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
     3,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleOpticalFlowVel, gyro_bias),  // bytes offset in struct
+    offsetof(px4_msgs__msg__VehicleOpticalFlowVel, gyro_rate_integral),  // bytes offset in struct
     NULL,  // default value
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__gyro_bias,  // size() function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__gyro_bias,  // get_const(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__gyro_bias,  // get(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__gyro_bias,  // fetch(index, &value) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__gyro_bias,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "ref_gyro",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    3,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleOpticalFlowVel, ref_gyro),  // bytes offset in struct
-    NULL,  // default value
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__ref_gyro,  // size() function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__ref_gyro,  // get_const(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__ref_gyro,  // get(index) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__ref_gyro,  // fetch(index, &value) function pointer
-    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__ref_gyro,  // assign(index, value) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__size_function__VehicleOpticalFlowVel__gyro_rate_integral,  // size() function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_const_function__VehicleOpticalFlowVel__gyro_rate_integral,  // get_const(index) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__get_function__VehicleOpticalFlowVel__gyro_rate_integral,  // get(index) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__fetch_function__VehicleOpticalFlowVel__gyro_rate_integral,  // fetch(index, &value) function pointer
+    px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__assign_function__VehicleOpticalFlowVel__gyro_rate_integral,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
   }
 };
@@ -629,7 +443,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleO
 static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__VehicleOpticalFlowVel_message_members = {
   "px4_msgs__msg",  // message namespace
   "VehicleOpticalFlowVel",  // message name
-  11,  // number of fields
+  8,  // number of fields
   sizeof(px4_msgs__msg__VehicleOpticalFlowVel),
   px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__VehicleOpticalFlowVel_message_member_array,  // message members
   px4_msgs__msg__VehicleOpticalFlowVel__rosidl_typesupport_introspection_c__VehicleOpticalFlowVel_init_function,  // function to initialize message memory (memory has to be allocated)

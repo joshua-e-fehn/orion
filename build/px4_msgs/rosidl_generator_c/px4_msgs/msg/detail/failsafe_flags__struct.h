@@ -35,7 +35,6 @@ typedef struct px4_msgs__msg__FailsafeFlags
   uint32_t mode_req_local_position;
   uint32_t mode_req_local_position_relaxed;
   uint32_t mode_req_global_position;
-  uint32_t mode_req_global_position_relaxed;
   uint32_t mode_req_mission;
   uint32_t mode_req_offboard_signal;
   uint32_t mode_req_home_position;
@@ -61,8 +60,6 @@ typedef struct px4_msgs__msg__FailsafeFlags
   bool local_velocity_invalid;
   /// Global position estimate invalid
   bool global_position_invalid;
-  /// Global position estimate invalid with relaxed accuracy requirements
-  bool global_position_invalid_relaxed;
   /// No mission available
   bool auto_mission_missing;
   /// Offboard signal lost
@@ -75,15 +72,15 @@ typedef struct px4_msgs__msg__FailsafeFlags
   /// GCS connection lost
   bool gcs_connection_lost;
   /// Battery
-  /// Battery warning level (see BatteryStatus.msg)
+  /// Battery warning level
   uint8_t battery_warning;
   /// Low battery based on remaining flight time
   bool battery_low_remaining_time;
   /// Battery unhealthy
   bool battery_unhealthy;
   /// Other
-  /// Geofence breached (one or multiple)
-  bool geofence_breached;
+  /// Primary Geofence breached
+  bool primary_geofence_breached;
   /// Mission failure
   bool mission_failure;
   /// vehicle in fixed-wing system failure failsafe mode (after quad-chute)
@@ -92,10 +89,8 @@ typedef struct px4_msgs__msg__FailsafeFlags
   bool wind_limit_exceeded;
   /// Maximum flight time exceeded
   bool flight_time_limit_exceeded;
-  /// Position estimate has dropped below threshold, but is currently still declared valid
-  bool position_accuracy_low;
-  /// Navigator failed to execute a mode
-  bool navigator_failure;
+  /// Local position estimate has dropped below threshold, but is currently still declared valid
+  bool local_position_accuracy_low;
   /// Failure detector
   /// Critical failure (attitude/altitude limit exceeded, or external ATS)
   bool fd_critical_failure;

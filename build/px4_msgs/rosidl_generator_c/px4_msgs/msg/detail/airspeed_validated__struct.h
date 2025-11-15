@@ -17,95 +17,25 @@ extern "C"
 
 // Constants defined in the message
 
-/// Constant 'MESSAGE_VERSION'.
-enum
-{
-  px4_msgs__msg__AirspeedValidated__MESSAGE_VERSION = 1ul
-};
-
-/// Constant 'SOURCE_DISABLED'.
-/**
-  * Disabled
- */
-enum
-{
-  px4_msgs__msg__AirspeedValidated__SOURCE_DISABLED = -1
-};
-
-/// Constant 'SOURCE_GROUND_MINUS_WIND'.
-/**
-  * Ground speed minus wind
- */
-enum
-{
-  px4_msgs__msg__AirspeedValidated__SOURCE_GROUND_MINUS_WIND = 0
-};
-
-/// Constant 'SOURCE_SENSOR_1'.
-/**
-  * Sensor 1
- */
-enum
-{
-  px4_msgs__msg__AirspeedValidated__SOURCE_SENSOR_1 = 1
-};
-
-/// Constant 'SOURCE_SENSOR_2'.
-/**
-  * Sensor 2
- */
-enum
-{
-  px4_msgs__msg__AirspeedValidated__SOURCE_SENSOR_2 = 2
-};
-
-/// Constant 'SOURCE_SENSOR_3'.
-/**
-  * Sensor 3
- */
-enum
-{
-  px4_msgs__msg__AirspeedValidated__SOURCE_SENSOR_3 = 3
-};
-
-/// Constant 'SOURCE_SYNTHETIC'.
-/**
-  * Synthetic airspeed
- */
-enum
-{
-  px4_msgs__msg__AirspeedValidated__SOURCE_SYNTHETIC = 4
-};
-
 /// Struct defined in msg/AirspeedValidated in the package px4_msgs.
-/**
-  * Validated airspeed
-  *
-  * Provides information about airspeed (indicated, true, calibrated) and the source of the data.
-  * Used by controllers, estimators and for airspeed reporting to operator.
- */
 typedef struct px4_msgs__msg__AirspeedValidated
 {
-  /// Time since system start
+  /// time since system start (microseconds)
   uint64_t timestamp;
-  /// [m/s] [@invalid NaN] Indicated airspeed (IAS)
+  /// indicated airspeed in m/s (IAS), set to NAN if invalid
   float indicated_airspeed_m_s;
-  /// [m/s] [@invalid NaN] Calibrated airspeed (CAS)
+  /// calibrated airspeed in m/s (CAS, accounts for instrumentation errors), set to NAN if invalid
   float calibrated_airspeed_m_s;
-  /// [m/s] [@invalid NaN] True airspeed (TAS)
+  /// true filtered airspeed in m/s (TAS), set to NAN if invalid
   float true_airspeed_m_s;
-  /// Source of currently published airspeed values
-  int8_t airspeed_source;
-  /// [m/s] [@invalid NaN] CAS calculated from groundspeed - windspeed, where windspeed is estimated based on a zero-sideslip assumption
+  /// CAS calculated from groundspeed - windspeed, where windspeed is estimated based on a zero-sideslip assumption, set to NAN if invalid
   float calibrated_ground_minus_wind_m_s;
-  /// [m/s] [@invalid NaN] Synthetic airspeed
-  float calibraded_airspeed_synth_m_s;
-  /// Filtered indicated airspeed derivative
-  float airspeed_derivative_filtered;
-  /// Filtered fixed-wing throttle
-  float throttle_filtered;
-  /// Filtered pitch
-  float pitch_filtered;
+  /// TAS calculated from groundspeed - windspeed, where windspeed is estimated based on a zero-sideslip assumption, set to NAN if invalid
+  float true_ground_minus_wind_m_s;
+  /// True if data from at least one airspeed sensor is declared valid.
+  bool airspeed_sensor_measurement_valid;
+  /// 1-3: airspeed sensor index, 0: groundspeed-windspeed, -1: airspeed invalid
+  int8_t selected_airspeed_index;
 } px4_msgs__msg__AirspeedValidated;
 
 // Struct for a sequence of px4_msgs__msg__AirspeedValidated.

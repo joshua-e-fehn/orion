@@ -94,31 +94,23 @@ rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Ad
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Airspeed.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/AirspeedValidated.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/AirspeedWind.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ArmingCheckReply.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ArmingCheckRequest.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/AutotuneAttitudeControlStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/BatteryInfo.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/BatteryStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ButtonEvent.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/CameraCapture.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/CameraStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/CameraTrigger.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/CanInterfaceStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/CellularStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/CollisionConstraints.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ConfigOverrides.idl
+rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/CollisionReport.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ControlAllocatorStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Cpuload.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DatamanRequest.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DatamanResponse.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DebugArray.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DebugKeyValue.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DebugValue.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DebugVect.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DifferentialPressure.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DistanceSensor.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DistanceSensorModeChangeRequest.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/DronecanNodeStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Ekf2Timestamps.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/EscReport.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/EscStatus.idl
@@ -138,20 +130,11 @@ rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Es
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Event.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FailsafeFlags.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FailureDetectorStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FigureEightStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FixedWingLateralGuidanceStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FixedWingLateralSetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FixedWingLateralStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FixedWingLongitudinalSetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FixedWingRunwayControl.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FlightPhaseEstimation.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FollowTarget.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FollowTargetEstimator.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FollowTargetStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/FuelTankStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GeneratorStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GeofenceResult.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GeofenceStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GimbalControls.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GimbalDeviceAttitudeStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GimbalDeviceInformation.idl
@@ -160,11 +143,6 @@ rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Gi
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GimbalManagerSetAttitude.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GimbalManagerSetManualControl.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GimbalManagerStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GotoSetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GpioConfig.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GpioIn.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GpioOut.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GpioRequest.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GpsDump.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/GpsInjectData.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Gripper.idl
@@ -173,7 +151,6 @@ rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/He
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/HomePosition.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/HoverThrustEstimate.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/InputRc.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/InternalCombustionEngineControl.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/InternalCombustionEngineStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/IridiumsbdStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/IrlockReport.idl
@@ -181,43 +158,30 @@ rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/La
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/LandingGearWheel.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/LandingTargetInnovations.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/LandingTargetPose.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/LateralControlConfiguration.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/LaunchDetectionStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/LedControl.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/LogMessage.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/LoggerStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/LongitudinalControlConfiguration.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/MagWorkerData.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/MagnetometerBiasEstimate.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ManualControlSetpoint.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ManualControlSwitches.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/MavlinkLog.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/MavlinkTunnel.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/MessageFormatRequest.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/MessageFormatResponse.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Mission.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/MissionResult.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ModeCompleted.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/MountOrientation.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/NavigatorMissionItem.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/NavigatorStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/NeuralControl.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/NormalizedUnsignedSetpoint.idl
+rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/NpfgStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ObstacleDistance.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OffboardControlMode.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OnboardComputerStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OpenDroneIdArmStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OpenDroneIdOperatorId.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OpenDroneIdSelfId.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OpenDroneIdSystem.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OrbTest.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OrbTestLarge.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OrbTestMedium.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/OrbitStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ParameterResetRequest.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ParameterSetUsedRequest.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ParameterSetValueRequest.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ParameterSetValueResponse.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/ParameterUpdate.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Ping.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/PositionControllerLandingStatus.idl
@@ -227,7 +191,6 @@ rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Po
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/PowerButtonState.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/PowerMonitor.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/PpsCapture.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/PurePursuitStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/PwmInput.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Px4ioStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/QshellReq.idl
@@ -236,29 +199,15 @@ rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Ra
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RateCtrlStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RcChannels.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RcParameterMap.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RegisterExtComponentReply.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RegisterExtComponentRequest.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RoverAttitudeSetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RoverAttitudeStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RoverPositionSetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RoverRateSetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RoverRateStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RoverSpeedSetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RoverSpeedStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RoverSteeringSetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RoverThrottleSetpoint.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Rpm.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RtlStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/RtlTimeEstimate.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SatelliteInfo.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorAccel.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorAccelFifo.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorAirflow.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorBaro.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorCombined.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorCorrection.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorGnssRelative.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorGnssStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorGps.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorGyro.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/SensorGyroFft.idl
@@ -278,15 +227,15 @@ rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Te
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/TelemetryStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/TiltrotorExtraControls.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/TimesyncStatus.idl
+rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/TrajectoryBezier.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/TrajectorySetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/TrajectorySetpoint6dof.idl
+rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/TrajectoryWaypoint.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/TransponderReport.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/TuneControl.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/UavcanParameterRequest.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/UavcanParameterValue.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/UlogStream.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/UlogStreamAck.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/UnregisterExtComponent.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VehicleAcceleration.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VehicleAirData.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VehicleAngularAccelerationSetpoint.idl
@@ -312,12 +261,11 @@ rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Ve
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VehicleStatus.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VehicleThrustSetpoint.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VehicleTorqueSetpoint.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VelocityLimits.idl
+rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VehicleTrajectoryBezier.idl
+rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VehicleTrajectoryWaypoint.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/VtolVehicleStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/WheelEncoders.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/Wind.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/msg/YawEstimatorStatus.idl
-rosidl_generator_c/px4_msgs/msg/action_request.h: rosidl_adapter/px4_msgs/srv/VehicleCommand.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: /opt/ros/humble/share/builtin_interfaces/msg/Duration.idl
 rosidl_generator_c/px4_msgs/msg/action_request.h: /opt/ros/humble/share/builtin_interfaces/msg/Time.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C code for ROS interfaces"
@@ -464,30 +412,6 @@ rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__struct.h: rosidl_generator
 rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/arming_check_reply.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/arming_check_reply.h
-
-rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/arming_check_request.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/arming_check_request.h
-
-rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/autotune_attitude_control_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/autotune_attitude_control_status.h
 
@@ -499,18 +423,6 @@ rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__struct.
 
 rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/battery_info.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/battery_info.h
-
-rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/battery_info__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/battery_info__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/battery_info__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/battery_info__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/battery_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/battery_status.h
@@ -572,18 +484,6 @@ rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__struct.h: rosidl_generato
 rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/can_interface_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/can_interface_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/cellular_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/cellular_status.h
 
@@ -608,17 +508,17 @@ rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__struct.h: rosidl_g
 rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/config_overrides.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/config_overrides.h
+rosidl_generator_c/px4_msgs/msg/collision_report.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/collision_report.h
 
-rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.h
+rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.h
 
-rosidl_generator_c/px4_msgs/msg/detail/config_overrides__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/config_overrides__struct.h
+rosidl_generator_c/px4_msgs/msg/detail/collision_report__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/collision_report__struct.h
 
-rosidl_generator_c/px4_msgs/msg/detail/config_overrides__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/config_overrides__type_support.h
+rosidl_generator_c/px4_msgs/msg/detail/collision_report__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/collision_report__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/control_allocator_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/control_allocator_status.h
@@ -643,30 +543,6 @@ rosidl_generator_c/px4_msgs/msg/detail/cpuload__struct.h: rosidl_generator_c/px4
 
 rosidl_generator_c/px4_msgs/msg/detail/cpuload__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/cpuload__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/dataman_request.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/dataman_request.h
-
-rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/dataman_request__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dataman_request__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/dataman_request__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dataman_request__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/dataman_response.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/dataman_response.h
-
-rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/dataman_response__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dataman_response__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/dataman_response__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dataman_response__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/debug_array.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/debug_array.h
@@ -739,30 +615,6 @@ rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__struct.h: rosidl_generat
 
 rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/distance_sensor_mode_change_request.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/distance_sensor_mode_change_request.h
-
-rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/dronecan_node_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/dronecan_node_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/ekf2_timestamps.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/ekf2_timestamps.h
@@ -992,90 +844,6 @@ rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__struct.h: rosidl
 rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/figure_eight_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/figure_eight_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/fixed_wing_lateral_guidance_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/fixed_wing_lateral_guidance_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/fixed_wing_lateral_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/fixed_wing_lateral_setpoint.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/fixed_wing_lateral_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/fixed_wing_lateral_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/fixed_wing_longitudinal_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/fixed_wing_longitudinal_setpoint.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/fixed_wing_runway_control.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/fixed_wing_runway_control.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/flight_phase_estimation.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/flight_phase_estimation.h
-
-rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/follow_target.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/follow_target.h
 
@@ -1112,18 +880,6 @@ rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__struct.h: rosidl_ge
 rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/fuel_tank_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/fuel_tank_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/generator_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/generator_status.h
 
@@ -1147,18 +903,6 @@ rosidl_generator_c/px4_msgs/msg/detail/geofence_result__struct.h: rosidl_generat
 
 rosidl_generator_c/px4_msgs/msg/detail/geofence_result__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/geofence_result__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/geofence_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/geofence_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/geofence_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/geofence_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/geofence_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/geofence_status__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/gimbal_controls.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/gimbal_controls.h
@@ -1256,66 +1000,6 @@ rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__struct.h: rosidl_g
 rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/goto_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/goto_setpoint.h
-
-rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/gpio_config.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/gpio_config.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_config__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_config__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_config__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_config__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/gpio_in.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/gpio_in.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_in__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_in__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_in__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_in__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/gpio_out.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/gpio_out.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_out__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_out__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_out__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_out__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/gpio_request.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/gpio_request.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_request__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_request__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_request__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_request__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/gps_dump.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/gps_dump.h
 
@@ -1412,18 +1096,6 @@ rosidl_generator_c/px4_msgs/msg/detail/input_rc__struct.h: rosidl_generator_c/px
 rosidl_generator_c/px4_msgs/msg/detail/input_rc__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/input_rc__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/internal_combustion_engine_control.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/internal_combustion_engine_control.h
-
-rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/internal_combustion_engine_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/internal_combustion_engine_status.h
 
@@ -1508,18 +1180,6 @@ rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__struct.h: rosidl_gen
 rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/lateral_control_configuration.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/lateral_control_configuration.h
-
-rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/launch_detection_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/launch_detection_status.h
 
@@ -1567,18 +1227,6 @@ rosidl_generator_c/px4_msgs/msg/detail/logger_status__struct.h: rosidl_generator
 
 rosidl_generator_c/px4_msgs/msg/detail/logger_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/logger_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/longitudinal_control_configuration.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/longitudinal_control_configuration.h
-
-rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/mag_worker_data.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/mag_worker_data.h
@@ -1652,30 +1300,6 @@ rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__struct.h: rosidl_generato
 rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/message_format_request.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/message_format_request.h
-
-rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/message_format_request__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/message_format_request__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/message_format_request__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/message_format_request__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/message_format_response.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/message_format_response.h
-
-rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/message_format_response__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/message_format_response__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/message_format_response__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/message_format_response__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/mission.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/mission.h
 
@@ -1736,30 +1360,6 @@ rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__struct.h: rosidl_
 rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/navigator_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/navigator_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/navigator_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/navigator_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/navigator_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/navigator_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/neural_control.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/neural_control.h
-
-rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/neural_control__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/neural_control__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/neural_control__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/neural_control__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/normalized_unsigned_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/normalized_unsigned_setpoint.h
 
@@ -1771,6 +1371,18 @@ rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__struct.h: r
 
 rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__type_support.h
+
+rosidl_generator_c/px4_msgs/msg/npfg_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/npfg_status.h
+
+rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.h
+
+rosidl_generator_c/px4_msgs/msg/detail/npfg_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/npfg_status__struct.h
+
+rosidl_generator_c/px4_msgs/msg/detail/npfg_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/npfg_status__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/obstacle_distance.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/obstacle_distance.h
@@ -1807,54 +1419,6 @@ rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__struct.h: rosidl
 
 rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/open_drone_id_arm_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/open_drone_id_arm_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/open_drone_id_operator_id.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/open_drone_id_operator_id.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/open_drone_id_self_id.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/open_drone_id_self_id.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/open_drone_id_system.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/open_drone_id_system.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/orb_test.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/orb_test.h
@@ -1903,54 +1467,6 @@ rosidl_generator_c/px4_msgs/msg/detail/orbit_status__struct.h: rosidl_generator_
 
 rosidl_generator_c/px4_msgs/msg/detail/orbit_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/orbit_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/parameter_reset_request.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/parameter_reset_request.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/parameter_set_used_request.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/parameter_set_used_request.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/parameter_set_value_request.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/parameter_set_value_request.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/parameter_set_value_response.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/parameter_set_value_response.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/parameter_update.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/parameter_update.h
@@ -2060,18 +1576,6 @@ rosidl_generator_c/px4_msgs/msg/detail/pps_capture__struct.h: rosidl_generator_c
 rosidl_generator_c/px4_msgs/msg/detail/pps_capture__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/pps_capture__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/pure_pursuit_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/pure_pursuit_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/pwm_input.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/pwm_input.h
 
@@ -2168,138 +1672,6 @@ rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__struct.h: rosidl_genera
 rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/register_ext_component_reply.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/register_ext_component_reply.h
-
-rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/register_ext_component_request.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/register_ext_component_request.h
-
-rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rover_attitude_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rover_attitude_setpoint.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rover_attitude_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rover_attitude_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rover_position_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rover_position_setpoint.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rover_rate_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rover_rate_setpoint.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rover_rate_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rover_rate_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rover_speed_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rover_speed_setpoint.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rover_speed_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rover_speed_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rover_steering_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rover_steering_setpoint.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rover_throttle_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rover_throttle_setpoint.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/rpm.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rpm.h
 
@@ -2311,18 +1683,6 @@ rosidl_generator_c/px4_msgs/msg/detail/rpm__struct.h: rosidl_generator_c/px4_msg
 
 rosidl_generator_c/px4_msgs/msg/detail/rpm__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rpm__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/rtl_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rtl_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rtl_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rtl_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/rtl_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rtl_status__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/rtl_time_estimate.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/rtl_time_estimate.h
@@ -2372,18 +1732,6 @@ rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__struct.h: rosidl_gener
 rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/sensor_airflow.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/sensor_airflow.h
-
-rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__type_support.h
-
 rosidl_generator_c/px4_msgs/msg/sensor_baro.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/sensor_baro.h
 
@@ -2431,18 +1779,6 @@ rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__struct.h: rosidl_ge
 
 rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/sensor_gnss_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/sensor_gnss_status.h
-
-rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/sensor_gps.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/sensor_gps.h
@@ -2672,6 +2008,18 @@ rosidl_generator_c/px4_msgs/msg/detail/timesync_status__struct.h: rosidl_generat
 rosidl_generator_c/px4_msgs/msg/detail/timesync_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/timesync_status__type_support.h
 
+rosidl_generator_c/px4_msgs/msg/trajectory_bezier.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/trajectory_bezier.h
+
+rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.h
+
+rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__struct.h
+
+rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__type_support.h
+
 rosidl_generator_c/px4_msgs/msg/trajectory_setpoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/trajectory_setpoint.h
 
@@ -2684,17 +2032,17 @@ rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__struct.h: rosidl_gen
 rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/trajectory_setpoint6dof.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/trajectory_setpoint6dof.h
+rosidl_generator_c/px4_msgs/msg/trajectory_waypoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/trajectory_waypoint.h
 
-rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.h
+rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.h
 
-rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__struct.h
+rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__struct.h
 
-rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__type_support.h
+rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/transponder_report.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/transponder_report.h
@@ -2767,18 +2115,6 @@ rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__struct.h: rosidl_generat
 
 rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/unregister_ext_component.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/unregister_ext_component.h
-
-rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/vehicle_acceleration.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/vehicle_acceleration.h
@@ -3080,17 +2416,29 @@ rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__struct.h: rosidl
 rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__type_support.h
 
-rosidl_generator_c/px4_msgs/msg/velocity_limits.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/velocity_limits.h
+rosidl_generator_c/px4_msgs/msg/vehicle_trajectory_bezier.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/vehicle_trajectory_bezier.h
 
-rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.h
+rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.h
 
-rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__struct.h
+rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__struct.h
 
-rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__type_support.h
+rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__type_support.h
+
+rosidl_generator_c/px4_msgs/msg/vehicle_trajectory_waypoint.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/vehicle_trajectory_waypoint.h
+
+rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.h
+
+rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__struct.h
+
+rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/vtol_vehicle_status.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/vtol_vehicle_status.h
@@ -3103,18 +2451,6 @@ rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__struct.h: rosidl_gen
 
 rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__type_support.h
-
-rosidl_generator_c/px4_msgs/msg/wheel_encoders.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/wheel_encoders.h
-
-rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.h
-
-rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__struct.h
-
-rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/wind.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/wind.h
@@ -3139,18 +2475,6 @@ rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__struct.h: rosidl_ge
 
 rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__type_support.h
-
-rosidl_generator_c/px4_msgs/srv/vehicle_command.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/srv/vehicle_command.h
-
-rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.h
-
-rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__struct.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__struct.h
-
-rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__type_support.h: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__type_support.h
 
 rosidl_generator_c/px4_msgs/msg/detail/action_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/action_request__functions.c
@@ -3188,17 +2512,8 @@ rosidl_generator_c/px4_msgs/msg/detail/airspeed_validated__functions.c: rosidl_g
 rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c
@@ -3215,29 +2530,20 @@ rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c: rosidl_genera
 rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c
+rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c
@@ -3256,12 +2562,6 @@ rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c: rosid
 
 rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c
@@ -3320,27 +2620,6 @@ rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c: rosidl_gener
 rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c
 
@@ -3350,17 +2629,11 @@ rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c: ros
 rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c
@@ -3386,21 +2659,6 @@ rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functi
 rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c
 
@@ -3425,9 +2683,6 @@ rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c: rosid
 rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c
 
@@ -3449,9 +2704,6 @@ rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c: 
 rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c
 
@@ -3463,9 +2715,6 @@ rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c: rosidl_generato
 
 rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c
@@ -3485,12 +2734,6 @@ rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c: rosidl_generato
 rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c
 
@@ -3506,14 +2749,11 @@ rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c: rosidl_ge
 rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c
+
+rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c
@@ -3523,18 +2763,6 @@ rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c: rosid
 
 rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c
@@ -3547,18 +2775,6 @@ rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c: rosidl_gene
 
 rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c
@@ -3587,9 +2803,6 @@ rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c: rosidl_genera
 rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c
 
@@ -3614,44 +2827,8 @@ rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c: rosidl_generato
 rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c
@@ -3665,9 +2842,6 @@ rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c: rosidl_generat
 rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c
-
 rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c
 
@@ -3679,9 +2853,6 @@ rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c: rosidl_ge
 
 rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c
@@ -3740,11 +2911,14 @@ rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c: ro
 rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c
 
+rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c
+
 rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c
+rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c
@@ -3763,9 +2937,6 @@ rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c: rosidl_generato
 
 rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c
@@ -3842,23 +3013,20 @@ rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c: ros
 rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c
 
-rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c
+rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c
+
+rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c
-
-rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c
 
 rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c
-
-rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c: rosidl_generator_c/px4_msgs/msg/action_request.h
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/action_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/action_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/action_request__functions.c
@@ -4028,38 +3196,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.i: cmake_force
@@ -4070,24 +3210,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.i: cmake_force
@@ -4101,7 +3227,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.i: cmake_force
@@ -4115,7 +3241,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.i: cmake_force
@@ -4129,7 +3255,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.i: cmake_force
@@ -4143,7 +3269,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.i: cmake_force
@@ -4154,24 +3280,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.i: cmake_force
@@ -4185,7 +3297,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.i: cmake_force
@@ -4196,24 +3308,24 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.i
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.i
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.s
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.s
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.i: cmake_force
@@ -4227,7 +3339,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.i: cmake_force
@@ -4238,38 +3350,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.i: cmake_force
@@ -4283,7 +3367,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.i: cmake_force
@@ -4297,7 +3381,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.i: cmake_force
@@ -4311,7 +3395,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.i: cmake_force
@@ -4325,7 +3409,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.i: cmake_force
@@ -4339,7 +3423,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.i: cmake_force
@@ -4350,38 +3434,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.i: cmake_force
@@ -4395,7 +3451,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.i: cmake_force
@@ -4409,7 +3465,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.i: cmake_force
@@ -4423,7 +3479,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.i: cmake_force
@@ -4437,7 +3493,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.i: cmake_force
@@ -4451,7 +3507,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__functions.c.i: cmake_force
@@ -4465,7 +3521,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias__functions.c.i: cmake_force
@@ -4479,7 +3535,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_bias3d__functions.c.i: cmake_force
@@ -4493,7 +3549,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_event_flags__functions.c.i: cmake_force
@@ -4507,7 +3563,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_gps_status__functions.c.i: cmake_force
@@ -4521,7 +3577,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_innovations__functions.c.i: cmake_force
@@ -4535,7 +3591,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_selector_status__functions.c.i: cmake_force
@@ -4549,7 +3605,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_sensor_bias__functions.c.i: cmake_force
@@ -4563,7 +3619,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_states__functions.c.i: cmake_force
@@ -4577,7 +3633,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status__functions.c.i: cmake_force
@@ -4591,7 +3647,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_status_flags__functions.c.i: cmake_force
@@ -4605,7 +3661,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/event__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.i: cmake_force
@@ -4619,7 +3675,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.i: cmake_force
@@ -4633,7 +3689,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.i: cmake_force
@@ -4644,108 +3700,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.i: cmake_force
@@ -4759,7 +3717,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.i: cmake_force
@@ -4773,7 +3731,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.i: cmake_force
@@ -4784,24 +3742,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.i: cmake_force
@@ -4815,7 +3759,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.i: cmake_force
@@ -4826,24 +3770,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.i: cmake_force
@@ -4857,7 +3787,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.i: cmake_force
@@ -4871,7 +3801,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.i: cmake_force
@@ -4885,7 +3815,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_set_attitude__functions.c.i: cmake_force
@@ -4899,7 +3829,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_information__functions.c.i: cmake_force
@@ -4913,7 +3843,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.i: cmake_force
@@ -4927,7 +3857,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.i: cmake_force
@@ -4941,7 +3871,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.i: cmake_force
@@ -4952,80 +3882,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.i: cmake_force
@@ -5039,7 +3899,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.i: cmake_force
@@ -5053,7 +3913,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.i: cmake_force
@@ -5067,7 +3927,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/health_report__functions.c.i: cmake_force
@@ -5081,7 +3941,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/heater_status__functions.c.i: cmake_force
@@ -5095,7 +3955,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.i: cmake_force
@@ -5109,7 +3969,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.i: cmake_force
@@ -5123,7 +3983,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.i: cmake_force
@@ -5134,24 +3994,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.i: cmake_force
@@ -5165,7 +4011,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.i: cmake_force
@@ -5179,7 +4025,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.i: cmake_force
@@ -5193,7 +4039,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear__functions.c.i: cmake_force
@@ -5207,7 +4053,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.i: cmake_force
@@ -5221,7 +4067,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.i: cmake_force
@@ -5235,7 +4081,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.i: cmake_force
@@ -5246,24 +4092,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.i: cmake_force
@@ -5277,7 +4109,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.i: cmake_force
@@ -5291,7 +4123,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.i: cmake_force
@@ -5305,7 +4137,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.i: cmake_force
@@ -5316,24 +4148,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.i: cmake_force
@@ -5347,7 +4165,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.i: cmake_force
@@ -5361,7 +4179,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.i: cmake_force
@@ -5375,7 +4193,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.i: cmake_force
@@ -5389,7 +4207,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.i: cmake_force
@@ -5403,7 +4221,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.i: cmake_force
@@ -5414,38 +4232,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.i: cmake_force
@@ -5459,7 +4249,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.i: cmake_force
@@ -5473,7 +4263,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.i: cmake_force
@@ -5487,7 +4277,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.i: cmake_force
@@ -5501,7 +4291,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.i: cmake_force
@@ -5512,38 +4302,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.i: cmake_force
@@ -5554,10 +4316,24 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.s
 
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c
+
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.i
+
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.s
+
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.i: cmake_force
@@ -5571,7 +4347,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.i: cmake_force
@@ -5585,7 +4361,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.i: cmake_force
@@ -5596,66 +4372,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.i: cmake_force
@@ -5669,7 +4389,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.i: cmake_force
@@ -5683,7 +4403,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.i: cmake_force
@@ -5697,7 +4417,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.i: cmake_force
@@ -5708,66 +4428,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.i: cmake_force
@@ -5781,7 +4445,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.i: cmake_force
@@ -5795,7 +4459,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.i: cmake_force
@@ -5809,7 +4473,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_status__functions.c.i: cmake_force
@@ -5823,7 +4487,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint__functions.c.i: cmake_force
@@ -5837,7 +4501,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_setpoint_triplet__functions.c.i: cmake_force
@@ -5851,7 +4515,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.i: cmake_force
@@ -5865,7 +4529,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.i: cmake_force
@@ -5879,7 +4543,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.i: cmake_force
@@ -5890,24 +4554,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.i: cmake_force
@@ -5921,7 +4571,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.i: cmake_force
@@ -5935,7 +4585,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.i: cmake_force
@@ -5949,7 +4599,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_retval__functions.c.i: cmake_force
@@ -5963,7 +4613,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/radio_status__functions.c.i: cmake_force
@@ -5977,7 +4627,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.i: cmake_force
@@ -5991,7 +4641,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.i: cmake_force
@@ -6005,7 +4655,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.i: cmake_force
@@ -6016,164 +4666,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.i: cmake_force
@@ -6184,24 +4680,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.i: cmake_force
@@ -6215,7 +4697,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_170) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.i: cmake_force
@@ -6229,7 +4711,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_171) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.i: cmake_force
@@ -6243,7 +4725,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_172) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.i: cmake_force
@@ -6254,24 +4736,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_173) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_174) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.i: cmake_force
@@ -6285,7 +4753,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_175) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.i: cmake_force
@@ -6299,7 +4767,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_176) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.i: cmake_force
@@ -6313,7 +4781,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_177) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.i: cmake_force
@@ -6324,24 +4792,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_178) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.i: cmake_force
@@ -6355,7 +4809,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.i: cmake_force
@@ -6369,7 +4823,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_181) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.i: cmake_force
@@ -6383,7 +4837,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_182) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fifo__functions.c.i: cmake_force
@@ -6397,7 +4851,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_183) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_hygrometer__functions.c.i: cmake_force
@@ -6411,7 +4865,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_184) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_mag__functions.c.i: cmake_force
@@ -6425,7 +4879,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_185) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_optical_flow__functions.c.i: cmake_force
@@ -6439,7 +4893,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_186) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_preflight_mag__functions.c.i: cmake_force
@@ -6453,7 +4907,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_187) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_selection__functions.c.i: cmake_force
@@ -6467,7 +4921,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_188) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_uwb__functions.c.i: cmake_force
@@ -6481,7 +4935,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_189) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status__functions.c.i: cmake_force
@@ -6495,7 +4949,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_190) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensors_status_imu__functions.c.i: cmake_force
@@ -6509,7 +4963,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_191) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/system_power__functions.c.i: cmake_force
@@ -6523,7 +4977,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_192) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/takeoff_status__functions.c.i: cmake_force
@@ -6537,7 +4991,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_193) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/task_stack_info__functions.c.i: cmake_force
@@ -6551,7 +5005,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_194) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tecs_status__functions.c.i: cmake_force
@@ -6565,7 +5019,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_195) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.i: cmake_force
@@ -6579,7 +5033,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_196) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.i: cmake_force
@@ -6593,7 +5047,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_197) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.i: cmake_force
@@ -6604,10 +5058,24 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.s
 
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c
+
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.i
+
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.s
+
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_198) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.i: cmake_force
@@ -6618,24 +5086,24 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_199) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.i
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.i
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.s
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.s
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_200) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.i: cmake_force
@@ -6649,7 +5117,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_201) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.i: cmake_force
@@ -6663,7 +5131,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_202) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.i: cmake_force
@@ -6677,7 +5145,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_203) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.i: cmake_force
@@ -6691,7 +5159,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_204) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.i: cmake_force
@@ -6705,7 +5173,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_205) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.i: cmake_force
@@ -6716,24 +5184,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_206) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_207) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.i: cmake_force
@@ -6747,7 +5201,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_208) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.i: cmake_force
@@ -6761,7 +5215,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.i: cmake_force
@@ -6775,7 +5229,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_velocity__functions.c.i: cmake_force
@@ -6789,7 +5243,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_211) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude__functions.c.i: cmake_force
@@ -6803,7 +5257,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_212) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_attitude_setpoint__functions.c.i: cmake_force
@@ -6817,7 +5271,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_213) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command__functions.c.i: cmake_force
@@ -6831,7 +5285,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_214) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_command_ack__functions.c.i: cmake_force
@@ -6845,7 +5299,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_215) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_constraints__functions.c.i: cmake_force
@@ -6859,7 +5313,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_216) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_control_mode__functions.c.i: cmake_force
@@ -6873,7 +5327,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_217) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_global_position__functions.c.i: cmake_force
@@ -6887,7 +5341,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_218) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu__functions.c.i: cmake_force
@@ -6901,7 +5355,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_219) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_imu_status__functions.c.i: cmake_force
@@ -6915,7 +5369,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_220) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_land_detected__functions.c.i: cmake_force
@@ -6929,7 +5383,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_221) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_170) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position__functions.c.i: cmake_force
@@ -6943,7 +5397,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_222) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_171) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_local_position_setpoint__functions.c.i: cmake_force
@@ -6957,7 +5411,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_223) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_172) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_magnetometer__functions.c.i: cmake_force
@@ -6971,7 +5425,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_224) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_173) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_odometry__functions.c.i: cmake_force
@@ -6985,7 +5439,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_225) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_174) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow__functions.c.i: cmake_force
@@ -6999,7 +5453,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_226) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_175) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_optical_flow_vel__functions.c.i: cmake_force
@@ -7013,7 +5467,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_227) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_176) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_rates_setpoint__functions.c.i: cmake_force
@@ -7027,7 +5481,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_228) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_177) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_roi__functions.c.i: cmake_force
@@ -7041,7 +5495,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_229) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_178) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.i: cmake_force
@@ -7055,7 +5509,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_230) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.i: cmake_force
@@ -7069,7 +5523,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_231) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.i: cmake_force
@@ -7080,24 +5534,38 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_232) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_181) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.i
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.i
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.s
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.s
+
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_182) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c
+
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.i
+
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.s
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_233) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_183) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.i: cmake_force
@@ -7108,24 +5576,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.s
 
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_234) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.s
-
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_235) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_184) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.i: cmake_force
@@ -7139,7 +5593,7 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o: rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_236) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_185) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c
 
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.i: cmake_force
@@ -7149,20 +5603,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/deta
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.s
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/flags.make
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.o: rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.o: CMakeFiles/px4_msgs__rosidl_generator_c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_237) "Building C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.o -MF CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.o.d -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.o -c /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c > CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.i
-
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c -o CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.s
 
 # Object files for target px4_msgs__rosidl_generator_c
 px4_msgs__rosidl_generator_c_OBJECTS = \
@@ -7178,31 +5618,23 @@ px4_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_validated__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o" \
+"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o" \
@@ -7222,20 +5654,11 @@ px4_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o" \
@@ -7244,11 +5667,6 @@ px4_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o" \
@@ -7257,7 +5675,6 @@ px4_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o" \
@@ -7265,43 +5682,30 @@ px4_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o" \
+"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o" \
@@ -7311,7 +5715,6 @@ px4_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o" \
@@ -7320,29 +5723,15 @@ px4_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o" \
@@ -7362,15 +5751,15 @@ px4_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o" \
+"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.o" \
+"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o" \
@@ -7396,12 +5785,11 @@ px4_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.o" \
+"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.o" \
+"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.o" \
 "CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o" \
-"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.o"
+"CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o"
 
 # External object files for target px4_msgs__rosidl_generator_c
 px4_msgs__rosidl_generator_c_EXTERNAL_OBJECTS =
@@ -7418,31 +5806,23 @@ libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_validated__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o
+libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o
@@ -7462,20 +5842,11 @@ libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/event__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failsafe_flags__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_estimator__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_attitude_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_device_information__functions.c.o
@@ -7484,11 +5855,6 @@ libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_attitude__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_set_manual_control__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gps_inject_data__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/gripper__functions.c.o
@@ -7497,7 +5863,6 @@ libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/home_position__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/hover_thrust_estimate__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/iridiumsbd_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/irlock_report__functions.c.o
@@ -7505,43 +5870,30 @@ libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_gear_wheel__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_innovations__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/led_control__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/log_message__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/magnetometer_bias_estimate__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_setpoint__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/manual_control_switches__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_log__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mission_result__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mode_completed__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/mount_orientation__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c.o
+libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/offboard_control_mode__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_large__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orb_test_medium__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ping__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/position_controller_landing_status__functions.c.o
@@ -7551,7 +5903,6 @@ libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_button_state__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/power_monitor__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/px4io_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/qshell_req__functions.c.o
@@ -7560,29 +5911,15 @@ libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rate_ctrl_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_channels__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/satellite_info__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_combined__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_correction__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/sensor_gyro_fft__functions.c.o
@@ -7602,15 +5939,15 @@ libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/telemetry_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tiltrotor_extra_controls__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.c.o
+libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c.o
+libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/tune_control__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_request__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/uavcan_parameter_value__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_air_data__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_angular_acceleration_setpoint__functions.c.o
@@ -7636,18 +5973,17 @@ libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_status__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_thrust_setpoint__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c.o
+libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c.o
+libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__functions.c.o
-libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c.o
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/build.make
 libpx4_msgs__rosidl_generator_c.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
 libpx4_msgs__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libpx4_msgs__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 libpx4_msgs__rosidl_generator_c.so: CMakeFiles/px4_msgs__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_238) "Linking C shared library libpx4_msgs__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_186) "Linking C shared library libpx4_msgs__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/px4_msgs__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -7670,23 +6006,17 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/airspeed.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/airspeed_validated.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/airspeed_wind.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/arming_check_reply.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/arming_check_request.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/autotune_attitude_control_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/battery_info.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/battery_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/button_event.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/camera_capture.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/camera_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/camera_trigger.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/can_interface_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/cellular_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/collision_constraints.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/config_overrides.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/collision_report.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/control_allocator_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/cpuload.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/dataman_request.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/dataman_response.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/debug_array.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/debug_key_value.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/debug_value.h
@@ -7739,22 +6069,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/battery_info__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/battery_info__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/battery_status__struct.h
@@ -7775,10 +6093,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/cellular_status__struct.h
@@ -7787,10 +6101,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/config_overrides__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/config_overrides__type_support.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/collision_report__functions.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/collision_report__struct.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/collision_report__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__struct.h
@@ -7799,14 +6113,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/cpuload__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/cpuload__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dataman_request__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dataman_request__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dataman_response__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dataman_response__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/debug_array__struct.h
@@ -7831,14 +6137,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__struct.h
@@ -7915,34 +6213,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/failure_detector_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/figure_eight_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_setpoint__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_lateral_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_longitudinal_setpoint__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fixed_wing_runway_control__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/flight_phase_estimation__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/follow_target__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/follow_target__struct.h
@@ -7955,10 +6225,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/follow_target_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/fuel_tank_status__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/generator_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/generator_status__struct.h
@@ -7967,10 +6233,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/geofence_result__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/geofence_result__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/geofence_result__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/geofence_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/geofence_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/geofence_status__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gimbal_controls__struct.h
@@ -8003,26 +6265,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gimbal_manager_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/goto_setpoint__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_config__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_config__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_config__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_in__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_in__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_in__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_out__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_out__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_out__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_request__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_request__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gpio_request__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gps_dump__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/gps_dump__struct.h
@@ -8055,10 +6297,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/input_rc__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/input_rc__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/input_rc__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_control__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/internal_combustion_engine_status__struct.h
@@ -8087,10 +6325,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/landing_target_pose__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/lateral_control_configuration__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/launch_detection_status__struct.h
@@ -8107,10 +6341,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/logger_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/logger_status__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/logger_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/longitudinal_control_configuration__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/mag_worker_data__struct.h
@@ -8135,14 +6365,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/mavlink_tunnel__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/message_format_request__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/message_format_request__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/message_format_request__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/message_format_response__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/message_format_response__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/message_format_response__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/mission__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/mission__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/mission__struct.h
@@ -8163,18 +6385,14 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/navigator_mission_item__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/navigator_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/navigator_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/navigator_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/neural_control__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/neural_control__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/neural_control__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/normalized_unsigned_setpoint__type_support.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/npfg_status__functions.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/npfg_status__struct.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/npfg_status__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/obstacle_distance__struct.h
@@ -8187,22 +6405,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/onboard_computer_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_arm_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_operator_id__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_self_id__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/open_drone_id_system__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/orb_test__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/orb_test__struct.h
@@ -8219,22 +6421,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/orbit_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/orbit_status__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/orbit_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_reset_request__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_used_request__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_request__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_set_value_response__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_update__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/parameter_update__struct.h
@@ -8271,10 +6457,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pps_capture__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pps_capture__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pps_capture__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pure_pursuit_status__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pwm_input__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/pwm_input__struct.h
@@ -8307,58 +6489,10 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rc_parameter_map__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_reply__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/register_ext_component_request__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_setpoint__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_attitude_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_position_setpoint__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_setpoint__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_rate_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_setpoint__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_speed_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_steering_setpoint__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rover_throttle_setpoint__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rpm__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rpm__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rpm__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rtl_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rtl_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rtl_status__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/rtl_time_estimate__struct.h
@@ -8375,10 +6509,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_accel_fifo__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_airflow__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_baro__struct.h
@@ -8395,10 +6525,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_relative__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gnss_status__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/sensor_gps__struct.h
@@ -8475,14 +6601,18 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/timesync_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/timesync_status__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/timesync_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint6dof__type_support.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__functions.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__struct.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_bezier__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_setpoint__type_support.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__functions.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__struct.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/trajectory_waypoint__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/transponder_report__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/transponder_report__struct.h
@@ -8507,10 +6637,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/ulog_stream_ack__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/unregister_ext_component__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_acceleration__struct.h
@@ -8611,18 +6737,18 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_torque_setpoint__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/velocity_limits__type_support.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__functions.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__struct.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_bezier__type_support.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.c
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__functions.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__struct.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vehicle_trajectory_waypoint__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__struct.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/vtol_vehicle_status__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/wheel_encoders__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/wind__functions.c
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/wind__functions.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/wind__struct.h
@@ -8633,8 +6759,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/detail/yaw_estimator_status__type_support.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/differential_pressure.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/distance_sensor.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/distance_sensor_mode_change_request.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/dronecan_node_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/ekf2_timestamps.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/esc_report.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/esc_status.h
@@ -8654,20 +6778,11 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/event.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/failsafe_flags.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/failure_detector_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/figure_eight_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/fixed_wing_lateral_guidance_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/fixed_wing_lateral_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/fixed_wing_lateral_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/fixed_wing_longitudinal_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/fixed_wing_runway_control.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/flight_phase_estimation.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/follow_target.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/follow_target_estimator.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/follow_target_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/fuel_tank_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/generator_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/geofence_result.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/geofence_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gimbal_controls.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gimbal_device_attitude_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gimbal_device_information.h
@@ -8676,11 +6791,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gimbal_manager_set_attitude.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gimbal_manager_set_manual_control.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gimbal_manager_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/goto_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gpio_config.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gpio_in.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gpio_out.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gpio_request.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gps_dump.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gps_inject_data.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/gripper.h
@@ -8689,7 +6799,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/home_position.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/hover_thrust_estimate.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/input_rc.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/internal_combustion_engine_control.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/internal_combustion_engine_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/iridiumsbd_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/irlock_report.h
@@ -8697,43 +6806,30 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/landing_gear_wheel.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/landing_target_innovations.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/landing_target_pose.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/lateral_control_configuration.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/launch_detection_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/led_control.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/log_message.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/logger_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/longitudinal_control_configuration.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/mag_worker_data.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/magnetometer_bias_estimate.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/manual_control_setpoint.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/manual_control_switches.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/mavlink_log.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/mavlink_tunnel.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/message_format_request.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/message_format_response.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/mission.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/mission_result.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/mode_completed.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/mount_orientation.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/navigator_mission_item.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/navigator_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/neural_control.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/normalized_unsigned_setpoint.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/npfg_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/obstacle_distance.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/offboard_control_mode.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/onboard_computer_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/open_drone_id_arm_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/open_drone_id_operator_id.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/open_drone_id_self_id.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/open_drone_id_system.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/orb_test.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/orb_test_large.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/orb_test_medium.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/orbit_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/parameter_reset_request.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/parameter_set_used_request.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/parameter_set_value_request.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/parameter_set_value_response.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/parameter_update.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/ping.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/position_controller_landing_status.h
@@ -8743,7 +6839,6 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/power_button_state.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/power_monitor.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/pps_capture.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/pure_pursuit_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/pwm_input.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/px4io_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/qshell_req.h
@@ -8752,29 +6847,15 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rate_ctrl_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rc_channels.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rc_parameter_map.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/register_ext_component_reply.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/register_ext_component_request.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rover_attitude_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rover_attitude_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rover_position_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rover_rate_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rover_rate_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rover_speed_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rover_speed_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rover_steering_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rover_throttle_setpoint.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rpm.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rtl_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/rtl_time_estimate.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/satellite_info.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_accel.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_accel_fifo.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_airflow.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_baro.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_combined.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_correction.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_gnss_relative.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_gnss_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_gps.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_gyro.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/sensor_gyro_fft.h
@@ -8794,15 +6875,15 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/telemetry_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/tiltrotor_extra_controls.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/timesync_status.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/trajectory_bezier.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/trajectory_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/trajectory_setpoint6dof.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/trajectory_waypoint.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/transponder_report.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/tune_control.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/uavcan_parameter_request.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/uavcan_parameter_value.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/ulog_stream.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/ulog_stream_ack.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/unregister_ext_component.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/vehicle_acceleration.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/vehicle_air_data.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/vehicle_angular_acceleration_setpoint.h
@@ -8828,16 +6909,11 @@ CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/vehicle_status.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/vehicle_thrust_setpoint.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/vehicle_torque_setpoint.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/velocity_limits.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/vehicle_trajectory_bezier.h
+CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/vehicle_trajectory_waypoint.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/vtol_vehicle_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/wheel_encoders.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/wind.h
 CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/msg/yaw_estimator_status.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.c
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__functions.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__struct.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__type_support.h
-CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/px4_msgs/srv/vehicle_command.h
 	cd /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs /home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs /home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/CMakeFiles/px4_msgs__rosidl_generator_c.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/px4_msgs__rosidl_generator_c.dir/depend
 

@@ -394,17 +394,8 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/AirspeedWind.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/AirspeedWind.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ArmingCheckReply.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ArmingCheckReply.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ArmingCheckRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ArmingCheckRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/AutotuneAttitudeControlStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/AutotuneAttitudeControlStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/BatteryInfo.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/BatteryInfo.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/BatteryStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/BatteryStatus.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -421,29 +412,20 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CameraTrigger.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CameraTrigger.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CanInterfaceStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CanInterfaceStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CellularStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CellularStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CollisionConstraints.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CollisionConstraints.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ConfigOverrides.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ConfigOverrides.idl" "DESTINATION" "share/px4_msgs/msg")
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CollisionReport.idl" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/CollisionReport.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ControlAllocatorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ControlAllocatorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Cpuload.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Cpuload.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DatamanRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DatamanRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DatamanResponse.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DatamanResponse.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DebugArray.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DebugArray.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -462,12 +444,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DistanceSensor.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DistanceSensor.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DistanceSensorModeChangeRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DistanceSensorModeChangeRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DronecanNodeStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/DronecanNodeStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Ekf2Timestamps.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Ekf2Timestamps.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -526,27 +502,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FailureDetectorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FailureDetectorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FigureEightStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FigureEightStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingLateralGuidanceStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingLateralGuidanceStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingLateralSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingLateralSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingLateralStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingLateralStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingLongitudinalSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingLongitudinalSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingRunwayControl.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FixedWingRunwayControl.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FlightPhaseEstimation.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FlightPhaseEstimation.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FollowTarget.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FollowTarget.idl" "DESTINATION" "share/px4_msgs/msg")
 
@@ -556,17 +511,11 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FollowTargetStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FollowTargetStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FuelTankStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/FuelTankStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GeneratorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GeneratorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GeofenceResult.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GeofenceResult.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GeofenceStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GeofenceStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GimbalControls.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GimbalControls.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -592,21 +541,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GimbalManagerStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GimbalManagerStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GotoSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GotoSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpioConfig.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpioConfig.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpioIn.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpioIn.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpioOut.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpioOut.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpioRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpioRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpsDump.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/GpsDump.idl" "DESTINATION" "share/px4_msgs/msg")
 
@@ -631,9 +565,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/InputRc.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/InputRc.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/InternalCombustionEngineControl.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/InternalCombustionEngineControl.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/InternalCombustionEngineStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/InternalCombustionEngineStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
@@ -655,9 +586,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LandingTargetPose.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LandingTargetPose.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LateralControlConfiguration.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LateralControlConfiguration.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LaunchDetectionStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LaunchDetectionStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
@@ -669,9 +597,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LoggerStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LoggerStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LongitudinalControlConfiguration.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/LongitudinalControlConfiguration.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/MagWorkerData.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/MagWorkerData.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -691,12 +616,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/MavlinkTunnel.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/MavlinkTunnel.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/MessageFormatRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/MessageFormatRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/MessageFormatResponse.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/MessageFormatResponse.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Mission.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Mission.idl" "DESTINATION" "share/px4_msgs/msg")
 
@@ -712,14 +631,11 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NavigatorMissionItem.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NavigatorMissionItem.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NavigatorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NavigatorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NeuralControl.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NeuralControl.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NormalizedUnsignedSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NormalizedUnsignedSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
+
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NpfgStatus.idl" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/NpfgStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ObstacleDistance.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ObstacleDistance.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -729,18 +645,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OnboardComputerStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OnboardComputerStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OpenDroneIdArmStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OpenDroneIdArmStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OpenDroneIdOperatorId.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OpenDroneIdOperatorId.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OpenDroneIdSelfId.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OpenDroneIdSelfId.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OpenDroneIdSystem.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OpenDroneIdSystem.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OrbTest.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OrbTest.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -753,18 +657,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OrbitStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/OrbitStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterResetRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterResetRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterSetUsedRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterSetUsedRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterSetValueRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterSetValueRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterSetValueResponse.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterSetValueResponse.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterUpdate.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/ParameterUpdate.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -793,9 +685,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/PpsCapture.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/PpsCapture.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/PurePursuitStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/PurePursuitStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/PwmInput.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/PwmInput.idl" "DESTINATION" "share/px4_msgs/msg")
 
@@ -820,44 +709,8 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RcParameterMap.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RcParameterMap.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RegisterExtComponentReply.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RegisterExtComponentReply.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RegisterExtComponentRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RegisterExtComponentRequest.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverAttitudeSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverAttitudeSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverAttitudeStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverAttitudeStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverPositionSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverPositionSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverRateSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverRateSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverRateStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverRateStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverSpeedSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverSpeedSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverSpeedStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverSpeedStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverSteeringSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverSteeringSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverThrottleSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RoverThrottleSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Rpm.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Rpm.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RtlStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RtlStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RtlTimeEstimate.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/RtlTimeEstimate.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -871,9 +724,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorAccelFifo.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorAccelFifo.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorAirflow.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorAirflow.idl" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorBaro.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorBaro.idl" "DESTINATION" "share/px4_msgs/msg")
 
@@ -885,9 +735,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorGnssRelative.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorGnssRelative.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorGnssStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorGnssStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorGps.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/SensorGps.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -946,11 +793,14 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TimesyncStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TimesyncStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TrajectoryBezier.idl" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TrajectoryBezier.idl" "DESTINATION" "share/px4_msgs/msg")
+
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TrajectorySetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TrajectorySetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TrajectorySetpoint6dof.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TrajectorySetpoint6dof.idl" "DESTINATION" "share/px4_msgs/msg")
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TrajectoryWaypoint.idl" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TrajectoryWaypoint.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TransponderReport.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/TransponderReport.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -969,9 +819,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/UlogStreamAck.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/UlogStreamAck.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/UnregisterExtComponent.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/UnregisterExtComponent.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VehicleAcceleration.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VehicleAcceleration.idl" "DESTINATION" "share/px4_msgs/msg")
@@ -1048,23 +895,20 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VehicleTorqueSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VehicleTorqueSetpoint.idl" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VelocityLimits.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VelocityLimits.idl" "DESTINATION" "share/px4_msgs/msg")
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VehicleTrajectoryBezier.idl" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VehicleTrajectoryBezier.idl" "DESTINATION" "share/px4_msgs/msg")
+
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VehicleTrajectoryWaypoint.idl" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VehicleTrajectoryWaypoint.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VtolVehicleStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/VtolVehicleStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/WheelEncoders.idl" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/WheelEncoders.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Wind.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/Wind.idl" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/YawEstimatorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/msg/YawEstimatorStatus.idl" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/srv/VehicleCommand.idl" "DESTINATION" "share/px4_msgs/srv")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_adapter/px4_msgs/srv/VehicleCommand.idl" "DESTINATION" "share/px4_msgs/srv")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ActionRequest.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ActionRequest.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1102,17 +946,8 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/AirspeedWind.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/AirspeedWind.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ArmingCheckReply.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ArmingCheckReply.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ArmingCheckRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ArmingCheckRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/AutotuneAttitudeControlStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/AutotuneAttitudeControlStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/BatteryInfo.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/BatteryInfo.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/BatteryStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/BatteryStatus.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1129,29 +964,20 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CameraTrigger.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CameraTrigger.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CanInterfaceStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CanInterfaceStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CellularStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CellularStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CollisionConstraints.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CollisionConstraints.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ConfigOverrides.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ConfigOverrides.msg" "DESTINATION" "share/px4_msgs/msg")
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CollisionReport.msg" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/CollisionReport.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ControlAllocatorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ControlAllocatorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Cpuload.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Cpuload.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DatamanRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DatamanRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DatamanResponse.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DatamanResponse.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DebugArray.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DebugArray.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1170,12 +996,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DistanceSensor.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DistanceSensor.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DistanceSensorModeChangeRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DistanceSensorModeChangeRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DronecanNodeStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/DronecanNodeStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Ekf2Timestamps.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Ekf2Timestamps.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1234,27 +1054,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FailureDetectorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FailureDetectorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FigureEightStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FigureEightStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingLateralGuidanceStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingLateralGuidanceStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingLateralSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingLateralSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingLateralStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingLateralStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingLongitudinalSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingLongitudinalSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingRunwayControl.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FixedWingRunwayControl.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FlightPhaseEstimation.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FlightPhaseEstimation.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FollowTarget.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FollowTarget.msg" "DESTINATION" "share/px4_msgs/msg")
 
@@ -1264,17 +1063,11 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FollowTargetStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FollowTargetStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FuelTankStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/FuelTankStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GeneratorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GeneratorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GeofenceResult.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GeofenceResult.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GeofenceStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GeofenceStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GimbalControls.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GimbalControls.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1300,21 +1093,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GimbalManagerStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GimbalManagerStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GotoSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GotoSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpioConfig.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpioConfig.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpioIn.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpioIn.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpioOut.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpioOut.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpioRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpioRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpsDump.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpsDump.msg" "DESTINATION" "share/px4_msgs/msg")
 
@@ -1339,9 +1117,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/InputRc.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/InputRc.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/InternalCombustionEngineControl.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/InternalCombustionEngineControl.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/InternalCombustionEngineStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/InternalCombustionEngineStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
@@ -1363,9 +1138,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LandingTargetPose.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LandingTargetPose.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LateralControlConfiguration.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LateralControlConfiguration.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LaunchDetectionStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LaunchDetectionStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
@@ -1377,9 +1149,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LoggerStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LoggerStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LongitudinalControlConfiguration.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/LongitudinalControlConfiguration.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/MagWorkerData.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/MagWorkerData.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1399,12 +1168,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/MavlinkTunnel.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/MavlinkTunnel.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/MessageFormatRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/MessageFormatRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/MessageFormatResponse.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/MessageFormatResponse.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Mission.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Mission.msg" "DESTINATION" "share/px4_msgs/msg")
 
@@ -1420,14 +1183,11 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NavigatorMissionItem.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NavigatorMissionItem.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NavigatorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NavigatorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NeuralControl.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NeuralControl.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NormalizedUnsignedSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NormalizedUnsignedSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
+
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NpfgStatus.msg" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/NpfgStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ObstacleDistance.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ObstacleDistance.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1437,18 +1197,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OnboardComputerStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OnboardComputerStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OpenDroneIdArmStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OpenDroneIdArmStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OpenDroneIdOperatorId.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OpenDroneIdOperatorId.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OpenDroneIdSelfId.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OpenDroneIdSelfId.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OpenDroneIdSystem.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OpenDroneIdSystem.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OrbTest.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OrbTest.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1461,18 +1209,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OrbitStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/OrbitStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterResetRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterResetRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterSetUsedRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterSetUsedRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterSetValueRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterSetValueRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterSetValueResponse.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterSetValueResponse.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterUpdate.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/ParameterUpdate.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1501,9 +1237,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/PpsCapture.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/PpsCapture.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/PurePursuitStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/PurePursuitStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/PwmInput.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/PwmInput.msg" "DESTINATION" "share/px4_msgs/msg")
 
@@ -1528,44 +1261,8 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RcParameterMap.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RcParameterMap.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RegisterExtComponentReply.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RegisterExtComponentReply.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RegisterExtComponentRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RegisterExtComponentRequest.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverAttitudeSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverAttitudeSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverAttitudeStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverAttitudeStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverPositionSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverPositionSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverRateSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverRateSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverRateStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverRateStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverSpeedSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverSpeedSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverSpeedStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverSpeedStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverSteeringSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverSteeringSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverThrottleSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RoverThrottleSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Rpm.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Rpm.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RtlStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RtlStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RtlTimeEstimate.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/RtlTimeEstimate.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1579,9 +1276,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorAccelFifo.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorAccelFifo.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorAirflow.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorAirflow.msg" "DESTINATION" "share/px4_msgs/msg")
-
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorBaro.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorBaro.msg" "DESTINATION" "share/px4_msgs/msg")
 
@@ -1593,9 +1287,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorGnssRelative.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorGnssRelative.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorGnssStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorGnssStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorGps.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/SensorGps.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1654,11 +1345,14 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TimesyncStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TimesyncStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TrajectoryBezier.msg" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TrajectoryBezier.msg" "DESTINATION" "share/px4_msgs/msg")
+
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TrajectorySetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TrajectorySetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TrajectorySetpoint6dof.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TrajectorySetpoint6dof.msg" "DESTINATION" "share/px4_msgs/msg")
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TrajectoryWaypoint.msg" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TrajectoryWaypoint.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TransponderReport.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/TransponderReport.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1677,9 +1371,6 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/UlogStreamAck.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/UlogStreamAck.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/UnregisterExtComponent.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/UnregisterExtComponent.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VehicleAcceleration.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VehicleAcceleration.msg" "DESTINATION" "share/px4_msgs/msg")
@@ -1756,29 +1447,20 @@ ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/s
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VehicleTorqueSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VehicleTorqueSetpoint.msg" "DESTINATION" "share/px4_msgs/msg")
 
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VelocityLimits.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VelocityLimits.msg" "DESTINATION" "share/px4_msgs/msg")
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VehicleTrajectoryBezier.msg" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VehicleTrajectoryBezier.msg" "DESTINATION" "share/px4_msgs/msg")
+
+# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VehicleTrajectoryWaypoint.msg" "DESTINATION" "share/px4_msgs/msg")
+ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VehicleTrajectoryWaypoint.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VtolVehicleStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/VtolVehicleStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/WheelEncoders.msg" "DESTINATION" "share/px4_msgs/msg")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/WheelEncoders.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Wind.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/Wind.msg" "DESTINATION" "share/px4_msgs/msg")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/YawEstimatorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/YawEstimatorStatus.msg" "DESTINATION" "share/px4_msgs/msg")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/srv/VehicleCommand.srv" "DESTINATION" "share/px4_msgs/srv")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/srv/VehicleCommand.srv" "DESTINATION" "share/px4_msgs/srv")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_cmake/srv/VehicleCommand_Request.msg" "DESTINATION" "share/px4_msgs/srv")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_cmake/srv/VehicleCommand_Request.msg" "DESTINATION" "share/px4_msgs/srv")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_cmake/srv/VehicleCommand_Response.msg" "DESTINATION" "share/px4_msgs/srv")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/rosidl_cmake/srv/VehicleCommand_Response.msg" "DESTINATION" "share/px4_msgs/srv")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/px4_msgs" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_msgs/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/px4_msgs" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

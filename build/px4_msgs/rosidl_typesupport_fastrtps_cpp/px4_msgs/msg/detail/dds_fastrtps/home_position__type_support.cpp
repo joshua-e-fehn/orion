@@ -46,10 +46,6 @@ cdr_serialize(
   cdr << ros_message.y;
   // Member: z
   cdr << ros_message.z;
-  // Member: roll
-  cdr << ros_message.roll;
-  // Member: pitch
-  cdr << ros_message.pitch;
   // Member: yaw
   cdr << ros_message.yaw;
   // Member: valid_alt
@@ -60,8 +56,6 @@ cdr_serialize(
   cdr << (ros_message.valid_lpos ? true : false);
   // Member: manual_home
   cdr << (ros_message.manual_home ? true : false);
-  // Member: update_count
-  cdr << ros_message.update_count;
   return true;
 }
 
@@ -91,12 +85,6 @@ cdr_deserialize(
 
   // Member: z
   cdr >> ros_message.z;
-
-  // Member: roll
-  cdr >> ros_message.roll;
-
-  // Member: pitch
-  cdr >> ros_message.pitch;
 
   // Member: yaw
   cdr >> ros_message.yaw;
@@ -128,9 +116,6 @@ cdr_deserialize(
     cdr >> tmp;
     ros_message.manual_home = tmp ? true : false;
   }
-
-  // Member: update_count
-  cdr >> ros_message.update_count;
 
   return true;
 }
@@ -190,18 +175,6 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: roll
-  {
-    size_t item_size = sizeof(ros_message.roll);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: pitch
-  {
-    size_t item_size = sizeof(ros_message.pitch);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // Member: yaw
   {
     size_t item_size = sizeof(ros_message.yaw);
@@ -229,12 +202,6 @@ get_serialized_size(
   // Member: manual_home
   {
     size_t item_size = sizeof(ros_message.manual_home);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: update_count
-  {
-    size_t item_size = sizeof(ros_message.update_count);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -325,24 +292,6 @@ max_serialized_size_HomePosition(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: roll
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: pitch
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
   // Member: yaw
   {
     size_t array_size = 1;
@@ -384,15 +333,6 @@ max_serialized_size_HomePosition(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: update_count
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -401,7 +341,7 @@ max_serialized_size_HomePosition(
     using DataType = px4_msgs::msg::HomePosition;
     is_plain =
       (
-      offsetof(DataType, update_count) +
+      offsetof(DataType, manual_home) +
       last_member_size
       ) == ret_val;
   }

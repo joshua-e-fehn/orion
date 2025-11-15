@@ -21,6 +21,7 @@ px4_msgs__msg__RateCtrlStatus__init(px4_msgs__msg__RateCtrlStatus * msg)
   // rollspeed_integ
   // pitchspeed_integ
   // yawspeed_integ
+  // wheel_rate_integ
   return true;
 }
 
@@ -34,6 +35,7 @@ px4_msgs__msg__RateCtrlStatus__fini(px4_msgs__msg__RateCtrlStatus * msg)
   // rollspeed_integ
   // pitchspeed_integ
   // yawspeed_integ
+  // wheel_rate_integ
 }
 
 bool
@@ -58,6 +60,10 @@ px4_msgs__msg__RateCtrlStatus__are_equal(const px4_msgs__msg__RateCtrlStatus * l
   if (lhs->yawspeed_integ != rhs->yawspeed_integ) {
     return false;
   }
+  // wheel_rate_integ
+  if (lhs->wheel_rate_integ != rhs->wheel_rate_integ) {
+    return false;
+  }
   return true;
 }
 
@@ -77,6 +83,8 @@ px4_msgs__msg__RateCtrlStatus__copy(
   output->pitchspeed_integ = input->pitchspeed_integ;
   // yawspeed_integ
   output->yawspeed_integ = input->yawspeed_integ;
+  // wheel_rate_integ
+  output->wheel_rate_integ = input->wheel_rate_integ;
   return true;
 }
 

@@ -59,37 +59,37 @@ px4_msgs__msg__SatelliteInfo__are_equal(const px4_msgs__msg__SatelliteInfo * lhs
     return false;
   }
   // svid
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     if (lhs->svid[i] != rhs->svid[i]) {
       return false;
     }
   }
   // used
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     if (lhs->used[i] != rhs->used[i]) {
       return false;
     }
   }
   // elevation
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     if (lhs->elevation[i] != rhs->elevation[i]) {
       return false;
     }
   }
   // azimuth
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     if (lhs->azimuth[i] != rhs->azimuth[i]) {
       return false;
     }
   }
   // snr
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     if (lhs->snr[i] != rhs->snr[i]) {
       return false;
     }
   }
   // prn
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     if (lhs->prn[i] != rhs->prn[i]) {
       return false;
     }
@@ -110,27 +110,27 @@ px4_msgs__msg__SatelliteInfo__copy(
   // count
   output->count = input->count;
   // svid
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     output->svid[i] = input->svid[i];
   }
   // used
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     output->used[i] = input->used[i];
   }
   // elevation
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     output->elevation[i] = input->elevation[i];
   }
   // azimuth
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     output->azimuth[i] = input->azimuth[i];
   }
   // snr
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     output->snr[i] = input->snr[i];
   }
   // prn
-  for (size_t i = 0; i < 40; ++i) {
+  for (size_t i = 0; i < 20; ++i) {
     output->prn[i] = input->prn[i];
   }
   return true;

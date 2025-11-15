@@ -22,13 +22,6 @@ class Metaclass_AirspeedValidated(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'MESSAGE_VERSION': 1,
-        'SOURCE_DISABLED': -1,
-        'SOURCE_GROUND_MINUS_WIND': 0,
-        'SOURCE_SENSOR_1': 1,
-        'SOURCE_SENSOR_2': 2,
-        'SOURCE_SENSOR_3': 3,
-        'SOURCE_SYNTHETIC': 4,
     }
 
     @classmethod
@@ -57,76 +50,21 @@ class Metaclass_AirspeedValidated(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
-            'SOURCE_DISABLED': cls.__constants['SOURCE_DISABLED'],
-            'SOURCE_GROUND_MINUS_WIND': cls.__constants['SOURCE_GROUND_MINUS_WIND'],
-            'SOURCE_SENSOR_1': cls.__constants['SOURCE_SENSOR_1'],
-            'SOURCE_SENSOR_2': cls.__constants['SOURCE_SENSOR_2'],
-            'SOURCE_SENSOR_3': cls.__constants['SOURCE_SENSOR_3'],
-            'SOURCE_SYNTHETIC': cls.__constants['SOURCE_SYNTHETIC'],
         }
-
-    @property
-    def MESSAGE_VERSION(self):
-        """Message constant 'MESSAGE_VERSION'."""
-        return Metaclass_AirspeedValidated.__constants['MESSAGE_VERSION']
-
-    @property
-    def SOURCE_DISABLED(self):
-        """Message constant 'SOURCE_DISABLED'."""
-        return Metaclass_AirspeedValidated.__constants['SOURCE_DISABLED']
-
-    @property
-    def SOURCE_GROUND_MINUS_WIND(self):
-        """Message constant 'SOURCE_GROUND_MINUS_WIND'."""
-        return Metaclass_AirspeedValidated.__constants['SOURCE_GROUND_MINUS_WIND']
-
-    @property
-    def SOURCE_SENSOR_1(self):
-        """Message constant 'SOURCE_SENSOR_1'."""
-        return Metaclass_AirspeedValidated.__constants['SOURCE_SENSOR_1']
-
-    @property
-    def SOURCE_SENSOR_2(self):
-        """Message constant 'SOURCE_SENSOR_2'."""
-        return Metaclass_AirspeedValidated.__constants['SOURCE_SENSOR_2']
-
-    @property
-    def SOURCE_SENSOR_3(self):
-        """Message constant 'SOURCE_SENSOR_3'."""
-        return Metaclass_AirspeedValidated.__constants['SOURCE_SENSOR_3']
-
-    @property
-    def SOURCE_SYNTHETIC(self):
-        """Message constant 'SOURCE_SYNTHETIC'."""
-        return Metaclass_AirspeedValidated.__constants['SOURCE_SYNTHETIC']
 
 
 class AirspeedValidated(metaclass=Metaclass_AirspeedValidated):
-    """
-    Message class 'AirspeedValidated'.
-
-    Constants:
-      MESSAGE_VERSION
-      SOURCE_DISABLED
-      SOURCE_GROUND_MINUS_WIND
-      SOURCE_SENSOR_1
-      SOURCE_SENSOR_2
-      SOURCE_SENSOR_3
-      SOURCE_SYNTHETIC
-    """
+    """Message class 'AirspeedValidated'."""
 
     __slots__ = [
         '_timestamp',
         '_indicated_airspeed_m_s',
         '_calibrated_airspeed_m_s',
         '_true_airspeed_m_s',
-        '_airspeed_source',
         '_calibrated_ground_minus_wind_m_s',
-        '_calibraded_airspeed_synth_m_s',
-        '_airspeed_derivative_filtered',
-        '_throttle_filtered',
-        '_pitch_filtered',
+        '_true_ground_minus_wind_m_s',
+        '_airspeed_sensor_measurement_valid',
+        '_selected_airspeed_index',
     ]
 
     _fields_and_field_types = {
@@ -134,12 +72,10 @@ class AirspeedValidated(metaclass=Metaclass_AirspeedValidated):
         'indicated_airspeed_m_s': 'float',
         'calibrated_airspeed_m_s': 'float',
         'true_airspeed_m_s': 'float',
-        'airspeed_source': 'int8',
         'calibrated_ground_minus_wind_m_s': 'float',
-        'calibraded_airspeed_synth_m_s': 'float',
-        'airspeed_derivative_filtered': 'float',
-        'throttle_filtered': 'float',
-        'pitch_filtered': 'float',
+        'true_ground_minus_wind_m_s': 'float',
+        'airspeed_sensor_measurement_valid': 'boolean',
+        'selected_airspeed_index': 'int8',
     }
 
     SLOT_TYPES = (
@@ -147,12 +83,10 @@ class AirspeedValidated(metaclass=Metaclass_AirspeedValidated):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('int8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -163,12 +97,10 @@ class AirspeedValidated(metaclass=Metaclass_AirspeedValidated):
         self.indicated_airspeed_m_s = kwargs.get('indicated_airspeed_m_s', float())
         self.calibrated_airspeed_m_s = kwargs.get('calibrated_airspeed_m_s', float())
         self.true_airspeed_m_s = kwargs.get('true_airspeed_m_s', float())
-        self.airspeed_source = kwargs.get('airspeed_source', int())
         self.calibrated_ground_minus_wind_m_s = kwargs.get('calibrated_ground_minus_wind_m_s', float())
-        self.calibraded_airspeed_synth_m_s = kwargs.get('calibraded_airspeed_synth_m_s', float())
-        self.airspeed_derivative_filtered = kwargs.get('airspeed_derivative_filtered', float())
-        self.throttle_filtered = kwargs.get('throttle_filtered', float())
-        self.pitch_filtered = kwargs.get('pitch_filtered', float())
+        self.true_ground_minus_wind_m_s = kwargs.get('true_ground_minus_wind_m_s', float())
+        self.airspeed_sensor_measurement_valid = kwargs.get('airspeed_sensor_measurement_valid', bool())
+        self.selected_airspeed_index = kwargs.get('selected_airspeed_index', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -207,17 +139,13 @@ class AirspeedValidated(metaclass=Metaclass_AirspeedValidated):
             return False
         if self.true_airspeed_m_s != other.true_airspeed_m_s:
             return False
-        if self.airspeed_source != other.airspeed_source:
-            return False
         if self.calibrated_ground_minus_wind_m_s != other.calibrated_ground_minus_wind_m_s:
             return False
-        if self.calibraded_airspeed_synth_m_s != other.calibraded_airspeed_synth_m_s:
+        if self.true_ground_minus_wind_m_s != other.true_ground_minus_wind_m_s:
             return False
-        if self.airspeed_derivative_filtered != other.airspeed_derivative_filtered:
+        if self.airspeed_sensor_measurement_valid != other.airspeed_sensor_measurement_valid:
             return False
-        if self.throttle_filtered != other.throttle_filtered:
-            return False
-        if self.pitch_filtered != other.pitch_filtered:
+        if self.selected_airspeed_index != other.selected_airspeed_index:
             return False
         return True
 
@@ -287,21 +215,6 @@ class AirspeedValidated(metaclass=Metaclass_AirspeedValidated):
         self._true_airspeed_m_s = value
 
     @builtins.property
-    def airspeed_source(self):
-        """Message field 'airspeed_source'."""
-        return self._airspeed_source
-
-    @airspeed_source.setter
-    def airspeed_source(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'airspeed_source' field must be of type 'int'"
-            assert value >= -128 and value < 128, \
-                "The 'airspeed_source' field must be an integer in [-128, 127]"
-        self._airspeed_source = value
-
-    @builtins.property
     def calibrated_ground_minus_wind_m_s(self):
         """Message field 'calibrated_ground_minus_wind_m_s'."""
         return self._calibrated_ground_minus_wind_m_s
@@ -317,61 +230,44 @@ class AirspeedValidated(metaclass=Metaclass_AirspeedValidated):
         self._calibrated_ground_minus_wind_m_s = value
 
     @builtins.property
-    def calibraded_airspeed_synth_m_s(self):
-        """Message field 'calibraded_airspeed_synth_m_s'."""
-        return self._calibraded_airspeed_synth_m_s
+    def true_ground_minus_wind_m_s(self):
+        """Message field 'true_ground_minus_wind_m_s'."""
+        return self._true_ground_minus_wind_m_s
 
-    @calibraded_airspeed_synth_m_s.setter
-    def calibraded_airspeed_synth_m_s(self, value):
+    @true_ground_minus_wind_m_s.setter
+    def true_ground_minus_wind_m_s(self, value):
         if __debug__:
             assert \
                 isinstance(value, float), \
-                "The 'calibraded_airspeed_synth_m_s' field must be of type 'float'"
+                "The 'true_ground_minus_wind_m_s' field must be of type 'float'"
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'calibraded_airspeed_synth_m_s' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._calibraded_airspeed_synth_m_s = value
+                "The 'true_ground_minus_wind_m_s' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._true_ground_minus_wind_m_s = value
 
     @builtins.property
-    def airspeed_derivative_filtered(self):
-        """Message field 'airspeed_derivative_filtered'."""
-        return self._airspeed_derivative_filtered
+    def airspeed_sensor_measurement_valid(self):
+        """Message field 'airspeed_sensor_measurement_valid'."""
+        return self._airspeed_sensor_measurement_valid
 
-    @airspeed_derivative_filtered.setter
-    def airspeed_derivative_filtered(self, value):
+    @airspeed_sensor_measurement_valid.setter
+    def airspeed_sensor_measurement_valid(self, value):
         if __debug__:
             assert \
-                isinstance(value, float), \
-                "The 'airspeed_derivative_filtered' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'airspeed_derivative_filtered' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._airspeed_derivative_filtered = value
+                isinstance(value, bool), \
+                "The 'airspeed_sensor_measurement_valid' field must be of type 'bool'"
+        self._airspeed_sensor_measurement_valid = value
 
     @builtins.property
-    def throttle_filtered(self):
-        """Message field 'throttle_filtered'."""
-        return self._throttle_filtered
+    def selected_airspeed_index(self):
+        """Message field 'selected_airspeed_index'."""
+        return self._selected_airspeed_index
 
-    @throttle_filtered.setter
-    def throttle_filtered(self, value):
+    @selected_airspeed_index.setter
+    def selected_airspeed_index(self, value):
         if __debug__:
             assert \
-                isinstance(value, float), \
-                "The 'throttle_filtered' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'throttle_filtered' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._throttle_filtered = value
-
-    @builtins.property
-    def pitch_filtered(self):
-        """Message field 'pitch_filtered'."""
-        return self._pitch_filtered
-
-    @pitch_filtered.setter
-    def pitch_filtered(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'pitch_filtered' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'pitch_filtered' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._pitch_filtered = value
+                isinstance(value, int), \
+                "The 'selected_airspeed_index' field must be of type 'int'"
+            assert value >= -128 and value < 128, \
+                "The 'selected_airspeed_index' field must be an integer in [-128, 127]"
+        self._selected_airspeed_index = value

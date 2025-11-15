@@ -54,7 +54,6 @@ struct ManualControlSetpoint_
       this->aux5 = 0.0f;
       this->aux6 = 0.0f;
       this->sticks_moving = false;
-      this->buttons = 0;
     }
   }
 
@@ -80,7 +79,6 @@ struct ManualControlSetpoint_
       this->aux5 = 0.0f;
       this->aux6 = 0.0f;
       this->sticks_moving = false;
-      this->buttons = 0;
     }
   }
 
@@ -133,9 +131,6 @@ struct ManualControlSetpoint_
   using _sticks_moving_type =
     bool;
   _sticks_moving_type sticks_moving;
-  using _buttons_type =
-    uint16_t;
-  _buttons_type buttons;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -234,16 +229,8 @@ struct ManualControlSetpoint_
     this->sticks_moving = _arg;
     return *this;
   }
-  Type & set__buttons(
-    const uint16_t & _arg)
-  {
-    this->buttons = _arg;
-    return *this;
-  }
 
   // constant declarations
-  static constexpr uint32_t MESSAGE_VERSION =
-    0u;
   static constexpr uint8_t SOURCE_UNKNOWN =
     0u;
   static constexpr uint8_t SOURCE_RC =
@@ -349,9 +336,6 @@ struct ManualControlSetpoint_
     if (this->sticks_moving != other.sticks_moving) {
       return false;
     }
-    if (this->buttons != other.buttons) {
-      return false;
-    }
     return true;
   }
   bool operator!=(const ManualControlSetpoint_ & other) const
@@ -365,11 +349,6 @@ using ManualControlSetpoint =
   px4_msgs::msg::ManualControlSetpoint_<std::allocator<void>>;
 
 // constant definitions
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint32_t ManualControlSetpoint_<ContainerAllocator>::MESSAGE_VERSION;
-#endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>

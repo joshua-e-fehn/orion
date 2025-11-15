@@ -118,14 +118,14 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Actuator
     NULL  // resize(index) function pointer
   },
   {
-    "kill",  // name
+    "manual_lockdown",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__ActuatorArmed, kill),  // bytes offset in struct
+    offsetof(px4_msgs__msg__ActuatorArmed, manual_lockdown),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -135,14 +135,14 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Actuator
     NULL  // resize(index) function pointer
   },
   {
-    "termination",  // name
+    "force_failsafe",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__ActuatorArmed, termination),  // bytes offset in struct
+    offsetof(px4_msgs__msg__ActuatorArmed, force_failsafe),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer

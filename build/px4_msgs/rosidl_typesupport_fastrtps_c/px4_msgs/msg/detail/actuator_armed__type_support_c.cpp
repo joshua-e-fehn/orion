@@ -74,14 +74,14 @@ static bool _ActuatorArmed__cdr_serialize(
     cdr << (ros_message->lockdown ? true : false);
   }
 
-  // Field name: kill
+  // Field name: manual_lockdown
   {
-    cdr << (ros_message->kill ? true : false);
+    cdr << (ros_message->manual_lockdown ? true : false);
   }
 
-  // Field name: termination
+  // Field name: force_failsafe
   {
-    cdr << (ros_message->termination ? true : false);
+    cdr << (ros_message->force_failsafe ? true : false);
   }
 
   // Field name: in_esc_calibration_mode
@@ -134,18 +134,18 @@ static bool _ActuatorArmed__cdr_deserialize(
     ros_message->lockdown = tmp ? true : false;
   }
 
-  // Field name: kill
+  // Field name: manual_lockdown
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message->kill = tmp ? true : false;
+    ros_message->manual_lockdown = tmp ? true : false;
   }
 
-  // Field name: termination
+  // Field name: force_failsafe
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message->termination = tmp ? true : false;
+    ros_message->force_failsafe = tmp ? true : false;
   }
 
   // Field name: in_esc_calibration_mode
@@ -202,15 +202,15 @@ size_t get_serialized_size_px4_msgs__msg__ActuatorArmed(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name kill
+  // field.name manual_lockdown
   {
-    size_t item_size = sizeof(ros_message->kill);
+    size_t item_size = sizeof(ros_message->manual_lockdown);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name termination
+  // field.name force_failsafe
   {
-    size_t item_size = sizeof(ros_message->termination);
+    size_t item_size = sizeof(ros_message->force_failsafe);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -285,14 +285,14 @@ size_t max_serialized_size_px4_msgs__msg__ActuatorArmed(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: kill
+  // member: manual_lockdown
   {
     size_t array_size = 1;
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: termination
+  // member: force_failsafe
   {
     size_t array_size = 1;
 

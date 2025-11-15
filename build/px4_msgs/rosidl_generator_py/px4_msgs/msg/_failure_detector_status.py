@@ -68,7 +68,6 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
         '_fd_motor',
         '_imbalanced_prop_metric',
         '_motor_failure_mask',
-        '_motor_stop_mask',
     ]
 
     _fields_and_field_types = {
@@ -83,7 +82,6 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
         'fd_motor': 'boolean',
         'imbalanced_prop_metric': 'float',
         'motor_failure_mask': 'uint16',
-        'motor_stop_mask': 'uint16',
     }
 
     SLOT_TYPES = (
@@ -97,7 +95,6 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
     )
 
@@ -116,7 +113,6 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
         self.fd_motor = kwargs.get('fd_motor', bool())
         self.imbalanced_prop_metric = kwargs.get('imbalanced_prop_metric', float())
         self.motor_failure_mask = kwargs.get('motor_failure_mask', int())
-        self.motor_stop_mask = kwargs.get('motor_stop_mask', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -168,8 +164,6 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
         if self.imbalanced_prop_metric != other.imbalanced_prop_metric:
             return False
         if self.motor_failure_mask != other.motor_failure_mask:
-            return False
-        if self.motor_stop_mask != other.motor_stop_mask:
             return False
         return True
 
@@ -326,18 +320,3 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
             assert value >= 0 and value < 65536, \
                 "The 'motor_failure_mask' field must be an unsigned integer in [0, 65535]"
         self._motor_failure_mask = value
-
-    @builtins.property
-    def motor_stop_mask(self):
-        """Message field 'motor_stop_mask'."""
-        return self._motor_stop_mask
-
-    @motor_stop_mask.setter
-    def motor_stop_mask(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'motor_stop_mask' field must be of type 'int'"
-            assert value >= 0 and value < 65536, \
-                "The 'motor_stop_mask' field must be an unsigned integer in [0, 65535]"
-        self._motor_stop_mask = value

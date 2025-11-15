@@ -262,45 +262,6 @@ offboard_control/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_control.dir/build.make CMakeFiles/offboard_control.dir/build
 .PHONY : offboard_control/fast
 
-#=============================================================================
-# Target rules for targets named offboard_control_srv
-
-# Build rule for target.
-offboard_control_srv: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 offboard_control_srv
-.PHONY : offboard_control_srv
-
-# fast build rule for target.
-offboard_control_srv/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_control_srv.dir/build.make CMakeFiles/offboard_control_srv.dir/build
-.PHONY : offboard_control_srv/fast
-
-#=============================================================================
-# Target rules for targets named ament_cmake_python_copy_px4_ros_com
-
-# Build rule for target.
-ament_cmake_python_copy_px4_ros_com: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_px4_ros_com
-.PHONY : ament_cmake_python_copy_px4_ros_com
-
-# fast build rule for target.
-ament_cmake_python_copy_px4_ros_com/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_px4_ros_com.dir/build.make CMakeFiles/ament_cmake_python_copy_px4_ros_com.dir/build
-.PHONY : ament_cmake_python_copy_px4_ros_com/fast
-
-#=============================================================================
-# Target rules for targets named ament_cmake_python_build_px4_ros_com_egg
-
-# Build rule for target.
-ament_cmake_python_build_px4_ros_com_egg: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_build_px4_ros_com_egg
-.PHONY : ament_cmake_python_build_px4_ros_com_egg
-
-# fast build rule for target.
-ament_cmake_python_build_px4_ros_com_egg/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_px4_ros_com_egg.dir/build.make CMakeFiles/ament_cmake_python_build_px4_ros_com_egg.dir/build
-.PHONY : ament_cmake_python_build_px4_ros_com_egg/fast
-
 src/examples/advertisers/debug_vect_advertiser.o: src/examples/advertisers/debug_vect_advertiser.cpp.o
 .PHONY : src/examples/advertisers/debug_vect_advertiser.o
 
@@ -397,30 +358,6 @@ src/examples/offboard/offboard_control.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_control.dir/build.make CMakeFiles/offboard_control.dir/src/examples/offboard/offboard_control.cpp.s
 .PHONY : src/examples/offboard/offboard_control.cpp.s
 
-src/examples/offboard/offboard_control_srv.o: src/examples/offboard/offboard_control_srv.cpp.o
-.PHONY : src/examples/offboard/offboard_control_srv.o
-
-# target to build an object file
-src/examples/offboard/offboard_control_srv.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_control_srv.dir/build.make CMakeFiles/offboard_control_srv.dir/src/examples/offboard/offboard_control_srv.cpp.o
-.PHONY : src/examples/offboard/offboard_control_srv.cpp.o
-
-src/examples/offboard/offboard_control_srv.i: src/examples/offboard/offboard_control_srv.cpp.i
-.PHONY : src/examples/offboard/offboard_control_srv.i
-
-# target to preprocess a source file
-src/examples/offboard/offboard_control_srv.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_control_srv.dir/build.make CMakeFiles/offboard_control_srv.dir/src/examples/offboard/offboard_control_srv.cpp.i
-.PHONY : src/examples/offboard/offboard_control_srv.cpp.i
-
-src/examples/offboard/offboard_control_srv.s: src/examples/offboard/offboard_control_srv.cpp.s
-.PHONY : src/examples/offboard/offboard_control_srv.s
-
-# target to generate assembly for a file
-src/examples/offboard/offboard_control_srv.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_control_srv.dir/build.make CMakeFiles/offboard_control_srv.dir/src/examples/offboard/offboard_control_srv.cpp.s
-.PHONY : src/examples/offboard/offboard_control_srv.cpp.s
-
 src/lib/frame_transforms.o: src/lib/frame_transforms.cpp.o
 .PHONY : src/lib/frame_transforms.o
 
@@ -458,14 +395,11 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... ament_cmake_python_build_px4_ros_com_egg"
-	@echo "... ament_cmake_python_copy_px4_ros_com"
 	@echo "... px4_ros_com_uninstall"
 	@echo "... uninstall"
 	@echo "... debug_vect_advertiser"
 	@echo "... frame_transforms"
 	@echo "... offboard_control"
-	@echo "... offboard_control_srv"
 	@echo "... sensor_combined_listener"
 	@echo "... vehicle_gps_position_listener"
 	@echo "... src/examples/advertisers/debug_vect_advertiser.o"
@@ -480,9 +414,6 @@ help:
 	@echo "... src/examples/offboard/offboard_control.o"
 	@echo "... src/examples/offboard/offboard_control.i"
 	@echo "... src/examples/offboard/offboard_control.s"
-	@echo "... src/examples/offboard/offboard_control_srv.o"
-	@echo "... src/examples/offboard/offboard_control_srv.i"
-	@echo "... src/examples/offboard/offboard_control_srv.s"
 	@echo "... src/lib/frame_transforms.o"
 	@echo "... src/lib/frame_transforms.i"
 	@echo "... src/lib/frame_transforms.s"

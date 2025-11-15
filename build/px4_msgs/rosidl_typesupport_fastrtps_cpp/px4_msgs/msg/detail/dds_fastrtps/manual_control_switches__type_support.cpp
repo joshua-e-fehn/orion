@@ -48,8 +48,6 @@ cdr_serialize(
   cdr << ros_message.offboard_switch;
   // Member: kill_switch
   cdr << ros_message.kill_switch;
-  // Member: termination_switch
-  cdr << ros_message.termination_switch;
   // Member: gear_switch
   cdr << ros_message.gear_switch;
   // Member: transition_switch
@@ -60,8 +58,6 @@ cdr_serialize(
   cdr << ros_message.video_switch;
   // Member: engage_main_motor_switch
   cdr << ros_message.engage_main_motor_switch;
-  // Member: payload_power_switch
-  cdr << ros_message.payload_power_switch;
   // Member: switch_changes
   cdr << ros_message.switch_changes;
   return true;
@@ -97,9 +93,6 @@ cdr_deserialize(
   // Member: kill_switch
   cdr >> ros_message.kill_switch;
 
-  // Member: termination_switch
-  cdr >> ros_message.termination_switch;
-
   // Member: gear_switch
   cdr >> ros_message.gear_switch;
 
@@ -114,9 +107,6 @@ cdr_deserialize(
 
   // Member: engage_main_motor_switch
   cdr >> ros_message.engage_main_motor_switch;
-
-  // Member: payload_power_switch
-  cdr >> ros_message.payload_power_switch;
 
   // Member: switch_changes
   cdr >> ros_message.switch_changes;
@@ -185,12 +175,6 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: termination_switch
-  {
-    size_t item_size = sizeof(ros_message.termination_switch);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // Member: gear_switch
   {
     size_t item_size = sizeof(ros_message.gear_switch);
@@ -218,12 +202,6 @@ get_serialized_size(
   // Member: engage_main_motor_switch
   {
     size_t item_size = sizeof(ros_message.engage_main_motor_switch);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: payload_power_switch
-  {
-    size_t item_size = sizeof(ros_message.payload_power_switch);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -323,14 +301,6 @@ max_serialized_size_ManualControlSwitches(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: termination_switch
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
   // Member: gear_switch
   {
     size_t array_size = 1;
@@ -364,14 +334,6 @@ max_serialized_size_ManualControlSwitches(
   }
 
   // Member: engage_main_motor_switch
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
-  // Member: payload_power_switch
   {
     size_t array_size = 1;
 

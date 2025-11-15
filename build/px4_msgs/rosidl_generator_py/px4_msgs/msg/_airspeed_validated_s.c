@@ -86,15 +86,6 @@ bool px4_msgs__msg__airspeed_validated__convert_from_py(PyObject * _pymsg, void 
     ros_message->true_airspeed_m_s = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
-  {  // airspeed_source
-    PyObject * field = PyObject_GetAttrString(_pymsg, "airspeed_source");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->airspeed_source = (int8_t)PyLong_AsLong(field);
-    Py_DECREF(field);
-  }
   {  // calibrated_ground_minus_wind_m_s
     PyObject * field = PyObject_GetAttrString(_pymsg, "calibrated_ground_minus_wind_m_s");
     if (!field) {
@@ -104,40 +95,31 @@ bool px4_msgs__msg__airspeed_validated__convert_from_py(PyObject * _pymsg, void 
     ros_message->calibrated_ground_minus_wind_m_s = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
-  {  // calibraded_airspeed_synth_m_s
-    PyObject * field = PyObject_GetAttrString(_pymsg, "calibraded_airspeed_synth_m_s");
+  {  // true_ground_minus_wind_m_s
+    PyObject * field = PyObject_GetAttrString(_pymsg, "true_ground_minus_wind_m_s");
     if (!field) {
       return false;
     }
     assert(PyFloat_Check(field));
-    ros_message->calibraded_airspeed_synth_m_s = (float)PyFloat_AS_DOUBLE(field);
+    ros_message->true_ground_minus_wind_m_s = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
-  {  // airspeed_derivative_filtered
-    PyObject * field = PyObject_GetAttrString(_pymsg, "airspeed_derivative_filtered");
+  {  // airspeed_sensor_measurement_valid
+    PyObject * field = PyObject_GetAttrString(_pymsg, "airspeed_sensor_measurement_valid");
     if (!field) {
       return false;
     }
-    assert(PyFloat_Check(field));
-    ros_message->airspeed_derivative_filtered = (float)PyFloat_AS_DOUBLE(field);
+    assert(PyBool_Check(field));
+    ros_message->airspeed_sensor_measurement_valid = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // throttle_filtered
-    PyObject * field = PyObject_GetAttrString(_pymsg, "throttle_filtered");
+  {  // selected_airspeed_index
+    PyObject * field = PyObject_GetAttrString(_pymsg, "selected_airspeed_index");
     if (!field) {
       return false;
     }
-    assert(PyFloat_Check(field));
-    ros_message->throttle_filtered = (float)PyFloat_AS_DOUBLE(field);
-    Py_DECREF(field);
-  }
-  {  // pitch_filtered
-    PyObject * field = PyObject_GetAttrString(_pymsg, "pitch_filtered");
-    if (!field) {
-      return false;
-    }
-    assert(PyFloat_Check(field));
-    ros_message->pitch_filtered = (float)PyFloat_AS_DOUBLE(field);
+    assert(PyLong_Check(field));
+    ros_message->selected_airspeed_index = (int8_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
 
@@ -206,17 +188,6 @@ PyObject * px4_msgs__msg__airspeed_validated__convert_to_py(void * raw_ros_messa
       }
     }
   }
-  {  // airspeed_source
-    PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->airspeed_source);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "airspeed_source", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
   {  // calibrated_ground_minus_wind_m_s
     PyObject * field = NULL;
     field = PyFloat_FromDouble(ros_message->calibrated_ground_minus_wind_m_s);
@@ -228,44 +199,33 @@ PyObject * px4_msgs__msg__airspeed_validated__convert_to_py(void * raw_ros_messa
       }
     }
   }
-  {  // calibraded_airspeed_synth_m_s
+  {  // true_ground_minus_wind_m_s
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->calibraded_airspeed_synth_m_s);
+    field = PyFloat_FromDouble(ros_message->true_ground_minus_wind_m_s);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "calibraded_airspeed_synth_m_s", field);
+      int rc = PyObject_SetAttrString(_pymessage, "true_ground_minus_wind_m_s", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // airspeed_derivative_filtered
+  {  // airspeed_sensor_measurement_valid
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->airspeed_derivative_filtered);
+    field = PyBool_FromLong(ros_message->airspeed_sensor_measurement_valid ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "airspeed_derivative_filtered", field);
+      int rc = PyObject_SetAttrString(_pymessage, "airspeed_sensor_measurement_valid", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // throttle_filtered
+  {  // selected_airspeed_index
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->throttle_filtered);
+    field = PyLong_FromLong(ros_message->selected_airspeed_index);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "throttle_filtered", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
-  {  // pitch_filtered
-    PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->pitch_filtered);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "pitch_filtered", field);
+      int rc = PyObject_SetAttrString(_pymessage, "selected_airspeed_index", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

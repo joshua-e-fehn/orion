@@ -52,26 +52,26 @@ cdr_serialize(
   cdr << ros_message.alt;
   // Member: yaw
   cdr << ros_message.yaw;
+  // Member: yaw_valid
+  cdr << (ros_message.yaw_valid ? true : false);
+  // Member: yawspeed
+  cdr << ros_message.yawspeed;
+  // Member: yawspeed_valid
+  cdr << (ros_message.yawspeed_valid ? true : false);
   // Member: loiter_radius
   cdr << ros_message.loiter_radius;
-  // Member: loiter_minor_radius
-  cdr << ros_message.loiter_minor_radius;
   // Member: loiter_direction_counter_clockwise
   cdr << (ros_message.loiter_direction_counter_clockwise ? true : false);
-  // Member: loiter_orientation
-  cdr << ros_message.loiter_orientation;
-  // Member: loiter_pattern
-  cdr << ros_message.loiter_pattern;
   // Member: acceptance_radius
   cdr << ros_message.acceptance_radius;
-  // Member: alt_acceptance_radius
-  cdr << ros_message.alt_acceptance_radius;
   // Member: cruising_speed
   cdr << ros_message.cruising_speed;
   // Member: gliding_enabled
   cdr << (ros_message.gliding_enabled ? true : false);
   // Member: cruising_throttle
   cdr << ros_message.cruising_throttle;
+  // Member: disable_weather_vane
+  cdr << (ros_message.disable_weather_vane ? true : false);
   return true;
 }
 
@@ -115,11 +115,25 @@ cdr_deserialize(
   // Member: yaw
   cdr >> ros_message.yaw;
 
+  // Member: yaw_valid
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.yaw_valid = tmp ? true : false;
+  }
+
+  // Member: yawspeed
+  cdr >> ros_message.yawspeed;
+
+  // Member: yawspeed_valid
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.yawspeed_valid = tmp ? true : false;
+  }
+
   // Member: loiter_radius
   cdr >> ros_message.loiter_radius;
-
-  // Member: loiter_minor_radius
-  cdr >> ros_message.loiter_minor_radius;
 
   // Member: loiter_direction_counter_clockwise
   {
@@ -128,17 +142,8 @@ cdr_deserialize(
     ros_message.loiter_direction_counter_clockwise = tmp ? true : false;
   }
 
-  // Member: loiter_orientation
-  cdr >> ros_message.loiter_orientation;
-
-  // Member: loiter_pattern
-  cdr >> ros_message.loiter_pattern;
-
   // Member: acceptance_radius
   cdr >> ros_message.acceptance_radius;
-
-  // Member: alt_acceptance_radius
-  cdr >> ros_message.alt_acceptance_radius;
 
   // Member: cruising_speed
   cdr >> ros_message.cruising_speed;
@@ -152,6 +157,13 @@ cdr_deserialize(
 
   // Member: cruising_throttle
   cdr >> ros_message.cruising_throttle;
+
+  // Member: disable_weather_vane
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.disable_weather_vane = tmp ? true : false;
+  }
 
   return true;
 }
@@ -229,15 +241,27 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: loiter_radius
+  // Member: yaw_valid
   {
-    size_t item_size = sizeof(ros_message.loiter_radius);
+    size_t item_size = sizeof(ros_message.yaw_valid);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: loiter_minor_radius
+  // Member: yawspeed
   {
-    size_t item_size = sizeof(ros_message.loiter_minor_radius);
+    size_t item_size = sizeof(ros_message.yawspeed);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: yawspeed_valid
+  {
+    size_t item_size = sizeof(ros_message.yawspeed_valid);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: loiter_radius
+  {
+    size_t item_size = sizeof(ros_message.loiter_radius);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -247,27 +271,9 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: loiter_orientation
-  {
-    size_t item_size = sizeof(ros_message.loiter_orientation);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: loiter_pattern
-  {
-    size_t item_size = sizeof(ros_message.loiter_pattern);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // Member: acceptance_radius
   {
     size_t item_size = sizeof(ros_message.acceptance_radius);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: alt_acceptance_radius
-  {
-    size_t item_size = sizeof(ros_message.alt_acceptance_radius);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -286,6 +292,12 @@ get_serialized_size(
   // Member: cruising_throttle
   {
     size_t item_size = sizeof(ros_message.cruising_throttle);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: disable_weather_vane
+  {
+    size_t item_size = sizeof(ros_message.disable_weather_vane);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -401,7 +413,15 @@ max_serialized_size_PositionSetpoint(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: loiter_radius
+  // Member: yaw_valid
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: yawspeed
   {
     size_t array_size = 1;
 
@@ -410,7 +430,15 @@ max_serialized_size_PositionSetpoint(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: loiter_minor_radius
+  // Member: yawspeed_valid
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: loiter_radius
   {
     size_t array_size = 1;
 
@@ -427,33 +455,7 @@ max_serialized_size_PositionSetpoint(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: loiter_orientation
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: loiter_pattern
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
   // Member: acceptance_radius
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: alt_acceptance_radius
   {
     size_t array_size = 1;
 
@@ -488,6 +490,14 @@ max_serialized_size_PositionSetpoint(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
+  // Member: disable_weather_vane
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -496,7 +506,7 @@ max_serialized_size_PositionSetpoint(
     using DataType = px4_msgs::msg::PositionSetpoint;
     is_plain =
       (
-      offsetof(DataType, cruising_throttle) +
+      offsetof(DataType, disable_weather_vane) +
       last_member_size
       ) == ret_val;
   }

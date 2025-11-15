@@ -44,33 +44,21 @@ cdr_serialize(
   {
     cdr << ros_message.vel_ne;
   }
-  // Member: vel_body_filtered
+  // Member: flow_uncompensated_integral
   {
-    cdr << ros_message.vel_body_filtered;
+    cdr << ros_message.flow_uncompensated_integral;
   }
-  // Member: vel_ne_filtered
+  // Member: flow_compensated_integral
   {
-    cdr << ros_message.vel_ne_filtered;
-  }
-  // Member: flow_rate_uncompensated
-  {
-    cdr << ros_message.flow_rate_uncompensated;
-  }
-  // Member: flow_rate_compensated
-  {
-    cdr << ros_message.flow_rate_compensated;
+    cdr << ros_message.flow_compensated_integral;
   }
   // Member: gyro_rate
   {
     cdr << ros_message.gyro_rate;
   }
-  // Member: gyro_bias
+  // Member: gyro_rate_integral
   {
-    cdr << ros_message.gyro_bias;
-  }
-  // Member: ref_gyro
-  {
-    cdr << ros_message.ref_gyro;
+    cdr << ros_message.gyro_rate_integral;
   }
   return true;
 }
@@ -97,24 +85,14 @@ cdr_deserialize(
     cdr >> ros_message.vel_ne;
   }
 
-  // Member: vel_body_filtered
+  // Member: flow_uncompensated_integral
   {
-    cdr >> ros_message.vel_body_filtered;
+    cdr >> ros_message.flow_uncompensated_integral;
   }
 
-  // Member: vel_ne_filtered
+  // Member: flow_compensated_integral
   {
-    cdr >> ros_message.vel_ne_filtered;
-  }
-
-  // Member: flow_rate_uncompensated
-  {
-    cdr >> ros_message.flow_rate_uncompensated;
-  }
-
-  // Member: flow_rate_compensated
-  {
-    cdr >> ros_message.flow_rate_compensated;
+    cdr >> ros_message.flow_compensated_integral;
   }
 
   // Member: gyro_rate
@@ -122,14 +100,9 @@ cdr_deserialize(
     cdr >> ros_message.gyro_rate;
   }
 
-  // Member: gyro_bias
+  // Member: gyro_rate_integral
   {
-    cdr >> ros_message.gyro_bias;
-  }
-
-  // Member: ref_gyro
-  {
-    cdr >> ros_message.ref_gyro;
+    cdr >> ros_message.gyro_rate_integral;
   }
 
   return true;
@@ -174,31 +147,17 @@ get_serialized_size(
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: vel_body_filtered
+  // Member: flow_uncompensated_integral
   {
     size_t array_size = 2;
-    size_t item_size = sizeof(ros_message.vel_body_filtered[0]);
+    size_t item_size = sizeof(ros_message.flow_uncompensated_integral[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: vel_ne_filtered
+  // Member: flow_compensated_integral
   {
     size_t array_size = 2;
-    size_t item_size = sizeof(ros_message.vel_ne_filtered[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: flow_rate_uncompensated
-  {
-    size_t array_size = 2;
-    size_t item_size = sizeof(ros_message.flow_rate_uncompensated[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: flow_rate_compensated
-  {
-    size_t array_size = 2;
-    size_t item_size = sizeof(ros_message.flow_rate_compensated[0]);
+    size_t item_size = sizeof(ros_message.flow_compensated_integral[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -209,17 +168,10 @@ get_serialized_size(
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: gyro_bias
+  // Member: gyro_rate_integral
   {
     size_t array_size = 3;
-    size_t item_size = sizeof(ros_message.gyro_bias[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: ref_gyro
-  {
-    size_t array_size = 3;
-    size_t item_size = sizeof(ros_message.ref_gyro[0]);
+    size_t item_size = sizeof(ros_message.gyro_rate_integral[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -283,7 +235,7 @@ max_serialized_size_VehicleOpticalFlowVel(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: vel_body_filtered
+  // Member: flow_uncompensated_integral
   {
     size_t array_size = 2;
 
@@ -292,25 +244,7 @@ max_serialized_size_VehicleOpticalFlowVel(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: vel_ne_filtered
-  {
-    size_t array_size = 2;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: flow_rate_uncompensated
-  {
-    size_t array_size = 2;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: flow_rate_compensated
+  // Member: flow_compensated_integral
   {
     size_t array_size = 2;
 
@@ -328,16 +262,7 @@ max_serialized_size_VehicleOpticalFlowVel(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: gyro_bias
-  {
-    size_t array_size = 3;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: ref_gyro
+  // Member: gyro_rate_integral
   {
     size_t array_size = 3;
 
@@ -354,7 +279,7 @@ max_serialized_size_VehicleOpticalFlowVel(
     using DataType = px4_msgs::msg::VehicleOpticalFlowVel;
     is_plain =
       (
-      offsetof(DataType, ref_gyro) +
+      offsetof(DataType, gyro_rate_integral) +
       last_member_size
       ) == ret_val;
   }

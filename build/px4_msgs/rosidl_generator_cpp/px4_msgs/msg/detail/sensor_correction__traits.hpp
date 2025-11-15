@@ -32,114 +32,6 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: accel_device_ids
-  {
-    if (msg.accel_device_ids.size() == 0) {
-      out << "accel_device_ids: []";
-    } else {
-      out << "accel_device_ids: [";
-      size_t pending_items = msg.accel_device_ids.size();
-      for (auto item : msg.accel_device_ids) {
-        rosidl_generator_traits::value_to_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
-  // member: accel_temperature
-  {
-    if (msg.accel_temperature.size() == 0) {
-      out << "accel_temperature: []";
-    } else {
-      out << "accel_temperature: [";
-      size_t pending_items = msg.accel_temperature.size();
-      for (auto item : msg.accel_temperature) {
-        rosidl_generator_traits::value_to_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
-  // member: accel_offset_0
-  {
-    if (msg.accel_offset_0.size() == 0) {
-      out << "accel_offset_0: []";
-    } else {
-      out << "accel_offset_0: [";
-      size_t pending_items = msg.accel_offset_0.size();
-      for (auto item : msg.accel_offset_0) {
-        rosidl_generator_traits::value_to_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
-  // member: accel_offset_1
-  {
-    if (msg.accel_offset_1.size() == 0) {
-      out << "accel_offset_1: []";
-    } else {
-      out << "accel_offset_1: [";
-      size_t pending_items = msg.accel_offset_1.size();
-      for (auto item : msg.accel_offset_1) {
-        rosidl_generator_traits::value_to_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
-  // member: accel_offset_2
-  {
-    if (msg.accel_offset_2.size() == 0) {
-      out << "accel_offset_2: []";
-    } else {
-      out << "accel_offset_2: [";
-      size_t pending_items = msg.accel_offset_2.size();
-      for (auto item : msg.accel_offset_2) {
-        rosidl_generator_traits::value_to_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
-  // member: accel_offset_3
-  {
-    if (msg.accel_offset_3.size() == 0) {
-      out << "accel_offset_3: []";
-    } else {
-      out << "accel_offset_3: [";
-      size_t pending_items = msg.accel_offset_3.size();
-      for (auto item : msg.accel_offset_3) {
-        rosidl_generator_traits::value_to_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
   // member: gyro_device_ids
   {
     if (msg.gyro_device_ids.size() == 0) {
@@ -248,14 +140,14 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: mag_device_ids
+  // member: accel_device_ids
   {
-    if (msg.mag_device_ids.size() == 0) {
-      out << "mag_device_ids: []";
+    if (msg.accel_device_ids.size() == 0) {
+      out << "accel_device_ids: []";
     } else {
-      out << "mag_device_ids: [";
-      size_t pending_items = msg.mag_device_ids.size();
-      for (auto item : msg.mag_device_ids) {
+      out << "accel_device_ids: [";
+      size_t pending_items = msg.accel_device_ids.size();
+      for (auto item : msg.accel_device_ids) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -266,14 +158,14 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: mag_temperature
+  // member: accel_temperature
   {
-    if (msg.mag_temperature.size() == 0) {
-      out << "mag_temperature: []";
+    if (msg.accel_temperature.size() == 0) {
+      out << "accel_temperature: []";
     } else {
-      out << "mag_temperature: [";
-      size_t pending_items = msg.mag_temperature.size();
-      for (auto item : msg.mag_temperature) {
+      out << "accel_temperature: [";
+      size_t pending_items = msg.accel_temperature.size();
+      for (auto item : msg.accel_temperature) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -284,14 +176,14 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: mag_offset_0
+  // member: accel_offset_0
   {
-    if (msg.mag_offset_0.size() == 0) {
-      out << "mag_offset_0: []";
+    if (msg.accel_offset_0.size() == 0) {
+      out << "accel_offset_0: []";
     } else {
-      out << "mag_offset_0: [";
-      size_t pending_items = msg.mag_offset_0.size();
-      for (auto item : msg.mag_offset_0) {
+      out << "accel_offset_0: [";
+      size_t pending_items = msg.accel_offset_0.size();
+      for (auto item : msg.accel_offset_0) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -302,14 +194,14 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: mag_offset_1
+  // member: accel_offset_1
   {
-    if (msg.mag_offset_1.size() == 0) {
-      out << "mag_offset_1: []";
+    if (msg.accel_offset_1.size() == 0) {
+      out << "accel_offset_1: []";
     } else {
-      out << "mag_offset_1: [";
-      size_t pending_items = msg.mag_offset_1.size();
-      for (auto item : msg.mag_offset_1) {
+      out << "accel_offset_1: [";
+      size_t pending_items = msg.accel_offset_1.size();
+      for (auto item : msg.accel_offset_1) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -320,14 +212,14 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: mag_offset_2
+  // member: accel_offset_2
   {
-    if (msg.mag_offset_2.size() == 0) {
-      out << "mag_offset_2: []";
+    if (msg.accel_offset_2.size() == 0) {
+      out << "accel_offset_2: []";
     } else {
-      out << "mag_offset_2: [";
-      size_t pending_items = msg.mag_offset_2.size();
-      for (auto item : msg.mag_offset_2) {
+      out << "accel_offset_2: [";
+      size_t pending_items = msg.accel_offset_2.size();
+      for (auto item : msg.accel_offset_2) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -338,14 +230,14 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: mag_offset_3
+  // member: accel_offset_3
   {
-    if (msg.mag_offset_3.size() == 0) {
-      out << "mag_offset_3: []";
+    if (msg.accel_offset_3.size() == 0) {
+      out << "accel_offset_3: []";
     } else {
-      out << "mag_offset_3: [";
-      size_t pending_items = msg.mag_offset_3.size();
-      for (auto item : msg.mag_offset_3) {
+      out << "accel_offset_3: [";
+      size_t pending_items = msg.accel_offset_3.size();
+      for (auto item : msg.accel_offset_3) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -433,126 +325,6 @@ inline void to_block_style_yaml(
     out << "timestamp: ";
     rosidl_generator_traits::value_to_yaml(msg.timestamp, out);
     out << "\n";
-  }
-
-  // member: accel_device_ids
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    if (msg.accel_device_ids.size() == 0) {
-      out << "accel_device_ids: []\n";
-    } else {
-      out << "accel_device_ids:\n";
-      for (auto item : msg.accel_device_ids) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "- ";
-        rosidl_generator_traits::value_to_yaml(item, out);
-        out << "\n";
-      }
-    }
-  }
-
-  // member: accel_temperature
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    if (msg.accel_temperature.size() == 0) {
-      out << "accel_temperature: []\n";
-    } else {
-      out << "accel_temperature:\n";
-      for (auto item : msg.accel_temperature) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "- ";
-        rosidl_generator_traits::value_to_yaml(item, out);
-        out << "\n";
-      }
-    }
-  }
-
-  // member: accel_offset_0
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    if (msg.accel_offset_0.size() == 0) {
-      out << "accel_offset_0: []\n";
-    } else {
-      out << "accel_offset_0:\n";
-      for (auto item : msg.accel_offset_0) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "- ";
-        rosidl_generator_traits::value_to_yaml(item, out);
-        out << "\n";
-      }
-    }
-  }
-
-  // member: accel_offset_1
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    if (msg.accel_offset_1.size() == 0) {
-      out << "accel_offset_1: []\n";
-    } else {
-      out << "accel_offset_1:\n";
-      for (auto item : msg.accel_offset_1) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "- ";
-        rosidl_generator_traits::value_to_yaml(item, out);
-        out << "\n";
-      }
-    }
-  }
-
-  // member: accel_offset_2
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    if (msg.accel_offset_2.size() == 0) {
-      out << "accel_offset_2: []\n";
-    } else {
-      out << "accel_offset_2:\n";
-      for (auto item : msg.accel_offset_2) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "- ";
-        rosidl_generator_traits::value_to_yaml(item, out);
-        out << "\n";
-      }
-    }
-  }
-
-  // member: accel_offset_3
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    if (msg.accel_offset_3.size() == 0) {
-      out << "accel_offset_3: []\n";
-    } else {
-      out << "accel_offset_3:\n";
-      for (auto item : msg.accel_offset_3) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "- ";
-        rosidl_generator_traits::value_to_yaml(item, out);
-        out << "\n";
-      }
-    }
   }
 
   // member: gyro_device_ids
@@ -675,16 +447,16 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: mag_device_ids
+  // member: accel_device_ids
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.mag_device_ids.size() == 0) {
-      out << "mag_device_ids: []\n";
+    if (msg.accel_device_ids.size() == 0) {
+      out << "accel_device_ids: []\n";
     } else {
-      out << "mag_device_ids:\n";
-      for (auto item : msg.mag_device_ids) {
+      out << "accel_device_ids:\n";
+      for (auto item : msg.accel_device_ids) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -695,16 +467,16 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: mag_temperature
+  // member: accel_temperature
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.mag_temperature.size() == 0) {
-      out << "mag_temperature: []\n";
+    if (msg.accel_temperature.size() == 0) {
+      out << "accel_temperature: []\n";
     } else {
-      out << "mag_temperature:\n";
-      for (auto item : msg.mag_temperature) {
+      out << "accel_temperature:\n";
+      for (auto item : msg.accel_temperature) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -715,16 +487,16 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: mag_offset_0
+  // member: accel_offset_0
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.mag_offset_0.size() == 0) {
-      out << "mag_offset_0: []\n";
+    if (msg.accel_offset_0.size() == 0) {
+      out << "accel_offset_0: []\n";
     } else {
-      out << "mag_offset_0:\n";
-      for (auto item : msg.mag_offset_0) {
+      out << "accel_offset_0:\n";
+      for (auto item : msg.accel_offset_0) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -735,16 +507,16 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: mag_offset_1
+  // member: accel_offset_1
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.mag_offset_1.size() == 0) {
-      out << "mag_offset_1: []\n";
+    if (msg.accel_offset_1.size() == 0) {
+      out << "accel_offset_1: []\n";
     } else {
-      out << "mag_offset_1:\n";
-      for (auto item : msg.mag_offset_1) {
+      out << "accel_offset_1:\n";
+      for (auto item : msg.accel_offset_1) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -755,16 +527,16 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: mag_offset_2
+  // member: accel_offset_2
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.mag_offset_2.size() == 0) {
-      out << "mag_offset_2: []\n";
+    if (msg.accel_offset_2.size() == 0) {
+      out << "accel_offset_2: []\n";
     } else {
-      out << "mag_offset_2:\n";
-      for (auto item : msg.mag_offset_2) {
+      out << "accel_offset_2:\n";
+      for (auto item : msg.accel_offset_2) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -775,16 +547,16 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: mag_offset_3
+  // member: accel_offset_3
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.mag_offset_3.size() == 0) {
-      out << "mag_offset_3: []\n";
+    if (msg.accel_offset_3.size() == 0) {
+      out << "accel_offset_3: []\n";
     } else {
-      out << "mag_offset_3:\n";
-      for (auto item : msg.mag_offset_3) {
+      out << "accel_offset_3:\n";
+      for (auto item : msg.accel_offset_3) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }

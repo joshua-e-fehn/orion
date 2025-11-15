@@ -54,48 +54,6 @@ static bool _SensorCorrection__cdr_serialize(
     cdr << ros_message->timestamp;
   }
 
-  // Field name: accel_device_ids
-  {
-    size_t size = 4;
-    auto array_ptr = ros_message->accel_device_ids;
-    cdr.serializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_temperature
-  {
-    size_t size = 4;
-    auto array_ptr = ros_message->accel_temperature;
-    cdr.serializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_offset_0
-  {
-    size_t size = 3;
-    auto array_ptr = ros_message->accel_offset_0;
-    cdr.serializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_offset_1
-  {
-    size_t size = 3;
-    auto array_ptr = ros_message->accel_offset_1;
-    cdr.serializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_offset_2
-  {
-    size_t size = 3;
-    auto array_ptr = ros_message->accel_offset_2;
-    cdr.serializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_offset_3
-  {
-    size_t size = 3;
-    auto array_ptr = ros_message->accel_offset_3;
-    cdr.serializeArray(array_ptr, size);
-  }
-
   // Field name: gyro_device_ids
   {
     size_t size = 4;
@@ -138,45 +96,45 @@ static bool _SensorCorrection__cdr_serialize(
     cdr.serializeArray(array_ptr, size);
   }
 
-  // Field name: mag_device_ids
+  // Field name: accel_device_ids
   {
     size_t size = 4;
-    auto array_ptr = ros_message->mag_device_ids;
+    auto array_ptr = ros_message->accel_device_ids;
     cdr.serializeArray(array_ptr, size);
   }
 
-  // Field name: mag_temperature
+  // Field name: accel_temperature
   {
     size_t size = 4;
-    auto array_ptr = ros_message->mag_temperature;
+    auto array_ptr = ros_message->accel_temperature;
     cdr.serializeArray(array_ptr, size);
   }
 
-  // Field name: mag_offset_0
+  // Field name: accel_offset_0
   {
     size_t size = 3;
-    auto array_ptr = ros_message->mag_offset_0;
+    auto array_ptr = ros_message->accel_offset_0;
     cdr.serializeArray(array_ptr, size);
   }
 
-  // Field name: mag_offset_1
+  // Field name: accel_offset_1
   {
     size_t size = 3;
-    auto array_ptr = ros_message->mag_offset_1;
+    auto array_ptr = ros_message->accel_offset_1;
     cdr.serializeArray(array_ptr, size);
   }
 
-  // Field name: mag_offset_2
+  // Field name: accel_offset_2
   {
     size_t size = 3;
-    auto array_ptr = ros_message->mag_offset_2;
+    auto array_ptr = ros_message->accel_offset_2;
     cdr.serializeArray(array_ptr, size);
   }
 
-  // Field name: mag_offset_3
+  // Field name: accel_offset_3
   {
     size_t size = 3;
-    auto array_ptr = ros_message->mag_offset_3;
+    auto array_ptr = ros_message->accel_offset_3;
     cdr.serializeArray(array_ptr, size);
   }
 
@@ -231,48 +189,6 @@ static bool _SensorCorrection__cdr_deserialize(
     cdr >> ros_message->timestamp;
   }
 
-  // Field name: accel_device_ids
-  {
-    size_t size = 4;
-    auto array_ptr = ros_message->accel_device_ids;
-    cdr.deserializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_temperature
-  {
-    size_t size = 4;
-    auto array_ptr = ros_message->accel_temperature;
-    cdr.deserializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_offset_0
-  {
-    size_t size = 3;
-    auto array_ptr = ros_message->accel_offset_0;
-    cdr.deserializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_offset_1
-  {
-    size_t size = 3;
-    auto array_ptr = ros_message->accel_offset_1;
-    cdr.deserializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_offset_2
-  {
-    size_t size = 3;
-    auto array_ptr = ros_message->accel_offset_2;
-    cdr.deserializeArray(array_ptr, size);
-  }
-
-  // Field name: accel_offset_3
-  {
-    size_t size = 3;
-    auto array_ptr = ros_message->accel_offset_3;
-    cdr.deserializeArray(array_ptr, size);
-  }
-
   // Field name: gyro_device_ids
   {
     size_t size = 4;
@@ -315,45 +231,45 @@ static bool _SensorCorrection__cdr_deserialize(
     cdr.deserializeArray(array_ptr, size);
   }
 
-  // Field name: mag_device_ids
+  // Field name: accel_device_ids
   {
     size_t size = 4;
-    auto array_ptr = ros_message->mag_device_ids;
+    auto array_ptr = ros_message->accel_device_ids;
     cdr.deserializeArray(array_ptr, size);
   }
 
-  // Field name: mag_temperature
+  // Field name: accel_temperature
   {
     size_t size = 4;
-    auto array_ptr = ros_message->mag_temperature;
+    auto array_ptr = ros_message->accel_temperature;
     cdr.deserializeArray(array_ptr, size);
   }
 
-  // Field name: mag_offset_0
+  // Field name: accel_offset_0
   {
     size_t size = 3;
-    auto array_ptr = ros_message->mag_offset_0;
+    auto array_ptr = ros_message->accel_offset_0;
     cdr.deserializeArray(array_ptr, size);
   }
 
-  // Field name: mag_offset_1
+  // Field name: accel_offset_1
   {
     size_t size = 3;
-    auto array_ptr = ros_message->mag_offset_1;
+    auto array_ptr = ros_message->accel_offset_1;
     cdr.deserializeArray(array_ptr, size);
   }
 
-  // Field name: mag_offset_2
+  // Field name: accel_offset_2
   {
     size_t size = 3;
-    auto array_ptr = ros_message->mag_offset_2;
+    auto array_ptr = ros_message->accel_offset_2;
     cdr.deserializeArray(array_ptr, size);
   }
 
-  // Field name: mag_offset_3
+  // Field name: accel_offset_3
   {
     size_t size = 3;
-    auto array_ptr = ros_message->mag_offset_3;
+    auto array_ptr = ros_message->accel_offset_3;
     cdr.deserializeArray(array_ptr, size);
   }
 
@@ -414,60 +330,6 @@ size_t get_serialized_size_px4_msgs__msg__SensorCorrection(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name accel_device_ids
-  {
-    size_t array_size = 4;
-    auto array_ptr = ros_message->accel_device_ids;
-    (void)array_ptr;
-    size_t item_size = sizeof(array_ptr[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name accel_temperature
-  {
-    size_t array_size = 4;
-    auto array_ptr = ros_message->accel_temperature;
-    (void)array_ptr;
-    size_t item_size = sizeof(array_ptr[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name accel_offset_0
-  {
-    size_t array_size = 3;
-    auto array_ptr = ros_message->accel_offset_0;
-    (void)array_ptr;
-    size_t item_size = sizeof(array_ptr[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name accel_offset_1
-  {
-    size_t array_size = 3;
-    auto array_ptr = ros_message->accel_offset_1;
-    (void)array_ptr;
-    size_t item_size = sizeof(array_ptr[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name accel_offset_2
-  {
-    size_t array_size = 3;
-    auto array_ptr = ros_message->accel_offset_2;
-    (void)array_ptr;
-    size_t item_size = sizeof(array_ptr[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name accel_offset_3
-  {
-    size_t array_size = 3;
-    auto array_ptr = ros_message->accel_offset_3;
-    (void)array_ptr;
-    size_t item_size = sizeof(array_ptr[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // field.name gyro_device_ids
   {
     size_t array_size = 4;
@@ -522,55 +384,55 @@ size_t get_serialized_size_px4_msgs__msg__SensorCorrection(
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name mag_device_ids
+  // field.name accel_device_ids
   {
     size_t array_size = 4;
-    auto array_ptr = ros_message->mag_device_ids;
+    auto array_ptr = ros_message->accel_device_ids;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name mag_temperature
+  // field.name accel_temperature
   {
     size_t array_size = 4;
-    auto array_ptr = ros_message->mag_temperature;
+    auto array_ptr = ros_message->accel_temperature;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name mag_offset_0
+  // field.name accel_offset_0
   {
     size_t array_size = 3;
-    auto array_ptr = ros_message->mag_offset_0;
+    auto array_ptr = ros_message->accel_offset_0;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name mag_offset_1
+  // field.name accel_offset_1
   {
     size_t array_size = 3;
-    auto array_ptr = ros_message->mag_offset_1;
+    auto array_ptr = ros_message->accel_offset_1;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name mag_offset_2
+  // field.name accel_offset_2
   {
     size_t array_size = 3;
-    auto array_ptr = ros_message->mag_offset_2;
+    auto array_ptr = ros_message->accel_offset_2;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name mag_offset_3
+  // field.name accel_offset_3
   {
     size_t array_size = 3;
-    auto array_ptr = ros_message->mag_offset_3;
+    auto array_ptr = ros_message->accel_offset_3;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
     current_alignment += array_size * item_size +
@@ -655,54 +517,6 @@ size_t max_serialized_size_px4_msgs__msg__SensorCorrection(
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
-  // member: accel_device_ids
-  {
-    size_t array_size = 4;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: accel_temperature
-  {
-    size_t array_size = 4;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: accel_offset_0
-  {
-    size_t array_size = 3;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: accel_offset_1
-  {
-    size_t array_size = 3;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: accel_offset_2
-  {
-    size_t array_size = 3;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: accel_offset_3
-  {
-    size_t array_size = 3;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
   // member: gyro_device_ids
   {
     size_t array_size = 4;
@@ -751,7 +565,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorCorrection(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: mag_device_ids
+  // member: accel_device_ids
   {
     size_t array_size = 4;
 
@@ -759,7 +573,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorCorrection(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: mag_temperature
+  // member: accel_temperature
   {
     size_t array_size = 4;
 
@@ -767,7 +581,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorCorrection(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: mag_offset_0
+  // member: accel_offset_0
   {
     size_t array_size = 3;
 
@@ -775,7 +589,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorCorrection(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: mag_offset_1
+  // member: accel_offset_1
   {
     size_t array_size = 3;
 
@@ -783,7 +597,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorCorrection(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: mag_offset_2
+  // member: accel_offset_2
   {
     size_t array_size = 3;
 
@@ -791,7 +605,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorCorrection(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: mag_offset_3
+  // member: accel_offset_3
   {
     size_t array_size = 3;
 

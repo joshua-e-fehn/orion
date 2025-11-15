@@ -86,6 +86,15 @@ bool px4_msgs__msg__rate_ctrl_status__convert_from_py(PyObject * _pymsg, void * 
     ros_message->yawspeed_integ = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // wheel_rate_integ
+    PyObject * field = PyObject_GetAttrString(_pymsg, "wheel_rate_integ");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->wheel_rate_integ = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -146,6 +155,17 @@ PyObject * px4_msgs__msg__rate_ctrl_status__convert_to_py(void * raw_ros_message
     field = PyFloat_FromDouble(ros_message->yawspeed_integ);
     {
       int rc = PyObject_SetAttrString(_pymessage, "yawspeed_integ", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // wheel_rate_integ
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->wheel_rate_integ);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "wheel_rate_integ", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

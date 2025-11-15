@@ -322,9 +322,6 @@ include("/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cma
 # install("TARGETS" "offboard_control" "DESTINATION" "lib/px4_ros_com")
 include("/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_symlink_install_targets_3_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install("TARGETS" "offboard_control_srv" "DESTINATION" "lib/px4_ros_com")
-include("/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_symlink_install_targets_4_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
-
 # install(FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/px4_ros_com/environment")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/px4_ros_com/environment")
 
@@ -337,26 +334,8 @@ ament_cmake_symlink_install_directory("/home/atlas.linux/Documents/Orion/orion_a
 # install(DIRECTORY "launch" "DESTINATION" "share/px4_ros_com/")
 ament_cmake_symlink_install_directory("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" DIRECTORY "launch" "DESTINATION" "share/px4_ros_com/")
 
-# install(DIRECTORY "config" "DESTINATION" "share/px4_ros_com/")
-ament_cmake_symlink_install_directory("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" DIRECTORY "config" "DESTINATION" "share/px4_ros_com/")
-
 # install(DIRECTORY "test" "DESTINATION" "share/px4_ros_com/")
 ament_cmake_symlink_install_directory("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" DIRECTORY "test" "DESTINATION" "share/px4_ros_com/")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/px4_ros_com/environment")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/px4_ros_com/environment")
-
-# install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/px4_ros_com/environment")
-ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/px4_ros_com/environment")
-
-# install(DIRECTORY "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_python/px4_ros_com/px4_ros_com.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/px4_ros_com-0.1.0-py3.10.egg-info")
-ament_cmake_symlink_install_directory("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" DIRECTORY "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_python/px4_ros_com/px4_ros_com.egg-info/" "DESTINATION" "local/lib/python3.10/dist-packages/px4_ros_com-0.1.0-py3.10.egg-info")
-
-# install(DIRECTORY "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com/px4_ros_com/" "DESTINATION" "local/lib/python3.10/dist-packages/px4_ros_com" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
-ament_cmake_symlink_install_directory("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" DIRECTORY "/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com/px4_ros_com/" "DESTINATION" "local/lib/python3.10/dist-packages/px4_ros_com" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
-
-# install(PROGRAMS "src/examples/offboard_py/offboard_control.py" "src/examples/offboard_py/circle_trajectory_node.py" "DESTINATION" "lib/px4_ros_com")
-ament_cmake_symlink_install_programs("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" PROGRAMS "src/examples/offboard_py/offboard_control.py" "src/examples/offboard_py/circle_trajectory_node.py" "DESTINATION" "lib/px4_ros_com")
 
 # install(FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/px4_ros_com" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/atlas.linux/Documents/Orion/orion_arm/src/px4_ros_com" FILES "/home/atlas.linux/Documents/Orion/orion_arm/build/px4_ros_com/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/px4_ros_com" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

@@ -17,32 +17,20 @@ extern "C"
 
 // Constants defined in the message
 
-/// Constant 'MESSAGE_VERSION'.
-enum
-{
-  px4_msgs__msg__Wind__MESSAGE_VERSION = 0ul
-};
-
 /// Struct defined in msg/Wind in the package px4_msgs.
-/**
-  * Wind estimate (from EKF2)
-  *
-  * Contains the system-wide estimate of horizontal wind velocity and its variance.
-  * Published by the navigation filter (EKF2) for use by other flight modules and libraries.
- */
 typedef struct px4_msgs__msg__Wind
 {
-  /// Time since system start
+  /// time since system start (microseconds)
   uint64_t timestamp;
-  /// Timestamp of the raw data
+  /// the timestamp of the raw data (microseconds)
   uint64_t timestamp_sample;
-  /// Wind component in north / X direction
+  /// Wind component in north / X direction (m/sec)
   float windspeed_north;
-  /// Wind component in east / Y direction
+  /// Wind component in east / Y direction (m/sec)
   float windspeed_east;
-  /// [(m/s)^2] [@invalid 0 if not estimated] Wind estimate error variance in north / X direction
+  /// Wind estimate error variance in north / X direction (m/sec)**2 - set to zero (no uncertainty) if not estimated
   float variance_north;
-  /// [(m/s)^2] [@invalid 0 if not estimated] Wind estimate error variance in east / Y direction
+  /// Wind estimate error variance in east / Y direction (m/sec)**2 - set to zero (no uncertainty) if not estimated
   float variance_east;
   /// True airspeed innovation
   float tas_innov;

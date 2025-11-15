@@ -46,6 +46,8 @@ struct PositionControllerStatus_
       this->xtrack_error = 0.0f;
       this->wp_dist = 0.0f;
       this->acceptance_radius = 0.0f;
+      this->yaw_acceptance = 0.0f;
+      this->altitude_acceptance = 0.0f;
       this->type = 0;
     }
   }
@@ -64,6 +66,8 @@ struct PositionControllerStatus_
       this->xtrack_error = 0.0f;
       this->wp_dist = 0.0f;
       this->acceptance_radius = 0.0f;
+      this->yaw_acceptance = 0.0f;
+      this->altitude_acceptance = 0.0f;
       this->type = 0;
     }
   }
@@ -93,6 +97,12 @@ struct PositionControllerStatus_
   using _acceptance_radius_type =
     float;
   _acceptance_radius_type acceptance_radius;
+  using _yaw_acceptance_type =
+    float;
+  _yaw_acceptance_type yaw_acceptance;
+  using _altitude_acceptance_type =
+    float;
+  _altitude_acceptance_type altitude_acceptance;
   using _type_type =
     uint8_t;
   _type_type type;
@@ -144,6 +154,18 @@ struct PositionControllerStatus_
     const float & _arg)
   {
     this->acceptance_radius = _arg;
+    return *this;
+  }
+  Type & set__yaw_acceptance(
+    const float & _arg)
+  {
+    this->yaw_acceptance = _arg;
+    return *this;
+  }
+  Type & set__altitude_acceptance(
+    const float & _arg)
+  {
+    this->altitude_acceptance = _arg;
     return *this;
   }
   Type & set__type(
@@ -217,6 +239,12 @@ struct PositionControllerStatus_
       return false;
     }
     if (this->acceptance_radius != other.acceptance_radius) {
+      return false;
+    }
+    if (this->yaw_acceptance != other.yaw_acceptance) {
+      return false;
+    }
+    if (this->altitude_acceptance != other.altitude_acceptance) {
       return false;
     }
     if (this->type != other.type) {

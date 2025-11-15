@@ -37,7 +37,7 @@ void MissionResult_fini_function(void * message_memory)
   typed_message->~MissionResult();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult_message_member_array[15] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult_message_member_array[13] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
@@ -56,48 +56,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     nullptr  // resize(index) function pointer
   },
   {
-    "mission_id",  // name
+    "instance_count",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::MissionResult, mission_id),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "geofence_id",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::MissionResult, geofence_id),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "home_position_counter",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::MissionResult, home_position_counter),  // bytes offset in struct
+    offsetof(px4_msgs::msg::MissionResult, instance_count),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -298,7 +264,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers MissionResult_message_members = {
   "px4_msgs::msg",  // message namespace
   "MissionResult",  // message name
-  15,  // number of fields
+  13,  // number of fields
   sizeof(px4_msgs::msg::MissionResult),
   MissionResult_message_member_array,  // message members
   MissionResult_init_function,  // function to initialize message memory (memory has to be allocated)

@@ -37,7 +37,7 @@ void AirspeedValidated_fini_function(void * message_memory)
   typed_message->~AirspeedValidated();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember AirspeedValidated_message_member_array[10] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember AirspeedValidated_message_member_array[8] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
@@ -107,23 +107,6 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember AirspeedValid
     nullptr  // resize(index) function pointer
   },
   {
-    "airspeed_source",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT8,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::AirspeedValidated, airspeed_source),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
     "calibrated_ground_minus_wind_m_s",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
@@ -141,14 +124,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember AirspeedValid
     nullptr  // resize(index) function pointer
   },
   {
-    "calibraded_airspeed_synth_m_s",  // name
+    "true_ground_minus_wind_m_s",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::AirspeedValidated, calibraded_airspeed_synth_m_s),  // bytes offset in struct
+    offsetof(px4_msgs::msg::AirspeedValidated, true_ground_minus_wind_m_s),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -158,14 +141,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember AirspeedValid
     nullptr  // resize(index) function pointer
   },
   {
-    "airspeed_derivative_filtered",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    "airspeed_sensor_measurement_valid",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::AirspeedValidated, airspeed_derivative_filtered),  // bytes offset in struct
+    offsetof(px4_msgs::msg::AirspeedValidated, airspeed_sensor_measurement_valid),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -175,31 +158,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember AirspeedValid
     nullptr  // resize(index) function pointer
   },
   {
-    "throttle_filtered",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    "selected_airspeed_index",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::AirspeedValidated, throttle_filtered),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "pitch_filtered",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::AirspeedValidated, pitch_filtered),  // bytes offset in struct
+    offsetof(px4_msgs::msg::AirspeedValidated, selected_airspeed_index),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -213,7 +179,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember AirspeedValid
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers AirspeedValidated_message_members = {
   "px4_msgs::msg",  // message namespace
   "AirspeedValidated",  // message name
-  10,  // number of fields
+  8,  // number of fields
   sizeof(px4_msgs::msg::AirspeedValidated),
   AirspeedValidated_message_member_array,  // message members
   AirspeedValidated_init_function,  // function to initialize message memory (memory has to be allocated)

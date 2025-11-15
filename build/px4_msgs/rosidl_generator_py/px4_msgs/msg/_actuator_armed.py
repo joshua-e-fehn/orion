@@ -60,8 +60,8 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
         '_prearmed',
         '_ready_to_arm',
         '_lockdown',
-        '_kill',
-        '_termination',
+        '_manual_lockdown',
+        '_force_failsafe',
         '_in_esc_calibration_mode',
     ]
 
@@ -71,8 +71,8 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
         'prearmed': 'boolean',
         'ready_to_arm': 'boolean',
         'lockdown': 'boolean',
-        'kill': 'boolean',
-        'termination': 'boolean',
+        'manual_lockdown': 'boolean',
+        'force_failsafe': 'boolean',
         'in_esc_calibration_mode': 'boolean',
     }
 
@@ -96,8 +96,8 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
         self.prearmed = kwargs.get('prearmed', bool())
         self.ready_to_arm = kwargs.get('ready_to_arm', bool())
         self.lockdown = kwargs.get('lockdown', bool())
-        self.kill = kwargs.get('kill', bool())
-        self.termination = kwargs.get('termination', bool())
+        self.manual_lockdown = kwargs.get('manual_lockdown', bool())
+        self.force_failsafe = kwargs.get('force_failsafe', bool())
         self.in_esc_calibration_mode = kwargs.get('in_esc_calibration_mode', bool())
 
     def __repr__(self):
@@ -139,9 +139,9 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
             return False
         if self.lockdown != other.lockdown:
             return False
-        if self.kill != other.kill:
+        if self.manual_lockdown != other.manual_lockdown:
             return False
-        if self.termination != other.termination:
+        if self.force_failsafe != other.force_failsafe:
             return False
         if self.in_esc_calibration_mode != other.in_esc_calibration_mode:
             return False
@@ -220,30 +220,30 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
         self._lockdown = value
 
     @builtins.property
-    def kill(self):
-        """Message field 'kill'."""
-        return self._kill
+    def manual_lockdown(self):
+        """Message field 'manual_lockdown'."""
+        return self._manual_lockdown
 
-    @kill.setter
-    def kill(self, value):
+    @manual_lockdown.setter
+    def manual_lockdown(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'kill' field must be of type 'bool'"
-        self._kill = value
+                "The 'manual_lockdown' field must be of type 'bool'"
+        self._manual_lockdown = value
 
     @builtins.property
-    def termination(self):
-        """Message field 'termination'."""
-        return self._termination
+    def force_failsafe(self):
+        """Message field 'force_failsafe'."""
+        return self._force_failsafe
 
-    @termination.setter
-    def termination(self, value):
+    @force_failsafe.setter
+    def force_failsafe(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'termination' field must be of type 'bool'"
-        self._termination = value
+                "The 'force_failsafe' field must be of type 'bool'"
+        self._force_failsafe = value
 
     @builtins.property
     def in_esc_calibration_mode(self):

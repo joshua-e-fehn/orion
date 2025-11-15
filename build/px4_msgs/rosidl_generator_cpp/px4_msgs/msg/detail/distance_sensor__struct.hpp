@@ -50,7 +50,6 @@ struct DistanceSensor_
       this->v_fov = 0.0f;
       std::fill<typename std::array<float, 4>::iterator, float>(this->q.begin(), this->q.end(), 0.0f);
       this->orientation = 0;
-      this->mode = 0;
     }
   }
 
@@ -72,7 +71,6 @@ struct DistanceSensor_
       this->v_fov = 0.0f;
       std::fill<typename std::array<float, 4>::iterator, float>(this->q.begin(), this->q.end(), 0.0f);
       this->orientation = 0;
-      this->mode = 0;
     }
   }
 
@@ -113,9 +111,6 @@ struct DistanceSensor_
   using _orientation_type =
     uint8_t;
   _orientation_type orientation;
-  using _mode_type =
-    uint8_t;
-  _mode_type mode;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -190,12 +185,6 @@ struct DistanceSensor_
     this->orientation = _arg;
     return *this;
   }
-  Type & set__mode(
-    const uint8_t & _arg)
-  {
-    this->mode = _arg;
-    return *this;
-  }
 
   // constant declarations
   static constexpr uint8_t MAV_DISTANCE_SENSOR_LASER =
@@ -236,12 +225,6 @@ struct DistanceSensor_
     25u;
   static constexpr uint8_t ROTATION_CUSTOM =
     100u;
-  static constexpr uint8_t MODE_UNKNOWN =
-    0u;
-  static constexpr uint8_t MODE_ENABLED =
-    1u;
-  static constexpr uint8_t MODE_DISABLED =
-    2u;
 
   // pointer types
   using RawPtr =
@@ -317,9 +300,6 @@ struct DistanceSensor_
       return false;
     }
     if (this->orientation != other.orientation) {
-      return false;
-    }
-    if (this->mode != other.mode) {
       return false;
     }
     return true;
@@ -429,21 +409,6 @@ constexpr uint8_t DistanceSensor_<ContainerAllocator>::ROTATION_DOWNWARD_FACING;
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
 constexpr uint8_t DistanceSensor_<ContainerAllocator>::ROTATION_CUSTOM;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t DistanceSensor_<ContainerAllocator>::MODE_UNKNOWN;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t DistanceSensor_<ContainerAllocator>::MODE_ENABLED;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t DistanceSensor_<ContainerAllocator>::MODE_DISABLED;
 #endif  // __cplusplus < 201703L
 
 }  // namespace msg

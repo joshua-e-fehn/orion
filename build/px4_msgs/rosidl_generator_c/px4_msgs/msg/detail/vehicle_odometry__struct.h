@@ -17,16 +17,7 @@ extern "C"
 
 // Constants defined in the message
 
-/// Constant 'MESSAGE_VERSION'.
-enum
-{
-  px4_msgs__msg__VehicleOdometry__MESSAGE_VERSION = 0ul
-};
-
 /// Constant 'POSE_FRAME_UNKNOWN'.
-/**
-  * Unknown frame
- */
 enum
 {
   px4_msgs__msg__VehicleOdometry__POSE_FRAME_UNKNOWN = 0
@@ -34,7 +25,7 @@ enum
 
 /// Constant 'POSE_FRAME_NED'.
 /**
-  * North-East-Down (NED) navigation frame. Aligned with True North.
+  * NED earth-fixed frame
  */
 enum
 {
@@ -43,7 +34,7 @@ enum
 
 /// Constant 'POSE_FRAME_FRD'.
 /**
-  * Forward-Right-Down (FRD) frame. Constant arbitrary heading offset from True North. Z is down.
+  * FRD world-fixed frame, arbitrary heading reference
  */
 enum
 {
@@ -51,9 +42,6 @@ enum
 };
 
 /// Constant 'VELOCITY_FRAME_UNKNOWN'.
-/**
-  * Unknown frame
- */
 enum
 {
   px4_msgs__msg__VehicleOdometry__VELOCITY_FRAME_UNKNOWN = 0
@@ -61,7 +49,7 @@ enum
 
 /// Constant 'VELOCITY_FRAME_NED'.
 /**
-  * NED navigation frame at current position.
+  * NED earth-fixed frame
  */
 enum
 {
@@ -70,7 +58,7 @@ enum
 
 /// Constant 'VELOCITY_FRAME_FRD'.
 /**
-  * FRD navigation frame at current position. Constant arbitrary heading offset from True North. Z is down.
+  * FRD world-fixed frame, arbitrary heading reference
  */
 enum
 {
@@ -88,37 +76,29 @@ enum
 
 /// Struct defined in msg/VehicleOdometry in the package px4_msgs.
 /**
-  * Vehicle odometry data
-  *
-  * Fits ROS REP 147 for aerial vehicles
+  * Vehicle odometry data. Fits ROS REP 147 for aerial vehicles
  */
 typedef struct px4_msgs__msg__VehicleOdometry
 {
-  /// Time since system start
+  /// time since system start (microseconds)
   uint64_t timestamp;
-  /// Timestamp sample
   uint64_t timestamp_sample;
   /// Position and orientation frame of reference
   uint8_t pose_frame;
-  /// [m] [@frame local frame] [@invalid NaN If invalid/unknown] Position. Origin is position of GC at startup.
+  /// Position in meters. Frame of reference defined by local_frame. NaN if invalid/unknown
   float position[3];
-  /// [-] [@invalid NaN First value if invalid/unknown] Attitude (expressed as a quaternion) relative to pose reference frame at current location. Follows the Hamiltonian convention (w, x, y, z, right-handed, passive rotations from body to world)
+  /// Quaternion rotation from FRD body frame to reference frame. First value NaN if invalid/unknown
   float q[4];
   /// Reference frame of the velocity data
   uint8_t velocity_frame;
-  /// [m/s] [@frame @velocity_frame] [@invalid NaN If invalid/unknown] Velocity.
+  /// Velocity in meters/sec. Frame of reference defined by velocity_frame variable. NaN if invalid/unknown
   float velocity[3];
-  /// [rad/s] [@frame @VELOCITY_FRAME_BODY_FRD] [@invalid NaN If invalid/unknown] Angular velocity in body-fixed frame
+  /// Angular velocity in body-fixed frame (rad/s). NaN if invalid/unknown
   float angular_velocity[3];
-  /// Variance of position error
   float position_variance[3];
-  /// Variance of orientation/attitude error (expressed in body frame)
   float orientation_variance[3];
-  /// Variance of velocity error
   float velocity_variance[3];
-  /// Reset counter. Counts reset events on attitude, velocity and position.
   uint8_t reset_counter;
-  /// [-] [@invalid 0] Quality. Unused.
   int8_t quality;
 } px4_msgs__msg__VehicleOdometry;
 

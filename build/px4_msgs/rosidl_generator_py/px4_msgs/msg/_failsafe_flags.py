@@ -62,7 +62,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         '_mode_req_local_position',
         '_mode_req_local_position_relaxed',
         '_mode_req_global_position',
-        '_mode_req_global_position_relaxed',
         '_mode_req_mission',
         '_mode_req_offboard_signal',
         '_mode_req_home_position',
@@ -77,7 +76,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         '_local_position_invalid_relaxed',
         '_local_velocity_invalid',
         '_global_position_invalid',
-        '_global_position_invalid_relaxed',
         '_auto_mission_missing',
         '_offboard_control_signal_lost',
         '_home_position_invalid',
@@ -86,13 +84,12 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         '_battery_warning',
         '_battery_low_remaining_time',
         '_battery_unhealthy',
-        '_geofence_breached',
+        '_primary_geofence_breached',
         '_mission_failure',
         '_vtol_fixed_wing_system_failure',
         '_wind_limit_exceeded',
         '_flight_time_limit_exceeded',
-        '_position_accuracy_low',
-        '_navigator_failure',
+        '_local_position_accuracy_low',
         '_fd_critical_failure',
         '_fd_esc_arming_failure',
         '_fd_imbalanced_prop',
@@ -107,7 +104,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         'mode_req_local_position': 'uint32',
         'mode_req_local_position_relaxed': 'uint32',
         'mode_req_global_position': 'uint32',
-        'mode_req_global_position_relaxed': 'uint32',
         'mode_req_mission': 'uint32',
         'mode_req_offboard_signal': 'uint32',
         'mode_req_home_position': 'uint32',
@@ -122,7 +118,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         'local_position_invalid_relaxed': 'boolean',
         'local_velocity_invalid': 'boolean',
         'global_position_invalid': 'boolean',
-        'global_position_invalid_relaxed': 'boolean',
         'auto_mission_missing': 'boolean',
         'offboard_control_signal_lost': 'boolean',
         'home_position_invalid': 'boolean',
@@ -131,13 +126,12 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         'battery_warning': 'uint8',
         'battery_low_remaining_time': 'boolean',
         'battery_unhealthy': 'boolean',
-        'geofence_breached': 'boolean',
+        'primary_geofence_breached': 'boolean',
         'mission_failure': 'boolean',
         'vtol_fixed_wing_system_failure': 'boolean',
         'wind_limit_exceeded': 'boolean',
         'flight_time_limit_exceeded': 'boolean',
-        'position_accuracy_low': 'boolean',
-        'navigator_failure': 'boolean',
+        'local_position_accuracy_low': 'boolean',
         'fd_critical_failure': 'boolean',
         'fd_esc_arming_failure': 'boolean',
         'fd_imbalanced_prop': 'boolean',
@@ -159,8 +153,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
-        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -186,7 +178,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
-        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -200,7 +191,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         self.mode_req_local_position = kwargs.get('mode_req_local_position', int())
         self.mode_req_local_position_relaxed = kwargs.get('mode_req_local_position_relaxed', int())
         self.mode_req_global_position = kwargs.get('mode_req_global_position', int())
-        self.mode_req_global_position_relaxed = kwargs.get('mode_req_global_position_relaxed', int())
         self.mode_req_mission = kwargs.get('mode_req_mission', int())
         self.mode_req_offboard_signal = kwargs.get('mode_req_offboard_signal', int())
         self.mode_req_home_position = kwargs.get('mode_req_home_position', int())
@@ -215,7 +205,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         self.local_position_invalid_relaxed = kwargs.get('local_position_invalid_relaxed', bool())
         self.local_velocity_invalid = kwargs.get('local_velocity_invalid', bool())
         self.global_position_invalid = kwargs.get('global_position_invalid', bool())
-        self.global_position_invalid_relaxed = kwargs.get('global_position_invalid_relaxed', bool())
         self.auto_mission_missing = kwargs.get('auto_mission_missing', bool())
         self.offboard_control_signal_lost = kwargs.get('offboard_control_signal_lost', bool())
         self.home_position_invalid = kwargs.get('home_position_invalid', bool())
@@ -224,13 +213,12 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         self.battery_warning = kwargs.get('battery_warning', int())
         self.battery_low_remaining_time = kwargs.get('battery_low_remaining_time', bool())
         self.battery_unhealthy = kwargs.get('battery_unhealthy', bool())
-        self.geofence_breached = kwargs.get('geofence_breached', bool())
+        self.primary_geofence_breached = kwargs.get('primary_geofence_breached', bool())
         self.mission_failure = kwargs.get('mission_failure', bool())
         self.vtol_fixed_wing_system_failure = kwargs.get('vtol_fixed_wing_system_failure', bool())
         self.wind_limit_exceeded = kwargs.get('wind_limit_exceeded', bool())
         self.flight_time_limit_exceeded = kwargs.get('flight_time_limit_exceeded', bool())
-        self.position_accuracy_low = kwargs.get('position_accuracy_low', bool())
-        self.navigator_failure = kwargs.get('navigator_failure', bool())
+        self.local_position_accuracy_low = kwargs.get('local_position_accuracy_low', bool())
         self.fd_critical_failure = kwargs.get('fd_critical_failure', bool())
         self.fd_esc_arming_failure = kwargs.get('fd_esc_arming_failure', bool())
         self.fd_imbalanced_prop = kwargs.get('fd_imbalanced_prop', bool())
@@ -279,8 +267,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
             return False
         if self.mode_req_global_position != other.mode_req_global_position:
             return False
-        if self.mode_req_global_position_relaxed != other.mode_req_global_position_relaxed:
-            return False
         if self.mode_req_mission != other.mode_req_mission:
             return False
         if self.mode_req_offboard_signal != other.mode_req_offboard_signal:
@@ -309,8 +295,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
             return False
         if self.global_position_invalid != other.global_position_invalid:
             return False
-        if self.global_position_invalid_relaxed != other.global_position_invalid_relaxed:
-            return False
         if self.auto_mission_missing != other.auto_mission_missing:
             return False
         if self.offboard_control_signal_lost != other.offboard_control_signal_lost:
@@ -327,7 +311,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
             return False
         if self.battery_unhealthy != other.battery_unhealthy:
             return False
-        if self.geofence_breached != other.geofence_breached:
+        if self.primary_geofence_breached != other.primary_geofence_breached:
             return False
         if self.mission_failure != other.mission_failure:
             return False
@@ -337,9 +321,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
             return False
         if self.flight_time_limit_exceeded != other.flight_time_limit_exceeded:
             return False
-        if self.position_accuracy_low != other.position_accuracy_low:
-            return False
-        if self.navigator_failure != other.navigator_failure:
+        if self.local_position_accuracy_low != other.local_position_accuracy_low:
             return False
         if self.fd_critical_failure != other.fd_critical_failure:
             return False
@@ -460,21 +442,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
             assert value >= 0 and value < 4294967296, \
                 "The 'mode_req_global_position' field must be an unsigned integer in [0, 4294967295]"
         self._mode_req_global_position = value
-
-    @builtins.property
-    def mode_req_global_position_relaxed(self):
-        """Message field 'mode_req_global_position_relaxed'."""
-        return self._mode_req_global_position_relaxed
-
-    @mode_req_global_position_relaxed.setter
-    def mode_req_global_position_relaxed(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'mode_req_global_position_relaxed' field must be of type 'int'"
-            assert value >= 0 and value < 4294967296, \
-                "The 'mode_req_global_position_relaxed' field must be an unsigned integer in [0, 4294967295]"
-        self._mode_req_global_position_relaxed = value
 
     @builtins.property
     def mode_req_mission(self):
@@ -673,19 +640,6 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         self._global_position_invalid = value
 
     @builtins.property
-    def global_position_invalid_relaxed(self):
-        """Message field 'global_position_invalid_relaxed'."""
-        return self._global_position_invalid_relaxed
-
-    @global_position_invalid_relaxed.setter
-    def global_position_invalid_relaxed(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'global_position_invalid_relaxed' field must be of type 'bool'"
-        self._global_position_invalid_relaxed = value
-
-    @builtins.property
     def auto_mission_missing(self):
         """Message field 'auto_mission_missing'."""
         return self._auto_mission_missing
@@ -792,17 +746,17 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         self._battery_unhealthy = value
 
     @builtins.property
-    def geofence_breached(self):
-        """Message field 'geofence_breached'."""
-        return self._geofence_breached
+    def primary_geofence_breached(self):
+        """Message field 'primary_geofence_breached'."""
+        return self._primary_geofence_breached
 
-    @geofence_breached.setter
-    def geofence_breached(self, value):
+    @primary_geofence_breached.setter
+    def primary_geofence_breached(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'geofence_breached' field must be of type 'bool'"
-        self._geofence_breached = value
+                "The 'primary_geofence_breached' field must be of type 'bool'"
+        self._primary_geofence_breached = value
 
     @builtins.property
     def mission_failure(self):
@@ -857,30 +811,17 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         self._flight_time_limit_exceeded = value
 
     @builtins.property
-    def position_accuracy_low(self):
-        """Message field 'position_accuracy_low'."""
-        return self._position_accuracy_low
+    def local_position_accuracy_low(self):
+        """Message field 'local_position_accuracy_low'."""
+        return self._local_position_accuracy_low
 
-    @position_accuracy_low.setter
-    def position_accuracy_low(self, value):
+    @local_position_accuracy_low.setter
+    def local_position_accuracy_low(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'position_accuracy_low' field must be of type 'bool'"
-        self._position_accuracy_low = value
-
-    @builtins.property
-    def navigator_failure(self):
-        """Message field 'navigator_failure'."""
-        return self._navigator_failure
-
-    @navigator_failure.setter
-    def navigator_failure(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'navigator_failure' field must be of type 'bool'"
-        self._navigator_failure = value
+                "The 'local_position_accuracy_low' field must be of type 'bool'"
+        self._local_position_accuracy_low = value
 
     @builtins.property
     def fd_critical_failure(self):

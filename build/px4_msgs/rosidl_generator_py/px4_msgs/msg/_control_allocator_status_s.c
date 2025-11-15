@@ -161,15 +161,6 @@ bool px4_msgs__msg__control_allocator_status__convert_from_py(PyObject * _pymsg,
     ros_message->handled_motor_failure_mask = (uint16_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
-  {  // motor_stop_mask
-    PyObject * field = PyObject_GetAttrString(_pymsg, "motor_stop_mask");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->motor_stop_mask = (uint16_t)PyLong_AsUnsignedLong(field);
-    Py_DECREF(field);
-  }
 
   return true;
 }
@@ -284,17 +275,6 @@ PyObject * px4_msgs__msg__control_allocator_status__convert_to_py(void * raw_ros
     field = PyLong_FromUnsignedLong(ros_message->handled_motor_failure_mask);
     {
       int rc = PyObject_SetAttrString(_pymessage, "handled_motor_failure_mask", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
-  {  // motor_stop_mask
-    PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->motor_stop_mask);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "motor_stop_mask", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

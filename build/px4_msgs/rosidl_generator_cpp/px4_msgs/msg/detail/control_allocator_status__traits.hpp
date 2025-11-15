@@ -104,13 +104,6 @@ inline void to_flow_style_yaml(
   {
     out << "handled_motor_failure_mask: ";
     rosidl_generator_traits::value_to_yaml(msg.handled_motor_failure_mask, out);
-    out << ", ";
-  }
-
-  // member: motor_stop_mask
-  {
-    out << "motor_stop_mask: ";
-    rosidl_generator_traits::value_to_yaml(msg.motor_stop_mask, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -216,16 +209,6 @@ inline void to_block_style_yaml(
     }
     out << "handled_motor_failure_mask: ";
     rosidl_generator_traits::value_to_yaml(msg.handled_motor_failure_mask, out);
-    out << "\n";
-  }
-
-  // member: motor_stop_mask
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "motor_stop_mask: ";
-    rosidl_generator_traits::value_to_yaml(msg.motor_stop_mask, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

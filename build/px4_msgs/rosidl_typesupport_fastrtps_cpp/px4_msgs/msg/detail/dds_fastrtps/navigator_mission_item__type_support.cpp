@@ -34,6 +34,8 @@ cdr_serialize(
 {
   // Member: timestamp
   cdr << ros_message.timestamp;
+  // Member: instance_count
+  cdr << ros_message.instance_count;
   // Member: sequence_current
   cdr << ros_message.sequence_current;
   // Member: nav_cmd
@@ -77,6 +79,9 @@ cdr_deserialize(
 {
   // Member: timestamp
   cdr >> ros_message.timestamp;
+
+  // Member: instance_count
+  cdr >> ros_message.instance_count;
 
   // Member: sequence_current
   cdr >> ros_message.sequence_current;
@@ -165,6 +170,12 @@ get_serialized_size(
   // Member: timestamp
   {
     size_t item_size = sizeof(ros_message.timestamp);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: instance_count
+  {
+    size_t item_size = sizeof(ros_message.instance_count);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -295,6 +306,15 @@ max_serialized_size_NavigatorMissionItem(
     last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: instance_count
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   // Member: sequence_current

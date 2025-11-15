@@ -18,23 +18,18 @@ extern "C"
 // Constants defined in the message
 
 /// Struct defined in msg/Airspeed in the package px4_msgs.
-/**
-  * Airspeed data from sensors
-  *
-  * This is published by airspeed sensor drivers, CAN airspeed sensors, simulators.
-  * It is subscribed by the airspeed selector module, which validates the data from multiple sensors and passes on a single estimation to the EKF, controllers and telemetry providers.
- */
 typedef struct px4_msgs__msg__Airspeed
 {
-  /// Time since system start
+  /// time since system start (microseconds)
   uint64_t timestamp;
-  /// Timestamp of the raw data
   uint64_t timestamp_sample;
-  /// Indicated airspeed
+  /// indicated airspeed in m/s
   float indicated_airspeed_m_s;
-  /// True airspeed
+  /// true filtered airspeed in m/s
   float true_airspeed_m_s;
-  /// [@range 0,1] Confidence value for this sensor
+  /// air temperature in degrees Celsius, -1000 if unknown
+  float air_temperature_celsius;
+  /// confidence value from 0 to 1 for this sensor
   float confidence;
 } px4_msgs__msg__Airspeed;
 

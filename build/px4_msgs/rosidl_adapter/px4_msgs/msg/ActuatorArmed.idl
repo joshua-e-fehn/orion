@@ -28,11 +28,11 @@ module px4_msgs {
 
       @verbatim (language="comment", text=
         "Set to true if manual throttle kill switch is engaged")
-      boolean kill;
+      boolean manual_lockdown;
 
       @verbatim (language="comment", text=
-        "Send out failsafe (by default same as disarmed) output")
-      boolean termination;
+        "Set to true if the actuators are forced to the failsafe position")
+      boolean force_failsafe;
 
       @verbatim (language="comment", text=
         "IO/FMU should ignore messages from the actuator controls topics")

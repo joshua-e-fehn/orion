@@ -40,12 +40,12 @@ struct SatelliteInfo_
     {
       this->timestamp = 0ull;
       this->count = 0;
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->svid.begin(), this->svid.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->used.begin(), this->used.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->elevation.begin(), this->elevation.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->azimuth.begin(), this->azimuth.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->snr.begin(), this->snr.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->prn.begin(), this->prn.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->svid.begin(), this->svid.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->used.begin(), this->used.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->elevation.begin(), this->elevation.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->azimuth.begin(), this->azimuth.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->snr.begin(), this->snr.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->prn.begin(), this->prn.end(), 0);
     }
   }
 
@@ -62,12 +62,12 @@ struct SatelliteInfo_
     {
       this->timestamp = 0ull;
       this->count = 0;
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->svid.begin(), this->svid.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->used.begin(), this->used.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->elevation.begin(), this->elevation.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->azimuth.begin(), this->azimuth.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->snr.begin(), this->snr.end(), 0);
-      std::fill<typename std::array<uint8_t, 40>::iterator, uint8_t>(this->prn.begin(), this->prn.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->svid.begin(), this->svid.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->used.begin(), this->used.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->elevation.begin(), this->elevation.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->azimuth.begin(), this->azimuth.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->snr.begin(), this->snr.end(), 0);
+      std::fill<typename std::array<uint8_t, 20>::iterator, uint8_t>(this->prn.begin(), this->prn.end(), 0);
     }
   }
 
@@ -79,22 +79,22 @@ struct SatelliteInfo_
     uint8_t;
   _count_type count;
   using _svid_type =
-    std::array<uint8_t, 40>;
+    std::array<uint8_t, 20>;
   _svid_type svid;
   using _used_type =
-    std::array<uint8_t, 40>;
+    std::array<uint8_t, 20>;
   _used_type used;
   using _elevation_type =
-    std::array<uint8_t, 40>;
+    std::array<uint8_t, 20>;
   _elevation_type elevation;
   using _azimuth_type =
-    std::array<uint8_t, 40>;
+    std::array<uint8_t, 20>;
   _azimuth_type azimuth;
   using _snr_type =
-    std::array<uint8_t, 40>;
+    std::array<uint8_t, 20>;
   _snr_type snr;
   using _prn_type =
-    std::array<uint8_t, 40>;
+    std::array<uint8_t, 20>;
   _prn_type prn;
 
   // setters for named parameter idiom
@@ -111,37 +111,37 @@ struct SatelliteInfo_
     return *this;
   }
   Type & set__svid(
-    const std::array<uint8_t, 40> & _arg)
+    const std::array<uint8_t, 20> & _arg)
   {
     this->svid = _arg;
     return *this;
   }
   Type & set__used(
-    const std::array<uint8_t, 40> & _arg)
+    const std::array<uint8_t, 20> & _arg)
   {
     this->used = _arg;
     return *this;
   }
   Type & set__elevation(
-    const std::array<uint8_t, 40> & _arg)
+    const std::array<uint8_t, 20> & _arg)
   {
     this->elevation = _arg;
     return *this;
   }
   Type & set__azimuth(
-    const std::array<uint8_t, 40> & _arg)
+    const std::array<uint8_t, 20> & _arg)
   {
     this->azimuth = _arg;
     return *this;
   }
   Type & set__snr(
-    const std::array<uint8_t, 40> & _arg)
+    const std::array<uint8_t, 20> & _arg)
   {
     this->snr = _arg;
     return *this;
   }
   Type & set__prn(
-    const std::array<uint8_t, 40> & _arg)
+    const std::array<uint8_t, 20> & _arg)
   {
     this->prn = _arg;
     return *this;
@@ -149,7 +149,7 @@ struct SatelliteInfo_
 
   // constant declarations
   static constexpr uint8_t SAT_INFO_MAX_SATELLITES =
-    40u;
+    20u;
 
   // pointer types
   using RawPtr =

@@ -23,7 +23,6 @@ class Metaclass_Event(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'MESSAGE_VERSION': 1,
         'ORB_QUEUE_LENGTH': 16,
     }
 
@@ -53,14 +52,8 @@ class Metaclass_Event(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
             'ORB_QUEUE_LENGTH': cls.__constants['ORB_QUEUE_LENGTH'],
         }
-
-    @property
-    def MESSAGE_VERSION(self):
-        """Message constant 'MESSAGE_VERSION'."""
-        return Metaclass_Event.__constants['MESSAGE_VERSION']
 
     @property
     def ORB_QUEUE_LENGTH(self):
@@ -73,7 +66,6 @@ class Event(metaclass=Metaclass_Event):
     Message class 'Event'.
 
     Constants:
-      MESSAGE_VERSION
       ORB_QUEUE_LENGTH
     """
 

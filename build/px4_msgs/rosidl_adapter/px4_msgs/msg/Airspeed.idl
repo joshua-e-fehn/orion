@@ -5,34 +5,27 @@
 
 module px4_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      "Airspeed data from sensors" "\n"
-      "" "\n"
-      "This is published by airspeed sensor drivers, CAN airspeed sensors, simulators." "\n"
-      "It is subscribed by the airspeed selector module, which validates the data from multiple sensors and passes on a single estimation to the EKF, controllers and telemetry providers.")
     struct Airspeed {
       @verbatim (language="comment", text=
-        "Time since system start")
-      @unit (value="us")
+        "time since system start (microseconds)")
       uint64 timestamp;
 
-      @verbatim (language="comment", text=
-        "Timestamp of the raw data")
-      @unit (value="us")
       uint64 timestamp_sample;
 
       @verbatim (language="comment", text=
-        "Indicated airspeed")
-      @unit (value="m/s")
+        "indicated airspeed in m/s")
       float indicated_airspeed_m_s;
 
       @verbatim (language="comment", text=
-        "True airspeed")
-      @unit (value="m/s")
+        "true filtered airspeed in m/s")
       float true_airspeed_m_s;
 
       @verbatim (language="comment", text=
-        "[@range 0,1] Confidence value for this sensor")
+        "air temperature in degrees Celsius, -1000 if unknown")
+      float air_temperature_celsius;
+
+      @verbatim (language="comment", text=
+        "confidence value from 0 to 1 for this sensor")
       float confidence;
     };
   };

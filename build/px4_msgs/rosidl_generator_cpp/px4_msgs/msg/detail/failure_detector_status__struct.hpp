@@ -49,7 +49,6 @@ struct FailureDetectorStatus_
       this->fd_motor = false;
       this->imbalanced_prop_metric = 0.0f;
       this->motor_failure_mask = 0;
-      this->motor_stop_mask = 0;
     }
   }
 
@@ -70,7 +69,6 @@ struct FailureDetectorStatus_
       this->fd_motor = false;
       this->imbalanced_prop_metric = 0.0f;
       this->motor_failure_mask = 0;
-      this->motor_stop_mask = 0;
     }
   }
 
@@ -108,9 +106,6 @@ struct FailureDetectorStatus_
   using _motor_failure_mask_type =
     uint16_t;
   _motor_failure_mask_type motor_failure_mask;
-  using _motor_stop_mask_type =
-    uint16_t;
-  _motor_stop_mask_type motor_stop_mask;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -177,12 +172,6 @@ struct FailureDetectorStatus_
     const uint16_t & _arg)
   {
     this->motor_failure_mask = _arg;
-    return *this;
-  }
-  Type & set__motor_stop_mask(
-    const uint16_t & _arg)
-  {
-    this->motor_stop_mask = _arg;
     return *this;
   }
 
@@ -259,9 +248,6 @@ struct FailureDetectorStatus_
       return false;
     }
     if (this->motor_failure_mask != other.motor_failure_mask) {
-      return false;
-    }
-    if (this->motor_stop_mask != other.motor_stop_mask) {
       return false;
     }
     return true;

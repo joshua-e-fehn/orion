@@ -85,7 +85,7 @@ bool px4_msgs__msg__satellite_info__convert_from_py(PyObject * _pymsg, void * _r
       Py_INCREF(seq_field);
       assert(PyArray_NDIM(seq_field) == 1);
       assert(PyArray_TYPE(seq_field) == NPY_UINT8);
-      Py_ssize_t size = 40;
+      Py_ssize_t size = 20;
       uint8_t * dest = ros_message->svid;
       for (Py_ssize_t i = 0; i < size; ++i) {
         uint8_t tmp = *(npy_uint8 *)PyArray_GETPTR1(seq_field, i);
@@ -109,7 +109,7 @@ bool px4_msgs__msg__satellite_info__convert_from_py(PyObject * _pymsg, void * _r
       Py_INCREF(seq_field);
       assert(PyArray_NDIM(seq_field) == 1);
       assert(PyArray_TYPE(seq_field) == NPY_UINT8);
-      Py_ssize_t size = 40;
+      Py_ssize_t size = 20;
       uint8_t * dest = ros_message->used;
       for (Py_ssize_t i = 0; i < size; ++i) {
         uint8_t tmp = *(npy_uint8 *)PyArray_GETPTR1(seq_field, i);
@@ -133,7 +133,7 @@ bool px4_msgs__msg__satellite_info__convert_from_py(PyObject * _pymsg, void * _r
       Py_INCREF(seq_field);
       assert(PyArray_NDIM(seq_field) == 1);
       assert(PyArray_TYPE(seq_field) == NPY_UINT8);
-      Py_ssize_t size = 40;
+      Py_ssize_t size = 20;
       uint8_t * dest = ros_message->elevation;
       for (Py_ssize_t i = 0; i < size; ++i) {
         uint8_t tmp = *(npy_uint8 *)PyArray_GETPTR1(seq_field, i);
@@ -157,7 +157,7 @@ bool px4_msgs__msg__satellite_info__convert_from_py(PyObject * _pymsg, void * _r
       Py_INCREF(seq_field);
       assert(PyArray_NDIM(seq_field) == 1);
       assert(PyArray_TYPE(seq_field) == NPY_UINT8);
-      Py_ssize_t size = 40;
+      Py_ssize_t size = 20;
       uint8_t * dest = ros_message->azimuth;
       for (Py_ssize_t i = 0; i < size; ++i) {
         uint8_t tmp = *(npy_uint8 *)PyArray_GETPTR1(seq_field, i);
@@ -181,7 +181,7 @@ bool px4_msgs__msg__satellite_info__convert_from_py(PyObject * _pymsg, void * _r
       Py_INCREF(seq_field);
       assert(PyArray_NDIM(seq_field) == 1);
       assert(PyArray_TYPE(seq_field) == NPY_UINT8);
-      Py_ssize_t size = 40;
+      Py_ssize_t size = 20;
       uint8_t * dest = ros_message->snr;
       for (Py_ssize_t i = 0; i < size; ++i) {
         uint8_t tmp = *(npy_uint8 *)PyArray_GETPTR1(seq_field, i);
@@ -205,7 +205,7 @@ bool px4_msgs__msg__satellite_info__convert_from_py(PyObject * _pymsg, void * _r
       Py_INCREF(seq_field);
       assert(PyArray_NDIM(seq_field) == 1);
       assert(PyArray_TYPE(seq_field) == NPY_UINT8);
-      Py_ssize_t size = 40;
+      Py_ssize_t size = 20;
       uint8_t * dest = ros_message->prn;
       for (Py_ssize_t i = 0; i < size; ++i) {
         uint8_t tmp = *(npy_uint8 *)PyArray_GETPTR1(seq_field, i);
@@ -274,7 +274,7 @@ PyObject * px4_msgs__msg__satellite_info__convert_to_py(void * raw_ros_message)
     assert(sizeof(npy_uint8) == sizeof(uint8_t));
     npy_uint8 * dst = (npy_uint8 *)PyArray_GETPTR1(seq_field, 0);
     uint8_t * src = &(ros_message->svid[0]);
-    memcpy(dst, src, 40 * sizeof(uint8_t));
+    memcpy(dst, src, 20 * sizeof(uint8_t));
     Py_DECREF(field);
   }
   {  // used
@@ -292,7 +292,7 @@ PyObject * px4_msgs__msg__satellite_info__convert_to_py(void * raw_ros_message)
     assert(sizeof(npy_uint8) == sizeof(uint8_t));
     npy_uint8 * dst = (npy_uint8 *)PyArray_GETPTR1(seq_field, 0);
     uint8_t * src = &(ros_message->used[0]);
-    memcpy(dst, src, 40 * sizeof(uint8_t));
+    memcpy(dst, src, 20 * sizeof(uint8_t));
     Py_DECREF(field);
   }
   {  // elevation
@@ -310,7 +310,7 @@ PyObject * px4_msgs__msg__satellite_info__convert_to_py(void * raw_ros_message)
     assert(sizeof(npy_uint8) == sizeof(uint8_t));
     npy_uint8 * dst = (npy_uint8 *)PyArray_GETPTR1(seq_field, 0);
     uint8_t * src = &(ros_message->elevation[0]);
-    memcpy(dst, src, 40 * sizeof(uint8_t));
+    memcpy(dst, src, 20 * sizeof(uint8_t));
     Py_DECREF(field);
   }
   {  // azimuth
@@ -328,7 +328,7 @@ PyObject * px4_msgs__msg__satellite_info__convert_to_py(void * raw_ros_message)
     assert(sizeof(npy_uint8) == sizeof(uint8_t));
     npy_uint8 * dst = (npy_uint8 *)PyArray_GETPTR1(seq_field, 0);
     uint8_t * src = &(ros_message->azimuth[0]);
-    memcpy(dst, src, 40 * sizeof(uint8_t));
+    memcpy(dst, src, 20 * sizeof(uint8_t));
     Py_DECREF(field);
   }
   {  // snr
@@ -346,7 +346,7 @@ PyObject * px4_msgs__msg__satellite_info__convert_to_py(void * raw_ros_message)
     assert(sizeof(npy_uint8) == sizeof(uint8_t));
     npy_uint8 * dst = (npy_uint8 *)PyArray_GETPTR1(seq_field, 0);
     uint8_t * src = &(ros_message->snr[0]);
-    memcpy(dst, src, 40 * sizeof(uint8_t));
+    memcpy(dst, src, 20 * sizeof(uint8_t));
     Py_DECREF(field);
   }
   {  // prn
@@ -364,7 +364,7 @@ PyObject * px4_msgs__msg__satellite_info__convert_to_py(void * raw_ros_message)
     assert(sizeof(npy_uint8) == sizeof(uint8_t));
     npy_uint8 * dst = (npy_uint8 *)PyArray_GETPTR1(seq_field, 0);
     uint8_t * src = &(ros_message->prn[0]);
-    memcpy(dst, src, 40 * sizeof(uint8_t));
+    memcpy(dst, src, 20 * sizeof(uint8_t));
     Py_DECREF(field);
   }
 

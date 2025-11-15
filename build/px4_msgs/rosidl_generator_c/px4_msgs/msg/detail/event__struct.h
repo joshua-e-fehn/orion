@@ -17,12 +17,6 @@ extern "C"
 
 // Constants defined in the message
 
-/// Constant 'MESSAGE_VERSION'.
-enum
-{
-  px4_msgs__msg__Event__MESSAGE_VERSION = 1ul
-};
-
 /// Constant 'ORB_QUEUE_LENGTH'.
 enum
 {

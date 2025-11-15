@@ -144,8 +144,6 @@ typedef struct px4_msgs__msg__ManualControlSwitches
   uint8_t offboard_switch;
   /// throttle kill: _NORMAL_, KILL
   uint8_t kill_switch;
-  /// trigger termination which cannot be undone
-  uint8_t termination_switch;
   /// landing gear switch: _DOWN_, UP
   uint8_t gear_switch;
   /// VTOL transition switch: _HOVER, FORWARD_FLIGHT
@@ -156,8 +154,6 @@ typedef struct px4_msgs__msg__ManualControlSwitches
   uint8_t video_switch;
   /// Engage the main motor (for helicopters)
   uint8_t engage_main_motor_switch;
-  /// Payload power switch
-  uint8_t payload_power_switch;
   /// number of switch changes
   uint32_t switch_changes;
 } px4_msgs__msg__ManualControlSwitches;

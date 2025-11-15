@@ -40,7 +40,7 @@ px4_msgs__msg__Px4ioStatus__init(px4_msgs__msg__Px4ioStatus * msg)
   // arming_failsafe_custom
   // arming_fmu_armed
   // arming_fmu_prearmed
-  // arming_termination
+  // arming_force_failsafe
   // arming_io_arm_ok
   // arming_lockdown
   // arming_termination_failsafe
@@ -81,7 +81,7 @@ px4_msgs__msg__Px4ioStatus__fini(px4_msgs__msg__Px4ioStatus * msg)
   // arming_failsafe_custom
   // arming_fmu_armed
   // arming_fmu_prearmed
-  // arming_termination
+  // arming_force_failsafe
   // arming_io_arm_ok
   // arming_lockdown
   // arming_termination_failsafe
@@ -190,8 +190,8 @@ px4_msgs__msg__Px4ioStatus__are_equal(const px4_msgs__msg__Px4ioStatus * lhs, co
   if (lhs->arming_fmu_prearmed != rhs->arming_fmu_prearmed) {
     return false;
   }
-  // arming_termination
-  if (lhs->arming_termination != rhs->arming_termination) {
+  // arming_force_failsafe
+  if (lhs->arming_force_failsafe != rhs->arming_force_failsafe) {
     return false;
   }
   // arming_io_arm_ok
@@ -293,8 +293,8 @@ px4_msgs__msg__Px4ioStatus__copy(
   output->arming_fmu_armed = input->arming_fmu_armed;
   // arming_fmu_prearmed
   output->arming_fmu_prearmed = input->arming_fmu_prearmed;
-  // arming_termination
-  output->arming_termination = input->arming_termination;
+  // arming_force_failsafe
+  output->arming_force_failsafe = input->arming_force_failsafe;
   // arming_io_arm_ok
   output->arming_io_arm_ok = input->arming_io_arm_ok;
   // arming_lockdown

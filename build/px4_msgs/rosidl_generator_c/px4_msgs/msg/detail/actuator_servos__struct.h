@@ -17,12 +17,6 @@ extern "C"
 
 // Constants defined in the message
 
-/// Constant 'MESSAGE_VERSION'.
-enum
-{
-  px4_msgs__msg__ActuatorServos__MESSAGE_VERSION = 0ul
-};
-
 /// Constant 'NUM_CONTROLS'.
 enum
 {
@@ -32,17 +26,16 @@ enum
 /// Struct defined in msg/ActuatorServos in the package px4_msgs.
 /**
   * Servo control message
-  *
-  * Normalised output setpoint for up to 8 servos.
-  * Published by the vehicle's allocation and consumed by the actuator output drivers.
  */
 typedef struct px4_msgs__msg__ActuatorServos
 {
-  /// Time since system start
+  /// time since system start (microseconds)
   uint64_t timestamp;
-  /// Sampling timestamp of the data this control response is based on
+  /// the timestamp the data this control response is based on was sampled
   uint64_t timestamp_sample;
-  /// [@range -1, 1] Normalized output. 1 means maximum positive position. -1 maximum negative position (if not supported by the output, <0 maps to NaN). NaN maps to disarmed.
+  /// range: [-1, 1], where 1 means maximum positive position,
+  /// -1 maximum negative,
+  /// and NaN maps to disarmed
   float control[8];
 } px4_msgs__msg__ActuatorServos;
 

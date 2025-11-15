@@ -35,7 +35,7 @@ size_t px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__size_fu
   const void * untyped_member)
 {
   (void)untyped_member;
-  return 40;
+  return 20;
 }
 
 const void * px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__get_const_function__SatelliteInfo__svid(
@@ -80,7 +80,7 @@ size_t px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__size_fu
   const void * untyped_member)
 {
   (void)untyped_member;
-  return 40;
+  return 20;
 }
 
 const void * px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__get_const_function__SatelliteInfo__used(
@@ -125,7 +125,7 @@ size_t px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__size_fu
   const void * untyped_member)
 {
   (void)untyped_member;
-  return 40;
+  return 20;
 }
 
 const void * px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__get_const_function__SatelliteInfo__elevation(
@@ -170,7 +170,7 @@ size_t px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__size_fu
   const void * untyped_member)
 {
   (void)untyped_member;
-  return 40;
+  return 20;
 }
 
 const void * px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__get_const_function__SatelliteInfo__azimuth(
@@ -215,7 +215,7 @@ size_t px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__size_fu
   const void * untyped_member)
 {
   (void)untyped_member;
-  return 40;
+  return 20;
 }
 
 const void * px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__get_const_function__SatelliteInfo__snr(
@@ -260,7 +260,7 @@ size_t px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__size_fu
   const void * untyped_member)
 {
   (void)untyped_member;
-  return 40;
+  return 20;
 }
 
 const void * px4_msgs__msg__SatelliteInfo__rosidl_typesupport_introspection_c__get_const_function__SatelliteInfo__prn(
@@ -342,7 +342,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Satellit
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
-    40,  // array size
+    20,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__SatelliteInfo, svid),  // bytes offset in struct
     NULL,  // default value
@@ -359,7 +359,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Satellit
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
-    40,  // array size
+    20,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__SatelliteInfo, used),  // bytes offset in struct
     NULL,  // default value
@@ -376,7 +376,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Satellit
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
-    40,  // array size
+    20,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__SatelliteInfo, elevation),  // bytes offset in struct
     NULL,  // default value
@@ -393,7 +393,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Satellit
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
-    40,  // array size
+    20,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__SatelliteInfo, azimuth),  // bytes offset in struct
     NULL,  // default value
@@ -410,7 +410,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Satellit
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
-    40,  // array size
+    20,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__SatelliteInfo, snr),  // bytes offset in struct
     NULL,  // default value
@@ -427,7 +427,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Satellit
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
-    40,  // array size
+    20,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__SatelliteInfo, prn),  // bytes offset in struct
     NULL,  // default value

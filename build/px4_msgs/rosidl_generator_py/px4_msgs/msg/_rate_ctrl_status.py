@@ -61,6 +61,7 @@ class RateCtrlStatus(metaclass=Metaclass_RateCtrlStatus):
         '_rollspeed_integ',
         '_pitchspeed_integ',
         '_yawspeed_integ',
+        '_wheel_rate_integ',
     ]
 
     _fields_and_field_types = {
@@ -68,10 +69,12 @@ class RateCtrlStatus(metaclass=Metaclass_RateCtrlStatus):
         'rollspeed_integ': 'float',
         'pitchspeed_integ': 'float',
         'yawspeed_integ': 'float',
+        'wheel_rate_integ': 'float',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -85,6 +88,7 @@ class RateCtrlStatus(metaclass=Metaclass_RateCtrlStatus):
         self.rollspeed_integ = kwargs.get('rollspeed_integ', float())
         self.pitchspeed_integ = kwargs.get('pitchspeed_integ', float())
         self.yawspeed_integ = kwargs.get('yawspeed_integ', float())
+        self.wheel_rate_integ = kwargs.get('wheel_rate_integ', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -122,6 +126,8 @@ class RateCtrlStatus(metaclass=Metaclass_RateCtrlStatus):
         if self.pitchspeed_integ != other.pitchspeed_integ:
             return False
         if self.yawspeed_integ != other.yawspeed_integ:
+            return False
+        if self.wheel_rate_integ != other.wheel_rate_integ:
             return False
         return True
 
@@ -189,3 +195,18 @@ class RateCtrlStatus(metaclass=Metaclass_RateCtrlStatus):
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
                 "The 'yawspeed_integ' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
         self._yawspeed_integ = value
+
+    @builtins.property
+    def wheel_rate_integ(self):
+        """Message field 'wheel_rate_integ'."""
+        return self._wheel_rate_integ
+
+    @wheel_rate_integ.setter
+    def wheel_rate_integ(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'wheel_rate_integ' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'wheel_rate_integ' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._wheel_rate_integ = value

@@ -92,10 +92,17 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: hdg_test_ratio
+  // member: innovation_check_flags
   {
-    out << "hdg_test_ratio: ";
-    rosidl_generator_traits::value_to_yaml(msg.hdg_test_ratio, out);
+    out << "innovation_check_flags: ";
+    rosidl_generator_traits::value_to_yaml(msg.innovation_check_flags, out);
+    out << ", ";
+  }
+
+  // member: mag_test_ratio
+  {
+    out << "mag_test_ratio: ";
+    rosidl_generator_traits::value_to_yaml(msg.mag_test_ratio, out);
     out << ", ";
   }
 
@@ -197,20 +204,6 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: pre_flt_fail_innov_height
-  {
-    out << "pre_flt_fail_innov_height: ";
-    rosidl_generator_traits::value_to_yaml(msg.pre_flt_fail_innov_height, out);
-    out << ", ";
-  }
-
-  // member: pre_flt_fail_innov_pos_horiz
-  {
-    out << "pre_flt_fail_innov_pos_horiz: ";
-    rosidl_generator_traits::value_to_yaml(msg.pre_flt_fail_innov_pos_horiz, out);
-    out << ", ";
-  }
-
   // member: pre_flt_fail_innov_vel_horiz
   {
     out << "pre_flt_fail_innov_vel_horiz: ";
@@ -222,6 +215,13 @@ inline void to_flow_style_yaml(
   {
     out << "pre_flt_fail_innov_vel_vert: ";
     rosidl_generator_traits::value_to_yaml(msg.pre_flt_fail_innov_vel_vert, out);
+    out << ", ";
+  }
+
+  // member: pre_flt_fail_innov_height
+  {
+    out << "pre_flt_fail_innov_height: ";
+    rosidl_generator_traits::value_to_yaml(msg.pre_flt_fail_innov_height, out);
     out << ", ";
   }
 
@@ -271,34 +271,6 @@ inline void to_flow_style_yaml(
   {
     out << "timeout_flags: ";
     rosidl_generator_traits::value_to_yaml(msg.timeout_flags, out);
-    out << ", ";
-  }
-
-  // member: mag_inclination_deg
-  {
-    out << "mag_inclination_deg: ";
-    rosidl_generator_traits::value_to_yaml(msg.mag_inclination_deg, out);
-    out << ", ";
-  }
-
-  // member: mag_inclination_ref_deg
-  {
-    out << "mag_inclination_ref_deg: ";
-    rosidl_generator_traits::value_to_yaml(msg.mag_inclination_ref_deg, out);
-    out << ", ";
-  }
-
-  // member: mag_strength_gs
-  {
-    out << "mag_strength_gs: ";
-    rosidl_generator_traits::value_to_yaml(msg.mag_strength_gs, out);
-    out << ", ";
-  }
-
-  // member: mag_strength_ref_gs
-  {
-    out << "mag_strength_ref_gs: ";
-    rosidl_generator_traits::value_to_yaml(msg.mag_strength_ref_gs, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -397,13 +369,23 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: hdg_test_ratio
+  // member: innovation_check_flags
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "hdg_test_ratio: ";
-    rosidl_generator_traits::value_to_yaml(msg.hdg_test_ratio, out);
+    out << "innovation_check_flags: ";
+    rosidl_generator_traits::value_to_yaml(msg.innovation_check_flags, out);
+    out << "\n";
+  }
+
+  // member: mag_test_ratio
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "mag_test_ratio: ";
+    rosidl_generator_traits::value_to_yaml(msg.mag_test_ratio, out);
     out << "\n";
   }
 
@@ -547,26 +529,6 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: pre_flt_fail_innov_height
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "pre_flt_fail_innov_height: ";
-    rosidl_generator_traits::value_to_yaml(msg.pre_flt_fail_innov_height, out);
-    out << "\n";
-  }
-
-  // member: pre_flt_fail_innov_pos_horiz
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "pre_flt_fail_innov_pos_horiz: ";
-    rosidl_generator_traits::value_to_yaml(msg.pre_flt_fail_innov_pos_horiz, out);
-    out << "\n";
-  }
-
   // member: pre_flt_fail_innov_vel_horiz
   {
     if (indentation > 0) {
@@ -584,6 +546,16 @@ inline void to_block_style_yaml(
     }
     out << "pre_flt_fail_innov_vel_vert: ";
     rosidl_generator_traits::value_to_yaml(msg.pre_flt_fail_innov_vel_vert, out);
+    out << "\n";
+  }
+
+  // member: pre_flt_fail_innov_height
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "pre_flt_fail_innov_height: ";
+    rosidl_generator_traits::value_to_yaml(msg.pre_flt_fail_innov_height, out);
     out << "\n";
   }
 
@@ -654,46 +626,6 @@ inline void to_block_style_yaml(
     }
     out << "timeout_flags: ";
     rosidl_generator_traits::value_to_yaml(msg.timeout_flags, out);
-    out << "\n";
-  }
-
-  // member: mag_inclination_deg
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "mag_inclination_deg: ";
-    rosidl_generator_traits::value_to_yaml(msg.mag_inclination_deg, out);
-    out << "\n";
-  }
-
-  // member: mag_inclination_ref_deg
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "mag_inclination_ref_deg: ";
-    rosidl_generator_traits::value_to_yaml(msg.mag_inclination_ref_deg, out);
-    out << "\n";
-  }
-
-  // member: mag_strength_gs
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "mag_strength_gs: ";
-    rosidl_generator_traits::value_to_yaml(msg.mag_strength_gs, out);
-    out << "\n";
-  }
-
-  // member: mag_strength_ref_gs
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "mag_strength_ref_gs: ";
-    rosidl_generator_traits::value_to_yaml(msg.mag_strength_ref_gs, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

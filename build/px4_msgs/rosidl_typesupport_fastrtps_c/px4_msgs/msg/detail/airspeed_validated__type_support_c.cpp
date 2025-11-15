@@ -69,34 +69,24 @@ static bool _AirspeedValidated__cdr_serialize(
     cdr << ros_message->true_airspeed_m_s;
   }
 
-  // Field name: airspeed_source
-  {
-    cdr << ros_message->airspeed_source;
-  }
-
   // Field name: calibrated_ground_minus_wind_m_s
   {
     cdr << ros_message->calibrated_ground_minus_wind_m_s;
   }
 
-  // Field name: calibraded_airspeed_synth_m_s
+  // Field name: true_ground_minus_wind_m_s
   {
-    cdr << ros_message->calibraded_airspeed_synth_m_s;
+    cdr << ros_message->true_ground_minus_wind_m_s;
   }
 
-  // Field name: airspeed_derivative_filtered
+  // Field name: airspeed_sensor_measurement_valid
   {
-    cdr << ros_message->airspeed_derivative_filtered;
+    cdr << (ros_message->airspeed_sensor_measurement_valid ? true : false);
   }
 
-  // Field name: throttle_filtered
+  // Field name: selected_airspeed_index
   {
-    cdr << ros_message->throttle_filtered;
-  }
-
-  // Field name: pitch_filtered
-  {
-    cdr << ros_message->pitch_filtered;
+    cdr << ros_message->selected_airspeed_index;
   }
 
   return true;
@@ -131,34 +121,26 @@ static bool _AirspeedValidated__cdr_deserialize(
     cdr >> ros_message->true_airspeed_m_s;
   }
 
-  // Field name: airspeed_source
-  {
-    cdr >> ros_message->airspeed_source;
-  }
-
   // Field name: calibrated_ground_minus_wind_m_s
   {
     cdr >> ros_message->calibrated_ground_minus_wind_m_s;
   }
 
-  // Field name: calibraded_airspeed_synth_m_s
+  // Field name: true_ground_minus_wind_m_s
   {
-    cdr >> ros_message->calibraded_airspeed_synth_m_s;
+    cdr >> ros_message->true_ground_minus_wind_m_s;
   }
 
-  // Field name: airspeed_derivative_filtered
+  // Field name: airspeed_sensor_measurement_valid
   {
-    cdr >> ros_message->airspeed_derivative_filtered;
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->airspeed_sensor_measurement_valid = tmp ? true : false;
   }
 
-  // Field name: throttle_filtered
+  // Field name: selected_airspeed_index
   {
-    cdr >> ros_message->throttle_filtered;
-  }
-
-  // Field name: pitch_filtered
-  {
-    cdr >> ros_message->pitch_filtered;
+    cdr >> ros_message->selected_airspeed_index;
   }
 
   return true;
@@ -202,39 +184,27 @@ size_t get_serialized_size_px4_msgs__msg__AirspeedValidated(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name airspeed_source
-  {
-    size_t item_size = sizeof(ros_message->airspeed_source);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // field.name calibrated_ground_minus_wind_m_s
   {
     size_t item_size = sizeof(ros_message->calibrated_ground_minus_wind_m_s);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name calibraded_airspeed_synth_m_s
+  // field.name true_ground_minus_wind_m_s
   {
-    size_t item_size = sizeof(ros_message->calibraded_airspeed_synth_m_s);
+    size_t item_size = sizeof(ros_message->true_ground_minus_wind_m_s);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name airspeed_derivative_filtered
+  // field.name airspeed_sensor_measurement_valid
   {
-    size_t item_size = sizeof(ros_message->airspeed_derivative_filtered);
+    size_t item_size = sizeof(ros_message->airspeed_sensor_measurement_valid);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name throttle_filtered
+  // field.name selected_airspeed_index
   {
-    size_t item_size = sizeof(ros_message->throttle_filtered);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name pitch_filtered
-  {
-    size_t item_size = sizeof(ros_message->pitch_filtered);
+    size_t item_size = sizeof(ros_message->selected_airspeed_index);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -299,13 +269,6 @@ size_t max_serialized_size_px4_msgs__msg__AirspeedValidated(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: airspeed_source
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
   // member: calibrated_ground_minus_wind_m_s
   {
     size_t array_size = 1;
@@ -314,7 +277,7 @@ size_t max_serialized_size_px4_msgs__msg__AirspeedValidated(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: calibraded_airspeed_synth_m_s
+  // member: true_ground_minus_wind_m_s
   {
     size_t array_size = 1;
 
@@ -322,29 +285,19 @@ size_t max_serialized_size_px4_msgs__msg__AirspeedValidated(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: airspeed_derivative_filtered
+  // member: airspeed_sensor_measurement_valid
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: throttle_filtered
+  // member: selected_airspeed_index
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: pitch_filtered
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
   }
 
   size_t ret_val = current_alignment - initial_alignment;
@@ -355,7 +308,7 @@ size_t max_serialized_size_px4_msgs__msg__AirspeedValidated(
     using DataType = px4_msgs__msg__AirspeedValidated;
     is_plain =
       (
-      offsetof(DataType, pitch_filtered) +
+      offsetof(DataType, selected_airspeed_index) +
       last_member_size
       ) == ret_val;
   }

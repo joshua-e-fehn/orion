@@ -89,11 +89,6 @@ static bool _EstimatorAidSource1d__cdr_serialize(
     cdr << ros_message->innovation;
   }
 
-  // Field name: innovation_filtered
-  {
-    cdr << ros_message->innovation_filtered;
-  }
-
   // Field name: innovation_variance
   {
     cdr << ros_message->innovation_variance;
@@ -104,9 +99,9 @@ static bool _EstimatorAidSource1d__cdr_serialize(
     cdr << ros_message->test_ratio;
   }
 
-  // Field name: test_ratio_filtered
+  // Field name: fusion_enabled
   {
-    cdr << ros_message->test_ratio_filtered;
+    cdr << (ros_message->fusion_enabled ? true : false);
   }
 
   // Field name: innovation_rejected
@@ -171,11 +166,6 @@ static bool _EstimatorAidSource1d__cdr_deserialize(
     cdr >> ros_message->innovation;
   }
 
-  // Field name: innovation_filtered
-  {
-    cdr >> ros_message->innovation_filtered;
-  }
-
   // Field name: innovation_variance
   {
     cdr >> ros_message->innovation_variance;
@@ -186,9 +176,11 @@ static bool _EstimatorAidSource1d__cdr_deserialize(
     cdr >> ros_message->test_ratio;
   }
 
-  // Field name: test_ratio_filtered
+  // Field name: fusion_enabled
   {
-    cdr >> ros_message->test_ratio_filtered;
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->fusion_enabled = tmp ? true : false;
   }
 
   // Field name: innovation_rejected
@@ -270,12 +262,6 @@ size_t get_serialized_size_px4_msgs__msg__EstimatorAidSource1d(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name innovation_filtered
-  {
-    size_t item_size = sizeof(ros_message->innovation_filtered);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // field.name innovation_variance
   {
     size_t item_size = sizeof(ros_message->innovation_variance);
@@ -288,9 +274,9 @@ size_t get_serialized_size_px4_msgs__msg__EstimatorAidSource1d(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name test_ratio_filtered
+  // field.name fusion_enabled
   {
-    size_t item_size = sizeof(ros_message->test_ratio_filtered);
+    size_t item_size = sizeof(ros_message->fusion_enabled);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -398,14 +384,6 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorAidSource1d(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: innovation_filtered
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
   // member: innovation_variance
   {
     size_t array_size = 1;
@@ -422,13 +400,12 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorAidSource1d(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: test_ratio_filtered
+  // member: fusion_enabled
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
   }
   // member: innovation_rejected
   {

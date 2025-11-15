@@ -40,12 +40,10 @@ cdr_serialize(
   cdr << ros_message.baro_device_id;
   // Member: baro_alt_meter
   cdr << ros_message.baro_alt_meter;
+  // Member: baro_temp_celcius
+  cdr << ros_message.baro_temp_celcius;
   // Member: baro_pressure_pa
   cdr << ros_message.baro_pressure_pa;
-  // Member: ambient_temperature
-  cdr << ros_message.ambient_temperature;
-  // Member: temperature_source
-  cdr << ros_message.temperature_source;
   // Member: rho
   cdr << ros_message.rho;
   // Member: calibration_count
@@ -71,14 +69,11 @@ cdr_deserialize(
   // Member: baro_alt_meter
   cdr >> ros_message.baro_alt_meter;
 
+  // Member: baro_temp_celcius
+  cdr >> ros_message.baro_temp_celcius;
+
   // Member: baro_pressure_pa
   cdr >> ros_message.baro_pressure_pa;
-
-  // Member: ambient_temperature
-  cdr >> ros_message.ambient_temperature;
-
-  // Member: temperature_source
-  cdr >> ros_message.temperature_source;
 
   // Member: rho
   cdr >> ros_message.rho;
@@ -126,21 +121,15 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // Member: baro_temp_celcius
+  {
+    size_t item_size = sizeof(ros_message.baro_temp_celcius);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // Member: baro_pressure_pa
   {
     size_t item_size = sizeof(ros_message.baro_pressure_pa);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: ambient_temperature
-  {
-    size_t item_size = sizeof(ros_message.ambient_temperature);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: temperature_source
-  {
-    size_t item_size = sizeof(ros_message.temperature_source);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -216,6 +205,15 @@ max_serialized_size_VehicleAirData(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
+  // Member: baro_temp_celcius
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
   // Member: baro_pressure_pa
   {
     size_t array_size = 1;
@@ -223,23 +221,6 @@ max_serialized_size_VehicleAirData(
     last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: ambient_temperature
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: temperature_source
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
   }
 
   // Member: rho

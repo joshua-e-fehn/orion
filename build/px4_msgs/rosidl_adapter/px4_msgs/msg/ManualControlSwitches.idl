@@ -77,10 +77,6 @@ module px4_msgs {
       uint8 kill_switch;
 
       @verbatim (language="comment", text=
-        "trigger termination which cannot be undone")
-      uint8 termination_switch;
-
-      @verbatim (language="comment", text=
         "landing gear switch: _DOWN_, UP")
       uint8 gear_switch;
 
@@ -99,10 +95,6 @@ module px4_msgs {
       @verbatim (language="comment", text=
         "Engage the main motor (for helicopters)")
       uint8 engage_main_motor_switch;
-
-      @verbatim (language="comment", text=
-        "Payload power switch")
-      uint8 payload_power_switch;
 
       @verbatim (language="comment", text=
         "number of switch changes")

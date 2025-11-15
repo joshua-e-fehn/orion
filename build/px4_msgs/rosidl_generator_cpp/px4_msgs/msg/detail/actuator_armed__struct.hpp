@@ -43,8 +43,8 @@ struct ActuatorArmed_
       this->prearmed = false;
       this->ready_to_arm = false;
       this->lockdown = false;
-      this->kill = false;
-      this->termination = false;
+      this->manual_lockdown = false;
+      this->force_failsafe = false;
       this->in_esc_calibration_mode = false;
     }
   }
@@ -60,8 +60,8 @@ struct ActuatorArmed_
       this->prearmed = false;
       this->ready_to_arm = false;
       this->lockdown = false;
-      this->kill = false;
-      this->termination = false;
+      this->manual_lockdown = false;
+      this->force_failsafe = false;
       this->in_esc_calibration_mode = false;
     }
   }
@@ -82,12 +82,12 @@ struct ActuatorArmed_
   using _lockdown_type =
     bool;
   _lockdown_type lockdown;
-  using _kill_type =
+  using _manual_lockdown_type =
     bool;
-  _kill_type kill;
-  using _termination_type =
+  _manual_lockdown_type manual_lockdown;
+  using _force_failsafe_type =
     bool;
-  _termination_type termination;
+  _force_failsafe_type force_failsafe;
   using _in_esc_calibration_mode_type =
     bool;
   _in_esc_calibration_mode_type in_esc_calibration_mode;
@@ -123,16 +123,16 @@ struct ActuatorArmed_
     this->lockdown = _arg;
     return *this;
   }
-  Type & set__kill(
+  Type & set__manual_lockdown(
     const bool & _arg)
   {
-    this->kill = _arg;
+    this->manual_lockdown = _arg;
     return *this;
   }
-  Type & set__termination(
+  Type & set__force_failsafe(
     const bool & _arg)
   {
-    this->termination = _arg;
+    this->force_failsafe = _arg;
     return *this;
   }
   Type & set__in_esc_calibration_mode(
@@ -199,10 +199,10 @@ struct ActuatorArmed_
     if (this->lockdown != other.lockdown) {
       return false;
     }
-    if (this->kill != other.kill) {
+    if (this->manual_lockdown != other.manual_lockdown) {
       return false;
     }
-    if (this->termination != other.termination) {
+    if (this->force_failsafe != other.force_failsafe) {
       return false;
     }
     if (this->in_esc_calibration_mode != other.in_esc_calibration_mode) {

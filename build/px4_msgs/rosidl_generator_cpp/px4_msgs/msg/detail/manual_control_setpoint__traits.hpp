@@ -134,13 +134,6 @@ inline void to_flow_style_yaml(
   {
     out << "sticks_moving: ";
     rosidl_generator_traits::value_to_yaml(msg.sticks_moving, out);
-    out << ", ";
-  }
-
-  // member: buttons
-  {
-    out << "buttons: ";
-    rosidl_generator_traits::value_to_yaml(msg.buttons, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -306,16 +299,6 @@ inline void to_block_style_yaml(
     }
     out << "sticks_moving: ";
     rosidl_generator_traits::value_to_yaml(msg.sticks_moving, out);
-    out << "\n";
-  }
-
-  // member: buttons
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "buttons: ";
-    rosidl_generator_traits::value_to_yaml(msg.buttons, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

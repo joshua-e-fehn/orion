@@ -20,28 +20,23 @@ class Metaclass_CellularStatus(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'STATUS_FLAG_UNKNOWN': 1,
-        'STATUS_FLAG_FAILED': 2,
-        'STATUS_FLAG_INITIALIZING': 4,
-        'STATUS_FLAG_LOCKED': 8,
-        'STATUS_FLAG_DISABLED': 16,
-        'STATUS_FLAG_DISABLING': 32,
-        'STATUS_FLAG_ENABLING': 64,
-        'STATUS_FLAG_ENABLED': 128,
-        'STATUS_FLAG_SEARCHING': 256,
-        'STATUS_FLAG_REGISTERED': 512,
-        'STATUS_FLAG_DISCONNECTING': 1024,
-        'STATUS_FLAG_CONNECTING': 2048,
-        'STATUS_FLAG_CONNECTED': 4096,
-        'FAILURE_REASON_NONE': 0,
-        'FAILURE_REASON_UNKNOWN': 1,
-        'FAILURE_REASON_SIM_MISSING': 2,
-        'FAILURE_REASON_SIM_ERROR': 3,
-        'CELLULAR_NETWORK_RADIO_TYPE_NONE': 0,
-        'CELLULAR_NETWORK_RADIO_TYPE_GSM': 1,
-        'CELLULAR_NETWORK_RADIO_TYPE_CDMA': 2,
-        'CELLULAR_NETWORK_RADIO_TYPE_WCDMA': 3,
-        'CELLULAR_NETWORK_RADIO_TYPE_LTE': 4,
+        'CELLULAR_STATUS_FLAG_UNKNOWN': 0,
+        'CELLULAR_STATUS_FLAG_FAILED': 1,
+        'CELLULAR_STATUS_FLAG_INITIALIZING': 2,
+        'CELLULAR_STATUS_FLAG_LOCKED': 3,
+        'CELLULAR_STATUS_FLAG_DISABLED': 4,
+        'CELLULAR_STATUS_FLAG_DISABLING': 5,
+        'CELLULAR_STATUS_FLAG_ENABLING': 6,
+        'CELLULAR_STATUS_FLAG_ENABLED': 7,
+        'CELLULAR_STATUS_FLAG_SEARCHING': 8,
+        'CELLULAR_STATUS_FLAG_REGISTERED': 9,
+        'CELLULAR_STATUS_FLAG_DISCONNECTING': 10,
+        'CELLULAR_STATUS_FLAG_CONNECTING': 11,
+        'CELLULAR_STATUS_FLAG_CONNECTED': 12,
+        'CELLULAR_NETWORK_FAILED_REASON_NONE': 0,
+        'CELLULAR_NETWORK_FAILED_REASON_UNKNOWN': 1,
+        'CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING': 2,
+        'CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR': 3,
     }
 
     @classmethod
@@ -70,139 +65,109 @@ class Metaclass_CellularStatus(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'STATUS_FLAG_UNKNOWN': cls.__constants['STATUS_FLAG_UNKNOWN'],
-            'STATUS_FLAG_FAILED': cls.__constants['STATUS_FLAG_FAILED'],
-            'STATUS_FLAG_INITIALIZING': cls.__constants['STATUS_FLAG_INITIALIZING'],
-            'STATUS_FLAG_LOCKED': cls.__constants['STATUS_FLAG_LOCKED'],
-            'STATUS_FLAG_DISABLED': cls.__constants['STATUS_FLAG_DISABLED'],
-            'STATUS_FLAG_DISABLING': cls.__constants['STATUS_FLAG_DISABLING'],
-            'STATUS_FLAG_ENABLING': cls.__constants['STATUS_FLAG_ENABLING'],
-            'STATUS_FLAG_ENABLED': cls.__constants['STATUS_FLAG_ENABLED'],
-            'STATUS_FLAG_SEARCHING': cls.__constants['STATUS_FLAG_SEARCHING'],
-            'STATUS_FLAG_REGISTERED': cls.__constants['STATUS_FLAG_REGISTERED'],
-            'STATUS_FLAG_DISCONNECTING': cls.__constants['STATUS_FLAG_DISCONNECTING'],
-            'STATUS_FLAG_CONNECTING': cls.__constants['STATUS_FLAG_CONNECTING'],
-            'STATUS_FLAG_CONNECTED': cls.__constants['STATUS_FLAG_CONNECTED'],
-            'FAILURE_REASON_NONE': cls.__constants['FAILURE_REASON_NONE'],
-            'FAILURE_REASON_UNKNOWN': cls.__constants['FAILURE_REASON_UNKNOWN'],
-            'FAILURE_REASON_SIM_MISSING': cls.__constants['FAILURE_REASON_SIM_MISSING'],
-            'FAILURE_REASON_SIM_ERROR': cls.__constants['FAILURE_REASON_SIM_ERROR'],
-            'CELLULAR_NETWORK_RADIO_TYPE_NONE': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_NONE'],
-            'CELLULAR_NETWORK_RADIO_TYPE_GSM': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_GSM'],
-            'CELLULAR_NETWORK_RADIO_TYPE_CDMA': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_CDMA'],
-            'CELLULAR_NETWORK_RADIO_TYPE_WCDMA': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_WCDMA'],
-            'CELLULAR_NETWORK_RADIO_TYPE_LTE': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_LTE'],
+            'CELLULAR_STATUS_FLAG_UNKNOWN': cls.__constants['CELLULAR_STATUS_FLAG_UNKNOWN'],
+            'CELLULAR_STATUS_FLAG_FAILED': cls.__constants['CELLULAR_STATUS_FLAG_FAILED'],
+            'CELLULAR_STATUS_FLAG_INITIALIZING': cls.__constants['CELLULAR_STATUS_FLAG_INITIALIZING'],
+            'CELLULAR_STATUS_FLAG_LOCKED': cls.__constants['CELLULAR_STATUS_FLAG_LOCKED'],
+            'CELLULAR_STATUS_FLAG_DISABLED': cls.__constants['CELLULAR_STATUS_FLAG_DISABLED'],
+            'CELLULAR_STATUS_FLAG_DISABLING': cls.__constants['CELLULAR_STATUS_FLAG_DISABLING'],
+            'CELLULAR_STATUS_FLAG_ENABLING': cls.__constants['CELLULAR_STATUS_FLAG_ENABLING'],
+            'CELLULAR_STATUS_FLAG_ENABLED': cls.__constants['CELLULAR_STATUS_FLAG_ENABLED'],
+            'CELLULAR_STATUS_FLAG_SEARCHING': cls.__constants['CELLULAR_STATUS_FLAG_SEARCHING'],
+            'CELLULAR_STATUS_FLAG_REGISTERED': cls.__constants['CELLULAR_STATUS_FLAG_REGISTERED'],
+            'CELLULAR_STATUS_FLAG_DISCONNECTING': cls.__constants['CELLULAR_STATUS_FLAG_DISCONNECTING'],
+            'CELLULAR_STATUS_FLAG_CONNECTING': cls.__constants['CELLULAR_STATUS_FLAG_CONNECTING'],
+            'CELLULAR_STATUS_FLAG_CONNECTED': cls.__constants['CELLULAR_STATUS_FLAG_CONNECTED'],
+            'CELLULAR_NETWORK_FAILED_REASON_NONE': cls.__constants['CELLULAR_NETWORK_FAILED_REASON_NONE'],
+            'CELLULAR_NETWORK_FAILED_REASON_UNKNOWN': cls.__constants['CELLULAR_NETWORK_FAILED_REASON_UNKNOWN'],
+            'CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING': cls.__constants['CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING'],
+            'CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR': cls.__constants['CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR'],
         }
 
     @property
-    def STATUS_FLAG_UNKNOWN(self):
-        """Message constant 'STATUS_FLAG_UNKNOWN'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_UNKNOWN']
+    def CELLULAR_STATUS_FLAG_UNKNOWN(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_UNKNOWN'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_UNKNOWN']
 
     @property
-    def STATUS_FLAG_FAILED(self):
-        """Message constant 'STATUS_FLAG_FAILED'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_FAILED']
+    def CELLULAR_STATUS_FLAG_FAILED(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_FAILED'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_FAILED']
 
     @property
-    def STATUS_FLAG_INITIALIZING(self):
-        """Message constant 'STATUS_FLAG_INITIALIZING'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_INITIALIZING']
+    def CELLULAR_STATUS_FLAG_INITIALIZING(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_INITIALIZING'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_INITIALIZING']
 
     @property
-    def STATUS_FLAG_LOCKED(self):
-        """Message constant 'STATUS_FLAG_LOCKED'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_LOCKED']
+    def CELLULAR_STATUS_FLAG_LOCKED(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_LOCKED'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_LOCKED']
 
     @property
-    def STATUS_FLAG_DISABLED(self):
-        """Message constant 'STATUS_FLAG_DISABLED'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_DISABLED']
+    def CELLULAR_STATUS_FLAG_DISABLED(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_DISABLED'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_DISABLED']
 
     @property
-    def STATUS_FLAG_DISABLING(self):
-        """Message constant 'STATUS_FLAG_DISABLING'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_DISABLING']
+    def CELLULAR_STATUS_FLAG_DISABLING(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_DISABLING'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_DISABLING']
 
     @property
-    def STATUS_FLAG_ENABLING(self):
-        """Message constant 'STATUS_FLAG_ENABLING'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_ENABLING']
+    def CELLULAR_STATUS_FLAG_ENABLING(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_ENABLING'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_ENABLING']
 
     @property
-    def STATUS_FLAG_ENABLED(self):
-        """Message constant 'STATUS_FLAG_ENABLED'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_ENABLED']
+    def CELLULAR_STATUS_FLAG_ENABLED(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_ENABLED'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_ENABLED']
 
     @property
-    def STATUS_FLAG_SEARCHING(self):
-        """Message constant 'STATUS_FLAG_SEARCHING'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_SEARCHING']
+    def CELLULAR_STATUS_FLAG_SEARCHING(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_SEARCHING'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_SEARCHING']
 
     @property
-    def STATUS_FLAG_REGISTERED(self):
-        """Message constant 'STATUS_FLAG_REGISTERED'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_REGISTERED']
+    def CELLULAR_STATUS_FLAG_REGISTERED(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_REGISTERED'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_REGISTERED']
 
     @property
-    def STATUS_FLAG_DISCONNECTING(self):
-        """Message constant 'STATUS_FLAG_DISCONNECTING'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_DISCONNECTING']
+    def CELLULAR_STATUS_FLAG_DISCONNECTING(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_DISCONNECTING'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_DISCONNECTING']
 
     @property
-    def STATUS_FLAG_CONNECTING(self):
-        """Message constant 'STATUS_FLAG_CONNECTING'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_CONNECTING']
+    def CELLULAR_STATUS_FLAG_CONNECTING(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_CONNECTING'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_CONNECTING']
 
     @property
-    def STATUS_FLAG_CONNECTED(self):
-        """Message constant 'STATUS_FLAG_CONNECTED'."""
-        return Metaclass_CellularStatus.__constants['STATUS_FLAG_CONNECTED']
+    def CELLULAR_STATUS_FLAG_CONNECTED(self):
+        """Message constant 'CELLULAR_STATUS_FLAG_CONNECTED'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_CONNECTED']
 
     @property
-    def FAILURE_REASON_NONE(self):
-        """Message constant 'FAILURE_REASON_NONE'."""
-        return Metaclass_CellularStatus.__constants['FAILURE_REASON_NONE']
+    def CELLULAR_NETWORK_FAILED_REASON_NONE(self):
+        """Message constant 'CELLULAR_NETWORK_FAILED_REASON_NONE'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_FAILED_REASON_NONE']
 
     @property
-    def FAILURE_REASON_UNKNOWN(self):
-        """Message constant 'FAILURE_REASON_UNKNOWN'."""
-        return Metaclass_CellularStatus.__constants['FAILURE_REASON_UNKNOWN']
+    def CELLULAR_NETWORK_FAILED_REASON_UNKNOWN(self):
+        """Message constant 'CELLULAR_NETWORK_FAILED_REASON_UNKNOWN'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_FAILED_REASON_UNKNOWN']
 
     @property
-    def FAILURE_REASON_SIM_MISSING(self):
-        """Message constant 'FAILURE_REASON_SIM_MISSING'."""
-        return Metaclass_CellularStatus.__constants['FAILURE_REASON_SIM_MISSING']
+    def CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING(self):
+        """Message constant 'CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING']
 
     @property
-    def FAILURE_REASON_SIM_ERROR(self):
-        """Message constant 'FAILURE_REASON_SIM_ERROR'."""
-        return Metaclass_CellularStatus.__constants['FAILURE_REASON_SIM_ERROR']
-
-    @property
-    def CELLULAR_NETWORK_RADIO_TYPE_NONE(self):
-        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_NONE'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_NONE']
-
-    @property
-    def CELLULAR_NETWORK_RADIO_TYPE_GSM(self):
-        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_GSM'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_GSM']
-
-    @property
-    def CELLULAR_NETWORK_RADIO_TYPE_CDMA(self):
-        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_CDMA'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_CDMA']
-
-    @property
-    def CELLULAR_NETWORK_RADIO_TYPE_WCDMA(self):
-        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_WCDMA'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_WCDMA']
-
-    @property
-    def CELLULAR_NETWORK_RADIO_TYPE_LTE(self):
-        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_LTE'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_LTE']
+    def CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR(self):
+        """Message constant 'CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR']
 
 
 class CellularStatus(metaclass=Metaclass_CellularStatus):
@@ -210,28 +175,23 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
     Message class 'CellularStatus'.
 
     Constants:
-      STATUS_FLAG_UNKNOWN
-      STATUS_FLAG_FAILED
-      STATUS_FLAG_INITIALIZING
-      STATUS_FLAG_LOCKED
-      STATUS_FLAG_DISABLED
-      STATUS_FLAG_DISABLING
-      STATUS_FLAG_ENABLING
-      STATUS_FLAG_ENABLED
-      STATUS_FLAG_SEARCHING
-      STATUS_FLAG_REGISTERED
-      STATUS_FLAG_DISCONNECTING
-      STATUS_FLAG_CONNECTING
-      STATUS_FLAG_CONNECTED
-      FAILURE_REASON_NONE
-      FAILURE_REASON_UNKNOWN
-      FAILURE_REASON_SIM_MISSING
-      FAILURE_REASON_SIM_ERROR
-      CELLULAR_NETWORK_RADIO_TYPE_NONE
-      CELLULAR_NETWORK_RADIO_TYPE_GSM
-      CELLULAR_NETWORK_RADIO_TYPE_CDMA
-      CELLULAR_NETWORK_RADIO_TYPE_WCDMA
-      CELLULAR_NETWORK_RADIO_TYPE_LTE
+      CELLULAR_STATUS_FLAG_UNKNOWN
+      CELLULAR_STATUS_FLAG_FAILED
+      CELLULAR_STATUS_FLAG_INITIALIZING
+      CELLULAR_STATUS_FLAG_LOCKED
+      CELLULAR_STATUS_FLAG_DISABLED
+      CELLULAR_STATUS_FLAG_DISABLING
+      CELLULAR_STATUS_FLAG_ENABLING
+      CELLULAR_STATUS_FLAG_ENABLED
+      CELLULAR_STATUS_FLAG_SEARCHING
+      CELLULAR_STATUS_FLAG_REGISTERED
+      CELLULAR_STATUS_FLAG_DISCONNECTING
+      CELLULAR_STATUS_FLAG_CONNECTING
+      CELLULAR_STATUS_FLAG_CONNECTED
+      CELLULAR_NETWORK_FAILED_REASON_NONE
+      CELLULAR_NETWORK_FAILED_REASON_UNKNOWN
+      CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING
+      CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR
     """
 
     __slots__ = [

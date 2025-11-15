@@ -25,13 +25,11 @@ px4_msgs__msg__ManualControlSwitches__init(px4_msgs__msg__ManualControlSwitches 
   // loiter_switch
   // offboard_switch
   // kill_switch
-  // termination_switch
   // gear_switch
   // transition_switch
   // photo_switch
   // video_switch
   // engage_main_motor_switch
-  // payload_power_switch
   // switch_changes
   return true;
 }
@@ -50,13 +48,11 @@ px4_msgs__msg__ManualControlSwitches__fini(px4_msgs__msg__ManualControlSwitches 
   // loiter_switch
   // offboard_switch
   // kill_switch
-  // termination_switch
   // gear_switch
   // transition_switch
   // photo_switch
   // video_switch
   // engage_main_motor_switch
-  // payload_power_switch
   // switch_changes
 }
 
@@ -98,10 +94,6 @@ px4_msgs__msg__ManualControlSwitches__are_equal(const px4_msgs__msg__ManualContr
   if (lhs->kill_switch != rhs->kill_switch) {
     return false;
   }
-  // termination_switch
-  if (lhs->termination_switch != rhs->termination_switch) {
-    return false;
-  }
   // gear_switch
   if (lhs->gear_switch != rhs->gear_switch) {
     return false;
@@ -120,10 +112,6 @@ px4_msgs__msg__ManualControlSwitches__are_equal(const px4_msgs__msg__ManualContr
   }
   // engage_main_motor_switch
   if (lhs->engage_main_motor_switch != rhs->engage_main_motor_switch) {
-    return false;
-  }
-  // payload_power_switch
-  if (lhs->payload_power_switch != rhs->payload_power_switch) {
     return false;
   }
   // switch_changes
@@ -157,8 +145,6 @@ px4_msgs__msg__ManualControlSwitches__copy(
   output->offboard_switch = input->offboard_switch;
   // kill_switch
   output->kill_switch = input->kill_switch;
-  // termination_switch
-  output->termination_switch = input->termination_switch;
   // gear_switch
   output->gear_switch = input->gear_switch;
   // transition_switch
@@ -169,8 +155,6 @@ px4_msgs__msg__ManualControlSwitches__copy(
   output->video_switch = input->video_switch;
   // engage_main_motor_switch
   output->engage_main_motor_switch = input->engage_main_motor_switch;
-  // payload_power_switch
-  output->payload_power_switch = input->payload_power_switch;
   // switch_changes
   output->switch_changes = input->switch_changes;
   return true;

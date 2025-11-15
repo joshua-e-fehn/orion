@@ -1,1 +1,0 @@
-/home/atlas.linux/Documents/Orion/orion_arm/src/px4_msgs/msg/GpioConfig.msg

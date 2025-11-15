@@ -19,7 +19,7 @@ extern "C"
 
 /// Constant 'SOURCE_AS_BETA_ONLY'.
 /**
-  * Wind estimate only based on synthetic sideslip fusion
+  * wind estimate only based on synthetic sideslip fusion
  */
 enum
 {
@@ -28,7 +28,7 @@ enum
 
 /// Constant 'SOURCE_AS_SENSOR_1'.
 /**
-  * Combined synthetic sideslip and airspeed fusion (data from first airspeed sensor)
+  * combined synthetic sideslip and airspeed fusion (data from first airspeed sensor)
  */
 enum
 {
@@ -37,7 +37,7 @@ enum
 
 /// Constant 'SOURCE_AS_SENSOR_2'.
 /**
-  * Combined synthetic sideslip and airspeed fusion (data from second airspeed sensor)
+  * combined synthetic sideslip and airspeed fusion (data from second airspeed sensor)
  */
 enum
 {
@@ -46,7 +46,7 @@ enum
 
 /// Constant 'SOURCE_AS_SENSOR_3'.
 /**
-  * Combined synthetic sideslip and airspeed fusion (data from third airspeed sensor)
+  * combined synthetic sideslip and airspeed fusion (data from third airspeed sensor)
  */
 enum
 {
@@ -54,28 +54,19 @@ enum
 };
 
 /// Struct defined in msg/AirspeedWind in the package px4_msgs.
-/**
-  * Wind estimate (from airspeed_selector)
-  *
-  * Contains wind estimation and airspeed innovation information estimated by the WindEstimator
-  * in the airspeed selector module.
-  *
-  * This message is published by the airspeed selector for debugging purposes, and is not
-  * subscribed to by any other modules.
- */
 typedef struct px4_msgs__msg__AirspeedWind
 {
-  /// Time since system start
+  /// time since system start (microseconds)
   uint64_t timestamp;
-  /// Timestamp of the raw data
+  /// the timestamp of the raw data (microseconds)
   uint64_t timestamp_sample;
-  /// Wind component in north / X direction
+  /// Wind component in north / X direction (m/sec)
   float windspeed_north;
-  /// Wind component in east / Y direction
+  /// Wind component in east / Y direction (m/sec)
   float windspeed_east;
-  /// [(m/s)^2] [@invalid 0 if not estimated] Wind estimate error variance in north / X direction
+  /// Wind estimate error variance in north / X direction (m/sec)**2 - set to zero (no uncertainty) if not estimated
   float variance_north;
-  /// [(m/s)^2] [@invalid 0 if not estimated] Wind estimate error variance in east / Y direction
+  /// Wind estimate error variance in east / Y direction (m/sec)**2 - set to zero (no uncertainty) if not estimated
   float variance_east;
   /// True airspeed innovation
   float tas_innov;

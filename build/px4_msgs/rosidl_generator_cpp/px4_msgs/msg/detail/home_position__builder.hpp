@@ -21,32 +21,16 @@ namespace msg
 namespace builder
 {
 
-class Init_HomePosition_update_count
-{
-public:
-  explicit Init_HomePosition_update_count(::px4_msgs::msg::HomePosition & msg)
-  : msg_(msg)
-  {}
-  ::px4_msgs::msg::HomePosition update_count(::px4_msgs::msg::HomePosition::_update_count_type arg)
-  {
-    msg_.update_count = std::move(arg);
-    return std::move(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::HomePosition msg_;
-};
-
 class Init_HomePosition_manual_home
 {
 public:
   explicit Init_HomePosition_manual_home(::px4_msgs::msg::HomePosition & msg)
   : msg_(msg)
   {}
-  Init_HomePosition_update_count manual_home(::px4_msgs::msg::HomePosition::_manual_home_type arg)
+  ::px4_msgs::msg::HomePosition manual_home(::px4_msgs::msg::HomePosition::_manual_home_type arg)
   {
     msg_.manual_home = std::move(arg);
-    return Init_HomePosition_update_count(msg_);
+    return std::move(msg_);
   }
 
 private:
@@ -117,48 +101,16 @@ private:
   ::px4_msgs::msg::HomePosition msg_;
 };
 
-class Init_HomePosition_pitch
-{
-public:
-  explicit Init_HomePosition_pitch(::px4_msgs::msg::HomePosition & msg)
-  : msg_(msg)
-  {}
-  Init_HomePosition_yaw pitch(::px4_msgs::msg::HomePosition::_pitch_type arg)
-  {
-    msg_.pitch = std::move(arg);
-    return Init_HomePosition_yaw(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::HomePosition msg_;
-};
-
-class Init_HomePosition_roll
-{
-public:
-  explicit Init_HomePosition_roll(::px4_msgs::msg::HomePosition & msg)
-  : msg_(msg)
-  {}
-  Init_HomePosition_pitch roll(::px4_msgs::msg::HomePosition::_roll_type arg)
-  {
-    msg_.roll = std::move(arg);
-    return Init_HomePosition_pitch(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::HomePosition msg_;
-};
-
 class Init_HomePosition_z
 {
 public:
   explicit Init_HomePosition_z(::px4_msgs::msg::HomePosition & msg)
   : msg_(msg)
   {}
-  Init_HomePosition_roll z(::px4_msgs::msg::HomePosition::_z_type arg)
+  Init_HomePosition_yaw z(::px4_msgs::msg::HomePosition::_z_type arg)
   {
     msg_.z = std::move(arg);
-    return Init_HomePosition_roll(msg_);
+    return Init_HomePosition_yaw(msg_);
   }
 
 private:

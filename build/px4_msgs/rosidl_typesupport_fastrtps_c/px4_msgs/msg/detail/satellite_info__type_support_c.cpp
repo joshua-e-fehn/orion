@@ -61,42 +61,42 @@ static bool _SatelliteInfo__cdr_serialize(
 
   // Field name: svid
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->svid;
     cdr.serializeArray(array_ptr, size);
   }
 
   // Field name: used
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->used;
     cdr.serializeArray(array_ptr, size);
   }
 
   // Field name: elevation
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->elevation;
     cdr.serializeArray(array_ptr, size);
   }
 
   // Field name: azimuth
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->azimuth;
     cdr.serializeArray(array_ptr, size);
   }
 
   // Field name: snr
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->snr;
     cdr.serializeArray(array_ptr, size);
   }
 
   // Field name: prn
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->prn;
     cdr.serializeArray(array_ptr, size);
   }
@@ -125,42 +125,42 @@ static bool _SatelliteInfo__cdr_deserialize(
 
   // Field name: svid
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->svid;
     cdr.deserializeArray(array_ptr, size);
   }
 
   // Field name: used
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->used;
     cdr.deserializeArray(array_ptr, size);
   }
 
   // Field name: elevation
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->elevation;
     cdr.deserializeArray(array_ptr, size);
   }
 
   // Field name: azimuth
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->azimuth;
     cdr.deserializeArray(array_ptr, size);
   }
 
   // Field name: snr
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->snr;
     cdr.deserializeArray(array_ptr, size);
   }
 
   // Field name: prn
   {
-    size_t size = 40;
+    size_t size = 20;
     auto array_ptr = ros_message->prn;
     cdr.deserializeArray(array_ptr, size);
   }
@@ -196,7 +196,7 @@ size_t get_serialized_size_px4_msgs__msg__SatelliteInfo(
   }
   // field.name svid
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
     auto array_ptr = ros_message->svid;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
@@ -205,7 +205,7 @@ size_t get_serialized_size_px4_msgs__msg__SatelliteInfo(
   }
   // field.name used
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
     auto array_ptr = ros_message->used;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
@@ -214,7 +214,7 @@ size_t get_serialized_size_px4_msgs__msg__SatelliteInfo(
   }
   // field.name elevation
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
     auto array_ptr = ros_message->elevation;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
@@ -223,7 +223,7 @@ size_t get_serialized_size_px4_msgs__msg__SatelliteInfo(
   }
   // field.name azimuth
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
     auto array_ptr = ros_message->azimuth;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
@@ -232,7 +232,7 @@ size_t get_serialized_size_px4_msgs__msg__SatelliteInfo(
   }
   // field.name snr
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
     auto array_ptr = ros_message->snr;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
@@ -241,7 +241,7 @@ size_t get_serialized_size_px4_msgs__msg__SatelliteInfo(
   }
   // field.name prn
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
     auto array_ptr = ros_message->prn;
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
@@ -294,42 +294,42 @@ size_t max_serialized_size_px4_msgs__msg__SatelliteInfo(
   }
   // member: svid
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: used
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: elevation
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: azimuth
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: snr
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: prn
   {
-    size_t array_size = 40;
+    size_t array_size = 20;
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);

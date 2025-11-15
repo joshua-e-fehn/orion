@@ -34,6 +34,12 @@ cdr_serialize(
 {
   // Member: timestamp
   cdr << ros_message.timestamp;
+  // Member: roll_body
+  cdr << ros_message.roll_body;
+  // Member: pitch_body
+  cdr << ros_message.pitch_body;
+  // Member: yaw_body
+  cdr << ros_message.yaw_body;
   // Member: yaw_sp_move_rate
   cdr << ros_message.yaw_sp_move_rate;
   // Member: q_d
@@ -44,6 +50,10 @@ cdr_serialize(
   {
     cdr << ros_message.thrust_body;
   }
+  // Member: reset_integral
+  cdr << (ros_message.reset_integral ? true : false);
+  // Member: fw_control_yaw_wheel
+  cdr << (ros_message.fw_control_yaw_wheel ? true : false);
   return true;
 }
 
@@ -56,6 +66,15 @@ cdr_deserialize(
   // Member: timestamp
   cdr >> ros_message.timestamp;
 
+  // Member: roll_body
+  cdr >> ros_message.roll_body;
+
+  // Member: pitch_body
+  cdr >> ros_message.pitch_body;
+
+  // Member: yaw_body
+  cdr >> ros_message.yaw_body;
+
   // Member: yaw_sp_move_rate
   cdr >> ros_message.yaw_sp_move_rate;
 
@@ -67,6 +86,20 @@ cdr_deserialize(
   // Member: thrust_body
   {
     cdr >> ros_message.thrust_body;
+  }
+
+  // Member: reset_integral
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.reset_integral = tmp ? true : false;
+  }
+
+  // Member: fw_control_yaw_wheel
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.fw_control_yaw_wheel = tmp ? true : false;
   }
 
   return true;
@@ -91,6 +124,24 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // Member: roll_body
+  {
+    size_t item_size = sizeof(ros_message.roll_body);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: pitch_body
+  {
+    size_t item_size = sizeof(ros_message.pitch_body);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: yaw_body
+  {
+    size_t item_size = sizeof(ros_message.yaw_body);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // Member: yaw_sp_move_rate
   {
     size_t item_size = sizeof(ros_message.yaw_sp_move_rate);
@@ -109,6 +160,18 @@ get_serialized_size(
     size_t array_size = 3;
     size_t item_size = sizeof(ros_message.thrust_body[0]);
     current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: reset_integral
+  {
+    size_t item_size = sizeof(ros_message.reset_integral);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: fw_control_yaw_wheel
+  {
+    size_t item_size = sizeof(ros_message.fw_control_yaw_wheel);
+    current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
@@ -144,6 +207,33 @@ max_serialized_size_VehicleAttitudeSetpoint(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
+  // Member: roll_body
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
+  // Member: pitch_body
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
+  // Member: yaw_body
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
   // Member: yaw_sp_move_rate
   {
     size_t array_size = 1;
@@ -171,6 +261,22 @@ max_serialized_size_VehicleAttitudeSetpoint(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
+  // Member: reset_integral
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: fw_control_yaw_wheel
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -179,7 +285,7 @@ max_serialized_size_VehicleAttitudeSetpoint(
     using DataType = px4_msgs::msg::VehicleAttitudeSetpoint;
     is_plain =
       (
-      offsetof(DataType, thrust_body) +
+      offsetof(DataType, fw_control_yaw_wheel) +
       last_member_size
       ) == ret_val;
   }

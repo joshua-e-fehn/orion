@@ -74,13 +74,6 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: mode_req_global_position_relaxed
-  {
-    out << "mode_req_global_position_relaxed: ";
-    rosidl_generator_traits::value_to_yaml(msg.mode_req_global_position_relaxed, out);
-    out << ", ";
-  }
-
   // member: mode_req_mission
   {
     out << "mode_req_mission: ";
@@ -179,13 +172,6 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: global_position_invalid_relaxed
-  {
-    out << "global_position_invalid_relaxed: ";
-    rosidl_generator_traits::value_to_yaml(msg.global_position_invalid_relaxed, out);
-    out << ", ";
-  }
-
   // member: auto_mission_missing
   {
     out << "auto_mission_missing: ";
@@ -242,10 +228,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: geofence_breached
+  // member: primary_geofence_breached
   {
-    out << "geofence_breached: ";
-    rosidl_generator_traits::value_to_yaml(msg.geofence_breached, out);
+    out << "primary_geofence_breached: ";
+    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_breached, out);
     out << ", ";
   }
 
@@ -277,17 +263,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: position_accuracy_low
+  // member: local_position_accuracy_low
   {
-    out << "position_accuracy_low: ";
-    rosidl_generator_traits::value_to_yaml(msg.position_accuracy_low, out);
-    out << ", ";
-  }
-
-  // member: navigator_failure
-  {
-    out << "navigator_failure: ";
-    rosidl_generator_traits::value_to_yaml(msg.navigator_failure, out);
+    out << "local_position_accuracy_low: ";
+    rosidl_generator_traits::value_to_yaml(msg.local_position_accuracy_low, out);
     out << ", ";
   }
 
@@ -394,16 +373,6 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: mode_req_global_position_relaxed
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "mode_req_global_position_relaxed: ";
-    rosidl_generator_traits::value_to_yaml(msg.mode_req_global_position_relaxed, out);
-    out << "\n";
-  }
-
   // member: mode_req_mission
   {
     if (indentation > 0) {
@@ -544,16 +513,6 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: global_position_invalid_relaxed
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "global_position_invalid_relaxed: ";
-    rosidl_generator_traits::value_to_yaml(msg.global_position_invalid_relaxed, out);
-    out << "\n";
-  }
-
   // member: auto_mission_missing
   {
     if (indentation > 0) {
@@ -634,13 +593,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: geofence_breached
+  // member: primary_geofence_breached
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "geofence_breached: ";
-    rosidl_generator_traits::value_to_yaml(msg.geofence_breached, out);
+    out << "primary_geofence_breached: ";
+    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_breached, out);
     out << "\n";
   }
 
@@ -684,23 +643,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: position_accuracy_low
+  // member: local_position_accuracy_low
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "position_accuracy_low: ";
-    rosidl_generator_traits::value_to_yaml(msg.position_accuracy_low, out);
-    out << "\n";
-  }
-
-  // member: navigator_failure
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "navigator_failure: ";
-    rosidl_generator_traits::value_to_yaml(msg.navigator_failure, out);
+    out << "local_position_accuracy_low: ";
+    rosidl_generator_traits::value_to_yaml(msg.local_position_accuracy_low, out);
     out << "\n";
   }
 

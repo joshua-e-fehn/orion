@@ -24,7 +24,6 @@ px4_msgs__msg__FailsafeFlags__init(px4_msgs__msg__FailsafeFlags * msg)
   // mode_req_local_position
   // mode_req_local_position_relaxed
   // mode_req_global_position
-  // mode_req_global_position_relaxed
   // mode_req_mission
   // mode_req_offboard_signal
   // mode_req_home_position
@@ -39,7 +38,6 @@ px4_msgs__msg__FailsafeFlags__init(px4_msgs__msg__FailsafeFlags * msg)
   // local_position_invalid_relaxed
   // local_velocity_invalid
   // global_position_invalid
-  // global_position_invalid_relaxed
   // auto_mission_missing
   // offboard_control_signal_lost
   // home_position_invalid
@@ -48,13 +46,12 @@ px4_msgs__msg__FailsafeFlags__init(px4_msgs__msg__FailsafeFlags * msg)
   // battery_warning
   // battery_low_remaining_time
   // battery_unhealthy
-  // geofence_breached
+  // primary_geofence_breached
   // mission_failure
   // vtol_fixed_wing_system_failure
   // wind_limit_exceeded
   // flight_time_limit_exceeded
-  // position_accuracy_low
-  // navigator_failure
+  // local_position_accuracy_low
   // fd_critical_failure
   // fd_esc_arming_failure
   // fd_imbalanced_prop
@@ -75,7 +72,6 @@ px4_msgs__msg__FailsafeFlags__fini(px4_msgs__msg__FailsafeFlags * msg)
   // mode_req_local_position
   // mode_req_local_position_relaxed
   // mode_req_global_position
-  // mode_req_global_position_relaxed
   // mode_req_mission
   // mode_req_offboard_signal
   // mode_req_home_position
@@ -90,7 +86,6 @@ px4_msgs__msg__FailsafeFlags__fini(px4_msgs__msg__FailsafeFlags * msg)
   // local_position_invalid_relaxed
   // local_velocity_invalid
   // global_position_invalid
-  // global_position_invalid_relaxed
   // auto_mission_missing
   // offboard_control_signal_lost
   // home_position_invalid
@@ -99,13 +94,12 @@ px4_msgs__msg__FailsafeFlags__fini(px4_msgs__msg__FailsafeFlags * msg)
   // battery_warning
   // battery_low_remaining_time
   // battery_unhealthy
-  // geofence_breached
+  // primary_geofence_breached
   // mission_failure
   // vtol_fixed_wing_system_failure
   // wind_limit_exceeded
   // flight_time_limit_exceeded
-  // position_accuracy_low
-  // navigator_failure
+  // local_position_accuracy_low
   // fd_critical_failure
   // fd_esc_arming_failure
   // fd_imbalanced_prop
@@ -144,10 +138,6 @@ px4_msgs__msg__FailsafeFlags__are_equal(const px4_msgs__msg__FailsafeFlags * lhs
   }
   // mode_req_global_position
   if (lhs->mode_req_global_position != rhs->mode_req_global_position) {
-    return false;
-  }
-  // mode_req_global_position_relaxed
-  if (lhs->mode_req_global_position_relaxed != rhs->mode_req_global_position_relaxed) {
     return false;
   }
   // mode_req_mission
@@ -206,10 +196,6 @@ px4_msgs__msg__FailsafeFlags__are_equal(const px4_msgs__msg__FailsafeFlags * lhs
   if (lhs->global_position_invalid != rhs->global_position_invalid) {
     return false;
   }
-  // global_position_invalid_relaxed
-  if (lhs->global_position_invalid_relaxed != rhs->global_position_invalid_relaxed) {
-    return false;
-  }
   // auto_mission_missing
   if (lhs->auto_mission_missing != rhs->auto_mission_missing) {
     return false;
@@ -242,8 +228,8 @@ px4_msgs__msg__FailsafeFlags__are_equal(const px4_msgs__msg__FailsafeFlags * lhs
   if (lhs->battery_unhealthy != rhs->battery_unhealthy) {
     return false;
   }
-  // geofence_breached
-  if (lhs->geofence_breached != rhs->geofence_breached) {
+  // primary_geofence_breached
+  if (lhs->primary_geofence_breached != rhs->primary_geofence_breached) {
     return false;
   }
   // mission_failure
@@ -262,12 +248,8 @@ px4_msgs__msg__FailsafeFlags__are_equal(const px4_msgs__msg__FailsafeFlags * lhs
   if (lhs->flight_time_limit_exceeded != rhs->flight_time_limit_exceeded) {
     return false;
   }
-  // position_accuracy_low
-  if (lhs->position_accuracy_low != rhs->position_accuracy_low) {
-    return false;
-  }
-  // navigator_failure
-  if (lhs->navigator_failure != rhs->navigator_failure) {
+  // local_position_accuracy_low
+  if (lhs->local_position_accuracy_low != rhs->local_position_accuracy_low) {
     return false;
   }
   // fd_critical_failure
@@ -311,8 +293,6 @@ px4_msgs__msg__FailsafeFlags__copy(
   output->mode_req_local_position_relaxed = input->mode_req_local_position_relaxed;
   // mode_req_global_position
   output->mode_req_global_position = input->mode_req_global_position;
-  // mode_req_global_position_relaxed
-  output->mode_req_global_position_relaxed = input->mode_req_global_position_relaxed;
   // mode_req_mission
   output->mode_req_mission = input->mode_req_mission;
   // mode_req_offboard_signal
@@ -341,8 +321,6 @@ px4_msgs__msg__FailsafeFlags__copy(
   output->local_velocity_invalid = input->local_velocity_invalid;
   // global_position_invalid
   output->global_position_invalid = input->global_position_invalid;
-  // global_position_invalid_relaxed
-  output->global_position_invalid_relaxed = input->global_position_invalid_relaxed;
   // auto_mission_missing
   output->auto_mission_missing = input->auto_mission_missing;
   // offboard_control_signal_lost
@@ -359,8 +337,8 @@ px4_msgs__msg__FailsafeFlags__copy(
   output->battery_low_remaining_time = input->battery_low_remaining_time;
   // battery_unhealthy
   output->battery_unhealthy = input->battery_unhealthy;
-  // geofence_breached
-  output->geofence_breached = input->geofence_breached;
+  // primary_geofence_breached
+  output->primary_geofence_breached = input->primary_geofence_breached;
   // mission_failure
   output->mission_failure = input->mission_failure;
   // vtol_fixed_wing_system_failure
@@ -369,10 +347,8 @@ px4_msgs__msg__FailsafeFlags__copy(
   output->wind_limit_exceeded = input->wind_limit_exceeded;
   // flight_time_limit_exceeded
   output->flight_time_limit_exceeded = input->flight_time_limit_exceeded;
-  // position_accuracy_low
-  output->position_accuracy_low = input->position_accuracy_low;
-  // navigator_failure
-  output->navigator_failure = input->navigator_failure;
+  // local_position_accuracy_low
+  output->local_position_accuracy_low = input->local_position_accuracy_low;
   // fd_critical_failure
   output->fd_critical_failure = input->fd_critical_failure;
   // fd_esc_arming_failure

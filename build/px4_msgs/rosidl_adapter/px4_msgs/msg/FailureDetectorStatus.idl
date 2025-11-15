@@ -35,10 +35,6 @@ module px4_msgs {
       @verbatim (language="comment", text=
         "Bit-mask with motor indices, indicating critical motor failures")
       uint16 motor_failure_mask;
-
-      @verbatim (language="comment", text=
-        "Bitmaks of motors stopped by failure injection")
-      uint16 motor_stop_mask;
     };
   };
 };

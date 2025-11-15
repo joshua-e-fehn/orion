@@ -113,15 +113,6 @@ bool px4_msgs__msg__failsafe_flags__convert_from_py(PyObject * _pymsg, void * _r
     ros_message->mode_req_global_position = PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
-  {  // mode_req_global_position_relaxed
-    PyObject * field = PyObject_GetAttrString(_pymsg, "mode_req_global_position_relaxed");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->mode_req_global_position_relaxed = PyLong_AsUnsignedLong(field);
-    Py_DECREF(field);
-  }
   {  // mode_req_mission
     PyObject * field = PyObject_GetAttrString(_pymsg, "mode_req_mission");
     if (!field) {
@@ -248,15 +239,6 @@ bool px4_msgs__msg__failsafe_flags__convert_from_py(PyObject * _pymsg, void * _r
     ros_message->global_position_invalid = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // global_position_invalid_relaxed
-    PyObject * field = PyObject_GetAttrString(_pymsg, "global_position_invalid_relaxed");
-    if (!field) {
-      return false;
-    }
-    assert(PyBool_Check(field));
-    ros_message->global_position_invalid_relaxed = (Py_True == field);
-    Py_DECREF(field);
-  }
   {  // auto_mission_missing
     PyObject * field = PyObject_GetAttrString(_pymsg, "auto_mission_missing");
     if (!field) {
@@ -329,13 +311,13 @@ bool px4_msgs__msg__failsafe_flags__convert_from_py(PyObject * _pymsg, void * _r
     ros_message->battery_unhealthy = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // geofence_breached
-    PyObject * field = PyObject_GetAttrString(_pymsg, "geofence_breached");
+  {  // primary_geofence_breached
+    PyObject * field = PyObject_GetAttrString(_pymsg, "primary_geofence_breached");
     if (!field) {
       return false;
     }
     assert(PyBool_Check(field));
-    ros_message->geofence_breached = (Py_True == field);
+    ros_message->primary_geofence_breached = (Py_True == field);
     Py_DECREF(field);
   }
   {  // mission_failure
@@ -374,22 +356,13 @@ bool px4_msgs__msg__failsafe_flags__convert_from_py(PyObject * _pymsg, void * _r
     ros_message->flight_time_limit_exceeded = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // position_accuracy_low
-    PyObject * field = PyObject_GetAttrString(_pymsg, "position_accuracy_low");
+  {  // local_position_accuracy_low
+    PyObject * field = PyObject_GetAttrString(_pymsg, "local_position_accuracy_low");
     if (!field) {
       return false;
     }
     assert(PyBool_Check(field));
-    ros_message->position_accuracy_low = (Py_True == field);
-    Py_DECREF(field);
-  }
-  {  // navigator_failure
-    PyObject * field = PyObject_GetAttrString(_pymsg, "navigator_failure");
-    if (!field) {
-      return false;
-    }
-    assert(PyBool_Check(field));
-    ros_message->navigator_failure = (Py_True == field);
+    ros_message->local_position_accuracy_low = (Py_True == field);
     Py_DECREF(field);
   }
   {  // fd_critical_failure
@@ -521,17 +494,6 @@ PyObject * px4_msgs__msg__failsafe_flags__convert_to_py(void * raw_ros_message)
     field = PyLong_FromUnsignedLong(ros_message->mode_req_global_position);
     {
       int rc = PyObject_SetAttrString(_pymessage, "mode_req_global_position", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
-  {  // mode_req_global_position_relaxed
-    PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->mode_req_global_position_relaxed);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "mode_req_global_position_relaxed", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
@@ -692,17 +654,6 @@ PyObject * px4_msgs__msg__failsafe_flags__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // global_position_invalid_relaxed
-    PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->global_position_invalid_relaxed ? 1 : 0);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "global_position_invalid_relaxed", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
   {  // auto_mission_missing
     PyObject * field = NULL;
     field = PyBool_FromLong(ros_message->auto_mission_missing ? 1 : 0);
@@ -791,11 +742,11 @@ PyObject * px4_msgs__msg__failsafe_flags__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // geofence_breached
+  {  // primary_geofence_breached
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->geofence_breached ? 1 : 0);
+    field = PyBool_FromLong(ros_message->primary_geofence_breached ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "geofence_breached", field);
+      int rc = PyObject_SetAttrString(_pymessage, "primary_geofence_breached", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
@@ -846,22 +797,11 @@ PyObject * px4_msgs__msg__failsafe_flags__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // position_accuracy_low
+  {  // local_position_accuracy_low
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->position_accuracy_low ? 1 : 0);
+    field = PyBool_FromLong(ros_message->local_position_accuracy_low ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "position_accuracy_low", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
-  {  // navigator_failure
-    PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->navigator_failure ? 1 : 0);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "navigator_failure", field);
+      int rc = PyObject_SetAttrString(_pymessage, "local_position_accuracy_low", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

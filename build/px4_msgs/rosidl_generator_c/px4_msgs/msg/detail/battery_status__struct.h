@@ -18,269 +18,289 @@ extern "C"
 
 // Constants defined in the message
 
-/// Constant 'MESSAGE_VERSION'.
+/// Constant 'BATTERY_SOURCE_POWER_MODULE'.
 enum
 {
-  px4_msgs__msg__BatteryStatus__MESSAGE_VERSION = 1ul
+  px4_msgs__msg__BatteryStatus__BATTERY_SOURCE_POWER_MODULE = 0
 };
 
-/// Constant 'MAX_INSTANCES'.
+/// Constant 'BATTERY_SOURCE_EXTERNAL'.
 enum
 {
-  px4_msgs__msg__BatteryStatus__MAX_INSTANCES = 3
+  px4_msgs__msg__BatteryStatus__BATTERY_SOURCE_EXTERNAL = 1
 };
 
-/// Constant 'SOURCE_POWER_MODULE'.
+/// Constant 'BATTERY_SOURCE_ESCS'.
+enum
+{
+  px4_msgs__msg__BatteryStatus__BATTERY_SOURCE_ESCS = 2
+};
+
+/// Constant 'BATTERY_WARNING_NONE'.
 /**
-  * Power module
+  * no battery low voltage warning active
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__SOURCE_POWER_MODULE = 0
+  px4_msgs__msg__BatteryStatus__BATTERY_WARNING_NONE = 0
 };
 
-/// Constant 'SOURCE_EXTERNAL'.
+/// Constant 'BATTERY_WARNING_LOW'.
 /**
-  * External
+  * warning of low voltage
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__SOURCE_EXTERNAL = 1
+  px4_msgs__msg__BatteryStatus__BATTERY_WARNING_LOW = 1
 };
 
-/// Constant 'SOURCE_ESCS'.
+/// Constant 'BATTERY_WARNING_CRITICAL'.
 /**
-  * ESCs
+  * critical voltage, return / abort immediately
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__SOURCE_ESCS = 2
+  px4_msgs__msg__BatteryStatus__BATTERY_WARNING_CRITICAL = 2
 };
 
-/// Constant 'WARNING_NONE'.
+/// Constant 'BATTERY_WARNING_EMERGENCY'.
 /**
-  * No battery low voltage warning active
+  * immediate landing required
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__WARNING_NONE = 0
+  px4_msgs__msg__BatteryStatus__BATTERY_WARNING_EMERGENCY = 3
 };
 
-/// Constant 'WARNING_LOW'.
+/// Constant 'BATTERY_WARNING_FAILED'.
 /**
-  * Low voltage warning
+  * the battery has failed completely
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__WARNING_LOW = 1
+  px4_msgs__msg__BatteryStatus__BATTERY_WARNING_FAILED = 4
 };
 
-/// Constant 'WARNING_CRITICAL'.
+/// Constant 'BATTERY_STATE_UNHEALTHY'.
 /**
-  * Critical voltage, return / abort immediately
+  * Battery is diagnosed to be defective or an error occurred, usage is discouraged / prohibited. Possible causes (faults) are listed in faults field.
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__WARNING_CRITICAL = 2
+  px4_msgs__msg__BatteryStatus__BATTERY_STATE_UNHEALTHY = 6
 };
 
-/// Constant 'WARNING_EMERGENCY'.
-/**
-  * Immediate landing required
- */
-enum
-{
-  px4_msgs__msg__BatteryStatus__WARNING_EMERGENCY = 3
-};
-
-/// Constant 'WARNING_FAILED'.
-/**
-  * Battery has failed completely
- */
-enum
-{
-  px4_msgs__msg__BatteryStatus__WARNING_FAILED = 4
-};
-
-/// Constant 'STATE_UNHEALTHY'.
-/**
-  * Battery is diagnosed to be defective or an error occurred, usage is discouraged / prohibited. Possible causes (faults) are listed in faults field
- */
-enum
-{
-  px4_msgs__msg__BatteryStatus__STATE_UNHEALTHY = 6
-};
-
-/// Constant 'STATE_CHARGING'.
+/// Constant 'BATTERY_STATE_CHARGING'.
 /**
   * Battery is charging
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__STATE_CHARGING = 7
+  px4_msgs__msg__BatteryStatus__BATTERY_STATE_CHARGING = 7
 };
 
-/// Constant 'FAULT_DEEP_DISCHARGE'.
+/// Constant 'BATTERY_FAULT_DEEP_DISCHARGE'.
 /**
   * Battery has deep discharged
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_DEEP_DISCHARGE = 0
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_DEEP_DISCHARGE = 0
 };
 
-/// Constant 'FAULT_SPIKES'.
+/// Constant 'BATTERY_FAULT_SPIKES'.
 /**
   * Voltage spikes
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_SPIKES = 1
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_SPIKES = 1
 };
 
-/// Constant 'FAULT_CELL_FAIL'.
+/// Constant 'BATTERY_FAULT_CELL_FAIL'.
 /**
   * One or more cells have failed
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_CELL_FAIL = 2
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_CELL_FAIL = 2
 };
 
-/// Constant 'FAULT_OVER_CURRENT'.
+/// Constant 'BATTERY_FAULT_OVER_CURRENT'.
 /**
   * Over-current
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_OVER_CURRENT = 3
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_OVER_CURRENT = 3
 };
 
-/// Constant 'FAULT_OVER_TEMPERATURE'.
+/// Constant 'BATTERY_FAULT_OVER_TEMPERATURE'.
 /**
   * Over-temperature
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_OVER_TEMPERATURE = 4
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_OVER_TEMPERATURE = 4
 };
 
-/// Constant 'FAULT_UNDER_TEMPERATURE'.
+/// Constant 'BATTERY_FAULT_UNDER_TEMPERATURE'.
 /**
   * Under-temperature fault
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_UNDER_TEMPERATURE = 5
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_UNDER_TEMPERATURE = 5
 };
 
-/// Constant 'FAULT_INCOMPATIBLE_VOLTAGE'.
+/// Constant 'BATTERY_FAULT_INCOMPATIBLE_VOLTAGE'.
 /**
-  * Vehicle voltage is not compatible with this battery (batteries on same power rail should have similar voltage)
+  * Vehicle voltage is not compatible with battery one
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_INCOMPATIBLE_VOLTAGE = 6
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_INCOMPATIBLE_VOLTAGE = 6
 };
 
-/// Constant 'FAULT_INCOMPATIBLE_FIRMWARE'.
+/// Constant 'BATTERY_FAULT_INCOMPATIBLE_FIRMWARE'.
 /**
   * Battery firmware is not compatible with current autopilot firmware
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_INCOMPATIBLE_FIRMWARE = 7
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_INCOMPATIBLE_FIRMWARE = 7
 };
 
-/// Constant 'FAULT_INCOMPATIBLE_MODEL'.
+/// Constant 'BATTERY_FAULT_INCOMPATIBLE_MODEL'.
 /**
   * Battery model is not supported by the system
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_INCOMPATIBLE_MODEL = 8
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_INCOMPATIBLE_MODEL = 8
 };
 
-/// Constant 'FAULT_HARDWARE_FAILURE'.
+/// Constant 'BATTERY_FAULT_HARDWARE_FAILURE'.
 /**
-  * Hardware problem
+  * hardware problem
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_HARDWARE_FAILURE = 9
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_HARDWARE_FAILURE = 9
 };
 
-/// Constant 'FAULT_FAILED_TO_ARM'.
+/// Constant 'BATTERY_WARNING_OVER_TEMPERATURE'.
 /**
-  * Battery had a problem while arming
+  * Over-temperature
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_FAILED_TO_ARM = 10
+  px4_msgs__msg__BatteryStatus__BATTERY_WARNING_OVER_TEMPERATURE = 10
 };
 
-/// Constant 'FAULT_COUNT'.
+/// Constant 'BATTERY_FAULT_COUNT'.
 /**
-  * Counter. Keep this as last element
+  * Counter - keep it as last element!
  */
 enum
 {
-  px4_msgs__msg__BatteryStatus__FAULT_COUNT = 11
+  px4_msgs__msg__BatteryStatus__BATTERY_FAULT_COUNT = 11
+};
+
+/// Constant 'BATTERY_MODE_UNKNOWN'.
+/**
+  * Battery does not support a mode, or if it does, is operational
+ */
+enum
+{
+  px4_msgs__msg__BatteryStatus__BATTERY_MODE_UNKNOWN = 0
+};
+
+/// Constant 'BATTERY_MODE_AUTO_DISCHARGING'.
+/**
+  * Battery is auto discharging (towards storage level)
+ */
+enum
+{
+  px4_msgs__msg__BatteryStatus__BATTERY_MODE_AUTO_DISCHARGING = 1
+};
+
+/// Constant 'BATTERY_MODE_HOT_SWAP'.
+/**
+  * Battery in hot-swap mode
+ */
+enum
+{
+  px4_msgs__msg__BatteryStatus__BATTERY_MODE_HOT_SWAP = 2
+};
+
+/// Constant 'BATTERY_MODE_COUNT'.
+/**
+  * Counter - keep it as last element (once we're fully migrated to events interface we can just comment this)!
+ */
+enum
+{
+  px4_msgs__msg__BatteryStatus__BATTERY_MODE_COUNT = 3
+};
+
+/// Constant 'MAX_INSTANCES'.
+enum
+{
+  px4_msgs__msg__BatteryStatus__MAX_INSTANCES = 4
 };
 
 /// Struct defined in msg/BatteryStatus in the package px4_msgs.
-/**
-  * Battery status
-  *
-  * Battery status information for up to 4 battery instances.
-  * These are populated from power module and smart battery device drivers, and one battery updated from MAVLink.
-  * Battery instance information is also logged and streamed in MAVLink telemetry.
- */
 typedef struct px4_msgs__msg__BatteryStatus
 {
-  /// Time since system start
+  /// time since system start (microseconds)
   uint64_t timestamp;
-  /// Whether or not a battery is connected. For power modules this is based on a voltage threshold.
+  /// Whether or not a battery is connected, based on a voltage threshold
   bool connected;
-  /// [V] [@invalid 0] Battery voltage
+  /// Battery voltage in volts, 0 if unknown
   float voltage_v;
-  /// [A] [@invalid -1] Battery current
+  /// Battery voltage in volts, filtered, 0 if unknown
+  float voltage_filtered_v;
+  /// Battery current in amperes, -1 if unknown
   float current_a;
-  /// [A] [@invalid -1] Battery current average (for FW average in level flight)
+  /// Battery current in amperes, filtered, 0 if unknown
+  float current_filtered_a;
+  /// Battery current average in amperes, -1 if unknown
   float current_average_a;
-  /// [mAh] [@invalid -1] Discharged amount
+  /// Discharged amount in mAh, -1 if unknown
   float discharged_mah;
-  /// [@range 0,1] Remaining capacity
+  /// From 1 to 0, -1 if unknown
   float remaining;
-  /// [-] [@range 1,] [@invalid -1] Scaling factor to compensate for lower actuation power caused by voltage sag
+  /// Power scaling factor, >= 1, or -1 if unknown
   float scale;
-  /// [s] [@invalid NaN] Predicted time remaining until battery is empty under previous averaged load
+  /// predicted time in seconds remaining until battery is empty under previous averaged load, NAN if unknown
   float time_remaining_s;
-  /// [°C] [@invalid NaN] Temperature of the battery
+  /// temperature of the battery. NaN if unknown
   float temperature;
-  /// [-] [@invalid 0] Number of cells
+  /// Number of cells, 0 if unknown
   uint8_t cell_count;
   /// Battery source
   uint8_t source;
   /// Zero based priority is the connection on the Power Controller V1..Vn AKA BrickN-1
   uint8_t priority;
-  /// Capacity of the battery when fully charged
+  /// actual capacity of the battery
   uint16_t capacity;
-  /// Number of discharge cycles the battery has experienced
+  /// number of discharge cycles the battery has experienced
   uint16_t cycle_count;
-  /// Predicted remaining battery capacity based on the average rate of discharge
+  /// predicted remaining battery capacity based on the average rate of discharge in min
   uint16_t average_time_to_empty;
-  /// Manufacture date, part of serial number of the battery pack. Formatted as: Day + Month×32 + (Year–1980)×512
+  /// serial number of the battery pack
+  uint16_t serial_number;
+  /// manufacture date, part of serial number of the battery pack. Formatted as: Day + Month×32 + (Year–1980)×512
   uint16_t manufacture_date;
-  /// [@range 0, 100] State of health. FullChargeCapacity/DesignCapacity
+  /// state of health. FullChargeCapacity/DesignCapacity, 0-100%.
   uint16_t state_of_health;
-  /// [@range 1, 100] Max error, expected margin of error in the state-of-charge calculation
+  /// max error, expected margin of error in % in the state-of-charge calculation with a range of 1 to 100%
   uint16_t max_error;
-  /// ID number of a battery. Should be unique and consistent for the lifetime of a vehicle. 1-indexed
+  /// ID number of a battery. Should be unique and consistent for the lifetime of a vehicle. 1-indexed.
   uint8_t id;
-  /// Interface error counter
+  /// interface error counter
   uint16_t interface_error;
-  /// [V] [@invalid 0] Battery individual cell voltages
+  /// Battery individual cell voltages, 0 if unknown
   float voltage_cell_v[14];
   /// Max difference between individual cell voltages
   float max_cell_voltage_delta;
@@ -288,32 +308,30 @@ typedef struct px4_msgs__msg__BatteryStatus
   bool is_powering_off;
   /// Set if the battery is explicitly required before arming
   bool is_required;
+  /// Smart battery supply status/fault flags (bitmask) for health indication.
+  uint16_t faults;
+  /// Bitmask indicating smart battery internal manufacturer faults, those are not user actionable.
+  uint32_t custom_faults;
   /// Current battery warning
   uint8_t warning;
-  /// Smart battery supply status/fault flags (bitmask) for health indication
-  uint16_t faults;
-  /// Compensated battery capacity
+  /// Battery mode. Note, the normal operation mode
+  uint8_t mode;
+  /// The average power of the current discharge
+  float average_power;
+  /// The predicted charge or energy remaining in the battery
+  float available_energy;
+  /// The compensated battery capacity
   float full_charge_capacity_wh;
-  /// Compensated battery capacity remaining
+  /// The compensated battery capacity remaining
   float remaining_capacity_wh;
+  /// The design capacity of the battery
+  float design_capacity;
+  /// The predicted remaining time until the battery reaches full charge, in minutes
+  uint16_t average_time_to_full;
   /// Number of battery overdischarge
   uint16_t over_discharge_count;
   /// Nominal voltage of the battery pack
   float nominal_voltage;
-  /// Internal resistance per cell estimate
-  float internal_resistance_estimate;
-  /// Open circuit voltage estimate
-  float ocv_estimate;
-  /// Filtered open circuit voltage estimate
-  float ocv_estimate_filtered;
-  /// [@range 0, 1] Normalized volt based state of charge estimate
-  float volt_based_soc_estimate;
-  /// Predicted voltage
-  float voltage_prediction;
-  /// Prediction error
-  float prediction_error;
-  /// Norm of the covariance matrix
-  float estimation_covariance_norm;
 } px4_msgs__msg__BatteryStatus;
 
 // Struct for a sequence of px4_msgs__msg__BatteryStatus.

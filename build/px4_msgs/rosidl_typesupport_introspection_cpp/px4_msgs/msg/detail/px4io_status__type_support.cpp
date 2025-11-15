@@ -620,14 +620,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember Px4ioStatus_m
     nullptr  // resize(index) function pointer
   },
   {
-    "arming_termination",  // name
+    "arming_force_failsafe",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::Px4ioStatus, arming_termination),  // bytes offset in struct
+    offsetof(px4_msgs::msg::Px4ioStatus, arming_force_failsafe),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer

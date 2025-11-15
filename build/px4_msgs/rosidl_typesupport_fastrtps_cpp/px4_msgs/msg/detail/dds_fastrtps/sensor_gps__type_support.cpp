@@ -38,14 +38,14 @@ cdr_serialize(
   cdr << ros_message.timestamp_sample;
   // Member: device_id
   cdr << ros_message.device_id;
-  // Member: latitude_deg
-  cdr << ros_message.latitude_deg;
-  // Member: longitude_deg
-  cdr << ros_message.longitude_deg;
-  // Member: altitude_msl_m
-  cdr << ros_message.altitude_msl_m;
-  // Member: altitude_ellipsoid_m
-  cdr << ros_message.altitude_ellipsoid_m;
+  // Member: lat
+  cdr << ros_message.lat;
+  // Member: lon
+  cdr << ros_message.lon;
+  // Member: alt
+  cdr << ros_message.alt;
+  // Member: alt_ellipsoid
+  cdr << ros_message.alt_ellipsoid;
   // Member: s_variance_m_s
   cdr << ros_message.s_variance_m_s;
   // Member: c_variance_rad
@@ -70,8 +70,6 @@ cdr_serialize(
   cdr << ros_message.jamming_indicator;
   // Member: spoofing_state
   cdr << ros_message.spoofing_state;
-  // Member: authentication_state
-  cdr << ros_message.authentication_state;
   // Member: vel_m_s
   cdr << ros_message.vel_m_s;
   // Member: vel_n_m_s
@@ -90,8 +88,6 @@ cdr_serialize(
   cdr << ros_message.time_utc_usec;
   // Member: satellites_used
   cdr << ros_message.satellites_used;
-  // Member: system_error
-  cdr << ros_message.system_error;
   // Member: heading
   cdr << ros_message.heading;
   // Member: heading_offset
@@ -102,10 +98,6 @@ cdr_serialize(
   cdr << ros_message.rtcm_injection_rate;
   // Member: selected_rtcm_instance
   cdr << ros_message.selected_rtcm_instance;
-  // Member: rtcm_crc_failed
-  cdr << (ros_message.rtcm_crc_failed ? true : false);
-  // Member: rtcm_msg_used
-  cdr << ros_message.rtcm_msg_used;
   return true;
 }
 
@@ -124,17 +116,17 @@ cdr_deserialize(
   // Member: device_id
   cdr >> ros_message.device_id;
 
-  // Member: latitude_deg
-  cdr >> ros_message.latitude_deg;
+  // Member: lat
+  cdr >> ros_message.lat;
 
-  // Member: longitude_deg
-  cdr >> ros_message.longitude_deg;
+  // Member: lon
+  cdr >> ros_message.lon;
 
-  // Member: altitude_msl_m
-  cdr >> ros_message.altitude_msl_m;
+  // Member: alt
+  cdr >> ros_message.alt;
 
-  // Member: altitude_ellipsoid_m
-  cdr >> ros_message.altitude_ellipsoid_m;
+  // Member: alt_ellipsoid
+  cdr >> ros_message.alt_ellipsoid;
 
   // Member: s_variance_m_s
   cdr >> ros_message.s_variance_m_s;
@@ -172,9 +164,6 @@ cdr_deserialize(
   // Member: spoofing_state
   cdr >> ros_message.spoofing_state;
 
-  // Member: authentication_state
-  cdr >> ros_message.authentication_state;
-
   // Member: vel_m_s
   cdr >> ros_message.vel_m_s;
 
@@ -206,9 +195,6 @@ cdr_deserialize(
   // Member: satellites_used
   cdr >> ros_message.satellites_used;
 
-  // Member: system_error
-  cdr >> ros_message.system_error;
-
   // Member: heading
   cdr >> ros_message.heading;
 
@@ -223,16 +209,6 @@ cdr_deserialize(
 
   // Member: selected_rtcm_instance
   cdr >> ros_message.selected_rtcm_instance;
-
-  // Member: rtcm_crc_failed
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message.rtcm_crc_failed = tmp ? true : false;
-  }
-
-  // Member: rtcm_msg_used
-  cdr >> ros_message.rtcm_msg_used;
 
   return true;
 }
@@ -268,27 +244,27 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: latitude_deg
+  // Member: lat
   {
-    size_t item_size = sizeof(ros_message.latitude_deg);
+    size_t item_size = sizeof(ros_message.lat);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: longitude_deg
+  // Member: lon
   {
-    size_t item_size = sizeof(ros_message.longitude_deg);
+    size_t item_size = sizeof(ros_message.lon);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: altitude_msl_m
+  // Member: alt
   {
-    size_t item_size = sizeof(ros_message.altitude_msl_m);
+    size_t item_size = sizeof(ros_message.alt);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: altitude_ellipsoid_m
+  // Member: alt_ellipsoid
   {
-    size_t item_size = sizeof(ros_message.altitude_ellipsoid_m);
+    size_t item_size = sizeof(ros_message.alt_ellipsoid);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -364,12 +340,6 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: authentication_state
-  {
-    size_t item_size = sizeof(ros_message.authentication_state);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // Member: vel_m_s
   {
     size_t item_size = sizeof(ros_message.vel_m_s);
@@ -424,12 +394,6 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: system_error
-  {
-    size_t item_size = sizeof(ros_message.system_error);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // Member: heading
   {
     size_t item_size = sizeof(ros_message.heading);
@@ -457,18 +421,6 @@ get_serialized_size(
   // Member: selected_rtcm_instance
   {
     size_t item_size = sizeof(ros_message.selected_rtcm_instance);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: rtcm_crc_failed
-  {
-    size_t item_size = sizeof(ros_message.rtcm_crc_failed);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: rtcm_msg_used
-  {
-    size_t item_size = sizeof(ros_message.rtcm_msg_used);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -523,40 +475,40 @@ max_serialized_size_SensorGps(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: latitude_deg
+  // Member: lat
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint64_t);
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: longitude_deg
+  // Member: lon
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint64_t);
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: altitude_msl_m
+  // Member: alt
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint64_t);
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: altitude_ellipsoid_m
+  // Member: alt_ellipsoid
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint64_t);
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   // Member: s_variance_m_s
@@ -664,14 +616,6 @@ max_serialized_size_SensorGps(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: authentication_state
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
   // Member: vel_m_s
   {
     size_t array_size = 1;
@@ -751,15 +695,6 @@ max_serialized_size_SensorGps(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: system_error
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
   // Member: heading
   {
     size_t array_size = 1;
@@ -804,22 +739,6 @@ max_serialized_size_SensorGps(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: rtcm_crc_failed
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
-  // Member: rtcm_msg_used
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -828,7 +747,7 @@ max_serialized_size_SensorGps(
     using DataType = px4_msgs::msg::SensorGps;
     is_plain =
       (
-      offsetof(DataType, rtcm_msg_used) +
+      offsetof(DataType, selected_rtcm_instance) +
       last_member_size
       ) == ret_val;
   }

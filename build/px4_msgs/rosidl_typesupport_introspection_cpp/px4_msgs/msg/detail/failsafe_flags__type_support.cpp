@@ -37,7 +37,7 @@ void FailsafeFlags_fini_function(void * message_memory)
   typed_message->~FailsafeFlags();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember FailsafeFlags_message_member_array[42] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember FailsafeFlags_message_member_array[39] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
@@ -149,23 +149,6 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FailsafeFlags
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::FailsafeFlags, mode_req_global_position),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "mode_req_global_position_relaxed",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::FailsafeFlags, mode_req_global_position_relaxed),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -413,23 +396,6 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FailsafeFlags
     nullptr  // resize(index) function pointer
   },
   {
-    "global_position_invalid_relaxed",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::FailsafeFlags, global_position_invalid_relaxed),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
     "auto_mission_missing",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
@@ -566,14 +532,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FailsafeFlags
     nullptr  // resize(index) function pointer
   },
   {
-    "geofence_breached",  // name
+    "primary_geofence_breached",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::FailsafeFlags, geofence_breached),  // bytes offset in struct
+    offsetof(px4_msgs::msg::FailsafeFlags, primary_geofence_breached),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -651,31 +617,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FailsafeFlags
     nullptr  // resize(index) function pointer
   },
   {
-    "position_accuracy_low",  // name
+    "local_position_accuracy_low",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::FailsafeFlags, position_accuracy_low),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "navigator_failure",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::FailsafeFlags, navigator_failure),  // bytes offset in struct
+    offsetof(px4_msgs::msg::FailsafeFlags, local_position_accuracy_low),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -757,7 +706,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FailsafeFlags
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers FailsafeFlags_message_members = {
   "px4_msgs::msg",  // message namespace
   "FailsafeFlags",  // message name
-  42,  // number of fields
+  39,  // number of fields
   sizeof(px4_msgs::msg::FailsafeFlags),
   FailsafeFlags_message_member_array,  // message members
   FailsafeFlags_init_function,  // function to initialize message memory (memory has to be allocated)

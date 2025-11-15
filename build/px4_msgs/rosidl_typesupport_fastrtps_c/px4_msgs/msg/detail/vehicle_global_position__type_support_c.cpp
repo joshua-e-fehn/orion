@@ -79,24 +79,9 @@ static bool _VehicleGlobalPosition__cdr_serialize(
     cdr << ros_message->alt_ellipsoid;
   }
 
-  // Field name: lat_lon_valid
-  {
-    cdr << (ros_message->lat_lon_valid ? true : false);
-  }
-
-  // Field name: alt_valid
-  {
-    cdr << (ros_message->alt_valid ? true : false);
-  }
-
   // Field name: delta_alt
   {
     cdr << ros_message->delta_alt;
-  }
-
-  // Field name: delta_terrain
-  {
-    cdr << ros_message->delta_terrain;
   }
 
   // Field name: lat_lon_reset_counter
@@ -107,11 +92,6 @@ static bool _VehicleGlobalPosition__cdr_serialize(
   // Field name: alt_reset_counter
   {
     cdr << ros_message->alt_reset_counter;
-  }
-
-  // Field name: terrain_reset_counter
-  {
-    cdr << ros_message->terrain_reset_counter;
   }
 
   // Field name: eph
@@ -181,28 +161,9 @@ static bool _VehicleGlobalPosition__cdr_deserialize(
     cdr >> ros_message->alt_ellipsoid;
   }
 
-  // Field name: lat_lon_valid
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->lat_lon_valid = tmp ? true : false;
-  }
-
-  // Field name: alt_valid
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->alt_valid = tmp ? true : false;
-  }
-
   // Field name: delta_alt
   {
     cdr >> ros_message->delta_alt;
-  }
-
-  // Field name: delta_terrain
-  {
-    cdr >> ros_message->delta_terrain;
   }
 
   // Field name: lat_lon_reset_counter
@@ -213,11 +174,6 @@ static bool _VehicleGlobalPosition__cdr_deserialize(
   // Field name: alt_reset_counter
   {
     cdr >> ros_message->alt_reset_counter;
-  }
-
-  // Field name: terrain_reset_counter
-  {
-    cdr >> ros_message->terrain_reset_counter;
   }
 
   // Field name: eph
@@ -302,27 +258,9 @@ size_t get_serialized_size_px4_msgs__msg__VehicleGlobalPosition(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name lat_lon_valid
-  {
-    size_t item_size = sizeof(ros_message->lat_lon_valid);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name alt_valid
-  {
-    size_t item_size = sizeof(ros_message->alt_valid);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // field.name delta_alt
   {
     size_t item_size = sizeof(ros_message->delta_alt);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name delta_terrain
-  {
-    size_t item_size = sizeof(ros_message->delta_terrain);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -335,12 +273,6 @@ size_t get_serialized_size_px4_msgs__msg__VehicleGlobalPosition(
   // field.name alt_reset_counter
   {
     size_t item_size = sizeof(ros_message->alt_reset_counter);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name terrain_reset_counter
-  {
-    size_t item_size = sizeof(ros_message->terrain_reset_counter);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -451,29 +383,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleGlobalPosition(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: lat_lon_valid
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-  // member: alt_valid
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
   // member: delta_alt
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: delta_terrain
   {
     size_t array_size = 1;
 
@@ -489,13 +399,6 @@ size_t max_serialized_size_px4_msgs__msg__VehicleGlobalPosition(
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: alt_reset_counter
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-  // member: terrain_reset_counter
   {
     size_t array_size = 1;
 

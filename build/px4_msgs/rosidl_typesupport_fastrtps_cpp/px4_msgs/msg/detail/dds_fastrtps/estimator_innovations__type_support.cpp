@@ -68,9 +68,15 @@ cdr_serialize(
   {
     cdr << ros_message.aux_hvel;
   }
+  // Member: aux_vvel
+  cdr << ros_message.aux_vvel;
   // Member: flow
   {
     cdr << ros_message.flow;
+  }
+  // Member: terr_flow
+  {
+    cdr << ros_message.terr_flow;
   }
   // Member: heading
   cdr << ros_message.heading;
@@ -152,9 +158,17 @@ cdr_deserialize(
     cdr >> ros_message.aux_hvel;
   }
 
+  // Member: aux_vvel
+  cdr >> ros_message.aux_vvel;
+
   // Member: flow
   {
     cdr >> ros_message.flow;
+  }
+
+  // Member: terr_flow
+  {
+    cdr >> ros_message.terr_flow;
   }
 
   // Member: heading
@@ -286,10 +300,23 @@ get_serialized_size(
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // Member: aux_vvel
+  {
+    size_t item_size = sizeof(ros_message.aux_vvel);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // Member: flow
   {
     size_t array_size = 2;
     size_t item_size = sizeof(ros_message.flow[0]);
+    current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: terr_flow
+  {
+    size_t array_size = 2;
+    size_t item_size = sizeof(ros_message.terr_flow[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -485,7 +512,25 @@ max_serialized_size_EstimatorInnovations(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
+  // Member: aux_vvel
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
   // Member: flow
+  {
+    size_t array_size = 2;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
+  // Member: terr_flow
   {
     size_t array_size = 2;
 

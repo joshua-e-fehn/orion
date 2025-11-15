@@ -83,8 +83,6 @@ typedef struct px4_msgs__msg__ControlAllocatorStatus
   int8_t actuator_saturation[16];
   /// Bitmask of failed motors that were removed from the allocation / effectiveness matrix. Not necessarily identical to the report from FailureDetector
   uint16_t handled_motor_failure_mask;
-  /// Bitmaks of motors stopped by failure injection
-  uint16_t motor_stop_mask;
 } px4_msgs__msg__ControlAllocatorStatus;
 
 // Struct for a sequence of px4_msgs__msg__ControlAllocatorStatus.

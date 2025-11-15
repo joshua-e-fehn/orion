@@ -21,32 +21,16 @@ namespace msg
 namespace builder
 {
 
-class Init_FailureDetectorStatus_motor_stop_mask
-{
-public:
-  explicit Init_FailureDetectorStatus_motor_stop_mask(::px4_msgs::msg::FailureDetectorStatus & msg)
-  : msg_(msg)
-  {}
-  ::px4_msgs::msg::FailureDetectorStatus motor_stop_mask(::px4_msgs::msg::FailureDetectorStatus::_motor_stop_mask_type arg)
-  {
-    msg_.motor_stop_mask = std::move(arg);
-    return std::move(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::FailureDetectorStatus msg_;
-};
-
 class Init_FailureDetectorStatus_motor_failure_mask
 {
 public:
   explicit Init_FailureDetectorStatus_motor_failure_mask(::px4_msgs::msg::FailureDetectorStatus & msg)
   : msg_(msg)
   {}
-  Init_FailureDetectorStatus_motor_stop_mask motor_failure_mask(::px4_msgs::msg::FailureDetectorStatus::_motor_failure_mask_type arg)
+  ::px4_msgs::msg::FailureDetectorStatus motor_failure_mask(::px4_msgs::msg::FailureDetectorStatus::_motor_failure_mask_type arg)
   {
     msg_.motor_failure_mask = std::move(arg);
-    return Init_FailureDetectorStatus_motor_stop_mask(msg_);
+    return std::move(msg_);
   }
 
 private:

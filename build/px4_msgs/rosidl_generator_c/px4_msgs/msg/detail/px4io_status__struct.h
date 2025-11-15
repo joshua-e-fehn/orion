@@ -50,7 +50,7 @@ typedef struct px4_msgs__msg__Px4ioStatus
   bool arming_failsafe_custom;
   bool arming_fmu_armed;
   bool arming_fmu_prearmed;
-  bool arming_termination;
+  bool arming_force_failsafe;
   bool arming_io_arm_ok;
   bool arming_lockdown;
   bool arming_termination_failsafe;

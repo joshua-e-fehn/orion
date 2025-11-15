@@ -79,14 +79,29 @@ static bool _VehicleControlMode__cdr_serialize(
     cdr << (ros_message->flag_control_offboard_enabled ? true : false);
   }
 
-  // Field name: flag_control_position_enabled
+  // Field name: flag_control_rates_enabled
   {
-    cdr << (ros_message->flag_control_position_enabled ? true : false);
+    cdr << (ros_message->flag_control_rates_enabled ? true : false);
+  }
+
+  // Field name: flag_control_attitude_enabled
+  {
+    cdr << (ros_message->flag_control_attitude_enabled ? true : false);
+  }
+
+  // Field name: flag_control_acceleration_enabled
+  {
+    cdr << (ros_message->flag_control_acceleration_enabled ? true : false);
   }
 
   // Field name: flag_control_velocity_enabled
   {
     cdr << (ros_message->flag_control_velocity_enabled ? true : false);
+  }
+
+  // Field name: flag_control_position_enabled
+  {
+    cdr << (ros_message->flag_control_position_enabled ? true : false);
   }
 
   // Field name: flag_control_altitude_enabled
@@ -99,34 +114,9 @@ static bool _VehicleControlMode__cdr_serialize(
     cdr << (ros_message->flag_control_climb_rate_enabled ? true : false);
   }
 
-  // Field name: flag_control_acceleration_enabled
-  {
-    cdr << (ros_message->flag_control_acceleration_enabled ? true : false);
-  }
-
-  // Field name: flag_control_attitude_enabled
-  {
-    cdr << (ros_message->flag_control_attitude_enabled ? true : false);
-  }
-
-  // Field name: flag_control_rates_enabled
-  {
-    cdr << (ros_message->flag_control_rates_enabled ? true : false);
-  }
-
-  // Field name: flag_control_allocation_enabled
-  {
-    cdr << (ros_message->flag_control_allocation_enabled ? true : false);
-  }
-
   // Field name: flag_control_termination_enabled
   {
     cdr << (ros_message->flag_control_termination_enabled ? true : false);
-  }
-
-  // Field name: source_id
-  {
-    cdr << ros_message->source_id;
   }
 
   return true;
@@ -181,11 +171,25 @@ static bool _VehicleControlMode__cdr_deserialize(
     ros_message->flag_control_offboard_enabled = tmp ? true : false;
   }
 
-  // Field name: flag_control_position_enabled
+  // Field name: flag_control_rates_enabled
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message->flag_control_position_enabled = tmp ? true : false;
+    ros_message->flag_control_rates_enabled = tmp ? true : false;
+  }
+
+  // Field name: flag_control_attitude_enabled
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->flag_control_attitude_enabled = tmp ? true : false;
+  }
+
+  // Field name: flag_control_acceleration_enabled
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->flag_control_acceleration_enabled = tmp ? true : false;
   }
 
   // Field name: flag_control_velocity_enabled
@@ -193,6 +197,13 @@ static bool _VehicleControlMode__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->flag_control_velocity_enabled = tmp ? true : false;
+  }
+
+  // Field name: flag_control_position_enabled
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->flag_control_position_enabled = tmp ? true : false;
   }
 
   // Field name: flag_control_altitude_enabled
@@ -209,44 +220,11 @@ static bool _VehicleControlMode__cdr_deserialize(
     ros_message->flag_control_climb_rate_enabled = tmp ? true : false;
   }
 
-  // Field name: flag_control_acceleration_enabled
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->flag_control_acceleration_enabled = tmp ? true : false;
-  }
-
-  // Field name: flag_control_attitude_enabled
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->flag_control_attitude_enabled = tmp ? true : false;
-  }
-
-  // Field name: flag_control_rates_enabled
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->flag_control_rates_enabled = tmp ? true : false;
-  }
-
-  // Field name: flag_control_allocation_enabled
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->flag_control_allocation_enabled = tmp ? true : false;
-  }
-
   // Field name: flag_control_termination_enabled
   {
     uint8_t tmp;
     cdr >> tmp;
     ros_message->flag_control_termination_enabled = tmp ? true : false;
-  }
-
-  // Field name: source_id
-  {
-    cdr >> ros_message->source_id;
   }
 
   return true;
@@ -302,15 +280,33 @@ size_t get_serialized_size_px4_msgs__msg__VehicleControlMode(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name flag_control_position_enabled
+  // field.name flag_control_rates_enabled
   {
-    size_t item_size = sizeof(ros_message->flag_control_position_enabled);
+    size_t item_size = sizeof(ros_message->flag_control_rates_enabled);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name flag_control_attitude_enabled
+  {
+    size_t item_size = sizeof(ros_message->flag_control_attitude_enabled);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name flag_control_acceleration_enabled
+  {
+    size_t item_size = sizeof(ros_message->flag_control_acceleration_enabled);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
   // field.name flag_control_velocity_enabled
   {
     size_t item_size = sizeof(ros_message->flag_control_velocity_enabled);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name flag_control_position_enabled
+  {
+    size_t item_size = sizeof(ros_message->flag_control_position_enabled);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -326,39 +322,9 @@ size_t get_serialized_size_px4_msgs__msg__VehicleControlMode(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name flag_control_acceleration_enabled
-  {
-    size_t item_size = sizeof(ros_message->flag_control_acceleration_enabled);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name flag_control_attitude_enabled
-  {
-    size_t item_size = sizeof(ros_message->flag_control_attitude_enabled);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name flag_control_rates_enabled
-  {
-    size_t item_size = sizeof(ros_message->flag_control_rates_enabled);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name flag_control_allocation_enabled
-  {
-    size_t item_size = sizeof(ros_message->flag_control_allocation_enabled);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // field.name flag_control_termination_enabled
   {
     size_t item_size = sizeof(ros_message->flag_control_termination_enabled);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name source_id
-  {
-    size_t item_size = sizeof(ros_message->source_id);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -434,7 +400,21 @@ size_t max_serialized_size_px4_msgs__msg__VehicleControlMode(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: flag_control_position_enabled
+  // member: flag_control_rates_enabled
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: flag_control_attitude_enabled
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: flag_control_acceleration_enabled
   {
     size_t array_size = 1;
 
@@ -442,6 +422,13 @@ size_t max_serialized_size_px4_msgs__msg__VehicleControlMode(
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: flag_control_velocity_enabled
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: flag_control_position_enabled
   {
     size_t array_size = 1;
 
@@ -462,42 +449,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleControlMode(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: flag_control_acceleration_enabled
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-  // member: flag_control_attitude_enabled
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-  // member: flag_control_rates_enabled
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-  // member: flag_control_allocation_enabled
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
   // member: flag_control_termination_enabled
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-  // member: source_id
   {
     size_t array_size = 1;
 
@@ -513,7 +465,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleControlMode(
     using DataType = px4_msgs__msg__VehicleControlMode;
     is_plain =
       (
-      offsetof(DataType, source_id) +
+      offsetof(DataType, flag_control_termination_enabled) +
       last_member_size
       ) == ret_val;
   }

@@ -17,12 +17,6 @@ extern "C"
 
 // Constants defined in the message
 
-/// Constant 'MESSAGE_VERSION'.
-enum
-{
-  px4_msgs__msg__ActuatorMotors__MESSAGE_VERSION = 0ul
-};
-
 /// Constant 'ACTUATOR_FUNCTION_MOTOR1'.
 enum
 {
@@ -38,19 +32,18 @@ enum
 /// Struct defined in msg/ActuatorMotors in the package px4_msgs.
 /**
   * Motor control message
-  *
-  * Normalised thrust setpoint for up to 12 motors.
-  * Published by the vehicle's allocation and consumed by the ESC protocol drivers e.g. PWM, DSHOT, UAVCAN.
  */
 typedef struct px4_msgs__msg__ActuatorMotors
 {
-  /// Time since system start
+  /// time since system start (microseconds)
   uint64_t timestamp;
-  /// Sampling timestamp of the data this control response is based on
+  /// the timestamp the data this control response is based on was sampled
   uint64_t timestamp_sample;
-  /// Bitset indicating which motors are configured to be reversible
+  /// bitset which motors are configured to be reversible
   uint16_t reversible_flags;
-  /// [@range -1, 1] Normalized thrust. where 1 means maximum positive thrust, -1 maximum negative (if not supported by the output, <0 maps to NaN). NaN maps to disarmed (stop the motors)
+  /// range: [-1, 1], where 1 means maximum positive thrust,
+  /// -1 maximum negative (if not supported by the output, <0 maps to NaN),
+  /// and NaN maps to disarmed (stop the motors)
   float control[12];
 } px4_msgs__msg__ActuatorMotors;
 

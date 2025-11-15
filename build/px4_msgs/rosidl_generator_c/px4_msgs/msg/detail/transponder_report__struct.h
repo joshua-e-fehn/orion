@@ -195,7 +195,7 @@ enum
 /// Constant 'ORB_QUEUE_LENGTH'.
 enum
 {
-  px4_msgs__msg__TransponderReport__ORB_QUEUE_LENGTH = 16
+  px4_msgs__msg__TransponderReport__ORB_QUEUE_LENGTH = 8
 };
 
 /// Struct defined in msg/TransponderReport in the package px4_msgs.
@@ -213,7 +213,7 @@ typedef struct px4_msgs__msg__TransponderReport
   uint8_t altitude_type;
   /// Altitude(ASL) in meters
   float altitude;
-  /// Course over ground in radians, 0 to 2pi, 0 is north
+  /// Course over ground in radians, -pi to +pi, 0 is north
   float heading;
   /// The horizontal velocity in m/s
   float hor_velocity;

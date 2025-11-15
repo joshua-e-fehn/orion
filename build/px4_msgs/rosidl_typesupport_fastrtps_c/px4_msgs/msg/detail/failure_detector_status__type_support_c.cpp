@@ -104,11 +104,6 @@ static bool _FailureDetectorStatus__cdr_serialize(
     cdr << ros_message->motor_failure_mask;
   }
 
-  // Field name: motor_stop_mask
-  {
-    cdr << ros_message->motor_stop_mask;
-  }
-
   return true;
 }
 
@@ -192,11 +187,6 @@ static bool _FailureDetectorStatus__cdr_deserialize(
     cdr >> ros_message->motor_failure_mask;
   }
 
-  // Field name: motor_stop_mask
-  {
-    cdr >> ros_message->motor_stop_mask;
-  }
-
   return true;
 }  // NOLINT(readability/fn_size)
 
@@ -277,12 +267,6 @@ size_t get_serialized_size_px4_msgs__msg__FailureDetectorStatus(
   // field.name motor_failure_mask
   {
     size_t item_size = sizeof(ros_message->motor_failure_mask);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name motor_stop_mask
-  {
-    size_t item_size = sizeof(ros_message->motor_stop_mask);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -395,14 +379,6 @@ size_t max_serialized_size_px4_msgs__msg__FailureDetectorStatus(
     current_alignment += array_size * sizeof(uint16_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
   }
-  // member: motor_stop_mask
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint16_t);
-    current_alignment += array_size * sizeof(uint16_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
-  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -412,7 +388,7 @@ size_t max_serialized_size_px4_msgs__msg__FailureDetectorStatus(
     using DataType = px4_msgs__msg__FailureDetectorStatus;
     is_plain =
       (
-      offsetof(DataType, motor_stop_mask) +
+      offsetof(DataType, motor_failure_mask) +
       last_member_size
       ) == ret_val;
   }

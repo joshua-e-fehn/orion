@@ -35,8 +35,6 @@ typedef struct px4_msgs__msg__FailureDetectorStatus
   float imbalanced_prop_metric;
   /// Bit-mask with motor indices, indicating critical motor failures
   uint16_t motor_failure_mask;
-  /// Bitmaks of motors stopped by failure injection
-  uint16_t motor_stop_mask;
 } px4_msgs__msg__FailureDetectorStatus;
 
 // Struct for a sequence of px4_msgs__msg__FailureDetectorStatus.

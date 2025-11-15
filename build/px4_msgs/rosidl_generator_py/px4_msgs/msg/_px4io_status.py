@@ -87,7 +87,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
         '_arming_failsafe_custom',
         '_arming_fmu_armed',
         '_arming_fmu_prearmed',
-        '_arming_termination',
+        '_arming_force_failsafe',
         '_arming_io_arm_ok',
         '_arming_lockdown',
         '_arming_termination_failsafe',
@@ -122,7 +122,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
         'arming_failsafe_custom': 'boolean',
         'arming_fmu_armed': 'boolean',
         'arming_fmu_prearmed': 'boolean',
-        'arming_termination': 'boolean',
+        'arming_force_failsafe': 'boolean',
         'arming_io_arm_ok': 'boolean',
         'arming_lockdown': 'boolean',
         'arming_termination_failsafe': 'boolean',
@@ -195,7 +195,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
         self.arming_failsafe_custom = kwargs.get('arming_failsafe_custom', bool())
         self.arming_fmu_armed = kwargs.get('arming_fmu_armed', bool())
         self.arming_fmu_prearmed = kwargs.get('arming_fmu_prearmed', bool())
-        self.arming_termination = kwargs.get('arming_termination', bool())
+        self.arming_force_failsafe = kwargs.get('arming_force_failsafe', bool())
         self.arming_io_arm_ok = kwargs.get('arming_io_arm_ok', bool())
         self.arming_lockdown = kwargs.get('arming_lockdown', bool())
         self.arming_termination_failsafe = kwargs.get('arming_termination_failsafe', bool())
@@ -300,7 +300,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
             return False
         if self.arming_fmu_prearmed != other.arming_fmu_prearmed:
             return False
-        if self.arming_termination != other.arming_termination:
+        if self.arming_force_failsafe != other.arming_force_failsafe:
             return False
         if self.arming_io_arm_ok != other.arming_io_arm_ok:
             return False
@@ -633,17 +633,17 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
         self._arming_fmu_prearmed = value
 
     @builtins.property
-    def arming_termination(self):
-        """Message field 'arming_termination'."""
-        return self._arming_termination
+    def arming_force_failsafe(self):
+        """Message field 'arming_force_failsafe'."""
+        return self._arming_force_failsafe
 
-    @arming_termination.setter
-    def arming_termination(self, value):
+    @arming_force_failsafe.setter
+    def arming_force_failsafe(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'arming_termination' field must be of type 'bool'"
-        self._arming_termination = value
+                "The 'arming_force_failsafe' field must be of type 'bool'"
+        self._arming_force_failsafe = value
 
     @builtins.property
     def arming_io_arm_ok(self):

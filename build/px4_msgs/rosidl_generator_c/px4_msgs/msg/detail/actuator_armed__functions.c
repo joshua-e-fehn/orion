@@ -22,8 +22,8 @@ px4_msgs__msg__ActuatorArmed__init(px4_msgs__msg__ActuatorArmed * msg)
   // prearmed
   // ready_to_arm
   // lockdown
-  // kill
-  // termination
+  // manual_lockdown
+  // force_failsafe
   // in_esc_calibration_mode
   return true;
 }
@@ -39,8 +39,8 @@ px4_msgs__msg__ActuatorArmed__fini(px4_msgs__msg__ActuatorArmed * msg)
   // prearmed
   // ready_to_arm
   // lockdown
-  // kill
-  // termination
+  // manual_lockdown
+  // force_failsafe
   // in_esc_calibration_mode
 }
 
@@ -70,12 +70,12 @@ px4_msgs__msg__ActuatorArmed__are_equal(const px4_msgs__msg__ActuatorArmed * lhs
   if (lhs->lockdown != rhs->lockdown) {
     return false;
   }
-  // kill
-  if (lhs->kill != rhs->kill) {
+  // manual_lockdown
+  if (lhs->manual_lockdown != rhs->manual_lockdown) {
     return false;
   }
-  // termination
-  if (lhs->termination != rhs->termination) {
+  // force_failsafe
+  if (lhs->force_failsafe != rhs->force_failsafe) {
     return false;
   }
   // in_esc_calibration_mode
@@ -103,10 +103,10 @@ px4_msgs__msg__ActuatorArmed__copy(
   output->ready_to_arm = input->ready_to_arm;
   // lockdown
   output->lockdown = input->lockdown;
-  // kill
-  output->kill = input->kill;
-  // termination
-  output->termination = input->termination;
+  // manual_lockdown
+  output->manual_lockdown = input->manual_lockdown;
+  // force_failsafe
+  output->force_failsafe = input->force_failsafe;
   // in_esc_calibration_mode
   output->in_esc_calibration_mode = input->in_esc_calibration_mode;
   return true;

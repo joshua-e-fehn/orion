@@ -6,47 +6,14 @@
 module px4_msgs {
   module msg {
     module SensorGps_Constants {
-      @verbatim (language="comment", text=
-        "Value 0 is also valid to represent no fix.")
-      const uint8 FIX_TYPE_NONE = 1;
-      const uint8 FIX_TYPE_2D = 2;
-      const uint8 FIX_TYPE_3D = 3;
-      const uint8 FIX_TYPE_RTCM_CODE_DIFFERENTIAL = 4;
-      const uint8 FIX_TYPE_RTK_FLOAT = 5;
-      const uint8 FIX_TYPE_RTK_FIXED = 6;
-      const uint8 FIX_TYPE_EXTRAPOLATED = 8;
-      @verbatim (language="comment", text=
-        "default")
       const uint8 JAMMING_STATE_UNKNOWN = 0;
       const uint8 JAMMING_STATE_OK = 1;
-      const uint8 JAMMING_STATE_MITIGATED = 2;
-      const uint8 JAMMING_STATE_DETECTED = 3;
-      @verbatim (language="comment", text=
-        "default")
+      const uint8 JAMMING_STATE_WARNING = 2;
+      const uint8 JAMMING_STATE_CRITICAL = 3;
       const uint8 SPOOFING_STATE_UNKNOWN = 0;
-      const uint8 SPOOFING_STATE_OK = 1;
-      const uint8 SPOOFING_STATE_MITIGATED = 2;
-      const uint8 SPOOFING_STATE_DETECTED = 3;
-      @verbatim (language="comment", text=
-        " Combined authentication state (e.g. Galileo OSNMA)" "\n"        "default")
-      const uint8 AUTHENTICATION_STATE_UNKNOWN = 0;
-      const uint8 AUTHENTICATION_STATE_INITIALIZING = 1;
-      const uint8 AUTHENTICATION_STATE_ERROR = 2;
-      const uint8 AUTHENTICATION_STATE_OK = 3;
-      const uint8 AUTHENTICATION_STATE_DISABLED = 4;
-      @verbatim (language="comment", text=
-        "default")
-      const uint32 SYSTEM_ERROR_OK = 0;
-      const uint32 SYSTEM_ERROR_INCOMING_CORRECTIONS = 1;
-      const uint32 SYSTEM_ERROR_CONFIGURATION = 2;
-      const uint32 SYSTEM_ERROR_SOFTWARE = 4;
-      const uint32 SYSTEM_ERROR_ANTENNA = 8;
-      const uint32 SYSTEM_ERROR_EVENT_CONGESTION = 16;
-      const uint32 SYSTEM_ERROR_CPU_OVERLOAD = 32;
-      const uint32 SYSTEM_ERROR_OUTPUT_CONGESTION = 64;
-      const uint8 RTCM_MSG_USED_UNKNOWN = 0;
-      const uint8 RTCM_MSG_USED_NOT_USED = 1;
-      const uint8 RTCM_MSG_USED_USED = 2;
+      const uint8 SPOOFING_STATE_NONE = 1;
+      const uint8 SPOOFING_STATE_INDICATED = 2;
+      const uint8 SPOOFING_STATE_MULTIPLE = 3;
     };
     @verbatim (language="comment", text=
       "GPS position in WGS84 coordinates." "\n"
@@ -63,20 +30,20 @@ module px4_msgs {
       uint32 device_id;
 
       @verbatim (language="comment", text=
-        "Latitude in degrees, allows centimeter level RTK precision")
-      double latitude_deg;
+        "Latitude in 1E-7 degrees")
+      int32 lat;
 
       @verbatim (language="comment", text=
-        "Longitude in degrees, allows centimeter level RTK precision")
-      double longitude_deg;
+        "Longitude in 1E-7 degrees")
+      int32 lon;
 
       @verbatim (language="comment", text=
-        "Altitude above MSL, meters")
-      double altitude_msl_m;
+        "Altitude in 1E-3 meters above MSL, (millimetres)")
+      int32 alt;
 
       @verbatim (language="comment", text=
-        "Altitude above Ellipsoid, meters")
-      double altitude_ellipsoid_m;
+        "Altitude in 1E-3 meters bove Ellipsoid, (millimetres)")
+      int32 alt_ellipsoid;
 
       @verbatim (language="comment", text=
         "GPS speed accuracy estimate, (metres/sec)")
@@ -87,7 +54,7 @@ module px4_msgs {
       float c_variance_rad;
 
       @verbatim (language="comment", text=
-        "Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.")
+        "0-1: no fix, 2: 2D fix, 3: 3D fix, 4: RTCM code differential, 5: Real-Time Kinematic, float, 6: Real-Time Kinematic, fixed, 8: Extrapolated. Some applications will not use the value of this field unless it is at least two, so always correctly fill in the fix.")
       uint8 fix_type;
 
       @verbatim (language="comment", text=
@@ -115,7 +82,7 @@ module px4_msgs {
       uint16 automatic_gain_control;
 
       @verbatim (language="comment", text=
-        "indicates whether jamming has been detected or suspected by the receivers. O: Unknown, 1: OK, 2: Mitigated, 3: Detected")
+        "indicates whether jamming has been detected or suspected by the receivers. O: Unknown, 1: OK, 2: Warning, 3: Critical")
       uint8 jamming_state;
 
       @verbatim (language="comment", text=
@@ -123,12 +90,8 @@ module px4_msgs {
       int32 jamming_indicator;
 
       @verbatim (language="comment", text=
-        "indicates whether spoofing has been detected or suspected by the receivers. O: Unknown, 1: OK, 2: Mitigated, 3: Detected")
+        "indicates whether spoofing has been detected or suspected by the receivers. O: Unknown, 1: OK, 2: Warning, 3: Critical")
       uint8 spoofing_state;
-
-      @verbatim (language="comment", text=
-        "GPS signal authentication state")
-      uint8 authentication_state;
 
       @verbatim (language="comment", text=
         "GPS ground speed, (metres/sec)")
@@ -167,10 +130,6 @@ module px4_msgs {
       uint8 satellites_used;
 
       @verbatim (language="comment", text=
-        "General errors with the connected GPS receiver")
-      uint32 system_error;
-
-      @verbatim (language="comment", text=
         "heading angle of XYZ body frame rel to NED. Set to NaN if not available and updated (used for dual antenna GPS), (rad, [-PI, PI])")
       float heading;
 
@@ -189,14 +148,6 @@ module px4_msgs {
       @verbatim (language="comment", text=
         "uorb instance that is being used for RTCM corrections")
       uint8 selected_rtcm_instance;
-
-      @verbatim (language="comment", text=
-        "RTCM message CRC failure detected")
-      boolean rtcm_crc_failed;
-
-      @verbatim (language="comment", text=
-        "Indicates if the RTCM message was used successfully by the receiver")
-      uint8 rtcm_msg_used;
     };
   };
 };

@@ -178,16 +178,6 @@ static bool _VehicleLocalPosition__cdr_serialize(
     cdr << ros_message->heading;
   }
 
-  // Field name: heading_var
-  {
-    cdr << ros_message->heading_var;
-  }
-
-  // Field name: unaided_heading
-  {
-    cdr << ros_message->unaided_heading;
-  }
-
   // Field name: delta_heading
   {
     cdr << ros_message->delta_heading;
@@ -201,11 +191,6 @@ static bool _VehicleLocalPosition__cdr_serialize(
   // Field name: heading_good_for_control
   {
     cdr << (ros_message->heading_good_for_control ? true : false);
-  }
-
-  // Field name: tilt_var
-  {
-    cdr << ros_message->tilt_var;
   }
 
   // Field name: xy_global
@@ -238,29 +223,14 @@ static bool _VehicleLocalPosition__cdr_serialize(
     cdr << ros_message->ref_alt;
   }
 
-  // Field name: dist_bottom_valid
-  {
-    cdr << (ros_message->dist_bottom_valid ? true : false);
-  }
-
   // Field name: dist_bottom
   {
     cdr << ros_message->dist_bottom;
   }
 
-  // Field name: dist_bottom_var
+  // Field name: dist_bottom_valid
   {
-    cdr << ros_message->dist_bottom_var;
-  }
-
-  // Field name: delta_dist_bottom
-  {
-    cdr << ros_message->delta_dist_bottom;
-  }
-
-  // Field name: dist_bottom_reset_counter
-  {
-    cdr << ros_message->dist_bottom_reset_counter;
+    cdr << (ros_message->dist_bottom_valid ? true : false);
   }
 
   // Field name: dist_bottom_sensor_bitfield
@@ -308,14 +278,9 @@ static bool _VehicleLocalPosition__cdr_serialize(
     cdr << ros_message->hagl_min;
   }
 
-  // Field name: hagl_max_z
+  // Field name: hagl_max
   {
-    cdr << ros_message->hagl_max_z;
-  }
-
-  // Field name: hagl_max_xy
-  {
-    cdr << ros_message->hagl_max_xy;
+    cdr << ros_message->hagl_max;
   }
 
   return true;
@@ -467,16 +432,6 @@ static bool _VehicleLocalPosition__cdr_deserialize(
     cdr >> ros_message->heading;
   }
 
-  // Field name: heading_var
-  {
-    cdr >> ros_message->heading_var;
-  }
-
-  // Field name: unaided_heading
-  {
-    cdr >> ros_message->unaided_heading;
-  }
-
   // Field name: delta_heading
   {
     cdr >> ros_message->delta_heading;
@@ -492,11 +447,6 @@ static bool _VehicleLocalPosition__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->heading_good_for_control = tmp ? true : false;
-  }
-
-  // Field name: tilt_var
-  {
-    cdr >> ros_message->tilt_var;
   }
 
   // Field name: xy_global
@@ -533,31 +483,16 @@ static bool _VehicleLocalPosition__cdr_deserialize(
     cdr >> ros_message->ref_alt;
   }
 
-  // Field name: dist_bottom_valid
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->dist_bottom_valid = tmp ? true : false;
-  }
-
   // Field name: dist_bottom
   {
     cdr >> ros_message->dist_bottom;
   }
 
-  // Field name: dist_bottom_var
+  // Field name: dist_bottom_valid
   {
-    cdr >> ros_message->dist_bottom_var;
-  }
-
-  // Field name: delta_dist_bottom
-  {
-    cdr >> ros_message->delta_dist_bottom;
-  }
-
-  // Field name: dist_bottom_reset_counter
-  {
-    cdr >> ros_message->dist_bottom_reset_counter;
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->dist_bottom_valid = tmp ? true : false;
   }
 
   // Field name: dist_bottom_sensor_bitfield
@@ -607,14 +542,9 @@ static bool _VehicleLocalPosition__cdr_deserialize(
     cdr >> ros_message->hagl_min;
   }
 
-  // Field name: hagl_max_z
+  // Field name: hagl_max
   {
-    cdr >> ros_message->hagl_max_z;
-  }
-
-  // Field name: hagl_max_xy
-  {
-    cdr >> ros_message->hagl_max_xy;
+    cdr >> ros_message->hagl_max;
   }
 
   return true;
@@ -790,18 +720,6 @@ size_t get_serialized_size_px4_msgs__msg__VehicleLocalPosition(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name heading_var
-  {
-    size_t item_size = sizeof(ros_message->heading_var);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name unaided_heading
-  {
-    size_t item_size = sizeof(ros_message->unaided_heading);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // field.name delta_heading
   {
     size_t item_size = sizeof(ros_message->delta_heading);
@@ -817,12 +735,6 @@ size_t get_serialized_size_px4_msgs__msg__VehicleLocalPosition(
   // field.name heading_good_for_control
   {
     size_t item_size = sizeof(ros_message->heading_good_for_control);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name tilt_var
-  {
-    size_t item_size = sizeof(ros_message->tilt_var);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -862,33 +774,15 @@ size_t get_serialized_size_px4_msgs__msg__VehicleLocalPosition(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name dist_bottom_valid
-  {
-    size_t item_size = sizeof(ros_message->dist_bottom_valid);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // field.name dist_bottom
   {
     size_t item_size = sizeof(ros_message->dist_bottom);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name dist_bottom_var
+  // field.name dist_bottom_valid
   {
-    size_t item_size = sizeof(ros_message->dist_bottom_var);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name delta_dist_bottom
-  {
-    size_t item_size = sizeof(ros_message->delta_dist_bottom);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name dist_bottom_reset_counter
-  {
-    size_t item_size = sizeof(ros_message->dist_bottom_reset_counter);
+    size_t item_size = sizeof(ros_message->dist_bottom_valid);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -946,15 +840,9 @@ size_t get_serialized_size_px4_msgs__msg__VehicleLocalPosition(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name hagl_max_z
+  // field.name hagl_max
   {
-    size_t item_size = sizeof(ros_message->hagl_max_z);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name hagl_max_xy
-  {
-    size_t item_size = sizeof(ros_message->hagl_max_xy);
+    size_t item_size = sizeof(ros_message->hagl_max);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -1179,22 +1067,6 @@ size_t max_serialized_size_px4_msgs__msg__VehicleLocalPosition(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: heading_var
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: unaided_heading
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
   // member: delta_heading
   {
     size_t array_size = 1;
@@ -1216,14 +1088,6 @@ size_t max_serialized_size_px4_msgs__msg__VehicleLocalPosition(
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
-  }
-  // member: tilt_var
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
   // member: xy_global
   {
@@ -1271,13 +1135,6 @@ size_t max_serialized_size_px4_msgs__msg__VehicleLocalPosition(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: dist_bottom_valid
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
   // member: dist_bottom
   {
     size_t array_size = 1;
@@ -1286,23 +1143,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleLocalPosition(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: dist_bottom_var
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: delta_dist_bottom
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: dist_bottom_reset_counter
+  // member: dist_bottom_valid
   {
     size_t array_size = 1;
 
@@ -1379,15 +1220,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleLocalPosition(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: hagl_max_z
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: hagl_max_xy
+  // member: hagl_max
   {
     size_t array_size = 1;
 
@@ -1404,7 +1237,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleLocalPosition(
     using DataType = px4_msgs__msg__VehicleLocalPosition;
     is_plain =
       (
-      offsetof(DataType, hagl_max_xy) +
+      offsetof(DataType, hagl_max) +
       last_member_size
       ) == ret_val;
   }

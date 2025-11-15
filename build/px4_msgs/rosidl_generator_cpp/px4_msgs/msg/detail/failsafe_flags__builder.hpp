@@ -85,32 +85,16 @@ private:
   ::px4_msgs::msg::FailsafeFlags msg_;
 };
 
-class Init_FailsafeFlags_navigator_failure
+class Init_FailsafeFlags_local_position_accuracy_low
 {
 public:
-  explicit Init_FailsafeFlags_navigator_failure(::px4_msgs::msg::FailsafeFlags & msg)
+  explicit Init_FailsafeFlags_local_position_accuracy_low(::px4_msgs::msg::FailsafeFlags & msg)
   : msg_(msg)
   {}
-  Init_FailsafeFlags_fd_critical_failure navigator_failure(::px4_msgs::msg::FailsafeFlags::_navigator_failure_type arg)
+  Init_FailsafeFlags_fd_critical_failure local_position_accuracy_low(::px4_msgs::msg::FailsafeFlags::_local_position_accuracy_low_type arg)
   {
-    msg_.navigator_failure = std::move(arg);
+    msg_.local_position_accuracy_low = std::move(arg);
     return Init_FailsafeFlags_fd_critical_failure(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::FailsafeFlags msg_;
-};
-
-class Init_FailsafeFlags_position_accuracy_low
-{
-public:
-  explicit Init_FailsafeFlags_position_accuracy_low(::px4_msgs::msg::FailsafeFlags & msg)
-  : msg_(msg)
-  {}
-  Init_FailsafeFlags_navigator_failure position_accuracy_low(::px4_msgs::msg::FailsafeFlags::_position_accuracy_low_type arg)
-  {
-    msg_.position_accuracy_low = std::move(arg);
-    return Init_FailsafeFlags_navigator_failure(msg_);
   }
 
 private:
@@ -123,10 +107,10 @@ public:
   explicit Init_FailsafeFlags_flight_time_limit_exceeded(::px4_msgs::msg::FailsafeFlags & msg)
   : msg_(msg)
   {}
-  Init_FailsafeFlags_position_accuracy_low flight_time_limit_exceeded(::px4_msgs::msg::FailsafeFlags::_flight_time_limit_exceeded_type arg)
+  Init_FailsafeFlags_local_position_accuracy_low flight_time_limit_exceeded(::px4_msgs::msg::FailsafeFlags::_flight_time_limit_exceeded_type arg)
   {
     msg_.flight_time_limit_exceeded = std::move(arg);
-    return Init_FailsafeFlags_position_accuracy_low(msg_);
+    return Init_FailsafeFlags_local_position_accuracy_low(msg_);
   }
 
 private:
@@ -181,15 +165,15 @@ private:
   ::px4_msgs::msg::FailsafeFlags msg_;
 };
 
-class Init_FailsafeFlags_geofence_breached
+class Init_FailsafeFlags_primary_geofence_breached
 {
 public:
-  explicit Init_FailsafeFlags_geofence_breached(::px4_msgs::msg::FailsafeFlags & msg)
+  explicit Init_FailsafeFlags_primary_geofence_breached(::px4_msgs::msg::FailsafeFlags & msg)
   : msg_(msg)
   {}
-  Init_FailsafeFlags_mission_failure geofence_breached(::px4_msgs::msg::FailsafeFlags::_geofence_breached_type arg)
+  Init_FailsafeFlags_mission_failure primary_geofence_breached(::px4_msgs::msg::FailsafeFlags::_primary_geofence_breached_type arg)
   {
-    msg_.geofence_breached = std::move(arg);
+    msg_.primary_geofence_breached = std::move(arg);
     return Init_FailsafeFlags_mission_failure(msg_);
   }
 
@@ -203,10 +187,10 @@ public:
   explicit Init_FailsafeFlags_battery_unhealthy(::px4_msgs::msg::FailsafeFlags & msg)
   : msg_(msg)
   {}
-  Init_FailsafeFlags_geofence_breached battery_unhealthy(::px4_msgs::msg::FailsafeFlags::_battery_unhealthy_type arg)
+  Init_FailsafeFlags_primary_geofence_breached battery_unhealthy(::px4_msgs::msg::FailsafeFlags::_battery_unhealthy_type arg)
   {
     msg_.battery_unhealthy = std::move(arg);
-    return Init_FailsafeFlags_geofence_breached(msg_);
+    return Init_FailsafeFlags_primary_geofence_breached(msg_);
   }
 
 private:
@@ -325,32 +309,16 @@ private:
   ::px4_msgs::msg::FailsafeFlags msg_;
 };
 
-class Init_FailsafeFlags_global_position_invalid_relaxed
-{
-public:
-  explicit Init_FailsafeFlags_global_position_invalid_relaxed(::px4_msgs::msg::FailsafeFlags & msg)
-  : msg_(msg)
-  {}
-  Init_FailsafeFlags_auto_mission_missing global_position_invalid_relaxed(::px4_msgs::msg::FailsafeFlags::_global_position_invalid_relaxed_type arg)
-  {
-    msg_.global_position_invalid_relaxed = std::move(arg);
-    return Init_FailsafeFlags_auto_mission_missing(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::FailsafeFlags msg_;
-};
-
 class Init_FailsafeFlags_global_position_invalid
 {
 public:
   explicit Init_FailsafeFlags_global_position_invalid(::px4_msgs::msg::FailsafeFlags & msg)
   : msg_(msg)
   {}
-  Init_FailsafeFlags_global_position_invalid_relaxed global_position_invalid(::px4_msgs::msg::FailsafeFlags::_global_position_invalid_type arg)
+  Init_FailsafeFlags_auto_mission_missing global_position_invalid(::px4_msgs::msg::FailsafeFlags::_global_position_invalid_type arg)
   {
     msg_.global_position_invalid = std::move(arg);
-    return Init_FailsafeFlags_global_position_invalid_relaxed(msg_);
+    return Init_FailsafeFlags_auto_mission_missing(msg_);
   }
 
 private:
@@ -565,32 +533,16 @@ private:
   ::px4_msgs::msg::FailsafeFlags msg_;
 };
 
-class Init_FailsafeFlags_mode_req_global_position_relaxed
-{
-public:
-  explicit Init_FailsafeFlags_mode_req_global_position_relaxed(::px4_msgs::msg::FailsafeFlags & msg)
-  : msg_(msg)
-  {}
-  Init_FailsafeFlags_mode_req_mission mode_req_global_position_relaxed(::px4_msgs::msg::FailsafeFlags::_mode_req_global_position_relaxed_type arg)
-  {
-    msg_.mode_req_global_position_relaxed = std::move(arg);
-    return Init_FailsafeFlags_mode_req_mission(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::FailsafeFlags msg_;
-};
-
 class Init_FailsafeFlags_mode_req_global_position
 {
 public:
   explicit Init_FailsafeFlags_mode_req_global_position(::px4_msgs::msg::FailsafeFlags & msg)
   : msg_(msg)
   {}
-  Init_FailsafeFlags_mode_req_global_position_relaxed mode_req_global_position(::px4_msgs::msg::FailsafeFlags::_mode_req_global_position_type arg)
+  Init_FailsafeFlags_mode_req_mission mode_req_global_position(::px4_msgs::msg::FailsafeFlags::_mode_req_global_position_type arg)
   {
     msg_.mode_req_global_position = std::move(arg);
-    return Init_FailsafeFlags_mode_req_global_position_relaxed(msg_);
+    return Init_FailsafeFlags_mode_req_mission(msg_);
   }
 
 private:

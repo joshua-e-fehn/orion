@@ -77,40 +77,40 @@ bool px4_msgs__msg__sensor_gps__convert_from_py(PyObject * _pymsg, void * _ros_m
     ros_message->device_id = PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
-  {  // latitude_deg
-    PyObject * field = PyObject_GetAttrString(_pymsg, "latitude_deg");
+  {  // lat
+    PyObject * field = PyObject_GetAttrString(_pymsg, "lat");
     if (!field) {
       return false;
     }
-    assert(PyFloat_Check(field));
-    ros_message->latitude_deg = PyFloat_AS_DOUBLE(field);
+    assert(PyLong_Check(field));
+    ros_message->lat = (int32_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
-  {  // longitude_deg
-    PyObject * field = PyObject_GetAttrString(_pymsg, "longitude_deg");
+  {  // lon
+    PyObject * field = PyObject_GetAttrString(_pymsg, "lon");
     if (!field) {
       return false;
     }
-    assert(PyFloat_Check(field));
-    ros_message->longitude_deg = PyFloat_AS_DOUBLE(field);
+    assert(PyLong_Check(field));
+    ros_message->lon = (int32_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
-  {  // altitude_msl_m
-    PyObject * field = PyObject_GetAttrString(_pymsg, "altitude_msl_m");
+  {  // alt
+    PyObject * field = PyObject_GetAttrString(_pymsg, "alt");
     if (!field) {
       return false;
     }
-    assert(PyFloat_Check(field));
-    ros_message->altitude_msl_m = PyFloat_AS_DOUBLE(field);
+    assert(PyLong_Check(field));
+    ros_message->alt = (int32_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
-  {  // altitude_ellipsoid_m
-    PyObject * field = PyObject_GetAttrString(_pymsg, "altitude_ellipsoid_m");
+  {  // alt_ellipsoid
+    PyObject * field = PyObject_GetAttrString(_pymsg, "alt_ellipsoid");
     if (!field) {
       return false;
     }
-    assert(PyFloat_Check(field));
-    ros_message->altitude_ellipsoid_m = PyFloat_AS_DOUBLE(field);
+    assert(PyLong_Check(field));
+    ros_message->alt_ellipsoid = (int32_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
   {  // s_variance_m_s
@@ -221,15 +221,6 @@ bool px4_msgs__msg__sensor_gps__convert_from_py(PyObject * _pymsg, void * _ros_m
     ros_message->spoofing_state = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
-  {  // authentication_state
-    PyObject * field = PyObject_GetAttrString(_pymsg, "authentication_state");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->authentication_state = (uint8_t)PyLong_AsUnsignedLong(field);
-    Py_DECREF(field);
-  }
   {  // vel_m_s
     PyObject * field = PyObject_GetAttrString(_pymsg, "vel_m_s");
     if (!field) {
@@ -311,15 +302,6 @@ bool px4_msgs__msg__sensor_gps__convert_from_py(PyObject * _pymsg, void * _ros_m
     ros_message->satellites_used = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
-  {  // system_error
-    PyObject * field = PyObject_GetAttrString(_pymsg, "system_error");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->system_error = PyLong_AsUnsignedLong(field);
-    Py_DECREF(field);
-  }
   {  // heading
     PyObject * field = PyObject_GetAttrString(_pymsg, "heading");
     if (!field) {
@@ -363,24 +345,6 @@ bool px4_msgs__msg__sensor_gps__convert_from_py(PyObject * _pymsg, void * _ros_m
     }
     assert(PyLong_Check(field));
     ros_message->selected_rtcm_instance = (uint8_t)PyLong_AsUnsignedLong(field);
-    Py_DECREF(field);
-  }
-  {  // rtcm_crc_failed
-    PyObject * field = PyObject_GetAttrString(_pymsg, "rtcm_crc_failed");
-    if (!field) {
-      return false;
-    }
-    assert(PyBool_Check(field));
-    ros_message->rtcm_crc_failed = (Py_True == field);
-    Py_DECREF(field);
-  }
-  {  // rtcm_msg_used
-    PyObject * field = PyObject_GetAttrString(_pymsg, "rtcm_msg_used");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->rtcm_msg_used = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
 
@@ -438,44 +402,44 @@ PyObject * px4_msgs__msg__sensor_gps__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // latitude_deg
+  {  // lat
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->latitude_deg);
+    field = PyLong_FromLong(ros_message->lat);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "latitude_deg", field);
+      int rc = PyObject_SetAttrString(_pymessage, "lat", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // longitude_deg
+  {  // lon
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->longitude_deg);
+    field = PyLong_FromLong(ros_message->lon);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "longitude_deg", field);
+      int rc = PyObject_SetAttrString(_pymessage, "lon", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // altitude_msl_m
+  {  // alt
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->altitude_msl_m);
+    field = PyLong_FromLong(ros_message->alt);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "altitude_msl_m", field);
+      int rc = PyObject_SetAttrString(_pymessage, "alt", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // altitude_ellipsoid_m
+  {  // alt_ellipsoid
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->altitude_ellipsoid_m);
+    field = PyLong_FromLong(ros_message->alt_ellipsoid);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "altitude_ellipsoid_m", field);
+      int rc = PyObject_SetAttrString(_pymessage, "alt_ellipsoid", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
@@ -614,17 +578,6 @@ PyObject * px4_msgs__msg__sensor_gps__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // authentication_state
-    PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->authentication_state);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "authentication_state", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
   {  // vel_m_s
     PyObject * field = NULL;
     field = PyFloat_FromDouble(ros_message->vel_m_s);
@@ -724,17 +677,6 @@ PyObject * px4_msgs__msg__sensor_gps__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // system_error
-    PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->system_error);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "system_error", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
   {  // heading
     PyObject * field = NULL;
     field = PyFloat_FromDouble(ros_message->heading);
@@ -784,28 +726,6 @@ PyObject * px4_msgs__msg__sensor_gps__convert_to_py(void * raw_ros_message)
     field = PyLong_FromUnsignedLong(ros_message->selected_rtcm_instance);
     {
       int rc = PyObject_SetAttrString(_pymessage, "selected_rtcm_instance", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
-  {  // rtcm_crc_failed
-    PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->rtcm_crc_failed ? 1 : 0);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "rtcm_crc_failed", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
-  {  // rtcm_msg_used
-    PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->rtcm_msg_used);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "rtcm_msg_used", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

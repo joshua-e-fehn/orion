@@ -21,16 +21,48 @@ namespace msg
 namespace builder
 {
 
+class Init_VehicleAttitudeSetpoint_fw_control_yaw_wheel
+{
+public:
+  explicit Init_VehicleAttitudeSetpoint_fw_control_yaw_wheel(::px4_msgs::msg::VehicleAttitudeSetpoint & msg)
+  : msg_(msg)
+  {}
+  ::px4_msgs::msg::VehicleAttitudeSetpoint fw_control_yaw_wheel(::px4_msgs::msg::VehicleAttitudeSetpoint::_fw_control_yaw_wheel_type arg)
+  {
+    msg_.fw_control_yaw_wheel = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleAttitudeSetpoint msg_;
+};
+
+class Init_VehicleAttitudeSetpoint_reset_integral
+{
+public:
+  explicit Init_VehicleAttitudeSetpoint_reset_integral(::px4_msgs::msg::VehicleAttitudeSetpoint & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleAttitudeSetpoint_fw_control_yaw_wheel reset_integral(::px4_msgs::msg::VehicleAttitudeSetpoint::_reset_integral_type arg)
+  {
+    msg_.reset_integral = std::move(arg);
+    return Init_VehicleAttitudeSetpoint_fw_control_yaw_wheel(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleAttitudeSetpoint msg_;
+};
+
 class Init_VehicleAttitudeSetpoint_thrust_body
 {
 public:
   explicit Init_VehicleAttitudeSetpoint_thrust_body(::px4_msgs::msg::VehicleAttitudeSetpoint & msg)
   : msg_(msg)
   {}
-  ::px4_msgs::msg::VehicleAttitudeSetpoint thrust_body(::px4_msgs::msg::VehicleAttitudeSetpoint::_thrust_body_type arg)
+  Init_VehicleAttitudeSetpoint_reset_integral thrust_body(::px4_msgs::msg::VehicleAttitudeSetpoint::_thrust_body_type arg)
   {
     msg_.thrust_body = std::move(arg);
-    return std::move(msg_);
+    return Init_VehicleAttitudeSetpoint_reset_integral(msg_);
   }
 
 private:
@@ -69,16 +101,64 @@ private:
   ::px4_msgs::msg::VehicleAttitudeSetpoint msg_;
 };
 
+class Init_VehicleAttitudeSetpoint_yaw_body
+{
+public:
+  explicit Init_VehicleAttitudeSetpoint_yaw_body(::px4_msgs::msg::VehicleAttitudeSetpoint & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleAttitudeSetpoint_yaw_sp_move_rate yaw_body(::px4_msgs::msg::VehicleAttitudeSetpoint::_yaw_body_type arg)
+  {
+    msg_.yaw_body = std::move(arg);
+    return Init_VehicleAttitudeSetpoint_yaw_sp_move_rate(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleAttitudeSetpoint msg_;
+};
+
+class Init_VehicleAttitudeSetpoint_pitch_body
+{
+public:
+  explicit Init_VehicleAttitudeSetpoint_pitch_body(::px4_msgs::msg::VehicleAttitudeSetpoint & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleAttitudeSetpoint_yaw_body pitch_body(::px4_msgs::msg::VehicleAttitudeSetpoint::_pitch_body_type arg)
+  {
+    msg_.pitch_body = std::move(arg);
+    return Init_VehicleAttitudeSetpoint_yaw_body(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleAttitudeSetpoint msg_;
+};
+
+class Init_VehicleAttitudeSetpoint_roll_body
+{
+public:
+  explicit Init_VehicleAttitudeSetpoint_roll_body(::px4_msgs::msg::VehicleAttitudeSetpoint & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleAttitudeSetpoint_pitch_body roll_body(::px4_msgs::msg::VehicleAttitudeSetpoint::_roll_body_type arg)
+  {
+    msg_.roll_body = std::move(arg);
+    return Init_VehicleAttitudeSetpoint_pitch_body(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleAttitudeSetpoint msg_;
+};
+
 class Init_VehicleAttitudeSetpoint_timestamp
 {
 public:
   Init_VehicleAttitudeSetpoint_timestamp()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_VehicleAttitudeSetpoint_yaw_sp_move_rate timestamp(::px4_msgs::msg::VehicleAttitudeSetpoint::_timestamp_type arg)
+  Init_VehicleAttitudeSetpoint_roll_body timestamp(::px4_msgs::msg::VehicleAttitudeSetpoint::_timestamp_type arg)
   {
     msg_.timestamp = std::move(arg);
-    return Init_VehicleAttitudeSetpoint_yaw_sp_move_rate(msg_);
+    return Init_VehicleAttitudeSetpoint_roll_body(msg_);
   }
 
 private:

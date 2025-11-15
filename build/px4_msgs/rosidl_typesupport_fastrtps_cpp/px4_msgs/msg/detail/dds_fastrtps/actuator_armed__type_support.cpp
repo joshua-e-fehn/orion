@@ -42,10 +42,10 @@ cdr_serialize(
   cdr << (ros_message.ready_to_arm ? true : false);
   // Member: lockdown
   cdr << (ros_message.lockdown ? true : false);
-  // Member: kill
-  cdr << (ros_message.kill ? true : false);
-  // Member: termination
-  cdr << (ros_message.termination ? true : false);
+  // Member: manual_lockdown
+  cdr << (ros_message.manual_lockdown ? true : false);
+  // Member: force_failsafe
+  cdr << (ros_message.force_failsafe ? true : false);
   // Member: in_esc_calibration_mode
   cdr << (ros_message.in_esc_calibration_mode ? true : false);
   return true;
@@ -88,18 +88,18 @@ cdr_deserialize(
     ros_message.lockdown = tmp ? true : false;
   }
 
-  // Member: kill
+  // Member: manual_lockdown
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message.kill = tmp ? true : false;
+    ros_message.manual_lockdown = tmp ? true : false;
   }
 
-  // Member: termination
+  // Member: force_failsafe
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message.termination = tmp ? true : false;
+    ros_message.force_failsafe = tmp ? true : false;
   }
 
   // Member: in_esc_calibration_mode
@@ -155,15 +155,15 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: kill
+  // Member: manual_lockdown
   {
-    size_t item_size = sizeof(ros_message.kill);
+    size_t item_size = sizeof(ros_message.manual_lockdown);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: termination
+  // Member: force_failsafe
   {
-    size_t item_size = sizeof(ros_message.termination);
+    size_t item_size = sizeof(ros_message.force_failsafe);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -238,7 +238,7 @@ max_serialized_size_ActuatorArmed(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: kill
+  // Member: manual_lockdown
   {
     size_t array_size = 1;
 
@@ -246,7 +246,7 @@ max_serialized_size_ActuatorArmed(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: termination
+  // Member: force_failsafe
   {
     size_t array_size = 1;
 

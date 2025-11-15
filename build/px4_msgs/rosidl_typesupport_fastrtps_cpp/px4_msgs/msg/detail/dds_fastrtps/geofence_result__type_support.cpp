@@ -34,14 +34,14 @@ cdr_serialize(
 {
   // Member: timestamp
   cdr << ros_message.timestamp;
-  // Member: geofence_max_dist_triggered
-  cdr << (ros_message.geofence_max_dist_triggered ? true : false);
-  // Member: geofence_max_alt_triggered
-  cdr << (ros_message.geofence_max_alt_triggered ? true : false);
-  // Member: geofence_custom_fence_triggered
-  cdr << (ros_message.geofence_custom_fence_triggered ? true : false);
-  // Member: geofence_action
-  cdr << ros_message.geofence_action;
+  // Member: geofence_violation_reason
+  cdr << ros_message.geofence_violation_reason;
+  // Member: primary_geofence_breached
+  cdr << (ros_message.primary_geofence_breached ? true : false);
+  // Member: primary_geofence_action
+  cdr << ros_message.primary_geofence_action;
+  // Member: home_required
+  cdr << (ros_message.home_required ? true : false);
   return true;
 }
 
@@ -54,29 +54,25 @@ cdr_deserialize(
   // Member: timestamp
   cdr >> ros_message.timestamp;
 
-  // Member: geofence_max_dist_triggered
+  // Member: geofence_violation_reason
+  cdr >> ros_message.geofence_violation_reason;
+
+  // Member: primary_geofence_breached
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message.geofence_max_dist_triggered = tmp ? true : false;
+    ros_message.primary_geofence_breached = tmp ? true : false;
   }
 
-  // Member: geofence_max_alt_triggered
+  // Member: primary_geofence_action
+  cdr >> ros_message.primary_geofence_action;
+
+  // Member: home_required
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message.geofence_max_alt_triggered = tmp ? true : false;
+    ros_message.home_required = tmp ? true : false;
   }
-
-  // Member: geofence_custom_fence_triggered
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message.geofence_custom_fence_triggered = tmp ? true : false;
-  }
-
-  // Member: geofence_action
-  cdr >> ros_message.geofence_action;
 
   return true;
 }
@@ -100,27 +96,27 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: geofence_max_dist_triggered
+  // Member: geofence_violation_reason
   {
-    size_t item_size = sizeof(ros_message.geofence_max_dist_triggered);
+    size_t item_size = sizeof(ros_message.geofence_violation_reason);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: geofence_max_alt_triggered
+  // Member: primary_geofence_breached
   {
-    size_t item_size = sizeof(ros_message.geofence_max_alt_triggered);
+    size_t item_size = sizeof(ros_message.primary_geofence_breached);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: geofence_custom_fence_triggered
+  // Member: primary_geofence_action
   {
-    size_t item_size = sizeof(ros_message.geofence_custom_fence_triggered);
+    size_t item_size = sizeof(ros_message.primary_geofence_action);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: geofence_action
+  // Member: home_required
   {
-    size_t item_size = sizeof(ros_message.geofence_action);
+    size_t item_size = sizeof(ros_message.home_required);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -157,7 +153,7 @@ max_serialized_size_GeofenceResult(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
-  // Member: geofence_max_dist_triggered
+  // Member: geofence_violation_reason
   {
     size_t array_size = 1;
 
@@ -165,7 +161,7 @@ max_serialized_size_GeofenceResult(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: geofence_max_alt_triggered
+  // Member: primary_geofence_breached
   {
     size_t array_size = 1;
 
@@ -173,7 +169,7 @@ max_serialized_size_GeofenceResult(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: geofence_custom_fence_triggered
+  // Member: primary_geofence_action
   {
     size_t array_size = 1;
 
@@ -181,7 +177,7 @@ max_serialized_size_GeofenceResult(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: geofence_action
+  // Member: home_required
   {
     size_t array_size = 1;
 
@@ -197,7 +193,7 @@ max_serialized_size_GeofenceResult(
     using DataType = px4_msgs::msg::GeofenceResult;
     is_plain =
       (
-      offsetof(DataType, geofence_action) +
+      offsetof(DataType, home_required) +
       last_member_size
       ) == ret_val;
   }

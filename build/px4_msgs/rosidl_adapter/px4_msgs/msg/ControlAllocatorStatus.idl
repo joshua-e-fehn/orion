@@ -56,10 +56,6 @@ module px4_msgs {
       @verbatim (language="comment", text=
         "Bitmask of failed motors that were removed from the allocation / effectiveness matrix. Not necessarily identical to the report from FailureDetector")
       uint16 handled_motor_failure_mask;
-
-      @verbatim (language="comment", text=
-        "Bitmaks of motors stopped by failure injection")
-      uint16 motor_stop_mask;
     };
   };
 };

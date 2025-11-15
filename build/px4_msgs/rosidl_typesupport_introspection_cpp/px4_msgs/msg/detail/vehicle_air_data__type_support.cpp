@@ -37,7 +37,7 @@ void VehicleAirData_fini_function(void * message_memory)
   typed_message->~VehicleAirData();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleAirData_message_member_array[9] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleAirData_message_member_array[8] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
@@ -107,6 +107,23 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleAirDat
     nullptr  // resize(index) function pointer
   },
   {
+    "baro_temp_celcius",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::VehicleAirData, baro_temp_celcius),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "baro_pressure_pa",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
@@ -115,40 +132,6 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleAirDat
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::VehicleAirData, baro_pressure_pa),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "ambient_temperature",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::VehicleAirData, ambient_temperature),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "temperature_source",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::VehicleAirData, temperature_source),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -196,7 +179,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleAirDat
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers VehicleAirData_message_members = {
   "px4_msgs::msg",  // message namespace
   "VehicleAirData",  // message name
-  9,  // number of fields
+  8,  // number of fields
   sizeof(px4_msgs::msg::VehicleAirData),
   VehicleAirData_message_member_array,  // message members
   VehicleAirData_init_function,  // function to initialize message memory (memory has to be allocated)

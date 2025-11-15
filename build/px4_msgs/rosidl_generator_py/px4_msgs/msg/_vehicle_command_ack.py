@@ -20,7 +20,6 @@ class Metaclass_VehicleCommandAck(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'MESSAGE_VERSION': 0,
         'VEHICLE_CMD_RESULT_ACCEPTED': 0,
         'VEHICLE_CMD_RESULT_TEMPORARILY_REJECTED': 1,
         'VEHICLE_CMD_RESULT_DENIED': 2,
@@ -63,7 +62,6 @@ class Metaclass_VehicleCommandAck(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
             'VEHICLE_CMD_RESULT_ACCEPTED': cls.__constants['VEHICLE_CMD_RESULT_ACCEPTED'],
             'VEHICLE_CMD_RESULT_TEMPORARILY_REJECTED': cls.__constants['VEHICLE_CMD_RESULT_TEMPORARILY_REJECTED'],
             'VEHICLE_CMD_RESULT_DENIED': cls.__constants['VEHICLE_CMD_RESULT_DENIED'],
@@ -79,11 +77,6 @@ class Metaclass_VehicleCommandAck(type):
             'ARM_AUTH_DENIED_REASON_BAD_WEATHER': cls.__constants['ARM_AUTH_DENIED_REASON_BAD_WEATHER'],
             'ORB_QUEUE_LENGTH': cls.__constants['ORB_QUEUE_LENGTH'],
         }
-
-    @property
-    def MESSAGE_VERSION(self):
-        """Message constant 'MESSAGE_VERSION'."""
-        return Metaclass_VehicleCommandAck.__constants['MESSAGE_VERSION']
 
     @property
     def VEHICLE_CMD_RESULT_ACCEPTED(self):
@@ -161,7 +154,6 @@ class VehicleCommandAck(metaclass=Metaclass_VehicleCommandAck):
     Message class 'VehicleCommandAck'.
 
     Constants:
-      MESSAGE_VERSION
       VEHICLE_CMD_RESULT_ACCEPTED
       VEHICLE_CMD_RESULT_TEMPORARILY_REJECTED
       VEHICLE_CMD_RESULT_DENIED
@@ -196,7 +188,7 @@ class VehicleCommandAck(metaclass=Metaclass_VehicleCommandAck):
         'result_param1': 'uint8',
         'result_param2': 'int32',
         'target_system': 'uint8',
-        'target_component': 'uint16',
+        'target_component': 'uint8',
         'from_external': 'boolean',
     }
 
@@ -207,7 +199,7 @@ class VehicleCommandAck(metaclass=Metaclass_VehicleCommandAck):
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
@@ -377,8 +369,8 @@ class VehicleCommandAck(metaclass=Metaclass_VehicleCommandAck):
             assert \
                 isinstance(value, int), \
                 "The 'target_component' field must be of type 'int'"
-            assert value >= 0 and value < 65536, \
-                "The 'target_component' field must be an unsigned integer in [0, 65535]"
+            assert value >= 0 and value < 256, \
+                "The 'target_component' field must be an unsigned integer in [0, 255]"
         self._target_component = value
 
     @builtins.property

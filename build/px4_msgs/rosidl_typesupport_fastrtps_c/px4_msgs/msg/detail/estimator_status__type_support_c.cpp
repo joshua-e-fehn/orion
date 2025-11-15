@@ -91,9 +91,14 @@ static bool _EstimatorStatus__cdr_serialize(
     cdr << ros_message->pos_vert_accuracy;
   }
 
-  // Field name: hdg_test_ratio
+  // Field name: innovation_check_flags
   {
-    cdr << ros_message->hdg_test_ratio;
+    cdr << ros_message->innovation_check_flags;
+  }
+
+  // Field name: mag_test_ratio
+  {
+    cdr << ros_message->mag_test_ratio;
   }
 
   // Field name: vel_test_ratio
@@ -166,16 +171,6 @@ static bool _EstimatorStatus__cdr_serialize(
     cdr << (ros_message->pre_flt_fail_innov_heading ? true : false);
   }
 
-  // Field name: pre_flt_fail_innov_height
-  {
-    cdr << (ros_message->pre_flt_fail_innov_height ? true : false);
-  }
-
-  // Field name: pre_flt_fail_innov_pos_horiz
-  {
-    cdr << (ros_message->pre_flt_fail_innov_pos_horiz ? true : false);
-  }
-
   // Field name: pre_flt_fail_innov_vel_horiz
   {
     cdr << (ros_message->pre_flt_fail_innov_vel_horiz ? true : false);
@@ -184,6 +179,11 @@ static bool _EstimatorStatus__cdr_serialize(
   // Field name: pre_flt_fail_innov_vel_vert
   {
     cdr << (ros_message->pre_flt_fail_innov_vel_vert ? true : false);
+  }
+
+  // Field name: pre_flt_fail_innov_height
+  {
+    cdr << (ros_message->pre_flt_fail_innov_height ? true : false);
   }
 
   // Field name: pre_flt_fail_mag_field_disturbed
@@ -219,26 +219,6 @@ static bool _EstimatorStatus__cdr_serialize(
   // Field name: timeout_flags
   {
     cdr << ros_message->timeout_flags;
-  }
-
-  // Field name: mag_inclination_deg
-  {
-    cdr << ros_message->mag_inclination_deg;
-  }
-
-  // Field name: mag_inclination_ref_deg
-  {
-    cdr << ros_message->mag_inclination_ref_deg;
-  }
-
-  // Field name: mag_strength_gs
-  {
-    cdr << ros_message->mag_strength_gs;
-  }
-
-  // Field name: mag_strength_ref_gs
-  {
-    cdr << ros_message->mag_strength_ref_gs;
   }
 
   return true;
@@ -295,9 +275,14 @@ static bool _EstimatorStatus__cdr_deserialize(
     cdr >> ros_message->pos_vert_accuracy;
   }
 
-  // Field name: hdg_test_ratio
+  // Field name: innovation_check_flags
   {
-    cdr >> ros_message->hdg_test_ratio;
+    cdr >> ros_message->innovation_check_flags;
+  }
+
+  // Field name: mag_test_ratio
+  {
+    cdr >> ros_message->mag_test_ratio;
   }
 
   // Field name: vel_test_ratio
@@ -372,20 +357,6 @@ static bool _EstimatorStatus__cdr_deserialize(
     ros_message->pre_flt_fail_innov_heading = tmp ? true : false;
   }
 
-  // Field name: pre_flt_fail_innov_height
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->pre_flt_fail_innov_height = tmp ? true : false;
-  }
-
-  // Field name: pre_flt_fail_innov_pos_horiz
-  {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->pre_flt_fail_innov_pos_horiz = tmp ? true : false;
-  }
-
   // Field name: pre_flt_fail_innov_vel_horiz
   {
     uint8_t tmp;
@@ -398,6 +369,13 @@ static bool _EstimatorStatus__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->pre_flt_fail_innov_vel_vert = tmp ? true : false;
+  }
+
+  // Field name: pre_flt_fail_innov_height
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->pre_flt_fail_innov_height = tmp ? true : false;
   }
 
   // Field name: pre_flt_fail_mag_field_disturbed
@@ -435,26 +413,6 @@ static bool _EstimatorStatus__cdr_deserialize(
   // Field name: timeout_flags
   {
     cdr >> ros_message->timeout_flags;
-  }
-
-  // Field name: mag_inclination_deg
-  {
-    cdr >> ros_message->mag_inclination_deg;
-  }
-
-  // Field name: mag_inclination_ref_deg
-  {
-    cdr >> ros_message->mag_inclination_ref_deg;
-  }
-
-  // Field name: mag_strength_gs
-  {
-    cdr >> ros_message->mag_strength_gs;
-  }
-
-  // Field name: mag_strength_ref_gs
-  {
-    cdr >> ros_message->mag_strength_ref_gs;
   }
 
   return true;
@@ -525,9 +483,15 @@ size_t get_serialized_size_px4_msgs__msg__EstimatorStatus(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name hdg_test_ratio
+  // field.name innovation_check_flags
   {
-    size_t item_size = sizeof(ros_message->hdg_test_ratio);
+    size_t item_size = sizeof(ros_message->innovation_check_flags);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name mag_test_ratio
+  {
+    size_t item_size = sizeof(ros_message->mag_test_ratio);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -615,18 +579,6 @@ size_t get_serialized_size_px4_msgs__msg__EstimatorStatus(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name pre_flt_fail_innov_height
-  {
-    size_t item_size = sizeof(ros_message->pre_flt_fail_innov_height);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name pre_flt_fail_innov_pos_horiz
-  {
-    size_t item_size = sizeof(ros_message->pre_flt_fail_innov_pos_horiz);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // field.name pre_flt_fail_innov_vel_horiz
   {
     size_t item_size = sizeof(ros_message->pre_flt_fail_innov_vel_horiz);
@@ -636,6 +588,12 @@ size_t get_serialized_size_px4_msgs__msg__EstimatorStatus(
   // field.name pre_flt_fail_innov_vel_vert
   {
     size_t item_size = sizeof(ros_message->pre_flt_fail_innov_vel_vert);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name pre_flt_fail_innov_height
+  {
+    size_t item_size = sizeof(ros_message->pre_flt_fail_innov_height);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -678,30 +636,6 @@ size_t get_serialized_size_px4_msgs__msg__EstimatorStatus(
   // field.name timeout_flags
   {
     size_t item_size = sizeof(ros_message->timeout_flags);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name mag_inclination_deg
-  {
-    size_t item_size = sizeof(ros_message->mag_inclination_deg);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name mag_inclination_ref_deg
-  {
-    size_t item_size = sizeof(ros_message->mag_inclination_ref_deg);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name mag_strength_gs
-  {
-    size_t item_size = sizeof(ros_message->mag_strength_gs);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name mag_strength_ref_gs
-  {
-    size_t item_size = sizeof(ros_message->mag_strength_ref_gs);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -798,7 +732,15 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorStatus(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: hdg_test_ratio
+  // member: innovation_check_flags
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint16_t);
+    current_alignment += array_size * sizeof(uint16_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+  }
+  // member: mag_test_ratio
   {
     size_t array_size = 1;
 
@@ -912,20 +854,6 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorStatus(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: pre_flt_fail_innov_height
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-  // member: pre_flt_fail_innov_pos_horiz
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
   // member: pre_flt_fail_innov_vel_horiz
   {
     size_t array_size = 1;
@@ -934,6 +862,13 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorStatus(
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: pre_flt_fail_innov_vel_vert
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: pre_flt_fail_innov_height
   {
     size_t array_size = 1;
 
@@ -993,38 +928,6 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorStatus(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: mag_inclination_deg
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: mag_inclination_ref_deg
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: mag_strength_gs
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: mag_strength_ref_gs
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -1034,7 +937,7 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorStatus(
     using DataType = px4_msgs__msg__EstimatorStatus;
     is_plain =
       (
-      offsetof(DataType, mag_strength_ref_gs) +
+      offsetof(DataType, timeout_flags) +
       last_member_size
       ) == ret_val;
   }

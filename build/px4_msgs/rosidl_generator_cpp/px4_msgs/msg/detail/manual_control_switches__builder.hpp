@@ -37,32 +37,16 @@ private:
   ::px4_msgs::msg::ManualControlSwitches msg_;
 };
 
-class Init_ManualControlSwitches_payload_power_switch
-{
-public:
-  explicit Init_ManualControlSwitches_payload_power_switch(::px4_msgs::msg::ManualControlSwitches & msg)
-  : msg_(msg)
-  {}
-  Init_ManualControlSwitches_switch_changes payload_power_switch(::px4_msgs::msg::ManualControlSwitches::_payload_power_switch_type arg)
-  {
-    msg_.payload_power_switch = std::move(arg);
-    return Init_ManualControlSwitches_switch_changes(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::ManualControlSwitches msg_;
-};
-
 class Init_ManualControlSwitches_engage_main_motor_switch
 {
 public:
   explicit Init_ManualControlSwitches_engage_main_motor_switch(::px4_msgs::msg::ManualControlSwitches & msg)
   : msg_(msg)
   {}
-  Init_ManualControlSwitches_payload_power_switch engage_main_motor_switch(::px4_msgs::msg::ManualControlSwitches::_engage_main_motor_switch_type arg)
+  Init_ManualControlSwitches_switch_changes engage_main_motor_switch(::px4_msgs::msg::ManualControlSwitches::_engage_main_motor_switch_type arg)
   {
     msg_.engage_main_motor_switch = std::move(arg);
-    return Init_ManualControlSwitches_payload_power_switch(msg_);
+    return Init_ManualControlSwitches_switch_changes(msg_);
   }
 
 private:
@@ -133,32 +117,16 @@ private:
   ::px4_msgs::msg::ManualControlSwitches msg_;
 };
 
-class Init_ManualControlSwitches_termination_switch
-{
-public:
-  explicit Init_ManualControlSwitches_termination_switch(::px4_msgs::msg::ManualControlSwitches & msg)
-  : msg_(msg)
-  {}
-  Init_ManualControlSwitches_gear_switch termination_switch(::px4_msgs::msg::ManualControlSwitches::_termination_switch_type arg)
-  {
-    msg_.termination_switch = std::move(arg);
-    return Init_ManualControlSwitches_gear_switch(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::ManualControlSwitches msg_;
-};
-
 class Init_ManualControlSwitches_kill_switch
 {
 public:
   explicit Init_ManualControlSwitches_kill_switch(::px4_msgs::msg::ManualControlSwitches & msg)
   : msg_(msg)
   {}
-  Init_ManualControlSwitches_termination_switch kill_switch(::px4_msgs::msg::ManualControlSwitches::_kill_switch_type arg)
+  Init_ManualControlSwitches_gear_switch kill_switch(::px4_msgs::msg::ManualControlSwitches::_kill_switch_type arg)
   {
     msg_.kill_switch = std::move(arg);
-    return Init_ManualControlSwitches_termination_switch(msg_);
+    return Init_ManualControlSwitches_gear_switch(msg_);
   }
 
 private:

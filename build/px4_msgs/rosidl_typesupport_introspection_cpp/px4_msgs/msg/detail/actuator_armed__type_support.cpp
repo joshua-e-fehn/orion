@@ -124,14 +124,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     nullptr  // resize(index) function pointer
   },
   {
-    "kill",  // name
+    "manual_lockdown",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::ActuatorArmed, kill),  // bytes offset in struct
+    offsetof(px4_msgs::msg::ActuatorArmed, manual_lockdown),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -141,14 +141,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     nullptr  // resize(index) function pointer
   },
   {
-    "termination",  // name
+    "force_failsafe",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::ActuatorArmed, termination),  // bytes offset in struct
+    offsetof(px4_msgs::msg::ActuatorArmed, force_failsafe),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer

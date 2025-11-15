@@ -24,7 +24,6 @@ px4_msgs__msg__ControlAllocatorStatus__init(px4_msgs__msg__ControlAllocatorStatu
   // unallocated_thrust
   // actuator_saturation
   // handled_motor_failure_mask
-  // motor_stop_mask
   return true;
 }
 
@@ -41,7 +40,6 @@ px4_msgs__msg__ControlAllocatorStatus__fini(px4_msgs__msg__ControlAllocatorStatu
   // unallocated_thrust
   // actuator_saturation
   // handled_motor_failure_mask
-  // motor_stop_mask
 }
 
 bool
@@ -84,10 +82,6 @@ px4_msgs__msg__ControlAllocatorStatus__are_equal(const px4_msgs__msg__ControlAll
   if (lhs->handled_motor_failure_mask != rhs->handled_motor_failure_mask) {
     return false;
   }
-  // motor_stop_mask
-  if (lhs->motor_stop_mask != rhs->motor_stop_mask) {
-    return false;
-  }
   return true;
 }
 
@@ -119,8 +113,6 @@ px4_msgs__msg__ControlAllocatorStatus__copy(
   }
   // handled_motor_failure_mask
   output->handled_motor_failure_mask = input->handled_motor_failure_mask;
-  // motor_stop_mask
-  output->motor_stop_mask = input->motor_stop_mask;
   return true;
 }
 

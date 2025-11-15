@@ -226,36 +226,30 @@ struct AutotuneAttitudeControlStatus_
     0u;
   static constexpr uint8_t STATE_INIT =
     1u;
-  static constexpr uint8_t STATE_ROLL_AMPLITUDE_DETECTION =
-    2u;
   static constexpr uint8_t STATE_ROLL =
-    3u;
+    2u;
   static constexpr uint8_t STATE_ROLL_PAUSE =
-    4u;
-  static constexpr uint8_t STATE_PITCH_AMPLITUDE_DETECTION =
-    5u;
+    3u;
   static constexpr uint8_t STATE_PITCH =
-    6u;
+    4u;
   static constexpr uint8_t STATE_PITCH_PAUSE =
-    7u;
-  static constexpr uint8_t STATE_YAW_AMPLITUDE_DETECTION =
-    8u;
+    5u;
   static constexpr uint8_t STATE_YAW =
-    9u;
+    6u;
   static constexpr uint8_t STATE_YAW_PAUSE =
-    10u;
+    7u;
   static constexpr uint8_t STATE_VERIFICATION =
-    11u;
+    8u;
   static constexpr uint8_t STATE_APPLY =
-    12u;
+    9u;
   static constexpr uint8_t STATE_TEST =
-    13u;
+    10u;
   static constexpr uint8_t STATE_COMPLETE =
-    14u;
+    11u;
   static constexpr uint8_t STATE_FAIL =
-    15u;
+    12u;
   static constexpr uint8_t STATE_WAIT_FOR_DISARM =
-    16u;
+    13u;
 
   // pointer types
   using RawPtr =
@@ -368,11 +362,6 @@ constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_INIT
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_ROLL_AMPLITUDE_DETECTION;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
 constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_ROLL;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
@@ -383,22 +372,12 @@ constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_ROLL
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_PITCH_AMPLITUDE_DETECTION;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
 constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_PITCH;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
 constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_PITCH_PAUSE;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_YAW_AMPLITUDE_DETECTION;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17

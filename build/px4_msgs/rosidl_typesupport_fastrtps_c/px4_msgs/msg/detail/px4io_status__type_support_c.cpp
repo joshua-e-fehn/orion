@@ -164,9 +164,9 @@ static bool _Px4ioStatus__cdr_serialize(
     cdr << (ros_message->arming_fmu_prearmed ? true : false);
   }
 
-  // Field name: arming_termination
+  // Field name: arming_force_failsafe
   {
-    cdr << (ros_message->arming_termination ? true : false);
+    cdr << (ros_message->arming_force_failsafe ? true : false);
   }
 
   // Field name: arming_io_arm_ok
@@ -384,11 +384,11 @@ static bool _Px4ioStatus__cdr_deserialize(
     ros_message->arming_fmu_prearmed = tmp ? true : false;
   }
 
-  // Field name: arming_termination
+  // Field name: arming_force_failsafe
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message->arming_termination = tmp ? true : false;
+    ros_message->arming_force_failsafe = tmp ? true : false;
   }
 
   // Field name: arming_io_arm_ok
@@ -602,9 +602,9 @@ size_t get_serialized_size_px4_msgs__msg__Px4ioStatus(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name arming_termination
+  // field.name arming_force_failsafe
   {
-    size_t item_size = sizeof(ros_message->arming_termination);
+    size_t item_size = sizeof(ros_message->arming_force_failsafe);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -865,7 +865,7 @@ size_t max_serialized_size_px4_msgs__msg__Px4ioStatus(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: arming_termination
+  // member: arming_force_failsafe
   {
     size_t array_size = 1;
 

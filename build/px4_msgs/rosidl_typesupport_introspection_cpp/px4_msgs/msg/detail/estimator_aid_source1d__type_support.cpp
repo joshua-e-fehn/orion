@@ -37,7 +37,7 @@ void EstimatorAidSource1d_fini_function(void * message_memory)
   typed_message->~EstimatorAidSource1d();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidSource1d_message_member_array[14] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidSource1d_message_member_array[13] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
@@ -175,23 +175,6 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     nullptr  // resize(index) function pointer
   },
   {
-    "innovation_filtered",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::EstimatorAidSource1d, innovation_filtered),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
     "innovation_variance",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
@@ -226,14 +209,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     nullptr  // resize(index) function pointer
   },
   {
-    "test_ratio_filtered",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    "fusion_enabled",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::EstimatorAidSource1d, test_ratio_filtered),  // bytes offset in struct
+    offsetof(px4_msgs::msg::EstimatorAidSource1d, fusion_enabled),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -281,7 +264,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers EstimatorAidSource1d_message_members = {
   "px4_msgs::msg",  // message namespace
   "EstimatorAidSource1d",  // message name
-  14,  // number of fields
+  13,  // number of fields
   sizeof(px4_msgs::msg::EstimatorAidSource1d),
   EstimatorAidSource1d_message_member_array,  // message members
   EstimatorAidSource1d_init_function,  // function to initialize message memory (memory has to be allocated)

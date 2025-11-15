@@ -60,17 +60,17 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: kill
+  // member: manual_lockdown
   {
-    out << "kill: ";
-    rosidl_generator_traits::value_to_yaml(msg.kill, out);
+    out << "manual_lockdown: ";
+    rosidl_generator_traits::value_to_yaml(msg.manual_lockdown, out);
     out << ", ";
   }
 
-  // member: termination
+  // member: force_failsafe
   {
-    out << "termination: ";
-    rosidl_generator_traits::value_to_yaml(msg.termination, out);
+    out << "force_failsafe: ";
+    rosidl_generator_traits::value_to_yaml(msg.force_failsafe, out);
     out << ", ";
   }
 
@@ -136,23 +136,23 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: kill
+  // member: manual_lockdown
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "kill: ";
-    rosidl_generator_traits::value_to_yaml(msg.kill, out);
+    out << "manual_lockdown: ";
+    rosidl_generator_traits::value_to_yaml(msg.manual_lockdown, out);
     out << "\n";
   }
 
-  // member: termination
+  // member: force_failsafe
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "termination: ";
-    rosidl_generator_traits::value_to_yaml(msg.termination, out);
+    out << "force_failsafe: ";
+    rosidl_generator_traits::value_to_yaml(msg.force_failsafe, out);
     out << "\n";
   }
 

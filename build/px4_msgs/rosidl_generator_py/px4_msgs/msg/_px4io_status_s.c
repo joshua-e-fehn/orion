@@ -260,13 +260,13 @@ bool px4_msgs__msg__px4io_status__convert_from_py(PyObject * _pymsg, void * _ros
     ros_message->arming_fmu_prearmed = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // arming_termination
-    PyObject * field = PyObject_GetAttrString(_pymsg, "arming_termination");
+  {  // arming_force_failsafe
+    PyObject * field = PyObject_GetAttrString(_pymsg, "arming_force_failsafe");
     if (!field) {
       return false;
     }
     assert(PyBool_Check(field));
-    ros_message->arming_termination = (Py_True == field);
+    ros_message->arming_force_failsafe = (Py_True == field);
     Py_DECREF(field);
   }
   {  // arming_io_arm_ok
@@ -691,11 +691,11 @@ PyObject * px4_msgs__msg__px4io_status__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // arming_termination
+  {  // arming_force_failsafe
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->arming_termination ? 1 : 0);
+    field = PyBool_FromLong(ros_message->arming_force_failsafe ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "arming_termination", field);
+      int rc = PyObject_SetAttrString(_pymessage, "arming_force_failsafe", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

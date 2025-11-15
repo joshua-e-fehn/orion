@@ -22,37 +22,14 @@ class Metaclass_SensorGps(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'FIX_TYPE_NONE': 1,
-        'FIX_TYPE_2D': 2,
-        'FIX_TYPE_3D': 3,
-        'FIX_TYPE_RTCM_CODE_DIFFERENTIAL': 4,
-        'FIX_TYPE_RTK_FLOAT': 5,
-        'FIX_TYPE_RTK_FIXED': 6,
-        'FIX_TYPE_EXTRAPOLATED': 8,
         'JAMMING_STATE_UNKNOWN': 0,
         'JAMMING_STATE_OK': 1,
-        'JAMMING_STATE_MITIGATED': 2,
-        'JAMMING_STATE_DETECTED': 3,
+        'JAMMING_STATE_WARNING': 2,
+        'JAMMING_STATE_CRITICAL': 3,
         'SPOOFING_STATE_UNKNOWN': 0,
-        'SPOOFING_STATE_OK': 1,
-        'SPOOFING_STATE_MITIGATED': 2,
-        'SPOOFING_STATE_DETECTED': 3,
-        'AUTHENTICATION_STATE_UNKNOWN': 0,
-        'AUTHENTICATION_STATE_INITIALIZING': 1,
-        'AUTHENTICATION_STATE_ERROR': 2,
-        'AUTHENTICATION_STATE_OK': 3,
-        'AUTHENTICATION_STATE_DISABLED': 4,
-        'SYSTEM_ERROR_OK': 0,
-        'SYSTEM_ERROR_INCOMING_CORRECTIONS': 1,
-        'SYSTEM_ERROR_CONFIGURATION': 2,
-        'SYSTEM_ERROR_SOFTWARE': 4,
-        'SYSTEM_ERROR_ANTENNA': 8,
-        'SYSTEM_ERROR_EVENT_CONGESTION': 16,
-        'SYSTEM_ERROR_CPU_OVERLOAD': 32,
-        'SYSTEM_ERROR_OUTPUT_CONGESTION': 64,
-        'RTCM_MSG_USED_UNKNOWN': 0,
-        'RTCM_MSG_USED_NOT_USED': 1,
-        'RTCM_MSG_USED_USED': 2,
+        'SPOOFING_STATE_NONE': 1,
+        'SPOOFING_STATE_INDICATED': 2,
+        'SPOOFING_STATE_MULTIPLE': 3,
     }
 
     @classmethod
@@ -81,73 +58,15 @@ class Metaclass_SensorGps(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'FIX_TYPE_NONE': cls.__constants['FIX_TYPE_NONE'],
-            'FIX_TYPE_2D': cls.__constants['FIX_TYPE_2D'],
-            'FIX_TYPE_3D': cls.__constants['FIX_TYPE_3D'],
-            'FIX_TYPE_RTCM_CODE_DIFFERENTIAL': cls.__constants['FIX_TYPE_RTCM_CODE_DIFFERENTIAL'],
-            'FIX_TYPE_RTK_FLOAT': cls.__constants['FIX_TYPE_RTK_FLOAT'],
-            'FIX_TYPE_RTK_FIXED': cls.__constants['FIX_TYPE_RTK_FIXED'],
-            'FIX_TYPE_EXTRAPOLATED': cls.__constants['FIX_TYPE_EXTRAPOLATED'],
             'JAMMING_STATE_UNKNOWN': cls.__constants['JAMMING_STATE_UNKNOWN'],
             'JAMMING_STATE_OK': cls.__constants['JAMMING_STATE_OK'],
-            'JAMMING_STATE_MITIGATED': cls.__constants['JAMMING_STATE_MITIGATED'],
-            'JAMMING_STATE_DETECTED': cls.__constants['JAMMING_STATE_DETECTED'],
+            'JAMMING_STATE_WARNING': cls.__constants['JAMMING_STATE_WARNING'],
+            'JAMMING_STATE_CRITICAL': cls.__constants['JAMMING_STATE_CRITICAL'],
             'SPOOFING_STATE_UNKNOWN': cls.__constants['SPOOFING_STATE_UNKNOWN'],
-            'SPOOFING_STATE_OK': cls.__constants['SPOOFING_STATE_OK'],
-            'SPOOFING_STATE_MITIGATED': cls.__constants['SPOOFING_STATE_MITIGATED'],
-            'SPOOFING_STATE_DETECTED': cls.__constants['SPOOFING_STATE_DETECTED'],
-            'AUTHENTICATION_STATE_UNKNOWN': cls.__constants['AUTHENTICATION_STATE_UNKNOWN'],
-            'AUTHENTICATION_STATE_INITIALIZING': cls.__constants['AUTHENTICATION_STATE_INITIALIZING'],
-            'AUTHENTICATION_STATE_ERROR': cls.__constants['AUTHENTICATION_STATE_ERROR'],
-            'AUTHENTICATION_STATE_OK': cls.__constants['AUTHENTICATION_STATE_OK'],
-            'AUTHENTICATION_STATE_DISABLED': cls.__constants['AUTHENTICATION_STATE_DISABLED'],
-            'SYSTEM_ERROR_OK': cls.__constants['SYSTEM_ERROR_OK'],
-            'SYSTEM_ERROR_INCOMING_CORRECTIONS': cls.__constants['SYSTEM_ERROR_INCOMING_CORRECTIONS'],
-            'SYSTEM_ERROR_CONFIGURATION': cls.__constants['SYSTEM_ERROR_CONFIGURATION'],
-            'SYSTEM_ERROR_SOFTWARE': cls.__constants['SYSTEM_ERROR_SOFTWARE'],
-            'SYSTEM_ERROR_ANTENNA': cls.__constants['SYSTEM_ERROR_ANTENNA'],
-            'SYSTEM_ERROR_EVENT_CONGESTION': cls.__constants['SYSTEM_ERROR_EVENT_CONGESTION'],
-            'SYSTEM_ERROR_CPU_OVERLOAD': cls.__constants['SYSTEM_ERROR_CPU_OVERLOAD'],
-            'SYSTEM_ERROR_OUTPUT_CONGESTION': cls.__constants['SYSTEM_ERROR_OUTPUT_CONGESTION'],
-            'RTCM_MSG_USED_UNKNOWN': cls.__constants['RTCM_MSG_USED_UNKNOWN'],
-            'RTCM_MSG_USED_NOT_USED': cls.__constants['RTCM_MSG_USED_NOT_USED'],
-            'RTCM_MSG_USED_USED': cls.__constants['RTCM_MSG_USED_USED'],
+            'SPOOFING_STATE_NONE': cls.__constants['SPOOFING_STATE_NONE'],
+            'SPOOFING_STATE_INDICATED': cls.__constants['SPOOFING_STATE_INDICATED'],
+            'SPOOFING_STATE_MULTIPLE': cls.__constants['SPOOFING_STATE_MULTIPLE'],
         }
-
-    @property
-    def FIX_TYPE_NONE(self):
-        """Message constant 'FIX_TYPE_NONE'."""
-        return Metaclass_SensorGps.__constants['FIX_TYPE_NONE']
-
-    @property
-    def FIX_TYPE_2D(self):
-        """Message constant 'FIX_TYPE_2D'."""
-        return Metaclass_SensorGps.__constants['FIX_TYPE_2D']
-
-    @property
-    def FIX_TYPE_3D(self):
-        """Message constant 'FIX_TYPE_3D'."""
-        return Metaclass_SensorGps.__constants['FIX_TYPE_3D']
-
-    @property
-    def FIX_TYPE_RTCM_CODE_DIFFERENTIAL(self):
-        """Message constant 'FIX_TYPE_RTCM_CODE_DIFFERENTIAL'."""
-        return Metaclass_SensorGps.__constants['FIX_TYPE_RTCM_CODE_DIFFERENTIAL']
-
-    @property
-    def FIX_TYPE_RTK_FLOAT(self):
-        """Message constant 'FIX_TYPE_RTK_FLOAT'."""
-        return Metaclass_SensorGps.__constants['FIX_TYPE_RTK_FLOAT']
-
-    @property
-    def FIX_TYPE_RTK_FIXED(self):
-        """Message constant 'FIX_TYPE_RTK_FIXED'."""
-        return Metaclass_SensorGps.__constants['FIX_TYPE_RTK_FIXED']
-
-    @property
-    def FIX_TYPE_EXTRAPOLATED(self):
-        """Message constant 'FIX_TYPE_EXTRAPOLATED'."""
-        return Metaclass_SensorGps.__constants['FIX_TYPE_EXTRAPOLATED']
 
     @property
     def JAMMING_STATE_UNKNOWN(self):
@@ -160,14 +79,14 @@ class Metaclass_SensorGps(type):
         return Metaclass_SensorGps.__constants['JAMMING_STATE_OK']
 
     @property
-    def JAMMING_STATE_MITIGATED(self):
-        """Message constant 'JAMMING_STATE_MITIGATED'."""
-        return Metaclass_SensorGps.__constants['JAMMING_STATE_MITIGATED']
+    def JAMMING_STATE_WARNING(self):
+        """Message constant 'JAMMING_STATE_WARNING'."""
+        return Metaclass_SensorGps.__constants['JAMMING_STATE_WARNING']
 
     @property
-    def JAMMING_STATE_DETECTED(self):
-        """Message constant 'JAMMING_STATE_DETECTED'."""
-        return Metaclass_SensorGps.__constants['JAMMING_STATE_DETECTED']
+    def JAMMING_STATE_CRITICAL(self):
+        """Message constant 'JAMMING_STATE_CRITICAL'."""
+        return Metaclass_SensorGps.__constants['JAMMING_STATE_CRITICAL']
 
     @property
     def SPOOFING_STATE_UNKNOWN(self):
@@ -175,99 +94,19 @@ class Metaclass_SensorGps(type):
         return Metaclass_SensorGps.__constants['SPOOFING_STATE_UNKNOWN']
 
     @property
-    def SPOOFING_STATE_OK(self):
-        """Message constant 'SPOOFING_STATE_OK'."""
-        return Metaclass_SensorGps.__constants['SPOOFING_STATE_OK']
+    def SPOOFING_STATE_NONE(self):
+        """Message constant 'SPOOFING_STATE_NONE'."""
+        return Metaclass_SensorGps.__constants['SPOOFING_STATE_NONE']
 
     @property
-    def SPOOFING_STATE_MITIGATED(self):
-        """Message constant 'SPOOFING_STATE_MITIGATED'."""
-        return Metaclass_SensorGps.__constants['SPOOFING_STATE_MITIGATED']
+    def SPOOFING_STATE_INDICATED(self):
+        """Message constant 'SPOOFING_STATE_INDICATED'."""
+        return Metaclass_SensorGps.__constants['SPOOFING_STATE_INDICATED']
 
     @property
-    def SPOOFING_STATE_DETECTED(self):
-        """Message constant 'SPOOFING_STATE_DETECTED'."""
-        return Metaclass_SensorGps.__constants['SPOOFING_STATE_DETECTED']
-
-    @property
-    def AUTHENTICATION_STATE_UNKNOWN(self):
-        """Message constant 'AUTHENTICATION_STATE_UNKNOWN'."""
-        return Metaclass_SensorGps.__constants['AUTHENTICATION_STATE_UNKNOWN']
-
-    @property
-    def AUTHENTICATION_STATE_INITIALIZING(self):
-        """Message constant 'AUTHENTICATION_STATE_INITIALIZING'."""
-        return Metaclass_SensorGps.__constants['AUTHENTICATION_STATE_INITIALIZING']
-
-    @property
-    def AUTHENTICATION_STATE_ERROR(self):
-        """Message constant 'AUTHENTICATION_STATE_ERROR'."""
-        return Metaclass_SensorGps.__constants['AUTHENTICATION_STATE_ERROR']
-
-    @property
-    def AUTHENTICATION_STATE_OK(self):
-        """Message constant 'AUTHENTICATION_STATE_OK'."""
-        return Metaclass_SensorGps.__constants['AUTHENTICATION_STATE_OK']
-
-    @property
-    def AUTHENTICATION_STATE_DISABLED(self):
-        """Message constant 'AUTHENTICATION_STATE_DISABLED'."""
-        return Metaclass_SensorGps.__constants['AUTHENTICATION_STATE_DISABLED']
-
-    @property
-    def SYSTEM_ERROR_OK(self):
-        """Message constant 'SYSTEM_ERROR_OK'."""
-        return Metaclass_SensorGps.__constants['SYSTEM_ERROR_OK']
-
-    @property
-    def SYSTEM_ERROR_INCOMING_CORRECTIONS(self):
-        """Message constant 'SYSTEM_ERROR_INCOMING_CORRECTIONS'."""
-        return Metaclass_SensorGps.__constants['SYSTEM_ERROR_INCOMING_CORRECTIONS']
-
-    @property
-    def SYSTEM_ERROR_CONFIGURATION(self):
-        """Message constant 'SYSTEM_ERROR_CONFIGURATION'."""
-        return Metaclass_SensorGps.__constants['SYSTEM_ERROR_CONFIGURATION']
-
-    @property
-    def SYSTEM_ERROR_SOFTWARE(self):
-        """Message constant 'SYSTEM_ERROR_SOFTWARE'."""
-        return Metaclass_SensorGps.__constants['SYSTEM_ERROR_SOFTWARE']
-
-    @property
-    def SYSTEM_ERROR_ANTENNA(self):
-        """Message constant 'SYSTEM_ERROR_ANTENNA'."""
-        return Metaclass_SensorGps.__constants['SYSTEM_ERROR_ANTENNA']
-
-    @property
-    def SYSTEM_ERROR_EVENT_CONGESTION(self):
-        """Message constant 'SYSTEM_ERROR_EVENT_CONGESTION'."""
-        return Metaclass_SensorGps.__constants['SYSTEM_ERROR_EVENT_CONGESTION']
-
-    @property
-    def SYSTEM_ERROR_CPU_OVERLOAD(self):
-        """Message constant 'SYSTEM_ERROR_CPU_OVERLOAD'."""
-        return Metaclass_SensorGps.__constants['SYSTEM_ERROR_CPU_OVERLOAD']
-
-    @property
-    def SYSTEM_ERROR_OUTPUT_CONGESTION(self):
-        """Message constant 'SYSTEM_ERROR_OUTPUT_CONGESTION'."""
-        return Metaclass_SensorGps.__constants['SYSTEM_ERROR_OUTPUT_CONGESTION']
-
-    @property
-    def RTCM_MSG_USED_UNKNOWN(self):
-        """Message constant 'RTCM_MSG_USED_UNKNOWN'."""
-        return Metaclass_SensorGps.__constants['RTCM_MSG_USED_UNKNOWN']
-
-    @property
-    def RTCM_MSG_USED_NOT_USED(self):
-        """Message constant 'RTCM_MSG_USED_NOT_USED'."""
-        return Metaclass_SensorGps.__constants['RTCM_MSG_USED_NOT_USED']
-
-    @property
-    def RTCM_MSG_USED_USED(self):
-        """Message constant 'RTCM_MSG_USED_USED'."""
-        return Metaclass_SensorGps.__constants['RTCM_MSG_USED_USED']
+    def SPOOFING_STATE_MULTIPLE(self):
+        """Message constant 'SPOOFING_STATE_MULTIPLE'."""
+        return Metaclass_SensorGps.__constants['SPOOFING_STATE_MULTIPLE']
 
 
 class SensorGps(metaclass=Metaclass_SensorGps):
@@ -275,47 +114,24 @@ class SensorGps(metaclass=Metaclass_SensorGps):
     Message class 'SensorGps'.
 
     Constants:
-      FIX_TYPE_NONE
-      FIX_TYPE_2D
-      FIX_TYPE_3D
-      FIX_TYPE_RTCM_CODE_DIFFERENTIAL
-      FIX_TYPE_RTK_FLOAT
-      FIX_TYPE_RTK_FIXED
-      FIX_TYPE_EXTRAPOLATED
       JAMMING_STATE_UNKNOWN
       JAMMING_STATE_OK
-      JAMMING_STATE_MITIGATED
-      JAMMING_STATE_DETECTED
+      JAMMING_STATE_WARNING
+      JAMMING_STATE_CRITICAL
       SPOOFING_STATE_UNKNOWN
-      SPOOFING_STATE_OK
-      SPOOFING_STATE_MITIGATED
-      SPOOFING_STATE_DETECTED
-      AUTHENTICATION_STATE_UNKNOWN
-      AUTHENTICATION_STATE_INITIALIZING
-      AUTHENTICATION_STATE_ERROR
-      AUTHENTICATION_STATE_OK
-      AUTHENTICATION_STATE_DISABLED
-      SYSTEM_ERROR_OK
-      SYSTEM_ERROR_INCOMING_CORRECTIONS
-      SYSTEM_ERROR_CONFIGURATION
-      SYSTEM_ERROR_SOFTWARE
-      SYSTEM_ERROR_ANTENNA
-      SYSTEM_ERROR_EVENT_CONGESTION
-      SYSTEM_ERROR_CPU_OVERLOAD
-      SYSTEM_ERROR_OUTPUT_CONGESTION
-      RTCM_MSG_USED_UNKNOWN
-      RTCM_MSG_USED_NOT_USED
-      RTCM_MSG_USED_USED
+      SPOOFING_STATE_NONE
+      SPOOFING_STATE_INDICATED
+      SPOOFING_STATE_MULTIPLE
     """
 
     __slots__ = [
         '_timestamp',
         '_timestamp_sample',
         '_device_id',
-        '_latitude_deg',
-        '_longitude_deg',
-        '_altitude_msl_m',
-        '_altitude_ellipsoid_m',
+        '_lat',
+        '_lon',
+        '_alt',
+        '_alt_ellipsoid',
         '_s_variance_m_s',
         '_c_variance_rad',
         '_fix_type',
@@ -328,7 +144,6 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         '_jamming_state',
         '_jamming_indicator',
         '_spoofing_state',
-        '_authentication_state',
         '_vel_m_s',
         '_vel_n_m_s',
         '_vel_e_m_s',
@@ -338,24 +153,21 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         '_timestamp_time_relative',
         '_time_utc_usec',
         '_satellites_used',
-        '_system_error',
         '_heading',
         '_heading_offset',
         '_heading_accuracy',
         '_rtcm_injection_rate',
         '_selected_rtcm_instance',
-        '_rtcm_crc_failed',
-        '_rtcm_msg_used',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
         'timestamp_sample': 'uint64',
         'device_id': 'uint32',
-        'latitude_deg': 'double',
-        'longitude_deg': 'double',
-        'altitude_msl_m': 'double',
-        'altitude_ellipsoid_m': 'double',
+        'lat': 'int32',
+        'lon': 'int32',
+        'alt': 'int32',
+        'alt_ellipsoid': 'int32',
         's_variance_m_s': 'float',
         'c_variance_rad': 'float',
         'fix_type': 'uint8',
@@ -368,7 +180,6 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         'jamming_state': 'uint8',
         'jamming_indicator': 'int32',
         'spoofing_state': 'uint8',
-        'authentication_state': 'uint8',
         'vel_m_s': 'float',
         'vel_n_m_s': 'float',
         'vel_e_m_s': 'float',
@@ -378,24 +189,21 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         'timestamp_time_relative': 'int32',
         'time_utc_usec': 'uint64',
         'satellites_used': 'uint8',
-        'system_error': 'uint32',
         'heading': 'float',
         'heading_offset': 'float',
         'heading_accuracy': 'float',
         'rtcm_injection_rate': 'float',
         'selected_rtcm_instance': 'uint8',
-        'rtcm_crc_failed': 'boolean',
-        'rtcm_msg_used': 'uint8',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
-        rosidl_parser.definition.BasicType('double'),  # noqa: E501
-        rosidl_parser.definition.BasicType('double'),  # noqa: E501
-        rosidl_parser.definition.BasicType('double'),  # noqa: E501
-        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
@@ -408,7 +216,6 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -418,13 +225,10 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
     )
 
@@ -435,10 +239,10 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.device_id = kwargs.get('device_id', int())
-        self.latitude_deg = kwargs.get('latitude_deg', float())
-        self.longitude_deg = kwargs.get('longitude_deg', float())
-        self.altitude_msl_m = kwargs.get('altitude_msl_m', float())
-        self.altitude_ellipsoid_m = kwargs.get('altitude_ellipsoid_m', float())
+        self.lat = kwargs.get('lat', int())
+        self.lon = kwargs.get('lon', int())
+        self.alt = kwargs.get('alt', int())
+        self.alt_ellipsoid = kwargs.get('alt_ellipsoid', int())
         self.s_variance_m_s = kwargs.get('s_variance_m_s', float())
         self.c_variance_rad = kwargs.get('c_variance_rad', float())
         self.fix_type = kwargs.get('fix_type', int())
@@ -451,7 +255,6 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         self.jamming_state = kwargs.get('jamming_state', int())
         self.jamming_indicator = kwargs.get('jamming_indicator', int())
         self.spoofing_state = kwargs.get('spoofing_state', int())
-        self.authentication_state = kwargs.get('authentication_state', int())
         self.vel_m_s = kwargs.get('vel_m_s', float())
         self.vel_n_m_s = kwargs.get('vel_n_m_s', float())
         self.vel_e_m_s = kwargs.get('vel_e_m_s', float())
@@ -461,14 +264,11 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         self.timestamp_time_relative = kwargs.get('timestamp_time_relative', int())
         self.time_utc_usec = kwargs.get('time_utc_usec', int())
         self.satellites_used = kwargs.get('satellites_used', int())
-        self.system_error = kwargs.get('system_error', int())
         self.heading = kwargs.get('heading', float())
         self.heading_offset = kwargs.get('heading_offset', float())
         self.heading_accuracy = kwargs.get('heading_accuracy', float())
         self.rtcm_injection_rate = kwargs.get('rtcm_injection_rate', float())
         self.selected_rtcm_instance = kwargs.get('selected_rtcm_instance', int())
-        self.rtcm_crc_failed = kwargs.get('rtcm_crc_failed', bool())
-        self.rtcm_msg_used = kwargs.get('rtcm_msg_used', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -505,13 +305,13 @@ class SensorGps(metaclass=Metaclass_SensorGps):
             return False
         if self.device_id != other.device_id:
             return False
-        if self.latitude_deg != other.latitude_deg:
+        if self.lat != other.lat:
             return False
-        if self.longitude_deg != other.longitude_deg:
+        if self.lon != other.lon:
             return False
-        if self.altitude_msl_m != other.altitude_msl_m:
+        if self.alt != other.alt:
             return False
-        if self.altitude_ellipsoid_m != other.altitude_ellipsoid_m:
+        if self.alt_ellipsoid != other.alt_ellipsoid:
             return False
         if self.s_variance_m_s != other.s_variance_m_s:
             return False
@@ -537,8 +337,6 @@ class SensorGps(metaclass=Metaclass_SensorGps):
             return False
         if self.spoofing_state != other.spoofing_state:
             return False
-        if self.authentication_state != other.authentication_state:
-            return False
         if self.vel_m_s != other.vel_m_s:
             return False
         if self.vel_n_m_s != other.vel_n_m_s:
@@ -557,8 +355,6 @@ class SensorGps(metaclass=Metaclass_SensorGps):
             return False
         if self.satellites_used != other.satellites_used:
             return False
-        if self.system_error != other.system_error:
-            return False
         if self.heading != other.heading:
             return False
         if self.heading_offset != other.heading_offset:
@@ -568,10 +364,6 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         if self.rtcm_injection_rate != other.rtcm_injection_rate:
             return False
         if self.selected_rtcm_instance != other.selected_rtcm_instance:
-            return False
-        if self.rtcm_crc_failed != other.rtcm_crc_failed:
-            return False
-        if self.rtcm_msg_used != other.rtcm_msg_used:
             return False
         return True
 
@@ -626,64 +418,64 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         self._device_id = value
 
     @builtins.property
-    def latitude_deg(self):
-        """Message field 'latitude_deg'."""
-        return self._latitude_deg
+    def lat(self):
+        """Message field 'lat'."""
+        return self._lat
 
-    @latitude_deg.setter
-    def latitude_deg(self, value):
+    @lat.setter
+    def lat(self, value):
         if __debug__:
             assert \
-                isinstance(value, float), \
-                "The 'latitude_deg' field must be of type 'float'"
-            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
-                "The 'latitude_deg' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
-        self._latitude_deg = value
+                isinstance(value, int), \
+                "The 'lat' field must be of type 'int'"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'lat' field must be an integer in [-2147483648, 2147483647]"
+        self._lat = value
 
     @builtins.property
-    def longitude_deg(self):
-        """Message field 'longitude_deg'."""
-        return self._longitude_deg
+    def lon(self):
+        """Message field 'lon'."""
+        return self._lon
 
-    @longitude_deg.setter
-    def longitude_deg(self, value):
+    @lon.setter
+    def lon(self, value):
         if __debug__:
             assert \
-                isinstance(value, float), \
-                "The 'longitude_deg' field must be of type 'float'"
-            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
-                "The 'longitude_deg' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
-        self._longitude_deg = value
+                isinstance(value, int), \
+                "The 'lon' field must be of type 'int'"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'lon' field must be an integer in [-2147483648, 2147483647]"
+        self._lon = value
 
     @builtins.property
-    def altitude_msl_m(self):
-        """Message field 'altitude_msl_m'."""
-        return self._altitude_msl_m
+    def alt(self):
+        """Message field 'alt'."""
+        return self._alt
 
-    @altitude_msl_m.setter
-    def altitude_msl_m(self, value):
+    @alt.setter
+    def alt(self, value):
         if __debug__:
             assert \
-                isinstance(value, float), \
-                "The 'altitude_msl_m' field must be of type 'float'"
-            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
-                "The 'altitude_msl_m' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
-        self._altitude_msl_m = value
+                isinstance(value, int), \
+                "The 'alt' field must be of type 'int'"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'alt' field must be an integer in [-2147483648, 2147483647]"
+        self._alt = value
 
     @builtins.property
-    def altitude_ellipsoid_m(self):
-        """Message field 'altitude_ellipsoid_m'."""
-        return self._altitude_ellipsoid_m
+    def alt_ellipsoid(self):
+        """Message field 'alt_ellipsoid'."""
+        return self._alt_ellipsoid
 
-    @altitude_ellipsoid_m.setter
-    def altitude_ellipsoid_m(self, value):
+    @alt_ellipsoid.setter
+    def alt_ellipsoid(self, value):
         if __debug__:
             assert \
-                isinstance(value, float), \
-                "The 'altitude_ellipsoid_m' field must be of type 'float'"
-            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
-                "The 'altitude_ellipsoid_m' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
-        self._altitude_ellipsoid_m = value
+                isinstance(value, int), \
+                "The 'alt_ellipsoid' field must be of type 'int'"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'alt_ellipsoid' field must be an integer in [-2147483648, 2147483647]"
+        self._alt_ellipsoid = value
 
     @builtins.property
     def s_variance_m_s(self):
@@ -866,21 +658,6 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         self._spoofing_state = value
 
     @builtins.property
-    def authentication_state(self):
-        """Message field 'authentication_state'."""
-        return self._authentication_state
-
-    @authentication_state.setter
-    def authentication_state(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'authentication_state' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'authentication_state' field must be an unsigned integer in [0, 255]"
-        self._authentication_state = value
-
-    @builtins.property
     def vel_m_s(self):
         """Message field 'vel_m_s'."""
         return self._vel_m_s
@@ -1014,21 +791,6 @@ class SensorGps(metaclass=Metaclass_SensorGps):
         self._satellites_used = value
 
     @builtins.property
-    def system_error(self):
-        """Message field 'system_error'."""
-        return self._system_error
-
-    @system_error.setter
-    def system_error(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'system_error' field must be of type 'int'"
-            assert value >= 0 and value < 4294967296, \
-                "The 'system_error' field must be an unsigned integer in [0, 4294967295]"
-        self._system_error = value
-
-    @builtins.property
     def heading(self):
         """Message field 'heading'."""
         return self._heading
@@ -1102,31 +864,3 @@ class SensorGps(metaclass=Metaclass_SensorGps):
             assert value >= 0 and value < 256, \
                 "The 'selected_rtcm_instance' field must be an unsigned integer in [0, 255]"
         self._selected_rtcm_instance = value
-
-    @builtins.property
-    def rtcm_crc_failed(self):
-        """Message field 'rtcm_crc_failed'."""
-        return self._rtcm_crc_failed
-
-    @rtcm_crc_failed.setter
-    def rtcm_crc_failed(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'rtcm_crc_failed' field must be of type 'bool'"
-        self._rtcm_crc_failed = value
-
-    @builtins.property
-    def rtcm_msg_used(self):
-        """Message field 'rtcm_msg_used'."""
-        return self._rtcm_msg_used
-
-    @rtcm_msg_used.setter
-    def rtcm_msg_used(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'rtcm_msg_used' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'rtcm_msg_used' field must be an unsigned integer in [0, 255]"
-        self._rtcm_msg_used = value

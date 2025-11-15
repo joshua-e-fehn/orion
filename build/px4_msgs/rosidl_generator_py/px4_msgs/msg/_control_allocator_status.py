@@ -113,7 +113,6 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
         '_unallocated_thrust',
         '_actuator_saturation',
         '_handled_motor_failure_mask',
-        '_motor_stop_mask',
     ]
 
     _fields_and_field_types = {
@@ -124,7 +123,6 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
         'unallocated_thrust': 'float[3]',
         'actuator_saturation': 'int8[16]',
         'handled_motor_failure_mask': 'uint16',
-        'motor_stop_mask': 'uint16',
     }
 
     SLOT_TYPES = (
@@ -134,7 +132,6 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 3),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('int8'), 16),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
     )
 
@@ -161,7 +158,6 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
             self.actuator_saturation = numpy.array(kwargs.get('actuator_saturation'), dtype=numpy.int8)
             assert self.actuator_saturation.shape == (16, )
         self.handled_motor_failure_mask = kwargs.get('handled_motor_failure_mask', int())
-        self.motor_stop_mask = kwargs.get('motor_stop_mask', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -205,8 +201,6 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
         if any(self.actuator_saturation != other.actuator_saturation):
             return False
         if self.handled_motor_failure_mask != other.handled_motor_failure_mask:
-            return False
-        if self.motor_stop_mask != other.motor_stop_mask:
             return False
         return True
 
@@ -363,18 +357,3 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
             assert value >= 0 and value < 65536, \
                 "The 'handled_motor_failure_mask' field must be an unsigned integer in [0, 65535]"
         self._handled_motor_failure_mask = value
-
-    @builtins.property
-    def motor_stop_mask(self):
-        """Message field 'motor_stop_mask'."""
-        return self._motor_stop_mask
-
-    @motor_stop_mask.setter
-    def motor_stop_mask(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'motor_stop_mask' field must be of type 'int'"
-            assert value >= 0 and value < 65536, \
-                "The 'motor_stop_mask' field must be an unsigned integer in [0, 65535]"
-        self._motor_stop_mask = value
