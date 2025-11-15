@@ -27,6 +27,7 @@ install(PROGRAMS
   orion_flight/circle_trajectory_node.py
   orion_flight/planners/pp/pp_planner_node.py
   orion_flight/predictors/cv/cv_predictor_node.py
+  orion_flight/predictors/ca/ca_predictor_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
