@@ -79,7 +79,8 @@ echo -e "    - PX4 console showing 'pxh>'"
 echo ""
 
 # Ask user if PX4 is ready
-read -p "$(echo -e ${YELLOW}Is PX4 SITL running? [y/N]:${NC} )" -n 1 -r
+echo -ne "${YELLOW}Is PX4 SITL running? [y/N]: ${NC}"
+read -n 1 -r
 echo ""
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     print_warning "Please start PX4 SITL first, then run this script again."
@@ -96,10 +97,11 @@ echo -e "${CYAN}  Select Predictor Type${NC}"
 echo -e "${CYAN}========================================${NC}"
 echo ""
 echo "Available predictors:"
-echo -e "  ${GREEN}1)${NC} CV (Constant Velocity) - Best for straight-line motion"
-echo -e "  ${GREEN}2)${NC} CA (Constant Acceleration) - Best for maneuvering targets"
+echo -e "  ${GREEN}1${NC} - CV (Constant Velocity) - Best for straight-line motion"
+echo -e "  ${GREEN}2${NC} - CA (Constant Acceleration) - Best for maneuvering targets"
 echo ""
-read -p "$(echo -e ${YELLOW}Select predictor [1-2] (default: 1):${NC} )" -n 1 -r
+echo -ne "${YELLOW}Select predictor [1-2] (default: 1): ${NC}"
+read -n 1 -r
 echo ""
 
 PREDICTOR_TYPE="cv"
@@ -117,8 +119,7 @@ echo -e "${CYAN}========================================${NC}"
 echo -e "${CYAN}  Demo Parameters${NC}"
 echo -e "${CYAN}========================================${NC}"
 echo ""
-echo -e "  ${BLUE}Target Namespace:${NC} px4_2 (target drone)"
-echo -e "  ${BLUE}Flight Height:${NC} 5.0 meters"
+echo -e "  ${BLUE}Target Drone:${NC} px4_1 (main PX4 drone)"
 echo -e "  ${BLUE}Prediction Horizons:${NC} 0.5s, 1.0s, 2.0s, 3.0s, 5.0s"
 echo -e "  ${BLUE}Update Rate:${NC} 20 Hz"
 echo -e "  ${BLUE}Predictor Type:${NC} $PREDICTOR_TYPE"
@@ -129,7 +130,8 @@ print_info "Checking for MicroXRCEAgent..."
 if command -v MicroXRCEAgent &> /dev/null; then
     print_success "MicroXRCEAgent found!"
     
-    read -p "$(echo -e ${YELLOW}Start MicroXRCEAgent automatically? [Y/n]:${NC} )" -n 1 -r
+    echo -ne "${YELLOW}Start MicroXRCEAgent automatically? [Y/n]: ${NC}"
+    read -n 1 -r
     echo ""
     if [[ ! $REPLY =~ ^[Nn]$ ]]; then
         USE_AGENT="true"
@@ -148,19 +150,47 @@ echo -e "${CYAN}  Starting Demo${NC}"
 echo -e "${CYAN}========================================${NC}"
 echo ""
 
-print_info "Launching hover demo with $PREDICTOR_TYPE predictor..."
+print_info "IMPORTANT: You need TWO things running:"
+echo ""
+echo -e "${GREEN}1. PX4 SITL (already checked) ✓${NC}"
+echo -e "${GREEN}2. Hover Demo${NC} - Start this in a SEPARATE terminal:"
+echo ""
+echo -e "   ${BLUE}./hover_demo.sh${NC}"
+echo ""
+echo -e "Or manually:"
+echo -e "   ${BLUE}ros2 launch attack_drone hover.launch.py${NC}"
+echo ""
+echo -ne "${YELLOW}Is the hover demo running? [y/N]: ${NC}"
+read -n 1 -r
+echo ""
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    print_warning "Please start the hover demo first:"
+    echo ""
+    echo "  In a NEW terminal:"
+    echo "    cd ~/Documents/Orion/orion_arm"
+    echo "    source install/setup.bash"
+    echo "    ./hover_demo.sh"
+    echo ""
+    echo "  Then run this script again."
+    exit 0
+fi
+
+echo ""
+print_info "Launching $PREDICTOR_TYPE predictor...
 print_info "This will open RViz with visualization of:"
 echo "  - Target drone position and trajectory"
 echo "  - Predicted future positions at multiple horizons"
 echo "  - Uncertainty ellipsoids (growing with time)"
 echo ""
 
+# Set DDS QoS profile to handle larger message sizes
+export FASTRTPS_DEFAULT_PROFILES_FILE="${WORKSPACE_ROOT}/src/attack_drone/qos_profile.xml"
+export RMW_FASTRTPS_USE_QOS_FROM_XML=1
+
 # Launch the system
 ros2 launch orion_flight hover_with_predictor.launch.py \
     predictor_type:=$PREDICTOR_TYPE \
-    target_namespace:=px4_2 \
-    flight_height:=5.0 \
-    trail_length:=10 \
+    target_namespace:=px4_1 \
     prediction_update_rate:=20.0 \
     prediction_horizons:="[0.5, 1.0, 2.0, 3.0, 5.0]" \
     use_micro_ros_agent:=$USE_AGENT

@@ -56,8 +56,8 @@ def generate_launch_description():
     
     target_namespace_arg = DeclareLaunchArgument(
         'target_namespace',
-        default_value='px4_2',
-        description='ROS namespace for target drone (must match hover node)'
+        default_value='px4_1',
+        description='ROS namespace for target drone (px4_1 for single drone, px4_2 for second drone)'
     )
     
     flight_height_arg = DeclareLaunchArgument(
@@ -102,19 +102,9 @@ def generate_launch_description():
         output='screen'
     )
     
-    # Hover Trajectory Control Node for target drone
-    hover_node = Node(
-        package='attack_drone',
-        executable='hover_node',
-        name='hover_node',
-        namespace=target_namespace,
-        output='screen',
-        parameters=[{
-            'flight_height': LaunchConfiguration('flight_height'),
-            'trail_length': LaunchConfiguration('trail_length'),
-        }],
-        emulate_tty=True,
-    )
+    # Note: Hover node should be started separately via:
+    #   ros2 launch attack_drone hover.launch.py
+    # This launch file only starts the predictor and visualization
     
     # CV Predictor Node
     cv_predictor_node = Node(
@@ -194,7 +184,6 @@ def generate_launch_description():
         
         # Nodes
         micro_ros_agent,
-        hover_node,
         cv_predictor_node,
         ca_predictor_node,
         rviz_node,

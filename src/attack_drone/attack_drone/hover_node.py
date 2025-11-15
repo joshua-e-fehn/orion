@@ -29,15 +29,23 @@ class StraightLineNode(Node):
         self.trail_length = self.get_parameter('trail_length').value
         self.speed = self.get_parameter('speed').value
 
-        # QoS
-        qos_pub = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
-                             durability=DurabilityPolicy.VOLATILE,
-                             history=HistoryPolicy.KEEP_LAST,
-                             depth=1)
-        qos_sub = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
-                             durability=DurabilityPolicy.TRANSIENT_LOCAL,
-                             history=HistoryPolicy.KEEP_LAST,
-                             depth=1)
+        # QoS profiles for PX4 communication
+        # Publisher QoS: Best effort, volatile, depth 1
+        qos_pub = QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.VOLATILE,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=1
+        )
+        
+        # Subscriber QoS: Best effort, volatile (matching PX4 publishers)
+        # Large depth to handle all message buffering and prevent DDS errors
+        qos_sub = QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.VOLATILE,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=100  # Large depth to prevent payload size errors
+        )
 
         # Publishers
         self.offboard_control_mode_pub = self.create_publisher(OffboardControlMode, '/px4_1/fmu/in/offboard_control_mode', qos_pub)
@@ -59,17 +67,29 @@ class StraightLineNode(Node):
         self.last_update_time = self.get_clock().now()
         self.is_armed = False
         self.is_offboard = False
+        self.init_position_received = False
 
-        # Flight path
+        # Flight path (start from current position once received)
+        self.start_x = 0.0
+        self.start_y = 0.0
         self.current_x = 0.0
 
-        # Timer
+        # Timer (10 Hz for control loop)
         self.timer = self.create_timer(0.1, self.timer_callback)
 
         self.get_logger().info("StraightLineNode started!")
 
     def vehicle_local_position_callback(self, msg):
         self.vehicle_local_position = msg
+        
+        # Record initial position
+        if not self.init_position_received and msg.xy_valid:
+            self.start_x = msg.x
+            self.start_y = msg.y
+            self.current_x = msg.x
+            self.init_position_received = True
+            self.get_logger().info(f"Initial position: x={msg.x:.2f}, y={msg.y:.2f}, z={msg.z:.2f}")
+        
         if self.flight_phase == "STRAIGHT_LINE":
             self.position_history.append({'x': msg.x, 'y': msg.y, 'z': msg.z})
 
@@ -115,11 +135,18 @@ class StraightLineNode(Node):
         self.offboard_control_mode_pub.publish(msg)
 
     def publish_position_setpoint(self):
-        dt = (self.get_clock().now() - self.last_update_time).nanoseconds / 1e9
-        self.last_update_time = self.get_clock().now()
-        self.current_x += self.speed * dt  # move along X-axis
         msg = TrajectorySetpoint()
-        msg.position = [self.current_x, 0.0, self.flight_height]
+        
+        if self.flight_phase == "INIT":
+            # Send initial hover position before engaging OFFBOARD
+            msg.position = [self.start_x, self.start_y, self.flight_height]
+        elif self.flight_phase == "STRAIGHT_LINE":
+            # Move along X-axis at constant speed
+            dt = (self.get_clock().now() - self.last_update_time).nanoseconds / 1e9
+            self.last_update_time = self.get_clock().now()
+            self.current_x += self.speed * dt
+            msg.position = [self.current_x, self.start_y, self.flight_height]
+        
         msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
         self.trajectory_setpoint_pub.publish(msg)
 
@@ -145,15 +172,38 @@ class StraightLineNode(Node):
         self.marker_pub.publish(marker_array)
 
     def timer_callback(self):
+        # Always send offboard heartbeat and setpoints
         self.publish_offboard_control_heartbeat()
         self.publish_position_setpoint()
-        self.publish_markers()
-
+        
         if self.flight_phase == "INIT":
-            self.engage_offboard_mode()
-            self.arm()
-            self.flight_phase = "STRAIGHT_LINE"
-            self.get_logger().info("✓ Takeoff completed, starting straight-line flight")
+            # Wait for initial position before proceeding
+            if not self.init_position_received:
+                return
+            
+            # Send setpoints for at least 20 iterations (~2 seconds) before engaging OFFBOARD
+            self.offboard_setpoint_counter += 1
+            
+            if self.offboard_setpoint_counter == 10:
+                self.get_logger().info("Sending initial setpoints before OFFBOARD mode...")
+            elif self.offboard_setpoint_counter == 20:
+                self.get_logger().info("Engaging OFFBOARD mode and arming...")
+                self.engage_offboard_mode()
+            elif self.offboard_setpoint_counter == 25:
+                self.arm()
+            elif self.offboard_setpoint_counter == 30:
+                # Wait for drone to be armed and in OFFBOARD mode
+                if self.is_armed and self.is_offboard:
+                    self.flight_phase = "STRAIGHT_LINE"
+                    self.last_update_time = self.get_clock().now()
+                    self.get_logger().info("✓ Armed and in OFFBOARD mode, starting straight-line flight")
+                else:
+                    armed_status = "ARMED" if self.is_armed else "DISARMED"
+                    mode_status = "OFFBOARD" if self.is_offboard else f"MODE {self.vehicle_status.nav_state}"
+                    self.get_logger().warn(f"Waiting for ready state: {armed_status}, {mode_status}")
+        
+        elif self.flight_phase == "STRAIGHT_LINE":
+            self.publish_markers()
 
 def main(args=None):
     rclpy.init(args=args)
