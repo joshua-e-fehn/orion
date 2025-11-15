@@ -29,6 +29,7 @@ setup(
             'cv_predictor_node = orion_flight.predictors.cv.cv_predictor_node:main',
             # Planner nodes
             'pp_planner = orion_flight.planners.pp.pp_planner_node:main',
+            'lpn_planner = orion_flight.planners.lpn.lpn_planner_node:main',
         ],
     },
 )
