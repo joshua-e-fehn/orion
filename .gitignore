@@ -7,6 +7,10 @@ build/
 install/
 log/
 
+# External PX4 dependencies (keep as separate git repos)
+src/px4_msgs/
+src/px4_ros_com/
+
 # Old ROS1 artifacts (if migrating)
 devel/
 logs/
