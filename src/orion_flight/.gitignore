@@ -3,9 +3,6 @@ build/
 install/
 log/
 
-# Generated IDL files
-msg/idl.cc
-
 # Python compiled files
 __pycache__/
 *.py[cod]
@@ -35,6 +32,14 @@ rosidl_generator_*/
 rosidl_typesupport_*/
 rosidl_adapter/
 
+# RViz temp files
+*.rviz~
+
 # Backup files
 *.bak
 *.backup
+
+# Test artifacts
+.pytest_cache/
+*.coverage
+htmlcov/
