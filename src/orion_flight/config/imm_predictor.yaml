@@ -1,0 +1,43 @@
+/**:
+  ros__parameters:
+    # Target drone namespace
+    target_namespace: "px4_2"
+    
+    # Update rate for predictions (Hz)
+    update_rate: 20.0
+    
+    # Prediction horizons (seconds into the future)
+    prediction_horizons: [0.5, 1.0, 2.0, 3.0]
+    
+    # CV model process noise parameters
+    cv_process_noise:
+      position: 0.1      # Position process noise for CV model (m²/s³)
+      velocity: 0.5      # Velocity process noise for CV model (m²/s⁵)
+    
+    # CA model process noise parameters
+    ca_process_noise:
+      position: 0.1      # Position process noise for CA model (m²/s³)
+      velocity: 0.5      # Velocity process noise for CA model (m²/s⁵)
+      acceleration: 1.0  # Acceleration process noise for CA model (m²/s⁷)
+    
+    # Measurement noise parameters (shared by both models)
+    measurement_noise:
+      position: 0.05       # Position measurement noise (m²)
+      velocity: 0.1        # Velocity measurement noise (m²/s²)
+      acceleration: 0.5    # Acceleration measurement noise (m²/s⁴)
+    
+    # IMM-specific parameters
+    imm:
+      # Transition probability: probability of staying in the same mode
+      # Higher value (e.g., 0.95) = smoother transitions between models
+      # Lower value (e.g., 0.80) = more responsive to mode changes
+      transition_prob_stay: 0.95
+      
+      # Initial mode probabilities
+      # Starting belief about which model is more likely
+      initial_prob_cv: 0.5   # Initial probability for CV model
+      initial_prob_ca: 0.5   # Initial probability for CA model
+    
+    # Visualization
+    publish_markers: true
+    marker_scale: 1.0

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Constant Velocity (CV) Target Predictor Node.
+Constant Acceleration (CA) Target Predictor Node.
 
 This node subscribes to target position/velocity and publishes predictions
-assuming the target maintains constant velocity.
+assuming the target maintains constant acceleration.
 """
 
 import rclpy
@@ -12,32 +12,39 @@ from px4_msgs.msg import VehicleLocalPosition
 from visualization_msgs.msg import MarkerArray
 import numpy as np
 
-from .cv_model import CVModel
+from .ca_model import CAModel
 from ..common.types import PredictorInput, PredictorOutput
 from ..common.visualization import create_prediction_markers
 
 
-class CVPredictorNode(Node):
-    """ROS2 node for Constant Velocity target prediction."""
+class CAPredictorNode(Node):
+    """ROS2 node for Constant Acceleration target prediction."""
     
     def __init__(self):
-        super().__init__('cv_predictor_node')
+        super().__init__('ca_predictor_node')
         
         # Declare and get parameters
         self._declare_parameters()
         self._get_parameters()
         
-        # Initialize CV model
+        # Initialize CA model
+        # For standalone use, enable full 9D measurements (pos+vel+acc)
         process_noise = {
             'position': self.param_q_pos,
-            'velocity': self.param_q_vel
+            'velocity': self.param_q_vel,
+            'acceleration': self.param_q_acc
         }
         measurement_noise = {
             'position': self.param_r_pos,
-            'velocity': self.param_r_vel
+            'velocity': self.param_r_vel,
+            'acceleration': self.param_r_acc
         }
         
-        self.cv_model = CVModel(process_noise, measurement_noise)
+        self.ca_model = CAModel(
+            process_noise, 
+            measurement_noise,
+            use_acceleration_measurements=True  # Standalone mode: use full 9D measurements
+        )
         
         # Create subscribers
         target_topic = f'/{self.target_namespace}/fmu/out/vehicle_local_position'
@@ -79,22 +86,13 @@ class CVPredictorNode(Node):
         self.last_update_time = None
         
         self.get_logger().info(
-            f'CV Predictor initialized:\n'
+            f'CA Predictor initialized:\n'
             f'  Target namespace: {self.target_namespace}\n'
             f'  Update rate: {self.update_rate} Hz\n'
             f'  Prediction horizons: {self.prediction_horizons}\n'
-            f'  Process noise (pos, vel): ({self.param_q_pos}, {self.param_q_vel})\n'
-            f'  Measurement noise (pos, vel): ({self.param_r_pos}, {self.param_r_vel})'
+            f'  Process noise (pos, vel, acc): ({self.param_q_pos}, {self.param_q_vel}, {self.param_q_acc})\n'
+            f'  Measurement noise (pos, vel, acc): ({self.param_r_pos}, {self.param_r_vel}, {self.param_r_acc})'
         )
-        
-        print("\n" + "="*70)
-        print("  CV PREDICTOR NODE - DEBUG MODE")
-        print("="*70)
-        print(f"  Subscribing to: /{self.target_namespace}/fmu/out/vehicle_local_position")
-        print(f"  Publishing predictions to: /target/predicted_state")
-        print(f"  Publishing markers to: /target/prediction_markers")
-        print(f"  Waiting for first measurement from target drone...")
-        print("="*70 + "\n")
     
     def _declare_parameters(self):
         """Declare ROS2 parameters."""
@@ -103,10 +101,13 @@ class CVPredictorNode(Node):
         self.declare_parameter('prediction_horizons', [0.5, 1.0, 2.0, 3.0])
         self.declare_parameter('process_noise.position', 0.1)
         self.declare_parameter('process_noise.velocity', 0.5)
+        self.declare_parameter('process_noise.acceleration', 1.0)
         self.declare_parameter('measurement_noise.position', 0.05)
         self.declare_parameter('measurement_noise.velocity', 0.1)
+        self.declare_parameter('measurement_noise.acceleration', 0.5)
         self.declare_parameter('publish_markers', True)
         self.declare_parameter('marker_scale', 1.0)
+        self.declare_parameter('use_acceleration_from_msg', False)
     
     def _get_parameters(self):
         """Get parameter values."""
@@ -115,35 +116,38 @@ class CVPredictorNode(Node):
         self.prediction_horizons = self.get_parameter('prediction_horizons').value
         self.param_q_pos = self.get_parameter('process_noise.position').value
         self.param_q_vel = self.get_parameter('process_noise.velocity').value
+        self.param_q_acc = self.get_parameter('process_noise.acceleration').value
         self.param_r_pos = self.get_parameter('measurement_noise.position').value
         self.param_r_vel = self.get_parameter('measurement_noise.velocity').value
+        self.param_r_acc = self.get_parameter('measurement_noise.acceleration').value
         self.publish_markers = self.get_parameter('publish_markers').value
         self.marker_scale = self.get_parameter('marker_scale').value
+        self.use_accel_from_msg = self.get_parameter('use_acceleration_from_msg').value
     
     def target_callback(self, msg: VehicleLocalPosition):
         """
         Callback for target position measurements.
         
-        Updates the CV model with new measurement.
+        Updates the CA model with new measurement.
         """
         current_time = self.get_clock().now().nanoseconds / 1e9
         
         # Check validity flags
         if not (msg.xy_valid and msg.z_valid and msg.v_xy_valid and msg.v_z_valid):
             self.get_logger().warn('Received invalid target measurement', throttle_duration_sec=1.0)
-            print(f"[CV Node] ✗ Invalid measurement: xy_valid={msg.xy_valid}, z_valid={msg.z_valid}, "
-                  f"v_xy_valid={msg.v_xy_valid}, v_z_valid={msg.v_z_valid}")
             return
-        
-        # Debug: First valid measurement
-        if not self.cv_model.initialized:
-            print(f"\n[CV Node] ✓ First valid measurement received!")
-            print(f"  Position: [{msg.x:.3f}, {msg.y:.3f}, {msg.z:.3f}]")
-            print(f"  Velocity: [{msg.vx:.3f}, {msg.vy:.3f}, {msg.vz:.3f}]")
         
         # Extract position and velocity (already in NED from PX4)
         position = np.array([msg.x, msg.y, msg.z])
         velocity = np.array([msg.vx, msg.vy, msg.vz])
+        
+        # Extract acceleration if available and configured
+        acceleration = None
+        if self.use_accel_from_msg:
+            # Note: VehicleLocalPosition may have ax, ay, az fields
+            # Check if they exist before using
+            if hasattr(msg, 'ax') and hasattr(msg, 'ay') and hasattr(msg, 'az'):
+                acceleration = np.array([msg.ax, msg.ay, msg.az])
         
         # Calculate dt
         if self.last_measurement_time is not None:
@@ -155,29 +159,20 @@ class CVPredictorNode(Node):
             dt = 0.1  # Default dt for first measurement
         
         # Update model
-        self.cv_model.update(position, velocity, dt)
+        self.ca_model.update(position, velocity, dt, acceleration)
         
         self.last_measurement_time = current_time
         
         # Log diagnostics (throttled)
-        if self.cv_model.initialized:
-            innovation = self.cv_model.get_innovation()
+        if self.ca_model.initialized:
+            innovation = self.ca_model.get_innovation()
             innovation_norm = np.linalg.norm(innovation[0:3])  # Position innovation
-            
-            # Debug output every 20 updates (~2 seconds at 10 Hz)
-            if not hasattr(self, '_update_counter'):
-                self._update_counter = 0
-            self._update_counter += 1
-            
-            if self._update_counter % 20 == 0:
-                print(f"\n[CV Node] Measurement Update #{self._update_counter}:")
-                print(f"  dt: {dt:.3f}s")
-                print(f"  Innovation (residual): {innovation_norm:.3f}m")
-                print(f"  Current position: [{position[0]:.2f}, {position[1]:.2f}, {position[2]:.2f}]")
-                print(f"  Current velocity: [{velocity[0]:.2f}, {velocity[1]:.2f}, {velocity[2]:.2f}]")
+            _, _, est_acc, _, _, _ = self.ca_model.get_state()
+            acc_norm = np.linalg.norm(est_acc)
             
             self.get_logger().debug(
-                f'CV Update: dt={dt:.3f}s, innovation_norm={innovation_norm:.3f}m',
+                f'CA Update: dt={dt:.3f}s, innovation_norm={innovation_norm:.3f}m, '
+                f'est_acc_norm={acc_norm:.3f}m/s²',
                 throttle_duration_sec=1.0
             )
         
@@ -278,11 +273,7 @@ class CVPredictorNode(Node):
         """
         Timer callback to publish predictions at regular intervals.
         """
-        if not self.cv_model.initialized:
-            # Debug: Waiting for initialization
-            if not hasattr(self, '_waiting_logged'):
-                print("[CV Node] ⏳ Waiting for filter initialization...")
-                self._waiting_logged = True
+        if not self.ca_model.initialized:
             return
         
         current_time = self.get_clock().now().nanoseconds / 1e9
@@ -291,7 +282,7 @@ class CVPredictorNode(Node):
         predictions = []
         for horizon in self.prediction_horizons:
             try:
-                pos, vel, pos_cov, vel_cov = self.cv_model.predict(horizon)
+                pos, vel, acc, pos_cov, vel_cov, acc_cov = self.ca_model.predict(horizon)
                 
                 # Create PredictorOutput
                 pred_output = PredictorOutput(
@@ -299,13 +290,13 @@ class CVPredictorNode(Node):
                     prediction_horizon=horizon,
                     predicted_position=pos,
                     predicted_velocity=vel,
-                    predicted_acceleration=np.zeros(3),  # CV assumes zero acceleration
+                    predicted_acceleration=acc,
                     position_covariance=pos_cov,
                     velocity_covariance=vel_cov,
                     model_probability=1.0,
-                    innovation=self.cv_model.get_innovation(),
+                    innovation=self.ca_model.get_innovation(),
                     is_valid=True,
-                    predictor_type='cv'
+                    predictor_type='ca'
                 )
                 
                 predictions.append((horizon, pred_output))
@@ -327,37 +318,21 @@ class CVPredictorNode(Node):
                 markers = create_prediction_markers(
                     predictions,
                     frame_id='map',
-                    namespace='cv_predictor',
+                    namespace='ca_predictor',
                     scale=self.marker_scale
                 )
                 self.marker_pub.publish(markers)
             except Exception as e:
                 self.get_logger().error(f'Marker creation failed: {e}')
         
-        # Debug: Prediction output
-        if not hasattr(self, '_prediction_counter'):
-            self._prediction_counter = 0
-            print("\n[CV Node] ✓ First prediction published!")
-        self._prediction_counter += 1
-        
-        if self._prediction_counter % 20 == 0:  # Every 2 seconds at 10 Hz
-            print(f"\n[CV Node] Prediction #{self._prediction_counter} (all horizons):")
-            for horizon, pred in predictions:
-                print(f"  t+{horizon:.1f}s: pos=[{pred.predicted_position[0]:6.2f}, "
-                      f"{pred.predicted_position[1]:6.2f}, {pred.predicted_position[2]:6.2f}], "
-                      f"vel=[{pred.predicted_velocity[0]:5.2f}, {pred.predicted_velocity[1]:5.2f}, "
-                      f"{pred.predicted_velocity[2]:5.2f}]")
-            
-            # Show covariance uncertainty
-            pos_std = np.sqrt(np.diag(primary_pred.position_covariance))
-            print(f"  Position uncertainty (σ): [{pos_std[0]:.3f}, {pos_std[1]:.3f}, {pos_std[2]:.3f}]m")
-        
         # Log prediction info (throttled)
         self.get_logger().info(
-            f'CV Prediction: pos=[{primary_pred.predicted_position[0]:.2f}, '
+            f'CA Prediction: pos=[{primary_pred.predicted_position[0]:.2f}, '
             f'{primary_pred.predicted_position[1]:.2f}, {primary_pred.predicted_position[2]:.2f}], '
             f'vel=[{primary_pred.predicted_velocity[0]:.2f}, '
-            f'{primary_pred.predicted_velocity[1]:.2f}, {primary_pred.predicted_velocity[2]:.2f}]',
+            f'{primary_pred.predicted_velocity[1]:.2f}, {primary_pred.predicted_velocity[2]:.2f}], '
+            f'acc=[{primary_pred.predicted_acceleration[0]:.2f}, '
+            f'{primary_pred.predicted_acceleration[1]:.2f}, {primary_pred.predicted_acceleration[2]:.2f}]',
             throttle_duration_sec=2.0
         )
     
@@ -391,10 +366,10 @@ class CVPredictorNode(Node):
         msg.vy = float(prediction.predicted_velocity[1])
         msg.vz = float(prediction.predicted_velocity[2])
         
-        # Acceleration (CV assumes zero)
-        msg.ax = 0.0
-        msg.ay = 0.0
-        msg.az = 0.0
+        # Acceleration (NED frame) - CA predicts non-zero acceleration
+        msg.ax = float(prediction.predicted_acceleration[0])
+        msg.ay = float(prediction.predicted_acceleration[1])
+        msg.az = float(prediction.predicted_acceleration[2])
         
         # Validity flags
         msg.xy_valid = prediction.is_valid
@@ -412,16 +387,16 @@ class CVPredictorNode(Node):
 
 
 def main(args=None):
-    """Main entry point for CV predictor node."""
+    """Main entry point for CA predictor node."""
     rclpy.init(args=args)
     
     try:
-        node = CVPredictorNode()
+        node = CAPredictorNode()
         rclpy.spin(node)
     except KeyboardInterrupt:
         pass
     except Exception as e:
-        print(f'Error in CV predictor node: {e}')
+        print(f'Error in CA predictor node: {e}')
     finally:
         if rclpy.ok():
             rclpy.shutdown()

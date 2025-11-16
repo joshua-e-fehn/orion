@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""Pure Pursuit (PP) planner ROS2 node."""
+"""Proportional Navigation (PN) planner ROS2 node."""
 
 import rclpy
 import numpy as np
 import json
 
-from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
-
-from px4_msgs.msg import VehicleLocalPosition, TrajectorySetpoint, OffboardControlMode, VehicleCommand, VehicleStatus, VehicleCommandAck
+from px4_msgs.msg import VehicleLocalPosition, TrajectorySetpoint, OffboardControlMode
 from visualization_msgs.msg import MarkerArray
 from std_msgs.msg import String
 
@@ -15,56 +13,53 @@ from orion_flight.planners.common.planner_base import PlannerBase
 from orion_flight.planners.common.types import PlannerInput, PlannerOutput
 from orion_flight.planners.common.visualization import create_guidance_markers
 
-from orion_flight.planners.pp.pp_algorithm import PurePursuitAlgorithm
+from orion_flight.planners.pn.pn_algorithm import ProportionalNavigationAlgorithm
 
 
-class PPPlannerNode(PlannerBase):
+class PNPlannerNode(PlannerBase):
     """
-    ROS2 node for Pure Pursuit guidance law.
+    ROS2 node for Proportional Navigation guidance law.
     
-    Subscribes to interceptor and target states, computes PP guidance,
+    Subscribes to interceptor and target states, computes PN guidance,
     and publishes trajectory setpoints to PX4.
     """
     
     def __init__(self):
-        super().__init__('pp_planner')
+        super().__init__('pn_planner')
         
         # Declare ROS parameters
-        self.declare_parameter('G_pp', 2.0)
+        self.declare_parameter('N', 3.0)  # Navigation constant
         self.declare_parameter('amax', [4.0, 4.0, 2.0])
         self.declare_parameter('control_rate', 20.0)
-        self.declare_parameter('interceptor_namespace', 'px4_2')
-        self.declare_parameter('target_namespace', 'px4_1')
+        self.declare_parameter('interceptor_namespace', 'px4_1')
+        self.declare_parameter('target_namespace', 'px4_2')
         self.declare_parameter('use_predictor', True)
         self.declare_parameter('convergence_distance', 1.0)  # meters
+        self.declare_parameter('min_tgo', 0.05)  # seconds
+        self.declare_parameter('v_eps', 0.1)  # m/s
         
         # Get parameters
         params = {
-            'G_pp': self.get_parameter('G_pp').value,
+            'N': self.get_parameter('N').value,
             'amax': self.get_parameter('amax').value,
-            'dt': 1.0 / self.get_parameter('control_rate').value
+            'dt': 1.0 / self.get_parameter('control_rate').value,
+            'min_tgo': self.get_parameter('min_tgo').value,
+            'v_eps': self.get_parameter('v_eps').value
         }
         
         self.control_rate = self.get_parameter('control_rate').value
-        self.interceptor_ns = 'px4_2'#self.get_parameter('interceptor_namespace').value
+        self.interceptor_ns = self.get_parameter('interceptor_namespace').value
         self.target_ns = self.get_parameter('target_namespace').value
         self.use_predictor = self.get_parameter('use_predictor').value
         self.convergence_distance = self.get_parameter('convergence_distance').value
         
-        # Initialize PP algorithm
-        self.algorithm = PurePursuitAlgorithm(params)
+        # Initialize PN algorithm
+        self.algorithm = ProportionalNavigationAlgorithm(params)
         
         # State storage
         self.interceptor_state = None
         self.target_state = None
         self.predicted_state = None
-        self.interceptor_status = None
-        
-        # Auto-arm/offboard state tracking
-        self.flight_phase = "INIT"
-        self.offboard_setpoint_counter = 0
-        self.is_armed = False
-        self.is_offboard = False
         
         # Create subscriptions
         self._create_subscriptions()
@@ -82,34 +77,26 @@ class PPPlannerNode(PlannerBase):
         self.set_initialized(True)
         
         self.get_logger().info(
-            f'PP Planner initialized: G_pp={params["G_pp"]}, '
+            f'PN Planner initialized: N={params["N"]}, '
             f'amax={params["amax"]}, rate={self.control_rate} Hz'
         )
     
     def _create_subscriptions(self):
         """Create ROS2 subscriptions."""
-        # QoS profile for PX4 topics (BEST_EFFORT reliability)
-        qos_profile = QoSProfile(
-            reliability=ReliabilityPolicy.BEST_EFFORT,
-            durability=DurabilityPolicy.TRANSIENT_LOCAL,
-            history=HistoryPolicy.KEEP_LAST,
-            depth=1
-        )
-        
         # Interceptor state (ego drone)
         self.create_subscription(
             VehicleLocalPosition,
-            f'/{self.interceptor_ns}/fmu/out/vehicle_local_position_v1',
+            f'/{self.interceptor_ns}/fmu/out/vehicle_local_position',
             self.interceptor_callback,
-            qos_profile
+            10
         )
         
         # Target current state
         self.create_subscription(
             VehicleLocalPosition,
-            f'/{self.target_ns}/fmu/out/vehicle_local_position_v1',
+            f'/{self.target_ns}/fmu/out/vehicle_local_position',
             self.target_callback,
-            qos_profile
+            10
         )
         
         # Target predicted state (from predictor)
@@ -118,16 +105,8 @@ class PPPlannerNode(PlannerBase):
                 VehicleLocalPosition,
                 '/target/predicted_state',
                 self.predicted_callback,
-                qos_profile
+                10
             )
-        
-        # Vehicle status (for arming and offboard mode tracking)
-        self.create_subscription(
-            VehicleStatus,
-            f'/{self.interceptor_ns}/fmu/out/vehicle_status_v1',
-            self.vehicle_status_callback,
-            qos_profile
-        )
     
     def _create_publishers(self):
         """Create ROS2 publishers."""
@@ -142,13 +121,6 @@ class PPPlannerNode(PlannerBase):
         self.offboard_pub = self.create_publisher(
             OffboardControlMode,
             f'/{self.interceptor_ns}/fmu/in/offboard_control_mode',
-            10
-        )
-        
-        # Vehicle command publisher (for arming and mode changes)
-        self.vehicle_command_pub = self.create_publisher(
-            VehicleCommand,
-            f'/{self.interceptor_ns}/fmu/in/vehicle_command',
             10
         )
         
@@ -178,89 +150,11 @@ class PPPlannerNode(PlannerBase):
         """Callback for target predicted state updates."""
         self.predicted_state = msg
     
-    def vehicle_status_callback(self, msg: VehicleStatus):
-        """Callback for vehicle status updates."""
-        self.is_armed = (msg.arming_state == 2)  # ARMING_STATE_ARMED
-        self.is_offboard = (msg.nav_state == 14)  # NAVIGATION_STATE_OFFBOARD
-    
-    def arm(self):
-        """Send arm command to vehicle."""
-        cmd = VehicleCommand()
-        cmd.timestamp = int(self.get_clock().now().nanoseconds / 1000)
-        cmd.command = 400  # VEHICLE_CMD_COMPONENT_ARM_DISARM
-        cmd.param1 = 1.0  # 1 to arm
-        cmd.param2 = 21196.0  # Force arm
-        cmd.target_system = 0  # 0 = broadcast to local system
-        cmd.target_component = 1
-        cmd.source_system = 1
-        cmd.source_component = 1
-        cmd.from_external = True
-        
-        self.vehicle_command_pub.publish(cmd)
-        self.get_logger().info('Arm command sent')
-    
-    def engage_offboard_mode(self):
-        """Send offboard mode command to vehicle."""
-        cmd = VehicleCommand()
-        cmd.timestamp = int(self.get_clock().now().nanoseconds / 1000)
-        cmd.command = 176  # VEHICLE_CMD_DO_SET_MODE
-        cmd.param1 = 1.0  # Base mode: custom
-        cmd.param2 = 6.0  # Custom main mode: OFFBOARD
-        cmd.target_system = 0
-        cmd.target_component = 1
-        cmd.source_system = 1
-        cmd.source_component = 1
-        cmd.from_external = True
-        
-        self.vehicle_command_pub.publish(cmd)
-        self.get_logger().info('Offboard mode command sent')
-    
     def control_loop_callback(self):
         """Main control loop (runs at control_rate Hz)."""
-        # Always send offboard heartbeat and setpoints
-        self._publish_offboard_heartbeat()
-        
         # Check if we have necessary data
         if self.interceptor_state is None:
             self.get_logger().warn('No interceptor state available', throttle_duration_sec=2.0)
-            return
-        
-        # Send a default hover setpoint during initialization
-        if self.flight_phase == "INIT":
-            self._publish_hover_setpoint()
-        
-        # Auto-initialization state machine
-        if self.flight_phase == "INIT":
-            # Send setpoints for at least 20 iterations before engaging OFFBOARD
-            self.offboard_setpoint_counter += 1
-            
-            if self.offboard_setpoint_counter == 10:
-                self.get_logger().info("Sending initial setpoints before OFFBOARD mode...")
-            elif self.offboard_setpoint_counter == 20:
-                self.get_logger().info("Engaging OFFBOARD mode and arming...")
-                self.engage_offboard_mode()
-            elif self.offboard_setpoint_counter == 25:
-                self.arm()
-            elif self.offboard_setpoint_counter >= 30:
-                # Wait for drone to be armed and in OFFBOARD mode
-                if self.is_armed and self.is_offboard:
-                    self.flight_phase = "RUNNING"
-                    self.get_logger().info("✓ Armed and in OFFBOARD mode, starting guidance!")
-                else:
-                    # Keep trying to engage offboard and arm every 50 iterations (~2.5s)
-                    if self.offboard_setpoint_counter % 50 == 0:
-                        armed_status = "ARMED" if self.is_armed else "DISARMED"
-                        mode_status = "OFFBOARD" if self.is_offboard else "NOT_OFFBOARD"
-                        self.get_logger().warn(f"Waiting for ready state: {armed_status}, {mode_status}")
-                        if not self.is_offboard:
-                            self.engage_offboard_mode()
-                        if not self.is_armed:
-                            self.arm()
-            return
-        
-        # RUNNING phase - normal guidance operation
-        if not self.is_armed or not self.is_offboard:
-            self.get_logger().warn('Vehicle not armed/offboard, waiting...', throttle_duration_sec=2.0)
             return
         
         # Use predicted state if available and enabled, otherwise use current state
@@ -278,19 +172,15 @@ class PPPlannerNode(PlannerBase):
         # Build planner input
         planner_input = self._build_planner_input(self.interceptor_state, target, using_prediction)
         
-        # Debug logging (throttled)
-        if self.offboard_setpoint_counter % 20 == 0:
-            self.get_logger().info(
-                f'Interceptor: pos=[{self.interceptor_state.x:.2f}, {self.interceptor_state.y:.2f}, {self.interceptor_state.z:.2f}], '
-                f'Target: pos=[{target.x:.2f}, {target.y:.2f}, {target.z:.2f}]'
-            )
-        
         # Compute guidance
         planner_output = self.compute_guidance(planner_input)
         
         if planner_output.is_valid:
             # Publish trajectory setpoint
             self._publish_trajectory_setpoint(planner_output)
+            
+            # Publish offboard heartbeat
+            self._publish_offboard_heartbeat()
             
             # Publish visualization (at lower rate)
             if self.algorithm.get_command_count() % 4 == 0:  # ~5 Hz if control at 20 Hz
@@ -319,7 +209,7 @@ class PPPlannerNode(PlannerBase):
     
     def compute_guidance(self, planner_input: PlannerInput) -> PlannerOutput:
         """
-        Compute Pure Pursuit guidance command.
+        Compute Proportional Navigation guidance command.
         
         Args:
             planner_input: Current states
@@ -327,7 +217,7 @@ class PPPlannerNode(PlannerBase):
         Returns:
             PlannerOutput with commanded setpoints
         """
-        # Call PP algorithm
+        # Call PN algorithm
         result = self.algorithm.compute_command(
             p_i=planner_input.interceptor_position,
             v_i=planner_input.interceptor_velocity,
@@ -341,7 +231,7 @@ class PPPlannerNode(PlannerBase):
             commanded_acceleration=result['acceleration'],
             commanded_velocity=result['velocity'],
             commanded_position=result['position'],
-            commanded_yaw=0.0,  # PP doesn't specify yaw
+            commanded_yaw=0.0,  # PN doesn't specify yaw
             commanded_yaw_rate=0.0,
             time_to_go=result['tgo'],
             closing_velocity=result['closing_velocity'],
@@ -351,26 +241,23 @@ class PPPlannerNode(PlannerBase):
         )
     
     def _publish_trajectory_setpoint(self, output: PlannerOutput):
-        """Publish trajectory setpoint to PX4 (adjusted to avoid JSON errors)."""
+        """Publish trajectory setpoint to PX4."""
         msg = TrajectorySetpoint()
         msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
-
-        # Ensure all values are plain floats, and lists are the correct length
-        msg.position = [float(x) for x in output.commanded_position[:3]]  # NED
-        msg.velocity = [float(v) for v in output.commanded_velocity[:3]]  # NED
-        msg.acceleration = [float(a) for a in output.commanded_acceleration[:3]]  # NED
+        
+        # Position (NED)
+        msg.position = [float(x) for x in output.commanded_position]
+        
+        # Velocity (NED)
+        msg.velocity = [float(v) for v in output.commanded_velocity]
+        
+        # Acceleration (NED)
+        msg.acceleration = [float(a) for a in output.commanded_acceleration]
+        
+        # Yaw (default: face direction of motion)
         msg.yaw = float(output.commanded_yaw)
         
-        # Debug logging (throttled)
-        if self.algorithm.get_command_count() % 20 == 0:
-            self.get_logger().info(
-                f'Setpoint: pos=[{msg.position[0]:.2f}, {msg.position[1]:.2f}, {msg.position[2]:.2f}], '
-                f'vel=[{msg.velocity[0]:.2f}, {msg.velocity[1]:.2f}, {msg.velocity[2]:.2f}], '
-                f'accel=[{msg.acceleration[0]:.2f}, {msg.acceleration[1]:.2f}, {msg.acceleration[2]:.2f}]'
-            )
-
         self.trajectory_pub.publish(msg)
-
     
     def _publish_offboard_heartbeat(self):
         """Publish offboard control mode heartbeat."""
@@ -378,29 +265,9 @@ class PPPlannerNode(PlannerBase):
         msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
         msg.position = True
         msg.velocity = True
-        msg.acceleration = False
-        msg.attitude = False
-        msg.body_rate = False
+        msg.acceleration = True
         
         self.offboard_pub.publish(msg)
-    
-    def _publish_hover_setpoint(self):
-        """Publish a hover setpoint at current position during initialization."""
-        if self.interceptor_state is None:
-            return
-        
-        msg = TrajectorySetpoint()
-        msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
-        
-        # Hover at current position
-        msg.position = [float(self.interceptor_state.x), 
-                       float(self.interceptor_state.y), 
-                       float(self.interceptor_state.z)]
-        msg.velocity = [0.0, 0.0, 0.0]
-        msg.acceleration = [0.0, 0.0, 0.0]
-        msg.yaw = 0.0
-        
-        self.trajectory_pub.publish(msg)
     
     def _publish_visualization(self, input_data: PlannerInput, output: PlannerOutput):
         """Publish visualization markers for RViz."""
@@ -409,7 +276,7 @@ class PPPlannerNode(PlannerBase):
             target_pos=input_data.target_position,
             acceleration=output.commanded_acceleration,
             frame_id='map',
-            namespace='pp_planner',
+            namespace='pn_planner',
             scale_accel=0.5
         )
         
@@ -418,13 +285,13 @@ class PPPlannerNode(PlannerBase):
     def _publish_status(self, output: PlannerOutput):
         """Publish planner status as JSON."""
         status = {
-            'planner': 'pure_pursuit',
-            'active': bool(output.guidance_active),
+            'planner': 'proportional_navigation',
+            'active': output.guidance_active,
             'tgo': float(output.time_to_go),
             'closing_velocity': float(output.closing_velocity),
             'miss_distance': float(output.miss_distance),
-            'converged': bool(self.is_converged()),
-            'commands_issued': int(self.algorithm.get_command_count())
+            'converged': self.is_converged(),
+            'commands_issued': self.algorithm.get_command_count()
         }
         
         msg = String()
@@ -434,7 +301,7 @@ class PPPlannerNode(PlannerBase):
     def reset(self):
         """Reset planner state."""
         self.algorithm.reset()
-        self.get_logger().info('PP Planner reset')
+        self.get_logger().info('PN Planner reset')
     
     def is_converged(self) -> bool:
         """Check if intercept is complete."""
@@ -454,18 +321,18 @@ class PPPlannerNode(PlannerBase):
     
     def get_planner_type(self) -> str:
         """Get planner type identifier."""
-        return 'pp'
+        return 'pn'
 
 
 def main(args=None):
-    """Main entry point for PP planner node."""
+    """Main entry point for PN planner node."""
     rclpy.init(args=args)
-    node = PPPlannerNode()
+    node = PNPlannerNode()
     
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
-        node.get_logger().info('PP Planner shutting down...')
+        node.get_logger().info('PN Planner shutting down...')
     finally:
         node.destroy_node()
         rclpy.shutdown()

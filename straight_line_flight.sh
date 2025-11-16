@@ -120,9 +120,6 @@ echo ""
 print_info "Launching hover flight with RViz..."
 echo ""
 
-# Don't use XML QoS - causes more problems than it solves
-# The QoS is configured directly in the Python code now
-
 if [ "$USE_AGENT" = "true" ]; then
     ros2 launch attack_drone hover.launch.py \
         flight_height:=5.0 \

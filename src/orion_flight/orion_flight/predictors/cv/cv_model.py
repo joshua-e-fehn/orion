@@ -115,6 +115,10 @@ class CVModel:
         self.P = np.eye(self.state_dim) * 1.0
         
         self.initialized = True
+        
+        print(f"[CV Model] Initialized with:")
+        print(f"  Position: [{position[0]:.3f}, {position[1]:.3f}, {position[2]:.3f}]")
+        print(f"  Velocity: [{velocity[0]:.3f}, {velocity[1]:.3f}, {velocity[2]:.3f}]")
     
     def update(self, position: np.ndarray, velocity: np.ndarray, dt: float):
         """
@@ -171,23 +175,24 @@ class CVModel:
         I_KH = np.eye(self.state_dim) - K @ self.H
         self.P = I_KH @ P_pred @ I_KH.T + K @ self.R @ K.T
         self.P = ensure_covariance_valid(self.P)
+        
+        # Debug output (throttled by caller)
+        innovation_norm = np.linalg.norm(y[0:3])
+        if innovation_norm > 0.5:  # Only log significant innovations
+            print(f"[CV Model] Large innovation detected: {innovation_norm:.3f}m")
     
-    def predict(self, horizon: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def predict(self, horizon: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """
-        Predict state at future time t + horizon.
+        Predict future state at time t + horizon.
         
         Args:
-            horizon: Prediction time horizon (seconds)
+            horizon: Time into the future (seconds)
         
         Returns:
             predicted_position: [x, y, z]
             predicted_velocity: [vx, vy, vz]
-            position_covariance: 3x3 position covariance
-            velocity_covariance: 3x3 velocity covariance
+            full_covariance: 6x6 covariance matrix [pos, vel] including cross-correlations
         """
-        if horizon < 0:
-            raise ValueError(f"Negative horizon: {horizon}")
-        
         # Propagate state forward
         F = self._build_transition_matrix(horizon)
         x_pred = F @ self.x
@@ -201,28 +206,25 @@ class CVModel:
         position = x_pred[0:3]
         velocity = x_pred[3:6]
         
-        # Extract covariances
-        pos_cov = P_pred[0:3, 0:3]
-        vel_cov = P_pred[3:6, 3:6]
+        # Return full 6x6 covariance (includes position-velocity cross-correlations)
+        full_cov = P_pred  # 6x6 matrix
         
-        return position, velocity, pos_cov, vel_cov
+        return position, velocity, full_cov
     
-    def get_state(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def get_state(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """
         Get current state estimate.
         
         Returns:
             position: [x, y, z]
             velocity: [vx, vy, vz]
-            position_covariance: 3x3 position covariance
-            velocity_covariance: 3x3 velocity covariance
+            full_covariance: 6x6 covariance matrix [pos, vel] including cross-correlations
         """
         position = self.x[0:3]
         velocity = self.x[3:6]
-        pos_cov = self.P[0:3, 0:3]
-        vel_cov = self.P[3:6, 3:6]
+        full_cov = self.P  # 6x6 matrix with cross-correlations
         
-        return position, velocity, pos_cov, vel_cov
+        return position, velocity, full_cov
     
     def get_innovation(self) -> np.ndarray:
         """Get last measurement innovation (residual)."""
