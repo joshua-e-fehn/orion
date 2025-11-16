@@ -116,6 +116,60 @@ def create_prediction_markers(
         
         markers.markers.append(sphere)
         
+        # Create velocity arrow (always display)
+        vel_enu = ned_to_enu(pred.predicted_velocity)
+        vel_norm = np.linalg.norm(vel_enu)
+        
+        arrow = Marker()
+        arrow.header.frame_id = frame_id
+        arrow.header.stamp.sec = 0
+        arrow.header.stamp.nanosec = 0
+        arrow.ns = f"{namespace}_velocity"
+        arrow.id = marker_id
+        marker_id += 1
+        arrow.type = Marker.ARROW
+        arrow.action = Marker.ADD
+        
+        # Arrow from current position pointing in velocity direction
+        start_point = Point()
+        start_point.x = float(pos_enu[0])
+        start_point.y = float(pos_enu[1])
+        start_point.z = float(pos_enu[2])
+        
+        # Scale arrow length by velocity magnitude (but cap it)
+        # Use minimum length for very small velocities
+        if vel_norm > 0.01:
+            arrow_length = min(vel_norm * 0.5, 2.0) * scale
+            vel_unit = vel_enu / vel_norm
+        else:
+            # Default to small arrow pointing in X direction if velocity is zero
+            arrow_length = 0.3 * scale
+            vel_unit = np.array([1.0, 0.0, 0.0])
+        
+        end_point = Point()
+        end_point.x = float(pos_enu[0] + vel_unit[0] * arrow_length)
+        end_point.y = float(pos_enu[1] + vel_unit[1] * arrow_length)
+        end_point.z = float(pos_enu[2] + vel_unit[2] * arrow_length)
+        
+        arrow.points.append(start_point)
+        arrow.points.append(end_point)
+        
+        # Arrow shaft and head dimensions (smaller arrows)
+        arrow.scale.x = 0.05 * scale  # Shaft diameter (reduced from 0.1)
+        arrow.scale.y = 0.10 * scale  # Head diameter (reduced from 0.2)
+        arrow.scale.z = 0.15 * scale  # Head length (reduced from 0.3)
+        
+        # Color based on velocity magnitude (blue -> cyan -> white)
+        vel_color_factor = min(vel_norm / 5.0, 1.0)  # Normalize to max 5 m/s
+        arrow.color = ColorRGBA(
+            r=float(vel_color_factor),
+            g=float(0.5 + vel_color_factor * 0.5),
+            b=1.0,
+            a=0.9
+        )
+        
+        markers.markers.append(arrow)
+        
         # Create text label with horizon
         text = Marker()
         text.header.frame_id = frame_id

@@ -7,7 +7,7 @@
     update_rate: 20.0
     
     # Prediction horizons (seconds into future)
-    prediction_horizons: [0.5, 1.0, 2.0, 3.0, 5.0]
+    prediction_horizons: [0.5, 1.0, 2.0, 3.0, 5.0, 7.0, 10.0]
     
     # Process noise parameters (tuning)
     process_noise:
