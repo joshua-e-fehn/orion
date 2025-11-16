@@ -31,6 +31,8 @@ setup(
             'imm_predictor_node = orion_flight.predictors.imm.imm_predictor_node:main',
             # Planner nodes
             'pp_planner = orion_flight.planners.pp.pp_planner_node:main',
+            # Utility nodes
+            'target_tf_publisher = orion_flight.utils.target_tf_publisher:main',
         ],
     },
 )
