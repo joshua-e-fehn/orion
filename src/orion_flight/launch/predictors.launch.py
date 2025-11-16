@@ -55,17 +55,17 @@ def generate_launch_description():
         )
     )
     
-    # CA Predictor Node (placeholder - to be implemented)
-    # ca_predictor_node = Node(
-    #     package='orion_flight',
-    #     executable='ca_predictor_node',
-    #     name='ca_predictor_node',
-    #     output='screen',
-    #     parameters=[config_path],
-    #     condition=launch.conditions.IfCondition(
-    #         launch.substitutions.EqualsSubstitution(predictor_type, 'ca')
-    #     )
-    # )
+    # CA Predictor Node
+    ca_predictor_node = Node(
+        package='orion_flight',
+        executable='ca_predictor_node',
+        name='ca_predictor_node',
+        output='screen',
+        parameters=[config_path],
+        condition=launch.conditions.IfCondition(
+            launch.substitutions.EqualsSubstitution(predictor_type, 'ca')
+        )
+    )
     
     # IMM Predictor Node (placeholder - to be implemented)
     # imm_predictor_node = Node(
@@ -84,6 +84,6 @@ def generate_launch_description():
         target_namespace_arg,
         config_file_arg,
         cv_predictor_node,
-        # ca_predictor_node,  # Uncomment when implemented
+        ca_predictor_node,
         # imm_predictor_node,  # Uncomment when implemented
     ])

@@ -115,6 +115,10 @@ class CVModel:
         self.P = np.eye(self.state_dim) * 1.0
         
         self.initialized = True
+        
+        print(f"[CV Model] Initialized with:")
+        print(f"  Position: [{position[0]:.3f}, {position[1]:.3f}, {position[2]:.3f}]")
+        print(f"  Velocity: [{velocity[0]:.3f}, {velocity[1]:.3f}, {velocity[2]:.3f}]")
     
     def update(self, position: np.ndarray, velocity: np.ndarray, dt: float):
         """
@@ -171,6 +175,11 @@ class CVModel:
         I_KH = np.eye(self.state_dim) - K @ self.H
         self.P = I_KH @ P_pred @ I_KH.T + K @ self.R @ K.T
         self.P = ensure_covariance_valid(self.P)
+        
+        # Debug output (throttled by caller)
+        innovation_norm = np.linalg.norm(y[0:3])
+        if innovation_norm > 0.5:  # Only log significant innovations
+            print(f"[CV Model] Large innovation detected: {innovation_norm:.3f}m")
     
     def predict(self, horizon: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """

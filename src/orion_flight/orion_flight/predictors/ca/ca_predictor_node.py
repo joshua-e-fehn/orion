@@ -96,6 +96,7 @@ class CAPredictorNode(Node):
         self.declare_parameter('measurement_noise.acceleration', 0.5)
         self.declare_parameter('publish_markers', True)
         self.declare_parameter('marker_scale', 1.0)
+        self.declare_parameter('use_acceleration_from_msg', False)
     
     def _get_parameters(self):
         """Get parameter values."""
@@ -110,6 +111,7 @@ class CAPredictorNode(Node):
         self.param_r_acc = self.get_parameter('measurement_noise.acceleration').value
         self.publish_markers = self.get_parameter('publish_markers').value
         self.marker_scale = self.get_parameter('marker_scale').value
+        self.use_accel_from_msg = self.get_parameter('use_acceleration_from_msg').value
     
     def target_callback(self, msg: VehicleLocalPosition):
         """
@@ -128,8 +130,13 @@ class CAPredictorNode(Node):
         position = np.array([msg.x, msg.y, msg.z])
         velocity = np.array([msg.vx, msg.vy, msg.vz])
         
-        # Extract acceleration if available (PX4 provides it)
-        acceleration = np.array([msg.ax, msg.ay, msg.az])
+        # Extract acceleration if available and configured
+        acceleration = None
+        if self.use_accel_from_msg:
+            # Note: VehicleLocalPosition may have ax, ay, az fields
+            # Check if they exist before using
+            if hasattr(msg, 'ax') and hasattr(msg, 'ay') and hasattr(msg, 'az'):
+                acceleration = np.array([msg.ax, msg.ay, msg.az])
         
         # Calculate dt
         if self.last_measurement_time is not None:
@@ -149,8 +156,12 @@ class CAPredictorNode(Node):
         if self.ca_model.initialized:
             innovation = self.ca_model.get_innovation()
             innovation_norm = np.linalg.norm(innovation[0:3])  # Position innovation
+            _, _, est_acc, _, _, _ = self.ca_model.get_state()
+            acc_norm = np.linalg.norm(est_acc)
+            
             self.get_logger().debug(
-                f'CA Update: dt={dt:.3f}s, innovation_norm={innovation_norm:.3f}m',
+                f'CA Update: dt={dt:.3f}s, innovation_norm={innovation_norm:.3f}m, '
+                f'est_acc_norm={acc_norm:.3f}m/s²',
                 throttle_duration_sec=1.0
             )
     
@@ -167,7 +178,7 @@ class CAPredictorNode(Node):
         predictions = []
         for horizon in self.prediction_horizons:
             try:
-                pos, vel, acc, pos_cov, vel_cov = self.ca_model.predict(horizon)
+                pos, vel, acc, pos_cov, vel_cov, acc_cov = self.ca_model.predict(horizon)
                 
                 # Create PredictorOutput
                 pred_output = PredictorOutput(
@@ -251,7 +262,7 @@ class CAPredictorNode(Node):
         msg.vy = float(prediction.predicted_velocity[1])
         msg.vz = float(prediction.predicted_velocity[2])
         
-        # Acceleration (NED frame)
+        # Acceleration (NED frame) - CA predicts non-zero acceleration
         msg.ax = float(prediction.predicted_acceleration[0])
         msg.ay = float(prediction.predicted_acceleration[1])
         msg.az = float(prediction.predicted_acceleration[2])

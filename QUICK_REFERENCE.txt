@@ -1,0 +1,179 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                    ORION QUICK REFERENCE CARD                        ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ STEP 1: BUILD WORKSPACE (First Time or After Changes)               │
+└─────────────────────────────────────────────────────────────────────┘
+  cd ~/Documents/Orion/orion_arm
+  colcon build
+  source install/setup.bash
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ STEP 2: LAUNCH SIMULATION (Terminal 1)                              │
+└─────────────────────────────────────────────────────────────────────┘
+  cd ~/Documents/Orion/orion_arm
+  source install/setup.bash
+  ros2 launch orion_flight simulation.launch.py
+
+  ✓ Starts 2 PX4 drones in Gazebo
+  ✓ Opens terminal windows for PX4 instances
+  ✓ Starts MicroXRCE agents automatically
+  ✓ Launches RViz
+
+  WAIT for Gazebo to fully load before proceeding!
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ STEP 3: LAUNCH ATTACKER BEHAVIOR (Terminal 2)                       │
+└─────────────────────────────────────────────────────────────────────┘
+
+  HOVER MODE:
+    ros2 launch orion_flight attacker.launch.py \
+        mode:=hover \
+        flight_height:=5.0
+
+  CIRCLE MODE:
+    ros2 launch orion_flight attacker.launch.py \
+        mode:=circle \
+        radius:=10.0 \
+        altitude:=5.0 \
+        angular_velocity:=0.5
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ STEP 4: LAUNCH INTERCEPTOR SYSTEM (Terminal 3)                      │
+└─────────────────────────────────────────────────────────────────────┘
+
+  PREDICTION ONLY (Test Predictor):
+    ros2 launch orion_flight interceptor.launch.py \
+        mode:=prediction_only \
+        predictor:=cv
+
+  FULL SYSTEM (Prediction + Planning):
+    ros2 launch orion_flight interceptor.launch.py \
+        mode:=full \
+        predictor:=ca \
+        planner:=pp \
+        lookahead_distance:=3.0
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ INTERACTIVE MODE (Easiest!)                                         │
+└─────────────────────────────────────────────────────────────────────┘
+  cd ~/Documents/Orion/orion_arm
+  ./quick_launch.sh
+
+  Then follow the prompts!
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ COMMON COMMANDS                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+  # Check ROS topics
+  ros2 topic list
+
+  # Monitor topic rate
+  ros2 topic hz /px4_1/fmu/out/vehicle_local_position
+
+  # Echo topic data
+  ros2 topic echo /target/predicted_state
+
+  # Check running nodes
+  ros2 node list
+
+  # Rebuild single package
+  colcon build --packages-select orion_flight
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ PREDICTOR OPTIONS                                                    │
+└─────────────────────────────────────────────────────────────────────┘
+  predictor:=cv    → Constant Velocity (best for straight lines)
+  predictor:=ca    → Constant Acceleration (best for maneuvers)
+  predictor:=imm   → Interacting Multiple Model (future)
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ PLANNER OPTIONS                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+  planner:=pp      → Pure Pursuit (available)
+  planner:=apf     → Artificial Potential Field (future)
+  planner:=mpc     → Model Predictive Control (future)
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ TUNING PARAMETERS                                                    │
+└─────────────────────────────────────────────────────────────────────┘
+  flight_height:=X.X        # Attacker altitude (meters)
+  radius:=X.X               # Circle radius (meters)
+  angular_velocity:=X.X     # Circle speed (rad/s)
+  prediction_horizon:=X.X   # How far to predict (seconds)
+  lookahead_distance:=X.X   # PP lookahead (meters)
+  max_speed:=X.X            # Interceptor max speed (m/s)
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ EXAMPLE WORKFLOWS                                                    │
+└─────────────────────────────────────────────────────────────────────┘
+
+  TEST CV PREDICTOR ON HOVER:
+    Terminal 1: ros2 launch orion_flight simulation.launch.py
+    Terminal 2: ros2 launch orion_flight attacker.launch.py mode:=hover
+    Terminal 3: ros2 launch orion_flight interceptor.launch.py \
+                    mode:=prediction_only predictor:=cv
+
+  TEST CA PREDICTOR ON CIRCLE:
+    Terminal 1: ros2 launch orion_flight simulation.launch.py
+    Terminal 2: ros2 launch orion_flight attacker.launch.py \
+                    mode:=circle radius:=10.0
+    Terminal 3: ros2 launch orion_flight interceptor.launch.py \
+                    mode:=prediction_only predictor:=ca
+
+  FULL INTERCEPTION DEMO:
+    Terminal 1: ros2 launch orion_flight simulation.launch.py
+    Terminal 2: ros2 launch orion_flight attacker.launch.py \
+                    mode:=circle radius:=12.0 altitude:=8.0
+    Terminal 3: ros2 launch orion_flight interceptor.launch.py \
+                    mode:=full predictor:=ca planner:=pp
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ TROUBLESHOOTING                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+  Package not found:
+    → source install/setup.bash
+
+  Drones don't move:
+    → Wait for Gazebo to fully load
+    → Check that PX4 terminals show "pxh>" prompt
+    → Verify: ros2 topic list | grep px4_1
+
+  Simulation won't start:
+    → Check PX4 path: ls ~/PX4-Autopilot
+    → Verify build: ls ~/PX4-Autopilot/build/px4_sitl_default/bin/px4
+
+  Topics not publishing:
+    → Check MicroXRCE agents are connected
+    → Terminal should show "successfully created client"
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ STOPPING THE SYSTEM                                                  │
+└─────────────────────────────────────────────────────────────────────┘
+  1. Press Ctrl+C in interceptor terminal (Terminal 3)
+  2. Press Ctrl+C in attacker terminal (Terminal 2)
+  3. Press Ctrl+C in simulation terminal (Terminal 1)
+  4. Close PX4 and agent terminal windows
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ DOCUMENTATION                                                        │
+└─────────────────────────────────────────────────────────────────────┘
+  LAUNCH_FILES_GUIDE.md     → Complete guide with all parameters
+  LAUNCH_SYSTEM_SUMMARY.md  → System overview and architecture
+  README.md                 → Project main documentation
+  quick_launch.sh           → Interactive launcher script
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ TIPS                                                                 │
+└─────────────────────────────────────────────────────────────────────┘
+  ✓ Always source workspace: source install/setup.bash
+  ✓ Start simulation first, wait for Gazebo to load
+  ✓ Use CV predictor for straight lines, CA for maneuvers
+  ✓ Smaller lookahead = tighter following, larger = smoother
+  ✓ Monitor with: ros2 topic hz <topic_name>
+  ✓ Record data: ros2 bag record -a
+
+╔══════════════════════════════════════════════════════════════════════╗
+║  For more details, see: LAUNCH_FILES_GUIDE.md                        ║
+╚══════════════════════════════════════════════════════════════════════╝

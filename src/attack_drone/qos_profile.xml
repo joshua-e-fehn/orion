@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dds xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+    <profiles>
+        <!-- Default participant profile -->
+        <participant profile_name="default_participant" is_default_profile="true">
+            <rtps>
+                <builtin>
+                    <discovery_config>
+                        <leaseDuration>
+                            <sec>DURATION_INFINITY</sec>
+                        </leaseDuration>
+                    </discovery_config>
+                </builtin>
+            </rtps>
+        </participant>
+        
+        <!-- Default data reader profile -->
+        <data_reader profile_name="default_datareader" is_default_profile="true">
+            <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+            <qos>
+                <reliability>
+                    <kind>BEST_EFFORT</kind>
+                </reliability>
+                <durability>
+                    <kind>VOLATILE</kind>
+                </durability>
+            </qos>
+        </data_reader>
+        
+        <!-- Default data writer profile -->
+        <data_writer profile_name="default_datawriter" is_default_profile="true">
+            <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+            <qos>
+                <reliability>
+                    <kind>BEST_EFFORT</kind>
+                </reliability>
+                <durability>
+                    <kind>VOLATILE</kind>
+                </durability>
+            </qos>
+        </data_writer>
+    </profiles>
+</dds>

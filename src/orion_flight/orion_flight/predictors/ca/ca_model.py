@@ -43,25 +43,26 @@ class CAModel:
         self.r_vel = measurement_noise.get('velocity', 0.1)
         self.r_acc = measurement_noise.get('acceleration', 0.5)
         
-        # Measurement matrix H (we observe position, velocity, and acceleration)
-        self.H = np.eye(self.state_dim)
+        # Measurement matrix H (we observe position, velocity, and optionally acceleration)
+        # For now, we assume we only measure position and velocity directly
+        # Acceleration is estimated from velocity changes
+        self.H = np.zeros((6, self.state_dim))
+        self.H[0:3, 0:3] = np.eye(3)  # Measure position
+        self.H[3:6, 3:6] = np.eye(3)  # Measure velocity
         
         # Build measurement noise covariance
         self.R = self._build_measurement_noise()
         
-        # For estimating acceleration when not directly measured
-        self.prev_velocity = None
-        self.prev_time = None
-        
         self.initialized = False
-        self.last_innovation = np.zeros(self.state_dim)
+        self.last_innovation = np.zeros(6)  # 6D innovation (pos + vel)
+        self.last_velocity = None
+        self.last_measurement_time = None
     
     def _build_measurement_noise(self) -> np.ndarray:
         """Build measurement noise covariance matrix R."""
-        R = np.zeros((self.state_dim, self.state_dim))
+        R = np.zeros((6, 6))
         R[0:3, 0:3] = np.eye(3) * self.r_pos  # Position noise
         R[3:6, 3:6] = np.eye(3) * self.r_vel  # Velocity noise
-        R[6:9, 6:9] = np.eye(3) * self.r_acc  # Acceleration noise (higher uncertainty)
         return R
     
     def _build_process_noise(self, dt: float) -> np.ndarray:
@@ -69,14 +70,16 @@ class CAModel:
         Build process noise covariance matrix Q for time step dt.
         
         Uses continuous white noise jerk model:
-        The jerk (derivative of acceleration) is modeled as white noise.
+        Q = G·Q_cont·G^T·dt
+        
+        where G is the noise gain matrix.
         """
         # Continuous time process noise intensities
         q_cont_pos = self.q_pos
         q_cont_vel = self.q_vel
         q_cont_acc = self.q_acc
         
-        # Discrete time process noise matrix
+        # Discrete time process noise
         Q = np.zeros((self.state_dim, self.state_dim))
         
         dt2 = dt * dt
@@ -84,19 +87,25 @@ class CAModel:
         dt4 = dt3 * dt
         dt5 = dt4 * dt
         
-        # Position block (affected by velocity, acceleration, and jerk)
-        Q[0:3, 0:3] = np.eye(3) * (q_cont_pos * dt + q_cont_vel * dt3 / 3.0 + q_cont_acc * dt5 / 20.0)
-        Q[0:3, 3:6] = np.eye(3) * (q_cont_vel * dt2 / 2.0 + q_cont_acc * dt4 / 8.0)
-        Q[0:3, 6:9] = np.eye(3) * (q_cont_acc * dt3 / 6.0)
+        # Position-position block
+        Q[0:3, 0:3] = np.eye(3) * (q_cont_pos * dt + q_cont_vel * dt3/3.0 + q_cont_acc * dt5/20.0)
         
-        # Velocity block (affected by acceleration and jerk)
-        Q[3:6, 0:3] = np.eye(3) * (q_cont_vel * dt2 / 2.0 + q_cont_acc * dt4 / 8.0)
-        Q[3:6, 3:6] = np.eye(3) * (q_cont_vel * dt + q_cont_acc * dt3 / 3.0)
-        Q[3:6, 6:9] = np.eye(3) * (q_cont_acc * dt2 / 2.0)
+        # Position-velocity block
+        Q[0:3, 3:6] = np.eye(3) * (q_cont_vel * dt2/2.0 + q_cont_acc * dt4/8.0)
+        Q[3:6, 0:3] = Q[0:3, 3:6]  # Symmetric
         
-        # Acceleration block (affected by jerk)
-        Q[6:9, 0:3] = np.eye(3) * (q_cont_acc * dt3 / 6.0)
-        Q[6:9, 3:6] = np.eye(3) * (q_cont_acc * dt2 / 2.0)
+        # Position-acceleration block
+        Q[0:3, 6:9] = np.eye(3) * (q_cont_acc * dt3/6.0)
+        Q[6:9, 0:3] = Q[0:3, 6:9]  # Symmetric
+        
+        # Velocity-velocity block
+        Q[3:6, 3:6] = np.eye(3) * (q_cont_vel * dt + q_cont_acc * dt3/3.0)
+        
+        # Velocity-acceleration block
+        Q[3:6, 6:9] = np.eye(3) * (q_cont_acc * dt2/2.0)
+        Q[6:9, 3:6] = Q[3:6, 6:9]  # Symmetric
+        
+        # Acceleration-acceleration block
         Q[6:9, 6:9] = np.eye(3) * (q_cont_acc * dt)
         
         return Q
@@ -118,50 +127,47 @@ class CAModel:
         """
         F = np.eye(self.state_dim)
         
-        dt2 = 0.5 * dt * dt
+        dt2_half = 0.5 * dt * dt
         
         # Position updates
-        F[0, 3] = dt      # x += vx*dt
-        F[0, 6] = dt2     # x += 0.5*ax*dt²
-        F[1, 4] = dt      # y += vy*dt
-        F[1, 7] = dt2     # y += 0.5*ay*dt²
-        F[2, 5] = dt      # z += vz*dt
-        F[2, 8] = dt2     # z += 0.5*az*dt²
+        F[0, 3] = dt       # x += vx*dt
+        F[1, 4] = dt       # y += vy*dt
+        F[2, 5] = dt       # z += vz*dt
+        F[0, 6] = dt2_half # x += 0.5*ax*dt²
+        F[1, 7] = dt2_half # y += 0.5*ay*dt²
+        F[2, 8] = dt2_half # z += 0.5*az*dt²
         
         # Velocity updates
-        F[3, 6] = dt      # vx += ax*dt
-        F[4, 7] = dt      # vy += ay*dt
-        F[5, 8] = dt      # vz += az*dt
+        F[3, 6] = dt       # vx += ax*dt
+        F[4, 7] = dt       # vy += ay*dt
+        F[5, 8] = dt       # vz += az*dt
         
-        # Acceleration remains constant (already identity)
+        # Acceleration stays constant (F[6:9, 6:9] = I already set)
         
         return F
     
     def _estimate_acceleration(self, velocity: np.ndarray, dt: float) -> np.ndarray:
         """
-        Estimate acceleration from velocity using finite difference.
+        Estimate acceleration from velocity change.
         
         Args:
             velocity: Current velocity [vx, vy, vz]
-            dt: Time step (seconds)
+            dt: Time since last measurement
         
         Returns:
             Estimated acceleration [ax, ay, az]
         """
-        if self.prev_velocity is None or dt < 1e-6:
-            # No previous velocity or dt too small
+        if self.last_velocity is None or dt < 1e-6:
             return np.zeros(3)
         
         # Finite difference: a ≈ (v - v_prev) / dt
-        acceleration = (velocity - self.prev_velocity) / dt
+        acc = (velocity - self.last_velocity) / dt
         
-        # Limit acceleration magnitude to reasonable values (e.g., 10 m/s²)
-        acc_magnitude = np.linalg.norm(acceleration)
-        max_acc = 10.0
-        if acc_magnitude > max_acc:
-            acceleration = acceleration * (max_acc / acc_magnitude)
+        # Clamp to reasonable values to avoid outliers
+        max_acc = 10.0  # m/s² (reasonable for drones)
+        acc = np.clip(acc, -max_acc, max_acc)
         
-        return acceleration
+        return acc
     
     def initialize(self, position: np.ndarray, velocity: np.ndarray, acceleration: np.ndarray = None):
         """
@@ -170,7 +176,7 @@ class CAModel:
         Args:
             position: Initial position [x, y, z]
             velocity: Initial velocity [vx, vy, vz]
-            acceleration: Initial acceleration [ax, ay, az] (optional)
+            acceleration: Initial acceleration [ax, ay, az] (optional, defaults to zero)
         """
         self.x[0:3] = position
         self.x[3:6] = velocity
@@ -178,14 +184,14 @@ class CAModel:
         if acceleration is not None:
             self.x[6:9] = acceleration
         else:
-            self.x[6:9] = np.zeros(3)  # Start with zero acceleration
+            self.x[6:9] = np.zeros(3)
         
         # Reduce initial uncertainty after first measurement
         self.P = np.eye(self.state_dim) * 1.0
-        # Higher uncertainty for acceleration initially
+        # Higher uncertainty for acceleration since it's not directly measured
         self.P[6:9, 6:9] = np.eye(3) * 10.0
         
-        self.prev_velocity = velocity
+        self.last_velocity = velocity
         self.initialized = True
     
     def update(self, position: np.ndarray, velocity: np.ndarray, dt: float, 
@@ -197,19 +203,22 @@ class CAModel:
             position: Measured position [x, y, z] in NED
             velocity: Measured velocity [vx, vy, vz] in NED
             dt: Time since last update (seconds)
-            acceleration: Measured acceleration [ax, ay, az] in NED (optional)
+            acceleration: Measured acceleration [ax, ay, az] (optional)
         """
+        # Estimate acceleration from velocity change if not provided
+        if acceleration is None:
+            acc_estimate = self._estimate_acceleration(velocity, dt)
+        else:
+            acc_estimate = acceleration
+        
         if not self.initialized:
-            self.initialize(position, velocity, acceleration)
+            self.initialize(position, velocity, acc_estimate)
+            self.last_measurement_time = 0.0
             return
         
         if dt < 1e-6:
             # dt too small, skip prediction step
             dt = 1e-6
-        
-        # Estimate acceleration if not provided
-        if acceleration is None:
-            acceleration = self._estimate_acceleration(velocity, dt)
         
         # PREDICTION STEP
         F = self._build_transition_matrix(dt)
@@ -223,7 +232,8 @@ class CAModel:
         P_pred = ensure_covariance_valid(P_pred)
         
         # UPDATE STEP (Kalman correction)
-        z = np.concatenate([position, velocity, acceleration])  # Measurement vector
+        # We measure position and velocity (6D measurement)
+        z = np.concatenate([position, velocity])
         
         # Innovation (measurement residual)
         y = z - (self.H @ x_pred)
@@ -240,7 +250,7 @@ class CAModel:
             # Singular matrix - skip update
             self.x = x_pred
             self.P = P_pred
-            self.prev_velocity = velocity
+            self.last_velocity = velocity
             return
         
         # Update state
@@ -252,9 +262,9 @@ class CAModel:
         self.P = ensure_covariance_valid(self.P)
         
         # Store velocity for next acceleration estimate
-        self.prev_velocity = velocity
+        self.last_velocity = velocity
     
-    def predict(self, horizon: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def predict(self, horizon: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """
         Predict state at future time t + horizon.
         
@@ -267,6 +277,7 @@ class CAModel:
             predicted_acceleration: [ax, ay, az]
             position_covariance: 3x3 position covariance
             velocity_covariance: 3x3 velocity covariance
+            acceleration_covariance: 3x3 acceleration covariance
         """
         if horizon < 0:
             raise ValueError(f"Negative horizon: {horizon}")
@@ -288,10 +299,11 @@ class CAModel:
         # Extract covariances
         pos_cov = P_pred[0:3, 0:3]
         vel_cov = P_pred[3:6, 3:6]
+        acc_cov = P_pred[6:9, 6:9]
         
-        return position, velocity, acceleration, pos_cov, vel_cov
+        return position, velocity, acceleration, pos_cov, vel_cov, acc_cov
     
-    def get_state(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def get_state(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """
         Get current state estimate.
         
@@ -301,14 +313,16 @@ class CAModel:
             acceleration: [ax, ay, az]
             position_covariance: 3x3 position covariance
             velocity_covariance: 3x3 velocity covariance
+            acceleration_covariance: 3x3 acceleration covariance
         """
         position = self.x[0:3]
         velocity = self.x[3:6]
         acceleration = self.x[6:9]
         pos_cov = self.P[0:3, 0:3]
         vel_cov = self.P[3:6, 3:6]
+        acc_cov = self.P[6:9, 6:9]
         
-        return position, velocity, acceleration, pos_cov, vel_cov
+        return position, velocity, acceleration, pos_cov, vel_cov, acc_cov
     
     def get_innovation(self) -> np.ndarray:
         """Get last measurement innovation (residual)."""
@@ -318,7 +332,7 @@ class CAModel:
         """Reset model to uninitialized state."""
         self.x = np.zeros(self.state_dim)
         self.P = np.eye(self.state_dim) * 100.0
-        self.prev_velocity = None
-        self.prev_time = None
         self.initialized = False
-        self.last_innovation = np.zeros(self.state_dim)
+        self.last_innovation = np.zeros(6)
+        self.last_velocity = None
+        self.last_measurement_time = None

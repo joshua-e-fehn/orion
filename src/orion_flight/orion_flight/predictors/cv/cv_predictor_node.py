@@ -80,6 +80,15 @@ class CVPredictorNode(Node):
             f'  Process noise (pos, vel): ({self.param_q_pos}, {self.param_q_vel})\n'
             f'  Measurement noise (pos, vel): ({self.param_r_pos}, {self.param_r_vel})'
         )
+        
+        print("\n" + "="*70)
+        print("  CV PREDICTOR NODE - DEBUG MODE")
+        print("="*70)
+        print(f"  Subscribing to: /{self.target_namespace}/fmu/out/vehicle_local_position")
+        print(f"  Publishing predictions to: /target/predicted_state")
+        print(f"  Publishing markers to: /target/prediction_markers")
+        print(f"  Waiting for first measurement from target drone...")
+        print("="*70 + "\n")
     
     def _declare_parameters(self):
         """Declare ROS2 parameters."""
@@ -116,7 +125,15 @@ class CVPredictorNode(Node):
         # Check validity flags
         if not (msg.xy_valid and msg.z_valid and msg.v_xy_valid and msg.v_z_valid):
             self.get_logger().warn('Received invalid target measurement', throttle_duration_sec=1.0)
+            print(f"[CV Node] ✗ Invalid measurement: xy_valid={msg.xy_valid}, z_valid={msg.z_valid}, "
+                  f"v_xy_valid={msg.v_xy_valid}, v_z_valid={msg.v_z_valid}")
             return
+        
+        # Debug: First valid measurement
+        if not self.cv_model.initialized:
+            print(f"\n[CV Node] ✓ First valid measurement received!")
+            print(f"  Position: [{msg.x:.3f}, {msg.y:.3f}, {msg.z:.3f}]")
+            print(f"  Velocity: [{msg.vx:.3f}, {msg.vy:.3f}, {msg.vz:.3f}]")
         
         # Extract position and velocity (already in NED from PX4)
         position = np.array([msg.x, msg.y, msg.z])
@@ -140,6 +157,19 @@ class CVPredictorNode(Node):
         if self.cv_model.initialized:
             innovation = self.cv_model.get_innovation()
             innovation_norm = np.linalg.norm(innovation[0:3])  # Position innovation
+            
+            # Debug output every 20 updates (~2 seconds at 10 Hz)
+            if not hasattr(self, '_update_counter'):
+                self._update_counter = 0
+            self._update_counter += 1
+            
+            if self._update_counter % 20 == 0:
+                print(f"\n[CV Node] Measurement Update #{self._update_counter}:")
+                print(f"  dt: {dt:.3f}s")
+                print(f"  Innovation (residual): {innovation_norm:.3f}m")
+                print(f"  Current position: [{position[0]:.2f}, {position[1]:.2f}, {position[2]:.2f}]")
+                print(f"  Current velocity: [{velocity[0]:.2f}, {velocity[1]:.2f}, {velocity[2]:.2f}]")
+            
             self.get_logger().debug(
                 f'CV Update: dt={dt:.3f}s, innovation_norm={innovation_norm:.3f}m',
                 throttle_duration_sec=1.0
@@ -150,6 +180,10 @@ class CVPredictorNode(Node):
         Timer callback to publish predictions at regular intervals.
         """
         if not self.cv_model.initialized:
+            # Debug: Waiting for initialization
+            if not hasattr(self, '_waiting_logged'):
+                print("[CV Node] ⏳ Waiting for filter initialization...")
+                self._waiting_logged = True
             return
         
         current_time = self.get_clock().now().nanoseconds / 1e9
@@ -200,6 +234,24 @@ class CVPredictorNode(Node):
                 self.marker_pub.publish(markers)
             except Exception as e:
                 self.get_logger().error(f'Marker creation failed: {e}')
+        
+        # Debug: Prediction output
+        if not hasattr(self, '_prediction_counter'):
+            self._prediction_counter = 0
+            print("\n[CV Node] ✓ First prediction published!")
+        self._prediction_counter += 1
+        
+        if self._prediction_counter % 20 == 0:  # Every 2 seconds at 10 Hz
+            print(f"\n[CV Node] Prediction #{self._prediction_counter} (all horizons):")
+            for horizon, pred in predictions:
+                print(f"  t+{horizon:.1f}s: pos=[{pred.predicted_position[0]:6.2f}, "
+                      f"{pred.predicted_position[1]:6.2f}, {pred.predicted_position[2]:6.2f}], "
+                      f"vel=[{pred.predicted_velocity[0]:5.2f}, {pred.predicted_velocity[1]:5.2f}, "
+                      f"{pred.predicted_velocity[2]:5.2f}]")
+            
+            # Show covariance uncertainty
+            pos_std = np.sqrt(np.diag(primary_pred.position_covariance))
+            print(f"  Position uncertainty (σ): [{pos_std[0]:.3f}, {pos_std[1]:.3f}, {pos_std[2]:.3f}]m")
         
         # Log prediction info (throttled)
         self.get_logger().info(
