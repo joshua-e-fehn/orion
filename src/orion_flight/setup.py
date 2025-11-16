@@ -27,9 +27,13 @@ setup(
             'circle_trajectory_node = orion_flight.circle_trajectory_node:main',
             # Predictor nodes
             'cv_predictor_node = orion_flight.predictors.cv.cv_predictor_node:main',
+            'ca_predictor_node = orion_flight.predictors.ca.ca_predictor_node:main',
+            'imm_predictor_node = orion_flight.predictors.imm.imm_predictor_node:main',
             # Planner nodes
             'pp_planner = orion_flight.planners.pp.pp_planner_node:main',
             'pn_planner = orion_flight.planners.pn.pn_planner_node:main',
+            # Utility nodes
+            'target_tf_publisher = orion_flight.utils.target_tf_publisher:main',
         ],
     },
 )

@@ -1,6 +1,6 @@
-"""Interacting Multiple Model (IMM) predictor package - TO BE IMPLEMENTED."""
+"""Interacting Multiple Model (IMM) predictor package."""
 
-__all__ = []
+from .imm_filter import IMMFilter
+from .imm_predictor_node import IMMPredictorNode
 
-# TODO: Implement IMM filter combining CV and CA models
-# See PREDICTOR_IMPLEMENTATION_GUIDE.md for details
+__all__ = ['IMMFilter', 'IMMPredictorNode']

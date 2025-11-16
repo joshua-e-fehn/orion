@@ -1,6 +1,6 @@
-"""Constant Acceleration (CA) predictor package - TO BE IMPLEMENTED."""
+"""Constant Acceleration (CA) predictor package."""
 
-__all__ = []
+from .ca_model import CAModel
+from .ca_predictor_node import CAPredictorNode
 
-# TODO: Implement CA model and predictor node
-# See PREDICTOR_IMPLEMENTATION_GUIDE.md for details
+__all__ = ['CAModel', 'CAPredictorNode']

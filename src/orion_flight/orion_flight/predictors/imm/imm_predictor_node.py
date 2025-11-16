@@ -1,43 +1,80 @@
 #!/usr/bin/env python3
 """
-Constant Velocity (CV) Target Predictor Node.
+Interacting Multiple Model (IMM) Target Predictor Node.
 
 This node subscribes to target position/velocity and publishes predictions
-assuming the target maintains constant velocity.
+using an adaptive combination of CV and CA models.
 """
 
 import rclpy
 from rclpy.node import Node
 from px4_msgs.msg import VehicleLocalPosition
 from visualization_msgs.msg import MarkerArray
+from std_msgs.msg import String
 import numpy as np
+import json
 
-from .cv_model import CVModel
+from .imm_filter import IMMFilter
+from ..cv.cv_model import CVModel
+from ..ca.ca_model import CAModel
 from ..common.types import PredictorInput, PredictorOutput
 from ..common.visualization import create_prediction_markers
 
 
-class CVPredictorNode(Node):
-    """ROS2 node for Constant Velocity target prediction."""
+class IMMPredictorNode(Node):
+    """ROS2 node for IMM target prediction."""
     
     def __init__(self):
-        super().__init__('cv_predictor_node')
+        super().__init__('imm_predictor_node')
         
         # Declare and get parameters
         self._declare_parameters()
         self._get_parameters()
         
         # Initialize CV model
-        process_noise = {
-            'position': self.param_q_pos,
-            'velocity': self.param_q_vel
+        cv_process_noise = {
+            'position': self.param_cv_q_pos,
+            'velocity': self.param_cv_q_vel
         }
-        measurement_noise = {
+        cv_measurement_noise = {
             'position': self.param_r_pos,
             'velocity': self.param_r_vel
         }
+        cv_model = CVModel(cv_process_noise, cv_measurement_noise)
         
-        self.cv_model = CVModel(process_noise, measurement_noise)
+        # Initialize CA model
+        # CRITICAL: Set use_acceleration_measurements=False for IMM compatibility
+        # This ensures CA model uses 6D measurements (pos+vel) like CV model
+        # for fair likelihood comparison in IMM filter
+        ca_process_noise = {
+            'position': self.param_ca_q_pos,
+            'velocity': self.param_ca_q_vel,
+            'acceleration': self.param_ca_q_acc
+        }
+        ca_measurement_noise = {
+            'position': self.param_r_pos,
+            'velocity': self.param_r_vel,
+            'acceleration': self.param_r_acc
+        }
+        ca_model = CAModel(
+            ca_process_noise, 
+            ca_measurement_noise,
+            use_acceleration_measurements=False  # IMM mode: 6D measurements only
+        )
+        
+        # Initialize IMM filter
+        transition_matrix = np.array([
+            [self.param_p_cv_cv, self.param_p_cv_ca],
+            [self.param_p_ca_cv, self.param_p_ca_ca]
+        ])
+        initial_probs = np.array([self.param_init_p_cv, self.param_init_p_ca])
+        
+        self.imm_filter = IMMFilter(
+            cv_model=cv_model,
+            ca_model=ca_model,
+            transition_matrix=transition_matrix,
+            initial_mode_probabilities=initial_probs
+        )
         
         # Create subscribers
         target_topic = f'/{self.target_namespace}/fmu/out/vehicle_local_position'
@@ -52,6 +89,12 @@ class CVPredictorNode(Node):
         self.prediction_pub = self.create_publisher(
             VehicleLocalPosition,
             '/target/predicted_state',
+            10
+        )
+        
+        self.status_pub = self.create_publisher(
+            String,
+            '/target/predictor_status',
             10
         )
         
@@ -74,37 +117,54 @@ class CVPredictorNode(Node):
             self.prediction_callback
         )
         
-        # State
-        self.last_measurement_time = None
+        # Create timer for status updates
+        self.status_timer = self.create_timer(
+            1.0,  # 1 Hz status updates
+            self.status_callback
+        )
+        
+        # State - track timestamp in microseconds (PX4 format)
+        self.last_measurement_timestamp_us = None
         self.last_update_time = None
         
         self.get_logger().info(
-            f'CV Predictor initialized:\n'
+            f'IMM Predictor initialized:\n'
             f'  Target namespace: {self.target_namespace}\n'
             f'  Update rate: {self.update_rate} Hz\n'
             f'  Prediction horizons: {self.prediction_horizons}\n'
-            f'  Process noise (pos, vel): ({self.param_q_pos}, {self.param_q_vel})\n'
-            f'  Measurement noise (pos, vel): ({self.param_r_pos}, {self.param_r_vel})'
+            f'  CV process noise (pos, vel): ({self.param_cv_q_pos}, {self.param_cv_q_vel})\n'
+            f'  CA process noise (pos, vel, acc): ({self.param_ca_q_pos}, {self.param_ca_q_vel}, {self.param_ca_q_acc})\n'
+            f'  Measurement noise (pos, vel, acc): ({self.param_r_pos}, {self.param_r_vel}, {self.param_r_acc})\n'
+            f'  Transition matrix:\n{transition_matrix}\n'
+            f'  Initial probabilities: CV={self.param_init_p_cv}, CA={self.param_init_p_ca}'
         )
-        
-        print("\n" + "="*70)
-        print("  CV PREDICTOR NODE - DEBUG MODE")
-        print("="*70)
-        print(f"  Subscribing to: /{self.target_namespace}/fmu/out/vehicle_local_position")
-        print(f"  Publishing predictions to: /target/predicted_state")
-        print(f"  Publishing markers to: /target/prediction_markers")
-        print(f"  Waiting for first measurement from target drone...")
-        print("="*70 + "\n")
     
     def _declare_parameters(self):
         """Declare ROS2 parameters."""
         self.declare_parameter('target_namespace', 'px4_2')
         self.declare_parameter('update_rate', 10.0)
         self.declare_parameter('prediction_horizons', [0.5, 1.0, 2.0, 3.0])
-        self.declare_parameter('process_noise.position', 0.1)
-        self.declare_parameter('process_noise.velocity', 0.5)
+        
+        # CV model process noise
+        self.declare_parameter('cv_process_noise.position', 0.1)
+        self.declare_parameter('cv_process_noise.velocity', 0.5)
+        
+        # CA model process noise
+        self.declare_parameter('ca_process_noise.position', 0.1)
+        self.declare_parameter('ca_process_noise.velocity', 0.5)
+        self.declare_parameter('ca_process_noise.acceleration', 1.0)
+        
+        # Measurement noise (shared)
         self.declare_parameter('measurement_noise.position', 0.05)
         self.declare_parameter('measurement_noise.velocity', 0.1)
+        self.declare_parameter('measurement_noise.acceleration', 0.5)
+        
+        # IMM parameters
+        self.declare_parameter('imm.transition_prob_stay', 0.95)  # P(stay in same mode)
+        self.declare_parameter('imm.initial_prob_cv', 0.5)
+        self.declare_parameter('imm.initial_prob_ca', 0.5)
+        
+        # Visualization
         self.declare_parameter('publish_markers', True)
         self.declare_parameter('marker_scale', 1.0)
     
@@ -113,10 +173,39 @@ class CVPredictorNode(Node):
         self.target_namespace = self.get_parameter('target_namespace').value
         self.update_rate = self.get_parameter('update_rate').value
         self.prediction_horizons = self.get_parameter('prediction_horizons').value
-        self.param_q_pos = self.get_parameter('process_noise.position').value
-        self.param_q_vel = self.get_parameter('process_noise.velocity').value
+        
+        # CV process noise
+        self.param_cv_q_pos = self.get_parameter('cv_process_noise.position').value
+        self.param_cv_q_vel = self.get_parameter('cv_process_noise.velocity').value
+        
+        # CA process noise
+        self.param_ca_q_pos = self.get_parameter('ca_process_noise.position').value
+        self.param_ca_q_vel = self.get_parameter('ca_process_noise.velocity').value
+        self.param_ca_q_acc = self.get_parameter('ca_process_noise.acceleration').value
+        
+        # Measurement noise
         self.param_r_pos = self.get_parameter('measurement_noise.position').value
         self.param_r_vel = self.get_parameter('measurement_noise.velocity').value
+        self.param_r_acc = self.get_parameter('measurement_noise.acceleration').value
+        
+        # IMM parameters
+        p_stay = self.get_parameter('imm.transition_prob_stay').value
+        p_switch = 1.0 - p_stay
+        self.param_p_cv_cv = p_stay
+        self.param_p_cv_ca = p_switch
+        self.param_p_ca_cv = p_switch
+        self.param_p_ca_ca = p_stay
+        
+        self.param_init_p_cv = self.get_parameter('imm.initial_prob_cv').value
+        self.param_init_p_ca = self.get_parameter('imm.initial_prob_ca').value
+        
+        # Normalize initial probabilities
+        total = self.param_init_p_cv + self.param_init_p_ca
+        if total > 0:
+            self.param_init_p_cv /= total
+            self.param_init_p_ca /= total
+        
+        # Visualization
         self.publish_markers = self.get_parameter('publish_markers').value
         self.marker_scale = self.get_parameter('marker_scale').value
     
@@ -124,60 +213,69 @@ class CVPredictorNode(Node):
         """
         Callback for target position measurements.
         
-        Updates the CV model with new measurement.
+        Updates the IMM filter with new measurement.
         """
-        current_time = self.get_clock().now().nanoseconds / 1e9
-        
-        # Check validity flags
+        # Check validity flags first
         if not (msg.xy_valid and msg.z_valid and msg.v_xy_valid and msg.v_z_valid):
             self.get_logger().warn('Received invalid target measurement', throttle_duration_sec=1.0)
-            print(f"[CV Node] ✗ Invalid measurement: xy_valid={msg.xy_valid}, z_valid={msg.z_valid}, "
-                  f"v_xy_valid={msg.v_xy_valid}, v_z_valid={msg.v_z_valid}")
             return
-        
-        # Debug: First valid measurement
-        if not self.cv_model.initialized:
-            print(f"\n[CV Node] ✓ First valid measurement received!")
-            print(f"  Position: [{msg.x:.3f}, {msg.y:.3f}, {msg.z:.3f}]")
-            print(f"  Velocity: [{msg.vx:.3f}, {msg.vy:.3f}, {msg.vz:.3f}]")
         
         # Extract position and velocity (already in NED from PX4)
         position = np.array([msg.x, msg.y, msg.z])
         velocity = np.array([msg.vx, msg.vy, msg.vz])
         
-        # Calculate dt
-        if self.last_measurement_time is not None:
-            dt = current_time - self.last_measurement_time
-            if dt < 0:
-                self.get_logger().error('Negative dt - time went backwards!')
+        # Extract acceleration if available (PX4 provides it)
+        acceleration = np.array([msg.ax, msg.ay, msg.az])
+        
+        # CRITICAL: Calculate dt from PX4 timestamps (microseconds)
+        current_timestamp_us = msg.timestamp
+        
+        if self.last_measurement_timestamp_us is not None:
+            dt_us = current_timestamp_us - self.last_measurement_timestamp_us
+            
+            # Check for time going backwards
+            if dt_us < 0:
+                self.get_logger().error(
+                    f'Time went backwards! current={current_timestamp_us}, '
+                    f'last={self.last_measurement_timestamp_us}, dt={dt_us}'
+                )
+                # Reset and skip this measurement
+                self.last_measurement_timestamp_us = current_timestamp_us
+                return
+            
+            # Convert microseconds to seconds
+            dt = dt_us * 1e-6
+            
+            # Sanity check: reject unreasonable dt values
+            if dt > 1.0:  # More than 1 second gap
+                self.get_logger().warn(
+                    f'Large dt detected: {dt:.3f}s - possible data gap or timestamp issue',
+                    throttle_duration_sec=2.0
+                )
+                # Use a reasonable default instead of rejecting
+                dt = 0.1
+            elif dt < 1e-6:  # Less than 1 microsecond
+                self.get_logger().debug(
+                    f'Very small dt: {dt:.9f}s - skipping update',
+                    throttle_duration_sec=2.0
+                )
                 return
         else:
-            dt = 0.1  # Default dt for first measurement
+            # First measurement - use default dt
+            dt = 0.1
+            self.get_logger().info(f'First measurement received, using default dt={dt:.3f}s')
         
-        # Update model
-        self.cv_model.update(position, velocity, dt)
+        # Update IMM filter with properly calculated dt
+        self.imm_filter.update(position, velocity, dt, acceleration)
         
-        self.last_measurement_time = current_time
+        # Store timestamp for next iteration
+        self.last_measurement_timestamp_us = current_timestamp_us
         
         # Log diagnostics (throttled)
-        if self.cv_model.initialized:
-            innovation = self.cv_model.get_innovation()
-            innovation_norm = np.linalg.norm(innovation[0:3])  # Position innovation
-            
-            # Debug output every 20 updates (~2 seconds at 10 Hz)
-            if not hasattr(self, '_update_counter'):
-                self._update_counter = 0
-            self._update_counter += 1
-            
-            if self._update_counter % 20 == 0:
-                print(f"\n[CV Node] Measurement Update #{self._update_counter}:")
-                print(f"  dt: {dt:.3f}s")
-                print(f"  Innovation (residual): {innovation_norm:.3f}m")
-                print(f"  Current position: [{position[0]:.2f}, {position[1]:.2f}, {position[2]:.2f}]")
-                print(f"  Current velocity: [{velocity[0]:.2f}, {velocity[1]:.2f}, {velocity[2]:.2f}]")
-            
+        if self.imm_filter.initialized:
+            mode_probs = self.imm_filter.get_mode_probabilities()
             self.get_logger().debug(
-                f'CV Update: dt={dt:.3f}s, innovation_norm={innovation_norm:.3f}m',
+                f'IMM Update: dt={dt:.4f}s (from timestamps), P(CV)={mode_probs[0]:.3f}, P(CA)={mode_probs[1]:.3f}',
                 throttle_duration_sec=1.0
             )
         
@@ -278,20 +376,23 @@ class CVPredictorNode(Node):
         """
         Timer callback to publish predictions at regular intervals.
         """
-        if not self.cv_model.initialized:
-            # Debug: Waiting for initialization
-            if not hasattr(self, '_waiting_logged'):
-                print("[CV Node] ⏳ Waiting for filter initialization...")
-                self._waiting_logged = True
+        if not self.imm_filter.initialized:
             return
         
         current_time = self.get_clock().now().nanoseconds / 1e9
+        
+        # Get mode probabilities
+        mode_probs = self.imm_filter.get_mode_probabilities()
         
         # Generate predictions at all horizons
         predictions = []
         for horizon in self.prediction_horizons:
             try:
-                pos, vel, pos_cov, vel_cov = self.cv_model.predict(horizon)
+                pos, vel, acc, full_cov = self.imm_filter.predict(horizon)
+                
+                # Extract diagonal blocks for PredictorOutput compatibility
+                pos_cov = full_cov[0:3, 0:3]
+                vel_cov = full_cov[3:6, 3:6]
                 
                 # Create PredictorOutput
                 pred_output = PredictorOutput(
@@ -299,13 +400,12 @@ class CVPredictorNode(Node):
                     prediction_horizon=horizon,
                     predicted_position=pos,
                     predicted_velocity=vel,
-                    predicted_acceleration=np.zeros(3),  # CV assumes zero acceleration
+                    predicted_acceleration=acc,
                     position_covariance=pos_cov,
                     velocity_covariance=vel_cov,
-                    model_probability=1.0,
-                    innovation=self.cv_model.get_innovation(),
+                    model_probability=mode_probs[1],  # CA probability as primary indicator
                     is_valid=True,
-                    predictor_type='cv'
+                    predictor_type='imm'
                 )
                 
                 predictions.append((horizon, pred_output))
@@ -327,39 +427,59 @@ class CVPredictorNode(Node):
                 markers = create_prediction_markers(
                     predictions,
                     frame_id='map',
-                    namespace='cv_predictor',
+                    namespace='imm_predictor',
                     scale=self.marker_scale
                 )
                 self.marker_pub.publish(markers)
             except Exception as e:
                 self.get_logger().error(f'Marker creation failed: {e}')
         
-        # Debug: Prediction output
-        if not hasattr(self, '_prediction_counter'):
-            self._prediction_counter = 0
-            print("\n[CV Node] ✓ First prediction published!")
-        self._prediction_counter += 1
-        
-        if self._prediction_counter % 20 == 0:  # Every 2 seconds at 10 Hz
-            print(f"\n[CV Node] Prediction #{self._prediction_counter} (all horizons):")
-            for horizon, pred in predictions:
-                print(f"  t+{horizon:.1f}s: pos=[{pred.predicted_position[0]:6.2f}, "
-                      f"{pred.predicted_position[1]:6.2f}, {pred.predicted_position[2]:6.2f}], "
-                      f"vel=[{pred.predicted_velocity[0]:5.2f}, {pred.predicted_velocity[1]:5.2f}, "
-                      f"{pred.predicted_velocity[2]:5.2f}]")
-            
-            # Show covariance uncertainty
-            pos_std = np.sqrt(np.diag(primary_pred.position_covariance))
-            print(f"  Position uncertainty (σ): [{pos_std[0]:.3f}, {pos_std[1]:.3f}, {pos_std[2]:.3f}]m")
-        
         # Log prediction info (throttled)
         self.get_logger().info(
-            f'CV Prediction: pos=[{primary_pred.predicted_position[0]:.2f}, '
+            f'IMM Prediction [P(CV)={mode_probs[0]:.2f}, P(CA)={mode_probs[1]:.2f}]: '
+            f'pos=[{primary_pred.predicted_position[0]:.2f}, '
             f'{primary_pred.predicted_position[1]:.2f}, {primary_pred.predicted_position[2]:.2f}], '
             f'vel=[{primary_pred.predicted_velocity[0]:.2f}, '
-            f'{primary_pred.predicted_velocity[1]:.2f}, {primary_pred.predicted_velocity[2]:.2f}]',
+            f'{primary_pred.predicted_velocity[1]:.2f}, {primary_pred.predicted_velocity[2]:.2f}], '
+            f'acc=[{primary_pred.predicted_acceleration[0]:.2f}, '
+            f'{primary_pred.predicted_acceleration[1]:.2f}, {primary_pred.predicted_acceleration[2]:.2f}]',
             throttle_duration_sec=2.0
         )
+    
+    def status_callback(self):
+        """Publish predictor status information."""
+        if not self.imm_filter.initialized:
+            return
+        
+        mode_probs = self.imm_filter.get_mode_probabilities()
+        
+        # Get individual model predictions for diagnostics
+        model_preds = self.imm_filter.get_model_predictions(horizon=1.0)
+        
+        status_dict = {
+            'predictor_type': 'imm',
+            'initialized': self.imm_filter.initialized,
+            'mode_probabilities': {
+                'cv': float(mode_probs[0]),
+                'ca': float(mode_probs[1])
+            },
+            'active_model': 'ca' if mode_probs[1] > mode_probs[0] else 'cv',
+            'model_predictions': {
+                'cv': {
+                    'position': model_preds['cv']['position'].tolist(),
+                    'velocity': model_preds['cv']['velocity'].tolist()
+                },
+                'ca': {
+                    'position': model_preds['ca']['position'].tolist(),
+                    'velocity': model_preds['ca']['velocity'].tolist(),
+                    'acceleration': model_preds['ca']['acceleration'].tolist()
+                }
+            }
+        }
+        
+        status_msg = String()
+        status_msg.data = json.dumps(status_dict, indent=2)
+        self.status_pub.publish(status_msg)
     
     def _create_prediction_message(
         self,
@@ -391,10 +511,10 @@ class CVPredictorNode(Node):
         msg.vy = float(prediction.predicted_velocity[1])
         msg.vz = float(prediction.predicted_velocity[2])
         
-        # Acceleration (CV assumes zero)
-        msg.ax = 0.0
-        msg.ay = 0.0
-        msg.az = 0.0
+        # Acceleration (NED frame)
+        msg.ax = float(prediction.predicted_acceleration[0])
+        msg.ay = float(prediction.predicted_acceleration[1])
+        msg.az = float(prediction.predicted_acceleration[2])
         
         # Validity flags
         msg.xy_valid = prediction.is_valid
@@ -412,16 +532,16 @@ class CVPredictorNode(Node):
 
 
 def main(args=None):
-    """Main entry point for CV predictor node."""
+    """Main entry point for IMM predictor node."""
     rclpy.init(args=args)
     
     try:
-        node = CVPredictorNode()
+        node = IMMPredictorNode()
         rclpy.spin(node)
     except KeyboardInterrupt:
         pass
     except Exception as e:
-        print(f'Error in CV predictor node: {e}')
+        print(f'Error in IMM predictor node: {e}')
     finally:
         if rclpy.ok():
             rclpy.shutdown()

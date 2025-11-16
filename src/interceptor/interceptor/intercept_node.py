@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Autonomous Hover Flight Node with RViz Visualization
+Autonomous Intercept Node with RViz Visualization
 
-This node controls a drone to:
+This node controls a drone (px4_2) to follow another drone (px4_1):
 1. Takeoff to a specified height
-2. Hover at that height
-3. Visualize the positions in RViz
+2. Move towards px4_1's position
+3. Visualize the path in RViz
 """
 
 import rclpy
@@ -13,20 +13,19 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 from px4_msgs.msg import OffboardControlMode, TrajectorySetpoint, VehicleCommand, VehicleLocalPosition, VehicleStatus, VehicleCommandAck
 from visualization_msgs.msg import Marker, MarkerArray
-from geometry_msgs.msg import Point
 from collections import deque
 
 class InterceptNode(Node):
-    """Node for autonomous hover flight with visualization."""
-
     def __init__(self):
         super().__init__('intercept_node')
 
         # Parameters
-        self.declare_parameter('flight_height', -5.0)  # NED frame (negative = up)
+        self.declare_parameter('flight_height', -5.0)
         self.declare_parameter('trail_length', 10)
+        self.declare_parameter('kp', 0.5)  # proportional gain for chasing
         self.flight_height = self.get_parameter('flight_height').value
         self.trail_length = self.get_parameter('trail_length').value
+        self.kp = self.get_parameter('kp').value * 0.2
 
         # QoS
         qos_pub = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
@@ -46,30 +45,31 @@ class InterceptNode(Node):
 
         # Subscribers
         self.vehicle_pos_sub = self.create_subscription(VehicleLocalPosition, '/px4_2/fmu/out/vehicle_local_position_v1', self.vehicle_local_position_callback, qos_sub)
+        self.leader_pos_sub = self.create_subscription(VehicleLocalPosition, '/px4_1/fmu/out/vehicle_local_position_v1', self.leader_position_callback, qos_sub)
         self.vehicle_status_sub = self.create_subscription(VehicleStatus, '/px4_2/fmu/out/vehicle_status_v1', self.vehicle_status_callback, qos_sub)
         self.vehicle_ack_sub = self.create_subscription(VehicleCommandAck, '/px4_2/fmu/out/vehicle_command_ack', self.vehicle_command_ack_callback, qos_sub)
 
         # State
         self.vehicle_local_position = VehicleLocalPosition()
+        self.leader_position = VehicleLocalPosition()
         self.vehicle_status = VehicleStatus()
         self.position_history = deque(maxlen=self.trail_length)
         self.flight_phase = "INIT"
-        self.offboard_setpoint_counter = 0
-        self.last_update_time = self.get_clock().now()
         self.is_armed = False
         self.is_offboard = False
-        self.arm_retry_counter = 0
-        self.max_arm_retries = 10
 
         # Timer
         self.timer = self.create_timer(0.1, self.timer_callback)
 
-        self.get_logger().info("HoverNode started!")
+        self.get_logger().info("InterceptNode started!")
 
     def vehicle_local_position_callback(self, msg):
         self.vehicle_local_position = msg
-        if self.flight_phase in ["HOVER"]:
+        if self.flight_phase == "FOLLOW":
             self.position_history.append({'x': msg.x, 'y': msg.y, 'z': msg.z})
+
+    def leader_position_callback(self, msg):
+        self.leader_position = msg
 
     def vehicle_status_callback(self, msg):
         self.vehicle_status = msg
@@ -86,7 +86,7 @@ class InterceptNode(Node):
         msg = VehicleCommand()
         msg.command = VehicleCommand.VEHICLE_CMD_COMPONENT_ARM_DISARM
         msg.param1 = 1.0
-        msg.param2 = 21196.0  # force arm
+        msg.param2 = 21196.0
         msg.target_system = 0
         msg.target_component = 1
         msg.from_external = True
@@ -97,7 +97,7 @@ class InterceptNode(Node):
     def engage_offboard_mode(self):
         msg = VehicleCommand()
         msg.command = VehicleCommand.VEHICLE_CMD_DO_SET_MODE
-        msg.param1 = 1.0  # base mode
+        msg.param1 = 1.0
         msg.param2 = 6.0  # OFFBOARD
         msg.target_system = 0
         msg.target_component = 1
@@ -112,7 +112,7 @@ class InterceptNode(Node):
         msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
         self.offboard_control_mode_pub.publish(msg)
 
-    def publish_position_setpoint(self, x=0.0, y=0.0, z=None):
+    def publish_position_setpoint(self, x, y, z=None):
         z = self.flight_height if z is None else z
         msg = TrajectorySetpoint()
         msg.position = [x, y, z]
@@ -142,15 +142,23 @@ class InterceptNode(Node):
 
     def timer_callback(self):
         self.publish_offboard_control_heartbeat()
-        self.publish_position_setpoint()
-        self.publish_markers()
 
-        # INIT phase
         if self.flight_phase == "INIT":
             self.engage_offboard_mode()
             self.arm()
-            self.flight_phase = "HOVER"
-            self.get_logger().info("✓ Takeoff completed, hovering at target height")
+            self.flight_phase = "FOLLOW"
+            self.get_logger().info("✓ Takeoff completed, now following leader")
+
+        elif self.flight_phase == "FOLLOW":
+            # Simple proportional controller toward leader
+            dx = self.leader_position.x - self.vehicle_local_position.x
+            dy = self.leader_position.y - self.vehicle_local_position.y
+            dz = self.leader_position.z - self.vehicle_local_position.z
+            target_x = self.vehicle_local_position.x + self.kp * dx
+            target_y = self.vehicle_local_position.y + self.kp * dy
+            target_z = self.flight_height  # maintain a constant flight height
+            self.publish_position_setpoint(target_x, target_y, target_z)
+            self.publish_markers()
 
 def main(args=None):
     rclpy.init(args=args)
