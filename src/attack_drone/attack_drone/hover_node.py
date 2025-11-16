@@ -144,7 +144,7 @@ class StraightLineNode(Node):
             # Move along X-axis at constant speed
             dt = (self.get_clock().now() - self.last_update_time).nanoseconds / 1e9
             self.last_update_time = self.get_clock().now()
-            self.current_x += self.speed * dt
+            self.current_x += self.speed * dt *0.3
             msg.position = [self.current_x, self.start_y, self.flight_height]
         
         msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)

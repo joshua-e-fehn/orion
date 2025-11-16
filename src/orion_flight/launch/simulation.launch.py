@@ -138,7 +138,7 @@ echo "✓ Cleaned up all simulation processes"
     actions.append(cleanup_handler)
     
     # =========================================================================
-    # Launch Gazebo with first drone (px4_1)
+    # Launch Gazebo (GUI or headless) and then start PX4 drones
     # =========================================================================
     
     print(f"\n{'='*70}")
@@ -149,21 +149,39 @@ echo "✓ Cleaned up all simulation processes"
     print(f"  GUI: {gui}")
     print(f"  Headless: {headless}\n")
     
-    # Drone 1 environment - This one starts Gazebo!
-    # Note: NO PX4_GZ_STANDALONE for the first drone - it launches Gazebo
-    
-    # Start PX4 SITL for drone 1 (launches Gazebo)
-    # Run directly without terminal wrapper to ensure Gazebo GUI appears
-    px4_drone1 = ExecuteProcess(
-        cmd=[
-            'bash', '-c',
-            f'cd {px4_dir} && '
-            f'PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_x500 '
-            f'./build/px4_sitl_default/bin/px4 -i 1'
-        ],
+    # Start Gazebo first so we know a GUI is available
+    gz_cmd = ['gz', 'sim']
+    if headless.lower() == 'true' or gui.lower() == 'false':
+        gz_cmd += ['--headless-rendering']
+        print("  Gazebo: headless-rendering enabled")
+    else:
+        gz_cmd += ['-g']  # ensure GUI client
+        print("  Gazebo: GUI enabled (-g)")
+
+    gz_process = ExecuteProcess(
+        cmd=gz_cmd,
         output='screen',
-        name='px4_drone1',
+        name='gazebo',
         shell=False,
+    )
+    actions.append(gz_process)
+
+    # Start PX4 SITL for drone 1 (connects to existing Gazebo)
+    px4_drone1 = TimerAction(
+        period=2.0,  # give Gazebo a moment to start
+        actions=[
+            ExecuteProcess(
+                cmd=[
+                    'bash', '-c',
+                    f'cd {px4_dir} && '
+                    f'PX4_GZ_STANDALONE=1 PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_x500 '
+                    f'./build/px4_sitl_default/bin/px4 -i 1'
+                ],
+                output='screen',
+                name='px4_drone1',
+                shell=True,
+            )
+        ]
     )
     actions.append(px4_drone1)
     
@@ -176,7 +194,7 @@ echo "✓ Cleaned up all simulation processes"
     
     # Start PX4 SITL for drone 2 (delayed to avoid conflicts)
     px4_drone2 = TimerAction(
-        period=10.0,  # Wait 10 seconds for Gazebo to fully start
+        period=10.0,  # Wait for Gazebo + drone1 to stabilize
         actions=[
             ExecuteProcess(
                 cmd=[
@@ -187,7 +205,7 @@ echo "✓ Cleaned up all simulation processes"
                 ],
                 output='screen',
                 name='px4_drone2',
-                shell=False,
+                shell=True,
             )
         ]
     )

@@ -116,10 +116,10 @@ def launch_setup(context, *args, **kwargs):
         # Get predictor-specific config file
         if predictor == 'cv':
             config_file = 'cv_predictor.yaml'
-            executable = 'cv_predictor_node'
+            executable = 'cv_predictor_node'  # use wrapper without .py extension
         elif predictor == 'ca':
             config_file = 'ca_predictor.yaml'
-            executable = 'ca_predictor_node'
+            executable = 'ca_predictor_node.py'  # use installed script filename
         elif predictor == 'imm':
             print(f"    ERROR: IMM predictor not yet implemented!\n")
             raise NotImplementedError("IMM predictor coming soon!")
