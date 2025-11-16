@@ -97,6 +97,12 @@ class IMMPredictorNode(Node):
                 '/target/prediction_markers',
                 10
             )
+            # Publisher for current target position marker
+            self.target_marker_pub = self.create_publisher(
+                MarkerArray,
+                '/target/current_position_marker',
+                10
+            )
         
         # Create timer for regular prediction updates
         self.prediction_timer = self.create_timer(
@@ -237,6 +243,99 @@ class IMMPredictorNode(Node):
                 f'IMM Update: dt={dt:.3f}s, P(CV)={mode_probs[0]:.3f}, P(CA)={mode_probs[1]:.3f}',
                 throttle_duration_sec=1.0
             )
+        
+        # Publish current target position marker
+        if self.publish_markers:
+            self._publish_target_marker(position, velocity)
+    
+    def _publish_target_marker(self, position: np.ndarray, velocity: np.ndarray):
+        """
+        Publish a marker showing the current target drone position.
+        
+        Args:
+            position: Current position [x, y, z] in NED
+            velocity: Current velocity [vx, vy, vz] in NED
+        """
+        from ..common.types import ned_to_enu
+        from visualization_msgs.msg import Marker
+        from std_msgs.msg import ColorRGBA
+        from geometry_msgs.msg import Point
+        
+        # Convert NED to ENU for visualization
+        pos_enu = ned_to_enu(position)
+        vel_enu = ned_to_enu(velocity)
+        vel_norm = np.linalg.norm(vel_enu)
+        
+        markers = MarkerArray()
+        
+        # Create large sphere for target position
+        sphere = Marker()
+        sphere.header.frame_id = 'map'
+        sphere.header.stamp = self.get_clock().now().to_msg()
+        sphere.ns = 'target_current'
+        sphere.id = 0
+        sphere.type = Marker.SPHERE
+        sphere.action = Marker.ADD
+        sphere.pose.position.x = float(pos_enu[0])
+        sphere.pose.position.y = float(pos_enu[1])
+        sphere.pose.position.z = float(pos_enu[2])
+        sphere.pose.orientation.w = 1.0
+        sphere.scale.x = 0.5  # Larger than prediction spheres
+        sphere.scale.y = 0.5
+        sphere.scale.z = 0.5
+        sphere.color = ColorRGBA(r=1.0, g=0.0, b=0.0, a=0.9)  # Red for current target
+        markers.markers.append(sphere)
+        
+        # Create arrow showing current velocity
+        if vel_norm > 0.01:
+            arrow = Marker()
+            arrow.header.frame_id = 'map'
+            arrow.header.stamp = self.get_clock().now().to_msg()
+            arrow.ns = 'target_velocity'
+            arrow.id = 1
+            arrow.type = Marker.ARROW
+            arrow.action = Marker.ADD
+            
+            start_point = Point()
+            start_point.x = float(pos_enu[0])
+            start_point.y = float(pos_enu[1])
+            start_point.z = float(pos_enu[2])
+            
+            arrow_length = min(vel_norm * 1.0, 3.0)  # Longer arrow for current velocity
+            vel_unit = vel_enu / vel_norm
+            
+            end_point = Point()
+            end_point.x = float(pos_enu[0] + vel_unit[0] * arrow_length)
+            end_point.y = float(pos_enu[1] + vel_unit[1] * arrow_length)
+            end_point.z = float(pos_enu[2] + vel_unit[2] * arrow_length)
+            
+            arrow.points.append(start_point)
+            arrow.points.append(end_point)
+            
+            arrow.scale.x = 0.08  # Shaft diameter
+            arrow.scale.y = 0.15  # Head diameter
+            arrow.scale.z = 0.20  # Head length
+            arrow.color = ColorRGBA(r=1.0, g=0.5, b=0.0, a=0.9)  # Orange for current velocity
+            markers.markers.append(arrow)
+        
+        # Create text label
+        text = Marker()
+        text.header.frame_id = 'map'
+        text.header.stamp = self.get_clock().now().to_msg()
+        text.ns = 'target_label'
+        text.id = 2
+        text.type = Marker.TEXT_VIEW_FACING
+        text.action = Marker.ADD
+        text.pose.position.x = float(pos_enu[0])
+        text.pose.position.y = float(pos_enu[1])
+        text.pose.position.z = float(pos_enu[2] + 0.8)
+        text.pose.orientation.w = 1.0
+        text.scale.z = 0.5
+        text.color = ColorRGBA(r=1.0, g=1.0, b=1.0, a=1.0)
+        text.text = f"TARGET\nv={vel_norm:.2f}m/s"
+        markers.markers.append(text)
+        
+        self.target_marker_pub.publish(markers)
     
     def prediction_callback(self):
         """
