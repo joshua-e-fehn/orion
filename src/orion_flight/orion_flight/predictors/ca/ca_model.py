@@ -18,16 +18,22 @@ class CAModel:
     State vector: [x, y, z, vx, vy, vz, ax, ay, az]
     """
     
-    def __init__(self, process_noise: dict, measurement_noise: dict):
+    def __init__(self, process_noise: dict, measurement_noise: dict, use_acceleration_measurements: bool = True):
         """
         Initialize CA model.
         
         Args:
             process_noise: Dict with 'position', 'velocity', and 'acceleration' noise parameters
             measurement_noise: Dict with 'position', 'velocity', and 'acceleration' noise parameters
+            use_acceleration_measurements: If True, use full 9D measurements (pos+vel+acc) for standalone use.
+                                           If False, use 6D measurements (pos+vel only) for IMM compatibility.
+                                           Default: True (standalone mode)
         """
         # State dimension: [x, y, z, vx, vy, vz, ax, ay, az]
         self.state_dim = 9
+        
+        # Control whether to use acceleration measurements
+        self.use_acceleration_measurements = use_acceleration_measurements
         
         # State vector and covariance
         self.x = np.zeros(self.state_dim)
@@ -43,26 +49,48 @@ class CAModel:
         self.r_vel = measurement_noise.get('velocity', 0.1)
         self.r_acc = measurement_noise.get('acceleration', 0.5)
         
-        # Measurement matrix H (we observe position, velocity, and optionally acceleration)
-        # For now, we assume we only measure position and velocity directly
-        # Acceleration is estimated from velocity changes
-        self.H = np.zeros((6, self.state_dim))
-        self.H[0:3, 0:3] = np.eye(3)  # Measure position
-        self.H[3:6, 3:6] = np.eye(3)  # Measure velocity
+        # Measurement matrix H - depends on mode
+        # CRITICAL: For IMM compatibility, we only measure position and velocity (6D)
+        # For standalone CA mode, we can use full 9D measurements (pos+vel+acc)
+        if self.use_acceleration_measurements:
+            # Standalone mode: measure position, velocity, AND acceleration (9D)
+            self.H = np.eye(self.state_dim)  # 9x9 identity: measure all states
+            self.measurement_dim = 9
+        else:
+            # IMM mode: measure position and velocity ONLY (6D)
+            # This ensures innovation dimension matches CV model for fair likelihood comparison
+            self.H = np.zeros((6, self.state_dim))  # 6x9 matrix: measures [pos, vel] from [pos, vel, acc]
+            self.H[0:3, 0:3] = np.eye(3)  # Measure position
+            self.H[3:6, 3:6] = np.eye(3)  # Measure velocity
+            # Note: H[0:6, 6:9] = 0, so acceleration is NOT in measurement vector
+            self.measurement_dim = 6
         
         # Build measurement noise covariance
         self.R = self._build_measurement_noise()
         
         self.initialized = False
-        self.last_innovation = np.zeros(6)  # 6D innovation (pos + vel)
+        self.last_innovation = np.zeros(self.measurement_dim)
         self.last_velocity = None
         self.last_measurement_time = None
     
     def _build_measurement_noise(self) -> np.ndarray:
-        """Build measurement noise covariance matrix R."""
-        R = np.zeros((6, 6))
-        R[0:3, 0:3] = np.eye(3) * self.r_pos  # Position noise
-        R[3:6, 3:6] = np.eye(3) * self.r_vel  # Velocity noise
+        """
+        Build measurement noise covariance matrix R.
+        
+        Returns 6x6 matrix (position + velocity only) for IMM mode,
+        or 9x9 matrix (position + velocity + acceleration) for standalone mode.
+        """
+        if self.use_acceleration_measurements:
+            # Standalone mode: 9x9 measurement noise
+            R = np.zeros((9, 9))
+            R[0:3, 0:3] = np.eye(3) * self.r_pos  # Position noise
+            R[3:6, 3:6] = np.eye(3) * self.r_vel  # Velocity noise
+            R[6:9, 6:9] = np.eye(3) * self.r_acc  # Acceleration noise
+        else:
+            # IMM mode: 6x6 measurement noise (position + velocity only)
+            R = np.zeros((6, 6))
+            R[0:3, 0:3] = np.eye(3) * self.r_pos  # Position noise
+            R[3:6, 3:6] = np.eye(3) * self.r_vel  # Velocity noise
         return R
     
     def _build_process_noise(self, dt: float) -> np.ndarray:
@@ -204,6 +232,8 @@ class CAModel:
             velocity: Measured velocity [vx, vy, vz] in NED
             dt: Time since last update (seconds)
             acceleration: Measured acceleration [ax, ay, az] (optional)
+                         - Used directly if use_acceleration_measurements=True (standalone mode)
+                         - Used only for initialization if use_acceleration_measurements=False (IMM mode)
         """
         # Estimate acceleration from velocity change if not provided
         if acceleration is None:
@@ -232,8 +262,13 @@ class CAModel:
         P_pred = ensure_covariance_valid(P_pred)
         
         # UPDATE STEP (Kalman correction)
-        # We measure position and velocity (6D measurement)
-        z = np.concatenate([position, velocity])
+        # Measurement vector depends on mode
+        if self.use_acceleration_measurements and acceleration is not None:
+            # Standalone mode: use full 9D measurement (pos + vel + acc)
+            z = np.concatenate([position, velocity, acceleration])
+        else:
+            # IMM mode: use 6D measurement (pos + vel only)
+            z = np.concatenate([position, velocity])
         
         # Innovation (measurement residual)
         y = z - (self.H @ x_pred)
@@ -264,7 +299,7 @@ class CAModel:
         # Store velocity for next acceleration estimate
         self.last_velocity = velocity
     
-    def predict(self, horizon: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def predict(self, horizon: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """
         Predict state at future time t + horizon.
         
@@ -275,9 +310,8 @@ class CAModel:
             predicted_position: [x, y, z]
             predicted_velocity: [vx, vy, vz]
             predicted_acceleration: [ax, ay, az]
-            position_covariance: 3x3 position covariance
-            velocity_covariance: 3x3 velocity covariance
-            acceleration_covariance: 3x3 acceleration covariance
+            full_covariance: 6x6 covariance matrix for [pos, vel] including cross-correlations
+                            (acceleration covariance excluded for compatibility with CV model)
         """
         if horizon < 0:
             raise ValueError(f"Negative horizon: {horizon}")
@@ -296,14 +330,13 @@ class CAModel:
         velocity = x_pred[3:6]
         acceleration = x_pred[6:9]
         
-        # Extract covariances
-        pos_cov = P_pred[0:3, 0:3]
-        vel_cov = P_pred[3:6, 3:6]
-        acc_cov = P_pred[6:9, 6:9]
+        # Extract 6x6 covariance for position and velocity (including cross-correlations)
+        # This matches the CV model output dimension for fair IMM fusion
+        full_cov = P_pred[0:6, 0:6]  # 6x6 block: [pos, vel] with cross-correlations
         
-        return position, velocity, acceleration, pos_cov, vel_cov, acc_cov
+        return position, velocity, acceleration, full_cov
     
-    def get_state(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def get_state(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """
         Get current state estimate.
         
@@ -311,18 +344,14 @@ class CAModel:
             position: [x, y, z]
             velocity: [vx, vy, vz]
             acceleration: [ax, ay, az]
-            position_covariance: 3x3 position covariance
-            velocity_covariance: 3x3 velocity covariance
-            acceleration_covariance: 3x3 acceleration covariance
+            full_covariance: 6x6 covariance matrix for [pos, vel] including cross-correlations
         """
         position = self.x[0:3]
         velocity = self.x[3:6]
         acceleration = self.x[6:9]
-        pos_cov = self.P[0:3, 0:3]
-        vel_cov = self.P[3:6, 3:6]
-        acc_cov = self.P[6:9, 6:9]
+        full_cov = self.P[0:6, 0:6]  # 6x6 block with cross-correlations
         
-        return position, velocity, acceleration, pos_cov, vel_cov, acc_cov
+        return position, velocity, acceleration, full_cov
     
     def get_innovation(self) -> np.ndarray:
         """Get last measurement innovation (residual)."""
@@ -333,6 +362,6 @@ class CAModel:
         self.x = np.zeros(self.state_dim)
         self.P = np.eye(self.state_dim) * 100.0
         self.initialized = False
-        self.last_innovation = np.zeros(6)
+        self.last_innovation = np.zeros(self.measurement_dim)
         self.last_velocity = None
         self.last_measurement_time = None

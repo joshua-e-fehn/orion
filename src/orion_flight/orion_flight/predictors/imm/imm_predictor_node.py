@@ -43,6 +43,9 @@ class IMMPredictorNode(Node):
         cv_model = CVModel(cv_process_noise, cv_measurement_noise)
         
         # Initialize CA model
+        # CRITICAL: Set use_acceleration_measurements=False for IMM compatibility
+        # This ensures CA model uses 6D measurements (pos+vel) like CV model
+        # for fair likelihood comparison in IMM filter
         ca_process_noise = {
             'position': self.param_ca_q_pos,
             'velocity': self.param_ca_q_vel,
@@ -53,7 +56,11 @@ class IMMPredictorNode(Node):
             'velocity': self.param_r_vel,
             'acceleration': self.param_r_acc
         }
-        ca_model = CAModel(ca_process_noise, ca_measurement_noise)
+        ca_model = CAModel(
+            ca_process_noise, 
+            ca_measurement_noise,
+            use_acceleration_measurements=False  # IMM mode: 6D measurements only
+        )
         
         # Initialize IMM filter
         transition_matrix = np.array([
@@ -116,8 +123,8 @@ class IMMPredictorNode(Node):
             self.status_callback
         )
         
-        # State
-        self.last_measurement_time = None
+        # State - track timestamp in microseconds (PX4 format)
+        self.last_measurement_timestamp_us = None
         self.last_update_time = None
         
         self.get_logger().info(
@@ -208,9 +215,7 @@ class IMMPredictorNode(Node):
         
         Updates the IMM filter with new measurement.
         """
-        current_time = self.get_clock().now().nanoseconds / 1e9
-        
-        # Check validity flags
+        # Check validity flags first
         if not (msg.xy_valid and msg.z_valid and msg.v_xy_valid and msg.v_z_valid):
             self.get_logger().warn('Received invalid target measurement', throttle_duration_sec=1.0)
             return
@@ -222,25 +227,55 @@ class IMMPredictorNode(Node):
         # Extract acceleration if available (PX4 provides it)
         acceleration = np.array([msg.ax, msg.ay, msg.az])
         
-        # Calculate dt
-        if self.last_measurement_time is not None:
-            dt = current_time - self.last_measurement_time
-            if dt < 0:
-                self.get_logger().error('Negative dt - time went backwards!')
+        # CRITICAL: Calculate dt from PX4 timestamps (microseconds)
+        current_timestamp_us = msg.timestamp
+        
+        if self.last_measurement_timestamp_us is not None:
+            dt_us = current_timestamp_us - self.last_measurement_timestamp_us
+            
+            # Check for time going backwards
+            if dt_us < 0:
+                self.get_logger().error(
+                    f'Time went backwards! current={current_timestamp_us}, '
+                    f'last={self.last_measurement_timestamp_us}, dt={dt_us}'
+                )
+                # Reset and skip this measurement
+                self.last_measurement_timestamp_us = current_timestamp_us
+                return
+            
+            # Convert microseconds to seconds
+            dt = dt_us * 1e-6
+            
+            # Sanity check: reject unreasonable dt values
+            if dt > 1.0:  # More than 1 second gap
+                self.get_logger().warn(
+                    f'Large dt detected: {dt:.3f}s - possible data gap or timestamp issue',
+                    throttle_duration_sec=2.0
+                )
+                # Use a reasonable default instead of rejecting
+                dt = 0.1
+            elif dt < 1e-6:  # Less than 1 microsecond
+                self.get_logger().debug(
+                    f'Very small dt: {dt:.9f}s - skipping update',
+                    throttle_duration_sec=2.0
+                )
                 return
         else:
-            dt = 0.1  # Default dt for first measurement
+            # First measurement - use default dt
+            dt = 0.1
+            self.get_logger().info(f'First measurement received, using default dt={dt:.3f}s')
         
-        # Update IMM filter
+        # Update IMM filter with properly calculated dt
         self.imm_filter.update(position, velocity, dt, acceleration)
         
-        self.last_measurement_time = current_time
+        # Store timestamp for next iteration
+        self.last_measurement_timestamp_us = current_timestamp_us
         
         # Log diagnostics (throttled)
         if self.imm_filter.initialized:
             mode_probs = self.imm_filter.get_mode_probabilities()
             self.get_logger().debug(
-                f'IMM Update: dt={dt:.3f}s, P(CV)={mode_probs[0]:.3f}, P(CA)={mode_probs[1]:.3f}',
+                f'IMM Update: dt={dt:.4f}s (from timestamps), P(CV)={mode_probs[0]:.3f}, P(CA)={mode_probs[1]:.3f}',
                 throttle_duration_sec=1.0
             )
         
@@ -353,7 +388,11 @@ class IMMPredictorNode(Node):
         predictions = []
         for horizon in self.prediction_horizons:
             try:
-                pos, vel, acc, pos_cov, vel_cov = self.imm_filter.predict(horizon)
+                pos, vel, acc, full_cov = self.imm_filter.predict(horizon)
+                
+                # Extract diagonal blocks for PredictorOutput compatibility
+                pos_cov = full_cov[0:3, 0:3]
+                vel_cov = full_cov[3:6, 3:6]
                 
                 # Create PredictorOutput
                 pred_output = PredictorOutput(

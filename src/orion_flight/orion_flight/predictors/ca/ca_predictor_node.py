@@ -28,6 +28,7 @@ class CAPredictorNode(Node):
         self._get_parameters()
         
         # Initialize CA model
+        # For standalone use, enable full 9D measurements (pos+vel+acc)
         process_noise = {
             'position': self.param_q_pos,
             'velocity': self.param_q_vel,
@@ -39,7 +40,11 @@ class CAPredictorNode(Node):
             'acceleration': self.param_r_acc
         }
         
-        self.ca_model = CAModel(process_noise, measurement_noise)
+        self.ca_model = CAModel(
+            process_noise, 
+            measurement_noise,
+            use_acceleration_measurements=True  # Standalone mode: use full 9D measurements
+        )
         
         # Create subscribers
         target_topic = f'/{self.target_namespace}/fmu/out/vehicle_local_position'

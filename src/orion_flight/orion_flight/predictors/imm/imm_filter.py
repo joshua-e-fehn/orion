@@ -37,7 +37,7 @@ class IMMFilter:
         
         Args:
             cv_model: Constant Velocity model
-            ca_model: Constant Acceleration model
+            ca_model: Constant Acceleration model (will be set to IMM mode automatically)
             transition_matrix: 2x2 model transition probability matrix
                               [[P(CV->CV), P(CV->CA)],
                                [P(CA->CV), P(CA->CA)]]
@@ -47,6 +47,15 @@ class IMMFilter:
         """
         self.cv_model = cv_model
         self.ca_model = ca_model
+        
+        # CRITICAL: Ensure CA model is in IMM mode (6D measurements for fair likelihood comparison)
+        if hasattr(ca_model, 'use_acceleration_measurements'):
+            if ca_model.use_acceleration_measurements:
+                raise ValueError(
+                    "CA model must be initialized with use_acceleration_measurements=False for IMM. "
+                    "This ensures 6D innovations (pos+vel) for fair likelihood comparison with CV model."
+                )
+        
         self.models = [cv_model, ca_model]
         self.n_models = 2
         
@@ -134,13 +143,19 @@ class IMMFilter:
         - y_j is innovation (measurement residual) for model j
         - S_j is innovation covariance for model j
         
+        CRITICAL: All innovations must have the same dimension for fair comparison!
+        
         Args:
-            innovations: List of innovation vectors [y_cv, y_ca]
+            innovations: List of innovation vectors [y_cv, y_ca] - MUST be same dimension!
             innovation_covariances: List of innovation covariance matrices [S_cv, S_ca]
         
         Returns:
             likelihoods: Array of likelihoods [L_cv, L_ca]
         """
+        # Verify dimensions match
+        assert len(innovations[0]) == len(innovations[1]), \
+            f"Innovation dimension mismatch: CV={len(innovations[0])}, CA={len(innovations[1])}"
+        
         likelihoods = np.zeros(self.n_models)
         
         for j in range(self.n_models):
@@ -223,7 +238,11 @@ class IMMFilter:
             position: Measured position [x, y, z]
             velocity: Measured velocity [vx, vy, vz]
             dt: Time since last update (seconds)
-            acceleration: Measured acceleration [ax, ay, az] (optional)
+            acceleration: Measured acceleration [ax, ay, az] (optional, used for CA initialization only)
+        
+        Note:
+            Both models use 6D measurements (position + velocity) to ensure
+            innovation dimensions match for fair likelihood comparison.
         """
         if not self.initialized:
             # Initialize both models
@@ -232,6 +251,10 @@ class IMMFilter:
             self.initialized = True
             return
         
+        # Validate dt
+        if dt < 1e-6:
+            dt = 1e-6  # Prevent numerical issues
+        
         # Step 1: Compute mixing probabilities
         c = self._compute_mixing_probabilities()
         
@@ -239,33 +262,40 @@ class IMMFilter:
         self._mix_states()
         
         # Step 3: Update each model filter
+        # CRITICAL: Both models MUST produce same-dimension innovations (6D: pos+vel)
         # Store innovations and covariances before update
         innovations = []
         innovation_covariances = []
         
-        # Update CV model
+        # Update CV model (6D innovation: pos + vel)
         self.cv_model.update(position, velocity, dt)
         cv_innov = self.cv_model.get_innovation()
-        # Estimate innovation covariance (simplified: use measurement noise)
-        cv_S = self.cv_model.R  # Simplified: actual S = H*P*H' + R
+        cv_S = self.cv_model.R  # 6x6 innovation covariance
         innovations.append(cv_innov)
         innovation_covariances.append(cv_S)
         
-        # Update CA model
+        # Update CA model (6D innovation: pos + vel ONLY - acceleration not measured)
+        # Note: CA model still estimates acceleration internally, but measurement
+        # vector only includes position and velocity for fair likelihood comparison
         self.ca_model.update(position, velocity, dt, acceleration)
         ca_innov = self.ca_model.get_innovation()
-        ca_S = self.ca_model.R  # Simplified
+        ca_S = self.ca_model.R  # 6x6 innovation covariance (pos+vel only)
         innovations.append(ca_innov)
         innovation_covariances.append(ca_S)
         
-        # Step 4: Compute likelihoods
+        # Verify innovation dimensions match (both should be 6D)
+        assert len(cv_innov) == len(ca_innov) == 6, \
+            f"Innovation dimension mismatch: CV={len(cv_innov)}, CA={len(ca_innov)}, expected 6"
+        assert cv_S.shape == ca_S.shape == (6, 6), \
+            f"Innovation covariance shape mismatch: CV={cv_S.shape}, CA={ca_S.shape}, expected (6,6)"
+        
+        # Step 4: Compute likelihoods (now valid since innovations are same dimension)
         self.likelihoods = self._compute_likelihoods(innovations, innovation_covariances)
         
         # Step 5: Update mode probabilities
         self._update_mode_probabilities(c, self.likelihoods)
     
-    def predict(self, horizon: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray, 
-                                                np.ndarray, np.ndarray]:
+    def predict(self, horizon: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """
         Predict fused state at future time using IMM combination.
         
@@ -276,12 +306,11 @@ class IMMFilter:
             predicted_position: Fused [x, y, z]
             predicted_velocity: Fused [vx, vy, vz]
             predicted_acceleration: Fused [ax, ay, az]
-            position_covariance: Fused 3x3 position covariance
-            velocity_covariance: Fused 3x3 velocity covariance
+            full_covariance: Fused 6x6 covariance matrix for [pos, vel] with cross-correlations
         """
         # Get predictions from each model
-        cv_pos, cv_vel, cv_pos_cov, cv_vel_cov = self.cv_model.predict(horizon)
-        ca_pos, ca_vel, ca_acc, ca_pos_cov, ca_vel_cov = self.ca_model.predict(horizon)
+        cv_pos, cv_vel, cv_cov = self.cv_model.predict(horizon)
+        ca_pos, ca_vel, ca_acc, ca_cov = self.ca_model.predict(horizon)
         
         # Fuse predictions using mode probabilities
         # x̂ = Σ_j μ_j * x̂_j
@@ -289,33 +318,33 @@ class IMMFilter:
         fused_vel = self.mu[0] * cv_vel + self.mu[1] * ca_vel
         fused_acc = self.mu[1] * ca_acc  # Only CA has acceleration
         
-        # Fuse covariances with spread term
+        # Fuse full 6x6 covariances with spread term
         # P = Σ_j μ_j * (P_j + (x̂_j - x̂)(x̂_j - x̂)^T)
-        fused_pos_cov = np.zeros((3, 3))
-        fused_vel_cov = np.zeros((3, 3))
+        # This includes position-velocity cross-correlations!
+        fused_cov = np.zeros((6, 6))
         
-        for j, (pos_j, vel_j, pos_cov_j, vel_cov_j) in enumerate([
-            (cv_pos, cv_vel, cv_pos_cov, cv_vel_cov),
-            (ca_pos, ca_vel, ca_pos_cov, ca_vel_cov)
+        # Build full state vectors for spread computation
+        cv_state = np.concatenate([cv_pos, cv_vel])
+        ca_state = np.concatenate([ca_pos, ca_vel])
+        fused_state = np.concatenate([fused_pos, fused_vel])
+        
+        for j, (state_j, cov_j) in enumerate([
+            (cv_state, cv_cov),
+            (ca_state, ca_cov)
         ]):
-            # Position covariance with spread
-            pos_diff = pos_j - fused_pos
-            pos_spread = np.outer(pos_diff, pos_diff)
-            fused_pos_cov += self.mu[j] * (pos_cov_j + pos_spread)
+            # Compute spread term: (x̂_j - x̂)(x̂_j - x̂)^T
+            state_diff = state_j - fused_state
+            spread = np.outer(state_diff, state_diff)
             
-            # Velocity covariance with spread
-            vel_diff = vel_j - fused_vel
-            vel_spread = np.outer(vel_diff, vel_diff)
-            fused_vel_cov += self.mu[j] * (vel_cov_j + vel_spread)
+            # Fuse: P += μ_j * (P_j + spread)
+            fused_cov += self.mu[j] * (cov_j + spread)
         
-        # Ensure covariances are valid
-        fused_pos_cov = ensure_covariance_valid(fused_pos_cov)
-        fused_vel_cov = ensure_covariance_valid(fused_vel_cov)
+        # Ensure covariance is valid (symmetric, positive semi-definite)
+        fused_cov = ensure_covariance_valid(fused_cov)
         
-        return fused_pos, fused_vel, fused_acc, fused_pos_cov, fused_vel_cov
+        return fused_pos, fused_vel, fused_acc, fused_cov
     
-    def get_state(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, 
-                                  np.ndarray, np.ndarray]:
+    def get_state(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """
         Get current fused state estimate (prediction with horizon = 0).
         
@@ -323,8 +352,7 @@ class IMMFilter:
             position: Fused [x, y, z]
             velocity: Fused [vx, vy, vz]
             acceleration: Fused [ax, ay, az]
-            position_covariance: Fused 3x3 position covariance
-            velocity_covariance: Fused 3x3 velocity covariance
+            full_covariance: Fused 6x6 covariance matrix for [pos, vel] with cross-correlations
         """
         return self.predict(0.0)
     
@@ -347,8 +375,14 @@ class IMMFilter:
         Returns:
             Dictionary with 'cv' and 'ca' predictions
         """
-        cv_pos, cv_vel, cv_pos_cov, cv_vel_cov = self.cv_model.predict(horizon)
-        ca_pos, ca_vel, ca_acc, ca_pos_cov, ca_vel_cov = self.ca_model.predict(horizon)
+        cv_pos, cv_vel, cv_cov = self.cv_model.predict(horizon)
+        ca_pos, ca_vel, ca_acc, ca_cov = self.ca_model.predict(horizon)
+        
+        # Extract diagonal blocks for backward compatibility with visualization
+        cv_pos_cov = cv_cov[0:3, 0:3]
+        cv_vel_cov = cv_cov[3:6, 3:6]
+        ca_pos_cov = ca_cov[0:3, 0:3]
+        ca_vel_cov = ca_cov[3:6, 3:6]
         
         return {
             'cv': {
@@ -357,6 +391,7 @@ class IMMFilter:
                 'acceleration': np.zeros(3),
                 'position_covariance': cv_pos_cov,
                 'velocity_covariance': cv_vel_cov,
+                'full_covariance': cv_cov,  # 6x6 with cross-correlations
                 'probability': self.mu[0]
             },
             'ca': {
@@ -365,6 +400,7 @@ class IMMFilter:
                 'acceleration': ca_acc,
                 'position_covariance': ca_pos_cov,
                 'velocity_covariance': ca_vel_cov,
+                'full_covariance': ca_cov,  # 6x6 with cross-correlations
                 'probability': self.mu[1]
             }
         }
