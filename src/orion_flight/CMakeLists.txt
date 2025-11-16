@@ -26,9 +26,10 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   orion_flight/circle_trajectory_node.py
   orion_flight/planners/pp/pp_planner_node.py
-  orion_flight/planners/pn/pn_planner_node.py
   orion_flight/predictors/cv/cv_predictor_node.py
   orion_flight/predictors/ca/ca_predictor_node.py
+  orion_flight/predictors/imm/imm_predictor_node.py
+  orion_flight/utils/target_tf_publisher.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
