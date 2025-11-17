@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/VehicleImuStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -85,6 +92,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
         '_var_gyro',
         '_temperature_accel',
         '_temperature_gyro',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -110,6 +118,8 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
         'temperature_gyro': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
@@ -134,22 +144,25 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.accel_device_id = kwargs.get('accel_device_id', int())
         self.gyro_device_id = kwargs.get('gyro_device_id', int())
         if 'accel_clipping' not in kwargs:
             self.accel_clipping = numpy.zeros(3, dtype=numpy.uint32)
         else:
-            self.accel_clipping = numpy.array(kwargs.get('accel_clipping'), dtype=numpy.uint32)
-            assert self.accel_clipping.shape == (3, )
+            self.accel_clipping = kwargs.get('accel_clipping')
         if 'gyro_clipping' not in kwargs:
             self.gyro_clipping = numpy.zeros(3, dtype=numpy.uint32)
         else:
-            self.gyro_clipping = numpy.array(kwargs.get('gyro_clipping'), dtype=numpy.uint32)
-            assert self.gyro_clipping.shape == (3, )
+            self.gyro_clipping = kwargs.get('gyro_clipping')
         self.accel_error_count = kwargs.get('accel_error_count', int())
         self.gyro_error_count = kwargs.get('gyro_error_count', int())
         self.accel_rate_hz = kwargs.get('accel_rate_hz', float())
@@ -162,23 +175,19 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
         if 'mean_accel' not in kwargs:
             self.mean_accel = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.mean_accel = numpy.array(kwargs.get('mean_accel'), dtype=numpy.float32)
-            assert self.mean_accel.shape == (3, )
+            self.mean_accel = kwargs.get('mean_accel')
         if 'mean_gyro' not in kwargs:
             self.mean_gyro = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.mean_gyro = numpy.array(kwargs.get('mean_gyro'), dtype=numpy.float32)
-            assert self.mean_gyro.shape == (3, )
+            self.mean_gyro = kwargs.get('mean_gyro')
         if 'var_accel' not in kwargs:
             self.var_accel = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.var_accel = numpy.array(kwargs.get('var_accel'), dtype=numpy.float32)
-            assert self.var_accel.shape == (3, )
+            self.var_accel = kwargs.get('var_accel')
         if 'var_gyro' not in kwargs:
             self.var_gyro = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.var_gyro = numpy.array(kwargs.get('var_gyro'), dtype=numpy.float32)
-            assert self.var_gyro.shape == (3, )
+            self.var_gyro = kwargs.get('var_gyro')
         self.temperature_accel = kwargs.get('temperature_accel', float())
         self.temperature_gyro = kwargs.get('temperature_gyro', float())
 
@@ -187,7 +196,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -201,11 +210,12 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -265,7 +275,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -280,7 +290,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @accel_device_id.setter
     def accel_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'accel_device_id' field must be of type 'int'"
@@ -295,7 +305,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @gyro_device_id.setter
     def gyro_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'gyro_device_id' field must be of type 'int'"
@@ -310,14 +320,14 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @accel_clipping.setter
     def accel_clipping(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'accel_clipping' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 3, \
-                "The 'accel_clipping' numpy.ndarray() must have a size of 3"
-            self._accel_clipping = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'accel_clipping' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 3, \
+                    "The 'accel_clipping' numpy.ndarray() must have a size of 3"
+                self._accel_clipping = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -341,14 +351,14 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @gyro_clipping.setter
     def gyro_clipping(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'gyro_clipping' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 3, \
-                "The 'gyro_clipping' numpy.ndarray() must have a size of 3"
-            self._gyro_clipping = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'gyro_clipping' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 3, \
+                    "The 'gyro_clipping' numpy.ndarray() must have a size of 3"
+                self._gyro_clipping = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -372,7 +382,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @accel_error_count.setter
     def accel_error_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'accel_error_count' field must be of type 'int'"
@@ -387,7 +397,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @gyro_error_count.setter
     def gyro_error_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'gyro_error_count' field must be of type 'int'"
@@ -402,7 +412,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @accel_rate_hz.setter
     def accel_rate_hz(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'accel_rate_hz' field must be of type 'float'"
@@ -417,7 +427,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @gyro_rate_hz.setter
     def gyro_rate_hz(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'gyro_rate_hz' field must be of type 'float'"
@@ -432,7 +442,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @accel_raw_rate_hz.setter
     def accel_raw_rate_hz(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'accel_raw_rate_hz' field must be of type 'float'"
@@ -447,7 +457,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @gyro_raw_rate_hz.setter
     def gyro_raw_rate_hz(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'gyro_raw_rate_hz' field must be of type 'float'"
@@ -462,7 +472,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @accel_vibration_metric.setter
     def accel_vibration_metric(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'accel_vibration_metric' field must be of type 'float'"
@@ -477,7 +487,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @gyro_vibration_metric.setter
     def gyro_vibration_metric(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'gyro_vibration_metric' field must be of type 'float'"
@@ -492,7 +502,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @delta_angle_coning_metric.setter
     def delta_angle_coning_metric(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'delta_angle_coning_metric' field must be of type 'float'"
@@ -507,14 +517,14 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @mean_accel.setter
     def mean_accel(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'mean_accel' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'mean_accel' numpy.ndarray() must have a size of 3"
-            self._mean_accel = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'mean_accel' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'mean_accel' numpy.ndarray() must have a size of 3"
+                self._mean_accel = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -538,14 +548,14 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @mean_gyro.setter
     def mean_gyro(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'mean_gyro' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'mean_gyro' numpy.ndarray() must have a size of 3"
-            self._mean_gyro = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'mean_gyro' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'mean_gyro' numpy.ndarray() must have a size of 3"
+                self._mean_gyro = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -569,14 +579,14 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @var_accel.setter
     def var_accel(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'var_accel' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'var_accel' numpy.ndarray() must have a size of 3"
-            self._var_accel = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'var_accel' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'var_accel' numpy.ndarray() must have a size of 3"
+                self._var_accel = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -600,14 +610,14 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @var_gyro.setter
     def var_gyro(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'var_gyro' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'var_gyro' numpy.ndarray() must have a size of 3"
-            self._var_gyro = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'var_gyro' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'var_gyro' numpy.ndarray() must have a size of 3"
+                self._var_gyro = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -631,7 +641,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @temperature_accel.setter
     def temperature_accel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'temperature_accel' field must be of type 'float'"
@@ -646,7 +656,7 @@ class VehicleImuStatus(metaclass=Metaclass_VehicleImuStatus):
 
     @temperature_gyro.setter
     def temperature_gyro(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'temperature_gyro' field must be of type 'float'"

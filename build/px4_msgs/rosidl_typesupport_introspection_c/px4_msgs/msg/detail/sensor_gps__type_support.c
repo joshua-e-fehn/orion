@@ -31,12 +31,13 @@ void px4_msgs__msg__SensorGps__rosidl_typesupport_introspection_c__SensorGps_fin
   px4_msgs__msg__SensorGps__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGps__rosidl_typesupport_introspection_c__SensorGps_message_member_array[33] = {
+static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGps__rosidl_typesupport_introspection_c__SensorGps_message_member_array[37] = {
   {
     "timestamp",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -54,6 +55,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -71,6 +73,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT32,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -84,14 +87,15 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     NULL  // resize(index) function pointer
   },
   {
-    "lat",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    "latitude_deg",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorGps, lat),  // bytes offset in struct
+    offsetof(px4_msgs__msg__SensorGps, latitude_deg),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -101,14 +105,15 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     NULL  // resize(index) function pointer
   },
   {
-    "lon",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    "longitude_deg",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorGps, lon),  // bytes offset in struct
+    offsetof(px4_msgs__msg__SensorGps, longitude_deg),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -118,14 +123,15 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     NULL  // resize(index) function pointer
   },
   {
-    "alt",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    "altitude_msl_m",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorGps, alt),  // bytes offset in struct
+    offsetof(px4_msgs__msg__SensorGps, altitude_msl_m),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -135,14 +141,15 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     NULL  // resize(index) function pointer
   },
   {
-    "alt_ellipsoid",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    "altitude_ellipsoid_m",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorGps, alt_ellipsoid),  // bytes offset in struct
+    offsetof(px4_msgs__msg__SensorGps, altitude_ellipsoid_m),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -156,6 +163,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -173,6 +181,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -190,6 +199,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -207,6 +217,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -224,6 +235,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -241,6 +253,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -258,6 +271,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -275,6 +289,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -292,6 +307,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -309,6 +325,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -326,6 +343,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -343,6 +361,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -356,10 +375,29 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     NULL  // resize(index) function pointer
   },
   {
+    "authentication_state",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorGps, authentication_state),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "vel_m_s",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -377,6 +415,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -394,6 +433,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -411,6 +451,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -428,6 +469,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -445,6 +487,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -462,6 +505,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -479,6 +523,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -496,6 +541,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -509,10 +555,29 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     NULL  // resize(index) function pointer
   },
   {
+    "system_error",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT32,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorGps, system_error),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "heading",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -530,6 +595,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -547,6 +613,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -564,6 +631,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -581,10 +649,47 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__SensorGps, selected_rtcm_instance),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "rtcm_crc_failed",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorGps, rtcm_crc_failed),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "rtcm_msg_used",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorGps, rtcm_msg_used),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -598,8 +703,9 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorGp
 static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__SensorGps__rosidl_typesupport_introspection_c__SensorGps_message_members = {
   "px4_msgs__msg",  // message namespace
   "SensorGps",  // message name
-  33,  // number of fields
+  37,  // number of fields
   sizeof(px4_msgs__msg__SensorGps),
+  false,  // has_any_key_member_
   px4_msgs__msg__SensorGps__rosidl_typesupport_introspection_c__SensorGps_message_member_array,  // message members
   px4_msgs__msg__SensorGps__rosidl_typesupport_introspection_c__SensorGps_init_function,  // function to initialize message memory (memory has to be allocated)
   px4_msgs__msg__SensorGps__rosidl_typesupport_introspection_c__SensorGps_fini_function  // function to terminate message instance (will not free memory)
@@ -611,6 +717,9 @@ static rosidl_message_type_support_t px4_msgs__msg__SensorGps__rosidl_typesuppor
   0,
   &px4_msgs__msg__SensorGps__rosidl_typesupport_introspection_c__SensorGps_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__SensorGps__get_type_hash,
+  &px4_msgs__msg__SensorGps__get_type_description,
+  &px4_msgs__msg__SensorGps__get_type_description_sources,
 };
 
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_px4_msgs

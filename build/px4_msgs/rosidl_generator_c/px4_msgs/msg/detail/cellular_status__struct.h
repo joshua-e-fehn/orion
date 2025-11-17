@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/CellularStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/cellular_status.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__CELLULAR_STATUS__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__CELLULAR_STATUS__STRUCT_H_
 
@@ -14,180 +17,229 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
-/// Constant 'CELLULAR_STATUS_FLAG_UNKNOWN'.
+/// Constant 'STATUS_FLAG_UNKNOWN'.
 /**
   * State unknown or not reportable
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_UNKNOWN = 0
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_UNKNOWN = 1
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_FAILED'.
+/// Constant 'STATUS_FLAG_FAILED'.
 /**
-  * velocity setpoint
+  * Modem is unusable
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_FAILED = 1
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_FAILED = 2
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_INITIALIZING'.
+/// Constant 'STATUS_FLAG_INITIALIZING'.
 /**
   * Modem is being initialized
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_INITIALIZING = 2
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_INITIALIZING = 4
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_LOCKED'.
+/// Constant 'STATUS_FLAG_LOCKED'.
 /**
   * Modem is locked
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_LOCKED = 3
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_LOCKED = 8
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_DISABLED'.
+/// Constant 'STATUS_FLAG_DISABLED'.
 /**
   * Modem is not enabled and is powered down
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_DISABLED = 4
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_DISABLED = 16
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_DISABLING'.
+/// Constant 'STATUS_FLAG_DISABLING'.
 /**
-  * Modem is currently transitioning to the CELLULAR_STATUS_FLAG_DISABLED state
+  * Modem is currently transitioning to the STATUS_FLAG_DISABLED state
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_DISABLING = 5
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_DISABLING = 32
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_ENABLING'.
+/// Constant 'STATUS_FLAG_ENABLING'.
 /**
-  * Modem is currently transitioning to the CELLULAR_STATUS_FLAG_ENABLED state
+  * Modem is currently transitioning to the STATUS_FLAG_ENABLED state
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_ENABLING = 6
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_ENABLING = 64
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_ENABLED'.
+/// Constant 'STATUS_FLAG_ENABLED'.
 /**
   * Modem is enabled and powered on but not registered with a network provider and not available for data connections
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_ENABLED = 7
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_ENABLED = 128
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_SEARCHING'.
+/// Constant 'STATUS_FLAG_SEARCHING'.
 /**
   * Modem is searching for a network provider to register
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_SEARCHING = 8
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_SEARCHING = 256
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_REGISTERED'.
+/// Constant 'STATUS_FLAG_REGISTERED'.
 /**
   * Modem is registered with a network provider, and data connections and messaging may be available for use
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_REGISTERED = 9
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_REGISTERED = 512
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_DISCONNECTING'.
+/// Constant 'STATUS_FLAG_DISCONNECTING'.
 /**
   * Modem is disconnecting and deactivating the last active packet data bearer. This state will not be entered if more than one packet data bearer is active and one of the active bearers is deactivated
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_DISCONNECTING = 10
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_DISCONNECTING = 1024
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_CONNECTING'.
+/// Constant 'STATUS_FLAG_CONNECTING'.
 /**
   * Modem is activating and connecting the first packet data bearer. Subsequent bearer activations when another bearer is already active do not cause this state to be entered
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_CONNECTING = 11
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_CONNECTING = 2048
 };
 
-/// Constant 'CELLULAR_STATUS_FLAG_CONNECTED'.
+/// Constant 'STATUS_FLAG_CONNECTED'.
 /**
   * One or more packet data bearers is active and connected
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_STATUS_FLAG_CONNECTED = 12
+  px4_msgs__msg__CellularStatus__STATUS_FLAG_CONNECTED = 4096
 };
 
-/// Constant 'CELLULAR_NETWORK_FAILED_REASON_NONE'.
+/// Constant 'FAILURE_REASON_NONE'.
 /**
   * No error
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_NETWORK_FAILED_REASON_NONE = 0
+  px4_msgs__msg__CellularStatus__FAILURE_REASON_NONE = 0
 };
 
-/// Constant 'CELLULAR_NETWORK_FAILED_REASON_UNKNOWN'.
+/// Constant 'FAILURE_REASON_UNKNOWN'.
 /**
   * Error state is unknown
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_NETWORK_FAILED_REASON_UNKNOWN = 1
+  px4_msgs__msg__CellularStatus__FAILURE_REASON_UNKNOWN = 1
 };
 
-/// Constant 'CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING'.
+/// Constant 'FAILURE_REASON_SIM_MISSING'.
 /**
   * SIM is required for the modem but missing
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING = 2
+  px4_msgs__msg__CellularStatus__FAILURE_REASON_SIM_MISSING = 2
 };
 
-/// Constant 'CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR'.
+/// Constant 'FAILURE_REASON_SIM_ERROR'.
 /**
   * SIM is available, but not usable for connection
  */
 enum
 {
-  px4_msgs__msg__CellularStatus__CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR = 3
+  px4_msgs__msg__CellularStatus__FAILURE_REASON_SIM_ERROR = 3
+};
+
+/// Constant 'CELLULAR_NETWORK_RADIO_TYPE_NONE'.
+/**
+  * None
+ */
+enum
+{
+  px4_msgs__msg__CellularStatus__CELLULAR_NETWORK_RADIO_TYPE_NONE = 0
+};
+
+/// Constant 'CELLULAR_NETWORK_RADIO_TYPE_GSM'.
+/**
+  * GSM
+ */
+enum
+{
+  px4_msgs__msg__CellularStatus__CELLULAR_NETWORK_RADIO_TYPE_GSM = 1
+};
+
+/// Constant 'CELLULAR_NETWORK_RADIO_TYPE_CDMA'.
+/**
+  * CDMA
+ */
+enum
+{
+  px4_msgs__msg__CellularStatus__CELLULAR_NETWORK_RADIO_TYPE_CDMA = 2
+};
+
+/// Constant 'CELLULAR_NETWORK_RADIO_TYPE_WCDMA'.
+/**
+  * WCDMA
+ */
+enum
+{
+  px4_msgs__msg__CellularStatus__CELLULAR_NETWORK_RADIO_TYPE_WCDMA = 3
+};
+
+/// Constant 'CELLULAR_NETWORK_RADIO_TYPE_LTE'.
+/**
+  * LTE
+ */
+enum
+{
+  px4_msgs__msg__CellularStatus__CELLULAR_NETWORK_RADIO_TYPE_LTE = 4
 };
 
 /// Struct defined in msg/CellularStatus in the package px4_msgs.
+/**
+  * Cellular status
+  *
+  * This is currently used only for logging cell status from MAVLink.
+ */
 typedef struct px4_msgs__msg__CellularStatus
 {
-  /// time since system start (microseconds)
+  /// Time since system start
   uint64_t timestamp;
-  /// Status bitmap 1: Roaming is active
+  /// Status bitmap
   uint16_t status;
-  /// Failure reason when status in in CELLUAR_STATUS_FAILED
+  /// Failure reason
   uint8_t failure_reason;
-  /// Cellular network radio type 0: none 1: gsm 2: cdma 3: wcdma 4: lte
+  /// Cellular network radio type
   uint8_t type;
-  /// Cellular network RSSI/RSRP in dBm, absolute value
+  /// Cellular network RSSI/RSRP, absolute value
   uint8_t quality;
-  /// Mobile country code. If unknown, set to: UINT16_MAX
+  /// Mobile country code
   uint16_t mcc;
-  /// Mobile network code. If unknown, set to: UINT16_MAX
+  /// Mobile network code
   uint16_t mnc;
-  /// Location area code. If unknown, set to: 0
+  /// Location area code
   uint16_t lac;
 } px4_msgs__msg__CellularStatus;
 

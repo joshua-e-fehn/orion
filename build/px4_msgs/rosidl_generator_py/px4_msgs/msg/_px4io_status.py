@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/Px4ioStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -87,7 +94,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
         '_arming_failsafe_custom',
         '_arming_fmu_armed',
         '_arming_fmu_prearmed',
-        '_arming_force_failsafe',
+        '_arming_termination',
         '_arming_io_arm_ok',
         '_arming_lockdown',
         '_arming_termination_failsafe',
@@ -96,6 +103,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
         '_pwm_failsafe',
         '_pwm_rate_hz',
         '_raw_inputs',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -122,7 +130,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
         'arming_failsafe_custom': 'boolean',
         'arming_fmu_armed': 'boolean',
         'arming_fmu_prearmed': 'boolean',
-        'arming_force_failsafe': 'boolean',
+        'arming_termination': 'boolean',
         'arming_io_arm_ok': 'boolean',
         'arming_lockdown': 'boolean',
         'arming_termination_failsafe': 'boolean',
@@ -133,6 +141,8 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
         'raw_inputs': 'uint16[18]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
@@ -169,9 +179,14 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.free_memory_bytes = kwargs.get('free_memory_bytes', int())
         self.voltage_v = kwargs.get('voltage_v', float())
@@ -195,42 +210,37 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
         self.arming_failsafe_custom = kwargs.get('arming_failsafe_custom', bool())
         self.arming_fmu_armed = kwargs.get('arming_fmu_armed', bool())
         self.arming_fmu_prearmed = kwargs.get('arming_fmu_prearmed', bool())
-        self.arming_force_failsafe = kwargs.get('arming_force_failsafe', bool())
+        self.arming_termination = kwargs.get('arming_termination', bool())
         self.arming_io_arm_ok = kwargs.get('arming_io_arm_ok', bool())
         self.arming_lockdown = kwargs.get('arming_lockdown', bool())
         self.arming_termination_failsafe = kwargs.get('arming_termination_failsafe', bool())
         if 'pwm' not in kwargs:
             self.pwm = numpy.zeros(8, dtype=numpy.uint16)
         else:
-            self.pwm = numpy.array(kwargs.get('pwm'), dtype=numpy.uint16)
-            assert self.pwm.shape == (8, )
+            self.pwm = kwargs.get('pwm')
         if 'pwm_disarmed' not in kwargs:
             self.pwm_disarmed = numpy.zeros(8, dtype=numpy.uint16)
         else:
-            self.pwm_disarmed = numpy.array(kwargs.get('pwm_disarmed'), dtype=numpy.uint16)
-            assert self.pwm_disarmed.shape == (8, )
+            self.pwm_disarmed = kwargs.get('pwm_disarmed')
         if 'pwm_failsafe' not in kwargs:
             self.pwm_failsafe = numpy.zeros(8, dtype=numpy.uint16)
         else:
-            self.pwm_failsafe = numpy.array(kwargs.get('pwm_failsafe'), dtype=numpy.uint16)
-            assert self.pwm_failsafe.shape == (8, )
+            self.pwm_failsafe = kwargs.get('pwm_failsafe')
         if 'pwm_rate_hz' not in kwargs:
             self.pwm_rate_hz = numpy.zeros(8, dtype=numpy.uint16)
         else:
-            self.pwm_rate_hz = numpy.array(kwargs.get('pwm_rate_hz'), dtype=numpy.uint16)
-            assert self.pwm_rate_hz.shape == (8, )
+            self.pwm_rate_hz = kwargs.get('pwm_rate_hz')
         if 'raw_inputs' not in kwargs:
             self.raw_inputs = numpy.zeros(18, dtype=numpy.uint16)
         else:
-            self.raw_inputs = numpy.array(kwargs.get('raw_inputs'), dtype=numpy.uint16)
-            assert self.raw_inputs.shape == (18, )
+            self.raw_inputs = kwargs.get('raw_inputs')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -244,11 +254,12 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -300,7 +311,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
             return False
         if self.arming_fmu_prearmed != other.arming_fmu_prearmed:
             return False
-        if self.arming_force_failsafe != other.arming_force_failsafe:
+        if self.arming_termination != other.arming_termination:
             return False
         if self.arming_io_arm_ok != other.arming_io_arm_ok:
             return False
@@ -332,7 +343,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -347,7 +358,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @free_memory_bytes.setter
     def free_memory_bytes(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'free_memory_bytes' field must be of type 'int'"
@@ -362,7 +373,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @voltage_v.setter
     def voltage_v(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'voltage_v' field must be of type 'float'"
@@ -377,7 +388,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @rssi_v.setter
     def rssi_v(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'rssi_v' field must be of type 'float'"
@@ -392,7 +403,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_arm_sync.setter
     def status_arm_sync(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_arm_sync' field must be of type 'bool'"
@@ -405,7 +416,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_failsafe.setter
     def status_failsafe(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_failsafe' field must be of type 'bool'"
@@ -418,7 +429,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_fmu_initialized.setter
     def status_fmu_initialized(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_fmu_initialized' field must be of type 'bool'"
@@ -431,7 +442,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_fmu_ok.setter
     def status_fmu_ok(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_fmu_ok' field must be of type 'bool'"
@@ -444,7 +455,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_init_ok.setter
     def status_init_ok(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_init_ok' field must be of type 'bool'"
@@ -457,7 +468,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_outputs_armed.setter
     def status_outputs_armed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_outputs_armed' field must be of type 'bool'"
@@ -470,7 +481,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_raw_pwm.setter
     def status_raw_pwm(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_raw_pwm' field must be of type 'bool'"
@@ -483,7 +494,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_rc_ok.setter
     def status_rc_ok(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_rc_ok' field must be of type 'bool'"
@@ -496,7 +507,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_rc_dsm.setter
     def status_rc_dsm(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_rc_dsm' field must be of type 'bool'"
@@ -509,7 +520,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_rc_ppm.setter
     def status_rc_ppm(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_rc_ppm' field must be of type 'bool'"
@@ -522,7 +533,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_rc_sbus.setter
     def status_rc_sbus(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_rc_sbus' field must be of type 'bool'"
@@ -535,7 +546,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_rc_st24.setter
     def status_rc_st24(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_rc_st24' field must be of type 'bool'"
@@ -548,7 +559,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_rc_sumd.setter
     def status_rc_sumd(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_rc_sumd' field must be of type 'bool'"
@@ -561,7 +572,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @status_safety_button_event.setter
     def status_safety_button_event(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'status_safety_button_event' field must be of type 'bool'"
@@ -574,7 +585,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @alarm_pwm_error.setter
     def alarm_pwm_error(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'alarm_pwm_error' field must be of type 'bool'"
@@ -587,7 +598,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @alarm_rc_lost.setter
     def alarm_rc_lost(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'alarm_rc_lost' field must be of type 'bool'"
@@ -600,7 +611,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @arming_failsafe_custom.setter
     def arming_failsafe_custom(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'arming_failsafe_custom' field must be of type 'bool'"
@@ -613,7 +624,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @arming_fmu_armed.setter
     def arming_fmu_armed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'arming_fmu_armed' field must be of type 'bool'"
@@ -626,24 +637,24 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @arming_fmu_prearmed.setter
     def arming_fmu_prearmed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'arming_fmu_prearmed' field must be of type 'bool'"
         self._arming_fmu_prearmed = value
 
     @builtins.property
-    def arming_force_failsafe(self):
-        """Message field 'arming_force_failsafe'."""
-        return self._arming_force_failsafe
+    def arming_termination(self):
+        """Message field 'arming_termination'."""
+        return self._arming_termination
 
-    @arming_force_failsafe.setter
-    def arming_force_failsafe(self, value):
-        if __debug__:
+    @arming_termination.setter
+    def arming_termination(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
-                "The 'arming_force_failsafe' field must be of type 'bool'"
-        self._arming_force_failsafe = value
+                "The 'arming_termination' field must be of type 'bool'"
+        self._arming_termination = value
 
     @builtins.property
     def arming_io_arm_ok(self):
@@ -652,7 +663,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @arming_io_arm_ok.setter
     def arming_io_arm_ok(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'arming_io_arm_ok' field must be of type 'bool'"
@@ -665,7 +676,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @arming_lockdown.setter
     def arming_lockdown(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'arming_lockdown' field must be of type 'bool'"
@@ -678,7 +689,7 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @arming_termination_failsafe.setter
     def arming_termination_failsafe(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'arming_termination_failsafe' field must be of type 'bool'"
@@ -691,14 +702,14 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @pwm.setter
     def pwm(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint16, \
-                "The 'pwm' numpy.ndarray() must have the dtype of 'numpy.uint16'"
-            assert value.size == 8, \
-                "The 'pwm' numpy.ndarray() must have a size of 8"
-            self._pwm = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint16, \
+                    "The 'pwm' numpy.ndarray() must have the dtype of 'numpy.uint16'"
+                assert value.size == 8, \
+                    "The 'pwm' numpy.ndarray() must have a size of 8"
+                self._pwm = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -722,14 +733,14 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @pwm_disarmed.setter
     def pwm_disarmed(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint16, \
-                "The 'pwm_disarmed' numpy.ndarray() must have the dtype of 'numpy.uint16'"
-            assert value.size == 8, \
-                "The 'pwm_disarmed' numpy.ndarray() must have a size of 8"
-            self._pwm_disarmed = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint16, \
+                    "The 'pwm_disarmed' numpy.ndarray() must have the dtype of 'numpy.uint16'"
+                assert value.size == 8, \
+                    "The 'pwm_disarmed' numpy.ndarray() must have a size of 8"
+                self._pwm_disarmed = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -753,14 +764,14 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @pwm_failsafe.setter
     def pwm_failsafe(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint16, \
-                "The 'pwm_failsafe' numpy.ndarray() must have the dtype of 'numpy.uint16'"
-            assert value.size == 8, \
-                "The 'pwm_failsafe' numpy.ndarray() must have a size of 8"
-            self._pwm_failsafe = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint16, \
+                    "The 'pwm_failsafe' numpy.ndarray() must have the dtype of 'numpy.uint16'"
+                assert value.size == 8, \
+                    "The 'pwm_failsafe' numpy.ndarray() must have a size of 8"
+                self._pwm_failsafe = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -784,14 +795,14 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @pwm_rate_hz.setter
     def pwm_rate_hz(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint16, \
-                "The 'pwm_rate_hz' numpy.ndarray() must have the dtype of 'numpy.uint16'"
-            assert value.size == 8, \
-                "The 'pwm_rate_hz' numpy.ndarray() must have a size of 8"
-            self._pwm_rate_hz = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint16, \
+                    "The 'pwm_rate_hz' numpy.ndarray() must have the dtype of 'numpy.uint16'"
+                assert value.size == 8, \
+                    "The 'pwm_rate_hz' numpy.ndarray() must have a size of 8"
+                self._pwm_rate_hz = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -815,14 +826,14 @@ class Px4ioStatus(metaclass=Metaclass_Px4ioStatus):
 
     @raw_inputs.setter
     def raw_inputs(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint16, \
-                "The 'raw_inputs' numpy.ndarray() must have the dtype of 'numpy.uint16'"
-            assert value.size == 18, \
-                "The 'raw_inputs' numpy.ndarray() must have a size of 18"
-            self._raw_inputs = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint16, \
+                    "The 'raw_inputs' numpy.ndarray() must have the dtype of 'numpy.uint16'"
+                assert value.size == 18, \
+                    "The 'raw_inputs' numpy.ndarray() must have a size of 18"
+                self._raw_inputs = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ActuatorArmed.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/actuator_armed.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ACTUATOR_ARMED__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__ACTUATOR_ARMED__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -31,9 +33,9 @@ typedef struct px4_msgs__msg__ActuatorArmed
   /// Set to true if actuators are forced to being disabled (due to emergency or HIL)
   bool lockdown;
   /// Set to true if manual throttle kill switch is engaged
-  bool manual_lockdown;
-  /// Set to true if the actuators are forced to the failsafe position
-  bool force_failsafe;
+  bool kill;
+  /// Send out failsafe (by default same as disarmed) output
+  bool termination;
   /// IO/FMU should ignore messages from the actuator controls topics
   bool in_esc_calibration_mode;
 } px4_msgs__msg__ActuatorArmed;

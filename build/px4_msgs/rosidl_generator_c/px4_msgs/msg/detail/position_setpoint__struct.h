@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/PositionSetpoint.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/position_setpoint.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__POSITION_SETPOINT__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__POSITION_SETPOINT__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -71,6 +73,24 @@ enum
   px4_msgs__msg__PositionSetpoint__SETPOINT_TYPE_IDLE = 5
 };
 
+/// Constant 'LOITER_TYPE_ORBIT'.
+/**
+  * Circular pattern
+ */
+enum
+{
+  px4_msgs__msg__PositionSetpoint__LOITER_TYPE_ORBIT = 0
+};
+
+/// Constant 'LOITER_TYPE_FIGUREEIGHT'.
+/**
+  * Pattern resembling an 8
+ */
+enum
+{
+  px4_msgs__msg__PositionSetpoint__LOITER_TYPE_FIGUREEIGHT = 1
+};
+
 /// Struct defined in msg/PositionSetpoint in the package px4_msgs.
 /**
   * this file is only used in the position_setpoint triple as a dependency
@@ -95,28 +115,28 @@ typedef struct px4_msgs__msg__PositionSetpoint
   double lon;
   /// altitude AMSL, in m
   float alt;
-  /// yaw (only for multirotors), in rad [-PI..PI), NaN = hold current yaw
+  /// yaw (only in hover), in rad [-PI..PI), NaN = leave to flight task
   float yaw;
-  /// true if yaw setpoint valid
-  bool yaw_valid;
-  /// yawspeed (only for multirotors, in rad/s)
-  float yawspeed;
-  /// true if yawspeed setpoint valid
-  bool yawspeed_valid;
-  /// loiter radius (only for fixed wing), in m
+  /// [@range 0, INF] loiter major axis radius
   float loiter_radius;
+  /// [@range 0, INF] loiter minor axis radius (used for non-circular loiter shapes)
+  float loiter_minor_radius;
   /// loiter direction is clockwise by default and can be changed using this field
   bool loiter_direction_counter_clockwise;
-  /// navigation acceptance_radius if we're doing waypoint navigation
+  /// [@range -pi, pi] orientation of the major axis with respect to true north
+  float loiter_orientation;
+  /// loitern pattern to follow
+  uint8_t loiter_pattern;
+  /// horizontal acceptance_radius (meters)
   float acceptance_radius;
+  /// vertical acceptance radius, only used for fixed wing guidance, NAN = let guidance choose (meters)
+  float alt_acceptance_radius;
   /// the generally desired cruising speed (not a hard constraint)
   float cruising_speed;
   /// commands the vehicle to glide if the capability is available (fixed wing only)
   bool gliding_enabled;
   /// the generally desired cruising throttle (not a hard constraint), only has an effect for rover
   float cruising_throttle;
-  /// VTOL: disable (in auto mode) the weather vane feature that turns the nose into the wind
-  bool disable_weather_vane;
 } px4_msgs__msg__PositionSetpoint;
 
 // Struct for a sequence of px4_msgs__msg__PositionSetpoint.

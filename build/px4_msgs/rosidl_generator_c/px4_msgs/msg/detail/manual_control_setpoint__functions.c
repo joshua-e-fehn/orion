@@ -33,6 +33,7 @@ px4_msgs__msg__ManualControlSetpoint__init(px4_msgs__msg__ManualControlSetpoint 
   // aux5
   // aux6
   // sticks_moving
+  // buttons
   return true;
 }
 
@@ -58,6 +59,7 @@ px4_msgs__msg__ManualControlSetpoint__fini(px4_msgs__msg__ManualControlSetpoint 
   // aux5
   // aux6
   // sticks_moving
+  // buttons
 }
 
 bool
@@ -130,6 +132,10 @@ px4_msgs__msg__ManualControlSetpoint__are_equal(const px4_msgs__msg__ManualContr
   if (lhs->sticks_moving != rhs->sticks_moving) {
     return false;
   }
+  // buttons
+  if (lhs->buttons != rhs->buttons) {
+    return false;
+  }
   return true;
 }
 
@@ -173,11 +179,13 @@ px4_msgs__msg__ManualControlSetpoint__copy(
   output->aux6 = input->aux6;
   // sticks_moving
   output->sticks_moving = input->sticks_moving;
+  // buttons
+  output->buttons = input->buttons;
   return true;
 }
 
 px4_msgs__msg__ManualControlSetpoint *
-px4_msgs__msg__ManualControlSetpoint__create()
+px4_msgs__msg__ManualControlSetpoint__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__ManualControlSetpoint * msg = (px4_msgs__msg__ManualControlSetpoint *)allocator.allocate(sizeof(px4_msgs__msg__ManualControlSetpoint), allocator.state);

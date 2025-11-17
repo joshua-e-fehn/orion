@@ -18,7 +18,7 @@ px4_msgs__msg__IridiumsbdStatus__init(px4_msgs__msg__IridiumsbdStatus * msg)
     return false;
   }
   // timestamp
-  // last_heartbeat
+  // last_at_ok_timestamp
   // tx_buf_write_index
   // rx_buf_read_index
   // rx_buf_end_index
@@ -42,7 +42,7 @@ px4_msgs__msg__IridiumsbdStatus__fini(px4_msgs__msg__IridiumsbdStatus * msg)
     return;
   }
   // timestamp
-  // last_heartbeat
+  // last_at_ok_timestamp
   // tx_buf_write_index
   // rx_buf_read_index
   // rx_buf_end_index
@@ -68,8 +68,8 @@ px4_msgs__msg__IridiumsbdStatus__are_equal(const px4_msgs__msg__IridiumsbdStatus
   if (lhs->timestamp != rhs->timestamp) {
     return false;
   }
-  // last_heartbeat
-  if (lhs->last_heartbeat != rhs->last_heartbeat) {
+  // last_at_ok_timestamp
+  if (lhs->last_at_ok_timestamp != rhs->last_at_ok_timestamp) {
     return false;
   }
   // tx_buf_write_index
@@ -137,8 +137,8 @@ px4_msgs__msg__IridiumsbdStatus__copy(
   }
   // timestamp
   output->timestamp = input->timestamp;
-  // last_heartbeat
-  output->last_heartbeat = input->last_heartbeat;
+  // last_at_ok_timestamp
+  output->last_at_ok_timestamp = input->last_at_ok_timestamp;
   // tx_buf_write_index
   output->tx_buf_write_index = input->tx_buf_write_index;
   // rx_buf_read_index
@@ -169,7 +169,7 @@ px4_msgs__msg__IridiumsbdStatus__copy(
 }
 
 px4_msgs__msg__IridiumsbdStatus *
-px4_msgs__msg__IridiumsbdStatus__create()
+px4_msgs__msg__IridiumsbdStatus__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__IridiumsbdStatus * msg = (px4_msgs__msg__IridiumsbdStatus *)allocator.allocate(sizeof(px4_msgs__msg__IridiumsbdStatus), allocator.state);

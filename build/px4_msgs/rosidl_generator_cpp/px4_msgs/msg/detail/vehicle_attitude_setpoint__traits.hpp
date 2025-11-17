@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VehicleAttitudeSetpoint.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_attitude_setpoint.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_ATTITUDE_SETPOINT__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_ATTITUDE_SETPOINT__TRAITS_HPP_
 
@@ -29,27 +32,6 @@ inline void to_flow_style_yaml(
   {
     out << "timestamp: ";
     rosidl_generator_traits::value_to_yaml(msg.timestamp, out);
-    out << ", ";
-  }
-
-  // member: roll_body
-  {
-    out << "roll_body: ";
-    rosidl_generator_traits::value_to_yaml(msg.roll_body, out);
-    out << ", ";
-  }
-
-  // member: pitch_body
-  {
-    out << "pitch_body: ";
-    rosidl_generator_traits::value_to_yaml(msg.pitch_body, out);
-    out << ", ";
-  }
-
-  // member: yaw_body
-  {
-    out << "yaw_body: ";
-    rosidl_generator_traits::value_to_yaml(msg.yaw_body, out);
     out << ", ";
   }
 
@@ -93,20 +75,6 @@ inline void to_flow_style_yaml(
       }
       out << "]";
     }
-    out << ", ";
-  }
-
-  // member: reset_integral
-  {
-    out << "reset_integral: ";
-    rosidl_generator_traits::value_to_yaml(msg.reset_integral, out);
-    out << ", ";
-  }
-
-  // member: fw_control_yaw_wheel
-  {
-    out << "fw_control_yaw_wheel: ";
-    rosidl_generator_traits::value_to_yaml(msg.fw_control_yaw_wheel, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -122,36 +90,6 @@ inline void to_block_style_yaml(
     }
     out << "timestamp: ";
     rosidl_generator_traits::value_to_yaml(msg.timestamp, out);
-    out << "\n";
-  }
-
-  // member: roll_body
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "roll_body: ";
-    rosidl_generator_traits::value_to_yaml(msg.roll_body, out);
-    out << "\n";
-  }
-
-  // member: pitch_body
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "pitch_body: ";
-    rosidl_generator_traits::value_to_yaml(msg.pitch_body, out);
-    out << "\n";
-  }
-
-  // member: yaw_body
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "yaw_body: ";
-    rosidl_generator_traits::value_to_yaml(msg.yaw_body, out);
     out << "\n";
   }
 
@@ -203,26 +141,6 @@ inline void to_block_style_yaml(
         out << "\n";
       }
     }
-  }
-
-  // member: reset_integral
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "reset_integral: ";
-    rosidl_generator_traits::value_to_yaml(msg.reset_integral, out);
-    out << "\n";
-  }
-
-  // member: fw_control_yaw_wheel
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "fw_control_yaw_wheel: ";
-    rosidl_generator_traits::value_to_yaml(msg.fw_control_yaw_wheel, out);
-    out << "\n";
   }
 }  // NOLINT(readability/fn_size)
 

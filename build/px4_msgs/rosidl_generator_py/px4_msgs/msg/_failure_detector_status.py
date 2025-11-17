@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/FailureDetectorStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -68,6 +75,8 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
         '_fd_motor',
         '_imbalanced_prop_metric',
         '_motor_failure_mask',
+        '_motor_stop_mask',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -82,8 +91,11 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
         'fd_motor': 'boolean',
         'imbalanced_prop_metric': 'float',
         'motor_failure_mask': 'uint16',
+        'motor_stop_mask': 'uint16',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -96,12 +108,18 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.fd_roll = kwargs.get('fd_roll', bool())
         self.fd_pitch = kwargs.get('fd_pitch', bool())
@@ -113,13 +131,14 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
         self.fd_motor = kwargs.get('fd_motor', bool())
         self.imbalanced_prop_metric = kwargs.get('imbalanced_prop_metric', float())
         self.motor_failure_mask = kwargs.get('motor_failure_mask', int())
+        self.motor_stop_mask = kwargs.get('motor_stop_mask', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -133,11 +152,12 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -165,6 +185,8 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
             return False
         if self.motor_failure_mask != other.motor_failure_mask:
             return False
+        if self.motor_stop_mask != other.motor_stop_mask:
+            return False
         return True
 
     @classmethod
@@ -179,7 +201,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -194,7 +216,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @fd_roll.setter
     def fd_roll(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'fd_roll' field must be of type 'bool'"
@@ -207,7 +229,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @fd_pitch.setter
     def fd_pitch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'fd_pitch' field must be of type 'bool'"
@@ -220,7 +242,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @fd_alt.setter
     def fd_alt(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'fd_alt' field must be of type 'bool'"
@@ -233,7 +255,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @fd_ext.setter
     def fd_ext(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'fd_ext' field must be of type 'bool'"
@@ -246,7 +268,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @fd_arm_escs.setter
     def fd_arm_escs(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'fd_arm_escs' field must be of type 'bool'"
@@ -259,7 +281,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @fd_battery.setter
     def fd_battery(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'fd_battery' field must be of type 'bool'"
@@ -272,7 +294,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @fd_imbalanced_prop.setter
     def fd_imbalanced_prop(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'fd_imbalanced_prop' field must be of type 'bool'"
@@ -285,7 +307,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @fd_motor.setter
     def fd_motor(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'fd_motor' field must be of type 'bool'"
@@ -298,7 +320,7 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @imbalanced_prop_metric.setter
     def imbalanced_prop_metric(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'imbalanced_prop_metric' field must be of type 'float'"
@@ -313,10 +335,25 @@ class FailureDetectorStatus(metaclass=Metaclass_FailureDetectorStatus):
 
     @motor_failure_mask.setter
     def motor_failure_mask(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'motor_failure_mask' field must be of type 'int'"
             assert value >= 0 and value < 65536, \
                 "The 'motor_failure_mask' field must be an unsigned integer in [0, 65535]"
         self._motor_failure_mask = value
+
+    @builtins.property
+    def motor_stop_mask(self):
+        """Message field 'motor_stop_mask'."""
+        return self._motor_stop_mask
+
+    @motor_stop_mask.setter
+    def motor_stop_mask(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'motor_stop_mask' field must be of type 'int'"
+            assert value >= 0 and value < 65536, \
+                "The 'motor_stop_mask' field must be an unsigned integer in [0, 65535]"
+        self._motor_stop_mask = value

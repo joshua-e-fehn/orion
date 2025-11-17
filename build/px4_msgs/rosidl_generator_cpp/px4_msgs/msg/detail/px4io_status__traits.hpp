@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Px4ioStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/px4io_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__PX4IO_STATUS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__PX4IO_STATUS__TRAITS_HPP_
 
@@ -186,10 +189,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: arming_force_failsafe
+  // member: arming_termination
   {
-    out << "arming_force_failsafe: ";
-    rosidl_generator_traits::value_to_yaml(msg.arming_force_failsafe, out);
+    out << "arming_termination: ";
+    rosidl_generator_traits::value_to_yaml(msg.arming_termination, out);
     out << ", ";
   }
 
@@ -539,13 +542,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: arming_force_failsafe
+  // member: arming_termination
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "arming_force_failsafe: ";
-    rosidl_generator_traits::value_to_yaml(msg.arming_force_failsafe, out);
+    out << "arming_termination: ";
+    rosidl_generator_traits::value_to_yaml(msg.arming_termination, out);
     out << "\n";
   }
 

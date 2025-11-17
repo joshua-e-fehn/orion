@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/LoggerStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/logger_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__LOGGER_STATUS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__LOGGER_STATUS__TRAITS_HPP_
 
@@ -43,6 +46,13 @@ inline void to_flow_style_yaml(
   {
     out << "backend: ";
     rosidl_generator_traits::value_to_yaml(msg.backend, out);
+    out << ", ";
+  }
+
+  // member: is_logging
+  {
+    out << "is_logging: ";
+    rosidl_generator_traits::value_to_yaml(msg.is_logging, out);
     out << ", ";
   }
 
@@ -127,6 +137,16 @@ inline void to_block_style_yaml(
     }
     out << "backend: ";
     rosidl_generator_traits::value_to_yaml(msg.backend, out);
+    out << "\n";
+  }
+
+  // member: is_logging
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "is_logging: ";
+    rosidl_generator_traits::value_to_yaml(msg.is_logging, out);
     out << "\n";
   }
 

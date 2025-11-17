@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/HeaterStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -89,6 +96,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
         '_integrator_value',
         '_feed_forward_value',
         '_mode',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -106,6 +114,8 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
         'mode': 'uint8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
@@ -122,9 +132,14 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.device_id = kwargs.get('device_id', int())
         self.heater_on = kwargs.get('heater_on', bool())
@@ -143,7 +158,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -157,11 +172,12 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -205,7 +221,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -220,7 +236,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @device_id.setter
     def device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'device_id' field must be of type 'int'"
@@ -235,7 +251,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @heater_on.setter
     def heater_on(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'heater_on' field must be of type 'bool'"
@@ -248,7 +264,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @temperature_target_met.setter
     def temperature_target_met(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'temperature_target_met' field must be of type 'bool'"
@@ -261,7 +277,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @temperature_sensor.setter
     def temperature_sensor(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'temperature_sensor' field must be of type 'float'"
@@ -276,7 +292,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @temperature_target.setter
     def temperature_target(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'temperature_target' field must be of type 'float'"
@@ -291,7 +307,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @controller_period_usec.setter
     def controller_period_usec(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'controller_period_usec' field must be of type 'int'"
@@ -306,7 +322,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @controller_time_on_usec.setter
     def controller_time_on_usec(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'controller_time_on_usec' field must be of type 'int'"
@@ -321,7 +337,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @proportional_value.setter
     def proportional_value(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'proportional_value' field must be of type 'float'"
@@ -336,7 +352,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @integrator_value.setter
     def integrator_value(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'integrator_value' field must be of type 'float'"
@@ -351,7 +367,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @feed_forward_value.setter
     def feed_forward_value(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'feed_forward_value' field must be of type 'float'"
@@ -366,7 +382,7 @@ class HeaterStatus(metaclass=Metaclass_HeaterStatus):
 
     @mode.setter
     def mode(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'mode' field must be of type 'int'"

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VehicleRatesSetpoint.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_rates_setpoint.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_RATES_SETPOINT__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_RATES_SETPOINT__STRUCT_H_
 
@@ -14,15 +17,20 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
+
+/// Constant 'MESSAGE_VERSION'.
+enum
+{
+  px4_msgs__msg__VehicleRatesSetpoint__MESSAGE_VERSION = 0ul
+};
 
 /// Struct defined in msg/VehicleRatesSetpoint in the package px4_msgs.
 typedef struct px4_msgs__msg__VehicleRatesSetpoint
 {
   /// time since system start (microseconds)
   uint64_t timestamp;
-  /// body angular rates in NED frame
+  /// body angular rates in FRD frame
   /// [rad/s] roll rate setpoint
   float roll;
   /// pitch rate setpoint

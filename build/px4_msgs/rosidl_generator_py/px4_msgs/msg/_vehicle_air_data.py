@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/VehicleAirData.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -61,10 +68,12 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         '_timestamp_sample',
         '_baro_device_id',
         '_baro_alt_meter',
-        '_baro_temp_celcius',
         '_baro_pressure_pa',
+        '_ambient_temperature',
+        '_temperature_source',
         '_rho',
         '_calibration_count',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -72,12 +81,15 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         'timestamp_sample': 'uint64',
         'baro_device_id': 'uint32',
         'baro_alt_meter': 'float',
-        'baro_temp_celcius': 'float',
         'baro_pressure_pa': 'float',
+        'ambient_temperature': 'float',
+        'temperature_source': 'uint8',
         'rho': 'float',
         'calibration_count': 'uint8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -85,20 +97,27 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.baro_device_id = kwargs.get('baro_device_id', int())
         self.baro_alt_meter = kwargs.get('baro_alt_meter', float())
-        self.baro_temp_celcius = kwargs.get('baro_temp_celcius', float())
         self.baro_pressure_pa = kwargs.get('baro_pressure_pa', float())
+        self.ambient_temperature = kwargs.get('ambient_temperature', float())
+        self.temperature_source = kwargs.get('temperature_source', int())
         self.rho = kwargs.get('rho', float())
         self.calibration_count = kwargs.get('calibration_count', int())
 
@@ -107,7 +126,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -121,11 +140,12 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -139,9 +159,11 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
             return False
         if self.baro_alt_meter != other.baro_alt_meter:
             return False
-        if self.baro_temp_celcius != other.baro_temp_celcius:
-            return False
         if self.baro_pressure_pa != other.baro_pressure_pa:
+            return False
+        if self.ambient_temperature != other.ambient_temperature:
+            return False
+        if self.temperature_source != other.temperature_source:
             return False
         if self.rho != other.rho:
             return False
@@ -161,7 +183,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -176,7 +198,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -191,7 +213,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
 
     @baro_device_id.setter
     def baro_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'baro_device_id' field must be of type 'int'"
@@ -206,7 +228,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
 
     @baro_alt_meter.setter
     def baro_alt_meter(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'baro_alt_meter' field must be of type 'float'"
@@ -215,28 +237,13 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         self._baro_alt_meter = value
 
     @builtins.property
-    def baro_temp_celcius(self):
-        """Message field 'baro_temp_celcius'."""
-        return self._baro_temp_celcius
-
-    @baro_temp_celcius.setter
-    def baro_temp_celcius(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'baro_temp_celcius' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'baro_temp_celcius' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._baro_temp_celcius = value
-
-    @builtins.property
     def baro_pressure_pa(self):
         """Message field 'baro_pressure_pa'."""
         return self._baro_pressure_pa
 
     @baro_pressure_pa.setter
     def baro_pressure_pa(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'baro_pressure_pa' field must be of type 'float'"
@@ -245,13 +252,43 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         self._baro_pressure_pa = value
 
     @builtins.property
+    def ambient_temperature(self):
+        """Message field 'ambient_temperature'."""
+        return self._ambient_temperature
+
+    @ambient_temperature.setter
+    def ambient_temperature(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'ambient_temperature' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'ambient_temperature' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._ambient_temperature = value
+
+    @builtins.property
+    def temperature_source(self):
+        """Message field 'temperature_source'."""
+        return self._temperature_source
+
+    @temperature_source.setter
+    def temperature_source(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'temperature_source' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'temperature_source' field must be an unsigned integer in [0, 255]"
+        self._temperature_source = value
+
+    @builtins.property
     def rho(self):
         """Message field 'rho'."""
         return self._rho
 
     @rho.setter
     def rho(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'rho' field must be of type 'float'"
@@ -266,7 +303,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
 
     @calibration_count.setter
     def calibration_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'calibration_count' field must be of type 'int'"

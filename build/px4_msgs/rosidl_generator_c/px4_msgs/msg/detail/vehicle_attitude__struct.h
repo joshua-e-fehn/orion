@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VehicleAttitude.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_attitude.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_ATTITUDE__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_ATTITUDE__STRUCT_H_
 
@@ -14,12 +17,18 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
+
+/// Constant 'MESSAGE_VERSION'.
+enum
+{
+  px4_msgs__msg__VehicleAttitude__MESSAGE_VERSION = 0ul
+};
 
 /// Struct defined in msg/VehicleAttitude in the package px4_msgs.
 /**
   * This is similar to the mavlink message ATTITUDE_QUATERNION, but for onboard use
+  * The quaternion uses the Hamilton convention, and the order is q(w, x, y, z)
  */
 typedef struct px4_msgs__msg__VehicleAttitude
 {

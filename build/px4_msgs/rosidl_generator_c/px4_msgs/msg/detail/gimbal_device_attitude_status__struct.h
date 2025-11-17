@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/GimbalDeviceAttitudeStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/gimbal_device_attitude_status.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__GIMBAL_DEVICE_ATTITUDE_STATUS__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__GIMBAL_DEVICE_ATTITUDE_STATUS__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -60,6 +62,9 @@ typedef struct px4_msgs__msg__GimbalDeviceAttitudeStatus
   float angular_velocity_y;
   float angular_velocity_z;
   uint32_t failure_flags;
+  float delta_yaw;
+  float delta_yaw_velocity;
+  uint8_t gimbal_device_id;
   bool received_from_mavlink;
 } px4_msgs__msg__GimbalDeviceAttitudeStatus;
 

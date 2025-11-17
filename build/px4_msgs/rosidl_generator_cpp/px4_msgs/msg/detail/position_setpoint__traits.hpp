@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/PositionSetpoint.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/position_setpoint.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__POSITION_SETPOINT__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__POSITION_SETPOINT__TRAITS_HPP_
 
@@ -95,31 +98,17 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: yaw_valid
-  {
-    out << "yaw_valid: ";
-    rosidl_generator_traits::value_to_yaml(msg.yaw_valid, out);
-    out << ", ";
-  }
-
-  // member: yawspeed
-  {
-    out << "yawspeed: ";
-    rosidl_generator_traits::value_to_yaml(msg.yawspeed, out);
-    out << ", ";
-  }
-
-  // member: yawspeed_valid
-  {
-    out << "yawspeed_valid: ";
-    rosidl_generator_traits::value_to_yaml(msg.yawspeed_valid, out);
-    out << ", ";
-  }
-
   // member: loiter_radius
   {
     out << "loiter_radius: ";
     rosidl_generator_traits::value_to_yaml(msg.loiter_radius, out);
+    out << ", ";
+  }
+
+  // member: loiter_minor_radius
+  {
+    out << "loiter_minor_radius: ";
+    rosidl_generator_traits::value_to_yaml(msg.loiter_minor_radius, out);
     out << ", ";
   }
 
@@ -130,10 +119,31 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: loiter_orientation
+  {
+    out << "loiter_orientation: ";
+    rosidl_generator_traits::value_to_yaml(msg.loiter_orientation, out);
+    out << ", ";
+  }
+
+  // member: loiter_pattern
+  {
+    out << "loiter_pattern: ";
+    rosidl_generator_traits::value_to_yaml(msg.loiter_pattern, out);
+    out << ", ";
+  }
+
   // member: acceptance_radius
   {
     out << "acceptance_radius: ";
     rosidl_generator_traits::value_to_yaml(msg.acceptance_radius, out);
+    out << ", ";
+  }
+
+  // member: alt_acceptance_radius
+  {
+    out << "alt_acceptance_radius: ";
+    rosidl_generator_traits::value_to_yaml(msg.alt_acceptance_radius, out);
     out << ", ";
   }
 
@@ -155,13 +165,6 @@ inline void to_flow_style_yaml(
   {
     out << "cruising_throttle: ";
     rosidl_generator_traits::value_to_yaml(msg.cruising_throttle, out);
-    out << ", ";
-  }
-
-  // member: disable_weather_vane
-  {
-    out << "disable_weather_vane: ";
-    rosidl_generator_traits::value_to_yaml(msg.disable_weather_vane, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -270,36 +273,6 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: yaw_valid
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "yaw_valid: ";
-    rosidl_generator_traits::value_to_yaml(msg.yaw_valid, out);
-    out << "\n";
-  }
-
-  // member: yawspeed
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "yawspeed: ";
-    rosidl_generator_traits::value_to_yaml(msg.yawspeed, out);
-    out << "\n";
-  }
-
-  // member: yawspeed_valid
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "yawspeed_valid: ";
-    rosidl_generator_traits::value_to_yaml(msg.yawspeed_valid, out);
-    out << "\n";
-  }
-
   // member: loiter_radius
   {
     if (indentation > 0) {
@@ -307,6 +280,16 @@ inline void to_block_style_yaml(
     }
     out << "loiter_radius: ";
     rosidl_generator_traits::value_to_yaml(msg.loiter_radius, out);
+    out << "\n";
+  }
+
+  // member: loiter_minor_radius
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "loiter_minor_radius: ";
+    rosidl_generator_traits::value_to_yaml(msg.loiter_minor_radius, out);
     out << "\n";
   }
 
@@ -320,6 +303,26 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
+  // member: loiter_orientation
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "loiter_orientation: ";
+    rosidl_generator_traits::value_to_yaml(msg.loiter_orientation, out);
+    out << "\n";
+  }
+
+  // member: loiter_pattern
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "loiter_pattern: ";
+    rosidl_generator_traits::value_to_yaml(msg.loiter_pattern, out);
+    out << "\n";
+  }
+
   // member: acceptance_radius
   {
     if (indentation > 0) {
@@ -327,6 +330,16 @@ inline void to_block_style_yaml(
     }
     out << "acceptance_radius: ";
     rosidl_generator_traits::value_to_yaml(msg.acceptance_radius, out);
+    out << "\n";
+  }
+
+  // member: alt_acceptance_radius
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "alt_acceptance_radius: ";
+    rosidl_generator_traits::value_to_yaml(msg.alt_acceptance_radius, out);
     out << "\n";
   }
 
@@ -357,16 +370,6 @@ inline void to_block_style_yaml(
     }
     out << "cruising_throttle: ";
     rosidl_generator_traits::value_to_yaml(msg.cruising_throttle, out);
-    out << "\n";
-  }
-
-  // member: disable_weather_vane
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "disable_weather_vane: ";
-    rosidl_generator_traits::value_to_yaml(msg.disable_weather_vane, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

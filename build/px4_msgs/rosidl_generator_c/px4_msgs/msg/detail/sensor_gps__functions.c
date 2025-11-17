@@ -20,10 +20,10 @@ px4_msgs__msg__SensorGps__init(px4_msgs__msg__SensorGps * msg)
   // timestamp
   // timestamp_sample
   // device_id
-  // lat
-  // lon
-  // alt
-  // alt_ellipsoid
+  // latitude_deg
+  // longitude_deg
+  // altitude_msl_m
+  // altitude_ellipsoid_m
   // s_variance_m_s
   // c_variance_rad
   // fix_type
@@ -36,6 +36,7 @@ px4_msgs__msg__SensorGps__init(px4_msgs__msg__SensorGps * msg)
   // jamming_state
   // jamming_indicator
   // spoofing_state
+  // authentication_state
   // vel_m_s
   // vel_n_m_s
   // vel_e_m_s
@@ -45,11 +46,14 @@ px4_msgs__msg__SensorGps__init(px4_msgs__msg__SensorGps * msg)
   // timestamp_time_relative
   // time_utc_usec
   // satellites_used
+  // system_error
   // heading
   // heading_offset
   // heading_accuracy
   // rtcm_injection_rate
   // selected_rtcm_instance
+  // rtcm_crc_failed
+  // rtcm_msg_used
   return true;
 }
 
@@ -62,10 +66,10 @@ px4_msgs__msg__SensorGps__fini(px4_msgs__msg__SensorGps * msg)
   // timestamp
   // timestamp_sample
   // device_id
-  // lat
-  // lon
-  // alt
-  // alt_ellipsoid
+  // latitude_deg
+  // longitude_deg
+  // altitude_msl_m
+  // altitude_ellipsoid_m
   // s_variance_m_s
   // c_variance_rad
   // fix_type
@@ -78,6 +82,7 @@ px4_msgs__msg__SensorGps__fini(px4_msgs__msg__SensorGps * msg)
   // jamming_state
   // jamming_indicator
   // spoofing_state
+  // authentication_state
   // vel_m_s
   // vel_n_m_s
   // vel_e_m_s
@@ -87,11 +92,14 @@ px4_msgs__msg__SensorGps__fini(px4_msgs__msg__SensorGps * msg)
   // timestamp_time_relative
   // time_utc_usec
   // satellites_used
+  // system_error
   // heading
   // heading_offset
   // heading_accuracy
   // rtcm_injection_rate
   // selected_rtcm_instance
+  // rtcm_crc_failed
+  // rtcm_msg_used
 }
 
 bool
@@ -112,20 +120,20 @@ px4_msgs__msg__SensorGps__are_equal(const px4_msgs__msg__SensorGps * lhs, const 
   if (lhs->device_id != rhs->device_id) {
     return false;
   }
-  // lat
-  if (lhs->lat != rhs->lat) {
+  // latitude_deg
+  if (lhs->latitude_deg != rhs->latitude_deg) {
     return false;
   }
-  // lon
-  if (lhs->lon != rhs->lon) {
+  // longitude_deg
+  if (lhs->longitude_deg != rhs->longitude_deg) {
     return false;
   }
-  // alt
-  if (lhs->alt != rhs->alt) {
+  // altitude_msl_m
+  if (lhs->altitude_msl_m != rhs->altitude_msl_m) {
     return false;
   }
-  // alt_ellipsoid
-  if (lhs->alt_ellipsoid != rhs->alt_ellipsoid) {
+  // altitude_ellipsoid_m
+  if (lhs->altitude_ellipsoid_m != rhs->altitude_ellipsoid_m) {
     return false;
   }
   // s_variance_m_s
@@ -176,6 +184,10 @@ px4_msgs__msg__SensorGps__are_equal(const px4_msgs__msg__SensorGps * lhs, const 
   if (lhs->spoofing_state != rhs->spoofing_state) {
     return false;
   }
+  // authentication_state
+  if (lhs->authentication_state != rhs->authentication_state) {
+    return false;
+  }
   // vel_m_s
   if (lhs->vel_m_s != rhs->vel_m_s) {
     return false;
@@ -212,6 +224,10 @@ px4_msgs__msg__SensorGps__are_equal(const px4_msgs__msg__SensorGps * lhs, const 
   if (lhs->satellites_used != rhs->satellites_used) {
     return false;
   }
+  // system_error
+  if (lhs->system_error != rhs->system_error) {
+    return false;
+  }
   // heading
   if (lhs->heading != rhs->heading) {
     return false;
@@ -232,6 +248,14 @@ px4_msgs__msg__SensorGps__are_equal(const px4_msgs__msg__SensorGps * lhs, const 
   if (lhs->selected_rtcm_instance != rhs->selected_rtcm_instance) {
     return false;
   }
+  // rtcm_crc_failed
+  if (lhs->rtcm_crc_failed != rhs->rtcm_crc_failed) {
+    return false;
+  }
+  // rtcm_msg_used
+  if (lhs->rtcm_msg_used != rhs->rtcm_msg_used) {
+    return false;
+  }
   return true;
 }
 
@@ -249,14 +273,14 @@ px4_msgs__msg__SensorGps__copy(
   output->timestamp_sample = input->timestamp_sample;
   // device_id
   output->device_id = input->device_id;
-  // lat
-  output->lat = input->lat;
-  // lon
-  output->lon = input->lon;
-  // alt
-  output->alt = input->alt;
-  // alt_ellipsoid
-  output->alt_ellipsoid = input->alt_ellipsoid;
+  // latitude_deg
+  output->latitude_deg = input->latitude_deg;
+  // longitude_deg
+  output->longitude_deg = input->longitude_deg;
+  // altitude_msl_m
+  output->altitude_msl_m = input->altitude_msl_m;
+  // altitude_ellipsoid_m
+  output->altitude_ellipsoid_m = input->altitude_ellipsoid_m;
   // s_variance_m_s
   output->s_variance_m_s = input->s_variance_m_s;
   // c_variance_rad
@@ -281,6 +305,8 @@ px4_msgs__msg__SensorGps__copy(
   output->jamming_indicator = input->jamming_indicator;
   // spoofing_state
   output->spoofing_state = input->spoofing_state;
+  // authentication_state
+  output->authentication_state = input->authentication_state;
   // vel_m_s
   output->vel_m_s = input->vel_m_s;
   // vel_n_m_s
@@ -299,6 +325,8 @@ px4_msgs__msg__SensorGps__copy(
   output->time_utc_usec = input->time_utc_usec;
   // satellites_used
   output->satellites_used = input->satellites_used;
+  // system_error
+  output->system_error = input->system_error;
   // heading
   output->heading = input->heading;
   // heading_offset
@@ -309,11 +337,15 @@ px4_msgs__msg__SensorGps__copy(
   output->rtcm_injection_rate = input->rtcm_injection_rate;
   // selected_rtcm_instance
   output->selected_rtcm_instance = input->selected_rtcm_instance;
+  // rtcm_crc_failed
+  output->rtcm_crc_failed = input->rtcm_crc_failed;
+  // rtcm_msg_used
+  output->rtcm_msg_used = input->rtcm_msg_used;
   return true;
 }
 
 px4_msgs__msg__SensorGps *
-px4_msgs__msg__SensorGps__create()
+px4_msgs__msg__SensorGps__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__SensorGps * msg = (px4_msgs__msg__SensorGps *)allocator.allocate(sizeof(px4_msgs__msg__SensorGps), allocator.state);

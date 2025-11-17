@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VehicleLocalPosition.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_local_position.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_LOCAL_POSITION__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_LOCAL_POSITION__STRUCT_HPP_
 
@@ -63,17 +66,23 @@ struct VehicleLocalPosition_
       this->ay = 0.0f;
       this->az = 0.0f;
       this->heading = 0.0f;
+      this->heading_var = 0.0f;
+      this->unaided_heading = 0.0f;
       this->delta_heading = 0.0f;
       this->heading_reset_counter = 0;
       this->heading_good_for_control = false;
+      this->tilt_var = 0.0f;
       this->xy_global = false;
       this->z_global = false;
       this->ref_timestamp = 0ull;
       this->ref_lat = 0.0;
       this->ref_lon = 0.0;
       this->ref_alt = 0.0f;
-      this->dist_bottom = 0.0f;
       this->dist_bottom_valid = false;
+      this->dist_bottom = 0.0f;
+      this->dist_bottom_var = 0.0f;
+      this->delta_dist_bottom = 0.0f;
+      this->dist_bottom_reset_counter = 0;
       this->dist_bottom_sensor_bitfield = 0;
       this->eph = 0.0f;
       this->epv = 0.0f;
@@ -83,7 +92,8 @@ struct VehicleLocalPosition_
       this->vxy_max = 0.0f;
       this->vz_max = 0.0f;
       this->hagl_min = 0.0f;
-      this->hagl_max = 0.0f;
+      this->hagl_max_z = 0.0f;
+      this->hagl_max_xy = 0.0f;
     }
   }
 
@@ -119,17 +129,23 @@ struct VehicleLocalPosition_
       this->ay = 0.0f;
       this->az = 0.0f;
       this->heading = 0.0f;
+      this->heading_var = 0.0f;
+      this->unaided_heading = 0.0f;
       this->delta_heading = 0.0f;
       this->heading_reset_counter = 0;
       this->heading_good_for_control = false;
+      this->tilt_var = 0.0f;
       this->xy_global = false;
       this->z_global = false;
       this->ref_timestamp = 0ull;
       this->ref_lat = 0.0;
       this->ref_lon = 0.0;
       this->ref_alt = 0.0f;
-      this->dist_bottom = 0.0f;
       this->dist_bottom_valid = false;
+      this->dist_bottom = 0.0f;
+      this->dist_bottom_var = 0.0f;
+      this->delta_dist_bottom = 0.0f;
+      this->dist_bottom_reset_counter = 0;
       this->dist_bottom_sensor_bitfield = 0;
       this->eph = 0.0f;
       this->epv = 0.0f;
@@ -139,7 +155,8 @@ struct VehicleLocalPosition_
       this->vxy_max = 0.0f;
       this->vz_max = 0.0f;
       this->hagl_min = 0.0f;
-      this->hagl_max = 0.0f;
+      this->hagl_max_z = 0.0f;
+      this->hagl_max_xy = 0.0f;
     }
   }
 
@@ -219,6 +236,12 @@ struct VehicleLocalPosition_
   using _heading_type =
     float;
   _heading_type heading;
+  using _heading_var_type =
+    float;
+  _heading_var_type heading_var;
+  using _unaided_heading_type =
+    float;
+  _unaided_heading_type unaided_heading;
   using _delta_heading_type =
     float;
   _delta_heading_type delta_heading;
@@ -228,6 +251,9 @@ struct VehicleLocalPosition_
   using _heading_good_for_control_type =
     bool;
   _heading_good_for_control_type heading_good_for_control;
+  using _tilt_var_type =
+    float;
+  _tilt_var_type tilt_var;
   using _xy_global_type =
     bool;
   _xy_global_type xy_global;
@@ -246,12 +272,21 @@ struct VehicleLocalPosition_
   using _ref_alt_type =
     float;
   _ref_alt_type ref_alt;
-  using _dist_bottom_type =
-    float;
-  _dist_bottom_type dist_bottom;
   using _dist_bottom_valid_type =
     bool;
   _dist_bottom_valid_type dist_bottom_valid;
+  using _dist_bottom_type =
+    float;
+  _dist_bottom_type dist_bottom;
+  using _dist_bottom_var_type =
+    float;
+  _dist_bottom_var_type dist_bottom_var;
+  using _delta_dist_bottom_type =
+    float;
+  _delta_dist_bottom_type delta_dist_bottom;
+  using _dist_bottom_reset_counter_type =
+    uint8_t;
+  _dist_bottom_reset_counter_type dist_bottom_reset_counter;
   using _dist_bottom_sensor_bitfield_type =
     uint8_t;
   _dist_bottom_sensor_bitfield_type dist_bottom_sensor_bitfield;
@@ -279,9 +314,12 @@ struct VehicleLocalPosition_
   using _hagl_min_type =
     float;
   _hagl_min_type hagl_min;
-  using _hagl_max_type =
+  using _hagl_max_z_type =
     float;
-  _hagl_max_type hagl_max;
+  _hagl_max_z_type hagl_max_z;
+  using _hagl_max_xy_type =
+    float;
+  _hagl_max_xy_type hagl_max_xy;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -434,6 +472,18 @@ struct VehicleLocalPosition_
     this->heading = _arg;
     return *this;
   }
+  Type & set__heading_var(
+    const float & _arg)
+  {
+    this->heading_var = _arg;
+    return *this;
+  }
+  Type & set__unaided_heading(
+    const float & _arg)
+  {
+    this->unaided_heading = _arg;
+    return *this;
+  }
   Type & set__delta_heading(
     const float & _arg)
   {
@@ -450,6 +500,12 @@ struct VehicleLocalPosition_
     const bool & _arg)
   {
     this->heading_good_for_control = _arg;
+    return *this;
+  }
+  Type & set__tilt_var(
+    const float & _arg)
+  {
+    this->tilt_var = _arg;
     return *this;
   }
   Type & set__xy_global(
@@ -488,16 +544,34 @@ struct VehicleLocalPosition_
     this->ref_alt = _arg;
     return *this;
   }
+  Type & set__dist_bottom_valid(
+    const bool & _arg)
+  {
+    this->dist_bottom_valid = _arg;
+    return *this;
+  }
   Type & set__dist_bottom(
     const float & _arg)
   {
     this->dist_bottom = _arg;
     return *this;
   }
-  Type & set__dist_bottom_valid(
-    const bool & _arg)
+  Type & set__dist_bottom_var(
+    const float & _arg)
   {
-    this->dist_bottom_valid = _arg;
+    this->dist_bottom_var = _arg;
+    return *this;
+  }
+  Type & set__delta_dist_bottom(
+    const float & _arg)
+  {
+    this->delta_dist_bottom = _arg;
+    return *this;
+  }
+  Type & set__dist_bottom_reset_counter(
+    const uint8_t & _arg)
+  {
+    this->dist_bottom_reset_counter = _arg;
     return *this;
   }
   Type & set__dist_bottom_sensor_bitfield(
@@ -554,14 +628,22 @@ struct VehicleLocalPosition_
     this->hagl_min = _arg;
     return *this;
   }
-  Type & set__hagl_max(
+  Type & set__hagl_max_z(
     const float & _arg)
   {
-    this->hagl_max = _arg;
+    this->hagl_max_z = _arg;
+    return *this;
+  }
+  Type & set__hagl_max_xy(
+    const float & _arg)
+  {
+    this->hagl_max_xy = _arg;
     return *this;
   }
 
   // constant declarations
+  static constexpr uint32_t MESSAGE_VERSION =
+    1u;
   static constexpr uint8_t DIST_BOTTOM_SENSOR_NONE =
     0u;
   static constexpr uint8_t DIST_BOTTOM_SENSOR_RANGE =
@@ -684,6 +766,12 @@ struct VehicleLocalPosition_
     if (this->heading != other.heading) {
       return false;
     }
+    if (this->heading_var != other.heading_var) {
+      return false;
+    }
+    if (this->unaided_heading != other.unaided_heading) {
+      return false;
+    }
     if (this->delta_heading != other.delta_heading) {
       return false;
     }
@@ -691,6 +779,9 @@ struct VehicleLocalPosition_
       return false;
     }
     if (this->heading_good_for_control != other.heading_good_for_control) {
+      return false;
+    }
+    if (this->tilt_var != other.tilt_var) {
       return false;
     }
     if (this->xy_global != other.xy_global) {
@@ -711,10 +802,19 @@ struct VehicleLocalPosition_
     if (this->ref_alt != other.ref_alt) {
       return false;
     }
+    if (this->dist_bottom_valid != other.dist_bottom_valid) {
+      return false;
+    }
     if (this->dist_bottom != other.dist_bottom) {
       return false;
     }
-    if (this->dist_bottom_valid != other.dist_bottom_valid) {
+    if (this->dist_bottom_var != other.dist_bottom_var) {
+      return false;
+    }
+    if (this->delta_dist_bottom != other.delta_dist_bottom) {
+      return false;
+    }
+    if (this->dist_bottom_reset_counter != other.dist_bottom_reset_counter) {
       return false;
     }
     if (this->dist_bottom_sensor_bitfield != other.dist_bottom_sensor_bitfield) {
@@ -744,7 +844,10 @@ struct VehicleLocalPosition_
     if (this->hagl_min != other.hagl_min) {
       return false;
     }
-    if (this->hagl_max != other.hagl_max) {
+    if (this->hagl_max_z != other.hagl_max_z) {
+      return false;
+    }
+    if (this->hagl_max_xy != other.hagl_max_xy) {
       return false;
     }
     return true;
@@ -760,6 +863,11 @@ using VehicleLocalPosition =
   px4_msgs::msg::VehicleLocalPosition_<std::allocator<void>>;
 
 // constant definitions
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t VehicleLocalPosition_<ContainerAllocator>::MESSAGE_VERSION;
+#endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>

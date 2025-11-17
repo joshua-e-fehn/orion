@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/home_position__functions.h"
 #include "px4_msgs/msg/detail/home_position__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -37,12 +38,13 @@ void HomePosition_fini_function(void * message_memory)
   typed_message->~HomePosition();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_message_member_array[12] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_message_member_array[15] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -60,6 +62,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -77,6 +80,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -94,6 +98,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -111,6 +116,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -128,6 +134,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -145,6 +152,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -158,10 +166,47 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     nullptr  // resize(index) function pointer
   },
   {
+    "roll",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::HomePosition, roll),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "pitch",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::HomePosition, pitch),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "yaw",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -179,6 +224,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -196,6 +242,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -213,6 +260,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -230,10 +278,29 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::HomePosition, manual_home),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "update_count",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::HomePosition, update_count),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -247,8 +314,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HomePosition_
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers HomePosition_message_members = {
   "px4_msgs::msg",  // message namespace
   "HomePosition",  // message name
-  12,  // number of fields
+  15,  // number of fields
   sizeof(px4_msgs::msg::HomePosition),
+  false,  // has_any_key_member_
   HomePosition_message_member_array,  // message members
   HomePosition_init_function,  // function to initialize message memory (memory has to be allocated)
   HomePosition_fini_function  // function to terminate message instance (will not free memory)
@@ -258,6 +326,9 @@ static const rosidl_message_type_support_t HomePosition_message_type_support_han
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &HomePosition_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__HomePosition__get_type_hash,
+  &px4_msgs__msg__HomePosition__get_type_description,
+  &px4_msgs__msg__HomePosition__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

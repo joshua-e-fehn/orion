@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Wind.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/wind.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__WIND__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__WIND__STRUCT_H_
 
@@ -14,23 +17,34 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
+/// Constant 'MESSAGE_VERSION'.
+enum
+{
+  px4_msgs__msg__Wind__MESSAGE_VERSION = 0ul
+};
+
 /// Struct defined in msg/Wind in the package px4_msgs.
+/**
+  * Wind estimate (from EKF2)
+  *
+  * Contains the system-wide estimate of horizontal wind velocity and its variance.
+  * Published by the navigation filter (EKF2) for use by other flight modules and libraries.
+ */
 typedef struct px4_msgs__msg__Wind
 {
-  /// time since system start (microseconds)
+  /// Time since system start
   uint64_t timestamp;
-  /// the timestamp of the raw data (microseconds)
+  /// Timestamp of the raw data
   uint64_t timestamp_sample;
-  /// Wind component in north / X direction (m/sec)
+  /// Wind component in north / X direction
   float windspeed_north;
-  /// Wind component in east / Y direction (m/sec)
+  /// Wind component in east / Y direction
   float windspeed_east;
-  /// Wind estimate error variance in north / X direction (m/sec)**2 - set to zero (no uncertainty) if not estimated
+  /// [(m/s)^2] [@invalid 0 if not estimated] Wind estimate error variance in north / X direction
   float variance_north;
-  /// Wind estimate error variance in east / Y direction (m/sec)**2 - set to zero (no uncertainty) if not estimated
+  /// [(m/s)^2] [@invalid 0 if not estimated] Wind estimate error variance in east / Y direction
   float variance_east;
   /// True airspeed innovation
   float tas_innov;

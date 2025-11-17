@@ -22,10 +22,10 @@ class InterceptNode(Node):
         # Parameters
         self.declare_parameter('flight_height', -5.0)
         self.declare_parameter('trail_length', 10)
-        self.declare_parameter('kp', 0.5)  # proportional gain for chasing
+        self.declare_parameter('kp', 2.0)  # proportional gain for chasing
         self.flight_height = self.get_parameter('flight_height').value
         self.trail_length = self.get_parameter('trail_length').value
-        self.kp = self.get_parameter('kp').value * 0.2
+        self.kp = self.get_parameter('kp').value
 
         # QoS
         qos_pub = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
@@ -154,10 +154,10 @@ class InterceptNode(Node):
             dx = self.leader_position.x - self.vehicle_local_position.x
             dy = self.leader_position.y - self.vehicle_local_position.y
             dz = self.leader_position.z - self.vehicle_local_position.z
-            target_x = self.vehicle_local_position.x + self.kp * dx
+            target_x = self.vehicle_local_position.x + self.kp * dx 
             target_y = self.vehicle_local_position.y + self.kp * dy
-            target_z = self.flight_height  # maintain a constant flight height
-            self.publish_position_setpoint(target_x, target_y, target_z)
+            target_z = self.vehicle_local_position.z + self.kp * dz
+            self.publish_position_setpoint(target_x -2.0, target_y, target_z)
             self.publish_markers()
 
 def main(args=None):

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/OrbitStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/orbit_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ORBIT_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__ORBIT_STATUS__STRUCT_HPP_
 
@@ -142,6 +145,8 @@ struct OrbitStatus_
     3u;
   static constexpr uint8_t ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED =
     4u;
+  static constexpr uint8_t ORBIT_YAW_BEHAVIOUR_UNCHANGED =
+    5u;
 
   // pointer types
   using RawPtr =
@@ -241,6 +246,11 @@ constexpr uint8_t OrbitStatus_<ContainerAllocator>::ORBIT_YAW_BEHAVIOUR_HOLD_FRO
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
 constexpr uint8_t OrbitStatus_<ContainerAllocator>::ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t OrbitStatus_<ContainerAllocator>::ORBIT_YAW_BEHAVIOUR_UNCHANGED;
 #endif  // __cplusplus < 201703L
 
 }  // namespace msg

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/PositionControllerStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/position_controller_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__POSITION_CONTROLLER_STATUS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__POSITION_CONTROLLER_STATUS__TRAITS_HPP_
 
@@ -78,20 +81,6 @@ inline void to_flow_style_yaml(
   {
     out << "acceptance_radius: ";
     rosidl_generator_traits::value_to_yaml(msg.acceptance_radius, out);
-    out << ", ";
-  }
-
-  // member: yaw_acceptance
-  {
-    out << "yaw_acceptance: ";
-    rosidl_generator_traits::value_to_yaml(msg.yaw_acceptance, out);
-    out << ", ";
-  }
-
-  // member: altitude_acceptance
-  {
-    out << "altitude_acceptance: ";
-    rosidl_generator_traits::value_to_yaml(msg.altitude_acceptance, out);
     out << ", ";
   }
 
@@ -184,26 +173,6 @@ inline void to_block_style_yaml(
     }
     out << "acceptance_radius: ";
     rosidl_generator_traits::value_to_yaml(msg.acceptance_radius, out);
-    out << "\n";
-  }
-
-  // member: yaw_acceptance
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "yaw_acceptance: ";
-    rosidl_generator_traits::value_to_yaml(msg.yaw_acceptance, out);
-    out << "\n";
-  }
-
-  // member: altitude_acceptance
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "altitude_acceptance: ";
-    rosidl_generator_traits::value_to_yaml(msg.altitude_acceptance, out);
     out << "\n";
   }
 

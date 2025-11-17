@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ModeCompleted.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/mode_completed.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__MODE_COMPLETED__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__MODE_COMPLETED__STRUCT_H_
 
@@ -14,8 +17,13 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
+
+/// Constant 'MESSAGE_VERSION'.
+enum
+{
+  px4_msgs__msg__ModeCompleted__MESSAGE_VERSION = 0ul
+};
 
 /// Constant 'RESULT_SUCCESS'.
 enum
@@ -36,6 +44,7 @@ enum
 /// Struct defined in msg/ModeCompleted in the package px4_msgs.
 /**
   * Mode completion result, published by an active mode.
+  * The possible values of nav_state are defined in the VehicleStatus msg.
   * Note that this is not always published (e.g. when a user switches modes or on
   * failsafe activation)
  */
@@ -45,7 +54,7 @@ typedef struct px4_msgs__msg__ModeCompleted
   uint64_t timestamp;
   /// One of RESULT_*
   uint8_t result;
-  /// Source mode
+  /// Source mode (values in VehicleStatus)
   uint8_t nav_state;
 } px4_msgs__msg__ModeCompleted;
 

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/DistanceSensor.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/distance_sensor.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__DISTANCE_SENSOR__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__DISTANCE_SENSOR__BUILDER_HPP_
 
@@ -21,16 +24,32 @@ namespace msg
 namespace builder
 {
 
+class Init_DistanceSensor_mode
+{
+public:
+  explicit Init_DistanceSensor_mode(::px4_msgs::msg::DistanceSensor & msg)
+  : msg_(msg)
+  {}
+  ::px4_msgs::msg::DistanceSensor mode(::px4_msgs::msg::DistanceSensor::_mode_type arg)
+  {
+    msg_.mode = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::DistanceSensor msg_;
+};
+
 class Init_DistanceSensor_orientation
 {
 public:
   explicit Init_DistanceSensor_orientation(::px4_msgs::msg::DistanceSensor & msg)
   : msg_(msg)
   {}
-  ::px4_msgs::msg::DistanceSensor orientation(::px4_msgs::msg::DistanceSensor::_orientation_type arg)
+  Init_DistanceSensor_mode orientation(::px4_msgs::msg::DistanceSensor::_orientation_type arg)
   {
     msg_.orientation = std::move(arg);
-    return std::move(msg_);
+    return Init_DistanceSensor_mode(msg_);
   }
 
 private:

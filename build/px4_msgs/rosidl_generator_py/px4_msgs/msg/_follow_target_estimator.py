@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/FollowTargetEstimator.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -74,6 +81,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
         '_acc_est',
         '_prediction_count',
         '_fusion_count',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -91,6 +99,8 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
         'fusion_count': 'uint64',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -107,9 +117,14 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.last_filter_reset_timestamp = kwargs.get('last_filter_reset_timestamp', int())
         self.valid = kwargs.get('valid', bool())
@@ -120,18 +135,15 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
         if 'pos_est' not in kwargs:
             self.pos_est = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.pos_est = numpy.array(kwargs.get('pos_est'), dtype=numpy.float32)
-            assert self.pos_est.shape == (3, )
+            self.pos_est = kwargs.get('pos_est')
         if 'vel_est' not in kwargs:
             self.vel_est = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.vel_est = numpy.array(kwargs.get('vel_est'), dtype=numpy.float32)
-            assert self.vel_est.shape == (3, )
+            self.vel_est = kwargs.get('vel_est')
         if 'acc_est' not in kwargs:
             self.acc_est = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.acc_est = numpy.array(kwargs.get('acc_est'), dtype=numpy.float32)
-            assert self.acc_est.shape == (3, )
+            self.acc_est = kwargs.get('acc_est')
         self.prediction_count = kwargs.get('prediction_count', int())
         self.fusion_count = kwargs.get('fusion_count', int())
 
@@ -140,7 +152,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -154,11 +166,12 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -202,7 +215,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -217,7 +230,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @last_filter_reset_timestamp.setter
     def last_filter_reset_timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'last_filter_reset_timestamp' field must be of type 'int'"
@@ -232,7 +245,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @valid.setter
     def valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'valid' field must be of type 'bool'"
@@ -245,7 +258,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @stale.setter
     def stale(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'stale' field must be of type 'bool'"
@@ -258,7 +271,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @lat_est.setter
     def lat_est(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'lat_est' field must be of type 'float'"
@@ -273,7 +286,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @lon_est.setter
     def lon_est(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'lon_est' field must be of type 'float'"
@@ -288,7 +301,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @alt_est.setter
     def alt_est(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'alt_est' field must be of type 'float'"
@@ -303,14 +316,14 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @pos_est.setter
     def pos_est(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'pos_est' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'pos_est' numpy.ndarray() must have a size of 3"
-            self._pos_est = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'pos_est' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'pos_est' numpy.ndarray() must have a size of 3"
+                self._pos_est = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -334,14 +347,14 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @vel_est.setter
     def vel_est(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'vel_est' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'vel_est' numpy.ndarray() must have a size of 3"
-            self._vel_est = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'vel_est' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'vel_est' numpy.ndarray() must have a size of 3"
+                self._vel_est = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -365,14 +378,14 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @acc_est.setter
     def acc_est(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'acc_est' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'acc_est' numpy.ndarray() must have a size of 3"
-            self._acc_est = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'acc_est' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'acc_est' numpy.ndarray() must have a size of 3"
+                self._acc_est = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -396,7 +409,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @prediction_count.setter
     def prediction_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'prediction_count' field must be of type 'int'"
@@ -411,7 +424,7 @@ class FollowTargetEstimator(metaclass=Metaclass_FollowTargetEstimator):
 
     @fusion_count.setter
     def fusion_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'fusion_count' field must be of type 'int'"

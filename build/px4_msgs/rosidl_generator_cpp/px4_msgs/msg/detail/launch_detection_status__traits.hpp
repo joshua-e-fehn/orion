@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/LaunchDetectionStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/launch_detection_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__LAUNCH_DETECTION_STATUS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__LAUNCH_DETECTION_STATUS__TRAITS_HPP_
 

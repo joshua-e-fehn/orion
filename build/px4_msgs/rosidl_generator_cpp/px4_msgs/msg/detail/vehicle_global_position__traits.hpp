@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VehicleGlobalPosition.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_global_position.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_GLOBAL_POSITION__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_GLOBAL_POSITION__TRAITS_HPP_
 
@@ -67,10 +70,31 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: lat_lon_valid
+  {
+    out << "lat_lon_valid: ";
+    rosidl_generator_traits::value_to_yaml(msg.lat_lon_valid, out);
+    out << ", ";
+  }
+
+  // member: alt_valid
+  {
+    out << "alt_valid: ";
+    rosidl_generator_traits::value_to_yaml(msg.alt_valid, out);
+    out << ", ";
+  }
+
   // member: delta_alt
   {
     out << "delta_alt: ";
     rosidl_generator_traits::value_to_yaml(msg.delta_alt, out);
+    out << ", ";
+  }
+
+  // member: delta_terrain
+  {
+    out << "delta_terrain: ";
+    rosidl_generator_traits::value_to_yaml(msg.delta_terrain, out);
     out << ", ";
   }
 
@@ -85,6 +109,13 @@ inline void to_flow_style_yaml(
   {
     out << "alt_reset_counter: ";
     rosidl_generator_traits::value_to_yaml(msg.alt_reset_counter, out);
+    out << ", ";
+  }
+
+  // member: terrain_reset_counter
+  {
+    out << "terrain_reset_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.terrain_reset_counter, out);
     out << ", ";
   }
 
@@ -188,6 +219,26 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
+  // member: lat_lon_valid
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "lat_lon_valid: ";
+    rosidl_generator_traits::value_to_yaml(msg.lat_lon_valid, out);
+    out << "\n";
+  }
+
+  // member: alt_valid
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "alt_valid: ";
+    rosidl_generator_traits::value_to_yaml(msg.alt_valid, out);
+    out << "\n";
+  }
+
   // member: delta_alt
   {
     if (indentation > 0) {
@@ -195,6 +246,16 @@ inline void to_block_style_yaml(
     }
     out << "delta_alt: ";
     rosidl_generator_traits::value_to_yaml(msg.delta_alt, out);
+    out << "\n";
+  }
+
+  // member: delta_terrain
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "delta_terrain: ";
+    rosidl_generator_traits::value_to_yaml(msg.delta_terrain, out);
     out << "\n";
   }
 
@@ -215,6 +276,16 @@ inline void to_block_style_yaml(
     }
     out << "alt_reset_counter: ";
     rosidl_generator_traits::value_to_yaml(msg.alt_reset_counter, out);
+    out << "\n";
+  }
+
+  // member: terrain_reset_counter
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "terrain_reset_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.terrain_reset_counter, out);
     out << "\n";
   }
 

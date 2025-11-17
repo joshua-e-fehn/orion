@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Px4ioStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/px4io_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__PX4IO_STATUS__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__PX4IO_STATUS__BUILDER_HPP_
 
@@ -149,15 +152,15 @@ private:
   ::px4_msgs::msg::Px4ioStatus msg_;
 };
 
-class Init_Px4ioStatus_arming_force_failsafe
+class Init_Px4ioStatus_arming_termination
 {
 public:
-  explicit Init_Px4ioStatus_arming_force_failsafe(::px4_msgs::msg::Px4ioStatus & msg)
+  explicit Init_Px4ioStatus_arming_termination(::px4_msgs::msg::Px4ioStatus & msg)
   : msg_(msg)
   {}
-  Init_Px4ioStatus_arming_io_arm_ok arming_force_failsafe(::px4_msgs::msg::Px4ioStatus::_arming_force_failsafe_type arg)
+  Init_Px4ioStatus_arming_io_arm_ok arming_termination(::px4_msgs::msg::Px4ioStatus::_arming_termination_type arg)
   {
-    msg_.arming_force_failsafe = std::move(arg);
+    msg_.arming_termination = std::move(arg);
     return Init_Px4ioStatus_arming_io_arm_ok(msg_);
   }
 
@@ -171,10 +174,10 @@ public:
   explicit Init_Px4ioStatus_arming_fmu_prearmed(::px4_msgs::msg::Px4ioStatus & msg)
   : msg_(msg)
   {}
-  Init_Px4ioStatus_arming_force_failsafe arming_fmu_prearmed(::px4_msgs::msg::Px4ioStatus::_arming_fmu_prearmed_type arg)
+  Init_Px4ioStatus_arming_termination arming_fmu_prearmed(::px4_msgs::msg::Px4ioStatus::_arming_fmu_prearmed_type arg)
   {
     msg_.arming_fmu_prearmed = std::move(arg);
-    return Init_Px4ioStatus_arming_force_failsafe(msg_);
+    return Init_Px4ioStatus_arming_termination(msg_);
   }
 
 private:

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/OrbTestMedium.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/orb_test_medium.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ORB_TEST_MEDIUM__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__ORB_TEST_MEDIUM__STRUCT_H_
 
@@ -14,8 +17,13 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
+
+/// Constant 'ORB_QUEUE_LENGTH'.
+enum
+{
+  px4_msgs__msg__OrbTestMedium__ORB_QUEUE_LENGTH = 16
+};
 
 /// Struct defined in msg/OrbTestMedium in the package px4_msgs.
 typedef struct px4_msgs__msg__OrbTestMedium

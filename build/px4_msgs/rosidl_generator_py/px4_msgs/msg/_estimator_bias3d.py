@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/EstimatorBias3d.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -72,6 +79,7 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
         '_innov',
         '_innov_var',
         '_innov_test_ratio',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -85,6 +93,8 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
         'innov_test_ratio': 'float[3]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -97,44 +107,44 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.device_id = kwargs.get('device_id', int())
         if 'bias' not in kwargs:
             self.bias = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.bias = numpy.array(kwargs.get('bias'), dtype=numpy.float32)
-            assert self.bias.shape == (3, )
+            self.bias = kwargs.get('bias')
         if 'bias_var' not in kwargs:
             self.bias_var = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.bias_var = numpy.array(kwargs.get('bias_var'), dtype=numpy.float32)
-            assert self.bias_var.shape == (3, )
+            self.bias_var = kwargs.get('bias_var')
         if 'innov' not in kwargs:
             self.innov = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.innov = numpy.array(kwargs.get('innov'), dtype=numpy.float32)
-            assert self.innov.shape == (3, )
+            self.innov = kwargs.get('innov')
         if 'innov_var' not in kwargs:
             self.innov_var = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.innov_var = numpy.array(kwargs.get('innov_var'), dtype=numpy.float32)
-            assert self.innov_var.shape == (3, )
+            self.innov_var = kwargs.get('innov_var')
         if 'innov_test_ratio' not in kwargs:
             self.innov_test_ratio = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.innov_test_ratio = numpy.array(kwargs.get('innov_test_ratio'), dtype=numpy.float32)
-            assert self.innov_test_ratio.shape == (3, )
+            self.innov_test_ratio = kwargs.get('innov_test_ratio')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -148,11 +158,12 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -188,7 +199,7 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -203,7 +214,7 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -218,7 +229,7 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
 
     @device_id.setter
     def device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'device_id' field must be of type 'int'"
@@ -233,14 +244,14 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
 
     @bias.setter
     def bias(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'bias' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'bias' numpy.ndarray() must have a size of 3"
-            self._bias = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'bias' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'bias' numpy.ndarray() must have a size of 3"
+                self._bias = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -264,14 +275,14 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
 
     @bias_var.setter
     def bias_var(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'bias_var' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'bias_var' numpy.ndarray() must have a size of 3"
-            self._bias_var = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'bias_var' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'bias_var' numpy.ndarray() must have a size of 3"
+                self._bias_var = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -295,14 +306,14 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
 
     @innov.setter
     def innov(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'innov' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'innov' numpy.ndarray() must have a size of 3"
-            self._innov = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'innov' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'innov' numpy.ndarray() must have a size of 3"
+                self._innov = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -326,14 +337,14 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
 
     @innov_var.setter
     def innov_var(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'innov_var' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'innov_var' numpy.ndarray() must have a size of 3"
-            self._innov_var = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'innov_var' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'innov_var' numpy.ndarray() must have a size of 3"
+                self._innov_var = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -357,14 +368,14 @@ class EstimatorBias3d(metaclass=Metaclass_EstimatorBias3d):
 
     @innov_test_ratio.setter
     def innov_test_ratio(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'innov_test_ratio' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'innov_test_ratio' numpy.ndarray() must have a size of 3"
-            self._innov_test_ratio = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'innov_test_ratio' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'innov_test_ratio' numpy.ndarray() must have a size of 3"
+                self._innov_test_ratio = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

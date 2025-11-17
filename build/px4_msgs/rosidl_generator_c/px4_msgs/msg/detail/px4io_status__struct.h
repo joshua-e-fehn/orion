@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Px4ioStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/px4io_status.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__PX4IO_STATUS__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__PX4IO_STATUS__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -50,7 +52,7 @@ typedef struct px4_msgs__msg__Px4ioStatus
   bool arming_failsafe_custom;
   bool arming_fmu_armed;
   bool arming_fmu_prearmed;
-  bool arming_force_failsafe;
+  bool arming_termination;
   bool arming_io_arm_ok;
   bool arming_lockdown;
   bool arming_termination_failsafe;

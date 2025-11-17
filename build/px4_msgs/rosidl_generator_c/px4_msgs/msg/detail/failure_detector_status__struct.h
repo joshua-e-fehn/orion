@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/FailureDetectorStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/failure_detector_status.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__FAILURE_DETECTOR_STATUS__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__FAILURE_DETECTOR_STATUS__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -35,6 +37,8 @@ typedef struct px4_msgs__msg__FailureDetectorStatus
   float imbalanced_prop_metric;
   /// Bit-mask with motor indices, indicating critical motor failures
   uint16_t motor_failure_mask;
+  /// Bitmaks of motors stopped by failure injection
+  uint16_t motor_stop_mask;
 } px4_msgs__msg__FailureDetectorStatus;
 
 // Struct for a sequence of px4_msgs__msg__FailureDetectorStatus.

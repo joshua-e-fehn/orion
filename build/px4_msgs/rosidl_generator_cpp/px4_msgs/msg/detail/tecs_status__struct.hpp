@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/TecsStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/tecs_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__TECS_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__TECS_STATUS__STRUCT_HPP_
 
@@ -41,6 +44,7 @@ struct TecsStatus_
       this->timestamp = 0ull;
       this->altitude_sp = 0.0f;
       this->altitude_reference = 0.0f;
+      this->altitude_time_constant = 0.0f;
       this->height_rate_reference = 0.0f;
       this->height_rate_direct = 0.0f;
       this->height_rate_setpoint = 0.0f;
@@ -60,7 +64,8 @@ struct TecsStatus_
       this->throttle_sp = 0.0f;
       this->pitch_sp_rad = 0.0f;
       this->throttle_trim = 0.0f;
-      this->mode = 0;
+      this->underspeed_ratio = 0.0f;
+      this->fast_descend_ratio = 0.0f;
     }
   }
 
@@ -73,6 +78,7 @@ struct TecsStatus_
       this->timestamp = 0ull;
       this->altitude_sp = 0.0f;
       this->altitude_reference = 0.0f;
+      this->altitude_time_constant = 0.0f;
       this->height_rate_reference = 0.0f;
       this->height_rate_direct = 0.0f;
       this->height_rate_setpoint = 0.0f;
@@ -92,7 +98,8 @@ struct TecsStatus_
       this->throttle_sp = 0.0f;
       this->pitch_sp_rad = 0.0f;
       this->throttle_trim = 0.0f;
-      this->mode = 0;
+      this->underspeed_ratio = 0.0f;
+      this->fast_descend_ratio = 0.0f;
     }
   }
 
@@ -106,6 +113,9 @@ struct TecsStatus_
   using _altitude_reference_type =
     float;
   _altitude_reference_type altitude_reference;
+  using _altitude_time_constant_type =
+    float;
+  _altitude_time_constant_type altitude_time_constant;
   using _height_rate_reference_type =
     float;
   _height_rate_reference_type height_rate_reference;
@@ -163,9 +173,12 @@ struct TecsStatus_
   using _throttle_trim_type =
     float;
   _throttle_trim_type throttle_trim;
-  using _mode_type =
-    uint8_t;
-  _mode_type mode;
+  using _underspeed_ratio_type =
+    float;
+  _underspeed_ratio_type underspeed_ratio;
+  using _fast_descend_ratio_type =
+    float;
+  _fast_descend_ratio_type fast_descend_ratio;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -184,6 +197,12 @@ struct TecsStatus_
     const float & _arg)
   {
     this->altitude_reference = _arg;
+    return *this;
+  }
+  Type & set__altitude_time_constant(
+    const float & _arg)
+  {
+    this->altitude_time_constant = _arg;
     return *this;
   }
   Type & set__height_rate_reference(
@@ -300,18 +319,20 @@ struct TecsStatus_
     this->throttle_trim = _arg;
     return *this;
   }
-  Type & set__mode(
-    const uint8_t & _arg)
+  Type & set__underspeed_ratio(
+    const float & _arg)
   {
-    this->mode = _arg;
+    this->underspeed_ratio = _arg;
+    return *this;
+  }
+  Type & set__fast_descend_ratio(
+    const float & _arg)
+  {
+    this->fast_descend_ratio = _arg;
     return *this;
   }
 
   // constant declarations
-  static constexpr uint8_t TECS_MODE_NORMAL =
-    0u;
-  static constexpr uint8_t TECS_MODE_UNDERSPEED =
-    1u;
 
   // pointer types
   using RawPtr =
@@ -360,6 +381,9 @@ struct TecsStatus_
       return false;
     }
     if (this->altitude_reference != other.altitude_reference) {
+      return false;
+    }
+    if (this->altitude_time_constant != other.altitude_time_constant) {
       return false;
     }
     if (this->height_rate_reference != other.height_rate_reference) {
@@ -419,7 +443,10 @@ struct TecsStatus_
     if (this->throttle_trim != other.throttle_trim) {
       return false;
     }
-    if (this->mode != other.mode) {
+    if (this->underspeed_ratio != other.underspeed_ratio) {
+      return false;
+    }
+    if (this->fast_descend_ratio != other.fast_descend_ratio) {
       return false;
     }
     return true;
@@ -435,16 +462,6 @@ using TecsStatus =
   px4_msgs::msg::TecsStatus_<std::allocator<void>>;
 
 // constant definitions
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t TecsStatus_<ContainerAllocator>::TECS_MODE_NORMAL;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t TecsStatus_<ContainerAllocator>::TECS_MODE_UNDERSPEED;
-#endif  // __cplusplus < 201703L
 
 }  // namespace msg
 

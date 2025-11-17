@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/NavigatorMissionItem.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -58,7 +65,6 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     __slots__ = [
         '_timestamp',
-        '_instance_count',
         '_sequence_current',
         '_nav_cmd',
         '_latitude',
@@ -75,11 +81,11 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
         '_altitude_is_relative',
         '_autocontinue',
         '_vtol_back_transition',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
-        'instance_count': 'uint32',
         'sequence_current': 'uint16',
         'nav_cmd': 'uint16',
         'latitude': 'float',
@@ -98,9 +104,10 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
         'vtol_back_transition': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -120,11 +127,15 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
-        self.instance_count = kwargs.get('instance_count', int())
         self.sequence_current = kwargs.get('sequence_current', int())
         self.nav_cmd = kwargs.get('nav_cmd', int())
         self.latitude = kwargs.get('latitude', float())
@@ -147,7 +158,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -161,19 +172,18 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
         if self.timestamp != other.timestamp:
-            return False
-        if self.instance_count != other.instance_count:
             return False
         if self.sequence_current != other.sequence_current:
             return False
@@ -221,7 +231,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -230,28 +240,13 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
         self._timestamp = value
 
     @builtins.property
-    def instance_count(self):
-        """Message field 'instance_count'."""
-        return self._instance_count
-
-    @instance_count.setter
-    def instance_count(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'instance_count' field must be of type 'int'"
-            assert value >= 0 and value < 4294967296, \
-                "The 'instance_count' field must be an unsigned integer in [0, 4294967295]"
-        self._instance_count = value
-
-    @builtins.property
     def sequence_current(self):
         """Message field 'sequence_current'."""
         return self._sequence_current
 
     @sequence_current.setter
     def sequence_current(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'sequence_current' field must be of type 'int'"
@@ -266,7 +261,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @nav_cmd.setter
     def nav_cmd(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'nav_cmd' field must be of type 'int'"
@@ -281,7 +276,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @latitude.setter
     def latitude(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'latitude' field must be of type 'float'"
@@ -296,7 +291,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @longitude.setter
     def longitude(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'longitude' field must be of type 'float'"
@@ -311,7 +306,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @time_inside.setter
     def time_inside(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'time_inside' field must be of type 'float'"
@@ -326,7 +321,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @acceptance_radius.setter
     def acceptance_radius(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'acceptance_radius' field must be of type 'float'"
@@ -341,7 +336,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @loiter_radius.setter
     def loiter_radius(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'loiter_radius' field must be of type 'float'"
@@ -356,7 +351,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @yaw.setter
     def yaw(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'yaw' field must be of type 'float'"
@@ -371,7 +366,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @altitude.setter
     def altitude(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'altitude' field must be of type 'float'"
@@ -386,7 +381,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @frame.setter
     def frame(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'frame' field must be of type 'int'"
@@ -401,7 +396,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @origin.setter
     def origin(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'origin' field must be of type 'int'"
@@ -416,7 +411,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @loiter_exit_xtrack.setter
     def loiter_exit_xtrack(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'loiter_exit_xtrack' field must be of type 'bool'"
@@ -429,7 +424,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @force_heading.setter
     def force_heading(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'force_heading' field must be of type 'bool'"
@@ -442,7 +437,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @altitude_is_relative.setter
     def altitude_is_relative(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'altitude_is_relative' field must be of type 'bool'"
@@ -455,7 +450,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @autocontinue.setter
     def autocontinue(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'autocontinue' field must be of type 'bool'"
@@ -468,7 +463,7 @@ class NavigatorMissionItem(metaclass=Metaclass_NavigatorMissionItem):
 
     @vtol_back_transition.setter
     def vtol_back_transition(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'vtol_back_transition' field must be of type 'bool'"

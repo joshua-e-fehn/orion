@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Ekf2Timestamps.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/ekf2_timestamps.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__EKF2_TIMESTAMPS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__EKF2_TIMESTAMPS__TRAITS_HPP_
 
@@ -36,6 +39,13 @@ inline void to_flow_style_yaml(
   {
     out << "airspeed_timestamp_rel: ";
     rosidl_generator_traits::value_to_yaml(msg.airspeed_timestamp_rel, out);
+    out << ", ";
+  }
+
+  // member: airspeed_validated_timestamp_rel
+  {
+    out << "airspeed_validated_timestamp_rel: ";
+    rosidl_generator_traits::value_to_yaml(msg.airspeed_validated_timestamp_rel, out);
     out << ", ";
   }
 
@@ -96,6 +106,16 @@ inline void to_block_style_yaml(
     }
     out << "airspeed_timestamp_rel: ";
     rosidl_generator_traits::value_to_yaml(msg.airspeed_timestamp_rel, out);
+    out << "\n";
+  }
+
+  // member: airspeed_validated_timestamp_rel
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "airspeed_validated_timestamp_rel: ";
+    rosidl_generator_traits::value_to_yaml(msg.airspeed_validated_timestamp_rel, out);
     out << "\n";
   }
 

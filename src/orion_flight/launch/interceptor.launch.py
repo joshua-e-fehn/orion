@@ -119,10 +119,11 @@ def launch_setup(context, *args, **kwargs):
             executable = 'cv_predictor_node'  # use wrapper without .py extension
         elif predictor == 'ca':
             config_file = 'ca_predictor.yaml'
-            executable = 'ca_predictor_node.py'  # use installed script filename
+            # Installed file present as 'ca_predictor_node.py' (entry point script name differs)
+            executable = 'ca_predictor_node.py'
         elif predictor == 'imm':
-            print(f"    ERROR: IMM predictor not yet implemented!\n")
-            raise NotImplementedError("IMM predictor coming soon!")
+            config_file = 'imm_predictor.yaml'
+            executable = 'imm_predictor_node'
         
         config_path = os.path.join(pkg_orion_flight, 'config', config_file)
         

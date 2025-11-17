@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Event.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/event.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__EVENT__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__EVENT__STRUCT_H_
 
@@ -14,8 +17,13 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
+
+/// Constant 'MESSAGE_VERSION'.
+enum
+{
+  px4_msgs__msg__Event__MESSAGE_VERSION = 1ul
+};
 
 /// Constant 'ORB_QUEUE_LENGTH'.
 enum

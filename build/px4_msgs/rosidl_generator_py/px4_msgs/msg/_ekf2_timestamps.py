@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/Ekf2Timestamps.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -69,16 +76,19 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
     __slots__ = [
         '_timestamp',
         '_airspeed_timestamp_rel',
+        '_airspeed_validated_timestamp_rel',
         '_distance_sensor_timestamp_rel',
         '_optical_flow_timestamp_rel',
         '_vehicle_air_data_timestamp_rel',
         '_vehicle_magnetometer_timestamp_rel',
         '_visual_odometry_timestamp_rel',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
         'airspeed_timestamp_rel': 'int16',
+        'airspeed_validated_timestamp_rel': 'int16',
         'distance_sensor_timestamp_rel': 'int16',
         'optical_flow_timestamp_rel': 'int16',
         'vehicle_air_data_timestamp_rel': 'int16',
@@ -86,8 +96,11 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
         'visual_odometry_timestamp_rel': 'int16',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int16'),  # noqa: E501
         rosidl_parser.definition.BasicType('int16'),  # noqa: E501
         rosidl_parser.definition.BasicType('int16'),  # noqa: E501
         rosidl_parser.definition.BasicType('int16'),  # noqa: E501
@@ -97,11 +110,17 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.airspeed_timestamp_rel = kwargs.get('airspeed_timestamp_rel', int())
+        self.airspeed_validated_timestamp_rel = kwargs.get('airspeed_validated_timestamp_rel', int())
         self.distance_sensor_timestamp_rel = kwargs.get('distance_sensor_timestamp_rel', int())
         self.optical_flow_timestamp_rel = kwargs.get('optical_flow_timestamp_rel', int())
         self.vehicle_air_data_timestamp_rel = kwargs.get('vehicle_air_data_timestamp_rel', int())
@@ -113,7 +132,7 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -127,11 +146,12 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -140,6 +160,8 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
         if self.timestamp != other.timestamp:
             return False
         if self.airspeed_timestamp_rel != other.airspeed_timestamp_rel:
+            return False
+        if self.airspeed_validated_timestamp_rel != other.airspeed_validated_timestamp_rel:
             return False
         if self.distance_sensor_timestamp_rel != other.distance_sensor_timestamp_rel:
             return False
@@ -165,7 +187,7 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -180,7 +202,7 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
 
     @airspeed_timestamp_rel.setter
     def airspeed_timestamp_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'airspeed_timestamp_rel' field must be of type 'int'"
@@ -189,13 +211,28 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
         self._airspeed_timestamp_rel = value
 
     @builtins.property
+    def airspeed_validated_timestamp_rel(self):
+        """Message field 'airspeed_validated_timestamp_rel'."""
+        return self._airspeed_validated_timestamp_rel
+
+    @airspeed_validated_timestamp_rel.setter
+    def airspeed_validated_timestamp_rel(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'airspeed_validated_timestamp_rel' field must be of type 'int'"
+            assert value >= -32768 and value < 32768, \
+                "The 'airspeed_validated_timestamp_rel' field must be an integer in [-32768, 32767]"
+        self._airspeed_validated_timestamp_rel = value
+
+    @builtins.property
     def distance_sensor_timestamp_rel(self):
         """Message field 'distance_sensor_timestamp_rel'."""
         return self._distance_sensor_timestamp_rel
 
     @distance_sensor_timestamp_rel.setter
     def distance_sensor_timestamp_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'distance_sensor_timestamp_rel' field must be of type 'int'"
@@ -210,7 +247,7 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
 
     @optical_flow_timestamp_rel.setter
     def optical_flow_timestamp_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'optical_flow_timestamp_rel' field must be of type 'int'"
@@ -225,7 +262,7 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
 
     @vehicle_air_data_timestamp_rel.setter
     def vehicle_air_data_timestamp_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'vehicle_air_data_timestamp_rel' field must be of type 'int'"
@@ -240,7 +277,7 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
 
     @vehicle_magnetometer_timestamp_rel.setter
     def vehicle_magnetometer_timestamp_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'vehicle_magnetometer_timestamp_rel' field must be of type 'int'"
@@ -255,7 +292,7 @@ class Ekf2Timestamps(metaclass=Metaclass_Ekf2Timestamps):
 
     @visual_odometry_timestamp_rel.setter
     def visual_odometry_timestamp_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'visual_odometry_timestamp_rel' field must be of type 'int'"

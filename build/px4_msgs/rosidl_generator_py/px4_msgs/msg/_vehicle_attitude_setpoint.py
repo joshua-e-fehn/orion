@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/VehicleAttitudeSetpoint.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -26,6 +33,7 @@ class Metaclass_VehicleAttitudeSetpoint(type):
     _TYPE_SUPPORT = None
 
     __constants = {
+        'MESSAGE_VERSION': 1,
     }
 
     @classmethod
@@ -54,76 +62,73 @@ class Metaclass_VehicleAttitudeSetpoint(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
+            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
         }
+
+    @property
+    def MESSAGE_VERSION(self):
+        """Message constant 'MESSAGE_VERSION'."""
+        return Metaclass_VehicleAttitudeSetpoint.__constants['MESSAGE_VERSION']
 
 
 class VehicleAttitudeSetpoint(metaclass=Metaclass_VehicleAttitudeSetpoint):
-    """Message class 'VehicleAttitudeSetpoint'."""
+    """
+    Message class 'VehicleAttitudeSetpoint'.
+
+    Constants:
+      MESSAGE_VERSION
+    """
 
     __slots__ = [
         '_timestamp',
-        '_roll_body',
-        '_pitch_body',
-        '_yaw_body',
         '_yaw_sp_move_rate',
         '_q_d',
         '_thrust_body',
-        '_reset_integral',
-        '_fw_control_yaw_wheel',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
-        'roll_body': 'float',
-        'pitch_body': 'float',
-        'yaw_body': 'float',
         'yaw_sp_move_rate': 'float',
         'q_d': 'float[4]',
         'thrust_body': 'float[3]',
-        'reset_integral': 'boolean',
-        'fw_control_yaw_wheel': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 4),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 3),  # noqa: E501
-        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
-        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
-        self.roll_body = kwargs.get('roll_body', float())
-        self.pitch_body = kwargs.get('pitch_body', float())
-        self.yaw_body = kwargs.get('yaw_body', float())
         self.yaw_sp_move_rate = kwargs.get('yaw_sp_move_rate', float())
         if 'q_d' not in kwargs:
             self.q_d = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.q_d = numpy.array(kwargs.get('q_d'), dtype=numpy.float32)
-            assert self.q_d.shape == (4, )
+            self.q_d = kwargs.get('q_d')
         if 'thrust_body' not in kwargs:
             self.thrust_body = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.thrust_body = numpy.array(kwargs.get('thrust_body'), dtype=numpy.float32)
-            assert self.thrust_body.shape == (3, )
-        self.reset_integral = kwargs.get('reset_integral', bool())
-        self.fw_control_yaw_wheel = kwargs.get('fw_control_yaw_wheel', bool())
+            self.thrust_body = kwargs.get('thrust_body')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -137,11 +142,12 @@ class VehicleAttitudeSetpoint(metaclass=Metaclass_VehicleAttitudeSetpoint):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -149,21 +155,11 @@ class VehicleAttitudeSetpoint(metaclass=Metaclass_VehicleAttitudeSetpoint):
             return False
         if self.timestamp != other.timestamp:
             return False
-        if self.roll_body != other.roll_body:
-            return False
-        if self.pitch_body != other.pitch_body:
-            return False
-        if self.yaw_body != other.yaw_body:
-            return False
         if self.yaw_sp_move_rate != other.yaw_sp_move_rate:
             return False
         if any(self.q_d != other.q_d):
             return False
         if any(self.thrust_body != other.thrust_body):
-            return False
-        if self.reset_integral != other.reset_integral:
-            return False
-        if self.fw_control_yaw_wheel != other.fw_control_yaw_wheel:
             return False
         return True
 
@@ -179,7 +175,7 @@ class VehicleAttitudeSetpoint(metaclass=Metaclass_VehicleAttitudeSetpoint):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -188,58 +184,13 @@ class VehicleAttitudeSetpoint(metaclass=Metaclass_VehicleAttitudeSetpoint):
         self._timestamp = value
 
     @builtins.property
-    def roll_body(self):
-        """Message field 'roll_body'."""
-        return self._roll_body
-
-    @roll_body.setter
-    def roll_body(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'roll_body' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'roll_body' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._roll_body = value
-
-    @builtins.property
-    def pitch_body(self):
-        """Message field 'pitch_body'."""
-        return self._pitch_body
-
-    @pitch_body.setter
-    def pitch_body(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'pitch_body' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'pitch_body' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._pitch_body = value
-
-    @builtins.property
-    def yaw_body(self):
-        """Message field 'yaw_body'."""
-        return self._yaw_body
-
-    @yaw_body.setter
-    def yaw_body(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'yaw_body' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'yaw_body' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._yaw_body = value
-
-    @builtins.property
     def yaw_sp_move_rate(self):
         """Message field 'yaw_sp_move_rate'."""
         return self._yaw_sp_move_rate
 
     @yaw_sp_move_rate.setter
     def yaw_sp_move_rate(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'yaw_sp_move_rate' field must be of type 'float'"
@@ -254,14 +205,14 @@ class VehicleAttitudeSetpoint(metaclass=Metaclass_VehicleAttitudeSetpoint):
 
     @q_d.setter
     def q_d(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'q_d' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'q_d' numpy.ndarray() must have a size of 4"
-            self._q_d = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'q_d' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'q_d' numpy.ndarray() must have a size of 4"
+                self._q_d = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -285,14 +236,14 @@ class VehicleAttitudeSetpoint(metaclass=Metaclass_VehicleAttitudeSetpoint):
 
     @thrust_body.setter
     def thrust_body(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'thrust_body' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'thrust_body' numpy.ndarray() must have a size of 3"
-            self._thrust_body = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'thrust_body' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'thrust_body' numpy.ndarray() must have a size of 3"
+                self._thrust_body = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -308,29 +259,3 @@ class VehicleAttitudeSetpoint(metaclass=Metaclass_VehicleAttitudeSetpoint):
                  all(not (val < -3.402823466e+38 or val > 3.402823466e+38) or math.isinf(val) for val in value)), \
                 "The 'thrust_body' field must be a set or sequence with length 3 and each value of type 'float' and each float in [-340282346600000016151267322115014000640.000000, 340282346600000016151267322115014000640.000000]"
         self._thrust_body = numpy.array(value, dtype=numpy.float32)
-
-    @builtins.property
-    def reset_integral(self):
-        """Message field 'reset_integral'."""
-        return self._reset_integral
-
-    @reset_integral.setter
-    def reset_integral(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'reset_integral' field must be of type 'bool'"
-        self._reset_integral = value
-
-    @builtins.property
-    def fw_control_yaw_wheel(self):
-        """Message field 'fw_control_yaw_wheel'."""
-        return self._fw_control_yaw_wheel
-
-    @fw_control_yaw_wheel.setter
-    def fw_control_yaw_wheel(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'fw_control_yaw_wheel' field must be of type 'bool'"
-        self._fw_control_yaw_wheel = value

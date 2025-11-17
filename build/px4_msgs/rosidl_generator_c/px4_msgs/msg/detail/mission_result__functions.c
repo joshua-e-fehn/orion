@@ -18,7 +18,9 @@ px4_msgs__msg__MissionResult__init(px4_msgs__msg__MissionResult * msg)
     return false;
   }
   // timestamp
-  // instance_count
+  // mission_id
+  // geofence_id
+  // home_position_counter
   // seq_reached
   // seq_current
   // seq_total
@@ -40,7 +42,9 @@ px4_msgs__msg__MissionResult__fini(px4_msgs__msg__MissionResult * msg)
     return;
   }
   // timestamp
-  // instance_count
+  // mission_id
+  // geofence_id
+  // home_position_counter
   // seq_reached
   // seq_current
   // seq_total
@@ -64,8 +68,16 @@ px4_msgs__msg__MissionResult__are_equal(const px4_msgs__msg__MissionResult * lhs
   if (lhs->timestamp != rhs->timestamp) {
     return false;
   }
-  // instance_count
-  if (lhs->instance_count != rhs->instance_count) {
+  // mission_id
+  if (lhs->mission_id != rhs->mission_id) {
+    return false;
+  }
+  // geofence_id
+  if (lhs->geofence_id != rhs->geofence_id) {
+    return false;
+  }
+  // home_position_counter
+  if (lhs->home_position_counter != rhs->home_position_counter) {
     return false;
   }
   // seq_reached
@@ -125,8 +137,12 @@ px4_msgs__msg__MissionResult__copy(
   }
   // timestamp
   output->timestamp = input->timestamp;
-  // instance_count
-  output->instance_count = input->instance_count;
+  // mission_id
+  output->mission_id = input->mission_id;
+  // geofence_id
+  output->geofence_id = input->geofence_id;
+  // home_position_counter
+  output->home_position_counter = input->home_position_counter;
   // seq_reached
   output->seq_reached = input->seq_reached;
   // seq_current
@@ -153,7 +169,7 @@ px4_msgs__msg__MissionResult__copy(
 }
 
 px4_msgs__msg__MissionResult *
-px4_msgs__msg__MissionResult__create()
+px4_msgs__msg__MissionResult__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__MissionResult * msg = (px4_msgs__msg__MissionResult *)allocator.allocate(sizeof(px4_msgs__msg__MissionResult), allocator.state);

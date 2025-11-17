@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/EstimatorAidSource1d.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/estimator_aid_source1d.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ESTIMATOR_AID_SOURCE1D__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__ESTIMATOR_AID_SOURCE1D__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -30,10 +32,12 @@ typedef struct px4_msgs__msg__EstimatorAidSource1d
   float observation;
   float observation_variance;
   float innovation;
+  float innovation_filtered;
   float innovation_variance;
+  /// normalized innovation squared
   float test_ratio;
-  /// true when measurements are being fused
-  bool fusion_enabled;
+  /// signed filtered test ratio
+  float test_ratio_filtered;
   /// true if the observation has been rejected
   bool innovation_rejected;
   /// true if the sample was successfully fused

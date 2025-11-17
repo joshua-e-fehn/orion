@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ActuatorTest.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/actuator_test.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ACTUATOR_TEST__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__ACTUATOR_TEST__STRUCT_HPP_
 
@@ -123,7 +126,7 @@ struct ActuatorTest_
   static constexpr uint8_t MAX_NUM_SERVOS =
     8u;
   static constexpr uint8_t ORB_QUEUE_LENGTH =
-    12u;
+    16u;
 
   // pointer types
   using RawPtr =

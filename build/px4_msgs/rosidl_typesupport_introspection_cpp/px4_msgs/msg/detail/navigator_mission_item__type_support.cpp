@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/navigator_mission_item__functions.h"
 #include "px4_msgs/msg/detail/navigator_mission_item__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -37,12 +38,13 @@ void NavigatorMissionItem_fini_function(void * message_memory)
   typed_message->~NavigatorMissionItem();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMissionItem_message_member_array[18] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMissionItem_message_member_array[17] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -56,27 +58,11 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     nullptr  // resize(index) function pointer
   },
   {
-    "instance_count",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::NavigatorMissionItem, instance_count),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
     "sequence_current",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -94,6 +80,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -111,6 +98,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -128,6 +116,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -145,6 +134,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -162,6 +152,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -179,6 +170,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -196,6 +188,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -213,6 +206,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -230,6 +224,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -247,6 +242,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -264,6 +260,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -281,6 +278,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -298,6 +296,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -315,6 +314,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -332,6 +332,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -349,8 +350,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember NavigatorMiss
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers NavigatorMissionItem_message_members = {
   "px4_msgs::msg",  // message namespace
   "NavigatorMissionItem",  // message name
-  18,  // number of fields
+  17,  // number of fields
   sizeof(px4_msgs::msg::NavigatorMissionItem),
+  false,  // has_any_key_member_
   NavigatorMissionItem_message_member_array,  // message members
   NavigatorMissionItem_init_function,  // function to initialize message memory (memory has to be allocated)
   NavigatorMissionItem_fini_function  // function to terminate message instance (will not free memory)
@@ -360,6 +362,9 @@ static const rosidl_message_type_support_t NavigatorMissionItem_message_type_sup
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &NavigatorMissionItem_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__NavigatorMissionItem__get_type_hash,
+  &px4_msgs__msg__NavigatorMissionItem__get_type_description,
+  &px4_msgs__msg__NavigatorMissionItem__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/MavlinkTunnel.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -156,6 +163,7 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
         '_target_component',
         '_payload_length',
         '_payload',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -167,6 +175,8 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
         'payload': 'uint8[128]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
@@ -177,9 +187,14 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.payload_type = kwargs.get('payload_type', int())
         self.target_system = kwargs.get('target_system', int())
@@ -188,15 +203,14 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
         if 'payload' not in kwargs:
             self.payload = numpy.zeros(128, dtype=numpy.uint8)
         else:
-            self.payload = numpy.array(kwargs.get('payload'), dtype=numpy.uint8)
-            assert self.payload.shape == (128, )
+            self.payload = kwargs.get('payload')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -210,11 +224,12 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -246,7 +261,7 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -261,7 +276,7 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
 
     @payload_type.setter
     def payload_type(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'payload_type' field must be of type 'int'"
@@ -276,7 +291,7 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
 
     @target_system.setter
     def target_system(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'target_system' field must be of type 'int'"
@@ -291,7 +306,7 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
 
     @target_component.setter
     def target_component(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'target_component' field must be of type 'int'"
@@ -306,7 +321,7 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
 
     @payload_length.setter
     def payload_length(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'payload_length' field must be of type 'int'"
@@ -321,14 +336,14 @@ class MavlinkTunnel(metaclass=Metaclass_MavlinkTunnel):
 
     @payload.setter
     def payload(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'payload' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 128, \
-                "The 'payload' numpy.ndarray() must have a size of 128"
-            self._payload = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'payload' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 128, \
+                    "The 'payload' numpy.ndarray() must have a size of 128"
+                self._payload = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

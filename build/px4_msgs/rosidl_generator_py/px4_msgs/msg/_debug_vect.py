@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/DebugVect.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -65,6 +72,7 @@ class DebugVect(metaclass=Metaclass_DebugVect):
         '_x',
         '_y',
         '_z',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -75,6 +83,8 @@ class DebugVect(metaclass=Metaclass_DebugVect):
         'z': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 10),  # noqa: E501
@@ -84,15 +94,19 @@ class DebugVect(metaclass=Metaclass_DebugVect):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         if 'name' not in kwargs:
             self.name = numpy.zeros(10, dtype=numpy.uint8)
         else:
-            self.name = numpy.array(kwargs.get('name'), dtype=numpy.uint8)
-            assert self.name.shape == (10, )
+            self.name = kwargs.get('name')
         self.x = kwargs.get('x', float())
         self.y = kwargs.get('y', float())
         self.z = kwargs.get('z', float())
@@ -102,7 +116,7 @@ class DebugVect(metaclass=Metaclass_DebugVect):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -116,11 +130,12 @@ class DebugVect(metaclass=Metaclass_DebugVect):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -150,7 +165,7 @@ class DebugVect(metaclass=Metaclass_DebugVect):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -165,14 +180,14 @@ class DebugVect(metaclass=Metaclass_DebugVect):
 
     @name.setter
     def name(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'name' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 10, \
-                "The 'name' numpy.ndarray() must have a size of 10"
-            self._name = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'name' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 10, \
+                    "The 'name' numpy.ndarray() must have a size of 10"
+                self._name = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -196,7 +211,7 @@ class DebugVect(metaclass=Metaclass_DebugVect):
 
     @x.setter
     def x(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'x' field must be of type 'float'"
@@ -211,7 +226,7 @@ class DebugVect(metaclass=Metaclass_DebugVect):
 
     @y.setter
     def y(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'y' field must be of type 'float'"
@@ -226,7 +241,7 @@ class DebugVect(metaclass=Metaclass_DebugVect):
 
     @z.setter
     def z(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'z' field must be of type 'float'"

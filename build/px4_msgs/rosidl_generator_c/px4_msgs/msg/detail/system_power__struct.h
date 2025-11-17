@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/SystemPower.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/system_power.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__SYSTEM_POWER__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__SYSTEM_POWER__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -72,6 +74,8 @@ typedef struct px4_msgs__msg__SystemPower
   uint64_t timestamp;
   /// peripheral 5V rail voltage
   float voltage5v_v;
+  /// payload rail voltage
+  float voltage_payload_v;
   /// Sensors 3V3 rail voltage
   float sensors3v3[4];
   /// Sensors 3V3 rail voltage was read (bitfield).
@@ -92,6 +96,8 @@ typedef struct px4_msgs__msg__SystemPower
   uint8_t comp_5v_valid;
   /// 5V for CAN1/GPS1 valid
   uint8_t can1_gps1_5v_valid;
+  /// payload rail voltage is valid
+  uint8_t payload_v_valid;
 } px4_msgs__msg__SystemPower;
 
 // Struct for a sequence of px4_msgs__msg__SystemPower.

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/EstimatorAidSource2d.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/estimator_aid_source2d.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ESTIMATOR_AID_SOURCE2D__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__ESTIMATOR_AID_SOURCE2D__STRUCT_HPP_
 
@@ -43,12 +46,13 @@ struct EstimatorAidSource2d_
       this->estimator_instance = 0;
       this->device_id = 0ul;
       this->time_last_fuse = 0ull;
-      std::fill<typename std::array<float, 2>::iterator, float>(this->observation.begin(), this->observation.end(), 0.0f);
+      std::fill<typename std::array<double, 2>::iterator, double>(this->observation.begin(), this->observation.end(), 0.0);
       std::fill<typename std::array<float, 2>::iterator, float>(this->observation_variance.begin(), this->observation_variance.end(), 0.0f);
       std::fill<typename std::array<float, 2>::iterator, float>(this->innovation.begin(), this->innovation.end(), 0.0f);
+      std::fill<typename std::array<float, 2>::iterator, float>(this->innovation_filtered.begin(), this->innovation_filtered.end(), 0.0f);
       std::fill<typename std::array<float, 2>::iterator, float>(this->innovation_variance.begin(), this->innovation_variance.end(), 0.0f);
       std::fill<typename std::array<float, 2>::iterator, float>(this->test_ratio.begin(), this->test_ratio.end(), 0.0f);
-      this->fusion_enabled = false;
+      std::fill<typename std::array<float, 2>::iterator, float>(this->test_ratio_filtered.begin(), this->test_ratio_filtered.end(), 0.0f);
       this->innovation_rejected = false;
       this->fused = false;
     }
@@ -58,8 +62,10 @@ struct EstimatorAidSource2d_
   : observation(_alloc),
     observation_variance(_alloc),
     innovation(_alloc),
+    innovation_filtered(_alloc),
     innovation_variance(_alloc),
-    test_ratio(_alloc)
+    test_ratio(_alloc),
+    test_ratio_filtered(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
@@ -69,12 +75,13 @@ struct EstimatorAidSource2d_
       this->estimator_instance = 0;
       this->device_id = 0ul;
       this->time_last_fuse = 0ull;
-      std::fill<typename std::array<float, 2>::iterator, float>(this->observation.begin(), this->observation.end(), 0.0f);
+      std::fill<typename std::array<double, 2>::iterator, double>(this->observation.begin(), this->observation.end(), 0.0);
       std::fill<typename std::array<float, 2>::iterator, float>(this->observation_variance.begin(), this->observation_variance.end(), 0.0f);
       std::fill<typename std::array<float, 2>::iterator, float>(this->innovation.begin(), this->innovation.end(), 0.0f);
+      std::fill<typename std::array<float, 2>::iterator, float>(this->innovation_filtered.begin(), this->innovation_filtered.end(), 0.0f);
       std::fill<typename std::array<float, 2>::iterator, float>(this->innovation_variance.begin(), this->innovation_variance.end(), 0.0f);
       std::fill<typename std::array<float, 2>::iterator, float>(this->test_ratio.begin(), this->test_ratio.end(), 0.0f);
-      this->fusion_enabled = false;
+      std::fill<typename std::array<float, 2>::iterator, float>(this->test_ratio_filtered.begin(), this->test_ratio_filtered.end(), 0.0f);
       this->innovation_rejected = false;
       this->fused = false;
     }
@@ -97,7 +104,7 @@ struct EstimatorAidSource2d_
     uint64_t;
   _time_last_fuse_type time_last_fuse;
   using _observation_type =
-    std::array<float, 2>;
+    std::array<double, 2>;
   _observation_type observation;
   using _observation_variance_type =
     std::array<float, 2>;
@@ -105,15 +112,18 @@ struct EstimatorAidSource2d_
   using _innovation_type =
     std::array<float, 2>;
   _innovation_type innovation;
+  using _innovation_filtered_type =
+    std::array<float, 2>;
+  _innovation_filtered_type innovation_filtered;
   using _innovation_variance_type =
     std::array<float, 2>;
   _innovation_variance_type innovation_variance;
   using _test_ratio_type =
     std::array<float, 2>;
   _test_ratio_type test_ratio;
-  using _fusion_enabled_type =
-    bool;
-  _fusion_enabled_type fusion_enabled;
+  using _test_ratio_filtered_type =
+    std::array<float, 2>;
+  _test_ratio_filtered_type test_ratio_filtered;
   using _innovation_rejected_type =
     bool;
   _innovation_rejected_type innovation_rejected;
@@ -153,7 +163,7 @@ struct EstimatorAidSource2d_
     return *this;
   }
   Type & set__observation(
-    const std::array<float, 2> & _arg)
+    const std::array<double, 2> & _arg)
   {
     this->observation = _arg;
     return *this;
@@ -170,6 +180,12 @@ struct EstimatorAidSource2d_
     this->innovation = _arg;
     return *this;
   }
+  Type & set__innovation_filtered(
+    const std::array<float, 2> & _arg)
+  {
+    this->innovation_filtered = _arg;
+    return *this;
+  }
   Type & set__innovation_variance(
     const std::array<float, 2> & _arg)
   {
@@ -182,10 +198,10 @@ struct EstimatorAidSource2d_
     this->test_ratio = _arg;
     return *this;
   }
-  Type & set__fusion_enabled(
-    const bool & _arg)
+  Type & set__test_ratio_filtered(
+    const std::array<float, 2> & _arg)
   {
-    this->fusion_enabled = _arg;
+    this->test_ratio_filtered = _arg;
     return *this;
   }
   Type & set__innovation_rejected(
@@ -267,13 +283,16 @@ struct EstimatorAidSource2d_
     if (this->innovation != other.innovation) {
       return false;
     }
+    if (this->innovation_filtered != other.innovation_filtered) {
+      return false;
+    }
     if (this->innovation_variance != other.innovation_variance) {
       return false;
     }
     if (this->test_ratio != other.test_ratio) {
       return false;
     }
-    if (this->fusion_enabled != other.fusion_enabled) {
+    if (this->test_ratio_filtered != other.test_ratio_filtered) {
       return false;
     }
     if (this->innovation_rejected != other.innovation_rejected) {

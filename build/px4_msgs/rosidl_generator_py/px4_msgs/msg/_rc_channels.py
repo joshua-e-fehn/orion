@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/RcChannels.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -54,6 +61,8 @@ class Metaclass_RcChannels(type):
         'FUNCTION_FLTBTN_SLOT_5': 25,
         'FUNCTION_FLTBTN_SLOT_6': 26,
         'FUNCTION_ENGAGE_MAIN_MOTOR': 27,
+        'FUNCTION_PAYLOAD_POWER': 28,
+        'FUNCTION_TERMINATION': 29,
         'FUNCTION_FLTBTN_SLOT_COUNT': 6,
     }
 
@@ -111,6 +120,8 @@ class Metaclass_RcChannels(type):
             'FUNCTION_FLTBTN_SLOT_5': cls.__constants['FUNCTION_FLTBTN_SLOT_5'],
             'FUNCTION_FLTBTN_SLOT_6': cls.__constants['FUNCTION_FLTBTN_SLOT_6'],
             'FUNCTION_ENGAGE_MAIN_MOTOR': cls.__constants['FUNCTION_ENGAGE_MAIN_MOTOR'],
+            'FUNCTION_PAYLOAD_POWER': cls.__constants['FUNCTION_PAYLOAD_POWER'],
+            'FUNCTION_TERMINATION': cls.__constants['FUNCTION_TERMINATION'],
             'FUNCTION_FLTBTN_SLOT_COUNT': cls.__constants['FUNCTION_FLTBTN_SLOT_COUNT'],
         }
 
@@ -255,6 +266,16 @@ class Metaclass_RcChannels(type):
         return Metaclass_RcChannels.__constants['FUNCTION_ENGAGE_MAIN_MOTOR']
 
     @property
+    def FUNCTION_PAYLOAD_POWER(self):
+        """Message constant 'FUNCTION_PAYLOAD_POWER'."""
+        return Metaclass_RcChannels.__constants['FUNCTION_PAYLOAD_POWER']
+
+    @property
+    def FUNCTION_TERMINATION(self):
+        """Message constant 'FUNCTION_TERMINATION'."""
+        return Metaclass_RcChannels.__constants['FUNCTION_TERMINATION']
+
+    @property
     def FUNCTION_FLTBTN_SLOT_COUNT(self):
         """Message constant 'FUNCTION_FLTBTN_SLOT_COUNT'."""
         return Metaclass_RcChannels.__constants['FUNCTION_FLTBTN_SLOT_COUNT']
@@ -293,6 +314,8 @@ class RcChannels(metaclass=Metaclass_RcChannels):
       FUNCTION_FLTBTN_SLOT_5
       FUNCTION_FLTBTN_SLOT_6
       FUNCTION_ENGAGE_MAIN_MOTOR
+      FUNCTION_PAYLOAD_POWER
+      FUNCTION_TERMINATION
       FUNCTION_FLTBTN_SLOT_COUNT
     """
 
@@ -305,6 +328,7 @@ class RcChannels(metaclass=Metaclass_RcChannels):
         '_rssi',
         '_signal_lost',
         '_frame_drop_count',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -312,40 +336,45 @@ class RcChannels(metaclass=Metaclass_RcChannels):
         'timestamp_last_valid': 'uint64',
         'channels': 'float[18]',
         'channel_count': 'uint8',
-        'function': 'int8[28]',
+        'function': 'int8[30]',
         'rssi': 'uint8',
         'signal_lost': 'boolean',
         'frame_drop_count': 'uint32',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 18),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('int8'), 28),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('int8'), 30),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_last_valid = kwargs.get('timestamp_last_valid', int())
         if 'channels' not in kwargs:
             self.channels = numpy.zeros(18, dtype=numpy.float32)
         else:
-            self.channels = numpy.array(kwargs.get('channels'), dtype=numpy.float32)
-            assert self.channels.shape == (18, )
+            self.channels = kwargs.get('channels')
         self.channel_count = kwargs.get('channel_count', int())
         if 'function' not in kwargs:
-            self.function = numpy.zeros(28, dtype=numpy.int8)
+            self.function = numpy.zeros(30, dtype=numpy.int8)
         else:
-            self.function = numpy.array(kwargs.get('function'), dtype=numpy.int8)
-            assert self.function.shape == (28, )
+            self.function = kwargs.get('function')
         self.rssi = kwargs.get('rssi', int())
         self.signal_lost = kwargs.get('signal_lost', bool())
         self.frame_drop_count = kwargs.get('frame_drop_count', int())
@@ -355,7 +384,7 @@ class RcChannels(metaclass=Metaclass_RcChannels):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -369,11 +398,12 @@ class RcChannels(metaclass=Metaclass_RcChannels):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -409,7 +439,7 @@ class RcChannels(metaclass=Metaclass_RcChannels):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -424,7 +454,7 @@ class RcChannels(metaclass=Metaclass_RcChannels):
 
     @timestamp_last_valid.setter
     def timestamp_last_valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_last_valid' field must be of type 'int'"
@@ -439,14 +469,14 @@ class RcChannels(metaclass=Metaclass_RcChannels):
 
     @channels.setter
     def channels(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'channels' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 18, \
-                "The 'channels' numpy.ndarray() must have a size of 18"
-            self._channels = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'channels' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 18, \
+                    "The 'channels' numpy.ndarray() must have a size of 18"
+                self._channels = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -470,7 +500,7 @@ class RcChannels(metaclass=Metaclass_RcChannels):
 
     @channel_count.setter
     def channel_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'channel_count' field must be of type 'int'"
@@ -485,14 +515,14 @@ class RcChannels(metaclass=Metaclass_RcChannels):
 
     @function.setter
     def function(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.int8, \
-                "The 'function' numpy.ndarray() must have the dtype of 'numpy.int8'"
-            assert value.size == 28, \
-                "The 'function' numpy.ndarray() must have a size of 28"
-            self._function = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.int8, \
+                    "The 'function' numpy.ndarray() must have the dtype of 'numpy.int8'"
+                assert value.size == 30, \
+                    "The 'function' numpy.ndarray() must have a size of 30"
+                self._function = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -503,10 +533,10 @@ class RcChannels(metaclass=Metaclass_RcChannels):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 len(value) == 28 and
+                 len(value) == 30 and
                  all(isinstance(v, int) for v in value) and
                  all(val >= -128 and val < 128 for val in value)), \
-                "The 'function' field must be a set or sequence with length 28 and each value of type 'int' and each integer in [-128, 127]"
+                "The 'function' field must be a set or sequence with length 30 and each value of type 'int' and each integer in [-128, 127]"
         self._function = numpy.array(value, dtype=numpy.int8)
 
     @builtins.property
@@ -516,7 +546,7 @@ class RcChannels(metaclass=Metaclass_RcChannels):
 
     @rssi.setter
     def rssi(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'rssi' field must be of type 'int'"
@@ -531,7 +561,7 @@ class RcChannels(metaclass=Metaclass_RcChannels):
 
     @signal_lost.setter
     def signal_lost(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'signal_lost' field must be of type 'bool'"
@@ -544,7 +574,7 @@ class RcChannels(metaclass=Metaclass_RcChannels):
 
     @frame_drop_count.setter
     def frame_drop_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'frame_drop_count' field must be of type 'int'"

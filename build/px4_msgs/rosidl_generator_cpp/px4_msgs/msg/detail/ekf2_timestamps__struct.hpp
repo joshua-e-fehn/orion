@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Ekf2Timestamps.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/ekf2_timestamps.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__EKF2_TIMESTAMPS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__EKF2_TIMESTAMPS__STRUCT_HPP_
 
@@ -40,6 +43,7 @@ struct Ekf2Timestamps_
     {
       this->timestamp = 0ull;
       this->airspeed_timestamp_rel = 0;
+      this->airspeed_validated_timestamp_rel = 0;
       this->distance_sensor_timestamp_rel = 0;
       this->optical_flow_timestamp_rel = 0;
       this->vehicle_air_data_timestamp_rel = 0;
@@ -56,6 +60,7 @@ struct Ekf2Timestamps_
     {
       this->timestamp = 0ull;
       this->airspeed_timestamp_rel = 0;
+      this->airspeed_validated_timestamp_rel = 0;
       this->distance_sensor_timestamp_rel = 0;
       this->optical_flow_timestamp_rel = 0;
       this->vehicle_air_data_timestamp_rel = 0;
@@ -71,6 +76,9 @@ struct Ekf2Timestamps_
   using _airspeed_timestamp_rel_type =
     int16_t;
   _airspeed_timestamp_rel_type airspeed_timestamp_rel;
+  using _airspeed_validated_timestamp_rel_type =
+    int16_t;
+  _airspeed_validated_timestamp_rel_type airspeed_validated_timestamp_rel;
   using _distance_sensor_timestamp_rel_type =
     int16_t;
   _distance_sensor_timestamp_rel_type distance_sensor_timestamp_rel;
@@ -98,6 +106,12 @@ struct Ekf2Timestamps_
     const int16_t & _arg)
   {
     this->airspeed_timestamp_rel = _arg;
+    return *this;
+  }
+  Type & set__airspeed_validated_timestamp_rel(
+    const int16_t & _arg)
+  {
+    this->airspeed_validated_timestamp_rel = _arg;
     return *this;
   }
   Type & set__distance_sensor_timestamp_rel(
@@ -179,6 +193,9 @@ struct Ekf2Timestamps_
       return false;
     }
     if (this->airspeed_timestamp_rel != other.airspeed_timestamp_rel) {
+      return false;
+    }
+    if (this->airspeed_validated_timestamp_rel != other.airspeed_validated_timestamp_rel) {
       return false;
     }
     if (this->distance_sensor_timestamp_rel != other.distance_sensor_timestamp_rel) {

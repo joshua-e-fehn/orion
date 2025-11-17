@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/ActuatorArmed.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -60,9 +67,10 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
         '_prearmed',
         '_ready_to_arm',
         '_lockdown',
-        '_manual_lockdown',
-        '_force_failsafe',
+        '_kill',
+        '_termination',
         '_in_esc_calibration_mode',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -71,11 +79,13 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
         'prearmed': 'boolean',
         'ready_to_arm': 'boolean',
         'lockdown': 'boolean',
-        'manual_lockdown': 'boolean',
-        'force_failsafe': 'boolean',
+        'kill': 'boolean',
+        'termination': 'boolean',
         'in_esc_calibration_mode': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -88,16 +98,21 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.armed = kwargs.get('armed', bool())
         self.prearmed = kwargs.get('prearmed', bool())
         self.ready_to_arm = kwargs.get('ready_to_arm', bool())
         self.lockdown = kwargs.get('lockdown', bool())
-        self.manual_lockdown = kwargs.get('manual_lockdown', bool())
-        self.force_failsafe = kwargs.get('force_failsafe', bool())
+        self.kill = kwargs.get('kill', bool())
+        self.termination = kwargs.get('termination', bool())
         self.in_esc_calibration_mode = kwargs.get('in_esc_calibration_mode', bool())
 
     def __repr__(self):
@@ -105,7 +120,7 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -119,11 +134,12 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -139,9 +155,9 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
             return False
         if self.lockdown != other.lockdown:
             return False
-        if self.manual_lockdown != other.manual_lockdown:
+        if self.kill != other.kill:
             return False
-        if self.force_failsafe != other.force_failsafe:
+        if self.termination != other.termination:
             return False
         if self.in_esc_calibration_mode != other.in_esc_calibration_mode:
             return False
@@ -159,7 +175,7 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -174,7 +190,7 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
 
     @armed.setter
     def armed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'armed' field must be of type 'bool'"
@@ -187,7 +203,7 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
 
     @prearmed.setter
     def prearmed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'prearmed' field must be of type 'bool'"
@@ -200,7 +216,7 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
 
     @ready_to_arm.setter
     def ready_to_arm(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'ready_to_arm' field must be of type 'bool'"
@@ -213,37 +229,37 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
 
     @lockdown.setter
     def lockdown(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'lockdown' field must be of type 'bool'"
         self._lockdown = value
 
     @builtins.property
-    def manual_lockdown(self):
-        """Message field 'manual_lockdown'."""
-        return self._manual_lockdown
+    def kill(self):
+        """Message field 'kill'."""
+        return self._kill
 
-    @manual_lockdown.setter
-    def manual_lockdown(self, value):
-        if __debug__:
+    @kill.setter
+    def kill(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
-                "The 'manual_lockdown' field must be of type 'bool'"
-        self._manual_lockdown = value
+                "The 'kill' field must be of type 'bool'"
+        self._kill = value
 
     @builtins.property
-    def force_failsafe(self):
-        """Message field 'force_failsafe'."""
-        return self._force_failsafe
+    def termination(self):
+        """Message field 'termination'."""
+        return self._termination
 
-    @force_failsafe.setter
-    def force_failsafe(self, value):
-        if __debug__:
+    @termination.setter
+    def termination(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
-                "The 'force_failsafe' field must be of type 'bool'"
-        self._force_failsafe = value
+                "The 'termination' field must be of type 'bool'"
+        self._termination = value
 
     @builtins.property
     def in_esc_calibration_mode(self):
@@ -252,7 +268,7 @@ class ActuatorArmed(metaclass=Metaclass_ActuatorArmed):
 
     @in_esc_calibration_mode.setter
     def in_esc_calibration_mode(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'in_esc_calibration_mode' field must be of type 'bool'"

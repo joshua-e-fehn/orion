@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/satellite_info__functions.h"
 #include "px4_msgs/msg/detail/satellite_info__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -40,20 +41,20 @@ void SatelliteInfo_fini_function(void * message_memory)
 size_t size_function__SatelliteInfo__svid(const void * untyped_member)
 {
   (void)untyped_member;
-  return 20;
+  return 40;
 }
 
 const void * get_const_function__SatelliteInfo__svid(const void * untyped_member, size_t index)
 {
   const auto & member =
-    *reinterpret_cast<const std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<const std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
 void * get_function__SatelliteInfo__svid(void * untyped_member, size_t index)
 {
   auto & member =
-    *reinterpret_cast<std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
@@ -78,20 +79,20 @@ void assign_function__SatelliteInfo__svid(
 size_t size_function__SatelliteInfo__used(const void * untyped_member)
 {
   (void)untyped_member;
-  return 20;
+  return 40;
 }
 
 const void * get_const_function__SatelliteInfo__used(const void * untyped_member, size_t index)
 {
   const auto & member =
-    *reinterpret_cast<const std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<const std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
 void * get_function__SatelliteInfo__used(void * untyped_member, size_t index)
 {
   auto & member =
-    *reinterpret_cast<std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
@@ -116,20 +117,20 @@ void assign_function__SatelliteInfo__used(
 size_t size_function__SatelliteInfo__elevation(const void * untyped_member)
 {
   (void)untyped_member;
-  return 20;
+  return 40;
 }
 
 const void * get_const_function__SatelliteInfo__elevation(const void * untyped_member, size_t index)
 {
   const auto & member =
-    *reinterpret_cast<const std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<const std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
 void * get_function__SatelliteInfo__elevation(void * untyped_member, size_t index)
 {
   auto & member =
-    *reinterpret_cast<std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
@@ -154,20 +155,20 @@ void assign_function__SatelliteInfo__elevation(
 size_t size_function__SatelliteInfo__azimuth(const void * untyped_member)
 {
   (void)untyped_member;
-  return 20;
+  return 40;
 }
 
 const void * get_const_function__SatelliteInfo__azimuth(const void * untyped_member, size_t index)
 {
   const auto & member =
-    *reinterpret_cast<const std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<const std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
 void * get_function__SatelliteInfo__azimuth(void * untyped_member, size_t index)
 {
   auto & member =
-    *reinterpret_cast<std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
@@ -192,20 +193,20 @@ void assign_function__SatelliteInfo__azimuth(
 size_t size_function__SatelliteInfo__snr(const void * untyped_member)
 {
   (void)untyped_member;
-  return 20;
+  return 40;
 }
 
 const void * get_const_function__SatelliteInfo__snr(const void * untyped_member, size_t index)
 {
   const auto & member =
-    *reinterpret_cast<const std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<const std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
 void * get_function__SatelliteInfo__snr(void * untyped_member, size_t index)
 {
   auto & member =
-    *reinterpret_cast<std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
@@ -230,20 +231,20 @@ void assign_function__SatelliteInfo__snr(
 size_t size_function__SatelliteInfo__prn(const void * untyped_member)
 {
   (void)untyped_member;
-  return 20;
+  return 40;
 }
 
 const void * get_const_function__SatelliteInfo__prn(const void * untyped_member, size_t index)
 {
   const auto & member =
-    *reinterpret_cast<const std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<const std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
 void * get_function__SatelliteInfo__prn(void * untyped_member, size_t index)
 {
   auto & member =
-    *reinterpret_cast<std::array<uint8_t, 20> *>(untyped_member);
+    *reinterpret_cast<std::array<uint8_t, 40> *>(untyped_member);
   return &member[index];
 }
 
@@ -271,6 +272,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SatelliteInfo
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -288,6 +290,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SatelliteInfo
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -305,8 +308,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SatelliteInfo
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
-    20,  // array size
+    40,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::SatelliteInfo, svid),  // bytes offset in struct
     nullptr,  // default value
@@ -322,8 +326,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SatelliteInfo
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
-    20,  // array size
+    40,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::SatelliteInfo, used),  // bytes offset in struct
     nullptr,  // default value
@@ -339,8 +344,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SatelliteInfo
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
-    20,  // array size
+    40,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::SatelliteInfo, elevation),  // bytes offset in struct
     nullptr,  // default value
@@ -356,8 +362,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SatelliteInfo
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
-    20,  // array size
+    40,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::SatelliteInfo, azimuth),  // bytes offset in struct
     nullptr,  // default value
@@ -373,8 +380,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SatelliteInfo
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
-    20,  // array size
+    40,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::SatelliteInfo, snr),  // bytes offset in struct
     nullptr,  // default value
@@ -390,8 +398,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SatelliteInfo
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
-    20,  // array size
+    40,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::SatelliteInfo, prn),  // bytes offset in struct
     nullptr,  // default value
@@ -409,6 +418,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMembers SatelliteInf
   "SatelliteInfo",  // message name
   8,  // number of fields
   sizeof(px4_msgs::msg::SatelliteInfo),
+  false,  // has_any_key_member_
   SatelliteInfo_message_member_array,  // message members
   SatelliteInfo_init_function,  // function to initialize message memory (memory has to be allocated)
   SatelliteInfo_fini_function  // function to terminate message instance (will not free memory)
@@ -418,6 +428,9 @@ static const rosidl_message_type_support_t SatelliteInfo_message_type_support_ha
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &SatelliteInfo_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__SatelliteInfo__get_type_hash,
+  &px4_msgs__msg__SatelliteInfo__get_type_description,
+  &px4_msgs__msg__SatelliteInfo__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

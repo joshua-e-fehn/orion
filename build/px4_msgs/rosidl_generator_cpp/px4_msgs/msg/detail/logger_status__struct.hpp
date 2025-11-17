@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/LoggerStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/logger_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__LOGGER_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__LOGGER_STATUS__STRUCT_HPP_
 
@@ -41,6 +44,7 @@ struct LoggerStatus_
       this->timestamp = 0ull;
       this->type = 0;
       this->backend = 0;
+      this->is_logging = false;
       this->total_written_kb = 0.0f;
       this->write_rate_kb_s = 0.0f;
       this->dropouts = 0ul;
@@ -60,6 +64,7 @@ struct LoggerStatus_
       this->timestamp = 0ull;
       this->type = 0;
       this->backend = 0;
+      this->is_logging = false;
       this->total_written_kb = 0.0f;
       this->write_rate_kb_s = 0.0f;
       this->dropouts = 0ul;
@@ -80,6 +85,9 @@ struct LoggerStatus_
   using _backend_type =
     uint8_t;
   _backend_type backend;
+  using _is_logging_type =
+    bool;
+  _is_logging_type is_logging;
   using _total_written_kb_type =
     float;
   _total_written_kb_type total_written_kb;
@@ -119,6 +127,12 @@ struct LoggerStatus_
     const uint8_t & _arg)
   {
     this->backend = _arg;
+    return *this;
+  }
+  Type & set__is_logging(
+    const bool & _arg)
+  {
+    this->is_logging = _arg;
     return *this;
   }
   Type & set__total_written_kb(
@@ -223,6 +237,9 @@ struct LoggerStatus_
       return false;
     }
     if (this->backend != other.backend) {
+      return false;
+    }
+    if (this->is_logging != other.is_logging) {
       return false;
     }
     if (this->total_written_kb != other.total_written_kb) {

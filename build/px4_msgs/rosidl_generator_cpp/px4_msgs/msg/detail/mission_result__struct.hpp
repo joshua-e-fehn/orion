@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/MissionResult.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/mission_result.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__MISSION_RESULT__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__MISSION_RESULT__STRUCT_HPP_
 
@@ -39,7 +42,9 @@ struct MissionResult_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->timestamp = 0ull;
-      this->instance_count = 0ul;
+      this->mission_id = 0ul;
+      this->geofence_id = 0ul;
+      this->home_position_counter = 0ul;
       this->seq_reached = 0l;
       this->seq_current = 0;
       this->seq_total = 0;
@@ -61,7 +66,9 @@ struct MissionResult_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->timestamp = 0ull;
-      this->instance_count = 0ul;
+      this->mission_id = 0ul;
+      this->geofence_id = 0ul;
+      this->home_position_counter = 0ul;
       this->seq_reached = 0l;
       this->seq_current = 0;
       this->seq_total = 0;
@@ -80,9 +87,15 @@ struct MissionResult_
   using _timestamp_type =
     uint64_t;
   _timestamp_type timestamp;
-  using _instance_count_type =
+  using _mission_id_type =
     uint32_t;
-  _instance_count_type instance_count;
+  _mission_id_type mission_id;
+  using _geofence_id_type =
+    uint32_t;
+  _geofence_id_type geofence_id;
+  using _home_position_counter_type =
+    uint32_t;
+  _home_position_counter_type home_position_counter;
   using _seq_reached_type =
     int32_t;
   _seq_reached_type seq_reached;
@@ -124,10 +137,22 @@ struct MissionResult_
     this->timestamp = _arg;
     return *this;
   }
-  Type & set__instance_count(
+  Type & set__mission_id(
     const uint32_t & _arg)
   {
-    this->instance_count = _arg;
+    this->mission_id = _arg;
+    return *this;
+  }
+  Type & set__geofence_id(
+    const uint32_t & _arg)
+  {
+    this->geofence_id = _arg;
+    return *this;
+  }
+  Type & set__home_position_counter(
+    const uint32_t & _arg)
+  {
+    this->home_position_counter = _arg;
     return *this;
   }
   Type & set__seq_reached(
@@ -198,12 +223,6 @@ struct MissionResult_
   }
 
   // constant declarations
-  static constexpr uint8_t MISSION_EXECUTION_MODE_NORMAL =
-    0u;
-  static constexpr uint8_t MISSION_EXECUTION_MODE_REVERSE =
-    1u;
-  static constexpr uint8_t MISSION_EXECUTION_MODE_FAST_FORWARD =
-    2u;
 
   // pointer types
   using RawPtr =
@@ -248,7 +267,13 @@ struct MissionResult_
     if (this->timestamp != other.timestamp) {
       return false;
     }
-    if (this->instance_count != other.instance_count) {
+    if (this->mission_id != other.mission_id) {
+      return false;
+    }
+    if (this->geofence_id != other.geofence_id) {
+      return false;
+    }
+    if (this->home_position_counter != other.home_position_counter) {
       return false;
     }
     if (this->seq_reached != other.seq_reached) {
@@ -297,21 +322,6 @@ using MissionResult =
   px4_msgs::msg::MissionResult_<std::allocator<void>>;
 
 // constant definitions
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t MissionResult_<ContainerAllocator>::MISSION_EXECUTION_MODE_NORMAL;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t MissionResult_<ContainerAllocator>::MISSION_EXECUTION_MODE_REVERSE;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t MissionResult_<ContainerAllocator>::MISSION_EXECUTION_MODE_FAST_FORWARD;
-#endif  // __cplusplus < 201703L
 
 }  // namespace msg
 

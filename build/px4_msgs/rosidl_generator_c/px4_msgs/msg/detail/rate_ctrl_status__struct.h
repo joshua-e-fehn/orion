@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/RateCtrlStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/rate_ctrl_status.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__RATE_CTRL_STATUS__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__RATE_CTRL_STATUS__STRUCT_H_
 
@@ -14,7 +17,6 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Struct defined in msg/RateCtrlStatus in the package px4_msgs.
@@ -26,8 +28,6 @@ typedef struct px4_msgs__msg__RateCtrlStatus
   float rollspeed_integ;
   float pitchspeed_integ;
   float yawspeed_integ;
-  /// FW only and optional
-  float wheel_rate_integ;
 } px4_msgs__msg__RateCtrlStatus;
 
 // Struct for a sequence of px4_msgs__msg__RateCtrlStatus.

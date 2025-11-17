@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/OrbTestMedium.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/orb_test_medium.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ORB_TEST_MEDIUM__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__ORB_TEST_MEDIUM__STRUCT_HPP_
 
@@ -88,6 +91,8 @@ struct OrbTestMedium_
   }
 
   // constant declarations
+  static constexpr uint8_t ORB_QUEUE_LENGTH =
+    16u;
 
   // pointer types
   using RawPtr =
@@ -151,6 +156,11 @@ using OrbTestMedium =
   px4_msgs::msg::OrbTestMedium_<std::allocator<void>>;
 
 // constant definitions
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t OrbTestMedium_<ContainerAllocator>::ORB_QUEUE_LENGTH;
+#endif  // __cplusplus < 201703L
 
 }  // namespace msg
 

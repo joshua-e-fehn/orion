@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/GimbalDeviceSetAttitude.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -112,6 +119,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
         '_angular_velocity_x',
         '_angular_velocity_y',
         '_angular_velocity_z',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -125,6 +133,8 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
         'angular_velocity_z': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
@@ -137,9 +147,14 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.target_system = kwargs.get('target_system', int())
         self.target_component = kwargs.get('target_component', int())
@@ -147,8 +162,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
         if 'q' not in kwargs:
             self.q = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.q = numpy.array(kwargs.get('q'), dtype=numpy.float32)
-            assert self.q.shape == (4, )
+            self.q = kwargs.get('q')
         self.angular_velocity_x = kwargs.get('angular_velocity_x', float())
         self.angular_velocity_y = kwargs.get('angular_velocity_y', float())
         self.angular_velocity_z = kwargs.get('angular_velocity_z', float())
@@ -158,7 +172,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -172,11 +186,12 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -212,7 +227,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -227,7 +242,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
 
     @target_system.setter
     def target_system(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'target_system' field must be of type 'int'"
@@ -242,7 +257,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
 
     @target_component.setter
     def target_component(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'target_component' field must be of type 'int'"
@@ -257,7 +272,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
 
     @flags.setter
     def flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'flags' field must be of type 'int'"
@@ -272,14 +287,14 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
 
     @q.setter
     def q(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'q' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'q' numpy.ndarray() must have a size of 4"
-            self._q = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'q' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'q' numpy.ndarray() must have a size of 4"
+                self._q = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -303,7 +318,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
 
     @angular_velocity_x.setter
     def angular_velocity_x(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'angular_velocity_x' field must be of type 'float'"
@@ -318,7 +333,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
 
     @angular_velocity_y.setter
     def angular_velocity_y(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'angular_velocity_y' field must be of type 'float'"
@@ -333,7 +348,7 @@ class GimbalDeviceSetAttitude(metaclass=Metaclass_GimbalDeviceSetAttitude):
 
     @angular_velocity_z.setter
     def angular_velocity_z(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'angular_velocity_z' field must be of type 'float'"

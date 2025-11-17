@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/EstimatorAidSource1d.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/estimator_aid_source1d.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ESTIMATOR_AID_SOURCE1D__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__ESTIMATOR_AID_SOURCE1D__TRAITS_HPP_
 
@@ -81,6 +84,13 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: innovation_filtered
+  {
+    out << "innovation_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.innovation_filtered, out);
+    out << ", ";
+  }
+
   // member: innovation_variance
   {
     out << "innovation_variance: ";
@@ -95,10 +105,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: fusion_enabled
+  // member: test_ratio_filtered
   {
-    out << "fusion_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.fusion_enabled, out);
+    out << "test_ratio_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.test_ratio_filtered, out);
     out << ", ";
   }
 
@@ -201,6 +211,16 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
+  // member: innovation_filtered
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "innovation_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.innovation_filtered, out);
+    out << "\n";
+  }
+
   // member: innovation_variance
   {
     if (indentation > 0) {
@@ -221,13 +241,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: fusion_enabled
+  // member: test_ratio_filtered
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "fusion_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.fusion_enabled, out);
+    out << "test_ratio_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.test_ratio_filtered, out);
     out << "\n";
   }
 

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ActuatorArmed.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/actuator_armed.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ACTUATOR_ARMED__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__ACTUATOR_ARMED__BUILDER_HPP_
 
@@ -37,15 +40,15 @@ private:
   ::px4_msgs::msg::ActuatorArmed msg_;
 };
 
-class Init_ActuatorArmed_force_failsafe
+class Init_ActuatorArmed_termination
 {
 public:
-  explicit Init_ActuatorArmed_force_failsafe(::px4_msgs::msg::ActuatorArmed & msg)
+  explicit Init_ActuatorArmed_termination(::px4_msgs::msg::ActuatorArmed & msg)
   : msg_(msg)
   {}
-  Init_ActuatorArmed_in_esc_calibration_mode force_failsafe(::px4_msgs::msg::ActuatorArmed::_force_failsafe_type arg)
+  Init_ActuatorArmed_in_esc_calibration_mode termination(::px4_msgs::msg::ActuatorArmed::_termination_type arg)
   {
-    msg_.force_failsafe = std::move(arg);
+    msg_.termination = std::move(arg);
     return Init_ActuatorArmed_in_esc_calibration_mode(msg_);
   }
 
@@ -53,16 +56,16 @@ private:
   ::px4_msgs::msg::ActuatorArmed msg_;
 };
 
-class Init_ActuatorArmed_manual_lockdown
+class Init_ActuatorArmed_kill
 {
 public:
-  explicit Init_ActuatorArmed_manual_lockdown(::px4_msgs::msg::ActuatorArmed & msg)
+  explicit Init_ActuatorArmed_kill(::px4_msgs::msg::ActuatorArmed & msg)
   : msg_(msg)
   {}
-  Init_ActuatorArmed_force_failsafe manual_lockdown(::px4_msgs::msg::ActuatorArmed::_manual_lockdown_type arg)
+  Init_ActuatorArmed_termination kill(::px4_msgs::msg::ActuatorArmed::_kill_type arg)
   {
-    msg_.manual_lockdown = std::move(arg);
-    return Init_ActuatorArmed_force_failsafe(msg_);
+    msg_.kill = std::move(arg);
+    return Init_ActuatorArmed_termination(msg_);
   }
 
 private:
@@ -75,10 +78,10 @@ public:
   explicit Init_ActuatorArmed_lockdown(::px4_msgs::msg::ActuatorArmed & msg)
   : msg_(msg)
   {}
-  Init_ActuatorArmed_manual_lockdown lockdown(::px4_msgs::msg::ActuatorArmed::_lockdown_type arg)
+  Init_ActuatorArmed_kill lockdown(::px4_msgs::msg::ActuatorArmed::_lockdown_type arg)
   {
     msg_.lockdown = std::move(arg);
-    return Init_ActuatorArmed_manual_lockdown(msg_);
+    return Init_ActuatorArmed_kill(msg_);
   }
 
 private:

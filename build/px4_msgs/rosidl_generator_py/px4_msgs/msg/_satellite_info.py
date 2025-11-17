@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/SatelliteInfo.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -28,7 +35,7 @@ class Metaclass_SatelliteInfo(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'SAT_INFO_MAX_SATELLITES': 20,
+        'SAT_INFO_MAX_SATELLITES': 40,
     }
 
     @classmethod
@@ -83,73 +90,75 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
         '_azimuth',
         '_snr',
         '_prn',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
         'count': 'uint8',
-        'svid': 'uint8[20]',
-        'used': 'uint8[20]',
-        'elevation': 'uint8[20]',
-        'azimuth': 'uint8[20]',
-        'snr': 'uint8[20]',
-        'prn': 'uint8[20]',
+        'svid': 'uint8[40]',
+        'used': 'uint8[40]',
+        'elevation': 'uint8[40]',
+        'azimuth': 'uint8[40]',
+        'snr': 'uint8[40]',
+        'prn': 'uint8[40]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 20),  # noqa: E501
-        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 20),  # noqa: E501
-        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 20),  # noqa: E501
-        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 20),  # noqa: E501
-        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 20),  # noqa: E501
-        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 20),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 40),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 40),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 40),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 40),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 40),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 40),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.count = kwargs.get('count', int())
         if 'svid' not in kwargs:
-            self.svid = numpy.zeros(20, dtype=numpy.uint8)
+            self.svid = numpy.zeros(40, dtype=numpy.uint8)
         else:
-            self.svid = numpy.array(kwargs.get('svid'), dtype=numpy.uint8)
-            assert self.svid.shape == (20, )
+            self.svid = kwargs.get('svid')
         if 'used' not in kwargs:
-            self.used = numpy.zeros(20, dtype=numpy.uint8)
+            self.used = numpy.zeros(40, dtype=numpy.uint8)
         else:
-            self.used = numpy.array(kwargs.get('used'), dtype=numpy.uint8)
-            assert self.used.shape == (20, )
+            self.used = kwargs.get('used')
         if 'elevation' not in kwargs:
-            self.elevation = numpy.zeros(20, dtype=numpy.uint8)
+            self.elevation = numpy.zeros(40, dtype=numpy.uint8)
         else:
-            self.elevation = numpy.array(kwargs.get('elevation'), dtype=numpy.uint8)
-            assert self.elevation.shape == (20, )
+            self.elevation = kwargs.get('elevation')
         if 'azimuth' not in kwargs:
-            self.azimuth = numpy.zeros(20, dtype=numpy.uint8)
+            self.azimuth = numpy.zeros(40, dtype=numpy.uint8)
         else:
-            self.azimuth = numpy.array(kwargs.get('azimuth'), dtype=numpy.uint8)
-            assert self.azimuth.shape == (20, )
+            self.azimuth = kwargs.get('azimuth')
         if 'snr' not in kwargs:
-            self.snr = numpy.zeros(20, dtype=numpy.uint8)
+            self.snr = numpy.zeros(40, dtype=numpy.uint8)
         else:
-            self.snr = numpy.array(kwargs.get('snr'), dtype=numpy.uint8)
-            assert self.snr.shape == (20, )
+            self.snr = kwargs.get('snr')
         if 'prn' not in kwargs:
-            self.prn = numpy.zeros(20, dtype=numpy.uint8)
+            self.prn = numpy.zeros(40, dtype=numpy.uint8)
         else:
-            self.prn = numpy.array(kwargs.get('prn'), dtype=numpy.uint8)
-            assert self.prn.shape == (20, )
+            self.prn = kwargs.get('prn')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -163,11 +172,12 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -203,7 +213,7 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -218,7 +228,7 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
 
     @count.setter
     def count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'count' field must be of type 'int'"
@@ -233,14 +243,14 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
 
     @svid.setter
     def svid(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'svid' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 20, \
-                "The 'svid' numpy.ndarray() must have a size of 20"
-            self._svid = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'svid' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 40, \
+                    "The 'svid' numpy.ndarray() must have a size of 40"
+                self._svid = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -251,10 +261,10 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 len(value) == 20 and
+                 len(value) == 40 and
                  all(isinstance(v, int) for v in value) and
                  all(val >= 0 and val < 256 for val in value)), \
-                "The 'svid' field must be a set or sequence with length 20 and each value of type 'int' and each unsigned integer in [0, 255]"
+                "The 'svid' field must be a set or sequence with length 40 and each value of type 'int' and each unsigned integer in [0, 255]"
         self._svid = numpy.array(value, dtype=numpy.uint8)
 
     @builtins.property
@@ -264,14 +274,14 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
 
     @used.setter
     def used(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'used' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 20, \
-                "The 'used' numpy.ndarray() must have a size of 20"
-            self._used = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'used' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 40, \
+                    "The 'used' numpy.ndarray() must have a size of 40"
+                self._used = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -282,10 +292,10 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 len(value) == 20 and
+                 len(value) == 40 and
                  all(isinstance(v, int) for v in value) and
                  all(val >= 0 and val < 256 for val in value)), \
-                "The 'used' field must be a set or sequence with length 20 and each value of type 'int' and each unsigned integer in [0, 255]"
+                "The 'used' field must be a set or sequence with length 40 and each value of type 'int' and each unsigned integer in [0, 255]"
         self._used = numpy.array(value, dtype=numpy.uint8)
 
     @builtins.property
@@ -295,14 +305,14 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
 
     @elevation.setter
     def elevation(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'elevation' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 20, \
-                "The 'elevation' numpy.ndarray() must have a size of 20"
-            self._elevation = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'elevation' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 40, \
+                    "The 'elevation' numpy.ndarray() must have a size of 40"
+                self._elevation = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -313,10 +323,10 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 len(value) == 20 and
+                 len(value) == 40 and
                  all(isinstance(v, int) for v in value) and
                  all(val >= 0 and val < 256 for val in value)), \
-                "The 'elevation' field must be a set or sequence with length 20 and each value of type 'int' and each unsigned integer in [0, 255]"
+                "The 'elevation' field must be a set or sequence with length 40 and each value of type 'int' and each unsigned integer in [0, 255]"
         self._elevation = numpy.array(value, dtype=numpy.uint8)
 
     @builtins.property
@@ -326,14 +336,14 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
 
     @azimuth.setter
     def azimuth(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'azimuth' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 20, \
-                "The 'azimuth' numpy.ndarray() must have a size of 20"
-            self._azimuth = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'azimuth' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 40, \
+                    "The 'azimuth' numpy.ndarray() must have a size of 40"
+                self._azimuth = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -344,10 +354,10 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 len(value) == 20 and
+                 len(value) == 40 and
                  all(isinstance(v, int) for v in value) and
                  all(val >= 0 and val < 256 for val in value)), \
-                "The 'azimuth' field must be a set or sequence with length 20 and each value of type 'int' and each unsigned integer in [0, 255]"
+                "The 'azimuth' field must be a set or sequence with length 40 and each value of type 'int' and each unsigned integer in [0, 255]"
         self._azimuth = numpy.array(value, dtype=numpy.uint8)
 
     @builtins.property
@@ -357,14 +367,14 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
 
     @snr.setter
     def snr(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'snr' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 20, \
-                "The 'snr' numpy.ndarray() must have a size of 20"
-            self._snr = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'snr' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 40, \
+                    "The 'snr' numpy.ndarray() must have a size of 40"
+                self._snr = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -375,10 +385,10 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 len(value) == 20 and
+                 len(value) == 40 and
                  all(isinstance(v, int) for v in value) and
                  all(val >= 0 and val < 256 for val in value)), \
-                "The 'snr' field must be a set or sequence with length 20 and each value of type 'int' and each unsigned integer in [0, 255]"
+                "The 'snr' field must be a set or sequence with length 40 and each value of type 'int' and each unsigned integer in [0, 255]"
         self._snr = numpy.array(value, dtype=numpy.uint8)
 
     @builtins.property
@@ -388,14 +398,14 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
 
     @prn.setter
     def prn(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'prn' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 20, \
-                "The 'prn' numpy.ndarray() must have a size of 20"
-            self._prn = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'prn' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 40, \
+                    "The 'prn' numpy.ndarray() must have a size of 40"
+                self._prn = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -406,8 +416,8 @@ class SatelliteInfo(metaclass=Metaclass_SatelliteInfo):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 len(value) == 20 and
+                 len(value) == 40 and
                  all(isinstance(v, int) for v in value) and
                  all(val >= 0 and val < 256 for val in value)), \
-                "The 'prn' field must be a set or sequence with length 20 and each value of type 'int' and each unsigned integer in [0, 255]"
+                "The 'prn' field must be a set or sequence with length 40 and each value of type 'int' and each unsigned integer in [0, 255]"
         self._prn = numpy.array(value, dtype=numpy.uint8)

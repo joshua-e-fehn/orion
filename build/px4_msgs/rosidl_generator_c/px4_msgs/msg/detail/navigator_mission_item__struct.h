@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/NavigatorMissionItem.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/navigator_mission_item.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__NAVIGATOR_MISSION_ITEM__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__NAVIGATOR_MISSION_ITEM__STRUCT_H_
 
@@ -14,7 +17,6 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Struct defined in msg/NavigatorMissionItem in the package px4_msgs.
@@ -22,8 +24,6 @@ typedef struct px4_msgs__msg__NavigatorMissionItem
 {
   /// time since system start (microseconds)
   uint64_t timestamp;
-  /// Instance count of this mission. Increments monotonically whenever the mission is modified
-  uint32_t instance_count;
   /// Sequence of the current mission item
   uint16_t sequence_current;
   uint16_t nav_cmd;

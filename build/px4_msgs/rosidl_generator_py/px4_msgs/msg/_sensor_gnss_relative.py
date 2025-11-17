@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/SensorGnssRelative.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -82,6 +89,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
         '_reference_observations_miss',
         '_heading_valid',
         '_relative_position_normalized',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -108,6 +116,8 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
         'relative_position_normalized': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -133,9 +143,14 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.device_id = kwargs.get('device_id', int())
@@ -144,13 +159,11 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
         if 'position' not in kwargs:
             self.position = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.position = numpy.array(kwargs.get('position'), dtype=numpy.float32)
-            assert self.position.shape == (3, )
+            self.position = kwargs.get('position')
         if 'position_accuracy' not in kwargs:
             self.position_accuracy = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.position_accuracy = numpy.array(kwargs.get('position_accuracy'), dtype=numpy.float32)
-            assert self.position_accuracy.shape == (3, )
+            self.position_accuracy = kwargs.get('position_accuracy')
         self.heading = kwargs.get('heading', float())
         self.heading_accuracy = kwargs.get('heading_accuracy', float())
         self.position_length = kwargs.get('position_length', float())
@@ -171,7 +184,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -185,11 +198,12 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -251,7 +265,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -266,7 +280,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -281,7 +295,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @device_id.setter
     def device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'device_id' field must be of type 'int'"
@@ -296,7 +310,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @time_utc_usec.setter
     def time_utc_usec(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'time_utc_usec' field must be of type 'int'"
@@ -311,7 +325,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @reference_station_id.setter
     def reference_station_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'reference_station_id' field must be of type 'int'"
@@ -326,14 +340,14 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @position.setter
     def position(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'position' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'position' numpy.ndarray() must have a size of 3"
-            self._position = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'position' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'position' numpy.ndarray() must have a size of 3"
+                self._position = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -357,14 +371,14 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @position_accuracy.setter
     def position_accuracy(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'position_accuracy' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'position_accuracy' numpy.ndarray() must have a size of 3"
-            self._position_accuracy = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'position_accuracy' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'position_accuracy' numpy.ndarray() must have a size of 3"
+                self._position_accuracy = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -388,7 +402,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @heading.setter
     def heading(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'heading' field must be of type 'float'"
@@ -403,7 +417,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @heading_accuracy.setter
     def heading_accuracy(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'heading_accuracy' field must be of type 'float'"
@@ -418,7 +432,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @position_length.setter
     def position_length(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'position_length' field must be of type 'float'"
@@ -433,7 +447,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @accuracy_length.setter
     def accuracy_length(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'accuracy_length' field must be of type 'float'"
@@ -448,7 +462,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @gnss_fix_ok.setter
     def gnss_fix_ok(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'gnss_fix_ok' field must be of type 'bool'"
@@ -461,7 +475,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @differential_solution.setter
     def differential_solution(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'differential_solution' field must be of type 'bool'"
@@ -474,7 +488,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @relative_position_valid.setter
     def relative_position_valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'relative_position_valid' field must be of type 'bool'"
@@ -487,7 +501,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @carrier_solution_floating.setter
     def carrier_solution_floating(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'carrier_solution_floating' field must be of type 'bool'"
@@ -500,7 +514,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @carrier_solution_fixed.setter
     def carrier_solution_fixed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'carrier_solution_fixed' field must be of type 'bool'"
@@ -513,7 +527,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @moving_base_mode.setter
     def moving_base_mode(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'moving_base_mode' field must be of type 'bool'"
@@ -526,7 +540,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @reference_position_miss.setter
     def reference_position_miss(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'reference_position_miss' field must be of type 'bool'"
@@ -539,7 +553,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @reference_observations_miss.setter
     def reference_observations_miss(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'reference_observations_miss' field must be of type 'bool'"
@@ -552,7 +566,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @heading_valid.setter
     def heading_valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'heading_valid' field must be of type 'bool'"
@@ -565,7 +579,7 @@ class SensorGnssRelative(metaclass=Metaclass_SensorGnssRelative):
 
     @relative_position_normalized.setter
     def relative_position_normalized(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'relative_position_normalized' field must be of type 'bool'"

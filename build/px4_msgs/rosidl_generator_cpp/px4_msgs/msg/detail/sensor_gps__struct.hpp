@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/SensorGps.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/sensor_gps.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__SENSOR_GPS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__SENSOR_GPS__STRUCT_HPP_
 
@@ -41,10 +44,10 @@ struct SensorGps_
       this->timestamp = 0ull;
       this->timestamp_sample = 0ull;
       this->device_id = 0ul;
-      this->lat = 0l;
-      this->lon = 0l;
-      this->alt = 0l;
-      this->alt_ellipsoid = 0l;
+      this->latitude_deg = 0.0;
+      this->longitude_deg = 0.0;
+      this->altitude_msl_m = 0.0;
+      this->altitude_ellipsoid_m = 0.0;
       this->s_variance_m_s = 0.0f;
       this->c_variance_rad = 0.0f;
       this->fix_type = 0;
@@ -57,6 +60,7 @@ struct SensorGps_
       this->jamming_state = 0;
       this->jamming_indicator = 0l;
       this->spoofing_state = 0;
+      this->authentication_state = 0;
       this->vel_m_s = 0.0f;
       this->vel_n_m_s = 0.0f;
       this->vel_e_m_s = 0.0f;
@@ -66,11 +70,14 @@ struct SensorGps_
       this->timestamp_time_relative = 0l;
       this->time_utc_usec = 0ull;
       this->satellites_used = 0;
+      this->system_error = 0ul;
       this->heading = 0.0f;
       this->heading_offset = 0.0f;
       this->heading_accuracy = 0.0f;
       this->rtcm_injection_rate = 0.0f;
       this->selected_rtcm_instance = 0;
+      this->rtcm_crc_failed = false;
+      this->rtcm_msg_used = 0;
     }
   }
 
@@ -83,10 +90,10 @@ struct SensorGps_
       this->timestamp = 0ull;
       this->timestamp_sample = 0ull;
       this->device_id = 0ul;
-      this->lat = 0l;
-      this->lon = 0l;
-      this->alt = 0l;
-      this->alt_ellipsoid = 0l;
+      this->latitude_deg = 0.0;
+      this->longitude_deg = 0.0;
+      this->altitude_msl_m = 0.0;
+      this->altitude_ellipsoid_m = 0.0;
       this->s_variance_m_s = 0.0f;
       this->c_variance_rad = 0.0f;
       this->fix_type = 0;
@@ -99,6 +106,7 @@ struct SensorGps_
       this->jamming_state = 0;
       this->jamming_indicator = 0l;
       this->spoofing_state = 0;
+      this->authentication_state = 0;
       this->vel_m_s = 0.0f;
       this->vel_n_m_s = 0.0f;
       this->vel_e_m_s = 0.0f;
@@ -108,11 +116,14 @@ struct SensorGps_
       this->timestamp_time_relative = 0l;
       this->time_utc_usec = 0ull;
       this->satellites_used = 0;
+      this->system_error = 0ul;
       this->heading = 0.0f;
       this->heading_offset = 0.0f;
       this->heading_accuracy = 0.0f;
       this->rtcm_injection_rate = 0.0f;
       this->selected_rtcm_instance = 0;
+      this->rtcm_crc_failed = false;
+      this->rtcm_msg_used = 0;
     }
   }
 
@@ -126,18 +137,18 @@ struct SensorGps_
   using _device_id_type =
     uint32_t;
   _device_id_type device_id;
-  using _lat_type =
-    int32_t;
-  _lat_type lat;
-  using _lon_type =
-    int32_t;
-  _lon_type lon;
-  using _alt_type =
-    int32_t;
-  _alt_type alt;
-  using _alt_ellipsoid_type =
-    int32_t;
-  _alt_ellipsoid_type alt_ellipsoid;
+  using _latitude_deg_type =
+    double;
+  _latitude_deg_type latitude_deg;
+  using _longitude_deg_type =
+    double;
+  _longitude_deg_type longitude_deg;
+  using _altitude_msl_m_type =
+    double;
+  _altitude_msl_m_type altitude_msl_m;
+  using _altitude_ellipsoid_m_type =
+    double;
+  _altitude_ellipsoid_m_type altitude_ellipsoid_m;
   using _s_variance_m_s_type =
     float;
   _s_variance_m_s_type s_variance_m_s;
@@ -174,6 +185,9 @@ struct SensorGps_
   using _spoofing_state_type =
     uint8_t;
   _spoofing_state_type spoofing_state;
+  using _authentication_state_type =
+    uint8_t;
+  _authentication_state_type authentication_state;
   using _vel_m_s_type =
     float;
   _vel_m_s_type vel_m_s;
@@ -201,6 +215,9 @@ struct SensorGps_
   using _satellites_used_type =
     uint8_t;
   _satellites_used_type satellites_used;
+  using _system_error_type =
+    uint32_t;
+  _system_error_type system_error;
   using _heading_type =
     float;
   _heading_type heading;
@@ -216,6 +233,12 @@ struct SensorGps_
   using _selected_rtcm_instance_type =
     uint8_t;
   _selected_rtcm_instance_type selected_rtcm_instance;
+  using _rtcm_crc_failed_type =
+    bool;
+  _rtcm_crc_failed_type rtcm_crc_failed;
+  using _rtcm_msg_used_type =
+    uint8_t;
+  _rtcm_msg_used_type rtcm_msg_used;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -236,28 +259,28 @@ struct SensorGps_
     this->device_id = _arg;
     return *this;
   }
-  Type & set__lat(
-    const int32_t & _arg)
+  Type & set__latitude_deg(
+    const double & _arg)
   {
-    this->lat = _arg;
+    this->latitude_deg = _arg;
     return *this;
   }
-  Type & set__lon(
-    const int32_t & _arg)
+  Type & set__longitude_deg(
+    const double & _arg)
   {
-    this->lon = _arg;
+    this->longitude_deg = _arg;
     return *this;
   }
-  Type & set__alt(
-    const int32_t & _arg)
+  Type & set__altitude_msl_m(
+    const double & _arg)
   {
-    this->alt = _arg;
+    this->altitude_msl_m = _arg;
     return *this;
   }
-  Type & set__alt_ellipsoid(
-    const int32_t & _arg)
+  Type & set__altitude_ellipsoid_m(
+    const double & _arg)
   {
-    this->alt_ellipsoid = _arg;
+    this->altitude_ellipsoid_m = _arg;
     return *this;
   }
   Type & set__s_variance_m_s(
@@ -332,6 +355,12 @@ struct SensorGps_
     this->spoofing_state = _arg;
     return *this;
   }
+  Type & set__authentication_state(
+    const uint8_t & _arg)
+  {
+    this->authentication_state = _arg;
+    return *this;
+  }
   Type & set__vel_m_s(
     const float & _arg)
   {
@@ -386,6 +415,12 @@ struct SensorGps_
     this->satellites_used = _arg;
     return *this;
   }
+  Type & set__system_error(
+    const uint32_t & _arg)
+  {
+    this->system_error = _arg;
+    return *this;
+  }
   Type & set__heading(
     const float & _arg)
   {
@@ -416,24 +451,82 @@ struct SensorGps_
     this->selected_rtcm_instance = _arg;
     return *this;
   }
+  Type & set__rtcm_crc_failed(
+    const bool & _arg)
+  {
+    this->rtcm_crc_failed = _arg;
+    return *this;
+  }
+  Type & set__rtcm_msg_used(
+    const uint8_t & _arg)
+  {
+    this->rtcm_msg_used = _arg;
+    return *this;
+  }
 
   // constant declarations
+  static constexpr uint8_t FIX_TYPE_NONE =
+    1u;
+  static constexpr uint8_t FIX_TYPE_2D =
+    2u;
+  static constexpr uint8_t FIX_TYPE_3D =
+    3u;
+  static constexpr uint8_t FIX_TYPE_RTCM_CODE_DIFFERENTIAL =
+    4u;
+  static constexpr uint8_t FIX_TYPE_RTK_FLOAT =
+    5u;
+  static constexpr uint8_t FIX_TYPE_RTK_FIXED =
+    6u;
+  static constexpr uint8_t FIX_TYPE_EXTRAPOLATED =
+    8u;
   static constexpr uint8_t JAMMING_STATE_UNKNOWN =
     0u;
   static constexpr uint8_t JAMMING_STATE_OK =
     1u;
-  static constexpr uint8_t JAMMING_STATE_WARNING =
+  static constexpr uint8_t JAMMING_STATE_MITIGATED =
     2u;
-  static constexpr uint8_t JAMMING_STATE_CRITICAL =
+  static constexpr uint8_t JAMMING_STATE_DETECTED =
     3u;
   static constexpr uint8_t SPOOFING_STATE_UNKNOWN =
     0u;
-  static constexpr uint8_t SPOOFING_STATE_NONE =
+  static constexpr uint8_t SPOOFING_STATE_OK =
     1u;
-  static constexpr uint8_t SPOOFING_STATE_INDICATED =
+  static constexpr uint8_t SPOOFING_STATE_MITIGATED =
     2u;
-  static constexpr uint8_t SPOOFING_STATE_MULTIPLE =
+  static constexpr uint8_t SPOOFING_STATE_DETECTED =
     3u;
+  static constexpr uint8_t AUTHENTICATION_STATE_UNKNOWN =
+    0u;
+  static constexpr uint8_t AUTHENTICATION_STATE_INITIALIZING =
+    1u;
+  static constexpr uint8_t AUTHENTICATION_STATE_ERROR =
+    2u;
+  static constexpr uint8_t AUTHENTICATION_STATE_OK =
+    3u;
+  static constexpr uint8_t AUTHENTICATION_STATE_DISABLED =
+    4u;
+  static constexpr uint32_t SYSTEM_ERROR_OK =
+    0u;
+  static constexpr uint32_t SYSTEM_ERROR_INCOMING_CORRECTIONS =
+    1u;
+  static constexpr uint32_t SYSTEM_ERROR_CONFIGURATION =
+    2u;
+  static constexpr uint32_t SYSTEM_ERROR_SOFTWARE =
+    4u;
+  static constexpr uint32_t SYSTEM_ERROR_ANTENNA =
+    8u;
+  static constexpr uint32_t SYSTEM_ERROR_EVENT_CONGESTION =
+    16u;
+  static constexpr uint32_t SYSTEM_ERROR_CPU_OVERLOAD =
+    32u;
+  static constexpr uint32_t SYSTEM_ERROR_OUTPUT_CONGESTION =
+    64u;
+  static constexpr uint8_t RTCM_MSG_USED_UNKNOWN =
+    0u;
+  static constexpr uint8_t RTCM_MSG_USED_NOT_USED =
+    1u;
+  static constexpr uint8_t RTCM_MSG_USED_USED =
+    2u;
 
   // pointer types
   using RawPtr =
@@ -484,16 +577,16 @@ struct SensorGps_
     if (this->device_id != other.device_id) {
       return false;
     }
-    if (this->lat != other.lat) {
+    if (this->latitude_deg != other.latitude_deg) {
       return false;
     }
-    if (this->lon != other.lon) {
+    if (this->longitude_deg != other.longitude_deg) {
       return false;
     }
-    if (this->alt != other.alt) {
+    if (this->altitude_msl_m != other.altitude_msl_m) {
       return false;
     }
-    if (this->alt_ellipsoid != other.alt_ellipsoid) {
+    if (this->altitude_ellipsoid_m != other.altitude_ellipsoid_m) {
       return false;
     }
     if (this->s_variance_m_s != other.s_variance_m_s) {
@@ -532,6 +625,9 @@ struct SensorGps_
     if (this->spoofing_state != other.spoofing_state) {
       return false;
     }
+    if (this->authentication_state != other.authentication_state) {
+      return false;
+    }
     if (this->vel_m_s != other.vel_m_s) {
       return false;
     }
@@ -559,6 +655,9 @@ struct SensorGps_
     if (this->satellites_used != other.satellites_used) {
       return false;
     }
+    if (this->system_error != other.system_error) {
+      return false;
+    }
     if (this->heading != other.heading) {
       return false;
     }
@@ -572,6 +671,12 @@ struct SensorGps_
       return false;
     }
     if (this->selected_rtcm_instance != other.selected_rtcm_instance) {
+      return false;
+    }
+    if (this->rtcm_crc_failed != other.rtcm_crc_failed) {
+      return false;
+    }
+    if (this->rtcm_msg_used != other.rtcm_msg_used) {
       return false;
     }
     return true;
@@ -590,6 +695,41 @@ using SensorGps =
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::FIX_TYPE_NONE;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::FIX_TYPE_2D;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::FIX_TYPE_3D;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::FIX_TYPE_RTCM_CODE_DIFFERENTIAL;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::FIX_TYPE_RTK_FLOAT;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::FIX_TYPE_RTK_FIXED;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::FIX_TYPE_EXTRAPOLATED;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
 constexpr uint8_t SensorGps_<ContainerAllocator>::JAMMING_STATE_UNKNOWN;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
@@ -600,12 +740,12 @@ constexpr uint8_t SensorGps_<ContainerAllocator>::JAMMING_STATE_OK;
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t SensorGps_<ContainerAllocator>::JAMMING_STATE_WARNING;
+constexpr uint8_t SensorGps_<ContainerAllocator>::JAMMING_STATE_MITIGATED;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t SensorGps_<ContainerAllocator>::JAMMING_STATE_CRITICAL;
+constexpr uint8_t SensorGps_<ContainerAllocator>::JAMMING_STATE_DETECTED;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
@@ -615,17 +755,97 @@ constexpr uint8_t SensorGps_<ContainerAllocator>::SPOOFING_STATE_UNKNOWN;
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t SensorGps_<ContainerAllocator>::SPOOFING_STATE_NONE;
+constexpr uint8_t SensorGps_<ContainerAllocator>::SPOOFING_STATE_OK;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t SensorGps_<ContainerAllocator>::SPOOFING_STATE_INDICATED;
+constexpr uint8_t SensorGps_<ContainerAllocator>::SPOOFING_STATE_MITIGATED;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t SensorGps_<ContainerAllocator>::SPOOFING_STATE_MULTIPLE;
+constexpr uint8_t SensorGps_<ContainerAllocator>::SPOOFING_STATE_DETECTED;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::AUTHENTICATION_STATE_UNKNOWN;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::AUTHENTICATION_STATE_INITIALIZING;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::AUTHENTICATION_STATE_ERROR;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::AUTHENTICATION_STATE_OK;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::AUTHENTICATION_STATE_DISABLED;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t SensorGps_<ContainerAllocator>::SYSTEM_ERROR_OK;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t SensorGps_<ContainerAllocator>::SYSTEM_ERROR_INCOMING_CORRECTIONS;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t SensorGps_<ContainerAllocator>::SYSTEM_ERROR_CONFIGURATION;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t SensorGps_<ContainerAllocator>::SYSTEM_ERROR_SOFTWARE;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t SensorGps_<ContainerAllocator>::SYSTEM_ERROR_ANTENNA;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t SensorGps_<ContainerAllocator>::SYSTEM_ERROR_EVENT_CONGESTION;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t SensorGps_<ContainerAllocator>::SYSTEM_ERROR_CPU_OVERLOAD;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t SensorGps_<ContainerAllocator>::SYSTEM_ERROR_OUTPUT_CONGESTION;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::RTCM_MSG_USED_UNKNOWN;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::RTCM_MSG_USED_NOT_USED;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t SensorGps_<ContainerAllocator>::RTCM_MSG_USED_USED;
 #endif  // __cplusplus < 201703L
 
 }  // namespace msg

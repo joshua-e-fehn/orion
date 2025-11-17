@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/SystemPower.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/system_power.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__SYSTEM_POWER__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__SYSTEM_POWER__BUILDER_HPP_
 
@@ -21,16 +24,32 @@ namespace msg
 namespace builder
 {
 
+class Init_SystemPower_payload_v_valid
+{
+public:
+  explicit Init_SystemPower_payload_v_valid(::px4_msgs::msg::SystemPower & msg)
+  : msg_(msg)
+  {}
+  ::px4_msgs::msg::SystemPower payload_v_valid(::px4_msgs::msg::SystemPower::_payload_v_valid_type arg)
+  {
+    msg_.payload_v_valid = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::SystemPower msg_;
+};
+
 class Init_SystemPower_can1_gps1_5v_valid
 {
 public:
   explicit Init_SystemPower_can1_gps1_5v_valid(::px4_msgs::msg::SystemPower & msg)
   : msg_(msg)
   {}
-  ::px4_msgs::msg::SystemPower can1_gps1_5v_valid(::px4_msgs::msg::SystemPower::_can1_gps1_5v_valid_type arg)
+  Init_SystemPower_payload_v_valid can1_gps1_5v_valid(::px4_msgs::msg::SystemPower::_can1_gps1_5v_valid_type arg)
   {
     msg_.can1_gps1_5v_valid = std::move(arg);
-    return std::move(msg_);
+    return Init_SystemPower_payload_v_valid(msg_);
   }
 
 private:
@@ -181,16 +200,32 @@ private:
   ::px4_msgs::msg::SystemPower msg_;
 };
 
+class Init_SystemPower_voltage_payload_v
+{
+public:
+  explicit Init_SystemPower_voltage_payload_v(::px4_msgs::msg::SystemPower & msg)
+  : msg_(msg)
+  {}
+  Init_SystemPower_sensors3v3 voltage_payload_v(::px4_msgs::msg::SystemPower::_voltage_payload_v_type arg)
+  {
+    msg_.voltage_payload_v = std::move(arg);
+    return Init_SystemPower_sensors3v3(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::SystemPower msg_;
+};
+
 class Init_SystemPower_voltage5v_v
 {
 public:
   explicit Init_SystemPower_voltage5v_v(::px4_msgs::msg::SystemPower & msg)
   : msg_(msg)
   {}
-  Init_SystemPower_sensors3v3 voltage5v_v(::px4_msgs::msg::SystemPower::_voltage5v_v_type arg)
+  Init_SystemPower_voltage_payload_v voltage5v_v(::px4_msgs::msg::SystemPower::_voltage5v_v_type arg)
   {
     msg_.voltage5v_v = std::move(arg);
-    return Init_SystemPower_sensors3v3(msg_);
+    return Init_SystemPower_voltage_payload_v(msg_);
   }
 
 private:

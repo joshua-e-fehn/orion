@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/BatteryStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -25,33 +32,30 @@ class Metaclass_BatteryStatus(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'BATTERY_SOURCE_POWER_MODULE': 0,
-        'BATTERY_SOURCE_EXTERNAL': 1,
-        'BATTERY_SOURCE_ESCS': 2,
-        'BATTERY_WARNING_NONE': 0,
-        'BATTERY_WARNING_LOW': 1,
-        'BATTERY_WARNING_CRITICAL': 2,
-        'BATTERY_WARNING_EMERGENCY': 3,
-        'BATTERY_WARNING_FAILED': 4,
-        'BATTERY_STATE_UNHEALTHY': 6,
-        'BATTERY_STATE_CHARGING': 7,
-        'BATTERY_FAULT_DEEP_DISCHARGE': 0,
-        'BATTERY_FAULT_SPIKES': 1,
-        'BATTERY_FAULT_CELL_FAIL': 2,
-        'BATTERY_FAULT_OVER_CURRENT': 3,
-        'BATTERY_FAULT_OVER_TEMPERATURE': 4,
-        'BATTERY_FAULT_UNDER_TEMPERATURE': 5,
-        'BATTERY_FAULT_INCOMPATIBLE_VOLTAGE': 6,
-        'BATTERY_FAULT_INCOMPATIBLE_FIRMWARE': 7,
-        'BATTERY_FAULT_INCOMPATIBLE_MODEL': 8,
-        'BATTERY_FAULT_HARDWARE_FAILURE': 9,
-        'BATTERY_WARNING_OVER_TEMPERATURE': 10,
-        'BATTERY_FAULT_COUNT': 11,
-        'BATTERY_MODE_UNKNOWN': 0,
-        'BATTERY_MODE_AUTO_DISCHARGING': 1,
-        'BATTERY_MODE_HOT_SWAP': 2,
-        'BATTERY_MODE_COUNT': 3,
-        'MAX_INSTANCES': 4,
+        'MESSAGE_VERSION': 1,
+        'MAX_INSTANCES': 3,
+        'SOURCE_POWER_MODULE': 0,
+        'SOURCE_EXTERNAL': 1,
+        'SOURCE_ESCS': 2,
+        'WARNING_NONE': 0,
+        'WARNING_LOW': 1,
+        'WARNING_CRITICAL': 2,
+        'WARNING_EMERGENCY': 3,
+        'WARNING_FAILED': 4,
+        'STATE_UNHEALTHY': 6,
+        'STATE_CHARGING': 7,
+        'FAULT_DEEP_DISCHARGE': 0,
+        'FAULT_SPIKES': 1,
+        'FAULT_CELL_FAIL': 2,
+        'FAULT_OVER_CURRENT': 3,
+        'FAULT_OVER_TEMPERATURE': 4,
+        'FAULT_UNDER_TEMPERATURE': 5,
+        'FAULT_INCOMPATIBLE_VOLTAGE': 6,
+        'FAULT_INCOMPATIBLE_FIRMWARE': 7,
+        'FAULT_INCOMPATIBLE_MODEL': 8,
+        'FAULT_HARDWARE_FAILURE': 9,
+        'FAULT_FAILED_TO_ARM': 10,
+        'FAULT_COUNT': 11,
     }
 
     @classmethod
@@ -80,169 +84,151 @@ class Metaclass_BatteryStatus(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'BATTERY_SOURCE_POWER_MODULE': cls.__constants['BATTERY_SOURCE_POWER_MODULE'],
-            'BATTERY_SOURCE_EXTERNAL': cls.__constants['BATTERY_SOURCE_EXTERNAL'],
-            'BATTERY_SOURCE_ESCS': cls.__constants['BATTERY_SOURCE_ESCS'],
-            'BATTERY_WARNING_NONE': cls.__constants['BATTERY_WARNING_NONE'],
-            'BATTERY_WARNING_LOW': cls.__constants['BATTERY_WARNING_LOW'],
-            'BATTERY_WARNING_CRITICAL': cls.__constants['BATTERY_WARNING_CRITICAL'],
-            'BATTERY_WARNING_EMERGENCY': cls.__constants['BATTERY_WARNING_EMERGENCY'],
-            'BATTERY_WARNING_FAILED': cls.__constants['BATTERY_WARNING_FAILED'],
-            'BATTERY_STATE_UNHEALTHY': cls.__constants['BATTERY_STATE_UNHEALTHY'],
-            'BATTERY_STATE_CHARGING': cls.__constants['BATTERY_STATE_CHARGING'],
-            'BATTERY_FAULT_DEEP_DISCHARGE': cls.__constants['BATTERY_FAULT_DEEP_DISCHARGE'],
-            'BATTERY_FAULT_SPIKES': cls.__constants['BATTERY_FAULT_SPIKES'],
-            'BATTERY_FAULT_CELL_FAIL': cls.__constants['BATTERY_FAULT_CELL_FAIL'],
-            'BATTERY_FAULT_OVER_CURRENT': cls.__constants['BATTERY_FAULT_OVER_CURRENT'],
-            'BATTERY_FAULT_OVER_TEMPERATURE': cls.__constants['BATTERY_FAULT_OVER_TEMPERATURE'],
-            'BATTERY_FAULT_UNDER_TEMPERATURE': cls.__constants['BATTERY_FAULT_UNDER_TEMPERATURE'],
-            'BATTERY_FAULT_INCOMPATIBLE_VOLTAGE': cls.__constants['BATTERY_FAULT_INCOMPATIBLE_VOLTAGE'],
-            'BATTERY_FAULT_INCOMPATIBLE_FIRMWARE': cls.__constants['BATTERY_FAULT_INCOMPATIBLE_FIRMWARE'],
-            'BATTERY_FAULT_INCOMPATIBLE_MODEL': cls.__constants['BATTERY_FAULT_INCOMPATIBLE_MODEL'],
-            'BATTERY_FAULT_HARDWARE_FAILURE': cls.__constants['BATTERY_FAULT_HARDWARE_FAILURE'],
-            'BATTERY_WARNING_OVER_TEMPERATURE': cls.__constants['BATTERY_WARNING_OVER_TEMPERATURE'],
-            'BATTERY_FAULT_COUNT': cls.__constants['BATTERY_FAULT_COUNT'],
-            'BATTERY_MODE_UNKNOWN': cls.__constants['BATTERY_MODE_UNKNOWN'],
-            'BATTERY_MODE_AUTO_DISCHARGING': cls.__constants['BATTERY_MODE_AUTO_DISCHARGING'],
-            'BATTERY_MODE_HOT_SWAP': cls.__constants['BATTERY_MODE_HOT_SWAP'],
-            'BATTERY_MODE_COUNT': cls.__constants['BATTERY_MODE_COUNT'],
+            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
             'MAX_INSTANCES': cls.__constants['MAX_INSTANCES'],
+            'SOURCE_POWER_MODULE': cls.__constants['SOURCE_POWER_MODULE'],
+            'SOURCE_EXTERNAL': cls.__constants['SOURCE_EXTERNAL'],
+            'SOURCE_ESCS': cls.__constants['SOURCE_ESCS'],
+            'WARNING_NONE': cls.__constants['WARNING_NONE'],
+            'WARNING_LOW': cls.__constants['WARNING_LOW'],
+            'WARNING_CRITICAL': cls.__constants['WARNING_CRITICAL'],
+            'WARNING_EMERGENCY': cls.__constants['WARNING_EMERGENCY'],
+            'WARNING_FAILED': cls.__constants['WARNING_FAILED'],
+            'STATE_UNHEALTHY': cls.__constants['STATE_UNHEALTHY'],
+            'STATE_CHARGING': cls.__constants['STATE_CHARGING'],
+            'FAULT_DEEP_DISCHARGE': cls.__constants['FAULT_DEEP_DISCHARGE'],
+            'FAULT_SPIKES': cls.__constants['FAULT_SPIKES'],
+            'FAULT_CELL_FAIL': cls.__constants['FAULT_CELL_FAIL'],
+            'FAULT_OVER_CURRENT': cls.__constants['FAULT_OVER_CURRENT'],
+            'FAULT_OVER_TEMPERATURE': cls.__constants['FAULT_OVER_TEMPERATURE'],
+            'FAULT_UNDER_TEMPERATURE': cls.__constants['FAULT_UNDER_TEMPERATURE'],
+            'FAULT_INCOMPATIBLE_VOLTAGE': cls.__constants['FAULT_INCOMPATIBLE_VOLTAGE'],
+            'FAULT_INCOMPATIBLE_FIRMWARE': cls.__constants['FAULT_INCOMPATIBLE_FIRMWARE'],
+            'FAULT_INCOMPATIBLE_MODEL': cls.__constants['FAULT_INCOMPATIBLE_MODEL'],
+            'FAULT_HARDWARE_FAILURE': cls.__constants['FAULT_HARDWARE_FAILURE'],
+            'FAULT_FAILED_TO_ARM': cls.__constants['FAULT_FAILED_TO_ARM'],
+            'FAULT_COUNT': cls.__constants['FAULT_COUNT'],
         }
 
     @property
-    def BATTERY_SOURCE_POWER_MODULE(self):
-        """Message constant 'BATTERY_SOURCE_POWER_MODULE'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_SOURCE_POWER_MODULE']
-
-    @property
-    def BATTERY_SOURCE_EXTERNAL(self):
-        """Message constant 'BATTERY_SOURCE_EXTERNAL'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_SOURCE_EXTERNAL']
-
-    @property
-    def BATTERY_SOURCE_ESCS(self):
-        """Message constant 'BATTERY_SOURCE_ESCS'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_SOURCE_ESCS']
-
-    @property
-    def BATTERY_WARNING_NONE(self):
-        """Message constant 'BATTERY_WARNING_NONE'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_WARNING_NONE']
-
-    @property
-    def BATTERY_WARNING_LOW(self):
-        """Message constant 'BATTERY_WARNING_LOW'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_WARNING_LOW']
-
-    @property
-    def BATTERY_WARNING_CRITICAL(self):
-        """Message constant 'BATTERY_WARNING_CRITICAL'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_WARNING_CRITICAL']
-
-    @property
-    def BATTERY_WARNING_EMERGENCY(self):
-        """Message constant 'BATTERY_WARNING_EMERGENCY'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_WARNING_EMERGENCY']
-
-    @property
-    def BATTERY_WARNING_FAILED(self):
-        """Message constant 'BATTERY_WARNING_FAILED'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_WARNING_FAILED']
-
-    @property
-    def BATTERY_STATE_UNHEALTHY(self):
-        """Message constant 'BATTERY_STATE_UNHEALTHY'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_STATE_UNHEALTHY']
-
-    @property
-    def BATTERY_STATE_CHARGING(self):
-        """Message constant 'BATTERY_STATE_CHARGING'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_STATE_CHARGING']
-
-    @property
-    def BATTERY_FAULT_DEEP_DISCHARGE(self):
-        """Message constant 'BATTERY_FAULT_DEEP_DISCHARGE'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_DEEP_DISCHARGE']
-
-    @property
-    def BATTERY_FAULT_SPIKES(self):
-        """Message constant 'BATTERY_FAULT_SPIKES'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_SPIKES']
-
-    @property
-    def BATTERY_FAULT_CELL_FAIL(self):
-        """Message constant 'BATTERY_FAULT_CELL_FAIL'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_CELL_FAIL']
-
-    @property
-    def BATTERY_FAULT_OVER_CURRENT(self):
-        """Message constant 'BATTERY_FAULT_OVER_CURRENT'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_OVER_CURRENT']
-
-    @property
-    def BATTERY_FAULT_OVER_TEMPERATURE(self):
-        """Message constant 'BATTERY_FAULT_OVER_TEMPERATURE'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_OVER_TEMPERATURE']
-
-    @property
-    def BATTERY_FAULT_UNDER_TEMPERATURE(self):
-        """Message constant 'BATTERY_FAULT_UNDER_TEMPERATURE'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_UNDER_TEMPERATURE']
-
-    @property
-    def BATTERY_FAULT_INCOMPATIBLE_VOLTAGE(self):
-        """Message constant 'BATTERY_FAULT_INCOMPATIBLE_VOLTAGE'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_INCOMPATIBLE_VOLTAGE']
-
-    @property
-    def BATTERY_FAULT_INCOMPATIBLE_FIRMWARE(self):
-        """Message constant 'BATTERY_FAULT_INCOMPATIBLE_FIRMWARE'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_INCOMPATIBLE_FIRMWARE']
-
-    @property
-    def BATTERY_FAULT_INCOMPATIBLE_MODEL(self):
-        """Message constant 'BATTERY_FAULT_INCOMPATIBLE_MODEL'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_INCOMPATIBLE_MODEL']
-
-    @property
-    def BATTERY_FAULT_HARDWARE_FAILURE(self):
-        """Message constant 'BATTERY_FAULT_HARDWARE_FAILURE'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_HARDWARE_FAILURE']
-
-    @property
-    def BATTERY_WARNING_OVER_TEMPERATURE(self):
-        """Message constant 'BATTERY_WARNING_OVER_TEMPERATURE'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_WARNING_OVER_TEMPERATURE']
-
-    @property
-    def BATTERY_FAULT_COUNT(self):
-        """Message constant 'BATTERY_FAULT_COUNT'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_FAULT_COUNT']
-
-    @property
-    def BATTERY_MODE_UNKNOWN(self):
-        """Message constant 'BATTERY_MODE_UNKNOWN'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_MODE_UNKNOWN']
-
-    @property
-    def BATTERY_MODE_AUTO_DISCHARGING(self):
-        """Message constant 'BATTERY_MODE_AUTO_DISCHARGING'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_MODE_AUTO_DISCHARGING']
-
-    @property
-    def BATTERY_MODE_HOT_SWAP(self):
-        """Message constant 'BATTERY_MODE_HOT_SWAP'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_MODE_HOT_SWAP']
-
-    @property
-    def BATTERY_MODE_COUNT(self):
-        """Message constant 'BATTERY_MODE_COUNT'."""
-        return Metaclass_BatteryStatus.__constants['BATTERY_MODE_COUNT']
+    def MESSAGE_VERSION(self):
+        """Message constant 'MESSAGE_VERSION'."""
+        return Metaclass_BatteryStatus.__constants['MESSAGE_VERSION']
 
     @property
     def MAX_INSTANCES(self):
         """Message constant 'MAX_INSTANCES'."""
         return Metaclass_BatteryStatus.__constants['MAX_INSTANCES']
+
+    @property
+    def SOURCE_POWER_MODULE(self):
+        """Message constant 'SOURCE_POWER_MODULE'."""
+        return Metaclass_BatteryStatus.__constants['SOURCE_POWER_MODULE']
+
+    @property
+    def SOURCE_EXTERNAL(self):
+        """Message constant 'SOURCE_EXTERNAL'."""
+        return Metaclass_BatteryStatus.__constants['SOURCE_EXTERNAL']
+
+    @property
+    def SOURCE_ESCS(self):
+        """Message constant 'SOURCE_ESCS'."""
+        return Metaclass_BatteryStatus.__constants['SOURCE_ESCS']
+
+    @property
+    def WARNING_NONE(self):
+        """Message constant 'WARNING_NONE'."""
+        return Metaclass_BatteryStatus.__constants['WARNING_NONE']
+
+    @property
+    def WARNING_LOW(self):
+        """Message constant 'WARNING_LOW'."""
+        return Metaclass_BatteryStatus.__constants['WARNING_LOW']
+
+    @property
+    def WARNING_CRITICAL(self):
+        """Message constant 'WARNING_CRITICAL'."""
+        return Metaclass_BatteryStatus.__constants['WARNING_CRITICAL']
+
+    @property
+    def WARNING_EMERGENCY(self):
+        """Message constant 'WARNING_EMERGENCY'."""
+        return Metaclass_BatteryStatus.__constants['WARNING_EMERGENCY']
+
+    @property
+    def WARNING_FAILED(self):
+        """Message constant 'WARNING_FAILED'."""
+        return Metaclass_BatteryStatus.__constants['WARNING_FAILED']
+
+    @property
+    def STATE_UNHEALTHY(self):
+        """Message constant 'STATE_UNHEALTHY'."""
+        return Metaclass_BatteryStatus.__constants['STATE_UNHEALTHY']
+
+    @property
+    def STATE_CHARGING(self):
+        """Message constant 'STATE_CHARGING'."""
+        return Metaclass_BatteryStatus.__constants['STATE_CHARGING']
+
+    @property
+    def FAULT_DEEP_DISCHARGE(self):
+        """Message constant 'FAULT_DEEP_DISCHARGE'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_DEEP_DISCHARGE']
+
+    @property
+    def FAULT_SPIKES(self):
+        """Message constant 'FAULT_SPIKES'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_SPIKES']
+
+    @property
+    def FAULT_CELL_FAIL(self):
+        """Message constant 'FAULT_CELL_FAIL'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_CELL_FAIL']
+
+    @property
+    def FAULT_OVER_CURRENT(self):
+        """Message constant 'FAULT_OVER_CURRENT'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_OVER_CURRENT']
+
+    @property
+    def FAULT_OVER_TEMPERATURE(self):
+        """Message constant 'FAULT_OVER_TEMPERATURE'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_OVER_TEMPERATURE']
+
+    @property
+    def FAULT_UNDER_TEMPERATURE(self):
+        """Message constant 'FAULT_UNDER_TEMPERATURE'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_UNDER_TEMPERATURE']
+
+    @property
+    def FAULT_INCOMPATIBLE_VOLTAGE(self):
+        """Message constant 'FAULT_INCOMPATIBLE_VOLTAGE'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_INCOMPATIBLE_VOLTAGE']
+
+    @property
+    def FAULT_INCOMPATIBLE_FIRMWARE(self):
+        """Message constant 'FAULT_INCOMPATIBLE_FIRMWARE'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_INCOMPATIBLE_FIRMWARE']
+
+    @property
+    def FAULT_INCOMPATIBLE_MODEL(self):
+        """Message constant 'FAULT_INCOMPATIBLE_MODEL'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_INCOMPATIBLE_MODEL']
+
+    @property
+    def FAULT_HARDWARE_FAILURE(self):
+        """Message constant 'FAULT_HARDWARE_FAILURE'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_HARDWARE_FAILURE']
+
+    @property
+    def FAULT_FAILED_TO_ARM(self):
+        """Message constant 'FAULT_FAILED_TO_ARM'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_FAILED_TO_ARM']
+
+    @property
+    def FAULT_COUNT(self):
+        """Message constant 'FAULT_COUNT'."""
+        return Metaclass_BatteryStatus.__constants['FAULT_COUNT']
 
 
 class BatteryStatus(metaclass=Metaclass_BatteryStatus):
@@ -250,42 +236,37 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
     Message class 'BatteryStatus'.
 
     Constants:
-      BATTERY_SOURCE_POWER_MODULE
-      BATTERY_SOURCE_EXTERNAL
-      BATTERY_SOURCE_ESCS
-      BATTERY_WARNING_NONE
-      BATTERY_WARNING_LOW
-      BATTERY_WARNING_CRITICAL
-      BATTERY_WARNING_EMERGENCY
-      BATTERY_WARNING_FAILED
-      BATTERY_STATE_UNHEALTHY
-      BATTERY_STATE_CHARGING
-      BATTERY_FAULT_DEEP_DISCHARGE
-      BATTERY_FAULT_SPIKES
-      BATTERY_FAULT_CELL_FAIL
-      BATTERY_FAULT_OVER_CURRENT
-      BATTERY_FAULT_OVER_TEMPERATURE
-      BATTERY_FAULT_UNDER_TEMPERATURE
-      BATTERY_FAULT_INCOMPATIBLE_VOLTAGE
-      BATTERY_FAULT_INCOMPATIBLE_FIRMWARE
-      BATTERY_FAULT_INCOMPATIBLE_MODEL
-      BATTERY_FAULT_HARDWARE_FAILURE
-      BATTERY_WARNING_OVER_TEMPERATURE
-      BATTERY_FAULT_COUNT
-      BATTERY_MODE_UNKNOWN
-      BATTERY_MODE_AUTO_DISCHARGING
-      BATTERY_MODE_HOT_SWAP
-      BATTERY_MODE_COUNT
+      MESSAGE_VERSION
       MAX_INSTANCES
+      SOURCE_POWER_MODULE
+      SOURCE_EXTERNAL
+      SOURCE_ESCS
+      WARNING_NONE
+      WARNING_LOW
+      WARNING_CRITICAL
+      WARNING_EMERGENCY
+      WARNING_FAILED
+      STATE_UNHEALTHY
+      STATE_CHARGING
+      FAULT_DEEP_DISCHARGE
+      FAULT_SPIKES
+      FAULT_CELL_FAIL
+      FAULT_OVER_CURRENT
+      FAULT_OVER_TEMPERATURE
+      FAULT_UNDER_TEMPERATURE
+      FAULT_INCOMPATIBLE_VOLTAGE
+      FAULT_INCOMPATIBLE_FIRMWARE
+      FAULT_INCOMPATIBLE_MODEL
+      FAULT_HARDWARE_FAILURE
+      FAULT_FAILED_TO_ARM
+      FAULT_COUNT
     """
 
     __slots__ = [
         '_timestamp',
         '_connected',
         '_voltage_v',
-        '_voltage_filtered_v',
         '_current_a',
-        '_current_filtered_a',
         '_current_average_a',
         '_discharged_mah',
         '_remaining',
@@ -298,7 +279,6 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         '_capacity',
         '_cycle_count',
         '_average_time_to_empty',
-        '_serial_number',
         '_manufacture_date',
         '_state_of_health',
         '_max_error',
@@ -308,27 +288,27 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         '_max_cell_voltage_delta',
         '_is_powering_off',
         '_is_required',
-        '_faults',
-        '_custom_faults',
         '_warning',
-        '_mode',
-        '_average_power',
-        '_available_energy',
+        '_faults',
         '_full_charge_capacity_wh',
         '_remaining_capacity_wh',
-        '_design_capacity',
-        '_average_time_to_full',
         '_over_discharge_count',
         '_nominal_voltage',
+        '_internal_resistance_estimate',
+        '_ocv_estimate',
+        '_ocv_estimate_filtered',
+        '_volt_based_soc_estimate',
+        '_voltage_prediction',
+        '_prediction_error',
+        '_estimation_covariance_norm',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
         'connected': 'boolean',
         'voltage_v': 'float',
-        'voltage_filtered_v': 'float',
         'current_a': 'float',
-        'current_filtered_a': 'float',
         'current_average_a': 'float',
         'discharged_mah': 'float',
         'remaining': 'float',
@@ -341,7 +321,6 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         'capacity': 'uint16',
         'cycle_count': 'uint16',
         'average_time_to_empty': 'uint16',
-        'serial_number': 'uint16',
         'manufacture_date': 'uint16',
         'state_of_health': 'uint16',
         'max_error': 'uint16',
@@ -351,20 +330,23 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         'max_cell_voltage_delta': 'float',
         'is_powering_off': 'boolean',
         'is_required': 'boolean',
-        'faults': 'uint16',
-        'custom_faults': 'uint32',
         'warning': 'uint8',
-        'mode': 'uint8',
-        'average_power': 'float',
-        'available_energy': 'float',
+        'faults': 'uint16',
         'full_charge_capacity_wh': 'float',
         'remaining_capacity_wh': 'float',
-        'design_capacity': 'float',
-        'average_time_to_full': 'uint16',
         'over_discharge_count': 'uint16',
         'nominal_voltage': 'float',
+        'internal_resistance_estimate': 'float',
+        'ocv_estimate': 'float',
+        'ocv_estimate_filtered': 'float',
+        'volt_based_soc_estimate': 'float',
+        'voltage_prediction': 'float',
+        'prediction_error': 'float',
+        'estimation_covariance_norm': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -376,12 +358,9 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
@@ -394,30 +373,34 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.connected = kwargs.get('connected', bool())
         self.voltage_v = kwargs.get('voltage_v', float())
-        self.voltage_filtered_v = kwargs.get('voltage_filtered_v', float())
         self.current_a = kwargs.get('current_a', float())
-        self.current_filtered_a = kwargs.get('current_filtered_a', float())
         self.current_average_a = kwargs.get('current_average_a', float())
         self.discharged_mah = kwargs.get('discharged_mah', float())
         self.remaining = kwargs.get('remaining', float())
@@ -430,7 +413,6 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         self.capacity = kwargs.get('capacity', int())
         self.cycle_count = kwargs.get('cycle_count', int())
         self.average_time_to_empty = kwargs.get('average_time_to_empty', int())
-        self.serial_number = kwargs.get('serial_number', int())
         self.manufacture_date = kwargs.get('manufacture_date', int())
         self.state_of_health = kwargs.get('state_of_health', int())
         self.max_error = kwargs.get('max_error', int())
@@ -439,30 +421,30 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         if 'voltage_cell_v' not in kwargs:
             self.voltage_cell_v = numpy.zeros(14, dtype=numpy.float32)
         else:
-            self.voltage_cell_v = numpy.array(kwargs.get('voltage_cell_v'), dtype=numpy.float32)
-            assert self.voltage_cell_v.shape == (14, )
+            self.voltage_cell_v = kwargs.get('voltage_cell_v')
         self.max_cell_voltage_delta = kwargs.get('max_cell_voltage_delta', float())
         self.is_powering_off = kwargs.get('is_powering_off', bool())
         self.is_required = kwargs.get('is_required', bool())
-        self.faults = kwargs.get('faults', int())
-        self.custom_faults = kwargs.get('custom_faults', int())
         self.warning = kwargs.get('warning', int())
-        self.mode = kwargs.get('mode', int())
-        self.average_power = kwargs.get('average_power', float())
-        self.available_energy = kwargs.get('available_energy', float())
+        self.faults = kwargs.get('faults', int())
         self.full_charge_capacity_wh = kwargs.get('full_charge_capacity_wh', float())
         self.remaining_capacity_wh = kwargs.get('remaining_capacity_wh', float())
-        self.design_capacity = kwargs.get('design_capacity', float())
-        self.average_time_to_full = kwargs.get('average_time_to_full', int())
         self.over_discharge_count = kwargs.get('over_discharge_count', int())
         self.nominal_voltage = kwargs.get('nominal_voltage', float())
+        self.internal_resistance_estimate = kwargs.get('internal_resistance_estimate', float())
+        self.ocv_estimate = kwargs.get('ocv_estimate', float())
+        self.ocv_estimate_filtered = kwargs.get('ocv_estimate_filtered', float())
+        self.volt_based_soc_estimate = kwargs.get('volt_based_soc_estimate', float())
+        self.voltage_prediction = kwargs.get('voltage_prediction', float())
+        self.prediction_error = kwargs.get('prediction_error', float())
+        self.estimation_covariance_norm = kwargs.get('estimation_covariance_norm', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -476,11 +458,12 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -492,11 +475,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
             return False
         if self.voltage_v != other.voltage_v:
             return False
-        if self.voltage_filtered_v != other.voltage_filtered_v:
-            return False
         if self.current_a != other.current_a:
-            return False
-        if self.current_filtered_a != other.current_filtered_a:
             return False
         if self.current_average_a != other.current_average_a:
             return False
@@ -522,8 +501,6 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
             return False
         if self.average_time_to_empty != other.average_time_to_empty:
             return False
-        if self.serial_number != other.serial_number:
-            return False
         if self.manufacture_date != other.manufacture_date:
             return False
         if self.state_of_health != other.state_of_health:
@@ -542,29 +519,31 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
             return False
         if self.is_required != other.is_required:
             return False
-        if self.faults != other.faults:
-            return False
-        if self.custom_faults != other.custom_faults:
-            return False
         if self.warning != other.warning:
             return False
-        if self.mode != other.mode:
-            return False
-        if self.average_power != other.average_power:
-            return False
-        if self.available_energy != other.available_energy:
+        if self.faults != other.faults:
             return False
         if self.full_charge_capacity_wh != other.full_charge_capacity_wh:
             return False
         if self.remaining_capacity_wh != other.remaining_capacity_wh:
             return False
-        if self.design_capacity != other.design_capacity:
-            return False
-        if self.average_time_to_full != other.average_time_to_full:
-            return False
         if self.over_discharge_count != other.over_discharge_count:
             return False
         if self.nominal_voltage != other.nominal_voltage:
+            return False
+        if self.internal_resistance_estimate != other.internal_resistance_estimate:
+            return False
+        if self.ocv_estimate != other.ocv_estimate:
+            return False
+        if self.ocv_estimate_filtered != other.ocv_estimate_filtered:
+            return False
+        if self.volt_based_soc_estimate != other.volt_based_soc_estimate:
+            return False
+        if self.voltage_prediction != other.voltage_prediction:
+            return False
+        if self.prediction_error != other.prediction_error:
+            return False
+        if self.estimation_covariance_norm != other.estimation_covariance_norm:
             return False
         return True
 
@@ -580,7 +559,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -595,7 +574,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @connected.setter
     def connected(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'connected' field must be of type 'bool'"
@@ -608,7 +587,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @voltage_v.setter
     def voltage_v(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'voltage_v' field must be of type 'float'"
@@ -617,28 +596,13 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         self._voltage_v = value
 
     @builtins.property
-    def voltage_filtered_v(self):
-        """Message field 'voltage_filtered_v'."""
-        return self._voltage_filtered_v
-
-    @voltage_filtered_v.setter
-    def voltage_filtered_v(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'voltage_filtered_v' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'voltage_filtered_v' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._voltage_filtered_v = value
-
-    @builtins.property
     def current_a(self):
         """Message field 'current_a'."""
         return self._current_a
 
     @current_a.setter
     def current_a(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'current_a' field must be of type 'float'"
@@ -647,28 +611,13 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         self._current_a = value
 
     @builtins.property
-    def current_filtered_a(self):
-        """Message field 'current_filtered_a'."""
-        return self._current_filtered_a
-
-    @current_filtered_a.setter
-    def current_filtered_a(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'current_filtered_a' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'current_filtered_a' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._current_filtered_a = value
-
-    @builtins.property
     def current_average_a(self):
         """Message field 'current_average_a'."""
         return self._current_average_a
 
     @current_average_a.setter
     def current_average_a(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'current_average_a' field must be of type 'float'"
@@ -683,7 +632,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @discharged_mah.setter
     def discharged_mah(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'discharged_mah' field must be of type 'float'"
@@ -698,7 +647,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @remaining.setter
     def remaining(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'remaining' field must be of type 'float'"
@@ -713,7 +662,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @scale.setter
     def scale(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'scale' field must be of type 'float'"
@@ -728,7 +677,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @time_remaining_s.setter
     def time_remaining_s(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'time_remaining_s' field must be of type 'float'"
@@ -743,7 +692,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @temperature.setter
     def temperature(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'temperature' field must be of type 'float'"
@@ -758,7 +707,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @cell_count.setter
     def cell_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'cell_count' field must be of type 'int'"
@@ -773,7 +722,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @source.setter
     def source(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'source' field must be of type 'int'"
@@ -788,7 +737,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @priority.setter
     def priority(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'priority' field must be of type 'int'"
@@ -803,7 +752,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @capacity.setter
     def capacity(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'capacity' field must be of type 'int'"
@@ -818,7 +767,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @cycle_count.setter
     def cycle_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'cycle_count' field must be of type 'int'"
@@ -833,7 +782,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @average_time_to_empty.setter
     def average_time_to_empty(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'average_time_to_empty' field must be of type 'int'"
@@ -842,28 +791,13 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         self._average_time_to_empty = value
 
     @builtins.property
-    def serial_number(self):
-        """Message field 'serial_number'."""
-        return self._serial_number
-
-    @serial_number.setter
-    def serial_number(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'serial_number' field must be of type 'int'"
-            assert value >= 0 and value < 65536, \
-                "The 'serial_number' field must be an unsigned integer in [0, 65535]"
-        self._serial_number = value
-
-    @builtins.property
     def manufacture_date(self):
         """Message field 'manufacture_date'."""
         return self._manufacture_date
 
     @manufacture_date.setter
     def manufacture_date(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'manufacture_date' field must be of type 'int'"
@@ -878,7 +812,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @state_of_health.setter
     def state_of_health(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'state_of_health' field must be of type 'int'"
@@ -893,7 +827,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @max_error.setter
     def max_error(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'max_error' field must be of type 'int'"
@@ -908,7 +842,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @id.setter  # noqa: A003
     def id(self, value):  # noqa: A003
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'id' field must be of type 'int'"
@@ -923,7 +857,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @interface_error.setter
     def interface_error(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'interface_error' field must be of type 'int'"
@@ -938,14 +872,14 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @voltage_cell_v.setter
     def voltage_cell_v(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'voltage_cell_v' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 14, \
-                "The 'voltage_cell_v' numpy.ndarray() must have a size of 14"
-            self._voltage_cell_v = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'voltage_cell_v' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 14, \
+                    "The 'voltage_cell_v' numpy.ndarray() must have a size of 14"
+                self._voltage_cell_v = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -969,7 +903,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @max_cell_voltage_delta.setter
     def max_cell_voltage_delta(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'max_cell_voltage_delta' field must be of type 'float'"
@@ -984,7 +918,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @is_powering_off.setter
     def is_powering_off(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'is_powering_off' field must be of type 'bool'"
@@ -997,41 +931,11 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @is_required.setter
     def is_required(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'is_required' field must be of type 'bool'"
         self._is_required = value
-
-    @builtins.property
-    def faults(self):
-        """Message field 'faults'."""
-        return self._faults
-
-    @faults.setter
-    def faults(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'faults' field must be of type 'int'"
-            assert value >= 0 and value < 65536, \
-                "The 'faults' field must be an unsigned integer in [0, 65535]"
-        self._faults = value
-
-    @builtins.property
-    def custom_faults(self):
-        """Message field 'custom_faults'."""
-        return self._custom_faults
-
-    @custom_faults.setter
-    def custom_faults(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'custom_faults' field must be of type 'int'"
-            assert value >= 0 and value < 4294967296, \
-                "The 'custom_faults' field must be an unsigned integer in [0, 4294967295]"
-        self._custom_faults = value
 
     @builtins.property
     def warning(self):
@@ -1040,7 +944,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @warning.setter
     def warning(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'warning' field must be of type 'int'"
@@ -1049,49 +953,19 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         self._warning = value
 
     @builtins.property
-    def mode(self):
-        """Message field 'mode'."""
-        return self._mode
+    def faults(self):
+        """Message field 'faults'."""
+        return self._faults
 
-    @mode.setter
-    def mode(self, value):
-        if __debug__:
+    @faults.setter
+    def faults(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
-                "The 'mode' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'mode' field must be an unsigned integer in [0, 255]"
-        self._mode = value
-
-    @builtins.property
-    def average_power(self):
-        """Message field 'average_power'."""
-        return self._average_power
-
-    @average_power.setter
-    def average_power(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'average_power' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'average_power' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._average_power = value
-
-    @builtins.property
-    def available_energy(self):
-        """Message field 'available_energy'."""
-        return self._available_energy
-
-    @available_energy.setter
-    def available_energy(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'available_energy' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'available_energy' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._available_energy = value
+                "The 'faults' field must be of type 'int'"
+            assert value >= 0 and value < 65536, \
+                "The 'faults' field must be an unsigned integer in [0, 65535]"
+        self._faults = value
 
     @builtins.property
     def full_charge_capacity_wh(self):
@@ -1100,7 +974,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @full_charge_capacity_wh.setter
     def full_charge_capacity_wh(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'full_charge_capacity_wh' field must be of type 'float'"
@@ -1115,7 +989,7 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @remaining_capacity_wh.setter
     def remaining_capacity_wh(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'remaining_capacity_wh' field must be of type 'float'"
@@ -1124,43 +998,13 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
         self._remaining_capacity_wh = value
 
     @builtins.property
-    def design_capacity(self):
-        """Message field 'design_capacity'."""
-        return self._design_capacity
-
-    @design_capacity.setter
-    def design_capacity(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'design_capacity' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'design_capacity' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._design_capacity = value
-
-    @builtins.property
-    def average_time_to_full(self):
-        """Message field 'average_time_to_full'."""
-        return self._average_time_to_full
-
-    @average_time_to_full.setter
-    def average_time_to_full(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'average_time_to_full' field must be of type 'int'"
-            assert value >= 0 and value < 65536, \
-                "The 'average_time_to_full' field must be an unsigned integer in [0, 65535]"
-        self._average_time_to_full = value
-
-    @builtins.property
     def over_discharge_count(self):
         """Message field 'over_discharge_count'."""
         return self._over_discharge_count
 
     @over_discharge_count.setter
     def over_discharge_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'over_discharge_count' field must be of type 'int'"
@@ -1175,10 +1019,115 @@ class BatteryStatus(metaclass=Metaclass_BatteryStatus):
 
     @nominal_voltage.setter
     def nominal_voltage(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'nominal_voltage' field must be of type 'float'"
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
                 "The 'nominal_voltage' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
         self._nominal_voltage = value
+
+    @builtins.property
+    def internal_resistance_estimate(self):
+        """Message field 'internal_resistance_estimate'."""
+        return self._internal_resistance_estimate
+
+    @internal_resistance_estimate.setter
+    def internal_resistance_estimate(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'internal_resistance_estimate' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'internal_resistance_estimate' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._internal_resistance_estimate = value
+
+    @builtins.property
+    def ocv_estimate(self):
+        """Message field 'ocv_estimate'."""
+        return self._ocv_estimate
+
+    @ocv_estimate.setter
+    def ocv_estimate(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'ocv_estimate' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'ocv_estimate' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._ocv_estimate = value
+
+    @builtins.property
+    def ocv_estimate_filtered(self):
+        """Message field 'ocv_estimate_filtered'."""
+        return self._ocv_estimate_filtered
+
+    @ocv_estimate_filtered.setter
+    def ocv_estimate_filtered(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'ocv_estimate_filtered' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'ocv_estimate_filtered' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._ocv_estimate_filtered = value
+
+    @builtins.property
+    def volt_based_soc_estimate(self):
+        """Message field 'volt_based_soc_estimate'."""
+        return self._volt_based_soc_estimate
+
+    @volt_based_soc_estimate.setter
+    def volt_based_soc_estimate(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'volt_based_soc_estimate' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'volt_based_soc_estimate' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._volt_based_soc_estimate = value
+
+    @builtins.property
+    def voltage_prediction(self):
+        """Message field 'voltage_prediction'."""
+        return self._voltage_prediction
+
+    @voltage_prediction.setter
+    def voltage_prediction(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'voltage_prediction' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'voltage_prediction' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._voltage_prediction = value
+
+    @builtins.property
+    def prediction_error(self):
+        """Message field 'prediction_error'."""
+        return self._prediction_error
+
+    @prediction_error.setter
+    def prediction_error(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'prediction_error' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'prediction_error' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._prediction_error = value
+
+    @builtins.property
+    def estimation_covariance_norm(self):
+        """Message field 'estimation_covariance_norm'."""
+        return self._estimation_covariance_norm
+
+    @estimation_covariance_norm.setter
+    def estimation_covariance_norm(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'estimation_covariance_norm' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'estimation_covariance_norm' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._estimation_covariance_norm = value

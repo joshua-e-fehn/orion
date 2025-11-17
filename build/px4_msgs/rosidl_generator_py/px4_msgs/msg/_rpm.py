@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/Rpm.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -58,16 +65,19 @@ class Rpm(metaclass=Metaclass_Rpm):
 
     __slots__ = [
         '_timestamp',
-        '_indicated_frequency_rpm',
-        '_estimated_accurancy_rpm',
+        '_rpm_estimate',
+        '_rpm_raw',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
-        'indicated_frequency_rpm': 'float',
-        'estimated_accurancy_rpm': 'float',
+        'rpm_estimate': 'float',
+        'rpm_raw': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -75,19 +85,24 @@ class Rpm(metaclass=Metaclass_Rpm):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
-        self.indicated_frequency_rpm = kwargs.get('indicated_frequency_rpm', float())
-        self.estimated_accurancy_rpm = kwargs.get('estimated_accurancy_rpm', float())
+        self.rpm_estimate = kwargs.get('rpm_estimate', float())
+        self.rpm_raw = kwargs.get('rpm_raw', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -101,11 +116,12 @@ class Rpm(metaclass=Metaclass_Rpm):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -113,9 +129,9 @@ class Rpm(metaclass=Metaclass_Rpm):
             return False
         if self.timestamp != other.timestamp:
             return False
-        if self.indicated_frequency_rpm != other.indicated_frequency_rpm:
+        if self.rpm_estimate != other.rpm_estimate:
             return False
-        if self.estimated_accurancy_rpm != other.estimated_accurancy_rpm:
+        if self.rpm_raw != other.rpm_raw:
             return False
         return True
 
@@ -131,7 +147,7 @@ class Rpm(metaclass=Metaclass_Rpm):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -140,31 +156,31 @@ class Rpm(metaclass=Metaclass_Rpm):
         self._timestamp = value
 
     @builtins.property
-    def indicated_frequency_rpm(self):
-        """Message field 'indicated_frequency_rpm'."""
-        return self._indicated_frequency_rpm
+    def rpm_estimate(self):
+        """Message field 'rpm_estimate'."""
+        return self._rpm_estimate
 
-    @indicated_frequency_rpm.setter
-    def indicated_frequency_rpm(self, value):
-        if __debug__:
+    @rpm_estimate.setter
+    def rpm_estimate(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
-                "The 'indicated_frequency_rpm' field must be of type 'float'"
+                "The 'rpm_estimate' field must be of type 'float'"
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'indicated_frequency_rpm' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._indicated_frequency_rpm = value
+                "The 'rpm_estimate' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._rpm_estimate = value
 
     @builtins.property
-    def estimated_accurancy_rpm(self):
-        """Message field 'estimated_accurancy_rpm'."""
-        return self._estimated_accurancy_rpm
+    def rpm_raw(self):
+        """Message field 'rpm_raw'."""
+        return self._rpm_raw
 
-    @estimated_accurancy_rpm.setter
-    def estimated_accurancy_rpm(self, value):
-        if __debug__:
+    @rpm_raw.setter
+    def rpm_raw(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
-                "The 'estimated_accurancy_rpm' field must be of type 'float'"
+                "The 'rpm_raw' field must be of type 'float'"
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'estimated_accurancy_rpm' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._estimated_accurancy_rpm = value
+                "The 'rpm_raw' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._rpm_raw = value

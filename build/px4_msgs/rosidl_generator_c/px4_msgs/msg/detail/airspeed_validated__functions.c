@@ -21,10 +21,12 @@ px4_msgs__msg__AirspeedValidated__init(px4_msgs__msg__AirspeedValidated * msg)
   // indicated_airspeed_m_s
   // calibrated_airspeed_m_s
   // true_airspeed_m_s
+  // airspeed_source
   // calibrated_ground_minus_wind_m_s
-  // true_ground_minus_wind_m_s
-  // airspeed_sensor_measurement_valid
-  // selected_airspeed_index
+  // calibraded_airspeed_synth_m_s
+  // airspeed_derivative_filtered
+  // throttle_filtered
+  // pitch_filtered
   return true;
 }
 
@@ -38,10 +40,12 @@ px4_msgs__msg__AirspeedValidated__fini(px4_msgs__msg__AirspeedValidated * msg)
   // indicated_airspeed_m_s
   // calibrated_airspeed_m_s
   // true_airspeed_m_s
+  // airspeed_source
   // calibrated_ground_minus_wind_m_s
-  // true_ground_minus_wind_m_s
-  // airspeed_sensor_measurement_valid
-  // selected_airspeed_index
+  // calibraded_airspeed_synth_m_s
+  // airspeed_derivative_filtered
+  // throttle_filtered
+  // pitch_filtered
 }
 
 bool
@@ -66,20 +70,28 @@ px4_msgs__msg__AirspeedValidated__are_equal(const px4_msgs__msg__AirspeedValidat
   if (lhs->true_airspeed_m_s != rhs->true_airspeed_m_s) {
     return false;
   }
+  // airspeed_source
+  if (lhs->airspeed_source != rhs->airspeed_source) {
+    return false;
+  }
   // calibrated_ground_minus_wind_m_s
   if (lhs->calibrated_ground_minus_wind_m_s != rhs->calibrated_ground_minus_wind_m_s) {
     return false;
   }
-  // true_ground_minus_wind_m_s
-  if (lhs->true_ground_minus_wind_m_s != rhs->true_ground_minus_wind_m_s) {
+  // calibraded_airspeed_synth_m_s
+  if (lhs->calibraded_airspeed_synth_m_s != rhs->calibraded_airspeed_synth_m_s) {
     return false;
   }
-  // airspeed_sensor_measurement_valid
-  if (lhs->airspeed_sensor_measurement_valid != rhs->airspeed_sensor_measurement_valid) {
+  // airspeed_derivative_filtered
+  if (lhs->airspeed_derivative_filtered != rhs->airspeed_derivative_filtered) {
     return false;
   }
-  // selected_airspeed_index
-  if (lhs->selected_airspeed_index != rhs->selected_airspeed_index) {
+  // throttle_filtered
+  if (lhs->throttle_filtered != rhs->throttle_filtered) {
+    return false;
+  }
+  // pitch_filtered
+  if (lhs->pitch_filtered != rhs->pitch_filtered) {
     return false;
   }
   return true;
@@ -101,19 +113,23 @@ px4_msgs__msg__AirspeedValidated__copy(
   output->calibrated_airspeed_m_s = input->calibrated_airspeed_m_s;
   // true_airspeed_m_s
   output->true_airspeed_m_s = input->true_airspeed_m_s;
+  // airspeed_source
+  output->airspeed_source = input->airspeed_source;
   // calibrated_ground_minus_wind_m_s
   output->calibrated_ground_minus_wind_m_s = input->calibrated_ground_minus_wind_m_s;
-  // true_ground_minus_wind_m_s
-  output->true_ground_minus_wind_m_s = input->true_ground_minus_wind_m_s;
-  // airspeed_sensor_measurement_valid
-  output->airspeed_sensor_measurement_valid = input->airspeed_sensor_measurement_valid;
-  // selected_airspeed_index
-  output->selected_airspeed_index = input->selected_airspeed_index;
+  // calibraded_airspeed_synth_m_s
+  output->calibraded_airspeed_synth_m_s = input->calibraded_airspeed_synth_m_s;
+  // airspeed_derivative_filtered
+  output->airspeed_derivative_filtered = input->airspeed_derivative_filtered;
+  // throttle_filtered
+  output->throttle_filtered = input->throttle_filtered;
+  // pitch_filtered
+  output->pitch_filtered = input->pitch_filtered;
   return true;
 }
 
 px4_msgs__msg__AirspeedValidated *
-px4_msgs__msg__AirspeedValidated__create()
+px4_msgs__msg__AirspeedValidated__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__AirspeedValidated * msg = (px4_msgs__msg__AirspeedValidated *)allocator.allocate(sizeof(px4_msgs__msg__AirspeedValidated), allocator.state);

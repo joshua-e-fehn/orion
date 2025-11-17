@@ -1,0 +1,275 @@
+cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2020:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.001m
+[cv_predictor_node-1]   Current position: [45.48, -0.04, -5.00]
+[cv_predictor_node-1]   Current velocity: [0.31, -0.00, 0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #820 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 45.65,  -0.04,  -5.00], vel=[ 0.30, -0.00,  0.00]
+[cv_predictor_node-1]   t+1.0s: pos=[ 45.80,  -0.04,  -5.00], vel=[ 0.30, -0.00,  0.00]
+[cv_predictor_node-1]   t+2.0s: pos=[ 46.11,  -0.04,  -5.00], vel=[ 0.30, -0.00,  0.00]
+[cv_predictor_node-1]   t+3.0s: pos=[ 46.41,  -0.05,  -5.00], vel=[ 0.30, -0.00,  0.00]
+[cv_predictor_node-1]   t+5.0s: pos=[ 47.02,  -0.05,  -5.00], vel=[ 0.30, -0.00,  0.00]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2040:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [45.59, -0.04, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.29, -0.00, 0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2060:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.004m
+[cv_predictor_node-1]   Current position: [45.70, -0.04, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.28, 0.01, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #840 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 45.91,  -0.03,  -5.00], vel=[ 0.28,  0.01,  0.01]
+[cv_predictor_node-1]   t+1.0s: pos=[ 46.05,  -0.03,  -5.00], vel=[ 0.28,  0.01,  0.01]
+[cv_predictor_node-1]   t+2.0s: pos=[ 46.33,  -0.02,  -4.99], vel=[ 0.28,  0.01,  0.01]
+[cv_predictor_node-1]   t+3.0s: pos=[ 46.61,  -0.01,  -4.98], vel=[ 0.28,  0.01,  0.01]
+[cv_predictor_node-1]   t+5.0s: pos=[ 47.18,   0.00,  -4.96], vel=[ 0.28,  0.01,  0.01]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2080:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [45.80, -0.03, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.29, 0.01, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2100:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.002m
+[cv_predictor_node-1]   Current position: [45.92, -0.03, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.31, -0.00, 0.01]
+[cv_predictor_node-1] [INFO] [1763258516.303597713] [px4_2.cv_predictor_node]: CV Prediction: pos=[46.14, -0.04, -5.00], vel=[0.31, -0.01, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2120:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [46.05, -0.04, -5.00]
+[cv_predictor_node-1]   Current velocity: [0.32, -0.01, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #860 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 46.23,  -0.05,  -5.00], vel=[ 0.32, -0.01,  0.01]
+[cv_predictor_node-1]   t+1.0s: pos=[ 46.39,  -0.06,  -5.00], vel=[ 0.32, -0.01,  0.01]
+[cv_predictor_node-1]   t+2.0s: pos=[ 46.71,  -0.07,  -4.99], vel=[ 0.32, -0.01,  0.01]
+[cv_predictor_node-1]   t+3.0s: pos=[ 47.03,  -0.08,  -4.99], vel=[ 0.32, -0.01,  0.01]
+[cv_predictor_node-1]   t+5.0s: pos=[ 47.67,  -0.11,  -4.98], vel=[ 0.32, -0.01,  0.01]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2140:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.002m
+[cv_predictor_node-1]   Current position: [46.18, -0.05, -5.00]
+[cv_predictor_node-1]   Current velocity: [0.32, -0.00, -0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2160:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [46.30, -0.05, -4.99]
+[cv_predictor_node-1]   Current velocity: [0.31, 0.01, -0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #880 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 46.53,  -0.04,  -4.99], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   t+1.0s: pos=[ 46.68,  -0.03,  -5.00], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   t+2.0s: pos=[ 46.98,  -0.02,  -5.01], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   t+3.0s: pos=[ 47.29,  -0.01,  -5.03], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   t+5.0s: pos=[ 47.90,   0.02,  -5.05], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2180:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.002m
+[cv_predictor_node-1]   Current position: [46.42, -0.04, -4.99]
+[cv_predictor_node-1]   Current velocity: [0.30, 0.01, -0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2200:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.001m
+[cv_predictor_node-1]   Current position: [46.54, -0.04, -4.99]
+[cv_predictor_node-1]   Current velocity: [0.30, 0.01, -0.01]
+[cv_predictor_node-1] [INFO] [1763258518.303769486] [px4_2.cv_predictor_node]: CV Prediction: pos=[46.75, -0.03, -5.00], vel=[0.30, 0.01, -0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2220:
+[cv_predictor_node-1]   dt: 0.021s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [46.66, -0.04, -4.99]
+[cv_predictor_node-1]   Current velocity: [0.30, 0.01, -0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #900 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 46.82,  -0.03,  -5.00], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   t+1.0s: pos=[ 46.97,  -0.03,  -5.00], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   t+2.0s: pos=[ 47.27,  -0.02,  -5.01], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   t+3.0s: pos=[ 47.57,  -0.02,  -5.03], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   t+5.0s: pos=[ 48.16,  -0.01,  -5.05], vel=[ 0.30,  0.01, -0.01]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2240:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.002m
+[cv_predictor_node-1]   Current position: [46.78, -0.04, -4.99]
+[cv_predictor_node-1]   Current velocity: [0.30, -0.00, -0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2260:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.004m
+[cv_predictor_node-1]   Current position: [46.90, -0.06, -5.00]
+[cv_predictor_node-1]   Current velocity: [0.30, -0.00, -0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #920 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 47.12,  -0.06,  -5.00], vel=[ 0.30, -0.00, -0.00]
+[cv_predictor_node-1]   t+1.0s: pos=[ 47.27,  -0.06,  -5.00], vel=[ 0.30, -0.00, -0.00]
+[cv_predictor_node-1]   t+2.0s: pos=[ 47.57,  -0.07,  -5.00], vel=[ 0.30, -0.00, -0.00]
+[cv_predictor_node-1]   t+3.0s: pos=[ 47.88,  -0.07,  -5.01], vel=[ 0.30, -0.00, -0.00]
+[cv_predictor_node-1]   t+5.0s: pos=[ 48.48,  -0.07,  -5.01], vel=[ 0.30, -0.00, -0.00]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2280:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.005m
+[cv_predictor_node-1]   Current position: [47.01, -0.07, -5.00]
+[cv_predictor_node-1]   Current velocity: [0.30, 0.00, -0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2300:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.002m
+[cv_predictor_node-1]   Current position: [47.13, -0.07, -5.00]
+[cv_predictor_node-1]   Current velocity: [0.31, 0.02, -0.00]
+[cv_predictor_node-1] [INFO] [1763258520.353018890] [px4_2.cv_predictor_node]: CV Prediction: pos=[47.36, -0.05, -5.00], vel=[0.31, 0.02, 0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2320:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [47.26, -0.07, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.32, 0.02, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #940 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 47.42,  -0.05,  -5.00], vel=[ 0.32,  0.02,  0.00]
+[cv_predictor_node-1]   t+1.0s: pos=[ 47.58,  -0.04,  -5.00], vel=[ 0.32,  0.02,  0.00]
+[cv_predictor_node-1]   t+2.0s: pos=[ 47.90,  -0.02,  -5.00], vel=[ 0.32,  0.02,  0.00]
+[cv_predictor_node-1]   t+3.0s: pos=[ 48.22,   0.00,  -4.99], vel=[ 0.32,  0.02,  0.00]
+[cv_predictor_node-1]   t+5.0s: pos=[ 48.85,   0.05,  -4.98], vel=[ 0.32,  0.02,  0.00]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2340:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [47.39, -0.07, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.31, 0.03, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2360:
+[cv_predictor_node-1]   dt: 0.019s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [47.51, -0.06, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.30, 0.03, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #960 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 47.72,  -0.04,  -5.01], vel=[ 0.30,  0.02,  0.01]
+[cv_predictor_node-1]   t+1.0s: pos=[ 47.87,  -0.03,  -5.00], vel=[ 0.30,  0.02,  0.01]
+[cv_predictor_node-1]   t+2.0s: pos=[ 48.17,  -0.01,  -4.98], vel=[ 0.30,  0.02,  0.01]
+[cv_predictor_node-1]   t+3.0s: pos=[ 48.47,   0.02,  -4.97], vel=[ 0.30,  0.02,  0.01]
+[cv_predictor_node-1]   t+5.0s: pos=[ 49.07,   0.07,  -4.94], vel=[ 0.30,  0.02,  0.01]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2380:
+[cv_predictor_node-1]   dt: 0.015s
+[cv_predictor_node-1]   Innovation (residual): 0.004m
+[cv_predictor_node-1]   Current position: [47.62, -0.06, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.30, 0.02, 0.02]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2400:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [47.73, -0.05, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.30, 0.02, 0.01]
+[cv_predictor_node-1] [INFO] [1763258522.353549467] [px4_2.cv_predictor_node]: CV Prediction: pos=[47.95, -0.03, -5.00], vel=[0.31, 0.02, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2420:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.002m
+[cv_predictor_node-1]   Current position: [47.85, -0.04, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.31, 0.01, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #980 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 48.01,  -0.03,  -5.00], vel=[ 0.31,  0.02,  0.01]
+[cv_predictor_node-1]   t+1.0s: pos=[ 48.17,  -0.02,  -5.00], vel=[ 0.31,  0.02,  0.01]
+[cv_predictor_node-1]   t+2.0s: pos=[ 48.48,  -0.01,  -4.99], vel=[ 0.31,  0.02,  0.01]
+[cv_predictor_node-1]   t+3.0s: pos=[ 48.79,   0.01,  -4.99], vel=[ 0.31,  0.02,  0.01]
+[cv_predictor_node-1]   t+5.0s: pos=[ 49.41,   0.04,  -4.97], vel=[ 0.31,  0.02,  0.01]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2440:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [47.98, -0.04, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.32, 0.00, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2460:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [48.10, -0.05, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.31, -0.00, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #1000 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 48.33,  -0.05,  -5.00], vel=[ 0.31, -0.00,  0.01]
+[cv_predictor_node-1]   t+1.0s: pos=[ 48.48,  -0.05,  -5.00], vel=[ 0.31, -0.00,  0.01]
+[cv_predictor_node-1]   t+2.0s: pos=[ 48.79,  -0.06,  -4.99], vel=[ 0.31, -0.00,  0.01]
+[cv_predictor_node-1]   t+3.0s: pos=[ 49.10,  -0.06,  -4.99], vel=[ 0.31, -0.00,  0.01]
+[cv_predictor_node-1]   t+5.0s: pos=[ 49.71,  -0.07,  -4.98], vel=[ 0.31, -0.00,  0.01]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2480:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.002m
+[cv_predictor_node-1]   Current position: [48.22, -0.05, -5.01]
+[cv_predictor_node-1]   Current velocity: [0.30, 0.00, 0.01]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2500:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.001m
+[cv_predictor_node-1]   Current position: [48.34, -0.05, -5.00]
+[cv_predictor_node-1]   Current velocity: [0.31, 0.01, 0.01]
+[cv_predictor_node-1] [INFO] [1763258524.353747202] [px4_2.cv_predictor_node]: CV Prediction: pos=[48.55, -0.04, -5.00], vel=[0.31, 0.01, 0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2520:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.002m
+[cv_predictor_node-1]   Current position: [48.46, -0.04, -5.00]
+[cv_predictor_node-1]   Current velocity: [0.31, 0.02, 0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #1020 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 48.61,  -0.03,  -5.00], vel=[ 0.31,  0.02,  0.00]
+[cv_predictor_node-1]   t+1.0s: pos=[ 48.76,  -0.02,  -5.00], vel=[ 0.31,  0.02,  0.00]
+[cv_predictor_node-1]   t+2.0s: pos=[ 49.07,  -0.00,  -5.00], vel=[ 0.31,  0.02,  0.00]
+[cv_predictor_node-1]   t+3.0s: pos=[ 49.38,   0.01,  -4.99], vel=[ 0.31,  0.02,  0.00]
+[cv_predictor_node-1]   t+5.0s: pos=[ 49.99,   0.05,  -4.99], vel=[ 0.31,  0.02,  0.00]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2540:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.002m
+[cv_predictor_node-1]   Current position: [48.57, -0.02, -5.00]
+[cv_predictor_node-1]   Current velocity: [0.31, 0.01, 0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2560:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.003m
+[cv_predictor_node-1]   Current position: [48.70, -0.02, -4.99]
+[cv_predictor_node-1]   Current velocity: [0.32, -0.00, -0.00]
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Prediction #1040 (all horizons):
+[cv_predictor_node-1]   t+0.5s: pos=[ 48.92,  -0.03,  -5.00], vel=[ 0.32, -0.01, -0.00]
+[cv_predictor_node-1]   t+1.0s: pos=[ 49.08,  -0.03,  -5.00], vel=[ 0.32, -0.01, -0.00]
+[cv_predictor_node-1]   t+2.0s: pos=[ 49.39,  -0.04,  -5.00], vel=[ 0.32, -0.01, -0.00]
+[cv_predictor_node-1]   t+3.0s: pos=[ 49.71,  -0.05,  -5.01], vel=[ 0.32, -0.01, -0.00]
+[cv_predictor_node-1]   t+5.0s: pos=[ 50.34,  -0.06,  -5.02], vel=[ 0.32, -0.01, -0.00]
+[cv_predictor_node-1]   Position uncertainty (σ): [0.296, 0.296, 0.296]m
+[cv_predictor_node-1] 
+[cv_predictor_node-1] [CV Node] Measurement Update #2580:
+[cv_predictor_node-1]   dt: 0.020s
+[cv_predictor_node-1]   Innovation (residual): 0.001m
+[cv_predictor_node-1]   Current position: [48.82, -0.03, -4.99]
+[cv_predictor_node-1]   Current velocity: [0.31, -0.01, -0.01]

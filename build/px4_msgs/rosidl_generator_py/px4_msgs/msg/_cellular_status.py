@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/CellularStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -20,23 +27,28 @@ class Metaclass_CellularStatus(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'CELLULAR_STATUS_FLAG_UNKNOWN': 0,
-        'CELLULAR_STATUS_FLAG_FAILED': 1,
-        'CELLULAR_STATUS_FLAG_INITIALIZING': 2,
-        'CELLULAR_STATUS_FLAG_LOCKED': 3,
-        'CELLULAR_STATUS_FLAG_DISABLED': 4,
-        'CELLULAR_STATUS_FLAG_DISABLING': 5,
-        'CELLULAR_STATUS_FLAG_ENABLING': 6,
-        'CELLULAR_STATUS_FLAG_ENABLED': 7,
-        'CELLULAR_STATUS_FLAG_SEARCHING': 8,
-        'CELLULAR_STATUS_FLAG_REGISTERED': 9,
-        'CELLULAR_STATUS_FLAG_DISCONNECTING': 10,
-        'CELLULAR_STATUS_FLAG_CONNECTING': 11,
-        'CELLULAR_STATUS_FLAG_CONNECTED': 12,
-        'CELLULAR_NETWORK_FAILED_REASON_NONE': 0,
-        'CELLULAR_NETWORK_FAILED_REASON_UNKNOWN': 1,
-        'CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING': 2,
-        'CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR': 3,
+        'STATUS_FLAG_UNKNOWN': 1,
+        'STATUS_FLAG_FAILED': 2,
+        'STATUS_FLAG_INITIALIZING': 4,
+        'STATUS_FLAG_LOCKED': 8,
+        'STATUS_FLAG_DISABLED': 16,
+        'STATUS_FLAG_DISABLING': 32,
+        'STATUS_FLAG_ENABLING': 64,
+        'STATUS_FLAG_ENABLED': 128,
+        'STATUS_FLAG_SEARCHING': 256,
+        'STATUS_FLAG_REGISTERED': 512,
+        'STATUS_FLAG_DISCONNECTING': 1024,
+        'STATUS_FLAG_CONNECTING': 2048,
+        'STATUS_FLAG_CONNECTED': 4096,
+        'FAILURE_REASON_NONE': 0,
+        'FAILURE_REASON_UNKNOWN': 1,
+        'FAILURE_REASON_SIM_MISSING': 2,
+        'FAILURE_REASON_SIM_ERROR': 3,
+        'CELLULAR_NETWORK_RADIO_TYPE_NONE': 0,
+        'CELLULAR_NETWORK_RADIO_TYPE_GSM': 1,
+        'CELLULAR_NETWORK_RADIO_TYPE_CDMA': 2,
+        'CELLULAR_NETWORK_RADIO_TYPE_WCDMA': 3,
+        'CELLULAR_NETWORK_RADIO_TYPE_LTE': 4,
     }
 
     @classmethod
@@ -65,109 +77,139 @@ class Metaclass_CellularStatus(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'CELLULAR_STATUS_FLAG_UNKNOWN': cls.__constants['CELLULAR_STATUS_FLAG_UNKNOWN'],
-            'CELLULAR_STATUS_FLAG_FAILED': cls.__constants['CELLULAR_STATUS_FLAG_FAILED'],
-            'CELLULAR_STATUS_FLAG_INITIALIZING': cls.__constants['CELLULAR_STATUS_FLAG_INITIALIZING'],
-            'CELLULAR_STATUS_FLAG_LOCKED': cls.__constants['CELLULAR_STATUS_FLAG_LOCKED'],
-            'CELLULAR_STATUS_FLAG_DISABLED': cls.__constants['CELLULAR_STATUS_FLAG_DISABLED'],
-            'CELLULAR_STATUS_FLAG_DISABLING': cls.__constants['CELLULAR_STATUS_FLAG_DISABLING'],
-            'CELLULAR_STATUS_FLAG_ENABLING': cls.__constants['CELLULAR_STATUS_FLAG_ENABLING'],
-            'CELLULAR_STATUS_FLAG_ENABLED': cls.__constants['CELLULAR_STATUS_FLAG_ENABLED'],
-            'CELLULAR_STATUS_FLAG_SEARCHING': cls.__constants['CELLULAR_STATUS_FLAG_SEARCHING'],
-            'CELLULAR_STATUS_FLAG_REGISTERED': cls.__constants['CELLULAR_STATUS_FLAG_REGISTERED'],
-            'CELLULAR_STATUS_FLAG_DISCONNECTING': cls.__constants['CELLULAR_STATUS_FLAG_DISCONNECTING'],
-            'CELLULAR_STATUS_FLAG_CONNECTING': cls.__constants['CELLULAR_STATUS_FLAG_CONNECTING'],
-            'CELLULAR_STATUS_FLAG_CONNECTED': cls.__constants['CELLULAR_STATUS_FLAG_CONNECTED'],
-            'CELLULAR_NETWORK_FAILED_REASON_NONE': cls.__constants['CELLULAR_NETWORK_FAILED_REASON_NONE'],
-            'CELLULAR_NETWORK_FAILED_REASON_UNKNOWN': cls.__constants['CELLULAR_NETWORK_FAILED_REASON_UNKNOWN'],
-            'CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING': cls.__constants['CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING'],
-            'CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR': cls.__constants['CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR'],
+            'STATUS_FLAG_UNKNOWN': cls.__constants['STATUS_FLAG_UNKNOWN'],
+            'STATUS_FLAG_FAILED': cls.__constants['STATUS_FLAG_FAILED'],
+            'STATUS_FLAG_INITIALIZING': cls.__constants['STATUS_FLAG_INITIALIZING'],
+            'STATUS_FLAG_LOCKED': cls.__constants['STATUS_FLAG_LOCKED'],
+            'STATUS_FLAG_DISABLED': cls.__constants['STATUS_FLAG_DISABLED'],
+            'STATUS_FLAG_DISABLING': cls.__constants['STATUS_FLAG_DISABLING'],
+            'STATUS_FLAG_ENABLING': cls.__constants['STATUS_FLAG_ENABLING'],
+            'STATUS_FLAG_ENABLED': cls.__constants['STATUS_FLAG_ENABLED'],
+            'STATUS_FLAG_SEARCHING': cls.__constants['STATUS_FLAG_SEARCHING'],
+            'STATUS_FLAG_REGISTERED': cls.__constants['STATUS_FLAG_REGISTERED'],
+            'STATUS_FLAG_DISCONNECTING': cls.__constants['STATUS_FLAG_DISCONNECTING'],
+            'STATUS_FLAG_CONNECTING': cls.__constants['STATUS_FLAG_CONNECTING'],
+            'STATUS_FLAG_CONNECTED': cls.__constants['STATUS_FLAG_CONNECTED'],
+            'FAILURE_REASON_NONE': cls.__constants['FAILURE_REASON_NONE'],
+            'FAILURE_REASON_UNKNOWN': cls.__constants['FAILURE_REASON_UNKNOWN'],
+            'FAILURE_REASON_SIM_MISSING': cls.__constants['FAILURE_REASON_SIM_MISSING'],
+            'FAILURE_REASON_SIM_ERROR': cls.__constants['FAILURE_REASON_SIM_ERROR'],
+            'CELLULAR_NETWORK_RADIO_TYPE_NONE': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_NONE'],
+            'CELLULAR_NETWORK_RADIO_TYPE_GSM': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_GSM'],
+            'CELLULAR_NETWORK_RADIO_TYPE_CDMA': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_CDMA'],
+            'CELLULAR_NETWORK_RADIO_TYPE_WCDMA': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_WCDMA'],
+            'CELLULAR_NETWORK_RADIO_TYPE_LTE': cls.__constants['CELLULAR_NETWORK_RADIO_TYPE_LTE'],
         }
 
     @property
-    def CELLULAR_STATUS_FLAG_UNKNOWN(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_UNKNOWN'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_UNKNOWN']
+    def STATUS_FLAG_UNKNOWN(self):
+        """Message constant 'STATUS_FLAG_UNKNOWN'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_UNKNOWN']
 
     @property
-    def CELLULAR_STATUS_FLAG_FAILED(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_FAILED'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_FAILED']
+    def STATUS_FLAG_FAILED(self):
+        """Message constant 'STATUS_FLAG_FAILED'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_FAILED']
 
     @property
-    def CELLULAR_STATUS_FLAG_INITIALIZING(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_INITIALIZING'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_INITIALIZING']
+    def STATUS_FLAG_INITIALIZING(self):
+        """Message constant 'STATUS_FLAG_INITIALIZING'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_INITIALIZING']
 
     @property
-    def CELLULAR_STATUS_FLAG_LOCKED(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_LOCKED'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_LOCKED']
+    def STATUS_FLAG_LOCKED(self):
+        """Message constant 'STATUS_FLAG_LOCKED'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_LOCKED']
 
     @property
-    def CELLULAR_STATUS_FLAG_DISABLED(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_DISABLED'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_DISABLED']
+    def STATUS_FLAG_DISABLED(self):
+        """Message constant 'STATUS_FLAG_DISABLED'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_DISABLED']
 
     @property
-    def CELLULAR_STATUS_FLAG_DISABLING(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_DISABLING'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_DISABLING']
+    def STATUS_FLAG_DISABLING(self):
+        """Message constant 'STATUS_FLAG_DISABLING'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_DISABLING']
 
     @property
-    def CELLULAR_STATUS_FLAG_ENABLING(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_ENABLING'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_ENABLING']
+    def STATUS_FLAG_ENABLING(self):
+        """Message constant 'STATUS_FLAG_ENABLING'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_ENABLING']
 
     @property
-    def CELLULAR_STATUS_FLAG_ENABLED(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_ENABLED'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_ENABLED']
+    def STATUS_FLAG_ENABLED(self):
+        """Message constant 'STATUS_FLAG_ENABLED'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_ENABLED']
 
     @property
-    def CELLULAR_STATUS_FLAG_SEARCHING(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_SEARCHING'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_SEARCHING']
+    def STATUS_FLAG_SEARCHING(self):
+        """Message constant 'STATUS_FLAG_SEARCHING'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_SEARCHING']
 
     @property
-    def CELLULAR_STATUS_FLAG_REGISTERED(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_REGISTERED'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_REGISTERED']
+    def STATUS_FLAG_REGISTERED(self):
+        """Message constant 'STATUS_FLAG_REGISTERED'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_REGISTERED']
 
     @property
-    def CELLULAR_STATUS_FLAG_DISCONNECTING(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_DISCONNECTING'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_DISCONNECTING']
+    def STATUS_FLAG_DISCONNECTING(self):
+        """Message constant 'STATUS_FLAG_DISCONNECTING'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_DISCONNECTING']
 
     @property
-    def CELLULAR_STATUS_FLAG_CONNECTING(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_CONNECTING'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_CONNECTING']
+    def STATUS_FLAG_CONNECTING(self):
+        """Message constant 'STATUS_FLAG_CONNECTING'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_CONNECTING']
 
     @property
-    def CELLULAR_STATUS_FLAG_CONNECTED(self):
-        """Message constant 'CELLULAR_STATUS_FLAG_CONNECTED'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_STATUS_FLAG_CONNECTED']
+    def STATUS_FLAG_CONNECTED(self):
+        """Message constant 'STATUS_FLAG_CONNECTED'."""
+        return Metaclass_CellularStatus.__constants['STATUS_FLAG_CONNECTED']
 
     @property
-    def CELLULAR_NETWORK_FAILED_REASON_NONE(self):
-        """Message constant 'CELLULAR_NETWORK_FAILED_REASON_NONE'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_FAILED_REASON_NONE']
+    def FAILURE_REASON_NONE(self):
+        """Message constant 'FAILURE_REASON_NONE'."""
+        return Metaclass_CellularStatus.__constants['FAILURE_REASON_NONE']
 
     @property
-    def CELLULAR_NETWORK_FAILED_REASON_UNKNOWN(self):
-        """Message constant 'CELLULAR_NETWORK_FAILED_REASON_UNKNOWN'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_FAILED_REASON_UNKNOWN']
+    def FAILURE_REASON_UNKNOWN(self):
+        """Message constant 'FAILURE_REASON_UNKNOWN'."""
+        return Metaclass_CellularStatus.__constants['FAILURE_REASON_UNKNOWN']
 
     @property
-    def CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING(self):
-        """Message constant 'CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING']
+    def FAILURE_REASON_SIM_MISSING(self):
+        """Message constant 'FAILURE_REASON_SIM_MISSING'."""
+        return Metaclass_CellularStatus.__constants['FAILURE_REASON_SIM_MISSING']
 
     @property
-    def CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR(self):
-        """Message constant 'CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR'."""
-        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR']
+    def FAILURE_REASON_SIM_ERROR(self):
+        """Message constant 'FAILURE_REASON_SIM_ERROR'."""
+        return Metaclass_CellularStatus.__constants['FAILURE_REASON_SIM_ERROR']
+
+    @property
+    def CELLULAR_NETWORK_RADIO_TYPE_NONE(self):
+        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_NONE'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_NONE']
+
+    @property
+    def CELLULAR_NETWORK_RADIO_TYPE_GSM(self):
+        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_GSM'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_GSM']
+
+    @property
+    def CELLULAR_NETWORK_RADIO_TYPE_CDMA(self):
+        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_CDMA'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_CDMA']
+
+    @property
+    def CELLULAR_NETWORK_RADIO_TYPE_WCDMA(self):
+        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_WCDMA'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_WCDMA']
+
+    @property
+    def CELLULAR_NETWORK_RADIO_TYPE_LTE(self):
+        """Message constant 'CELLULAR_NETWORK_RADIO_TYPE_LTE'."""
+        return Metaclass_CellularStatus.__constants['CELLULAR_NETWORK_RADIO_TYPE_LTE']
 
 
 class CellularStatus(metaclass=Metaclass_CellularStatus):
@@ -175,23 +217,28 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
     Message class 'CellularStatus'.
 
     Constants:
-      CELLULAR_STATUS_FLAG_UNKNOWN
-      CELLULAR_STATUS_FLAG_FAILED
-      CELLULAR_STATUS_FLAG_INITIALIZING
-      CELLULAR_STATUS_FLAG_LOCKED
-      CELLULAR_STATUS_FLAG_DISABLED
-      CELLULAR_STATUS_FLAG_DISABLING
-      CELLULAR_STATUS_FLAG_ENABLING
-      CELLULAR_STATUS_FLAG_ENABLED
-      CELLULAR_STATUS_FLAG_SEARCHING
-      CELLULAR_STATUS_FLAG_REGISTERED
-      CELLULAR_STATUS_FLAG_DISCONNECTING
-      CELLULAR_STATUS_FLAG_CONNECTING
-      CELLULAR_STATUS_FLAG_CONNECTED
-      CELLULAR_NETWORK_FAILED_REASON_NONE
-      CELLULAR_NETWORK_FAILED_REASON_UNKNOWN
-      CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING
-      CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR
+      STATUS_FLAG_UNKNOWN
+      STATUS_FLAG_FAILED
+      STATUS_FLAG_INITIALIZING
+      STATUS_FLAG_LOCKED
+      STATUS_FLAG_DISABLED
+      STATUS_FLAG_DISABLING
+      STATUS_FLAG_ENABLING
+      STATUS_FLAG_ENABLED
+      STATUS_FLAG_SEARCHING
+      STATUS_FLAG_REGISTERED
+      STATUS_FLAG_DISCONNECTING
+      STATUS_FLAG_CONNECTING
+      STATUS_FLAG_CONNECTED
+      FAILURE_REASON_NONE
+      FAILURE_REASON_UNKNOWN
+      FAILURE_REASON_SIM_MISSING
+      FAILURE_REASON_SIM_ERROR
+      CELLULAR_NETWORK_RADIO_TYPE_NONE
+      CELLULAR_NETWORK_RADIO_TYPE_GSM
+      CELLULAR_NETWORK_RADIO_TYPE_CDMA
+      CELLULAR_NETWORK_RADIO_TYPE_WCDMA
+      CELLULAR_NETWORK_RADIO_TYPE_LTE
     """
 
     __slots__ = [
@@ -203,6 +250,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
         '_mcc',
         '_mnc',
         '_lac',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -216,6 +264,8 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
         'lac': 'uint16',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
@@ -228,9 +278,14 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.status = kwargs.get('status', int())
         self.failure_reason = kwargs.get('failure_reason', int())
@@ -245,7 +300,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -259,11 +314,12 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -299,7 +355,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -314,7 +370,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
 
     @status.setter
     def status(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'status' field must be of type 'int'"
@@ -329,7 +385,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
 
     @failure_reason.setter
     def failure_reason(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'failure_reason' field must be of type 'int'"
@@ -344,7 +400,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
 
     @type.setter  # noqa: A003
     def type(self, value):  # noqa: A003
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'type' field must be of type 'int'"
@@ -359,7 +415,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
 
     @quality.setter
     def quality(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'quality' field must be of type 'int'"
@@ -374,7 +430,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
 
     @mcc.setter
     def mcc(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'mcc' field must be of type 'int'"
@@ -389,7 +445,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
 
     @mnc.setter
     def mnc(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'mnc' field must be of type 'int'"
@@ -404,7 +460,7 @@ class CellularStatus(metaclass=Metaclass_CellularStatus):
 
     @lac.setter
     def lac(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'lac' field must be of type 'int'"

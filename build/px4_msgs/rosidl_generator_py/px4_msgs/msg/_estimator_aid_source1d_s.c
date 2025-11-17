@@ -122,6 +122,15 @@ bool px4_msgs__msg__estimator_aid_source1d__convert_from_py(PyObject * _pymsg, v
     ros_message->innovation = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // innovation_filtered
+    PyObject * field = PyObject_GetAttrString(_pymsg, "innovation_filtered");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->innovation_filtered = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
   {  // innovation_variance
     PyObject * field = PyObject_GetAttrString(_pymsg, "innovation_variance");
     if (!field) {
@@ -140,13 +149,13 @@ bool px4_msgs__msg__estimator_aid_source1d__convert_from_py(PyObject * _pymsg, v
     ros_message->test_ratio = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
-  {  // fusion_enabled
-    PyObject * field = PyObject_GetAttrString(_pymsg, "fusion_enabled");
+  {  // test_ratio_filtered
+    PyObject * field = PyObject_GetAttrString(_pymsg, "test_ratio_filtered");
     if (!field) {
       return false;
     }
-    assert(PyBool_Check(field));
-    ros_message->fusion_enabled = (Py_True == field);
+    assert(PyFloat_Check(field));
+    ros_message->test_ratio_filtered = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
   {  // innovation_rejected
@@ -277,6 +286,17 @@ PyObject * px4_msgs__msg__estimator_aid_source1d__convert_to_py(void * raw_ros_m
       }
     }
   }
+  {  // innovation_filtered
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->innovation_filtered);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "innovation_filtered", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
   {  // innovation_variance
     PyObject * field = NULL;
     field = PyFloat_FromDouble(ros_message->innovation_variance);
@@ -299,11 +319,11 @@ PyObject * px4_msgs__msg__estimator_aid_source1d__convert_to_py(void * raw_ros_m
       }
     }
   }
-  {  // fusion_enabled
+  {  // test_ratio_filtered
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->fusion_enabled ? 1 : 0);
+    field = PyFloat_FromDouble(ros_message->test_ratio_filtered);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "fusion_enabled", field);
+      int rc = PyObject_SetAttrString(_pymessage, "test_ratio_filtered", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

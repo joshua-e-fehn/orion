@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/IridiumsbdStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/iridiumsbd_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__IRIDIUMSBD_STATUS__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__IRIDIUMSBD_STATUS__BUILDER_HPP_
 
@@ -229,15 +232,15 @@ private:
   ::px4_msgs::msg::IridiumsbdStatus msg_;
 };
 
-class Init_IridiumsbdStatus_last_heartbeat
+class Init_IridiumsbdStatus_last_at_ok_timestamp
 {
 public:
-  explicit Init_IridiumsbdStatus_last_heartbeat(::px4_msgs::msg::IridiumsbdStatus & msg)
+  explicit Init_IridiumsbdStatus_last_at_ok_timestamp(::px4_msgs::msg::IridiumsbdStatus & msg)
   : msg_(msg)
   {}
-  Init_IridiumsbdStatus_tx_buf_write_index last_heartbeat(::px4_msgs::msg::IridiumsbdStatus::_last_heartbeat_type arg)
+  Init_IridiumsbdStatus_tx_buf_write_index last_at_ok_timestamp(::px4_msgs::msg::IridiumsbdStatus::_last_at_ok_timestamp_type arg)
   {
-    msg_.last_heartbeat = std::move(arg);
+    msg_.last_at_ok_timestamp = std::move(arg);
     return Init_IridiumsbdStatus_tx_buf_write_index(msg_);
   }
 
@@ -251,10 +254,10 @@ public:
   Init_IridiumsbdStatus_timestamp()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_IridiumsbdStatus_last_heartbeat timestamp(::px4_msgs::msg::IridiumsbdStatus::_timestamp_type arg)
+  Init_IridiumsbdStatus_last_at_ok_timestamp timestamp(::px4_msgs::msg::IridiumsbdStatus::_timestamp_type arg)
   {
     msg_.timestamp = std::move(arg);
-    return Init_IridiumsbdStatus_last_heartbeat(msg_);
+    return Init_IridiumsbdStatus_last_at_ok_timestamp(msg_);
   }
 
 private:

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/GeneratorStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -257,6 +264,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
         '_generator_speed',
         '_rectifier_temperature',
         '_generator_temperature',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -274,6 +282,8 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
         'generator_temperature': 'int16',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -290,9 +300,14 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.status = kwargs.get('status', int())
         self.battery_current = kwargs.get('battery_current', float())
@@ -311,7 +326,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -325,11 +340,12 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -373,7 +389,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -388,7 +404,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @status.setter
     def status(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'status' field must be of type 'int'"
@@ -403,7 +419,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @battery_current.setter
     def battery_current(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'battery_current' field must be of type 'float'"
@@ -418,7 +434,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @load_current.setter
     def load_current(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'load_current' field must be of type 'float'"
@@ -433,7 +449,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @power_generated.setter
     def power_generated(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'power_generated' field must be of type 'float'"
@@ -448,7 +464,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @bus_voltage.setter
     def bus_voltage(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'bus_voltage' field must be of type 'float'"
@@ -463,7 +479,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @bat_current_setpoint.setter
     def bat_current_setpoint(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'bat_current_setpoint' field must be of type 'float'"
@@ -478,7 +494,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @runtime.setter
     def runtime(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'runtime' field must be of type 'int'"
@@ -493,7 +509,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @time_until_maintenance.setter
     def time_until_maintenance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'time_until_maintenance' field must be of type 'int'"
@@ -508,7 +524,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @generator_speed.setter
     def generator_speed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'generator_speed' field must be of type 'int'"
@@ -523,7 +539,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @rectifier_temperature.setter
     def rectifier_temperature(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'rectifier_temperature' field must be of type 'int'"
@@ -538,7 +554,7 @@ class GeneratorStatus(metaclass=Metaclass_GeneratorStatus):
 
     @generator_temperature.setter
     def generator_temperature(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'generator_temperature' field must be of type 'int'"

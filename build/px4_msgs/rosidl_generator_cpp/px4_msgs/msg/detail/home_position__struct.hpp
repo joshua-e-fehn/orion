@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/HomePosition.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/home_position.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__HOME_POSITION__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__HOME_POSITION__STRUCT_HPP_
 
@@ -45,11 +48,14 @@ struct HomePosition_
       this->x = 0.0f;
       this->y = 0.0f;
       this->z = 0.0f;
+      this->roll = 0.0f;
+      this->pitch = 0.0f;
       this->yaw = 0.0f;
       this->valid_alt = false;
       this->valid_hpos = false;
       this->valid_lpos = false;
       this->manual_home = false;
+      this->update_count = 0ul;
     }
   }
 
@@ -66,11 +72,14 @@ struct HomePosition_
       this->x = 0.0f;
       this->y = 0.0f;
       this->z = 0.0f;
+      this->roll = 0.0f;
+      this->pitch = 0.0f;
       this->yaw = 0.0f;
       this->valid_alt = false;
       this->valid_hpos = false;
       this->valid_lpos = false;
       this->manual_home = false;
+      this->update_count = 0ul;
     }
   }
 
@@ -96,6 +105,12 @@ struct HomePosition_
   using _z_type =
     float;
   _z_type z;
+  using _roll_type =
+    float;
+  _roll_type roll;
+  using _pitch_type =
+    float;
+  _pitch_type pitch;
   using _yaw_type =
     float;
   _yaw_type yaw;
@@ -111,6 +126,9 @@ struct HomePosition_
   using _manual_home_type =
     bool;
   _manual_home_type manual_home;
+  using _update_count_type =
+    uint32_t;
+  _update_count_type update_count;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -155,6 +173,18 @@ struct HomePosition_
     this->z = _arg;
     return *this;
   }
+  Type & set__roll(
+    const float & _arg)
+  {
+    this->roll = _arg;
+    return *this;
+  }
+  Type & set__pitch(
+    const float & _arg)
+  {
+    this->pitch = _arg;
+    return *this;
+  }
   Type & set__yaw(
     const float & _arg)
   {
@@ -185,8 +215,16 @@ struct HomePosition_
     this->manual_home = _arg;
     return *this;
   }
+  Type & set__update_count(
+    const uint32_t & _arg)
+  {
+    this->update_count = _arg;
+    return *this;
+  }
 
   // constant declarations
+  static constexpr uint32_t MESSAGE_VERSION =
+    1u;
 
   // pointer types
   using RawPtr =
@@ -249,6 +287,12 @@ struct HomePosition_
     if (this->z != other.z) {
       return false;
     }
+    if (this->roll != other.roll) {
+      return false;
+    }
+    if (this->pitch != other.pitch) {
+      return false;
+    }
     if (this->yaw != other.yaw) {
       return false;
     }
@@ -264,6 +308,9 @@ struct HomePosition_
     if (this->manual_home != other.manual_home) {
       return false;
     }
+    if (this->update_count != other.update_count) {
+      return false;
+    }
     return true;
   }
   bool operator!=(const HomePosition_ & other) const
@@ -277,6 +324,11 @@ using HomePosition =
   px4_msgs::msg::HomePosition_<std::allocator<void>>;
 
 // constant definitions
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t HomePosition_<ContainerAllocator>::MESSAGE_VERSION;
+#endif  // __cplusplus < 201703L
 
 }  // namespace msg
 

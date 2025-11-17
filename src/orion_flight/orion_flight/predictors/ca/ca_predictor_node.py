@@ -9,13 +9,16 @@ assuming the target maintains constant acceleration.
 import rclpy
 from rclpy.node import Node
 from px4_msgs.msg import VehicleLocalPosition
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
+
 from visualization_msgs.msg import MarkerArray
 import numpy as np
 
-from .ca_model import CAModel
-from ..common.types import PredictorInput, PredictorOutput
-from ..common.visualization import create_prediction_markers
 
+# Use absolute imports so execution via entry point works (no relative import context needed)
+from orion_flight.predictors.ca.ca_model import CAModel
+from orion_flight.predictors.common.types import PredictorInput, PredictorOutput
+from orion_flight.predictors.common.visualization import create_prediction_markers
 
 class CAPredictorNode(Node):
     """ROS2 node for Constant Acceleration target prediction."""
@@ -28,7 +31,8 @@ class CAPredictorNode(Node):
         self._get_parameters()
         
         # Initialize CA model
-        # For standalone use, enable full 9D measurements (pos+vel+acc)
+        # For standalone use in prediction_only mode, use 6D measurements (pos+vel only)
+        # to match CV predictor innovation dimension for consistent interfaces
         process_noise = {
             'position': self.param_q_pos,
             'velocity': self.param_q_vel,
@@ -40,19 +44,23 @@ class CAPredictorNode(Node):
             'acceleration': self.param_r_acc
         }
         
-        self.ca_model = CAModel(
-            process_noise, 
-            measurement_noise,
-            use_acceleration_measurements=True  # Standalone mode: use full 9D measurements
-        )
+        self.ca_model = CAModel(process_noise, measurement_noise, use_acceleration_measurements=False)
         
-        # Create subscribers
-        target_topic = f'/{self.target_namespace}/fmu/out/vehicle_local_position'
+        # QoS profile matching PX4 publishers (BEST_EFFORT reliability)
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=1
+        )
+
+        # Create subscribers (PX4 topic uses _v1 suffix)
+        target_topic = f'/{self.target_namespace}/fmu/out/vehicle_local_position_v1'
         self.target_sub = self.create_subscription(
             VehicleLocalPosition,
             target_topic,
             self.target_callback,
-            10
+            qos_profile
         )
         
         # Create publishers
@@ -167,7 +175,7 @@ class CAPredictorNode(Node):
         if self.ca_model.initialized:
             innovation = self.ca_model.get_innovation()
             innovation_norm = np.linalg.norm(innovation[0:3])  # Position innovation
-            _, _, est_acc, _, _, _ = self.ca_model.get_state()
+            _, _, est_acc, _ = self.ca_model.get_state()
             acc_norm = np.linalg.norm(est_acc)
             
             self.get_logger().debug(
@@ -188,7 +196,7 @@ class CAPredictorNode(Node):
             position: Current position [x, y, z] in NED
             velocity: Current velocity [vx, vy, vz] in NED
         """
-        from ..common.types import ned_to_enu
+        from orion_flight.predictors.common.types import ned_to_enu
         from visualization_msgs.msg import Marker
         from std_msgs.msg import ColorRGBA
         from geometry_msgs.msg import Point
@@ -282,7 +290,11 @@ class CAPredictorNode(Node):
         predictions = []
         for horizon in self.prediction_horizons:
             try:
-                pos, vel, acc, pos_cov, vel_cov, acc_cov = self.ca_model.predict(horizon)
+                pos, vel, acc, full_cov = self.ca_model.predict(horizon)
+                
+                # Extract position and velocity covariances from full 6x6 covariance
+                pos_cov = full_cov[0:3, 0:3]
+                vel_cov = full_cov[3:6, 3:6]
                 
                 # Create PredictorOutput
                 pred_output = PredictorOutput(

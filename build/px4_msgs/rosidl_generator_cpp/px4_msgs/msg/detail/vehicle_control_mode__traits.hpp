@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VehicleControlMode.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_control_mode.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_CONTROL_MODE__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_CONTROL_MODE__TRAITS_HPP_
 
@@ -67,24 +70,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: flag_control_rates_enabled
+  // member: flag_control_position_enabled
   {
-    out << "flag_control_rates_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.flag_control_rates_enabled, out);
-    out << ", ";
-  }
-
-  // member: flag_control_attitude_enabled
-  {
-    out << "flag_control_attitude_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.flag_control_attitude_enabled, out);
-    out << ", ";
-  }
-
-  // member: flag_control_acceleration_enabled
-  {
-    out << "flag_control_acceleration_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.flag_control_acceleration_enabled, out);
+    out << "flag_control_position_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_position_enabled, out);
     out << ", ";
   }
 
@@ -92,13 +81,6 @@ inline void to_flow_style_yaml(
   {
     out << "flag_control_velocity_enabled: ";
     rosidl_generator_traits::value_to_yaml(msg.flag_control_velocity_enabled, out);
-    out << ", ";
-  }
-
-  // member: flag_control_position_enabled
-  {
-    out << "flag_control_position_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.flag_control_position_enabled, out);
     out << ", ";
   }
 
@@ -116,10 +98,45 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: flag_control_acceleration_enabled
+  {
+    out << "flag_control_acceleration_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_acceleration_enabled, out);
+    out << ", ";
+  }
+
+  // member: flag_control_attitude_enabled
+  {
+    out << "flag_control_attitude_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_attitude_enabled, out);
+    out << ", ";
+  }
+
+  // member: flag_control_rates_enabled
+  {
+    out << "flag_control_rates_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_rates_enabled, out);
+    out << ", ";
+  }
+
+  // member: flag_control_allocation_enabled
+  {
+    out << "flag_control_allocation_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_allocation_enabled, out);
+    out << ", ";
+  }
+
   // member: flag_control_termination_enabled
   {
     out << "flag_control_termination_enabled: ";
     rosidl_generator_traits::value_to_yaml(msg.flag_control_termination_enabled, out);
+    out << ", ";
+  }
+
+  // member: source_id
+  {
+    out << "source_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.source_id, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -188,33 +205,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: flag_control_rates_enabled
+  // member: flag_control_position_enabled
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "flag_control_rates_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.flag_control_rates_enabled, out);
-    out << "\n";
-  }
-
-  // member: flag_control_attitude_enabled
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "flag_control_attitude_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.flag_control_attitude_enabled, out);
-    out << "\n";
-  }
-
-  // member: flag_control_acceleration_enabled
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "flag_control_acceleration_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.flag_control_acceleration_enabled, out);
+    out << "flag_control_position_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_position_enabled, out);
     out << "\n";
   }
 
@@ -225,16 +222,6 @@ inline void to_block_style_yaml(
     }
     out << "flag_control_velocity_enabled: ";
     rosidl_generator_traits::value_to_yaml(msg.flag_control_velocity_enabled, out);
-    out << "\n";
-  }
-
-  // member: flag_control_position_enabled
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "flag_control_position_enabled: ";
-    rosidl_generator_traits::value_to_yaml(msg.flag_control_position_enabled, out);
     out << "\n";
   }
 
@@ -258,6 +245,46 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
+  // member: flag_control_acceleration_enabled
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "flag_control_acceleration_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_acceleration_enabled, out);
+    out << "\n";
+  }
+
+  // member: flag_control_attitude_enabled
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "flag_control_attitude_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_attitude_enabled, out);
+    out << "\n";
+  }
+
+  // member: flag_control_rates_enabled
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "flag_control_rates_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_rates_enabled, out);
+    out << "\n";
+  }
+
+  // member: flag_control_allocation_enabled
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "flag_control_allocation_enabled: ";
+    rosidl_generator_traits::value_to_yaml(msg.flag_control_allocation_enabled, out);
+    out << "\n";
+  }
+
   // member: flag_control_termination_enabled
   {
     if (indentation > 0) {
@@ -265,6 +292,16 @@ inline void to_block_style_yaml(
     }
     out << "flag_control_termination_enabled: ";
     rosidl_generator_traits::value_to_yaml(msg.flag_control_termination_enabled, out);
+    out << "\n";
+  }
+
+  // member: source_id
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "source_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.source_id, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

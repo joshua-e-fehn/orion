@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/ObstacleDistance.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -128,6 +135,7 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
         '_min_distance',
         '_max_distance',
         '_angle_offset',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -141,6 +149,8 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
         'angle_offset': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
@@ -153,17 +163,21 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.frame = kwargs.get('frame', int())
         self.sensor_type = kwargs.get('sensor_type', int())
         if 'distances' not in kwargs:
             self.distances = numpy.zeros(72, dtype=numpy.uint16)
         else:
-            self.distances = numpy.array(kwargs.get('distances'), dtype=numpy.uint16)
-            assert self.distances.shape == (72, )
+            self.distances = kwargs.get('distances')
         self.increment = kwargs.get('increment', float())
         self.min_distance = kwargs.get('min_distance', int())
         self.max_distance = kwargs.get('max_distance', int())
@@ -174,7 +188,7 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -188,11 +202,12 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -228,7 +243,7 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -243,7 +258,7 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
 
     @frame.setter
     def frame(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'frame' field must be of type 'int'"
@@ -258,7 +273,7 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
 
     @sensor_type.setter
     def sensor_type(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'sensor_type' field must be of type 'int'"
@@ -273,14 +288,14 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
 
     @distances.setter
     def distances(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint16, \
-                "The 'distances' numpy.ndarray() must have the dtype of 'numpy.uint16'"
-            assert value.size == 72, \
-                "The 'distances' numpy.ndarray() must have a size of 72"
-            self._distances = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint16, \
+                    "The 'distances' numpy.ndarray() must have the dtype of 'numpy.uint16'"
+                assert value.size == 72, \
+                    "The 'distances' numpy.ndarray() must have a size of 72"
+                self._distances = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -304,7 +319,7 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
 
     @increment.setter
     def increment(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'increment' field must be of type 'float'"
@@ -319,7 +334,7 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
 
     @min_distance.setter
     def min_distance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'min_distance' field must be of type 'int'"
@@ -334,7 +349,7 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
 
     @max_distance.setter
     def max_distance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'max_distance' field must be of type 'int'"
@@ -349,7 +364,7 @@ class ObstacleDistance(metaclass=Metaclass_ObstacleDistance):
 
     @angle_offset.setter
     def angle_offset(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'angle_offset' field must be of type 'float'"

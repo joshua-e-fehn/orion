@@ -31,12 +31,13 @@ void px4_msgs__msg__RateCtrlStatus__rosidl_typesupport_introspection_c__RateCtrl
   px4_msgs__msg__RateCtrlStatus__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__RateCtrlStatus__rosidl_typesupport_introspection_c__RateCtrlStatus_message_member_array[5] = {
+static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__RateCtrlStatus__rosidl_typesupport_introspection_c__RateCtrlStatus_message_member_array[4] = {
   {
     "timestamp",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -54,6 +55,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__RateCtrl
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -71,6 +73,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__RateCtrl
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -88,27 +91,11 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__RateCtrl
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__RateCtrlStatus, yawspeed_integ),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "wheel_rate_integ",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__RateCtrlStatus, wheel_rate_integ),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -122,8 +109,9 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__RateCtrl
 static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__RateCtrlStatus__rosidl_typesupport_introspection_c__RateCtrlStatus_message_members = {
   "px4_msgs__msg",  // message namespace
   "RateCtrlStatus",  // message name
-  5,  // number of fields
+  4,  // number of fields
   sizeof(px4_msgs__msg__RateCtrlStatus),
+  false,  // has_any_key_member_
   px4_msgs__msg__RateCtrlStatus__rosidl_typesupport_introspection_c__RateCtrlStatus_message_member_array,  // message members
   px4_msgs__msg__RateCtrlStatus__rosidl_typesupport_introspection_c__RateCtrlStatus_init_function,  // function to initialize message memory (memory has to be allocated)
   px4_msgs__msg__RateCtrlStatus__rosidl_typesupport_introspection_c__RateCtrlStatus_fini_function  // function to terminate message instance (will not free memory)
@@ -135,6 +123,9 @@ static rosidl_message_type_support_t px4_msgs__msg__RateCtrlStatus__rosidl_types
   0,
   &px4_msgs__msg__RateCtrlStatus__rosidl_typesupport_introspection_c__RateCtrlStatus_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__RateCtrlStatus__get_type_hash,
+  &px4_msgs__msg__RateCtrlStatus__get_type_description,
+  &px4_msgs__msg__RateCtrlStatus__get_type_description_sources,
 };
 
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_px4_msgs

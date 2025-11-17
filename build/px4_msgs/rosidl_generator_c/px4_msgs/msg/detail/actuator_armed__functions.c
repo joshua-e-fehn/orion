@@ -22,8 +22,8 @@ px4_msgs__msg__ActuatorArmed__init(px4_msgs__msg__ActuatorArmed * msg)
   // prearmed
   // ready_to_arm
   // lockdown
-  // manual_lockdown
-  // force_failsafe
+  // kill
+  // termination
   // in_esc_calibration_mode
   return true;
 }
@@ -39,8 +39,8 @@ px4_msgs__msg__ActuatorArmed__fini(px4_msgs__msg__ActuatorArmed * msg)
   // prearmed
   // ready_to_arm
   // lockdown
-  // manual_lockdown
-  // force_failsafe
+  // kill
+  // termination
   // in_esc_calibration_mode
 }
 
@@ -70,12 +70,12 @@ px4_msgs__msg__ActuatorArmed__are_equal(const px4_msgs__msg__ActuatorArmed * lhs
   if (lhs->lockdown != rhs->lockdown) {
     return false;
   }
-  // manual_lockdown
-  if (lhs->manual_lockdown != rhs->manual_lockdown) {
+  // kill
+  if (lhs->kill != rhs->kill) {
     return false;
   }
-  // force_failsafe
-  if (lhs->force_failsafe != rhs->force_failsafe) {
+  // termination
+  if (lhs->termination != rhs->termination) {
     return false;
   }
   // in_esc_calibration_mode
@@ -103,17 +103,17 @@ px4_msgs__msg__ActuatorArmed__copy(
   output->ready_to_arm = input->ready_to_arm;
   // lockdown
   output->lockdown = input->lockdown;
-  // manual_lockdown
-  output->manual_lockdown = input->manual_lockdown;
-  // force_failsafe
-  output->force_failsafe = input->force_failsafe;
+  // kill
+  output->kill = input->kill;
+  // termination
+  output->termination = input->termination;
   // in_esc_calibration_mode
   output->in_esc_calibration_mode = input->in_esc_calibration_mode;
   return true;
 }
 
 px4_msgs__msg__ActuatorArmed *
-px4_msgs__msg__ActuatorArmed__create()
+px4_msgs__msg__ActuatorArmed__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__ActuatorArmed * msg = (px4_msgs__msg__ActuatorArmed *)allocator.allocate(sizeof(px4_msgs__msg__ActuatorArmed), allocator.state);

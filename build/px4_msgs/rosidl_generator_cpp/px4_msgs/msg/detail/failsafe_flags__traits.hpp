@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/FailsafeFlags.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/failsafe_flags.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__FAILSAFE_FLAGS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__FAILSAFE_FLAGS__TRAITS_HPP_
 
@@ -71,6 +74,13 @@ inline void to_flow_style_yaml(
   {
     out << "mode_req_global_position: ";
     rosidl_generator_traits::value_to_yaml(msg.mode_req_global_position, out);
+    out << ", ";
+  }
+
+  // member: mode_req_global_position_relaxed
+  {
+    out << "mode_req_global_position_relaxed: ";
+    rosidl_generator_traits::value_to_yaml(msg.mode_req_global_position_relaxed, out);
     out << ", ";
   }
 
@@ -172,6 +182,13 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: global_position_invalid_relaxed
+  {
+    out << "global_position_invalid_relaxed: ";
+    rosidl_generator_traits::value_to_yaml(msg.global_position_invalid_relaxed, out);
+    out << ", ";
+  }
+
   // member: auto_mission_missing
   {
     out << "auto_mission_missing: ";
@@ -228,10 +245,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: primary_geofence_breached
+  // member: geofence_breached
   {
-    out << "primary_geofence_breached: ";
-    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_breached, out);
+    out << "geofence_breached: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_breached, out);
     out << ", ";
   }
 
@@ -263,10 +280,17 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: local_position_accuracy_low
+  // member: position_accuracy_low
   {
-    out << "local_position_accuracy_low: ";
-    rosidl_generator_traits::value_to_yaml(msg.local_position_accuracy_low, out);
+    out << "position_accuracy_low: ";
+    rosidl_generator_traits::value_to_yaml(msg.position_accuracy_low, out);
+    out << ", ";
+  }
+
+  // member: navigator_failure
+  {
+    out << "navigator_failure: ";
+    rosidl_generator_traits::value_to_yaml(msg.navigator_failure, out);
     out << ", ";
   }
 
@@ -373,6 +397,16 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
+  // member: mode_req_global_position_relaxed
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "mode_req_global_position_relaxed: ";
+    rosidl_generator_traits::value_to_yaml(msg.mode_req_global_position_relaxed, out);
+    out << "\n";
+  }
+
   // member: mode_req_mission
   {
     if (indentation > 0) {
@@ -513,6 +547,16 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
+  // member: global_position_invalid_relaxed
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "global_position_invalid_relaxed: ";
+    rosidl_generator_traits::value_to_yaml(msg.global_position_invalid_relaxed, out);
+    out << "\n";
+  }
+
   // member: auto_mission_missing
   {
     if (indentation > 0) {
@@ -593,13 +637,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: primary_geofence_breached
+  // member: geofence_breached
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "primary_geofence_breached: ";
-    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_breached, out);
+    out << "geofence_breached: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_breached, out);
     out << "\n";
   }
 
@@ -643,13 +687,23 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: local_position_accuracy_low
+  // member: position_accuracy_low
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "local_position_accuracy_low: ";
-    rosidl_generator_traits::value_to_yaml(msg.local_position_accuracy_low, out);
+    out << "position_accuracy_low: ";
+    rosidl_generator_traits::value_to_yaml(msg.position_accuracy_low, out);
+    out << "\n";
+  }
+
+  // member: navigator_failure
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "navigator_failure: ";
+    rosidl_generator_traits::value_to_yaml(msg.navigator_failure, out);
     out << "\n";
   }
 

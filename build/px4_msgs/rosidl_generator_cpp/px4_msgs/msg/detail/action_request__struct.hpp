@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ActionRequest.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/action_request.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ACTION_REQUEST__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__ACTION_REQUEST__STRUCT_HPP_
 
@@ -115,7 +118,9 @@ struct ActionRequest_
     6u;
   static constexpr uint8_t ACTION_VTOL_TRANSITION_TO_FIXEDWING =
     7u;
-  static constexpr uint8_t SOURCE_RC_STICK_GESTURE =
+  static constexpr uint8_t ACTION_TERMINATION =
+    8u;
+  static constexpr uint8_t SOURCE_STICK_GESTURE =
     0u;
   static constexpr uint8_t SOURCE_RC_SWITCH =
     1u;
@@ -232,7 +237,12 @@ constexpr uint8_t ActionRequest_<ContainerAllocator>::ACTION_VTOL_TRANSITION_TO_
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t ActionRequest_<ContainerAllocator>::SOURCE_RC_STICK_GESTURE;
+constexpr uint8_t ActionRequest_<ContainerAllocator>::ACTION_TERMINATION;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t ActionRequest_<ContainerAllocator>::SOURCE_STICK_GESTURE;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17

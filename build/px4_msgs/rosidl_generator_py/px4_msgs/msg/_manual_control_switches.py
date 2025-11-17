@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/ManualControlSwitches.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -163,12 +170,15 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
         '_loiter_switch',
         '_offboard_switch',
         '_kill_switch',
+        '_termination_switch',
         '_gear_switch',
         '_transition_switch',
         '_photo_switch',
         '_video_switch',
         '_engage_main_motor_switch',
+        '_payload_power_switch',
         '_switch_changes',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -180,17 +190,23 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
         'loiter_switch': 'uint8',
         'offboard_switch': 'uint8',
         'kill_switch': 'uint8',
+        'termination_switch': 'uint8',
         'gear_switch': 'uint8',
         'transition_switch': 'uint8',
         'photo_switch': 'uint8',
         'video_switch': 'uint8',
         'engage_main_motor_switch': 'uint8',
+        'payload_power_switch': 'uint8',
         'switch_changes': 'uint32',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
@@ -206,9 +222,14 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.mode_slot = kwargs.get('mode_slot', int())
@@ -217,11 +238,13 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
         self.loiter_switch = kwargs.get('loiter_switch', int())
         self.offboard_switch = kwargs.get('offboard_switch', int())
         self.kill_switch = kwargs.get('kill_switch', int())
+        self.termination_switch = kwargs.get('termination_switch', int())
         self.gear_switch = kwargs.get('gear_switch', int())
         self.transition_switch = kwargs.get('transition_switch', int())
         self.photo_switch = kwargs.get('photo_switch', int())
         self.video_switch = kwargs.get('video_switch', int())
         self.engage_main_motor_switch = kwargs.get('engage_main_motor_switch', int())
+        self.payload_power_switch = kwargs.get('payload_power_switch', int())
         self.switch_changes = kwargs.get('switch_changes', int())
 
     def __repr__(self):
@@ -229,7 +252,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -243,11 +266,12 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -269,6 +293,8 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
             return False
         if self.kill_switch != other.kill_switch:
             return False
+        if self.termination_switch != other.termination_switch:
+            return False
         if self.gear_switch != other.gear_switch:
             return False
         if self.transition_switch != other.transition_switch:
@@ -278,6 +304,8 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
         if self.video_switch != other.video_switch:
             return False
         if self.engage_main_motor_switch != other.engage_main_motor_switch:
+            return False
+        if self.payload_power_switch != other.payload_power_switch:
             return False
         if self.switch_changes != other.switch_changes:
             return False
@@ -295,7 +323,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -310,7 +338,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -325,7 +353,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @mode_slot.setter
     def mode_slot(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'mode_slot' field must be of type 'int'"
@@ -340,7 +368,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @arm_switch.setter
     def arm_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'arm_switch' field must be of type 'int'"
@@ -355,7 +383,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @return_switch.setter
     def return_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'return_switch' field must be of type 'int'"
@@ -370,7 +398,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @loiter_switch.setter
     def loiter_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'loiter_switch' field must be of type 'int'"
@@ -385,7 +413,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @offboard_switch.setter
     def offboard_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'offboard_switch' field must be of type 'int'"
@@ -400,7 +428,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @kill_switch.setter
     def kill_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'kill_switch' field must be of type 'int'"
@@ -409,13 +437,28 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
         self._kill_switch = value
 
     @builtins.property
+    def termination_switch(self):
+        """Message field 'termination_switch'."""
+        return self._termination_switch
+
+    @termination_switch.setter
+    def termination_switch(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'termination_switch' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'termination_switch' field must be an unsigned integer in [0, 255]"
+        self._termination_switch = value
+
+    @builtins.property
     def gear_switch(self):
         """Message field 'gear_switch'."""
         return self._gear_switch
 
     @gear_switch.setter
     def gear_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'gear_switch' field must be of type 'int'"
@@ -430,7 +473,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @transition_switch.setter
     def transition_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'transition_switch' field must be of type 'int'"
@@ -445,7 +488,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @photo_switch.setter
     def photo_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'photo_switch' field must be of type 'int'"
@@ -460,7 +503,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @video_switch.setter
     def video_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'video_switch' field must be of type 'int'"
@@ -475,7 +518,7 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
 
     @engage_main_motor_switch.setter
     def engage_main_motor_switch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'engage_main_motor_switch' field must be of type 'int'"
@@ -484,13 +527,28 @@ class ManualControlSwitches(metaclass=Metaclass_ManualControlSwitches):
         self._engage_main_motor_switch = value
 
     @builtins.property
+    def payload_power_switch(self):
+        """Message field 'payload_power_switch'."""
+        return self._payload_power_switch
+
+    @payload_power_switch.setter
+    def payload_power_switch(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'payload_power_switch' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'payload_power_switch' field must be an unsigned integer in [0, 255]"
+        self._payload_power_switch = value
+
+    @builtins.property
     def switch_changes(self):
         """Message field 'switch_changes'."""
         return self._switch_changes
 
     @switch_changes.setter
     def switch_changes(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'switch_changes' field must be of type 'int'"

@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/estimator_aid_source2d__functions.h"
 #include "px4_msgs/msg/detail/estimator_aid_source2d__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -46,32 +47,32 @@ size_t size_function__EstimatorAidSource2d__observation(const void * untyped_mem
 const void * get_const_function__EstimatorAidSource2d__observation(const void * untyped_member, size_t index)
 {
   const auto & member =
-    *reinterpret_cast<const std::array<float, 2> *>(untyped_member);
+    *reinterpret_cast<const std::array<double, 2> *>(untyped_member);
   return &member[index];
 }
 
 void * get_function__EstimatorAidSource2d__observation(void * untyped_member, size_t index)
 {
   auto & member =
-    *reinterpret_cast<std::array<float, 2> *>(untyped_member);
+    *reinterpret_cast<std::array<double, 2> *>(untyped_member);
   return &member[index];
 }
 
 void fetch_function__EstimatorAidSource2d__observation(
   const void * untyped_member, size_t index, void * untyped_value)
 {
-  const auto & item = *reinterpret_cast<const float *>(
+  const auto & item = *reinterpret_cast<const double *>(
     get_const_function__EstimatorAidSource2d__observation(untyped_member, index));
-  auto & value = *reinterpret_cast<float *>(untyped_value);
+  auto & value = *reinterpret_cast<double *>(untyped_value);
   value = item;
 }
 
 void assign_function__EstimatorAidSource2d__observation(
   void * untyped_member, size_t index, const void * untyped_value)
 {
-  auto & item = *reinterpret_cast<float *>(
+  auto & item = *reinterpret_cast<double *>(
     get_function__EstimatorAidSource2d__observation(untyped_member, index));
-  const auto & value = *reinterpret_cast<const float *>(untyped_value);
+  const auto & value = *reinterpret_cast<const double *>(untyped_value);
   item = value;
 }
 
@@ -147,6 +148,44 @@ void assign_function__EstimatorAidSource2d__innovation(
 {
   auto & item = *reinterpret_cast<float *>(
     get_function__EstimatorAidSource2d__innovation(untyped_member, index));
+  const auto & value = *reinterpret_cast<const float *>(untyped_value);
+  item = value;
+}
+
+size_t size_function__EstimatorAidSource2d__innovation_filtered(const void * untyped_member)
+{
+  (void)untyped_member;
+  return 2;
+}
+
+const void * get_const_function__EstimatorAidSource2d__innovation_filtered(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::array<float, 2> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__EstimatorAidSource2d__innovation_filtered(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::array<float, 2> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__EstimatorAidSource2d__innovation_filtered(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const float *>(
+    get_const_function__EstimatorAidSource2d__innovation_filtered(untyped_member, index));
+  auto & value = *reinterpret_cast<float *>(untyped_value);
+  value = item;
+}
+
+void assign_function__EstimatorAidSource2d__innovation_filtered(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<float *>(
+    get_function__EstimatorAidSource2d__innovation_filtered(untyped_member, index));
   const auto & value = *reinterpret_cast<const float *>(untyped_value);
   item = value;
 }
@@ -227,12 +266,51 @@ void assign_function__EstimatorAidSource2d__test_ratio(
   item = value;
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidSource2d_message_member_array[13] = {
+size_t size_function__EstimatorAidSource2d__test_ratio_filtered(const void * untyped_member)
+{
+  (void)untyped_member;
+  return 2;
+}
+
+const void * get_const_function__EstimatorAidSource2d__test_ratio_filtered(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::array<float, 2> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__EstimatorAidSource2d__test_ratio_filtered(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::array<float, 2> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__EstimatorAidSource2d__test_ratio_filtered(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const float *>(
+    get_const_function__EstimatorAidSource2d__test_ratio_filtered(untyped_member, index));
+  auto & value = *reinterpret_cast<float *>(untyped_value);
+  value = item;
+}
+
+void assign_function__EstimatorAidSource2d__test_ratio_filtered(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<float *>(
+    get_function__EstimatorAidSource2d__test_ratio_filtered(untyped_member, index));
+  const auto & value = *reinterpret_cast<const float *>(untyped_value);
+  item = value;
+}
+
+static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidSource2d_message_member_array[14] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -250,6 +328,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -267,6 +346,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -284,6 +364,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -301,6 +382,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -315,9 +397,10 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
   },
   {
     "observation",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
     2,  // array size
     false,  // is upper bound
@@ -335,6 +418,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
     2,  // array size
     false,  // is upper bound
@@ -352,6 +436,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
     2,  // array size
     false,  // is upper bound
@@ -365,10 +450,29 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     nullptr  // resize(index) function pointer
   },
   {
+    "innovation_filtered",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    true,  // is array
+    2,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::EstimatorAidSource2d, innovation_filtered),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__EstimatorAidSource2d__innovation_filtered,  // size() function pointer
+    get_const_function__EstimatorAidSource2d__innovation_filtered,  // get_const(index) function pointer
+    get_function__EstimatorAidSource2d__innovation_filtered,  // get(index) function pointer
+    fetch_function__EstimatorAidSource2d__innovation_filtered,  // fetch(index, &value) function pointer
+    assign_function__EstimatorAidSource2d__innovation_filtered,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "innovation_variance",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
     2,  // array size
     false,  // is upper bound
@@ -386,6 +490,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
     2,  // array size
     false,  // is upper bound
@@ -399,20 +504,21 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     nullptr  // resize(index) function pointer
   },
   {
-    "fusion_enabled",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
+    "test_ratio_filtered",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
+    false,  // is key
+    true,  // is array
+    2,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::EstimatorAidSource2d, fusion_enabled),  // bytes offset in struct
+    offsetof(px4_msgs::msg::EstimatorAidSource2d, test_ratio_filtered),  // bytes offset in struct
     nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
+    size_function__EstimatorAidSource2d__test_ratio_filtered,  // size() function pointer
+    get_const_function__EstimatorAidSource2d__test_ratio_filtered,  // get_const(index) function pointer
+    get_function__EstimatorAidSource2d__test_ratio_filtered,  // get(index) function pointer
+    fetch_function__EstimatorAidSource2d__test_ratio_filtered,  // fetch(index, &value) function pointer
+    assign_function__EstimatorAidSource2d__test_ratio_filtered,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
   },
   {
@@ -420,6 +526,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -437,6 +544,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -454,8 +562,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember EstimatorAidS
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers EstimatorAidSource2d_message_members = {
   "px4_msgs::msg",  // message namespace
   "EstimatorAidSource2d",  // message name
-  13,  // number of fields
+  14,  // number of fields
   sizeof(px4_msgs::msg::EstimatorAidSource2d),
+  false,  // has_any_key_member_
   EstimatorAidSource2d_message_member_array,  // message members
   EstimatorAidSource2d_init_function,  // function to initialize message memory (memory has to be allocated)
   EstimatorAidSource2d_fini_function  // function to terminate message instance (will not free memory)
@@ -465,6 +574,9 @@ static const rosidl_message_type_support_t EstimatorAidSource2d_message_type_sup
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &EstimatorAidSource2d_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__EstimatorAidSource2d__get_type_hash,
+  &px4_msgs__msg__EstimatorAidSource2d__get_type_description,
+  &px4_msgs__msg__EstimatorAidSource2d__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

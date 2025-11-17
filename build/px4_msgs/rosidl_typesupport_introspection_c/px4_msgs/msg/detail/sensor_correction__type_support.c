@@ -31,276 +31,6 @@ void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__Sensor
   px4_msgs__msg__SensorCorrection__fini(message_memory);
 }
 
-size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_device_ids(
-  const void * untyped_member)
-{
-  (void)untyped_member;
-  return 4;
-}
-
-const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_device_ids(
-  const void * untyped_member, size_t index)
-{
-  const uint32_t * member =
-    (const uint32_t *)(untyped_member);
-  return &member[index];
-}
-
-void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_device_ids(
-  void * untyped_member, size_t index)
-{
-  uint32_t * member =
-    (uint32_t *)(untyped_member);
-  return &member[index];
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_device_ids(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const uint32_t * item =
-    ((const uint32_t *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_device_ids(untyped_member, index));
-  uint32_t * value =
-    (uint32_t *)(untyped_value);
-  *value = *item;
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_device_ids(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  uint32_t * item =
-    ((uint32_t *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_device_ids(untyped_member, index));
-  const uint32_t * value =
-    (const uint32_t *)(untyped_value);
-  *item = *value;
-}
-
-size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_temperature(
-  const void * untyped_member)
-{
-  (void)untyped_member;
-  return 4;
-}
-
-const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_temperature(
-  const void * untyped_member, size_t index)
-{
-  const float * member =
-    (const float *)(untyped_member);
-  return &member[index];
-}
-
-void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_temperature(
-  void * untyped_member, size_t index)
-{
-  float * member =
-    (float *)(untyped_member);
-  return &member[index];
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_temperature(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const float * item =
-    ((const float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_temperature(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
-  *value = *item;
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_temperature(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  float * item =
-    ((float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_temperature(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
-  *item = *value;
-}
-
-size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_0(
-  const void * untyped_member)
-{
-  (void)untyped_member;
-  return 3;
-}
-
-const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_0(
-  const void * untyped_member, size_t index)
-{
-  const float * member =
-    (const float *)(untyped_member);
-  return &member[index];
-}
-
-void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_0(
-  void * untyped_member, size_t index)
-{
-  float * member =
-    (float *)(untyped_member);
-  return &member[index];
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_0(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const float * item =
-    ((const float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_0(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
-  *value = *item;
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_0(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  float * item =
-    ((float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_0(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
-  *item = *value;
-}
-
-size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_1(
-  const void * untyped_member)
-{
-  (void)untyped_member;
-  return 3;
-}
-
-const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_1(
-  const void * untyped_member, size_t index)
-{
-  const float * member =
-    (const float *)(untyped_member);
-  return &member[index];
-}
-
-void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_1(
-  void * untyped_member, size_t index)
-{
-  float * member =
-    (float *)(untyped_member);
-  return &member[index];
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_1(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const float * item =
-    ((const float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_1(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
-  *value = *item;
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_1(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  float * item =
-    ((float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_1(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
-  *item = *value;
-}
-
-size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_2(
-  const void * untyped_member)
-{
-  (void)untyped_member;
-  return 3;
-}
-
-const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_2(
-  const void * untyped_member, size_t index)
-{
-  const float * member =
-    (const float *)(untyped_member);
-  return &member[index];
-}
-
-void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_2(
-  void * untyped_member, size_t index)
-{
-  float * member =
-    (float *)(untyped_member);
-  return &member[index];
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_2(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const float * item =
-    ((const float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_2(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
-  *value = *item;
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_2(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  float * item =
-    ((float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_2(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
-  *item = *value;
-}
-
-size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_3(
-  const void * untyped_member)
-{
-  (void)untyped_member;
-  return 3;
-}
-
-const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_3(
-  const void * untyped_member, size_t index)
-{
-  const float * member =
-    (const float *)(untyped_member);
-  return &member[index];
-}
-
-void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_3(
-  void * untyped_member, size_t index)
-{
-  float * member =
-    (float *)(untyped_member);
-  return &member[index];
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_3(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const float * item =
-    ((const float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_3(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
-  *value = *item;
-}
-
-void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_3(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  float * item =
-    ((float *)
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_3(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
-  *item = *value;
-}
-
 size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__accel_device_ids(
   const void * untyped_member)
 {
@@ -571,6 +301,546 @@ void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign
   *item = *value;
 }
 
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_device_ids(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 4;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_device_ids(
+  const void * untyped_member, size_t index)
+{
+  const uint32_t * member =
+    (const uint32_t *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_device_ids(
+  void * untyped_member, size_t index)
+{
+  uint32_t * member =
+    (uint32_t *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_device_ids(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const uint32_t * item =
+    ((const uint32_t *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_device_ids(untyped_member, index));
+  uint32_t * value =
+    (uint32_t *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_device_ids(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  uint32_t * item =
+    ((uint32_t *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_device_ids(untyped_member, index));
+  const uint32_t * value =
+    (const uint32_t *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_temperature(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 4;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_temperature(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_temperature(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_temperature(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_temperature(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_temperature(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_temperature(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_0(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_0(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_0(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_0(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_0(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_0(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_0(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_1(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_1(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_1(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_1(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_1(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_1(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_1(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_2(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_2(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_2(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_2(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_2(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_2(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_2(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_3(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_3(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_3(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_3(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_3(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_3(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_3(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_device_ids(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 4;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_device_ids(
+  const void * untyped_member, size_t index)
+{
+  const uint32_t * member =
+    (const uint32_t *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_device_ids(
+  void * untyped_member, size_t index)
+{
+  uint32_t * member =
+    (uint32_t *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_device_ids(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const uint32_t * item =
+    ((const uint32_t *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_device_ids(untyped_member, index));
+  uint32_t * value =
+    (uint32_t *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_device_ids(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  uint32_t * item =
+    ((uint32_t *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_device_ids(untyped_member, index));
+  const uint32_t * value =
+    (const uint32_t *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_temperature(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 4;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_temperature(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_temperature(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_temperature(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_temperature(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_temperature(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_temperature(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_offset_0(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_0(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_0(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_offset_0(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_0(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_offset_0(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_0(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_offset_1(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_1(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_1(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_offset_1(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_1(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_offset_1(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_1(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_offset_2(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_2(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_2(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_offset_2(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_2(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_offset_2(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_2(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_offset_3(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_3(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_3(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_offset_3(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_3(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_offset_3(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_3(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
 size_t px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__baro_device_ids(
   const void * untyped_member)
 {
@@ -661,12 +931,13 @@ void px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign
   *item = *value;
 }
 
-static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__SensorCorrection_message_member_array[19] = {
+static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__SensorCorrection_message_member_array[25] = {
   {
     "timestamp",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -680,112 +951,11 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     NULL  // resize(index) function pointer
   },
   {
-    "gyro_device_ids",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_UINT32,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    4,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorCorrection, gyro_device_ids),  // bytes offset in struct
-    NULL,  // default value
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_device_ids,  // size() function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_device_ids,  // get_const(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_device_ids,  // get(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_device_ids,  // fetch(index, &value) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_device_ids,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "gyro_temperature",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    4,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorCorrection, gyro_temperature),  // bytes offset in struct
-    NULL,  // default value
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_temperature,  // size() function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_temperature,  // get_const(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_temperature,  // get(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_temperature,  // fetch(index, &value) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_temperature,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "gyro_offset_0",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    3,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorCorrection, gyro_offset_0),  // bytes offset in struct
-    NULL,  // default value
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_0,  // size() function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_0,  // get_const(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_0,  // get(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_0,  // fetch(index, &value) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_0,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "gyro_offset_1",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    3,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorCorrection, gyro_offset_1),  // bytes offset in struct
-    NULL,  // default value
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_1,  // size() function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_1,  // get_const(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_1,  // get(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_1,  // fetch(index, &value) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_1,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "gyro_offset_2",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    3,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorCorrection, gyro_offset_2),  // bytes offset in struct
-    NULL,  // default value
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_2,  // size() function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_2,  // get_const(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_2,  // get(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_2,  // fetch(index, &value) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_2,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "gyro_offset_3",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    3,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__SensorCorrection, gyro_offset_3),  // bytes offset in struct
-    NULL,  // default value
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_3,  // size() function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_3,  // get_const(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_3,  // get(index) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_3,  // fetch(index, &value) function pointer
-    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_3,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
     "accel_device_ids",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT32,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     4,  // array size
     false,  // is upper bound
@@ -803,6 +973,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     4,  // array size
     false,  // is upper bound
@@ -820,6 +991,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -837,6 +1009,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -854,6 +1027,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -871,6 +1045,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -884,10 +1059,227 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     NULL  // resize(index) function pointer
   },
   {
+    "gyro_device_ids",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT32,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    4,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, gyro_device_ids),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_device_ids,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_device_ids,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_device_ids,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_device_ids,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_device_ids,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "gyro_temperature",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    4,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, gyro_temperature),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_temperature,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_temperature,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_temperature,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_temperature,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_temperature,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "gyro_offset_0",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, gyro_offset_0),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_0,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_0,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_0,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_0,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_0,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "gyro_offset_1",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, gyro_offset_1),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_1,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_1,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_1,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_1,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_1,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "gyro_offset_2",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, gyro_offset_2),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_2,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_2,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_2,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_2,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_2,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "gyro_offset_3",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, gyro_offset_3),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__gyro_offset_3,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__gyro_offset_3,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__gyro_offset_3,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__gyro_offset_3,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__gyro_offset_3,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "mag_device_ids",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT32,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    4,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, mag_device_ids),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_device_ids,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_device_ids,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_device_ids,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_device_ids,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_device_ids,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "mag_temperature",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    4,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, mag_temperature),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_temperature,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_temperature,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_temperature,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_temperature,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_temperature,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "mag_offset_0",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, mag_offset_0),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_offset_0,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_0,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_0,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_offset_0,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_offset_0,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "mag_offset_1",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, mag_offset_1),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_offset_1,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_1,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_1,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_offset_1,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_offset_1,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "mag_offset_2",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, mag_offset_2),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_offset_2,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_2,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_2,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_offset_2,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_offset_2,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "mag_offset_3",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__SensorCorrection, mag_offset_3),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__size_function__SensorCorrection__mag_offset_3,  // size() function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_const_function__SensorCorrection__mag_offset_3,  // get_const(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__get_function__SensorCorrection__mag_offset_3,  // get(index) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__fetch_function__SensorCorrection__mag_offset_3,  // fetch(index, &value) function pointer
+    px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__assign_function__SensorCorrection__mag_offset_3,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "baro_device_ids",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT32,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     4,  // array size
     false,  // is upper bound
@@ -905,6 +1297,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     4,  // array size
     false,  // is upper bound
@@ -922,6 +1315,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -939,6 +1333,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -956,6 +1351,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -973,6 +1369,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -990,8 +1387,9 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__SensorCo
 static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__SensorCorrection_message_members = {
   "px4_msgs__msg",  // message namespace
   "SensorCorrection",  // message name
-  19,  // number of fields
+  25,  // number of fields
   sizeof(px4_msgs__msg__SensorCorrection),
+  false,  // has_any_key_member_
   px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__SensorCorrection_message_member_array,  // message members
   px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__SensorCorrection_init_function,  // function to initialize message memory (memory has to be allocated)
   px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__SensorCorrection_fini_function  // function to terminate message instance (will not free memory)
@@ -1003,6 +1401,9 @@ static rosidl_message_type_support_t px4_msgs__msg__SensorCorrection__rosidl_typ
   0,
   &px4_msgs__msg__SensorCorrection__rosidl_typesupport_introspection_c__SensorCorrection_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__SensorCorrection__get_type_hash,
+  &px4_msgs__msg__SensorCorrection__get_type_description,
+  &px4_msgs__msg__SensorCorrection__get_type_description_sources,
 };
 
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_px4_msgs

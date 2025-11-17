@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/ManualControlSetpoint.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -22,6 +29,7 @@ class Metaclass_ManualControlSetpoint(type):
     _TYPE_SUPPORT = None
 
     __constants = {
+        'MESSAGE_VERSION': 0,
         'SOURCE_UNKNOWN': 0,
         'SOURCE_RC': 1,
         'SOURCE_MAVLINK_0': 2,
@@ -58,6 +66,7 @@ class Metaclass_ManualControlSetpoint(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
+            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
             'SOURCE_UNKNOWN': cls.__constants['SOURCE_UNKNOWN'],
             'SOURCE_RC': cls.__constants['SOURCE_RC'],
             'SOURCE_MAVLINK_0': cls.__constants['SOURCE_MAVLINK_0'],
@@ -67,6 +76,11 @@ class Metaclass_ManualControlSetpoint(type):
             'SOURCE_MAVLINK_4': cls.__constants['SOURCE_MAVLINK_4'],
             'SOURCE_MAVLINK_5': cls.__constants['SOURCE_MAVLINK_5'],
         }
+
+    @property
+    def MESSAGE_VERSION(self):
+        """Message constant 'MESSAGE_VERSION'."""
+        return Metaclass_ManualControlSetpoint.__constants['MESSAGE_VERSION']
 
     @property
     def SOURCE_UNKNOWN(self):
@@ -114,6 +128,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
     Message class 'ManualControlSetpoint'.
 
     Constants:
+      MESSAGE_VERSION
       SOURCE_UNKNOWN
       SOURCE_RC
       SOURCE_MAVLINK_0
@@ -141,6 +156,8 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
         '_aux5',
         '_aux6',
         '_sticks_moving',
+        '_buttons',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -160,8 +177,11 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
         'aux5': 'float',
         'aux6': 'float',
         'sticks_moving': 'boolean',
+        'buttons': 'uint16',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -179,12 +199,18 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.valid = kwargs.get('valid', bool())
@@ -201,13 +227,14 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
         self.aux5 = kwargs.get('aux5', float())
         self.aux6 = kwargs.get('aux6', float())
         self.sticks_moving = kwargs.get('sticks_moving', bool())
+        self.buttons = kwargs.get('buttons', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -221,11 +248,12 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -263,6 +291,8 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
             return False
         if self.sticks_moving != other.sticks_moving:
             return False
+        if self.buttons != other.buttons:
+            return False
         return True
 
     @classmethod
@@ -277,7 +307,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -292,7 +322,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -307,7 +337,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @valid.setter
     def valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'valid' field must be of type 'bool'"
@@ -320,7 +350,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @data_source.setter
     def data_source(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'data_source' field must be of type 'int'"
@@ -335,7 +365,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @roll.setter
     def roll(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'roll' field must be of type 'float'"
@@ -350,7 +380,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @pitch.setter
     def pitch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'pitch' field must be of type 'float'"
@@ -365,7 +395,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @yaw.setter
     def yaw(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'yaw' field must be of type 'float'"
@@ -380,7 +410,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @throttle.setter
     def throttle(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'throttle' field must be of type 'float'"
@@ -395,7 +425,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @flaps.setter
     def flaps(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'flaps' field must be of type 'float'"
@@ -410,7 +440,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @aux1.setter
     def aux1(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aux1' field must be of type 'float'"
@@ -425,7 +455,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @aux2.setter
     def aux2(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aux2' field must be of type 'float'"
@@ -440,7 +470,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @aux3.setter
     def aux3(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aux3' field must be of type 'float'"
@@ -455,7 +485,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @aux4.setter
     def aux4(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aux4' field must be of type 'float'"
@@ -470,7 +500,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @aux5.setter
     def aux5(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aux5' field must be of type 'float'"
@@ -485,7 +515,7 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @aux6.setter
     def aux6(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aux6' field must be of type 'float'"
@@ -500,8 +530,23 @@ class ManualControlSetpoint(metaclass=Metaclass_ManualControlSetpoint):
 
     @sticks_moving.setter
     def sticks_moving(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'sticks_moving' field must be of type 'bool'"
         self._sticks_moving = value
+
+    @builtins.property
+    def buttons(self):
+        """Message field 'buttons'."""
+        return self._buttons
+
+    @buttons.setter
+    def buttons(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'buttons' field must be of type 'int'"
+            assert value >= 0 and value < 65536, \
+                "The 'buttons' field must be an unsigned integer in [0, 65535]"
+        self._buttons = value

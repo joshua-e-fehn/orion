@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/LoggerStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/logger_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__LOGGER_STATUS__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__LOGGER_STATUS__BUILDER_HPP_
 
@@ -133,16 +136,32 @@ private:
   ::px4_msgs::msg::LoggerStatus msg_;
 };
 
+class Init_LoggerStatus_is_logging
+{
+public:
+  explicit Init_LoggerStatus_is_logging(::px4_msgs::msg::LoggerStatus & msg)
+  : msg_(msg)
+  {}
+  Init_LoggerStatus_total_written_kb is_logging(::px4_msgs::msg::LoggerStatus::_is_logging_type arg)
+  {
+    msg_.is_logging = std::move(arg);
+    return Init_LoggerStatus_total_written_kb(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::LoggerStatus msg_;
+};
+
 class Init_LoggerStatus_backend
 {
 public:
   explicit Init_LoggerStatus_backend(::px4_msgs::msg::LoggerStatus & msg)
   : msg_(msg)
   {}
-  Init_LoggerStatus_total_written_kb backend(::px4_msgs::msg::LoggerStatus::_backend_type arg)
+  Init_LoggerStatus_is_logging backend(::px4_msgs::msg::LoggerStatus::_backend_type arg)
   {
     msg_.backend = std::move(arg);
-    return Init_LoggerStatus_total_written_kb(msg_);
+    return Init_LoggerStatus_is_logging(msg_);
   }
 
 private:

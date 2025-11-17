@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/DistanceSensor.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/distance_sensor.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__DISTANCE_SENSOR__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__DISTANCE_SENSOR__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -176,6 +178,24 @@ enum
   px4_msgs__msg__DistanceSensor__ROTATION_CUSTOM = 100
 };
 
+/// Constant 'MODE_UNKNOWN'.
+enum
+{
+  px4_msgs__msg__DistanceSensor__MODE_UNKNOWN = 0
+};
+
+/// Constant 'MODE_ENABLED'.
+enum
+{
+  px4_msgs__msg__DistanceSensor__MODE_ENABLED = 1
+};
+
+/// Constant 'MODE_DISABLED'.
+enum
+{
+  px4_msgs__msg__DistanceSensor__MODE_DISABLED = 2
+};
+
 /// Struct defined in msg/DistanceSensor in the package px4_msgs.
 /**
   * DISTANCE_SENSOR message data
@@ -206,6 +226,7 @@ typedef struct px4_msgs__msg__DistanceSensor
   float q[4];
   /// Direction the sensor faces from MAV_SENSOR_ORIENTATION enum
   uint8_t orientation;
+  uint8_t mode;
 } px4_msgs__msg__DistanceSensor;
 
 // Struct for a sequence of px4_msgs__msg__DistanceSensor.

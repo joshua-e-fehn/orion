@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Airspeed.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/airspeed.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__AIRSPEED__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__AIRSPEED__STRUCT_H_
 
@@ -14,22 +17,26 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Struct defined in msg/Airspeed in the package px4_msgs.
+/**
+  * Airspeed data from sensors
+  *
+  * This is published by airspeed sensor drivers, CAN airspeed sensors, simulators.
+  * It is subscribed by the airspeed selector module, which validates the data from multiple sensors and passes on a single estimation to the EKF, controllers and telemetry providers.
+ */
 typedef struct px4_msgs__msg__Airspeed
 {
-  /// time since system start (microseconds)
+  /// Time since system start
   uint64_t timestamp;
+  /// Timestamp of the raw data
   uint64_t timestamp_sample;
-  /// indicated airspeed in m/s
+  /// Indicated airspeed
   float indicated_airspeed_m_s;
-  /// true filtered airspeed in m/s
+  /// True airspeed
   float true_airspeed_m_s;
-  /// air temperature in degrees Celsius, -1000 if unknown
-  float air_temperature_celsius;
-  /// confidence value from 0 to 1 for this sensor
+  /// [@range 0,1] Confidence value for this sensor
   float confidence;
 } px4_msgs__msg__Airspeed;
 

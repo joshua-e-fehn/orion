@@ -28,6 +28,7 @@ px4_msgs__msg__FailureDetectorStatus__init(px4_msgs__msg__FailureDetectorStatus 
   // fd_motor
   // imbalanced_prop_metric
   // motor_failure_mask
+  // motor_stop_mask
   return true;
 }
 
@@ -48,6 +49,7 @@ px4_msgs__msg__FailureDetectorStatus__fini(px4_msgs__msg__FailureDetectorStatus 
   // fd_motor
   // imbalanced_prop_metric
   // motor_failure_mask
+  // motor_stop_mask
 }
 
 bool
@@ -100,6 +102,10 @@ px4_msgs__msg__FailureDetectorStatus__are_equal(const px4_msgs__msg__FailureDete
   if (lhs->motor_failure_mask != rhs->motor_failure_mask) {
     return false;
   }
+  // motor_stop_mask
+  if (lhs->motor_stop_mask != rhs->motor_stop_mask) {
+    return false;
+  }
   return true;
 }
 
@@ -133,11 +139,13 @@ px4_msgs__msg__FailureDetectorStatus__copy(
   output->imbalanced_prop_metric = input->imbalanced_prop_metric;
   // motor_failure_mask
   output->motor_failure_mask = input->motor_failure_mask;
+  // motor_stop_mask
+  output->motor_stop_mask = input->motor_stop_mask;
   return true;
 }
 
 px4_msgs__msg__FailureDetectorStatus *
-px4_msgs__msg__FailureDetectorStatus__create()
+px4_msgs__msg__FailureDetectorStatus__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__FailureDetectorStatus * msg = (px4_msgs__msg__FailureDetectorStatus *)allocator.allocate(sizeof(px4_msgs__msg__FailureDetectorStatus), allocator.state);

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/LogMessage.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/log_message.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__LOG_MESSAGE__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__LOG_MESSAGE__STRUCT_H_
 
@@ -14,7 +17,6 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Constant 'ORB_QUEUE_LENGTH'.
@@ -25,7 +27,7 @@ enum
 
 /// Struct defined in msg/LogMessage in the package px4_msgs.
 /**
-  * A logging message, output with PX4_{WARN,ERR,INFO}
+  * A logging message, output with PX4_WARN, PX4_ERR, PX4_INFO
  */
 typedef struct px4_msgs__msg__LogMessage
 {

@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/manual_control_switches__functions.h"
 #include "px4_msgs/msg/detail/manual_control_switches__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -37,12 +38,13 @@ void ManualControlSwitches_fini_function(void * message_memory)
   typed_message->~ManualControlSwitches();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControlSwitches_message_member_array[14] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControlSwitches_message_member_array[16] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -60,6 +62,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -77,6 +80,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -94,6 +98,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -111,6 +116,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -128,6 +134,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -145,6 +152,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -162,6 +170,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -175,10 +184,29 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     nullptr  // resize(index) function pointer
   },
   {
+    "termination_switch",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::ManualControlSwitches, termination_switch),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "gear_switch",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -196,6 +224,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -213,6 +242,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -230,6 +260,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -247,6 +278,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -260,10 +292,29 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
     nullptr  // resize(index) function pointer
   },
   {
+    "payload_power_switch",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::ManualControlSwitches, payload_power_switch),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "switch_changes",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -281,8 +332,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ManualControl
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers ManualControlSwitches_message_members = {
   "px4_msgs::msg",  // message namespace
   "ManualControlSwitches",  // message name
-  14,  // number of fields
+  16,  // number of fields
   sizeof(px4_msgs::msg::ManualControlSwitches),
+  false,  // has_any_key_member_
   ManualControlSwitches_message_member_array,  // message members
   ManualControlSwitches_init_function,  // function to initialize message memory (memory has to be allocated)
   ManualControlSwitches_fini_function  // function to terminate message instance (will not free memory)
@@ -292,6 +344,9 @@ static const rosidl_message_type_support_t ManualControlSwitches_message_type_su
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &ManualControlSwitches_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__ManualControlSwitches__get_type_hash,
+  &px4_msgs__msg__ManualControlSwitches__get_type_description,
+  &px4_msgs__msg__ManualControlSwitches__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

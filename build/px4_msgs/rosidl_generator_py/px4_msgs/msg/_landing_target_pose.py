@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/LandingTargetPose.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -74,6 +81,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
         '_x_abs',
         '_y_abs',
         '_z_abs',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -96,6 +104,8 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
         'z_abs': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -117,9 +127,14 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.is_static = kwargs.get('is_static', bool())
         self.rel_pos_valid = kwargs.get('rel_pos_valid', bool())
@@ -143,7 +158,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -157,11 +172,12 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -215,7 +231,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -230,7 +246,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @is_static.setter
     def is_static(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'is_static' field must be of type 'bool'"
@@ -243,7 +259,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @rel_pos_valid.setter
     def rel_pos_valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'rel_pos_valid' field must be of type 'bool'"
@@ -256,7 +272,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @rel_vel_valid.setter
     def rel_vel_valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'rel_vel_valid' field must be of type 'bool'"
@@ -269,7 +285,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @x_rel.setter
     def x_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'x_rel' field must be of type 'float'"
@@ -284,7 +300,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @y_rel.setter
     def y_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'y_rel' field must be of type 'float'"
@@ -299,7 +315,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @z_rel.setter
     def z_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'z_rel' field must be of type 'float'"
@@ -314,7 +330,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @vx_rel.setter
     def vx_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'vx_rel' field must be of type 'float'"
@@ -329,7 +345,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @vy_rel.setter
     def vy_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'vy_rel' field must be of type 'float'"
@@ -344,7 +360,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @cov_x_rel.setter
     def cov_x_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'cov_x_rel' field must be of type 'float'"
@@ -359,7 +375,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @cov_y_rel.setter
     def cov_y_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'cov_y_rel' field must be of type 'float'"
@@ -374,7 +390,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @cov_vx_rel.setter
     def cov_vx_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'cov_vx_rel' field must be of type 'float'"
@@ -389,7 +405,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @cov_vy_rel.setter
     def cov_vy_rel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'cov_vy_rel' field must be of type 'float'"
@@ -404,7 +420,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @abs_pos_valid.setter
     def abs_pos_valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'abs_pos_valid' field must be of type 'bool'"
@@ -417,7 +433,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @x_abs.setter
     def x_abs(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'x_abs' field must be of type 'float'"
@@ -432,7 +448,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @y_abs.setter
     def y_abs(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'y_abs' field must be of type 'float'"
@@ -447,7 +463,7 @@ class LandingTargetPose(metaclass=Metaclass_LandingTargetPose):
 
     @z_abs.setter
     def z_abs(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'z_abs' field must be of type 'float'"

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/MagWorkerData.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -85,6 +92,7 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
         '_x',
         '_y',
         '_z',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -100,6 +108,8 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
         'z': 'float[4]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -114,9 +124,14 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.done_count = kwargs.get('done_count', int())
@@ -125,8 +140,7 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
         if 'calibration_counter_total' not in kwargs:
             self.calibration_counter_total = numpy.zeros(4, dtype=numpy.uint32)
         else:
-            self.calibration_counter_total = numpy.array(kwargs.get('calibration_counter_total'), dtype=numpy.uint32)
-            assert self.calibration_counter_total.shape == (4, )
+            self.calibration_counter_total = kwargs.get('calibration_counter_total')
         self.side_data_collected = kwargs.get(
             'side_data_collected',
             [bool() for x in range(4)]
@@ -134,25 +148,22 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
         if 'x' not in kwargs:
             self.x = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.x = numpy.array(kwargs.get('x'), dtype=numpy.float32)
-            assert self.x.shape == (4, )
+            self.x = kwargs.get('x')
         if 'y' not in kwargs:
             self.y = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.y = numpy.array(kwargs.get('y'), dtype=numpy.float32)
-            assert self.y.shape == (4, )
+            self.y = kwargs.get('y')
         if 'z' not in kwargs:
             self.z = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.z = numpy.array(kwargs.get('z'), dtype=numpy.float32)
-            assert self.z.shape == (4, )
+            self.z = kwargs.get('z')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -166,11 +177,12 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -210,7 +222,7 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -225,7 +237,7 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -240,7 +252,7 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @done_count.setter
     def done_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'done_count' field must be of type 'int'"
@@ -255,7 +267,7 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @calibration_points_perside.setter
     def calibration_points_perside(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'calibration_points_perside' field must be of type 'int'"
@@ -270,7 +282,7 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @calibration_interval_perside_us.setter
     def calibration_interval_perside_us(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'calibration_interval_perside_us' field must be of type 'int'"
@@ -285,14 +297,14 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @calibration_counter_total.setter
     def calibration_counter_total(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'calibration_counter_total' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 4, \
-                "The 'calibration_counter_total' numpy.ndarray() must have a size of 4"
-            self._calibration_counter_total = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'calibration_counter_total' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 4, \
+                    "The 'calibration_counter_total' numpy.ndarray() must have a size of 4"
+                self._calibration_counter_total = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -316,7 +328,7 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @side_data_collected.setter
     def side_data_collected(self, value):
-        if __debug__:
+        if self._check_fields:
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -340,14 +352,14 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @x.setter
     def x(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'x' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'x' numpy.ndarray() must have a size of 4"
-            self._x = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'x' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'x' numpy.ndarray() must have a size of 4"
+                self._x = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -371,14 +383,14 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @y.setter
     def y(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'y' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'y' numpy.ndarray() must have a size of 4"
-            self._y = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'y' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'y' numpy.ndarray() must have a size of 4"
+                self._y = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -402,14 +414,14 @@ class MagWorkerData(metaclass=Metaclass_MagWorkerData):
 
     @z.setter
     def z(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'z' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'z' numpy.ndarray() must have a size of 4"
-            self._z = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'z' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'z' numpy.ndarray() must have a size of 4"
+                self._z = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

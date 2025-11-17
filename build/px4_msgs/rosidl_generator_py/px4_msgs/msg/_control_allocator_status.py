@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/ControlAllocatorStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -113,6 +120,8 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
         '_unallocated_thrust',
         '_actuator_saturation',
         '_handled_motor_failure_mask',
+        '_motor_stop_mask',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -123,8 +132,11 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
         'unallocated_thrust': 'float[3]',
         'actuator_saturation': 'int8[16]',
         'handled_motor_failure_mask': 'uint16',
+        'motor_stop_mask': 'uint16',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -133,38 +145,42 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 3),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('int8'), 16),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.torque_setpoint_achieved = kwargs.get('torque_setpoint_achieved', bool())
         if 'unallocated_torque' not in kwargs:
             self.unallocated_torque = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.unallocated_torque = numpy.array(kwargs.get('unallocated_torque'), dtype=numpy.float32)
-            assert self.unallocated_torque.shape == (3, )
+            self.unallocated_torque = kwargs.get('unallocated_torque')
         self.thrust_setpoint_achieved = kwargs.get('thrust_setpoint_achieved', bool())
         if 'unallocated_thrust' not in kwargs:
             self.unallocated_thrust = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.unallocated_thrust = numpy.array(kwargs.get('unallocated_thrust'), dtype=numpy.float32)
-            assert self.unallocated_thrust.shape == (3, )
+            self.unallocated_thrust = kwargs.get('unallocated_thrust')
         if 'actuator_saturation' not in kwargs:
             self.actuator_saturation = numpy.zeros(16, dtype=numpy.int8)
         else:
-            self.actuator_saturation = numpy.array(kwargs.get('actuator_saturation'), dtype=numpy.int8)
-            assert self.actuator_saturation.shape == (16, )
+            self.actuator_saturation = kwargs.get('actuator_saturation')
         self.handled_motor_failure_mask = kwargs.get('handled_motor_failure_mask', int())
+        self.motor_stop_mask = kwargs.get('motor_stop_mask', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -178,11 +194,12 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -202,6 +219,8 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
             return False
         if self.handled_motor_failure_mask != other.handled_motor_failure_mask:
             return False
+        if self.motor_stop_mask != other.motor_stop_mask:
+            return False
         return True
 
     @classmethod
@@ -216,7 +235,7 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -231,7 +250,7 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
 
     @torque_setpoint_achieved.setter
     def torque_setpoint_achieved(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'torque_setpoint_achieved' field must be of type 'bool'"
@@ -244,14 +263,14 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
 
     @unallocated_torque.setter
     def unallocated_torque(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'unallocated_torque' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'unallocated_torque' numpy.ndarray() must have a size of 3"
-            self._unallocated_torque = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'unallocated_torque' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'unallocated_torque' numpy.ndarray() must have a size of 3"
+                self._unallocated_torque = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -275,7 +294,7 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
 
     @thrust_setpoint_achieved.setter
     def thrust_setpoint_achieved(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'thrust_setpoint_achieved' field must be of type 'bool'"
@@ -288,14 +307,14 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
 
     @unallocated_thrust.setter
     def unallocated_thrust(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'unallocated_thrust' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'unallocated_thrust' numpy.ndarray() must have a size of 3"
-            self._unallocated_thrust = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'unallocated_thrust' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'unallocated_thrust' numpy.ndarray() must have a size of 3"
+                self._unallocated_thrust = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -319,14 +338,14 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
 
     @actuator_saturation.setter
     def actuator_saturation(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.int8, \
-                "The 'actuator_saturation' numpy.ndarray() must have the dtype of 'numpy.int8'"
-            assert value.size == 16, \
-                "The 'actuator_saturation' numpy.ndarray() must have a size of 16"
-            self._actuator_saturation = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.int8, \
+                    "The 'actuator_saturation' numpy.ndarray() must have the dtype of 'numpy.int8'"
+                assert value.size == 16, \
+                    "The 'actuator_saturation' numpy.ndarray() must have a size of 16"
+                self._actuator_saturation = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -350,10 +369,25 @@ class ControlAllocatorStatus(metaclass=Metaclass_ControlAllocatorStatus):
 
     @handled_motor_failure_mask.setter
     def handled_motor_failure_mask(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'handled_motor_failure_mask' field must be of type 'int'"
             assert value >= 0 and value < 65536, \
                 "The 'handled_motor_failure_mask' field must be an unsigned integer in [0, 65535]"
         self._handled_motor_failure_mask = value
+
+    @builtins.property
+    def motor_stop_mask(self):
+        """Message field 'motor_stop_mask'."""
+        return self._motor_stop_mask
+
+    @motor_stop_mask.setter
+    def motor_stop_mask(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'motor_stop_mask' field must be of type 'int'"
+            assert value >= 0 and value < 65536, \
+                "The 'motor_stop_mask' field must be an unsigned integer in [0, 65535]"
+        self._motor_stop_mask = value

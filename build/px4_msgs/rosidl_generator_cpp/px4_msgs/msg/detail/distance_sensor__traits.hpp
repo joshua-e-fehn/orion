@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/DistanceSensor.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/distance_sensor.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__DISTANCE_SENSOR__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__DISTANCE_SENSOR__TRAITS_HPP_
 
@@ -117,6 +120,13 @@ inline void to_flow_style_yaml(
   {
     out << "orientation: ";
     rosidl_generator_traits::value_to_yaml(msg.orientation, out);
+    out << ", ";
+  }
+
+  // member: mode
+  {
+    out << "mode: ";
+    rosidl_generator_traits::value_to_yaml(msg.mode, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -252,6 +262,16 @@ inline void to_block_style_yaml(
     }
     out << "orientation: ";
     rosidl_generator_traits::value_to_yaml(msg.orientation, out);
+    out << "\n";
+  }
+
+  // member: mode
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "mode: ";
+    rosidl_generator_traits::value_to_yaml(msg.mode, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

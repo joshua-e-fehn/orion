@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/VehicleRatesSetpoint.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -25,6 +32,7 @@ class Metaclass_VehicleRatesSetpoint(type):
     _TYPE_SUPPORT = None
 
     __constants = {
+        'MESSAGE_VERSION': 0,
     }
 
     @classmethod
@@ -53,11 +61,22 @@ class Metaclass_VehicleRatesSetpoint(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
+            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
         }
+
+    @property
+    def MESSAGE_VERSION(self):
+        """Message constant 'MESSAGE_VERSION'."""
+        return Metaclass_VehicleRatesSetpoint.__constants['MESSAGE_VERSION']
 
 
 class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
-    """Message class 'VehicleRatesSetpoint'."""
+    """
+    Message class 'VehicleRatesSetpoint'.
+
+    Constants:
+      MESSAGE_VERSION
+    """
 
     __slots__ = [
         '_timestamp',
@@ -66,6 +85,7 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
         '_yaw',
         '_thrust_body',
         '_reset_integral',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -77,6 +97,8 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
         'reset_integral': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -87,9 +109,14 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.roll = kwargs.get('roll', float())
         self.pitch = kwargs.get('pitch', float())
@@ -97,8 +124,7 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
         if 'thrust_body' not in kwargs:
             self.thrust_body = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.thrust_body = numpy.array(kwargs.get('thrust_body'), dtype=numpy.float32)
-            assert self.thrust_body.shape == (3, )
+            self.thrust_body = kwargs.get('thrust_body')
         self.reset_integral = kwargs.get('reset_integral', bool())
 
     def __repr__(self):
@@ -106,7 +132,7 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -120,11 +146,12 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -156,7 +183,7 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -171,7 +198,7 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
 
     @roll.setter
     def roll(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'roll' field must be of type 'float'"
@@ -186,7 +213,7 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
 
     @pitch.setter
     def pitch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'pitch' field must be of type 'float'"
@@ -201,7 +228,7 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
 
     @yaw.setter
     def yaw(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'yaw' field must be of type 'float'"
@@ -216,14 +243,14 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
 
     @thrust_body.setter
     def thrust_body(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'thrust_body' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'thrust_body' numpy.ndarray() must have a size of 3"
-            self._thrust_body = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'thrust_body' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'thrust_body' numpy.ndarray() must have a size of 3"
+                self._thrust_body = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -247,7 +274,7 @@ class VehicleRatesSetpoint(metaclass=Metaclass_VehicleRatesSetpoint):
 
     @reset_integral.setter
     def reset_integral(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'reset_integral' field must be of type 'bool'"

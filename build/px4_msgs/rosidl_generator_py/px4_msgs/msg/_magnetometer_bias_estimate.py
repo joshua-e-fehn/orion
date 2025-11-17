@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/MagnetometerBiasEstimate.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -68,6 +75,7 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
         '_bias_z',
         '_valid',
         '_stable',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -79,6 +87,8 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
         'stable': 'boolean[4]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 4),  # noqa: E501
@@ -89,25 +99,27 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         if 'bias_x' not in kwargs:
             self.bias_x = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.bias_x = numpy.array(kwargs.get('bias_x'), dtype=numpy.float32)
-            assert self.bias_x.shape == (4, )
+            self.bias_x = kwargs.get('bias_x')
         if 'bias_y' not in kwargs:
             self.bias_y = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.bias_y = numpy.array(kwargs.get('bias_y'), dtype=numpy.float32)
-            assert self.bias_y.shape == (4, )
+            self.bias_y = kwargs.get('bias_y')
         if 'bias_z' not in kwargs:
             self.bias_z = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.bias_z = numpy.array(kwargs.get('bias_z'), dtype=numpy.float32)
-            assert self.bias_z.shape == (4, )
+            self.bias_z = kwargs.get('bias_z')
         self.valid = kwargs.get(
             'valid',
             [bool() for x in range(4)]
@@ -122,7 +134,7 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -136,11 +148,12 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -172,7 +185,7 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -187,14 +200,14 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
 
     @bias_x.setter
     def bias_x(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'bias_x' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'bias_x' numpy.ndarray() must have a size of 4"
-            self._bias_x = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'bias_x' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'bias_x' numpy.ndarray() must have a size of 4"
+                self._bias_x = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -218,14 +231,14 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
 
     @bias_y.setter
     def bias_y(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'bias_y' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'bias_y' numpy.ndarray() must have a size of 4"
-            self._bias_y = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'bias_y' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'bias_y' numpy.ndarray() must have a size of 4"
+                self._bias_y = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -249,14 +262,14 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
 
     @bias_z.setter
     def bias_z(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'bias_z' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'bias_z' numpy.ndarray() must have a size of 4"
-            self._bias_z = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'bias_z' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'bias_z' numpy.ndarray() must have a size of 4"
+                self._bias_z = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -280,7 +293,7 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
 
     @valid.setter
     def valid(self, value):
-        if __debug__:
+        if self._check_fields:
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -304,7 +317,7 @@ class MagnetometerBiasEstimate(metaclass=Metaclass_MagnetometerBiasEstimate):
 
     @stable.setter
     def stable(self, value):
-        if __debug__:
+        if self._check_fields:
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

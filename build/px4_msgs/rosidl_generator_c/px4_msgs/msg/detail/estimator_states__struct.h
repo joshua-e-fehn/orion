@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/EstimatorStates.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/estimator_states.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ESTIMATOR_STATES__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__ESTIMATOR_STATES__STRUCT_H_
 
@@ -14,7 +17,6 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Struct defined in msg/EstimatorStates in the package px4_msgs.
@@ -25,7 +27,7 @@ typedef struct px4_msgs__msg__EstimatorStates
   /// the timestamp of the raw data (microseconds)
   uint64_t timestamp_sample;
   /// Internal filter states
-  float states[24];
+  float states[25];
   /// Number of states effectively used
   uint8_t n_states;
   /// Diagonal Elements of Covariance Matrix

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/CellularStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/cellular_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__CELLULAR_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__CELLULAR_STATUS__STRUCT_HPP_
 
@@ -143,40 +146,50 @@ struct CellularStatus_
   }
 
   // constant declarations
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_UNKNOWN =
-    0u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_FAILED =
+  static constexpr uint16_t STATUS_FLAG_UNKNOWN =
     1u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_INITIALIZING =
+  static constexpr uint16_t STATUS_FLAG_FAILED =
     2u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_LOCKED =
-    3u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_DISABLED =
+  static constexpr uint16_t STATUS_FLAG_INITIALIZING =
     4u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_DISABLING =
-    5u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_ENABLING =
-    6u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_ENABLED =
-    7u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_SEARCHING =
+  static constexpr uint16_t STATUS_FLAG_LOCKED =
     8u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_REGISTERED =
-    9u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_DISCONNECTING =
-    10u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_CONNECTING =
-    11u;
-  static constexpr uint8_t CELLULAR_STATUS_FLAG_CONNECTED =
-    12u;
-  static constexpr uint8_t CELLULAR_NETWORK_FAILED_REASON_NONE =
+  static constexpr uint16_t STATUS_FLAG_DISABLED =
+    16u;
+  static constexpr uint16_t STATUS_FLAG_DISABLING =
+    32u;
+  static constexpr uint16_t STATUS_FLAG_ENABLING =
+    64u;
+  static constexpr uint16_t STATUS_FLAG_ENABLED =
+    128u;
+  static constexpr uint16_t STATUS_FLAG_SEARCHING =
+    256u;
+  static constexpr uint16_t STATUS_FLAG_REGISTERED =
+    512u;
+  static constexpr uint16_t STATUS_FLAG_DISCONNECTING =
+    1024u;
+  static constexpr uint16_t STATUS_FLAG_CONNECTING =
+    2048u;
+  static constexpr uint16_t STATUS_FLAG_CONNECTED =
+    4096u;
+  static constexpr uint8_t FAILURE_REASON_NONE =
     0u;
-  static constexpr uint8_t CELLULAR_NETWORK_FAILED_REASON_UNKNOWN =
+  static constexpr uint8_t FAILURE_REASON_UNKNOWN =
     1u;
-  static constexpr uint8_t CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING =
+  static constexpr uint8_t FAILURE_REASON_SIM_MISSING =
     2u;
-  static constexpr uint8_t CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR =
+  static constexpr uint8_t FAILURE_REASON_SIM_ERROR =
     3u;
+  static constexpr uint8_t CELLULAR_NETWORK_RADIO_TYPE_NONE =
+    0u;
+  static constexpr uint8_t CELLULAR_NETWORK_RADIO_TYPE_GSM =
+    1u;
+  static constexpr uint8_t CELLULAR_NETWORK_RADIO_TYPE_CDMA =
+    2u;
+  static constexpr uint8_t CELLULAR_NETWORK_RADIO_TYPE_WCDMA =
+    3u;
+  static constexpr uint8_t CELLULAR_NETWORK_RADIO_TYPE_LTE =
+    4u;
 
   // pointer types
   using RawPtr =
@@ -258,87 +271,112 @@ using CellularStatus =
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_UNKNOWN;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_UNKNOWN;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_FAILED;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_FAILED;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_INITIALIZING;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_INITIALIZING;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_LOCKED;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_LOCKED;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_DISABLED;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_DISABLED;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_DISABLING;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_DISABLING;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_ENABLING;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_ENABLING;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_ENABLED;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_ENABLED;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_SEARCHING;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_SEARCHING;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_REGISTERED;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_REGISTERED;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_DISCONNECTING;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_DISCONNECTING;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_CONNECTING;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_CONNECTING;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_STATUS_FLAG_CONNECTED;
+constexpr uint16_t CellularStatus_<ContainerAllocator>::STATUS_FLAG_CONNECTED;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_NETWORK_FAILED_REASON_NONE;
+constexpr uint8_t CellularStatus_<ContainerAllocator>::FAILURE_REASON_NONE;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_NETWORK_FAILED_REASON_UNKNOWN;
+constexpr uint8_t CellularStatus_<ContainerAllocator>::FAILURE_REASON_UNKNOWN;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_NETWORK_FAILED_REASON_SIM_MISSING;
+constexpr uint8_t CellularStatus_<ContainerAllocator>::FAILURE_REASON_SIM_MISSING;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
-constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_NETWORK_FAILED_REASON_SIM_ERROR;
+constexpr uint8_t CellularStatus_<ContainerAllocator>::FAILURE_REASON_SIM_ERROR;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_NETWORK_RADIO_TYPE_NONE;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_NETWORK_RADIO_TYPE_GSM;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_NETWORK_RADIO_TYPE_CDMA;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_NETWORK_RADIO_TYPE_WCDMA;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t CellularStatus_<ContainerAllocator>::CELLULAR_NETWORK_RADIO_TYPE_LTE;
 #endif  // __cplusplus < 201703L
 
 }  // namespace msg

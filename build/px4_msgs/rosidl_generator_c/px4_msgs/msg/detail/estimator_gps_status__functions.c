@@ -30,6 +30,7 @@ px4_msgs__msg__EstimatorGpsStatus__init(px4_msgs__msg__EstimatorGpsStatus * msg)
   // check_fail_max_vert_drift
   // check_fail_max_horz_spd_err
   // check_fail_max_vert_spd_err
+  // check_fail_spoofed_gps
   // position_drift_rate_horizontal_m_s
   // position_drift_rate_vertical_m_s
   // filtered_horizontal_speed_m_s
@@ -55,6 +56,7 @@ px4_msgs__msg__EstimatorGpsStatus__fini(px4_msgs__msg__EstimatorGpsStatus * msg)
   // check_fail_max_vert_drift
   // check_fail_max_horz_spd_err
   // check_fail_max_vert_spd_err
+  // check_fail_spoofed_gps
   // position_drift_rate_horizontal_m_s
   // position_drift_rate_vertical_m_s
   // filtered_horizontal_speed_m_s
@@ -118,6 +120,10 @@ px4_msgs__msg__EstimatorGpsStatus__are_equal(const px4_msgs__msg__EstimatorGpsSt
   if (lhs->check_fail_max_vert_spd_err != rhs->check_fail_max_vert_spd_err) {
     return false;
   }
+  // check_fail_spoofed_gps
+  if (lhs->check_fail_spoofed_gps != rhs->check_fail_spoofed_gps) {
+    return false;
+  }
   // position_drift_rate_horizontal_m_s
   if (lhs->position_drift_rate_horizontal_m_s != rhs->position_drift_rate_horizontal_m_s) {
     return false;
@@ -167,6 +173,8 @@ px4_msgs__msg__EstimatorGpsStatus__copy(
   output->check_fail_max_horz_spd_err = input->check_fail_max_horz_spd_err;
   // check_fail_max_vert_spd_err
   output->check_fail_max_vert_spd_err = input->check_fail_max_vert_spd_err;
+  // check_fail_spoofed_gps
+  output->check_fail_spoofed_gps = input->check_fail_spoofed_gps;
   // position_drift_rate_horizontal_m_s
   output->position_drift_rate_horizontal_m_s = input->position_drift_rate_horizontal_m_s;
   // position_drift_rate_vertical_m_s
@@ -177,7 +185,7 @@ px4_msgs__msg__EstimatorGpsStatus__copy(
 }
 
 px4_msgs__msg__EstimatorGpsStatus *
-px4_msgs__msg__EstimatorGpsStatus__create()
+px4_msgs__msg__EstimatorGpsStatus__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__EstimatorGpsStatus * msg = (px4_msgs__msg__EstimatorGpsStatus *)allocator.allocate(sizeof(px4_msgs__msg__EstimatorGpsStatus), allocator.state);

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/InternalCombustionEngineStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -308,6 +315,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
         '_cylinder_head_temperature',
         '_exhaust_gas_temperature',
         '_lambda_coefficient',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -336,6 +344,8 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
         'lambda_coefficient': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
@@ -363,9 +373,14 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.state = kwargs.get('state', int())
         self.flags = kwargs.get('flags', int())
@@ -395,7 +410,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -409,11 +424,12 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -479,7 +495,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -494,7 +510,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @state.setter
     def state(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'state' field must be of type 'int'"
@@ -509,7 +525,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @flags.setter
     def flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'flags' field must be of type 'int'"
@@ -524,7 +540,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @engine_load_percent.setter
     def engine_load_percent(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'engine_load_percent' field must be of type 'int'"
@@ -539,7 +555,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @engine_speed_rpm.setter
     def engine_speed_rpm(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'engine_speed_rpm' field must be of type 'int'"
@@ -554,7 +570,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @spark_dwell_time_ms.setter
     def spark_dwell_time_ms(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'spark_dwell_time_ms' field must be of type 'float'"
@@ -569,7 +585,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @atmospheric_pressure_kpa.setter
     def atmospheric_pressure_kpa(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'atmospheric_pressure_kpa' field must be of type 'float'"
@@ -584,7 +600,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @intake_manifold_pressure_kpa.setter
     def intake_manifold_pressure_kpa(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'intake_manifold_pressure_kpa' field must be of type 'float'"
@@ -599,7 +615,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @intake_manifold_temperature.setter
     def intake_manifold_temperature(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'intake_manifold_temperature' field must be of type 'float'"
@@ -614,7 +630,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @coolant_temperature.setter
     def coolant_temperature(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'coolant_temperature' field must be of type 'float'"
@@ -629,7 +645,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @oil_pressure.setter
     def oil_pressure(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'oil_pressure' field must be of type 'float'"
@@ -644,7 +660,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @oil_temperature.setter
     def oil_temperature(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'oil_temperature' field must be of type 'float'"
@@ -659,7 +675,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @fuel_pressure.setter
     def fuel_pressure(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'fuel_pressure' field must be of type 'float'"
@@ -674,7 +690,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @fuel_consumption_rate_cm3pm.setter
     def fuel_consumption_rate_cm3pm(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'fuel_consumption_rate_cm3pm' field must be of type 'float'"
@@ -689,7 +705,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @estimated_consumed_fuel_volume_cm3.setter
     def estimated_consumed_fuel_volume_cm3(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'estimated_consumed_fuel_volume_cm3' field must be of type 'float'"
@@ -704,7 +720,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @throttle_position_percent.setter
     def throttle_position_percent(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'throttle_position_percent' field must be of type 'int'"
@@ -719,7 +735,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @ecu_index.setter
     def ecu_index(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'ecu_index' field must be of type 'int'"
@@ -734,7 +750,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @spark_plug_usage.setter
     def spark_plug_usage(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'spark_plug_usage' field must be of type 'int'"
@@ -749,7 +765,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @ignition_timing_deg.setter
     def ignition_timing_deg(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'ignition_timing_deg' field must be of type 'float'"
@@ -764,7 +780,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @injection_time_ms.setter
     def injection_time_ms(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'injection_time_ms' field must be of type 'float'"
@@ -779,7 +795,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @cylinder_head_temperature.setter
     def cylinder_head_temperature(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'cylinder_head_temperature' field must be of type 'float'"
@@ -794,7 +810,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @exhaust_gas_temperature.setter
     def exhaust_gas_temperature(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'exhaust_gas_temperature' field must be of type 'float'"
@@ -809,7 +825,7 @@ class InternalCombustionEngineStatus(metaclass=Metaclass_InternalCombustionEngin
 
     @lambda_coefficient.setter
     def lambda_coefficient(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'lambda_coefficient' field must be of type 'float'"

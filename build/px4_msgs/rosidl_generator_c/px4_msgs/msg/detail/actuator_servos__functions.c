@@ -77,7 +77,7 @@ px4_msgs__msg__ActuatorServos__copy(
 }
 
 px4_msgs__msg__ActuatorServos *
-px4_msgs__msg__ActuatorServos__create()
+px4_msgs__msg__ActuatorServos__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__ActuatorServos * msg = (px4_msgs__msg__ActuatorServos *)allocator.allocate(sizeof(px4_msgs__msg__ActuatorServos), allocator.state);

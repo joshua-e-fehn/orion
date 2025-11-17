@@ -24,11 +24,14 @@ px4_msgs__msg__HomePosition__init(px4_msgs__msg__HomePosition * msg)
   // x
   // y
   // z
+  // roll
+  // pitch
   // yaw
   // valid_alt
   // valid_hpos
   // valid_lpos
   // manual_home
+  // update_count
   return true;
 }
 
@@ -45,11 +48,14 @@ px4_msgs__msg__HomePosition__fini(px4_msgs__msg__HomePosition * msg)
   // x
   // y
   // z
+  // roll
+  // pitch
   // yaw
   // valid_alt
   // valid_hpos
   // valid_lpos
   // manual_home
+  // update_count
 }
 
 bool
@@ -86,6 +92,14 @@ px4_msgs__msg__HomePosition__are_equal(const px4_msgs__msg__HomePosition * lhs, 
   if (lhs->z != rhs->z) {
     return false;
   }
+  // roll
+  if (lhs->roll != rhs->roll) {
+    return false;
+  }
+  // pitch
+  if (lhs->pitch != rhs->pitch) {
+    return false;
+  }
   // yaw
   if (lhs->yaw != rhs->yaw) {
     return false;
@@ -104,6 +118,10 @@ px4_msgs__msg__HomePosition__are_equal(const px4_msgs__msg__HomePosition * lhs, 
   }
   // manual_home
   if (lhs->manual_home != rhs->manual_home) {
+    return false;
+  }
+  // update_count
+  if (lhs->update_count != rhs->update_count) {
     return false;
   }
   return true;
@@ -131,6 +149,10 @@ px4_msgs__msg__HomePosition__copy(
   output->y = input->y;
   // z
   output->z = input->z;
+  // roll
+  output->roll = input->roll;
+  // pitch
+  output->pitch = input->pitch;
   // yaw
   output->yaw = input->yaw;
   // valid_alt
@@ -141,11 +163,13 @@ px4_msgs__msg__HomePosition__copy(
   output->valid_lpos = input->valid_lpos;
   // manual_home
   output->manual_home = input->manual_home;
+  // update_count
+  output->update_count = input->update_count;
   return true;
 }
 
 px4_msgs__msg__HomePosition *
-px4_msgs__msg__HomePosition__create()
+px4_msgs__msg__HomePosition__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__HomePosition * msg = (px4_msgs__msg__HomePosition *)allocator.allocate(sizeof(px4_msgs__msg__HomePosition), allocator.state);

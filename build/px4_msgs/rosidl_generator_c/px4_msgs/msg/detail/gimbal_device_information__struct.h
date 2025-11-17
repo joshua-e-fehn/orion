@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/GimbalDeviceInformation.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/gimbal_device_information.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__GIMBAL_DEVICE_INFORMATION__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__GIMBAL_DEVICE_INFORMATION__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -108,7 +110,7 @@ typedef struct px4_msgs__msg__GimbalDeviceInformation
   float pitch_max;
   float yaw_min;
   float yaw_max;
-  uint8_t gimbal_device_compid;
+  uint8_t gimbal_device_id;
 } px4_msgs__msg__GimbalDeviceInformation;
 
 // Struct for a sequence of px4_msgs__msg__GimbalDeviceInformation.

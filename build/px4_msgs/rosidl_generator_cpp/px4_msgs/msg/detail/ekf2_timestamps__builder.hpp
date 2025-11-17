@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Ekf2Timestamps.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/ekf2_timestamps.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__EKF2_TIMESTAMPS__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__EKF2_TIMESTAMPS__BUILDER_HPP_
 
@@ -101,16 +104,32 @@ private:
   ::px4_msgs::msg::Ekf2Timestamps msg_;
 };
 
+class Init_Ekf2Timestamps_airspeed_validated_timestamp_rel
+{
+public:
+  explicit Init_Ekf2Timestamps_airspeed_validated_timestamp_rel(::px4_msgs::msg::Ekf2Timestamps & msg)
+  : msg_(msg)
+  {}
+  Init_Ekf2Timestamps_distance_sensor_timestamp_rel airspeed_validated_timestamp_rel(::px4_msgs::msg::Ekf2Timestamps::_airspeed_validated_timestamp_rel_type arg)
+  {
+    msg_.airspeed_validated_timestamp_rel = std::move(arg);
+    return Init_Ekf2Timestamps_distance_sensor_timestamp_rel(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::Ekf2Timestamps msg_;
+};
+
 class Init_Ekf2Timestamps_airspeed_timestamp_rel
 {
 public:
   explicit Init_Ekf2Timestamps_airspeed_timestamp_rel(::px4_msgs::msg::Ekf2Timestamps & msg)
   : msg_(msg)
   {}
-  Init_Ekf2Timestamps_distance_sensor_timestamp_rel airspeed_timestamp_rel(::px4_msgs::msg::Ekf2Timestamps::_airspeed_timestamp_rel_type arg)
+  Init_Ekf2Timestamps_airspeed_validated_timestamp_rel airspeed_timestamp_rel(::px4_msgs::msg::Ekf2Timestamps::_airspeed_timestamp_rel_type arg)
   {
     msg_.airspeed_timestamp_rel = std::move(arg);
-    return Init_Ekf2Timestamps_distance_sensor_timestamp_rel(msg_);
+    return Init_Ekf2Timestamps_airspeed_validated_timestamp_rel(msg_);
   }
 
 private:

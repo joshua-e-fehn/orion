@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/Ping.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -64,6 +71,7 @@ class Ping(metaclass=Metaclass_Ping):
         '_rtt_ms',
         '_system_id',
         '_component_id',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -76,6 +84,8 @@ class Ping(metaclass=Metaclass_Ping):
         'component_id': 'uint8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -87,9 +97,14 @@ class Ping(metaclass=Metaclass_Ping):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.ping_time = kwargs.get('ping_time', int())
         self.ping_sequence = kwargs.get('ping_sequence', int())
@@ -103,7 +118,7 @@ class Ping(metaclass=Metaclass_Ping):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -117,11 +132,12 @@ class Ping(metaclass=Metaclass_Ping):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -155,7 +171,7 @@ class Ping(metaclass=Metaclass_Ping):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -170,7 +186,7 @@ class Ping(metaclass=Metaclass_Ping):
 
     @ping_time.setter
     def ping_time(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'ping_time' field must be of type 'int'"
@@ -185,7 +201,7 @@ class Ping(metaclass=Metaclass_Ping):
 
     @ping_sequence.setter
     def ping_sequence(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'ping_sequence' field must be of type 'int'"
@@ -200,7 +216,7 @@ class Ping(metaclass=Metaclass_Ping):
 
     @dropped_packets.setter
     def dropped_packets(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'dropped_packets' field must be of type 'int'"
@@ -215,7 +231,7 @@ class Ping(metaclass=Metaclass_Ping):
 
     @rtt_ms.setter
     def rtt_ms(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'rtt_ms' field must be of type 'float'"
@@ -230,7 +246,7 @@ class Ping(metaclass=Metaclass_Ping):
 
     @system_id.setter
     def system_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'system_id' field must be of type 'int'"
@@ -245,7 +261,7 @@ class Ping(metaclass=Metaclass_Ping):
 
     @component_id.setter
     def component_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'component_id' field must be of type 'int'"

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/FailsafeFlags.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/failsafe_flags.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__FAILSAFE_FLAGS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__FAILSAFE_FLAGS__STRUCT_HPP_
 
@@ -45,6 +48,7 @@ struct FailsafeFlags_
       this->mode_req_local_position = 0ul;
       this->mode_req_local_position_relaxed = 0ul;
       this->mode_req_global_position = 0ul;
+      this->mode_req_global_position_relaxed = 0ul;
       this->mode_req_mission = 0ul;
       this->mode_req_offboard_signal = 0ul;
       this->mode_req_home_position = 0ul;
@@ -59,6 +63,7 @@ struct FailsafeFlags_
       this->local_position_invalid_relaxed = false;
       this->local_velocity_invalid = false;
       this->global_position_invalid = false;
+      this->global_position_invalid_relaxed = false;
       this->auto_mission_missing = false;
       this->offboard_control_signal_lost = false;
       this->home_position_invalid = false;
@@ -67,12 +72,13 @@ struct FailsafeFlags_
       this->battery_warning = 0;
       this->battery_low_remaining_time = false;
       this->battery_unhealthy = false;
-      this->primary_geofence_breached = false;
+      this->geofence_breached = false;
       this->mission_failure = false;
       this->vtol_fixed_wing_system_failure = false;
       this->wind_limit_exceeded = false;
       this->flight_time_limit_exceeded = false;
-      this->local_position_accuracy_low = false;
+      this->position_accuracy_low = false;
+      this->navigator_failure = false;
       this->fd_critical_failure = false;
       this->fd_esc_arming_failure = false;
       this->fd_imbalanced_prop = false;
@@ -93,6 +99,7 @@ struct FailsafeFlags_
       this->mode_req_local_position = 0ul;
       this->mode_req_local_position_relaxed = 0ul;
       this->mode_req_global_position = 0ul;
+      this->mode_req_global_position_relaxed = 0ul;
       this->mode_req_mission = 0ul;
       this->mode_req_offboard_signal = 0ul;
       this->mode_req_home_position = 0ul;
@@ -107,6 +114,7 @@ struct FailsafeFlags_
       this->local_position_invalid_relaxed = false;
       this->local_velocity_invalid = false;
       this->global_position_invalid = false;
+      this->global_position_invalid_relaxed = false;
       this->auto_mission_missing = false;
       this->offboard_control_signal_lost = false;
       this->home_position_invalid = false;
@@ -115,12 +123,13 @@ struct FailsafeFlags_
       this->battery_warning = 0;
       this->battery_low_remaining_time = false;
       this->battery_unhealthy = false;
-      this->primary_geofence_breached = false;
+      this->geofence_breached = false;
       this->mission_failure = false;
       this->vtol_fixed_wing_system_failure = false;
       this->wind_limit_exceeded = false;
       this->flight_time_limit_exceeded = false;
-      this->local_position_accuracy_low = false;
+      this->position_accuracy_low = false;
+      this->navigator_failure = false;
       this->fd_critical_failure = false;
       this->fd_esc_arming_failure = false;
       this->fd_imbalanced_prop = false;
@@ -150,6 +159,9 @@ struct FailsafeFlags_
   using _mode_req_global_position_type =
     uint32_t;
   _mode_req_global_position_type mode_req_global_position;
+  using _mode_req_global_position_relaxed_type =
+    uint32_t;
+  _mode_req_global_position_relaxed_type mode_req_global_position_relaxed;
   using _mode_req_mission_type =
     uint32_t;
   _mode_req_mission_type mode_req_mission;
@@ -192,6 +204,9 @@ struct FailsafeFlags_
   using _global_position_invalid_type =
     bool;
   _global_position_invalid_type global_position_invalid;
+  using _global_position_invalid_relaxed_type =
+    bool;
+  _global_position_invalid_relaxed_type global_position_invalid_relaxed;
   using _auto_mission_missing_type =
     bool;
   _auto_mission_missing_type auto_mission_missing;
@@ -216,9 +231,9 @@ struct FailsafeFlags_
   using _battery_unhealthy_type =
     bool;
   _battery_unhealthy_type battery_unhealthy;
-  using _primary_geofence_breached_type =
+  using _geofence_breached_type =
     bool;
-  _primary_geofence_breached_type primary_geofence_breached;
+  _geofence_breached_type geofence_breached;
   using _mission_failure_type =
     bool;
   _mission_failure_type mission_failure;
@@ -231,9 +246,12 @@ struct FailsafeFlags_
   using _flight_time_limit_exceeded_type =
     bool;
   _flight_time_limit_exceeded_type flight_time_limit_exceeded;
-  using _local_position_accuracy_low_type =
+  using _position_accuracy_low_type =
     bool;
-  _local_position_accuracy_low_type local_position_accuracy_low;
+  _position_accuracy_low_type position_accuracy_low;
+  using _navigator_failure_type =
+    bool;
+  _navigator_failure_type navigator_failure;
   using _fd_critical_failure_type =
     bool;
   _fd_critical_failure_type fd_critical_failure;
@@ -288,6 +306,12 @@ struct FailsafeFlags_
     const uint32_t & _arg)
   {
     this->mode_req_global_position = _arg;
+    return *this;
+  }
+  Type & set__mode_req_global_position_relaxed(
+    const uint32_t & _arg)
+  {
+    this->mode_req_global_position_relaxed = _arg;
     return *this;
   }
   Type & set__mode_req_mission(
@@ -374,6 +398,12 @@ struct FailsafeFlags_
     this->global_position_invalid = _arg;
     return *this;
   }
+  Type & set__global_position_invalid_relaxed(
+    const bool & _arg)
+  {
+    this->global_position_invalid_relaxed = _arg;
+    return *this;
+  }
   Type & set__auto_mission_missing(
     const bool & _arg)
   {
@@ -422,10 +452,10 @@ struct FailsafeFlags_
     this->battery_unhealthy = _arg;
     return *this;
   }
-  Type & set__primary_geofence_breached(
+  Type & set__geofence_breached(
     const bool & _arg)
   {
-    this->primary_geofence_breached = _arg;
+    this->geofence_breached = _arg;
     return *this;
   }
   Type & set__mission_failure(
@@ -452,10 +482,16 @@ struct FailsafeFlags_
     this->flight_time_limit_exceeded = _arg;
     return *this;
   }
-  Type & set__local_position_accuracy_low(
+  Type & set__position_accuracy_low(
     const bool & _arg)
   {
-    this->local_position_accuracy_low = _arg;
+    this->position_accuracy_low = _arg;
+    return *this;
+  }
+  Type & set__navigator_failure(
+    const bool & _arg)
+  {
+    this->navigator_failure = _arg;
     return *this;
   }
   Type & set__fd_critical_failure(
@@ -546,6 +582,9 @@ struct FailsafeFlags_
     if (this->mode_req_global_position != other.mode_req_global_position) {
       return false;
     }
+    if (this->mode_req_global_position_relaxed != other.mode_req_global_position_relaxed) {
+      return false;
+    }
     if (this->mode_req_mission != other.mode_req_mission) {
       return false;
     }
@@ -588,6 +627,9 @@ struct FailsafeFlags_
     if (this->global_position_invalid != other.global_position_invalid) {
       return false;
     }
+    if (this->global_position_invalid_relaxed != other.global_position_invalid_relaxed) {
+      return false;
+    }
     if (this->auto_mission_missing != other.auto_mission_missing) {
       return false;
     }
@@ -612,7 +654,7 @@ struct FailsafeFlags_
     if (this->battery_unhealthy != other.battery_unhealthy) {
       return false;
     }
-    if (this->primary_geofence_breached != other.primary_geofence_breached) {
+    if (this->geofence_breached != other.geofence_breached) {
       return false;
     }
     if (this->mission_failure != other.mission_failure) {
@@ -627,7 +669,10 @@ struct FailsafeFlags_
     if (this->flight_time_limit_exceeded != other.flight_time_limit_exceeded) {
       return false;
     }
-    if (this->local_position_accuracy_low != other.local_position_accuracy_low) {
+    if (this->position_accuracy_low != other.position_accuracy_low) {
+      return false;
+    }
+    if (this->navigator_failure != other.navigator_failure) {
       return false;
     }
     if (this->fd_critical_failure != other.fd_critical_failure) {

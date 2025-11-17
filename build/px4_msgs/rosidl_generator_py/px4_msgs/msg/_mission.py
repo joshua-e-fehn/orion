@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/Mission.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -56,40 +63,76 @@ class Mission(metaclass=Metaclass_Mission):
 
     __slots__ = [
         '_timestamp',
-        '_dataman_id',
+        '_mission_dataman_id',
+        '_fence_dataman_id',
+        '_safepoint_dataman_id',
         '_count',
         '_current_seq',
+        '_land_start_index',
+        '_land_index',
+        '_mission_id',
+        '_geofence_id',
+        '_safe_points_id',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
-        'dataman_id': 'uint8',
+        'mission_dataman_id': 'uint8',
+        'fence_dataman_id': 'uint8',
+        'safepoint_dataman_id': 'uint8',
         'count': 'uint16',
         'current_seq': 'int32',
+        'land_start_index': 'int32',
+        'land_index': 'int32',
+        'mission_id': 'uint32',
+        'geofence_id': 'uint32',
+        'safe_points_id': 'uint32',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
-        self.dataman_id = kwargs.get('dataman_id', int())
+        self.mission_dataman_id = kwargs.get('mission_dataman_id', int())
+        self.fence_dataman_id = kwargs.get('fence_dataman_id', int())
+        self.safepoint_dataman_id = kwargs.get('safepoint_dataman_id', int())
         self.count = kwargs.get('count', int())
         self.current_seq = kwargs.get('current_seq', int())
+        self.land_start_index = kwargs.get('land_start_index', int())
+        self.land_index = kwargs.get('land_index', int())
+        self.mission_id = kwargs.get('mission_id', int())
+        self.geofence_id = kwargs.get('geofence_id', int())
+        self.safe_points_id = kwargs.get('safe_points_id', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -103,11 +146,12 @@ class Mission(metaclass=Metaclass_Mission):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -115,11 +159,25 @@ class Mission(metaclass=Metaclass_Mission):
             return False
         if self.timestamp != other.timestamp:
             return False
-        if self.dataman_id != other.dataman_id:
+        if self.mission_dataman_id != other.mission_dataman_id:
+            return False
+        if self.fence_dataman_id != other.fence_dataman_id:
+            return False
+        if self.safepoint_dataman_id != other.safepoint_dataman_id:
             return False
         if self.count != other.count:
             return False
         if self.current_seq != other.current_seq:
+            return False
+        if self.land_start_index != other.land_start_index:
+            return False
+        if self.land_index != other.land_index:
+            return False
+        if self.mission_id != other.mission_id:
+            return False
+        if self.geofence_id != other.geofence_id:
+            return False
+        if self.safe_points_id != other.safe_points_id:
             return False
         return True
 
@@ -135,7 +193,7 @@ class Mission(metaclass=Metaclass_Mission):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -144,19 +202,49 @@ class Mission(metaclass=Metaclass_Mission):
         self._timestamp = value
 
     @builtins.property
-    def dataman_id(self):
-        """Message field 'dataman_id'."""
-        return self._dataman_id
+    def mission_dataman_id(self):
+        """Message field 'mission_dataman_id'."""
+        return self._mission_dataman_id
 
-    @dataman_id.setter
-    def dataman_id(self, value):
-        if __debug__:
+    @mission_dataman_id.setter
+    def mission_dataman_id(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
-                "The 'dataman_id' field must be of type 'int'"
+                "The 'mission_dataman_id' field must be of type 'int'"
             assert value >= 0 and value < 256, \
-                "The 'dataman_id' field must be an unsigned integer in [0, 255]"
-        self._dataman_id = value
+                "The 'mission_dataman_id' field must be an unsigned integer in [0, 255]"
+        self._mission_dataman_id = value
+
+    @builtins.property
+    def fence_dataman_id(self):
+        """Message field 'fence_dataman_id'."""
+        return self._fence_dataman_id
+
+    @fence_dataman_id.setter
+    def fence_dataman_id(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'fence_dataman_id' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'fence_dataman_id' field must be an unsigned integer in [0, 255]"
+        self._fence_dataman_id = value
+
+    @builtins.property
+    def safepoint_dataman_id(self):
+        """Message field 'safepoint_dataman_id'."""
+        return self._safepoint_dataman_id
+
+    @safepoint_dataman_id.setter
+    def safepoint_dataman_id(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'safepoint_dataman_id' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'safepoint_dataman_id' field must be an unsigned integer in [0, 255]"
+        self._safepoint_dataman_id = value
 
     @builtins.property
     def count(self):
@@ -165,7 +253,7 @@ class Mission(metaclass=Metaclass_Mission):
 
     @count.setter
     def count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'count' field must be of type 'int'"
@@ -180,10 +268,85 @@ class Mission(metaclass=Metaclass_Mission):
 
     @current_seq.setter
     def current_seq(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'current_seq' field must be of type 'int'"
             assert value >= -2147483648 and value < 2147483648, \
                 "The 'current_seq' field must be an integer in [-2147483648, 2147483647]"
         self._current_seq = value
+
+    @builtins.property
+    def land_start_index(self):
+        """Message field 'land_start_index'."""
+        return self._land_start_index
+
+    @land_start_index.setter
+    def land_start_index(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'land_start_index' field must be of type 'int'"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'land_start_index' field must be an integer in [-2147483648, 2147483647]"
+        self._land_start_index = value
+
+    @builtins.property
+    def land_index(self):
+        """Message field 'land_index'."""
+        return self._land_index
+
+    @land_index.setter
+    def land_index(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'land_index' field must be of type 'int'"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'land_index' field must be an integer in [-2147483648, 2147483647]"
+        self._land_index = value
+
+    @builtins.property
+    def mission_id(self):
+        """Message field 'mission_id'."""
+        return self._mission_id
+
+    @mission_id.setter
+    def mission_id(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'mission_id' field must be of type 'int'"
+            assert value >= 0 and value < 4294967296, \
+                "The 'mission_id' field must be an unsigned integer in [0, 4294967295]"
+        self._mission_id = value
+
+    @builtins.property
+    def geofence_id(self):
+        """Message field 'geofence_id'."""
+        return self._geofence_id
+
+    @geofence_id.setter
+    def geofence_id(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'geofence_id' field must be of type 'int'"
+            assert value >= 0 and value < 4294967296, \
+                "The 'geofence_id' field must be an unsigned integer in [0, 4294967295]"
+        self._geofence_id = value
+
+    @builtins.property
+    def safe_points_id(self):
+        """Message field 'safe_points_id'."""
+        return self._safe_points_id
+
+    @safe_points_id.setter
+    def safe_points_id(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'safe_points_id' field must be of type 'int'"
+            assert value >= 0 and value < 4294967296, \
+                "The 'safe_points_id' field must be an unsigned integer in [0, 4294967295]"
+        self._safe_points_id = value

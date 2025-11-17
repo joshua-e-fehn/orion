@@ -18,14 +18,9 @@ px4_msgs__msg__VehicleAttitudeSetpoint__init(px4_msgs__msg__VehicleAttitudeSetpo
     return false;
   }
   // timestamp
-  // roll_body
-  // pitch_body
-  // yaw_body
   // yaw_sp_move_rate
   // q_d
   // thrust_body
-  // reset_integral
-  // fw_control_yaw_wheel
   return true;
 }
 
@@ -36,14 +31,9 @@ px4_msgs__msg__VehicleAttitudeSetpoint__fini(px4_msgs__msg__VehicleAttitudeSetpo
     return;
   }
   // timestamp
-  // roll_body
-  // pitch_body
-  // yaw_body
   // yaw_sp_move_rate
   // q_d
   // thrust_body
-  // reset_integral
-  // fw_control_yaw_wheel
 }
 
 bool
@@ -54,18 +44,6 @@ px4_msgs__msg__VehicleAttitudeSetpoint__are_equal(const px4_msgs__msg__VehicleAt
   }
   // timestamp
   if (lhs->timestamp != rhs->timestamp) {
-    return false;
-  }
-  // roll_body
-  if (lhs->roll_body != rhs->roll_body) {
-    return false;
-  }
-  // pitch_body
-  if (lhs->pitch_body != rhs->pitch_body) {
-    return false;
-  }
-  // yaw_body
-  if (lhs->yaw_body != rhs->yaw_body) {
     return false;
   }
   // yaw_sp_move_rate
@@ -84,14 +62,6 @@ px4_msgs__msg__VehicleAttitudeSetpoint__are_equal(const px4_msgs__msg__VehicleAt
       return false;
     }
   }
-  // reset_integral
-  if (lhs->reset_integral != rhs->reset_integral) {
-    return false;
-  }
-  // fw_control_yaw_wheel
-  if (lhs->fw_control_yaw_wheel != rhs->fw_control_yaw_wheel) {
-    return false;
-  }
   return true;
 }
 
@@ -105,12 +75,6 @@ px4_msgs__msg__VehicleAttitudeSetpoint__copy(
   }
   // timestamp
   output->timestamp = input->timestamp;
-  // roll_body
-  output->roll_body = input->roll_body;
-  // pitch_body
-  output->pitch_body = input->pitch_body;
-  // yaw_body
-  output->yaw_body = input->yaw_body;
   // yaw_sp_move_rate
   output->yaw_sp_move_rate = input->yaw_sp_move_rate;
   // q_d
@@ -121,15 +85,11 @@ px4_msgs__msg__VehicleAttitudeSetpoint__copy(
   for (size_t i = 0; i < 3; ++i) {
     output->thrust_body[i] = input->thrust_body[i];
   }
-  // reset_integral
-  output->reset_integral = input->reset_integral;
-  // fw_control_yaw_wheel
-  output->fw_control_yaw_wheel = input->fw_control_yaw_wheel;
   return true;
 }
 
 px4_msgs__msg__VehicleAttitudeSetpoint *
-px4_msgs__msg__VehicleAttitudeSetpoint__create()
+px4_msgs__msg__VehicleAttitudeSetpoint__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__VehicleAttitudeSetpoint * msg = (px4_msgs__msg__VehicleAttitudeSetpoint *)allocator.allocate(sizeof(px4_msgs__msg__VehicleAttitudeSetpoint), allocator.state);

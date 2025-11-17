@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ActuatorArmed.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/actuator_armed.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ACTUATOR_ARMED__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__ACTUATOR_ARMED__STRUCT_HPP_
 
@@ -43,8 +46,8 @@ struct ActuatorArmed_
       this->prearmed = false;
       this->ready_to_arm = false;
       this->lockdown = false;
-      this->manual_lockdown = false;
-      this->force_failsafe = false;
+      this->kill = false;
+      this->termination = false;
       this->in_esc_calibration_mode = false;
     }
   }
@@ -60,8 +63,8 @@ struct ActuatorArmed_
       this->prearmed = false;
       this->ready_to_arm = false;
       this->lockdown = false;
-      this->manual_lockdown = false;
-      this->force_failsafe = false;
+      this->kill = false;
+      this->termination = false;
       this->in_esc_calibration_mode = false;
     }
   }
@@ -82,12 +85,12 @@ struct ActuatorArmed_
   using _lockdown_type =
     bool;
   _lockdown_type lockdown;
-  using _manual_lockdown_type =
+  using _kill_type =
     bool;
-  _manual_lockdown_type manual_lockdown;
-  using _force_failsafe_type =
+  _kill_type kill;
+  using _termination_type =
     bool;
-  _force_failsafe_type force_failsafe;
+  _termination_type termination;
   using _in_esc_calibration_mode_type =
     bool;
   _in_esc_calibration_mode_type in_esc_calibration_mode;
@@ -123,16 +126,16 @@ struct ActuatorArmed_
     this->lockdown = _arg;
     return *this;
   }
-  Type & set__manual_lockdown(
+  Type & set__kill(
     const bool & _arg)
   {
-    this->manual_lockdown = _arg;
+    this->kill = _arg;
     return *this;
   }
-  Type & set__force_failsafe(
+  Type & set__termination(
     const bool & _arg)
   {
-    this->force_failsafe = _arg;
+    this->termination = _arg;
     return *this;
   }
   Type & set__in_esc_calibration_mode(
@@ -199,10 +202,10 @@ struct ActuatorArmed_
     if (this->lockdown != other.lockdown) {
       return false;
     }
-    if (this->manual_lockdown != other.manual_lockdown) {
+    if (this->kill != other.kill) {
       return false;
     }
-    if (this->force_failsafe != other.force_failsafe) {
+    if (this->termination != other.termination) {
       return false;
     }
     if (this->in_esc_calibration_mode != other.in_esc_calibration_mode) {

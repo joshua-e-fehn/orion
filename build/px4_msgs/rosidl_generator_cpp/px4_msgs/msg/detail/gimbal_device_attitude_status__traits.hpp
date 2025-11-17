@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/GimbalDeviceAttitudeStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/gimbal_device_attitude_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__GIMBAL_DEVICE_ATTITUDE_STATUS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__GIMBAL_DEVICE_ATTITUDE_STATUS__TRAITS_HPP_
 
@@ -96,6 +99,27 @@ inline void to_flow_style_yaml(
   {
     out << "failure_flags: ";
     rosidl_generator_traits::value_to_yaml(msg.failure_flags, out);
+    out << ", ";
+  }
+
+  // member: delta_yaw
+  {
+    out << "delta_yaw: ";
+    rosidl_generator_traits::value_to_yaml(msg.delta_yaw, out);
+    out << ", ";
+  }
+
+  // member: delta_yaw_velocity
+  {
+    out << "delta_yaw_velocity: ";
+    rosidl_generator_traits::value_to_yaml(msg.delta_yaw_velocity, out);
+    out << ", ";
+  }
+
+  // member: gimbal_device_id
+  {
+    out << "gimbal_device_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.gimbal_device_id, out);
     out << ", ";
   }
 
@@ -208,6 +232,36 @@ inline void to_block_style_yaml(
     }
     out << "failure_flags: ";
     rosidl_generator_traits::value_to_yaml(msg.failure_flags, out);
+    out << "\n";
+  }
+
+  // member: delta_yaw
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "delta_yaw: ";
+    rosidl_generator_traits::value_to_yaml(msg.delta_yaw, out);
+    out << "\n";
+  }
+
+  // member: delta_yaw_velocity
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "delta_yaw_velocity: ";
+    rosidl_generator_traits::value_to_yaml(msg.delta_yaw_velocity, out);
+    out << "\n";
+  }
+
+  // member: gimbal_device_id
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "gimbal_device_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.gimbal_device_id, out);
     out << "\n";
   }
 

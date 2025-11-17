@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/PowerMonitor.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -69,6 +76,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
         '_rcal',
         '_me',
         '_al',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -86,6 +94,8 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
         'al': 'int16',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -102,9 +112,14 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.voltage_v = kwargs.get('voltage_v', float())
         self.current_a = kwargs.get('current_a', float())
@@ -123,7 +138,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -137,11 +152,12 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -185,7 +201,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -200,7 +216,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @voltage_v.setter
     def voltage_v(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'voltage_v' field must be of type 'float'"
@@ -215,7 +231,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @current_a.setter
     def current_a(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'current_a' field must be of type 'float'"
@@ -230,7 +246,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @power_w.setter
     def power_w(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'power_w' field must be of type 'float'"
@@ -245,7 +261,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @rconf.setter
     def rconf(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'rconf' field must be of type 'int'"
@@ -260,7 +276,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @rsv.setter
     def rsv(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'rsv' field must be of type 'int'"
@@ -275,7 +291,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @rbv.setter
     def rbv(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'rbv' field must be of type 'int'"
@@ -290,7 +306,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @rp.setter
     def rp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'rp' field must be of type 'int'"
@@ -305,7 +321,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @rc.setter
     def rc(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'rc' field must be of type 'int'"
@@ -320,7 +336,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @rcal.setter
     def rcal(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'rcal' field must be of type 'int'"
@@ -335,7 +351,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @me.setter
     def me(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'me' field must be of type 'int'"
@@ -350,7 +366,7 @@ class PowerMonitor(metaclass=Metaclass_PowerMonitor):
 
     @al.setter
     def al(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'al' field must be of type 'int'"

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/OffboardControlMode.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/offboard_control_mode.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__OFFBOARD_CONTROL_MODE__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__OFFBOARD_CONTROL_MODE__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -30,7 +32,8 @@ typedef struct px4_msgs__msg__OffboardControlMode
   bool acceleration;
   bool attitude;
   bool body_rate;
-  bool actuator;
+  bool thrust_and_torque;
+  bool direct_actuator;
 } px4_msgs__msg__OffboardControlMode;
 
 // Struct for a sequence of px4_msgs__msg__OffboardControlMode.

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/TransponderReport.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/transponder_report.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__TRANSPONDER_REPORT__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__TRANSPONDER_REPORT__STRUCT_HPP_
 
@@ -278,7 +281,7 @@ struct TransponderReport_
   static constexpr uint16_t ADSB_EMITTER_TYPE_ENUM_END =
     20u;
   static constexpr uint8_t ORB_QUEUE_LENGTH =
-    8u;
+    16u;
 
   // pointer types
   using RawPtr =

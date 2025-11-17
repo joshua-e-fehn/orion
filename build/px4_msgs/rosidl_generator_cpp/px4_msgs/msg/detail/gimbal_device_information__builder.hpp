@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/GimbalDeviceInformation.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/gimbal_device_information.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__GIMBAL_DEVICE_INFORMATION__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__GIMBAL_DEVICE_INFORMATION__BUILDER_HPP_
 
@@ -21,15 +24,15 @@ namespace msg
 namespace builder
 {
 
-class Init_GimbalDeviceInformation_gimbal_device_compid
+class Init_GimbalDeviceInformation_gimbal_device_id
 {
 public:
-  explicit Init_GimbalDeviceInformation_gimbal_device_compid(::px4_msgs::msg::GimbalDeviceInformation & msg)
+  explicit Init_GimbalDeviceInformation_gimbal_device_id(::px4_msgs::msg::GimbalDeviceInformation & msg)
   : msg_(msg)
   {}
-  ::px4_msgs::msg::GimbalDeviceInformation gimbal_device_compid(::px4_msgs::msg::GimbalDeviceInformation::_gimbal_device_compid_type arg)
+  ::px4_msgs::msg::GimbalDeviceInformation gimbal_device_id(::px4_msgs::msg::GimbalDeviceInformation::_gimbal_device_id_type arg)
   {
-    msg_.gimbal_device_compid = std::move(arg);
+    msg_.gimbal_device_id = std::move(arg);
     return std::move(msg_);
   }
 
@@ -43,10 +46,10 @@ public:
   explicit Init_GimbalDeviceInformation_yaw_max(::px4_msgs::msg::GimbalDeviceInformation & msg)
   : msg_(msg)
   {}
-  Init_GimbalDeviceInformation_gimbal_device_compid yaw_max(::px4_msgs::msg::GimbalDeviceInformation::_yaw_max_type arg)
+  Init_GimbalDeviceInformation_gimbal_device_id yaw_max(::px4_msgs::msg::GimbalDeviceInformation::_yaw_max_type arg)
   {
     msg_.yaw_max = std::move(arg);
-    return Init_GimbalDeviceInformation_gimbal_device_compid(msg_);
+    return Init_GimbalDeviceInformation_gimbal_device_id(msg_);
   }
 
 private:

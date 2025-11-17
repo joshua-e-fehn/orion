@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/VehicleCommand.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -22,6 +29,7 @@ class Metaclass_VehicleCommand(type):
     _TYPE_SUPPORT = None
 
     __constants = {
+        'MESSAGE_VERSION': 0,
         'VEHICLE_CMD_CUSTOM_0': 0,
         'VEHICLE_CMD_CUSTOM_1': 1,
         'VEHICLE_CMD_CUSTOM_2': 2,
@@ -34,6 +42,7 @@ class Metaclass_VehicleCommand(type):
         'VEHICLE_CMD_NAV_TAKEOFF': 22,
         'VEHICLE_CMD_NAV_PRECLAND': 23,
         'VEHICLE_CMD_DO_ORBIT': 34,
+        'VEHICLE_CMD_DO_FIGUREEIGHT': 35,
         'VEHICLE_CMD_NAV_ROI': 80,
         'VEHICLE_CMD_NAV_PATHPLANNING': 81,
         'VEHICLE_CMD_NAV_VTOL_TAKEOFF': 84,
@@ -89,6 +98,7 @@ class Metaclass_VehicleCommand(type):
         'VEHICLE_CMD_PREFLIGHT_STORAGE': 245,
         'VEHICLE_CMD_PREFLIGHT_REBOOT_SHUTDOWN': 246,
         'VEHICLE_CMD_OBLIQUE_SURVEY': 260,
+        'VEHICLE_CMD_DO_SET_STANDARD_MODE': 262,
         'VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION': 283,
         'VEHICLE_CMD_MISSION_START': 300,
         'VEHICLE_CMD_ACTUATOR_TEST': 310,
@@ -98,9 +108,11 @@ class Metaclass_VehicleCommand(type):
         'VEHICLE_CMD_INJECT_FAILURE': 420,
         'VEHICLE_CMD_START_RX_PAIR': 500,
         'VEHICLE_CMD_REQUEST_MESSAGE': 512,
+        'VEHICLE_CMD_REQUEST_CAMERA_INFORMATION': 521,
         'VEHICLE_CMD_SET_CAMERA_MODE': 530,
         'VEHICLE_CMD_SET_CAMERA_ZOOM': 531,
         'VEHICLE_CMD_SET_CAMERA_FOCUS': 532,
+        'VEHICLE_CMD_EXTERNAL_ATTITUDE_ESTIMATE': 620,
         'VEHICLE_CMD_DO_GIMBAL_MANAGER_PITCHYAW': 1000,
         'VEHICLE_CMD_DO_GIMBAL_MANAGER_CONFIGURE': 1001,
         'VEHICLE_CMD_IMAGE_START_CAPTURE': 2000,
@@ -116,8 +128,11 @@ class Metaclass_VehicleCommand(type):
         'VEHICLE_CMD_PAYLOAD_CONTROL_DEPLOY': 30002,
         'VEHICLE_CMD_FIXED_MAG_CAL_YAW': 42006,
         'VEHICLE_CMD_DO_WINCH': 42600,
+        'VEHICLE_CMD_EXTERNAL_POSITION_ESTIMATE': 43003,
+        'VEHICLE_CMD_EXTERNAL_WIND_ESTIMATE': 43004,
         'VEHICLE_CMD_PX4_INTERNAL_START': 65537,
         'VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN': 100000,
+        'VEHICLE_CMD_SET_NAV_STATE': 100001,
         'VEHICLE_MOUNT_MODE_RETRACT': 0,
         'VEHICLE_MOUNT_MODE_NEUTRAL': 1,
         'VEHICLE_MOUNT_MODE_MAVLINK_TARGETING': 2,
@@ -160,11 +175,18 @@ class Metaclass_VehicleCommand(type):
         'SPEED_TYPE_GROUNDSPEED': 1,
         'SPEED_TYPE_CLIMB_SPEED': 2,
         'SPEED_TYPE_DESCEND_SPEED': 3,
+        'ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TO_CIRCLE_CENTER': 0,
+        'ORBIT_YAW_BEHAVIOUR_HOLD_INITIAL_HEADING': 1,
+        'ORBIT_YAW_BEHAVIOUR_UNCONTROLLED': 2,
+        'ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE': 3,
+        'ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED': 4,
+        'ORBIT_YAW_BEHAVIOUR_UNCHANGED': 5,
         'ARMING_ACTION_DISARM': 0,
         'ARMING_ACTION_ARM': 1,
         'GRIPPER_ACTION_RELEASE': 0,
         'GRIPPER_ACTION_GRAB': 1,
         'ORB_QUEUE_LENGTH': 8,
+        'COMPONENT_MODE_EXECUTOR_START': 1000,
     }
 
     @classmethod
@@ -193,6 +215,7 @@ class Metaclass_VehicleCommand(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
+            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
             'VEHICLE_CMD_CUSTOM_0': cls.__constants['VEHICLE_CMD_CUSTOM_0'],
             'VEHICLE_CMD_CUSTOM_1': cls.__constants['VEHICLE_CMD_CUSTOM_1'],
             'VEHICLE_CMD_CUSTOM_2': cls.__constants['VEHICLE_CMD_CUSTOM_2'],
@@ -205,6 +228,7 @@ class Metaclass_VehicleCommand(type):
             'VEHICLE_CMD_NAV_TAKEOFF': cls.__constants['VEHICLE_CMD_NAV_TAKEOFF'],
             'VEHICLE_CMD_NAV_PRECLAND': cls.__constants['VEHICLE_CMD_NAV_PRECLAND'],
             'VEHICLE_CMD_DO_ORBIT': cls.__constants['VEHICLE_CMD_DO_ORBIT'],
+            'VEHICLE_CMD_DO_FIGUREEIGHT': cls.__constants['VEHICLE_CMD_DO_FIGUREEIGHT'],
             'VEHICLE_CMD_NAV_ROI': cls.__constants['VEHICLE_CMD_NAV_ROI'],
             'VEHICLE_CMD_NAV_PATHPLANNING': cls.__constants['VEHICLE_CMD_NAV_PATHPLANNING'],
             'VEHICLE_CMD_NAV_VTOL_TAKEOFF': cls.__constants['VEHICLE_CMD_NAV_VTOL_TAKEOFF'],
@@ -260,6 +284,7 @@ class Metaclass_VehicleCommand(type):
             'VEHICLE_CMD_PREFLIGHT_STORAGE': cls.__constants['VEHICLE_CMD_PREFLIGHT_STORAGE'],
             'VEHICLE_CMD_PREFLIGHT_REBOOT_SHUTDOWN': cls.__constants['VEHICLE_CMD_PREFLIGHT_REBOOT_SHUTDOWN'],
             'VEHICLE_CMD_OBLIQUE_SURVEY': cls.__constants['VEHICLE_CMD_OBLIQUE_SURVEY'],
+            'VEHICLE_CMD_DO_SET_STANDARD_MODE': cls.__constants['VEHICLE_CMD_DO_SET_STANDARD_MODE'],
             'VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION': cls.__constants['VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION'],
             'VEHICLE_CMD_MISSION_START': cls.__constants['VEHICLE_CMD_MISSION_START'],
             'VEHICLE_CMD_ACTUATOR_TEST': cls.__constants['VEHICLE_CMD_ACTUATOR_TEST'],
@@ -269,9 +294,11 @@ class Metaclass_VehicleCommand(type):
             'VEHICLE_CMD_INJECT_FAILURE': cls.__constants['VEHICLE_CMD_INJECT_FAILURE'],
             'VEHICLE_CMD_START_RX_PAIR': cls.__constants['VEHICLE_CMD_START_RX_PAIR'],
             'VEHICLE_CMD_REQUEST_MESSAGE': cls.__constants['VEHICLE_CMD_REQUEST_MESSAGE'],
+            'VEHICLE_CMD_REQUEST_CAMERA_INFORMATION': cls.__constants['VEHICLE_CMD_REQUEST_CAMERA_INFORMATION'],
             'VEHICLE_CMD_SET_CAMERA_MODE': cls.__constants['VEHICLE_CMD_SET_CAMERA_MODE'],
             'VEHICLE_CMD_SET_CAMERA_ZOOM': cls.__constants['VEHICLE_CMD_SET_CAMERA_ZOOM'],
             'VEHICLE_CMD_SET_CAMERA_FOCUS': cls.__constants['VEHICLE_CMD_SET_CAMERA_FOCUS'],
+            'VEHICLE_CMD_EXTERNAL_ATTITUDE_ESTIMATE': cls.__constants['VEHICLE_CMD_EXTERNAL_ATTITUDE_ESTIMATE'],
             'VEHICLE_CMD_DO_GIMBAL_MANAGER_PITCHYAW': cls.__constants['VEHICLE_CMD_DO_GIMBAL_MANAGER_PITCHYAW'],
             'VEHICLE_CMD_DO_GIMBAL_MANAGER_CONFIGURE': cls.__constants['VEHICLE_CMD_DO_GIMBAL_MANAGER_CONFIGURE'],
             'VEHICLE_CMD_IMAGE_START_CAPTURE': cls.__constants['VEHICLE_CMD_IMAGE_START_CAPTURE'],
@@ -287,8 +314,11 @@ class Metaclass_VehicleCommand(type):
             'VEHICLE_CMD_PAYLOAD_CONTROL_DEPLOY': cls.__constants['VEHICLE_CMD_PAYLOAD_CONTROL_DEPLOY'],
             'VEHICLE_CMD_FIXED_MAG_CAL_YAW': cls.__constants['VEHICLE_CMD_FIXED_MAG_CAL_YAW'],
             'VEHICLE_CMD_DO_WINCH': cls.__constants['VEHICLE_CMD_DO_WINCH'],
+            'VEHICLE_CMD_EXTERNAL_POSITION_ESTIMATE': cls.__constants['VEHICLE_CMD_EXTERNAL_POSITION_ESTIMATE'],
+            'VEHICLE_CMD_EXTERNAL_WIND_ESTIMATE': cls.__constants['VEHICLE_CMD_EXTERNAL_WIND_ESTIMATE'],
             'VEHICLE_CMD_PX4_INTERNAL_START': cls.__constants['VEHICLE_CMD_PX4_INTERNAL_START'],
             'VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN': cls.__constants['VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN'],
+            'VEHICLE_CMD_SET_NAV_STATE': cls.__constants['VEHICLE_CMD_SET_NAV_STATE'],
             'VEHICLE_MOUNT_MODE_RETRACT': cls.__constants['VEHICLE_MOUNT_MODE_RETRACT'],
             'VEHICLE_MOUNT_MODE_NEUTRAL': cls.__constants['VEHICLE_MOUNT_MODE_NEUTRAL'],
             'VEHICLE_MOUNT_MODE_MAVLINK_TARGETING': cls.__constants['VEHICLE_MOUNT_MODE_MAVLINK_TARGETING'],
@@ -331,12 +361,24 @@ class Metaclass_VehicleCommand(type):
             'SPEED_TYPE_GROUNDSPEED': cls.__constants['SPEED_TYPE_GROUNDSPEED'],
             'SPEED_TYPE_CLIMB_SPEED': cls.__constants['SPEED_TYPE_CLIMB_SPEED'],
             'SPEED_TYPE_DESCEND_SPEED': cls.__constants['SPEED_TYPE_DESCEND_SPEED'],
+            'ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TO_CIRCLE_CENTER': cls.__constants['ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TO_CIRCLE_CENTER'],
+            'ORBIT_YAW_BEHAVIOUR_HOLD_INITIAL_HEADING': cls.__constants['ORBIT_YAW_BEHAVIOUR_HOLD_INITIAL_HEADING'],
+            'ORBIT_YAW_BEHAVIOUR_UNCONTROLLED': cls.__constants['ORBIT_YAW_BEHAVIOUR_UNCONTROLLED'],
+            'ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE': cls.__constants['ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE'],
+            'ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED': cls.__constants['ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED'],
+            'ORBIT_YAW_BEHAVIOUR_UNCHANGED': cls.__constants['ORBIT_YAW_BEHAVIOUR_UNCHANGED'],
             'ARMING_ACTION_DISARM': cls.__constants['ARMING_ACTION_DISARM'],
             'ARMING_ACTION_ARM': cls.__constants['ARMING_ACTION_ARM'],
             'GRIPPER_ACTION_RELEASE': cls.__constants['GRIPPER_ACTION_RELEASE'],
             'GRIPPER_ACTION_GRAB': cls.__constants['GRIPPER_ACTION_GRAB'],
             'ORB_QUEUE_LENGTH': cls.__constants['ORB_QUEUE_LENGTH'],
+            'COMPONENT_MODE_EXECUTOR_START': cls.__constants['COMPONENT_MODE_EXECUTOR_START'],
         }
+
+    @property
+    def MESSAGE_VERSION(self):
+        """Message constant 'MESSAGE_VERSION'."""
+        return Metaclass_VehicleCommand.__constants['MESSAGE_VERSION']
 
     @property
     def VEHICLE_CMD_CUSTOM_0(self):
@@ -397,6 +439,11 @@ class Metaclass_VehicleCommand(type):
     def VEHICLE_CMD_DO_ORBIT(self):
         """Message constant 'VEHICLE_CMD_DO_ORBIT'."""
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_DO_ORBIT']
+
+    @property
+    def VEHICLE_CMD_DO_FIGUREEIGHT(self):
+        """Message constant 'VEHICLE_CMD_DO_FIGUREEIGHT'."""
+        return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_DO_FIGUREEIGHT']
 
     @property
     def VEHICLE_CMD_NAV_ROI(self):
@@ -674,6 +721,11 @@ class Metaclass_VehicleCommand(type):
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_OBLIQUE_SURVEY']
 
     @property
+    def VEHICLE_CMD_DO_SET_STANDARD_MODE(self):
+        """Message constant 'VEHICLE_CMD_DO_SET_STANDARD_MODE'."""
+        return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_DO_SET_STANDARD_MODE']
+
+    @property
     def VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION(self):
         """Message constant 'VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION'."""
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION']
@@ -719,6 +771,11 @@ class Metaclass_VehicleCommand(type):
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_REQUEST_MESSAGE']
 
     @property
+    def VEHICLE_CMD_REQUEST_CAMERA_INFORMATION(self):
+        """Message constant 'VEHICLE_CMD_REQUEST_CAMERA_INFORMATION'."""
+        return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_REQUEST_CAMERA_INFORMATION']
+
+    @property
     def VEHICLE_CMD_SET_CAMERA_MODE(self):
         """Message constant 'VEHICLE_CMD_SET_CAMERA_MODE'."""
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_SET_CAMERA_MODE']
@@ -732,6 +789,11 @@ class Metaclass_VehicleCommand(type):
     def VEHICLE_CMD_SET_CAMERA_FOCUS(self):
         """Message constant 'VEHICLE_CMD_SET_CAMERA_FOCUS'."""
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_SET_CAMERA_FOCUS']
+
+    @property
+    def VEHICLE_CMD_EXTERNAL_ATTITUDE_ESTIMATE(self):
+        """Message constant 'VEHICLE_CMD_EXTERNAL_ATTITUDE_ESTIMATE'."""
+        return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_EXTERNAL_ATTITUDE_ESTIMATE']
 
     @property
     def VEHICLE_CMD_DO_GIMBAL_MANAGER_PITCHYAW(self):
@@ -809,6 +871,16 @@ class Metaclass_VehicleCommand(type):
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_DO_WINCH']
 
     @property
+    def VEHICLE_CMD_EXTERNAL_POSITION_ESTIMATE(self):
+        """Message constant 'VEHICLE_CMD_EXTERNAL_POSITION_ESTIMATE'."""
+        return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_EXTERNAL_POSITION_ESTIMATE']
+
+    @property
+    def VEHICLE_CMD_EXTERNAL_WIND_ESTIMATE(self):
+        """Message constant 'VEHICLE_CMD_EXTERNAL_WIND_ESTIMATE'."""
+        return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_EXTERNAL_WIND_ESTIMATE']
+
+    @property
     def VEHICLE_CMD_PX4_INTERNAL_START(self):
         """Message constant 'VEHICLE_CMD_PX4_INTERNAL_START'."""
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_PX4_INTERNAL_START']
@@ -817,6 +889,11 @@ class Metaclass_VehicleCommand(type):
     def VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN(self):
         """Message constant 'VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN'."""
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN']
+
+    @property
+    def VEHICLE_CMD_SET_NAV_STATE(self):
+        """Message constant 'VEHICLE_CMD_SET_NAV_STATE'."""
+        return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_SET_NAV_STATE']
 
     @property
     def VEHICLE_MOUNT_MODE_RETRACT(self):
@@ -1029,6 +1106,36 @@ class Metaclass_VehicleCommand(type):
         return Metaclass_VehicleCommand.__constants['SPEED_TYPE_DESCEND_SPEED']
 
     @property
+    def ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TO_CIRCLE_CENTER(self):
+        """Message constant 'ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TO_CIRCLE_CENTER'."""
+        return Metaclass_VehicleCommand.__constants['ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TO_CIRCLE_CENTER']
+
+    @property
+    def ORBIT_YAW_BEHAVIOUR_HOLD_INITIAL_HEADING(self):
+        """Message constant 'ORBIT_YAW_BEHAVIOUR_HOLD_INITIAL_HEADING'."""
+        return Metaclass_VehicleCommand.__constants['ORBIT_YAW_BEHAVIOUR_HOLD_INITIAL_HEADING']
+
+    @property
+    def ORBIT_YAW_BEHAVIOUR_UNCONTROLLED(self):
+        """Message constant 'ORBIT_YAW_BEHAVIOUR_UNCONTROLLED'."""
+        return Metaclass_VehicleCommand.__constants['ORBIT_YAW_BEHAVIOUR_UNCONTROLLED']
+
+    @property
+    def ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE(self):
+        """Message constant 'ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE'."""
+        return Metaclass_VehicleCommand.__constants['ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE']
+
+    @property
+    def ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED(self):
+        """Message constant 'ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED'."""
+        return Metaclass_VehicleCommand.__constants['ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED']
+
+    @property
+    def ORBIT_YAW_BEHAVIOUR_UNCHANGED(self):
+        """Message constant 'ORBIT_YAW_BEHAVIOUR_UNCHANGED'."""
+        return Metaclass_VehicleCommand.__constants['ORBIT_YAW_BEHAVIOUR_UNCHANGED']
+
+    @property
     def ARMING_ACTION_DISARM(self):
         """Message constant 'ARMING_ACTION_DISARM'."""
         return Metaclass_VehicleCommand.__constants['ARMING_ACTION_DISARM']
@@ -1053,12 +1160,18 @@ class Metaclass_VehicleCommand(type):
         """Message constant 'ORB_QUEUE_LENGTH'."""
         return Metaclass_VehicleCommand.__constants['ORB_QUEUE_LENGTH']
 
+    @property
+    def COMPONENT_MODE_EXECUTOR_START(self):
+        """Message constant 'COMPONENT_MODE_EXECUTOR_START'."""
+        return Metaclass_VehicleCommand.__constants['COMPONENT_MODE_EXECUTOR_START']
+
 
 class VehicleCommand(metaclass=Metaclass_VehicleCommand):
     """
     Message class 'VehicleCommand'.
 
     Constants:
+      MESSAGE_VERSION
       VEHICLE_CMD_CUSTOM_0
       VEHICLE_CMD_CUSTOM_1
       VEHICLE_CMD_CUSTOM_2
@@ -1071,6 +1184,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
       VEHICLE_CMD_NAV_TAKEOFF
       VEHICLE_CMD_NAV_PRECLAND
       VEHICLE_CMD_DO_ORBIT
+      VEHICLE_CMD_DO_FIGUREEIGHT
       VEHICLE_CMD_NAV_ROI
       VEHICLE_CMD_NAV_PATHPLANNING
       VEHICLE_CMD_NAV_VTOL_TAKEOFF
@@ -1126,6 +1240,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
       VEHICLE_CMD_PREFLIGHT_STORAGE
       VEHICLE_CMD_PREFLIGHT_REBOOT_SHUTDOWN
       VEHICLE_CMD_OBLIQUE_SURVEY
+      VEHICLE_CMD_DO_SET_STANDARD_MODE
       VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION
       VEHICLE_CMD_MISSION_START
       VEHICLE_CMD_ACTUATOR_TEST
@@ -1135,9 +1250,11 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
       VEHICLE_CMD_INJECT_FAILURE
       VEHICLE_CMD_START_RX_PAIR
       VEHICLE_CMD_REQUEST_MESSAGE
+      VEHICLE_CMD_REQUEST_CAMERA_INFORMATION
       VEHICLE_CMD_SET_CAMERA_MODE
       VEHICLE_CMD_SET_CAMERA_ZOOM
       VEHICLE_CMD_SET_CAMERA_FOCUS
+      VEHICLE_CMD_EXTERNAL_ATTITUDE_ESTIMATE
       VEHICLE_CMD_DO_GIMBAL_MANAGER_PITCHYAW
       VEHICLE_CMD_DO_GIMBAL_MANAGER_CONFIGURE
       VEHICLE_CMD_IMAGE_START_CAPTURE
@@ -1153,8 +1270,11 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
       VEHICLE_CMD_PAYLOAD_CONTROL_DEPLOY
       VEHICLE_CMD_FIXED_MAG_CAL_YAW
       VEHICLE_CMD_DO_WINCH
+      VEHICLE_CMD_EXTERNAL_POSITION_ESTIMATE
+      VEHICLE_CMD_EXTERNAL_WIND_ESTIMATE
       VEHICLE_CMD_PX4_INTERNAL_START
       VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN
+      VEHICLE_CMD_SET_NAV_STATE
       VEHICLE_MOUNT_MODE_RETRACT
       VEHICLE_MOUNT_MODE_NEUTRAL
       VEHICLE_MOUNT_MODE_MAVLINK_TARGETING
@@ -1197,11 +1317,18 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
       SPEED_TYPE_GROUNDSPEED
       SPEED_TYPE_CLIMB_SPEED
       SPEED_TYPE_DESCEND_SPEED
+      ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TO_CIRCLE_CENTER
+      ORBIT_YAW_BEHAVIOUR_HOLD_INITIAL_HEADING
+      ORBIT_YAW_BEHAVIOUR_UNCONTROLLED
+      ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE
+      ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED
+      ORBIT_YAW_BEHAVIOUR_UNCHANGED
       ARMING_ACTION_DISARM
       ARMING_ACTION_ARM
       GRIPPER_ACTION_RELEASE
       GRIPPER_ACTION_GRAB
       ORB_QUEUE_LENGTH
+      COMPONENT_MODE_EXECUTOR_START
     """
 
     __slots__ = [
@@ -1220,6 +1347,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
         '_source_component',
         '_confirmation',
         '_from_external',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -1235,11 +1363,13 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
         'target_system': 'uint8',
         'target_component': 'uint8',
         'source_system': 'uint8',
-        'source_component': 'uint8',
+        'source_component': 'uint16',
         'confirmation': 'uint8',
         'from_external': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -1253,15 +1383,20 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.param1 = kwargs.get('param1', float())
         self.param2 = kwargs.get('param2', float())
@@ -1283,7 +1418,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -1297,11 +1432,12 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -1351,7 +1487,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -1366,7 +1502,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @param1.setter
     def param1(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'param1' field must be of type 'float'"
@@ -1381,7 +1517,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @param2.setter
     def param2(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'param2' field must be of type 'float'"
@@ -1396,7 +1532,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @param3.setter
     def param3(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'param3' field must be of type 'float'"
@@ -1411,7 +1547,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @param4.setter
     def param4(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'param4' field must be of type 'float'"
@@ -1426,7 +1562,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @param5.setter
     def param5(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'param5' field must be of type 'float'"
@@ -1441,7 +1577,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @param6.setter
     def param6(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'param6' field must be of type 'float'"
@@ -1456,7 +1592,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @param7.setter
     def param7(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'param7' field must be of type 'float'"
@@ -1471,7 +1607,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @command.setter
     def command(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'command' field must be of type 'int'"
@@ -1486,7 +1622,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @target_system.setter
     def target_system(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'target_system' field must be of type 'int'"
@@ -1501,7 +1637,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @target_component.setter
     def target_component(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'target_component' field must be of type 'int'"
@@ -1516,7 +1652,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @source_system.setter
     def source_system(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'source_system' field must be of type 'int'"
@@ -1531,12 +1667,12 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @source_component.setter
     def source_component(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'source_component' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'source_component' field must be an unsigned integer in [0, 255]"
+            assert value >= 0 and value < 65536, \
+                "The 'source_component' field must be an unsigned integer in [0, 65535]"
         self._source_component = value
 
     @builtins.property
@@ -1546,7 +1682,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @confirmation.setter
     def confirmation(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'confirmation' field must be of type 'int'"
@@ -1561,7 +1697,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
 
     @from_external.setter
     def from_external(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'from_external' field must be of type 'bool'"

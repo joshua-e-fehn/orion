@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VehicleCommandAck.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_command_ack.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_COMMAND_ACK__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_COMMAND_ACK__STRUCT_H_
 
@@ -14,8 +17,13 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
+
+/// Constant 'MESSAGE_VERSION'.
+enum
+{
+  px4_msgs__msg__VehicleCommandAck__MESSAGE_VERSION = 0ul
+};
 
 /// Constant 'VEHICLE_CMD_RESULT_ACCEPTED'.
 /**
@@ -145,7 +153,8 @@ typedef struct px4_msgs__msg__VehicleCommandAck
   /// Additional parameter of the result, example: which parameter of MAV_CMD_NAV_WAYPOINT caused it to be denied.
   int32_t result_param2;
   uint8_t target_system;
-  uint8_t target_component;
+  /// Target component / mode executor
+  uint16_t target_component;
   /// Indicates if the command came from an external source
   bool from_external;
 } px4_msgs__msg__VehicleCommandAck;

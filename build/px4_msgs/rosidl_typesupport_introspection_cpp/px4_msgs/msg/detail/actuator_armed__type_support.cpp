@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/actuator_armed__functions.h"
 #include "px4_msgs/msg/detail/actuator_armed__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -43,6 +44,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -60,6 +62,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -77,6 +80,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -94,6 +98,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -111,6 +116,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -124,14 +130,15 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     nullptr  // resize(index) function pointer
   },
   {
-    "manual_lockdown",  // name
+    "kill",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::ActuatorArmed, manual_lockdown),  // bytes offset in struct
+    offsetof(px4_msgs::msg::ActuatorArmed, kill),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -141,14 +148,15 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     nullptr  // resize(index) function pointer
   },
   {
-    "force_failsafe",  // name
+    "termination",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::ActuatorArmed, force_failsafe),  // bytes offset in struct
+    offsetof(px4_msgs::msg::ActuatorArmed, termination),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -162,6 +170,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ActuatorArmed
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -181,6 +190,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMembers ActuatorArme
   "ActuatorArmed",  // message name
   8,  // number of fields
   sizeof(px4_msgs::msg::ActuatorArmed),
+  false,  // has_any_key_member_
   ActuatorArmed_message_member_array,  // message members
   ActuatorArmed_init_function,  // function to initialize message memory (memory has to be allocated)
   ActuatorArmed_fini_function  // function to terminate message instance (will not free memory)
@@ -190,6 +200,9 @@ static const rosidl_message_type_support_t ActuatorArmed_message_type_support_ha
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &ActuatorArmed_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__ActuatorArmed__get_type_hash,
+  &px4_msgs__msg__ActuatorArmed__get_type_description,
+  &px4_msgs__msg__ActuatorArmed__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

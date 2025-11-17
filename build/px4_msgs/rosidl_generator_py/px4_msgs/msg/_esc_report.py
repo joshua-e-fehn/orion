@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/EscReport.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -161,6 +168,7 @@ class EscReport(metaclass=Metaclass_EscReport):
         '_actuator_function',
         '_failures',
         '_esc_power',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -178,6 +186,8 @@ class EscReport(metaclass=Metaclass_EscReport):
         'esc_power': 'int8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
@@ -194,9 +204,14 @@ class EscReport(metaclass=Metaclass_EscReport):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.esc_errorcount = kwargs.get('esc_errorcount', int())
         self.esc_rpm = kwargs.get('esc_rpm', int())
@@ -215,7 +230,7 @@ class EscReport(metaclass=Metaclass_EscReport):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -229,11 +244,12 @@ class EscReport(metaclass=Metaclass_EscReport):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -277,7 +293,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -292,7 +308,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @esc_errorcount.setter
     def esc_errorcount(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'esc_errorcount' field must be of type 'int'"
@@ -307,7 +323,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @esc_rpm.setter
     def esc_rpm(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'esc_rpm' field must be of type 'int'"
@@ -322,7 +338,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @esc_voltage.setter
     def esc_voltage(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'esc_voltage' field must be of type 'float'"
@@ -337,7 +353,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @esc_current.setter
     def esc_current(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'esc_current' field must be of type 'float'"
@@ -352,7 +368,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @esc_temperature.setter
     def esc_temperature(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'esc_temperature' field must be of type 'float'"
@@ -367,7 +383,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @esc_address.setter
     def esc_address(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'esc_address' field must be of type 'int'"
@@ -382,7 +398,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @esc_cmdcount.setter
     def esc_cmdcount(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'esc_cmdcount' field must be of type 'int'"
@@ -397,7 +413,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @esc_state.setter
     def esc_state(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'esc_state' field must be of type 'int'"
@@ -412,7 +428,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @actuator_function.setter
     def actuator_function(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'actuator_function' field must be of type 'int'"
@@ -427,7 +443,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @failures.setter
     def failures(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'failures' field must be of type 'int'"
@@ -442,7 +458,7 @@ class EscReport(metaclass=Metaclass_EscReport):
 
     @esc_power.setter
     def esc_power(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'esc_power' field must be of type 'int'"

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/EstimatorInnovations.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -15,7 +22,6 @@ import math  # noqa: E402, I100
 # Member 'ev_hpos'
 # Member 'aux_hvel'
 # Member 'flow'
-# Member 'terr_flow'
 # Member 'mag_field'
 # Member 'gravity'
 # Member 'drag'
@@ -82,9 +88,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
         '_rng_vpos',
         '_baro_vpos',
         '_aux_hvel',
-        '_aux_vvel',
         '_flow',
-        '_terr_flow',
         '_heading',
         '_mag_field',
         '_gravity',
@@ -93,6 +97,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
         '_beta',
         '_hagl',
         '_hagl_rate',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -109,9 +114,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
         'rng_vpos': 'float',
         'baro_vpos': 'float',
         'aux_hvel': 'float[2]',
-        'aux_vvel': 'float',
         'flow': 'float[2]',
-        'terr_flow': 'float[2]',
         'heading': 'float',
         'mag_field': 'float[3]',
         'gravity': 'float[3]',
@@ -122,6 +125,8 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
         'hagl_rate': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -136,8 +141,6 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 2),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 2),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 2),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 3),  # noqa: E501
@@ -150,69 +153,59 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         if 'gps_hvel' not in kwargs:
             self.gps_hvel = numpy.zeros(2, dtype=numpy.float32)
         else:
-            self.gps_hvel = numpy.array(kwargs.get('gps_hvel'), dtype=numpy.float32)
-            assert self.gps_hvel.shape == (2, )
+            self.gps_hvel = kwargs.get('gps_hvel')
         self.gps_vvel = kwargs.get('gps_vvel', float())
         if 'gps_hpos' not in kwargs:
             self.gps_hpos = numpy.zeros(2, dtype=numpy.float32)
         else:
-            self.gps_hpos = numpy.array(kwargs.get('gps_hpos'), dtype=numpy.float32)
-            assert self.gps_hpos.shape == (2, )
+            self.gps_hpos = kwargs.get('gps_hpos')
         self.gps_vpos = kwargs.get('gps_vpos', float())
         if 'ev_hvel' not in kwargs:
             self.ev_hvel = numpy.zeros(2, dtype=numpy.float32)
         else:
-            self.ev_hvel = numpy.array(kwargs.get('ev_hvel'), dtype=numpy.float32)
-            assert self.ev_hvel.shape == (2, )
+            self.ev_hvel = kwargs.get('ev_hvel')
         self.ev_vvel = kwargs.get('ev_vvel', float())
         if 'ev_hpos' not in kwargs:
             self.ev_hpos = numpy.zeros(2, dtype=numpy.float32)
         else:
-            self.ev_hpos = numpy.array(kwargs.get('ev_hpos'), dtype=numpy.float32)
-            assert self.ev_hpos.shape == (2, )
+            self.ev_hpos = kwargs.get('ev_hpos')
         self.ev_vpos = kwargs.get('ev_vpos', float())
         self.rng_vpos = kwargs.get('rng_vpos', float())
         self.baro_vpos = kwargs.get('baro_vpos', float())
         if 'aux_hvel' not in kwargs:
             self.aux_hvel = numpy.zeros(2, dtype=numpy.float32)
         else:
-            self.aux_hvel = numpy.array(kwargs.get('aux_hvel'), dtype=numpy.float32)
-            assert self.aux_hvel.shape == (2, )
-        self.aux_vvel = kwargs.get('aux_vvel', float())
+            self.aux_hvel = kwargs.get('aux_hvel')
         if 'flow' not in kwargs:
             self.flow = numpy.zeros(2, dtype=numpy.float32)
         else:
-            self.flow = numpy.array(kwargs.get('flow'), dtype=numpy.float32)
-            assert self.flow.shape == (2, )
-        if 'terr_flow' not in kwargs:
-            self.terr_flow = numpy.zeros(2, dtype=numpy.float32)
-        else:
-            self.terr_flow = numpy.array(kwargs.get('terr_flow'), dtype=numpy.float32)
-            assert self.terr_flow.shape == (2, )
+            self.flow = kwargs.get('flow')
         self.heading = kwargs.get('heading', float())
         if 'mag_field' not in kwargs:
             self.mag_field = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.mag_field = numpy.array(kwargs.get('mag_field'), dtype=numpy.float32)
-            assert self.mag_field.shape == (3, )
+            self.mag_field = kwargs.get('mag_field')
         if 'gravity' not in kwargs:
             self.gravity = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.gravity = numpy.array(kwargs.get('gravity'), dtype=numpy.float32)
-            assert self.gravity.shape == (3, )
+            self.gravity = kwargs.get('gravity')
         if 'drag' not in kwargs:
             self.drag = numpy.zeros(2, dtype=numpy.float32)
         else:
-            self.drag = numpy.array(kwargs.get('drag'), dtype=numpy.float32)
-            assert self.drag.shape == (2, )
+            self.drag = kwargs.get('drag')
         self.airspeed = kwargs.get('airspeed', float())
         self.beta = kwargs.get('beta', float())
         self.hagl = kwargs.get('hagl', float())
@@ -223,7 +216,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -237,11 +230,12 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -273,11 +267,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
             return False
         if any(self.aux_hvel != other.aux_hvel):
             return False
-        if self.aux_vvel != other.aux_vvel:
-            return False
         if any(self.flow != other.flow):
-            return False
-        if any(self.terr_flow != other.terr_flow):
             return False
         if self.heading != other.heading:
             return False
@@ -309,7 +299,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -324,7 +314,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -339,14 +329,14 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @gps_hvel.setter
     def gps_hvel(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'gps_hvel' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 2, \
-                "The 'gps_hvel' numpy.ndarray() must have a size of 2"
-            self._gps_hvel = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'gps_hvel' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 2, \
+                    "The 'gps_hvel' numpy.ndarray() must have a size of 2"
+                self._gps_hvel = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -370,7 +360,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @gps_vvel.setter
     def gps_vvel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'gps_vvel' field must be of type 'float'"
@@ -385,14 +375,14 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @gps_hpos.setter
     def gps_hpos(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'gps_hpos' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 2, \
-                "The 'gps_hpos' numpy.ndarray() must have a size of 2"
-            self._gps_hpos = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'gps_hpos' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 2, \
+                    "The 'gps_hpos' numpy.ndarray() must have a size of 2"
+                self._gps_hpos = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -416,7 +406,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @gps_vpos.setter
     def gps_vpos(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'gps_vpos' field must be of type 'float'"
@@ -431,14 +421,14 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @ev_hvel.setter
     def ev_hvel(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'ev_hvel' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 2, \
-                "The 'ev_hvel' numpy.ndarray() must have a size of 2"
-            self._ev_hvel = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'ev_hvel' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 2, \
+                    "The 'ev_hvel' numpy.ndarray() must have a size of 2"
+                self._ev_hvel = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -462,7 +452,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @ev_vvel.setter
     def ev_vvel(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'ev_vvel' field must be of type 'float'"
@@ -477,14 +467,14 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @ev_hpos.setter
     def ev_hpos(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'ev_hpos' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 2, \
-                "The 'ev_hpos' numpy.ndarray() must have a size of 2"
-            self._ev_hpos = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'ev_hpos' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 2, \
+                    "The 'ev_hpos' numpy.ndarray() must have a size of 2"
+                self._ev_hpos = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -508,7 +498,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @ev_vpos.setter
     def ev_vpos(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'ev_vpos' field must be of type 'float'"
@@ -523,7 +513,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @rng_vpos.setter
     def rng_vpos(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'rng_vpos' field must be of type 'float'"
@@ -538,7 +528,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @baro_vpos.setter
     def baro_vpos(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'baro_vpos' field must be of type 'float'"
@@ -553,14 +543,14 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @aux_hvel.setter
     def aux_hvel(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'aux_hvel' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 2, \
-                "The 'aux_hvel' numpy.ndarray() must have a size of 2"
-            self._aux_hvel = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'aux_hvel' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 2, \
+                    "The 'aux_hvel' numpy.ndarray() must have a size of 2"
+                self._aux_hvel = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -578,35 +568,20 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
         self._aux_hvel = numpy.array(value, dtype=numpy.float32)
 
     @builtins.property
-    def aux_vvel(self):
-        """Message field 'aux_vvel'."""
-        return self._aux_vvel
-
-    @aux_vvel.setter
-    def aux_vvel(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'aux_vvel' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'aux_vvel' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._aux_vvel = value
-
-    @builtins.property
     def flow(self):
         """Message field 'flow'."""
         return self._flow
 
     @flow.setter
     def flow(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'flow' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 2, \
-                "The 'flow' numpy.ndarray() must have a size of 2"
-            self._flow = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'flow' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 2, \
+                    "The 'flow' numpy.ndarray() must have a size of 2"
+                self._flow = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -624,44 +599,13 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
         self._flow = numpy.array(value, dtype=numpy.float32)
 
     @builtins.property
-    def terr_flow(self):
-        """Message field 'terr_flow'."""
-        return self._terr_flow
-
-    @terr_flow.setter
-    def terr_flow(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'terr_flow' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 2, \
-                "The 'terr_flow' numpy.ndarray() must have a size of 2"
-            self._terr_flow = value
-            return
-        if __debug__:
-            from collections.abc import Sequence
-            from collections.abc import Set
-            from collections import UserList
-            from collections import UserString
-            assert \
-                ((isinstance(value, Sequence) or
-                  isinstance(value, Set) or
-                  isinstance(value, UserList)) and
-                 not isinstance(value, str) and
-                 not isinstance(value, UserString) and
-                 len(value) == 2 and
-                 all(isinstance(v, float) for v in value) and
-                 all(not (val < -3.402823466e+38 or val > 3.402823466e+38) or math.isinf(val) for val in value)), \
-                "The 'terr_flow' field must be a set or sequence with length 2 and each value of type 'float' and each float in [-340282346600000016151267322115014000640.000000, 340282346600000016151267322115014000640.000000]"
-        self._terr_flow = numpy.array(value, dtype=numpy.float32)
-
-    @builtins.property
     def heading(self):
         """Message field 'heading'."""
         return self._heading
 
     @heading.setter
     def heading(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'heading' field must be of type 'float'"
@@ -676,14 +620,14 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @mag_field.setter
     def mag_field(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'mag_field' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'mag_field' numpy.ndarray() must have a size of 3"
-            self._mag_field = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'mag_field' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'mag_field' numpy.ndarray() must have a size of 3"
+                self._mag_field = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -707,14 +651,14 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @gravity.setter
     def gravity(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'gravity' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'gravity' numpy.ndarray() must have a size of 3"
-            self._gravity = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'gravity' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'gravity' numpy.ndarray() must have a size of 3"
+                self._gravity = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -738,14 +682,14 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @drag.setter
     def drag(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'drag' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 2, \
-                "The 'drag' numpy.ndarray() must have a size of 2"
-            self._drag = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'drag' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 2, \
+                    "The 'drag' numpy.ndarray() must have a size of 2"
+                self._drag = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -769,7 +713,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @airspeed.setter
     def airspeed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'airspeed' field must be of type 'float'"
@@ -784,7 +728,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @beta.setter
     def beta(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'beta' field must be of type 'float'"
@@ -799,7 +743,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @hagl.setter
     def hagl(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'hagl' field must be of type 'float'"
@@ -814,7 +758,7 @@ class EstimatorInnovations(metaclass=Metaclass_EstimatorInnovations):
 
     @hagl_rate.setter
     def hagl_rate(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'hagl_rate' field must be of type 'float'"

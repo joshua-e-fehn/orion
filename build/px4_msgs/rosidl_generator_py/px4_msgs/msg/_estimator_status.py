@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/EstimatorStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -35,9 +42,10 @@ class Metaclass_EstimatorStatus(type):
         'GPS_CHECK_FAIL_MAX_VERT_DRIFT': 7,
         'GPS_CHECK_FAIL_MAX_HORZ_SPD_ERR': 8,
         'GPS_CHECK_FAIL_MAX_VERT_SPD_ERR': 9,
+        'GPS_CHECK_FAIL_SPOOFED': 10,
         'CS_TILT_ALIGN': 0,
         'CS_YAW_ALIGN': 1,
-        'CS_GPS': 2,
+        'CS_GNSS_POS': 2,
         'CS_OPT_FLOW': 3,
         'CS_MAG_HDG': 4,
         'CS_MAG_3D': 5,
@@ -64,6 +72,9 @@ class Metaclass_EstimatorStatus(type):
         'CS_VEHICLE_AT_REST': 26,
         'CS_GPS_YAW_FAULT': 27,
         'CS_RNG_FAULT': 28,
+        'CS_GNSS_VEL': 44,
+        'CS_GNSS_FAULT': 45,
+        'CS_YAW_MANUAL': 46,
     }
 
     @classmethod
@@ -102,9 +113,10 @@ class Metaclass_EstimatorStatus(type):
             'GPS_CHECK_FAIL_MAX_VERT_DRIFT': cls.__constants['GPS_CHECK_FAIL_MAX_VERT_DRIFT'],
             'GPS_CHECK_FAIL_MAX_HORZ_SPD_ERR': cls.__constants['GPS_CHECK_FAIL_MAX_HORZ_SPD_ERR'],
             'GPS_CHECK_FAIL_MAX_VERT_SPD_ERR': cls.__constants['GPS_CHECK_FAIL_MAX_VERT_SPD_ERR'],
+            'GPS_CHECK_FAIL_SPOOFED': cls.__constants['GPS_CHECK_FAIL_SPOOFED'],
             'CS_TILT_ALIGN': cls.__constants['CS_TILT_ALIGN'],
             'CS_YAW_ALIGN': cls.__constants['CS_YAW_ALIGN'],
-            'CS_GPS': cls.__constants['CS_GPS'],
+            'CS_GNSS_POS': cls.__constants['CS_GNSS_POS'],
             'CS_OPT_FLOW': cls.__constants['CS_OPT_FLOW'],
             'CS_MAG_HDG': cls.__constants['CS_MAG_HDG'],
             'CS_MAG_3D': cls.__constants['CS_MAG_3D'],
@@ -131,6 +143,9 @@ class Metaclass_EstimatorStatus(type):
             'CS_VEHICLE_AT_REST': cls.__constants['CS_VEHICLE_AT_REST'],
             'CS_GPS_YAW_FAULT': cls.__constants['CS_GPS_YAW_FAULT'],
             'CS_RNG_FAULT': cls.__constants['CS_RNG_FAULT'],
+            'CS_GNSS_VEL': cls.__constants['CS_GNSS_VEL'],
+            'CS_GNSS_FAULT': cls.__constants['CS_GNSS_FAULT'],
+            'CS_YAW_MANUAL': cls.__constants['CS_YAW_MANUAL'],
         }
 
     @property
@@ -184,6 +199,11 @@ class Metaclass_EstimatorStatus(type):
         return Metaclass_EstimatorStatus.__constants['GPS_CHECK_FAIL_MAX_VERT_SPD_ERR']
 
     @property
+    def GPS_CHECK_FAIL_SPOOFED(self):
+        """Message constant 'GPS_CHECK_FAIL_SPOOFED'."""
+        return Metaclass_EstimatorStatus.__constants['GPS_CHECK_FAIL_SPOOFED']
+
+    @property
     def CS_TILT_ALIGN(self):
         """Message constant 'CS_TILT_ALIGN'."""
         return Metaclass_EstimatorStatus.__constants['CS_TILT_ALIGN']
@@ -194,9 +214,9 @@ class Metaclass_EstimatorStatus(type):
         return Metaclass_EstimatorStatus.__constants['CS_YAW_ALIGN']
 
     @property
-    def CS_GPS(self):
-        """Message constant 'CS_GPS'."""
-        return Metaclass_EstimatorStatus.__constants['CS_GPS']
+    def CS_GNSS_POS(self):
+        """Message constant 'CS_GNSS_POS'."""
+        return Metaclass_EstimatorStatus.__constants['CS_GNSS_POS']
 
     @property
     def CS_OPT_FLOW(self):
@@ -328,6 +348,21 @@ class Metaclass_EstimatorStatus(type):
         """Message constant 'CS_RNG_FAULT'."""
         return Metaclass_EstimatorStatus.__constants['CS_RNG_FAULT']
 
+    @property
+    def CS_GNSS_VEL(self):
+        """Message constant 'CS_GNSS_VEL'."""
+        return Metaclass_EstimatorStatus.__constants['CS_GNSS_VEL']
+
+    @property
+    def CS_GNSS_FAULT(self):
+        """Message constant 'CS_GNSS_FAULT'."""
+        return Metaclass_EstimatorStatus.__constants['CS_GNSS_FAULT']
+
+    @property
+    def CS_YAW_MANUAL(self):
+        """Message constant 'CS_YAW_MANUAL'."""
+        return Metaclass_EstimatorStatus.__constants['CS_YAW_MANUAL']
+
 
 class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
     """
@@ -344,9 +379,10 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
       GPS_CHECK_FAIL_MAX_VERT_DRIFT
       GPS_CHECK_FAIL_MAX_HORZ_SPD_ERR
       GPS_CHECK_FAIL_MAX_VERT_SPD_ERR
+      GPS_CHECK_FAIL_SPOOFED
       CS_TILT_ALIGN
       CS_YAW_ALIGN
-      CS_GPS
+      CS_GNSS_POS
       CS_OPT_FLOW
       CS_MAG_HDG
       CS_MAG_3D
@@ -373,6 +409,9 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
       CS_VEHICLE_AT_REST
       CS_GPS_YAW_FAULT
       CS_RNG_FAULT
+      CS_GNSS_VEL
+      CS_GNSS_FAULT
+      CS_YAW_MANUAL
     """
 
     __slots__ = [
@@ -384,8 +423,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         '_filter_fault_flags',
         '_pos_horiz_accuracy',
         '_pos_vert_accuracy',
-        '_innovation_check_flags',
-        '_mag_test_ratio',
+        '_hdg_test_ratio',
         '_vel_test_ratio',
         '_pos_test_ratio',
         '_hgt_test_ratio',
@@ -400,9 +438,10 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         '_reset_count_quat',
         '_time_slip',
         '_pre_flt_fail_innov_heading',
+        '_pre_flt_fail_innov_height',
+        '_pre_flt_fail_innov_pos_horiz',
         '_pre_flt_fail_innov_vel_horiz',
         '_pre_flt_fail_innov_vel_vert',
-        '_pre_flt_fail_innov_height',
         '_pre_flt_fail_mag_field_disturbed',
         '_accel_device_id',
         '_gyro_device_id',
@@ -410,6 +449,11 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         '_mag_device_id',
         '_health_flags',
         '_timeout_flags',
+        '_mag_inclination_deg',
+        '_mag_inclination_ref_deg',
+        '_mag_strength_gs',
+        '_mag_strength_ref_gs',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -421,8 +465,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         'filter_fault_flags': 'uint32',
         'pos_horiz_accuracy': 'float',
         'pos_vert_accuracy': 'float',
-        'innovation_check_flags': 'uint16',
-        'mag_test_ratio': 'float',
+        'hdg_test_ratio': 'float',
         'vel_test_ratio': 'float',
         'pos_test_ratio': 'float',
         'hgt_test_ratio': 'float',
@@ -437,9 +480,10 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         'reset_count_quat': 'uint8',
         'time_slip': 'float',
         'pre_flt_fail_innov_heading': 'boolean',
+        'pre_flt_fail_innov_height': 'boolean',
+        'pre_flt_fail_innov_pos_horiz': 'boolean',
         'pre_flt_fail_innov_vel_horiz': 'boolean',
         'pre_flt_fail_innov_vel_vert': 'boolean',
-        'pre_flt_fail_innov_height': 'boolean',
         'pre_flt_fail_mag_field_disturbed': 'boolean',
         'accel_device_id': 'uint32',
         'gyro_device_id': 'uint32',
@@ -447,8 +491,14 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         'mag_device_id': 'uint32',
         'health_flags': 'uint8',
         'timeout_flags': 'uint8',
+        'mag_inclination_deg': 'float',
+        'mag_inclination_ref_deg': 'float',
+        'mag_strength_gs': 'float',
+        'mag_strength_ref_gs': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -458,7 +508,6 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -478,32 +527,40 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         if 'output_tracking_error' not in kwargs:
             self.output_tracking_error = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.output_tracking_error = numpy.array(kwargs.get('output_tracking_error'), dtype=numpy.float32)
-            assert self.output_tracking_error.shape == (3, )
+            self.output_tracking_error = kwargs.get('output_tracking_error')
         self.gps_check_fail_flags = kwargs.get('gps_check_fail_flags', int())
         self.control_mode_flags = kwargs.get('control_mode_flags', int())
         self.filter_fault_flags = kwargs.get('filter_fault_flags', int())
         self.pos_horiz_accuracy = kwargs.get('pos_horiz_accuracy', float())
         self.pos_vert_accuracy = kwargs.get('pos_vert_accuracy', float())
-        self.innovation_check_flags = kwargs.get('innovation_check_flags', int())
-        self.mag_test_ratio = kwargs.get('mag_test_ratio', float())
+        self.hdg_test_ratio = kwargs.get('hdg_test_ratio', float())
         self.vel_test_ratio = kwargs.get('vel_test_ratio', float())
         self.pos_test_ratio = kwargs.get('pos_test_ratio', float())
         self.hgt_test_ratio = kwargs.get('hgt_test_ratio', float())
@@ -518,9 +575,10 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         self.reset_count_quat = kwargs.get('reset_count_quat', int())
         self.time_slip = kwargs.get('time_slip', float())
         self.pre_flt_fail_innov_heading = kwargs.get('pre_flt_fail_innov_heading', bool())
+        self.pre_flt_fail_innov_height = kwargs.get('pre_flt_fail_innov_height', bool())
+        self.pre_flt_fail_innov_pos_horiz = kwargs.get('pre_flt_fail_innov_pos_horiz', bool())
         self.pre_flt_fail_innov_vel_horiz = kwargs.get('pre_flt_fail_innov_vel_horiz', bool())
         self.pre_flt_fail_innov_vel_vert = kwargs.get('pre_flt_fail_innov_vel_vert', bool())
-        self.pre_flt_fail_innov_height = kwargs.get('pre_flt_fail_innov_height', bool())
         self.pre_flt_fail_mag_field_disturbed = kwargs.get('pre_flt_fail_mag_field_disturbed', bool())
         self.accel_device_id = kwargs.get('accel_device_id', int())
         self.gyro_device_id = kwargs.get('gyro_device_id', int())
@@ -528,13 +586,17 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         self.mag_device_id = kwargs.get('mag_device_id', int())
         self.health_flags = kwargs.get('health_flags', int())
         self.timeout_flags = kwargs.get('timeout_flags', int())
+        self.mag_inclination_deg = kwargs.get('mag_inclination_deg', float())
+        self.mag_inclination_ref_deg = kwargs.get('mag_inclination_ref_deg', float())
+        self.mag_strength_gs = kwargs.get('mag_strength_gs', float())
+        self.mag_strength_ref_gs = kwargs.get('mag_strength_ref_gs', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -548,11 +610,12 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -574,9 +637,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
             return False
         if self.pos_vert_accuracy != other.pos_vert_accuracy:
             return False
-        if self.innovation_check_flags != other.innovation_check_flags:
-            return False
-        if self.mag_test_ratio != other.mag_test_ratio:
+        if self.hdg_test_ratio != other.hdg_test_ratio:
             return False
         if self.vel_test_ratio != other.vel_test_ratio:
             return False
@@ -606,11 +667,13 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
             return False
         if self.pre_flt_fail_innov_heading != other.pre_flt_fail_innov_heading:
             return False
+        if self.pre_flt_fail_innov_height != other.pre_flt_fail_innov_height:
+            return False
+        if self.pre_flt_fail_innov_pos_horiz != other.pre_flt_fail_innov_pos_horiz:
+            return False
         if self.pre_flt_fail_innov_vel_horiz != other.pre_flt_fail_innov_vel_horiz:
             return False
         if self.pre_flt_fail_innov_vel_vert != other.pre_flt_fail_innov_vel_vert:
-            return False
-        if self.pre_flt_fail_innov_height != other.pre_flt_fail_innov_height:
             return False
         if self.pre_flt_fail_mag_field_disturbed != other.pre_flt_fail_mag_field_disturbed:
             return False
@@ -626,6 +689,14 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
             return False
         if self.timeout_flags != other.timeout_flags:
             return False
+        if self.mag_inclination_deg != other.mag_inclination_deg:
+            return False
+        if self.mag_inclination_ref_deg != other.mag_inclination_ref_deg:
+            return False
+        if self.mag_strength_gs != other.mag_strength_gs:
+            return False
+        if self.mag_strength_ref_gs != other.mag_strength_ref_gs:
+            return False
         return True
 
     @classmethod
@@ -640,7 +711,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -655,7 +726,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -670,14 +741,14 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @output_tracking_error.setter
     def output_tracking_error(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'output_tracking_error' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'output_tracking_error' numpy.ndarray() must have a size of 3"
-            self._output_tracking_error = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'output_tracking_error' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'output_tracking_error' numpy.ndarray() must have a size of 3"
+                self._output_tracking_error = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -701,7 +772,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @gps_check_fail_flags.setter
     def gps_check_fail_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'gps_check_fail_flags' field must be of type 'int'"
@@ -716,7 +787,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @control_mode_flags.setter
     def control_mode_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'control_mode_flags' field must be of type 'int'"
@@ -731,7 +802,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @filter_fault_flags.setter
     def filter_fault_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'filter_fault_flags' field must be of type 'int'"
@@ -746,7 +817,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @pos_horiz_accuracy.setter
     def pos_horiz_accuracy(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'pos_horiz_accuracy' field must be of type 'float'"
@@ -761,7 +832,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @pos_vert_accuracy.setter
     def pos_vert_accuracy(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'pos_vert_accuracy' field must be of type 'float'"
@@ -770,34 +841,19 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
         self._pos_vert_accuracy = value
 
     @builtins.property
-    def innovation_check_flags(self):
-        """Message field 'innovation_check_flags'."""
-        return self._innovation_check_flags
+    def hdg_test_ratio(self):
+        """Message field 'hdg_test_ratio'."""
+        return self._hdg_test_ratio
 
-    @innovation_check_flags.setter
-    def innovation_check_flags(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, int), \
-                "The 'innovation_check_flags' field must be of type 'int'"
-            assert value >= 0 and value < 65536, \
-                "The 'innovation_check_flags' field must be an unsigned integer in [0, 65535]"
-        self._innovation_check_flags = value
-
-    @builtins.property
-    def mag_test_ratio(self):
-        """Message field 'mag_test_ratio'."""
-        return self._mag_test_ratio
-
-    @mag_test_ratio.setter
-    def mag_test_ratio(self, value):
-        if __debug__:
+    @hdg_test_ratio.setter
+    def hdg_test_ratio(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
-                "The 'mag_test_ratio' field must be of type 'float'"
+                "The 'hdg_test_ratio' field must be of type 'float'"
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'mag_test_ratio' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._mag_test_ratio = value
+                "The 'hdg_test_ratio' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._hdg_test_ratio = value
 
     @builtins.property
     def vel_test_ratio(self):
@@ -806,7 +862,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @vel_test_ratio.setter
     def vel_test_ratio(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'vel_test_ratio' field must be of type 'float'"
@@ -821,7 +877,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @pos_test_ratio.setter
     def pos_test_ratio(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'pos_test_ratio' field must be of type 'float'"
@@ -836,7 +892,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @hgt_test_ratio.setter
     def hgt_test_ratio(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'hgt_test_ratio' field must be of type 'float'"
@@ -851,7 +907,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @tas_test_ratio.setter
     def tas_test_ratio(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'tas_test_ratio' field must be of type 'float'"
@@ -866,7 +922,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @hagl_test_ratio.setter
     def hagl_test_ratio(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'hagl_test_ratio' field must be of type 'float'"
@@ -881,7 +937,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @beta_test_ratio.setter
     def beta_test_ratio(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'beta_test_ratio' field must be of type 'float'"
@@ -896,7 +952,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @solution_status_flags.setter
     def solution_status_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'solution_status_flags' field must be of type 'int'"
@@ -911,7 +967,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @reset_count_vel_ne.setter
     def reset_count_vel_ne(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'reset_count_vel_ne' field must be of type 'int'"
@@ -926,7 +982,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @reset_count_vel_d.setter
     def reset_count_vel_d(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'reset_count_vel_d' field must be of type 'int'"
@@ -941,7 +997,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @reset_count_pos_ne.setter
     def reset_count_pos_ne(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'reset_count_pos_ne' field must be of type 'int'"
@@ -956,7 +1012,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @reset_count_pod_d.setter
     def reset_count_pod_d(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'reset_count_pod_d' field must be of type 'int'"
@@ -971,7 +1027,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @reset_count_quat.setter
     def reset_count_quat(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'reset_count_quat' field must be of type 'int'"
@@ -986,7 +1042,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @time_slip.setter
     def time_slip(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'time_slip' field must be of type 'float'"
@@ -1001,11 +1057,37 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @pre_flt_fail_innov_heading.setter
     def pre_flt_fail_innov_heading(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'pre_flt_fail_innov_heading' field must be of type 'bool'"
         self._pre_flt_fail_innov_heading = value
+
+    @builtins.property
+    def pre_flt_fail_innov_height(self):
+        """Message field 'pre_flt_fail_innov_height'."""
+        return self._pre_flt_fail_innov_height
+
+    @pre_flt_fail_innov_height.setter
+    def pre_flt_fail_innov_height(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, bool), \
+                "The 'pre_flt_fail_innov_height' field must be of type 'bool'"
+        self._pre_flt_fail_innov_height = value
+
+    @builtins.property
+    def pre_flt_fail_innov_pos_horiz(self):
+        """Message field 'pre_flt_fail_innov_pos_horiz'."""
+        return self._pre_flt_fail_innov_pos_horiz
+
+    @pre_flt_fail_innov_pos_horiz.setter
+    def pre_flt_fail_innov_pos_horiz(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, bool), \
+                "The 'pre_flt_fail_innov_pos_horiz' field must be of type 'bool'"
+        self._pre_flt_fail_innov_pos_horiz = value
 
     @builtins.property
     def pre_flt_fail_innov_vel_horiz(self):
@@ -1014,7 +1096,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @pre_flt_fail_innov_vel_horiz.setter
     def pre_flt_fail_innov_vel_horiz(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'pre_flt_fail_innov_vel_horiz' field must be of type 'bool'"
@@ -1027,24 +1109,11 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @pre_flt_fail_innov_vel_vert.setter
     def pre_flt_fail_innov_vel_vert(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'pre_flt_fail_innov_vel_vert' field must be of type 'bool'"
         self._pre_flt_fail_innov_vel_vert = value
-
-    @builtins.property
-    def pre_flt_fail_innov_height(self):
-        """Message field 'pre_flt_fail_innov_height'."""
-        return self._pre_flt_fail_innov_height
-
-    @pre_flt_fail_innov_height.setter
-    def pre_flt_fail_innov_height(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'pre_flt_fail_innov_height' field must be of type 'bool'"
-        self._pre_flt_fail_innov_height = value
 
     @builtins.property
     def pre_flt_fail_mag_field_disturbed(self):
@@ -1053,7 +1122,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @pre_flt_fail_mag_field_disturbed.setter
     def pre_flt_fail_mag_field_disturbed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'pre_flt_fail_mag_field_disturbed' field must be of type 'bool'"
@@ -1066,7 +1135,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @accel_device_id.setter
     def accel_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'accel_device_id' field must be of type 'int'"
@@ -1081,7 +1150,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @gyro_device_id.setter
     def gyro_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'gyro_device_id' field must be of type 'int'"
@@ -1096,7 +1165,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @baro_device_id.setter
     def baro_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'baro_device_id' field must be of type 'int'"
@@ -1111,7 +1180,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @mag_device_id.setter
     def mag_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'mag_device_id' field must be of type 'int'"
@@ -1126,7 +1195,7 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @health_flags.setter
     def health_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'health_flags' field must be of type 'int'"
@@ -1141,10 +1210,70 @@ class EstimatorStatus(metaclass=Metaclass_EstimatorStatus):
 
     @timeout_flags.setter
     def timeout_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timeout_flags' field must be of type 'int'"
             assert value >= 0 and value < 256, \
                 "The 'timeout_flags' field must be an unsigned integer in [0, 255]"
         self._timeout_flags = value
+
+    @builtins.property
+    def mag_inclination_deg(self):
+        """Message field 'mag_inclination_deg'."""
+        return self._mag_inclination_deg
+
+    @mag_inclination_deg.setter
+    def mag_inclination_deg(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'mag_inclination_deg' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'mag_inclination_deg' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._mag_inclination_deg = value
+
+    @builtins.property
+    def mag_inclination_ref_deg(self):
+        """Message field 'mag_inclination_ref_deg'."""
+        return self._mag_inclination_ref_deg
+
+    @mag_inclination_ref_deg.setter
+    def mag_inclination_ref_deg(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'mag_inclination_ref_deg' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'mag_inclination_ref_deg' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._mag_inclination_ref_deg = value
+
+    @builtins.property
+    def mag_strength_gs(self):
+        """Message field 'mag_strength_gs'."""
+        return self._mag_strength_gs
+
+    @mag_strength_gs.setter
+    def mag_strength_gs(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'mag_strength_gs' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'mag_strength_gs' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._mag_strength_gs = value
+
+    @builtins.property
+    def mag_strength_ref_gs(self):
+        """Message field 'mag_strength_ref_gs'."""
+        return self._mag_strength_ref_gs
+
+    @mag_strength_ref_gs.setter
+    def mag_strength_ref_gs(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'mag_strength_ref_gs' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'mag_strength_ref_gs' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._mag_strength_ref_gs = value

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/RcParameterMap.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -93,6 +100,7 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
         '_value0',
         '_value_min',
         '_value_max',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -106,6 +114,8 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
         'value_max': 'float[3]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('boolean'), 3),  # noqa: E501
@@ -118,9 +128,14 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.valid = kwargs.get(
             'valid',
@@ -129,40 +144,34 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
         if 'param_index' not in kwargs:
             self.param_index = numpy.zeros(3, dtype=numpy.int32)
         else:
-            self.param_index = numpy.array(kwargs.get('param_index'), dtype=numpy.int32)
-            assert self.param_index.shape == (3, )
+            self.param_index = kwargs.get('param_index')
         if 'param_id' not in kwargs:
             self.param_id = numpy.zeros(51, dtype=numpy.uint8)
         else:
-            self.param_id = numpy.array(kwargs.get('param_id'), dtype=numpy.uint8)
-            assert self.param_id.shape == (51, )
+            self.param_id = kwargs.get('param_id')
         if 'scale' not in kwargs:
             self.scale = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.scale = numpy.array(kwargs.get('scale'), dtype=numpy.float32)
-            assert self.scale.shape == (3, )
+            self.scale = kwargs.get('scale')
         if 'value0' not in kwargs:
             self.value0 = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.value0 = numpy.array(kwargs.get('value0'), dtype=numpy.float32)
-            assert self.value0.shape == (3, )
+            self.value0 = kwargs.get('value0')
         if 'value_min' not in kwargs:
             self.value_min = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.value_min = numpy.array(kwargs.get('value_min'), dtype=numpy.float32)
-            assert self.value_min.shape == (3, )
+            self.value_min = kwargs.get('value_min')
         if 'value_max' not in kwargs:
             self.value_max = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.value_max = numpy.array(kwargs.get('value_max'), dtype=numpy.float32)
-            assert self.value_max.shape == (3, )
+            self.value_max = kwargs.get('value_max')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -176,11 +185,12 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -216,7 +226,7 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -231,7 +241,7 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
 
     @valid.setter
     def valid(self, value):
-        if __debug__:
+        if self._check_fields:
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -255,14 +265,14 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
 
     @param_index.setter
     def param_index(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.int32, \
-                "The 'param_index' numpy.ndarray() must have the dtype of 'numpy.int32'"
-            assert value.size == 3, \
-                "The 'param_index' numpy.ndarray() must have a size of 3"
-            self._param_index = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.int32, \
+                    "The 'param_index' numpy.ndarray() must have the dtype of 'numpy.int32'"
+                assert value.size == 3, \
+                    "The 'param_index' numpy.ndarray() must have a size of 3"
+                self._param_index = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -286,14 +296,14 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
 
     @param_id.setter
     def param_id(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'param_id' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 51, \
-                "The 'param_id' numpy.ndarray() must have a size of 51"
-            self._param_id = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'param_id' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 51, \
+                    "The 'param_id' numpy.ndarray() must have a size of 51"
+                self._param_id = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -317,14 +327,14 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
 
     @scale.setter
     def scale(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'scale' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'scale' numpy.ndarray() must have a size of 3"
-            self._scale = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'scale' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'scale' numpy.ndarray() must have a size of 3"
+                self._scale = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -348,14 +358,14 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
 
     @value0.setter
     def value0(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'value0' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'value0' numpy.ndarray() must have a size of 3"
-            self._value0 = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'value0' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'value0' numpy.ndarray() must have a size of 3"
+                self._value0 = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -379,14 +389,14 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
 
     @value_min.setter
     def value_min(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'value_min' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'value_min' numpy.ndarray() must have a size of 3"
-            self._value_min = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'value_min' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'value_min' numpy.ndarray() must have a size of 3"
+                self._value_min = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -410,14 +420,14 @@ class RcParameterMap(metaclass=Metaclass_RcParameterMap):
 
     @value_max.setter
     def value_max(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'value_max' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'value_max' numpy.ndarray() must have a size of 3"
-            self._value_max = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'value_max' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'value_max' numpy.ndarray() must have a size of 3"
+                self._value_max = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

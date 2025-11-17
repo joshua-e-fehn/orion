@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ActuatorMotors.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/actuator_motors.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ACTUATOR_MOTORS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__ACTUATOR_MOTORS__STRUCT_HPP_
 
@@ -99,6 +102,8 @@ struct ActuatorMotors_
   }
 
   // constant declarations
+  static constexpr uint32_t MESSAGE_VERSION =
+    0u;
   static constexpr uint8_t ACTUATOR_FUNCTION_MOTOR1 =
     101u;
   static constexpr uint8_t NUM_CONTROLS =
@@ -169,6 +174,11 @@ using ActuatorMotors =
   px4_msgs::msg::ActuatorMotors_<std::allocator<void>>;
 
 // constant definitions
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t ActuatorMotors_<ContainerAllocator>::MESSAGE_VERSION;
+#endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>

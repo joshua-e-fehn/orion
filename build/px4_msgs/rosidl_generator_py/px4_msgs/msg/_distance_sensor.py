@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/DistanceSensor.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -44,6 +51,9 @@ class Metaclass_DistanceSensor(type):
         'ROTATION_UPWARD_FACING': 24,
         'ROTATION_DOWNWARD_FACING': 25,
         'ROTATION_CUSTOM': 100,
+        'MODE_UNKNOWN': 0,
+        'MODE_ENABLED': 1,
+        'MODE_DISABLED': 2,
     }
 
     @classmethod
@@ -91,6 +101,9 @@ class Metaclass_DistanceSensor(type):
             'ROTATION_UPWARD_FACING': cls.__constants['ROTATION_UPWARD_FACING'],
             'ROTATION_DOWNWARD_FACING': cls.__constants['ROTATION_DOWNWARD_FACING'],
             'ROTATION_CUSTOM': cls.__constants['ROTATION_CUSTOM'],
+            'MODE_UNKNOWN': cls.__constants['MODE_UNKNOWN'],
+            'MODE_ENABLED': cls.__constants['MODE_ENABLED'],
+            'MODE_DISABLED': cls.__constants['MODE_DISABLED'],
         }
 
     @property
@@ -188,6 +201,21 @@ class Metaclass_DistanceSensor(type):
         """Message constant 'ROTATION_CUSTOM'."""
         return Metaclass_DistanceSensor.__constants['ROTATION_CUSTOM']
 
+    @property
+    def MODE_UNKNOWN(self):
+        """Message constant 'MODE_UNKNOWN'."""
+        return Metaclass_DistanceSensor.__constants['MODE_UNKNOWN']
+
+    @property
+    def MODE_ENABLED(self):
+        """Message constant 'MODE_ENABLED'."""
+        return Metaclass_DistanceSensor.__constants['MODE_ENABLED']
+
+    @property
+    def MODE_DISABLED(self):
+        """Message constant 'MODE_DISABLED'."""
+        return Metaclass_DistanceSensor.__constants['MODE_DISABLED']
+
 
 class DistanceSensor(metaclass=Metaclass_DistanceSensor):
     """
@@ -213,6 +241,9 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
       ROTATION_UPWARD_FACING
       ROTATION_DOWNWARD_FACING
       ROTATION_CUSTOM
+      MODE_UNKNOWN
+      MODE_ENABLED
+      MODE_DISABLED
     """
 
     __slots__ = [
@@ -228,6 +259,8 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
         '_v_fov',
         '_q',
         '_orientation',
+        '_mode',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -243,8 +276,11 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
         'v_fov': 'float',
         'q': 'float[4]',
         'orientation': 'uint8',
+        'mode': 'uint8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
@@ -258,12 +294,18 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 4),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.device_id = kwargs.get('device_id', int())
         self.min_distance = kwargs.get('min_distance', float())
@@ -277,16 +319,16 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
         if 'q' not in kwargs:
             self.q = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.q = numpy.array(kwargs.get('q'), dtype=numpy.float32)
-            assert self.q.shape == (4, )
+            self.q = kwargs.get('q')
         self.orientation = kwargs.get('orientation', int())
+        self.mode = kwargs.get('mode', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -300,11 +342,12 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -334,6 +377,8 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
             return False
         if self.orientation != other.orientation:
             return False
+        if self.mode != other.mode:
+            return False
         return True
 
     @classmethod
@@ -348,7 +393,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -363,7 +408,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @device_id.setter
     def device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'device_id' field must be of type 'int'"
@@ -378,7 +423,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @min_distance.setter
     def min_distance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'min_distance' field must be of type 'float'"
@@ -393,7 +438,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @max_distance.setter
     def max_distance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'max_distance' field must be of type 'float'"
@@ -408,7 +453,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @current_distance.setter
     def current_distance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'current_distance' field must be of type 'float'"
@@ -423,7 +468,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @variance.setter
     def variance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'variance' field must be of type 'float'"
@@ -438,7 +483,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @signal_quality.setter
     def signal_quality(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'signal_quality' field must be of type 'int'"
@@ -453,7 +498,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @type.setter  # noqa: A003
     def type(self, value):  # noqa: A003
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'type' field must be of type 'int'"
@@ -468,7 +513,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @h_fov.setter
     def h_fov(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'h_fov' field must be of type 'float'"
@@ -483,7 +528,7 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @v_fov.setter
     def v_fov(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'v_fov' field must be of type 'float'"
@@ -498,14 +543,14 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @q.setter
     def q(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'q' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'q' numpy.ndarray() must have a size of 4"
-            self._q = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'q' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'q' numpy.ndarray() must have a size of 4"
+                self._q = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -529,10 +574,25 @@ class DistanceSensor(metaclass=Metaclass_DistanceSensor):
 
     @orientation.setter
     def orientation(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'orientation' field must be of type 'int'"
             assert value >= 0 and value < 256, \
                 "The 'orientation' field must be an unsigned integer in [0, 255]"
         self._orientation = value
+
+    @builtins.property
+    def mode(self):
+        """Message field 'mode'."""
+        return self._mode
+
+    @mode.setter
+    def mode(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'mode' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'mode' field must be an unsigned integer in [0, 255]"
+        self._mode = value

@@ -18,7 +18,6 @@ px4_msgs__msg__NavigatorMissionItem__init(px4_msgs__msg__NavigatorMissionItem * 
     return false;
   }
   // timestamp
-  // instance_count
   // sequence_current
   // nav_cmd
   // latitude
@@ -45,7 +44,6 @@ px4_msgs__msg__NavigatorMissionItem__fini(px4_msgs__msg__NavigatorMissionItem * 
     return;
   }
   // timestamp
-  // instance_count
   // sequence_current
   // nav_cmd
   // latitude
@@ -72,10 +70,6 @@ px4_msgs__msg__NavigatorMissionItem__are_equal(const px4_msgs__msg__NavigatorMis
   }
   // timestamp
   if (lhs->timestamp != rhs->timestamp) {
-    return false;
-  }
-  // instance_count
-  if (lhs->instance_count != rhs->instance_count) {
     return false;
   }
   // sequence_current
@@ -155,8 +149,6 @@ px4_msgs__msg__NavigatorMissionItem__copy(
   }
   // timestamp
   output->timestamp = input->timestamp;
-  // instance_count
-  output->instance_count = input->instance_count;
   // sequence_current
   output->sequence_current = input->sequence_current;
   // nav_cmd
@@ -193,7 +185,7 @@ px4_msgs__msg__NavigatorMissionItem__copy(
 }
 
 px4_msgs__msg__NavigatorMissionItem *
-px4_msgs__msg__NavigatorMissionItem__create()
+px4_msgs__msg__NavigatorMissionItem__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__NavigatorMissionItem * msg = (px4_msgs__msg__NavigatorMissionItem *)allocator.allocate(sizeof(px4_msgs__msg__NavigatorMissionItem), allocator.state);

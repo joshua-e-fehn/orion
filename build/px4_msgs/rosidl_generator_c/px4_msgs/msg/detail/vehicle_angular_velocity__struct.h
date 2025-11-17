@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VehicleAngularVelocity.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_angular_velocity.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_ANGULAR_VELOCITY__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_ANGULAR_VELOCITY__STRUCT_H_
 
@@ -14,8 +17,13 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
+
+/// Constant 'MESSAGE_VERSION'.
+enum
+{
+  px4_msgs__msg__VehicleAngularVelocity__MESSAGE_VERSION = 0ul
+};
 
 /// Struct defined in msg/VehicleAngularVelocity in the package px4_msgs.
 typedef struct px4_msgs__msg__VehicleAngularVelocity

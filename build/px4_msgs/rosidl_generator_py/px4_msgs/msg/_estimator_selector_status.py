@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/EstimatorSelectorStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -79,6 +86,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
         '_accumulated_accel_error',
         '_gyro_fault_detected',
         '_accel_fault_detected',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -100,6 +108,8 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
         'accel_fault_detected': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
@@ -120,9 +130,14 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.primary_instance = kwargs.get('primary_instance', int())
         self.instances_available = kwargs.get('instances_available', int())
@@ -135,13 +150,11 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
         if 'combined_test_ratio' not in kwargs:
             self.combined_test_ratio = numpy.zeros(9, dtype=numpy.float32)
         else:
-            self.combined_test_ratio = numpy.array(kwargs.get('combined_test_ratio'), dtype=numpy.float32)
-            assert self.combined_test_ratio.shape == (9, )
+            self.combined_test_ratio = kwargs.get('combined_test_ratio')
         if 'relative_test_ratio' not in kwargs:
             self.relative_test_ratio = numpy.zeros(9, dtype=numpy.float32)
         else:
-            self.relative_test_ratio = numpy.array(kwargs.get('relative_test_ratio'), dtype=numpy.float32)
-            assert self.relative_test_ratio.shape == (9, )
+            self.relative_test_ratio = kwargs.get('relative_test_ratio')
         self.healthy = kwargs.get(
             'healthy',
             [bool() for x in range(9)]
@@ -149,13 +162,11 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
         if 'accumulated_gyro_error' not in kwargs:
             self.accumulated_gyro_error = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.accumulated_gyro_error = numpy.array(kwargs.get('accumulated_gyro_error'), dtype=numpy.float32)
-            assert self.accumulated_gyro_error.shape == (4, )
+            self.accumulated_gyro_error = kwargs.get('accumulated_gyro_error')
         if 'accumulated_accel_error' not in kwargs:
             self.accumulated_accel_error = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.accumulated_accel_error = numpy.array(kwargs.get('accumulated_accel_error'), dtype=numpy.float32)
-            assert self.accumulated_accel_error.shape == (4, )
+            self.accumulated_accel_error = kwargs.get('accumulated_accel_error')
         self.gyro_fault_detected = kwargs.get('gyro_fault_detected', bool())
         self.accel_fault_detected = kwargs.get('accel_fault_detected', bool())
 
@@ -164,7 +175,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -178,11 +189,12 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -234,7 +246,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -249,7 +261,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @primary_instance.setter
     def primary_instance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'primary_instance' field must be of type 'int'"
@@ -264,7 +276,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @instances_available.setter
     def instances_available(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'instances_available' field must be of type 'int'"
@@ -279,7 +291,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @instance_changed_count.setter
     def instance_changed_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'instance_changed_count' field must be of type 'int'"
@@ -294,7 +306,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @last_instance_change.setter
     def last_instance_change(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'last_instance_change' field must be of type 'int'"
@@ -309,7 +321,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @accel_device_id.setter
     def accel_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'accel_device_id' field must be of type 'int'"
@@ -324,7 +336,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @baro_device_id.setter
     def baro_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'baro_device_id' field must be of type 'int'"
@@ -339,7 +351,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @gyro_device_id.setter
     def gyro_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'gyro_device_id' field must be of type 'int'"
@@ -354,7 +366,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @mag_device_id.setter
     def mag_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'mag_device_id' field must be of type 'int'"
@@ -369,14 +381,14 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @combined_test_ratio.setter
     def combined_test_ratio(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'combined_test_ratio' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 9, \
-                "The 'combined_test_ratio' numpy.ndarray() must have a size of 9"
-            self._combined_test_ratio = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'combined_test_ratio' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 9, \
+                    "The 'combined_test_ratio' numpy.ndarray() must have a size of 9"
+                self._combined_test_ratio = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -400,14 +412,14 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @relative_test_ratio.setter
     def relative_test_ratio(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'relative_test_ratio' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 9, \
-                "The 'relative_test_ratio' numpy.ndarray() must have a size of 9"
-            self._relative_test_ratio = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'relative_test_ratio' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 9, \
+                    "The 'relative_test_ratio' numpy.ndarray() must have a size of 9"
+                self._relative_test_ratio = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -431,7 +443,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @healthy.setter
     def healthy(self, value):
-        if __debug__:
+        if self._check_fields:
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -455,14 +467,14 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @accumulated_gyro_error.setter
     def accumulated_gyro_error(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'accumulated_gyro_error' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'accumulated_gyro_error' numpy.ndarray() must have a size of 4"
-            self._accumulated_gyro_error = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'accumulated_gyro_error' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'accumulated_gyro_error' numpy.ndarray() must have a size of 4"
+                self._accumulated_gyro_error = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -486,14 +498,14 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @accumulated_accel_error.setter
     def accumulated_accel_error(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'accumulated_accel_error' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'accumulated_accel_error' numpy.ndarray() must have a size of 4"
-            self._accumulated_accel_error = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'accumulated_accel_error' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'accumulated_accel_error' numpy.ndarray() must have a size of 4"
+                self._accumulated_accel_error = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -517,7 +529,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @gyro_fault_detected.setter
     def gyro_fault_detected(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'gyro_fault_detected' field must be of type 'bool'"
@@ -530,7 +542,7 @@ class EstimatorSelectorStatus(metaclass=Metaclass_EstimatorSelectorStatus):
 
     @accel_fault_detected.setter
     def accel_fault_detected(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'accel_fault_detected' field must be of type 'bool'"

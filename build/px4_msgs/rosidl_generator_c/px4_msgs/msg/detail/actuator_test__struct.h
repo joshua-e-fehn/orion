@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ActuatorTest.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/actuator_test.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ACTUATOR_TEST__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__ACTUATOR_TEST__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -62,11 +64,11 @@ enum
 
 /// Constant 'ORB_QUEUE_LENGTH'.
 /**
-  * same as MAX_NUM_MOTORS to support code in esc_calibration
+  * >= MAX_NUM_MOTORS to support code in esc_calibration
  */
 enum
 {
-  px4_msgs__msg__ActuatorTest__ORB_QUEUE_LENGTH = 12
+  px4_msgs__msg__ActuatorTest__ORB_QUEUE_LENGTH = 16
 };
 
 /// Struct defined in msg/ActuatorTest in the package px4_msgs.

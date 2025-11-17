@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/FailureDetectorStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/failure_detector_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__FAILURE_DETECTOR_STATUS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__FAILURE_DETECTOR_STATUS__TRAITS_HPP_
 
@@ -99,6 +102,13 @@ inline void to_flow_style_yaml(
   {
     out << "motor_failure_mask: ";
     rosidl_generator_traits::value_to_yaml(msg.motor_failure_mask, out);
+    out << ", ";
+  }
+
+  // member: motor_stop_mask
+  {
+    out << "motor_stop_mask: ";
+    rosidl_generator_traits::value_to_yaml(msg.motor_stop_mask, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -214,6 +224,16 @@ inline void to_block_style_yaml(
     }
     out << "motor_failure_mask: ";
     rosidl_generator_traits::value_to_yaml(msg.motor_failure_mask, out);
+    out << "\n";
+  }
+
+  // member: motor_stop_mask
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "motor_stop_mask: ";
+    rosidl_generator_traits::value_to_yaml(msg.motor_stop_mask, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

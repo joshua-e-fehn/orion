@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ControlAllocatorStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/control_allocator_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__CONTROL_ALLOCATOR_STATUS__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__CONTROL_ALLOCATOR_STATUS__BUILDER_HPP_
 
@@ -21,16 +24,32 @@ namespace msg
 namespace builder
 {
 
+class Init_ControlAllocatorStatus_motor_stop_mask
+{
+public:
+  explicit Init_ControlAllocatorStatus_motor_stop_mask(::px4_msgs::msg::ControlAllocatorStatus & msg)
+  : msg_(msg)
+  {}
+  ::px4_msgs::msg::ControlAllocatorStatus motor_stop_mask(::px4_msgs::msg::ControlAllocatorStatus::_motor_stop_mask_type arg)
+  {
+    msg_.motor_stop_mask = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::ControlAllocatorStatus msg_;
+};
+
 class Init_ControlAllocatorStatus_handled_motor_failure_mask
 {
 public:
   explicit Init_ControlAllocatorStatus_handled_motor_failure_mask(::px4_msgs::msg::ControlAllocatorStatus & msg)
   : msg_(msg)
   {}
-  ::px4_msgs::msg::ControlAllocatorStatus handled_motor_failure_mask(::px4_msgs::msg::ControlAllocatorStatus::_handled_motor_failure_mask_type arg)
+  Init_ControlAllocatorStatus_motor_stop_mask handled_motor_failure_mask(::px4_msgs::msg::ControlAllocatorStatus::_handled_motor_failure_mask_type arg)
   {
     msg_.handled_motor_failure_mask = std::move(arg);
-    return std::move(msg_);
+    return Init_ControlAllocatorStatus_motor_stop_mask(msg_);
   }
 
 private:

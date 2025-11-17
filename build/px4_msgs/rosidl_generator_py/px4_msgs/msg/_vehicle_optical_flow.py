@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/VehicleOpticalFlow.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -72,6 +79,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
         '_max_flow_rate',
         '_min_ground_distance',
         '_max_ground_distance',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -88,6 +96,8 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
         'max_ground_distance': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -103,22 +113,25 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.device_id = kwargs.get('device_id', int())
         if 'pixel_flow' not in kwargs:
             self.pixel_flow = numpy.zeros(2, dtype=numpy.float32)
         else:
-            self.pixel_flow = numpy.array(kwargs.get('pixel_flow'), dtype=numpy.float32)
-            assert self.pixel_flow.shape == (2, )
+            self.pixel_flow = kwargs.get('pixel_flow')
         if 'delta_angle' not in kwargs:
             self.delta_angle = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.delta_angle = numpy.array(kwargs.get('delta_angle'), dtype=numpy.float32)
-            assert self.delta_angle.shape == (3, )
+            self.delta_angle = kwargs.get('delta_angle')
         self.distance_m = kwargs.get('distance_m', float())
         self.integration_timespan_us = kwargs.get('integration_timespan_us', int())
         self.quality = kwargs.get('quality', int())
@@ -131,7 +144,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -145,11 +158,12 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -191,7 +205,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -206,7 +220,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -221,7 +235,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @device_id.setter
     def device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'device_id' field must be of type 'int'"
@@ -236,14 +250,14 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @pixel_flow.setter
     def pixel_flow(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'pixel_flow' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 2, \
-                "The 'pixel_flow' numpy.ndarray() must have a size of 2"
-            self._pixel_flow = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'pixel_flow' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 2, \
+                    "The 'pixel_flow' numpy.ndarray() must have a size of 2"
+                self._pixel_flow = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -267,14 +281,14 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @delta_angle.setter
     def delta_angle(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'delta_angle' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'delta_angle' numpy.ndarray() must have a size of 3"
-            self._delta_angle = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'delta_angle' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'delta_angle' numpy.ndarray() must have a size of 3"
+                self._delta_angle = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -298,7 +312,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @distance_m.setter
     def distance_m(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'distance_m' field must be of type 'float'"
@@ -313,7 +327,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @integration_timespan_us.setter
     def integration_timespan_us(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'integration_timespan_us' field must be of type 'int'"
@@ -328,7 +342,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @quality.setter
     def quality(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'quality' field must be of type 'int'"
@@ -343,7 +357,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @max_flow_rate.setter
     def max_flow_rate(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'max_flow_rate' field must be of type 'float'"
@@ -358,7 +372,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @min_ground_distance.setter
     def min_ground_distance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'min_ground_distance' field must be of type 'float'"
@@ -373,7 +387,7 @@ class VehicleOpticalFlow(metaclass=Metaclass_VehicleOpticalFlow):
 
     @max_ground_distance.setter
     def max_ground_distance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'max_ground_distance' field must be of type 'float'"

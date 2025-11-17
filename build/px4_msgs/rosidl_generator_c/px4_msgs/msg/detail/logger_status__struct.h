@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/LoggerStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/logger_status.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__LOGGER_STATUS__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__LOGGER_STATUS__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -60,6 +62,7 @@ typedef struct px4_msgs__msg__LoggerStatus
   uint64_t timestamp;
   uint8_t type;
   uint8_t backend;
+  bool is_logging;
   /// total written to log in kiloBytes
   float total_written_kb;
   /// write rate in kiloBytes/s

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/OrbitStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -27,6 +34,7 @@ class Metaclass_OrbitStatus(type):
         'ORBIT_YAW_BEHAVIOUR_UNCONTROLLED': 2,
         'ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE': 3,
         'ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED': 4,
+        'ORBIT_YAW_BEHAVIOUR_UNCHANGED': 5,
     }
 
     @classmethod
@@ -60,6 +68,7 @@ class Metaclass_OrbitStatus(type):
             'ORBIT_YAW_BEHAVIOUR_UNCONTROLLED': cls.__constants['ORBIT_YAW_BEHAVIOUR_UNCONTROLLED'],
             'ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE': cls.__constants['ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE'],
             'ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED': cls.__constants['ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED'],
+            'ORBIT_YAW_BEHAVIOUR_UNCHANGED': cls.__constants['ORBIT_YAW_BEHAVIOUR_UNCHANGED'],
         }
 
     @property
@@ -87,6 +96,11 @@ class Metaclass_OrbitStatus(type):
         """Message constant 'ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED'."""
         return Metaclass_OrbitStatus.__constants['ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED']
 
+    @property
+    def ORBIT_YAW_BEHAVIOUR_UNCHANGED(self):
+        """Message constant 'ORBIT_YAW_BEHAVIOUR_UNCHANGED'."""
+        return Metaclass_OrbitStatus.__constants['ORBIT_YAW_BEHAVIOUR_UNCHANGED']
+
 
 class OrbitStatus(metaclass=Metaclass_OrbitStatus):
     """
@@ -98,6 +112,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
       ORBIT_YAW_BEHAVIOUR_UNCONTROLLED
       ORBIT_YAW_BEHAVIOUR_HOLD_FRONT_TANGENT_TO_CIRCLE
       ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED
+      ORBIT_YAW_BEHAVIOUR_UNCHANGED
     """
 
     __slots__ = [
@@ -108,6 +123,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
         '_y',
         '_z',
         '_yaw_behaviour',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -120,6 +136,8 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
         'yaw_behaviour': 'uint8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -131,9 +149,14 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.radius = kwargs.get('radius', float())
         self.frame = kwargs.get('frame', int())
@@ -147,7 +170,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -161,11 +184,12 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -199,7 +223,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -214,7 +238,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
 
     @radius.setter
     def radius(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'radius' field must be of type 'float'"
@@ -229,7 +253,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
 
     @frame.setter
     def frame(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'frame' field must be of type 'int'"
@@ -244,7 +268,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
 
     @x.setter
     def x(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'x' field must be of type 'float'"
@@ -259,7 +283,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
 
     @y.setter
     def y(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'y' field must be of type 'float'"
@@ -274,7 +298,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
 
     @z.setter
     def z(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'z' field must be of type 'float'"
@@ -289,7 +313,7 @@ class OrbitStatus(metaclass=Metaclass_OrbitStatus):
 
     @yaw_behaviour.setter
     def yaw_behaviour(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'yaw_behaviour' field must be of type 'int'"

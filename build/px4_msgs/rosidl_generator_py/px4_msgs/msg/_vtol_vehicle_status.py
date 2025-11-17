@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/VtolVehicleStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -20,6 +27,7 @@ class Metaclass_VtolVehicleStatus(type):
     _TYPE_SUPPORT = None
 
     __constants = {
+        'MESSAGE_VERSION': 0,
         'VEHICLE_VTOL_STATE_UNDEFINED': 0,
         'VEHICLE_VTOL_STATE_TRANSITION_TO_FW': 1,
         'VEHICLE_VTOL_STATE_TRANSITION_TO_MC': 2,
@@ -53,12 +61,18 @@ class Metaclass_VtolVehicleStatus(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
+            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
             'VEHICLE_VTOL_STATE_UNDEFINED': cls.__constants['VEHICLE_VTOL_STATE_UNDEFINED'],
             'VEHICLE_VTOL_STATE_TRANSITION_TO_FW': cls.__constants['VEHICLE_VTOL_STATE_TRANSITION_TO_FW'],
             'VEHICLE_VTOL_STATE_TRANSITION_TO_MC': cls.__constants['VEHICLE_VTOL_STATE_TRANSITION_TO_MC'],
             'VEHICLE_VTOL_STATE_MC': cls.__constants['VEHICLE_VTOL_STATE_MC'],
             'VEHICLE_VTOL_STATE_FW': cls.__constants['VEHICLE_VTOL_STATE_FW'],
         }
+
+    @property
+    def MESSAGE_VERSION(self):
+        """Message constant 'MESSAGE_VERSION'."""
+        return Metaclass_VtolVehicleStatus.__constants['MESSAGE_VERSION']
 
     @property
     def VEHICLE_VTOL_STATE_UNDEFINED(self):
@@ -91,6 +105,7 @@ class VtolVehicleStatus(metaclass=Metaclass_VtolVehicleStatus):
     Message class 'VtolVehicleStatus'.
 
     Constants:
+      MESSAGE_VERSION
       VEHICLE_VTOL_STATE_UNDEFINED
       VEHICLE_VTOL_STATE_TRANSITION_TO_FW
       VEHICLE_VTOL_STATE_TRANSITION_TO_MC
@@ -102,6 +117,7 @@ class VtolVehicleStatus(metaclass=Metaclass_VtolVehicleStatus):
         '_timestamp',
         '_vehicle_vtol_state',
         '_fixed_wing_system_failure',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -110,6 +126,8 @@ class VtolVehicleStatus(metaclass=Metaclass_VtolVehicleStatus):
         'fixed_wing_system_failure': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
@@ -117,9 +135,14 @@ class VtolVehicleStatus(metaclass=Metaclass_VtolVehicleStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.vehicle_vtol_state = kwargs.get('vehicle_vtol_state', int())
         self.fixed_wing_system_failure = kwargs.get('fixed_wing_system_failure', bool())
@@ -129,7 +152,7 @@ class VtolVehicleStatus(metaclass=Metaclass_VtolVehicleStatus):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -143,11 +166,12 @@ class VtolVehicleStatus(metaclass=Metaclass_VtolVehicleStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -173,7 +197,7 @@ class VtolVehicleStatus(metaclass=Metaclass_VtolVehicleStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -188,7 +212,7 @@ class VtolVehicleStatus(metaclass=Metaclass_VtolVehicleStatus):
 
     @vehicle_vtol_state.setter
     def vehicle_vtol_state(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'vehicle_vtol_state' field must be of type 'int'"
@@ -203,7 +227,7 @@ class VtolVehicleStatus(metaclass=Metaclass_VtolVehicleStatus):
 
     @fixed_wing_system_failure.setter
     def fixed_wing_system_failure(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'fixed_wing_system_failure' field must be of type 'bool'"

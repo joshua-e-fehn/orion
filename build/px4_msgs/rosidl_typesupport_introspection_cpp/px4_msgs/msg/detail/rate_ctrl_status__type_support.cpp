@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/rate_ctrl_status__functions.h"
 #include "px4_msgs/msg/detail/rate_ctrl_status__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -37,12 +38,13 @@ void RateCtrlStatus_fini_function(void * message_memory)
   typed_message->~RateCtrlStatus();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember RateCtrlStatus_message_member_array[5] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember RateCtrlStatus_message_member_array[4] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -60,6 +62,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember RateCtrlStatu
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -77,6 +80,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember RateCtrlStatu
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -94,27 +98,11 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember RateCtrlStatu
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::RateCtrlStatus, yawspeed_integ),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "wheel_rate_integ",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::RateCtrlStatus, wheel_rate_integ),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -128,8 +116,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember RateCtrlStatu
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers RateCtrlStatus_message_members = {
   "px4_msgs::msg",  // message namespace
   "RateCtrlStatus",  // message name
-  5,  // number of fields
+  4,  // number of fields
   sizeof(px4_msgs::msg::RateCtrlStatus),
+  false,  // has_any_key_member_
   RateCtrlStatus_message_member_array,  // message members
   RateCtrlStatus_init_function,  // function to initialize message memory (memory has to be allocated)
   RateCtrlStatus_fini_function  // function to terminate message instance (will not free memory)
@@ -139,6 +128,9 @@ static const rosidl_message_type_support_t RateCtrlStatus_message_type_support_h
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &RateCtrlStatus_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__RateCtrlStatus__get_type_hash,
+  &px4_msgs__msg__RateCtrlStatus__get_type_description,
+  &px4_msgs__msg__RateCtrlStatus__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

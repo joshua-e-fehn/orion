@@ -31,12 +31,13 @@ void px4_msgs__msg__VehicleGlobalPosition__rosidl_typesupport_introspection_c__V
   px4_msgs__msg__VehicleGlobalPosition__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleGlobalPosition__rosidl_typesupport_introspection_c__VehicleGlobalPosition_message_member_array[14] = {
+static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleGlobalPosition__rosidl_typesupport_introspection_c__VehicleGlobalPosition_message_member_array[18] = {
   {
     "timestamp",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -54,6 +55,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -71,6 +73,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -88,6 +91,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -105,6 +109,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -122,6 +127,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -135,10 +141,47 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     NULL  // resize(index) function pointer
   },
   {
+    "lat_lon_valid",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__VehicleGlobalPosition, lat_lon_valid),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "alt_valid",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__VehicleGlobalPosition, alt_valid),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "delta_alt",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -152,10 +195,29 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     NULL  // resize(index) function pointer
   },
   {
+    "delta_terrain",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__VehicleGlobalPosition, delta_terrain),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "lat_lon_reset_counter",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -173,6 +235,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -186,10 +249,29 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     NULL  // resize(index) function pointer
   },
   {
+    "terrain_reset_counter",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__VehicleGlobalPosition, terrain_reset_counter),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "eph",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -207,6 +289,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -224,6 +307,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -241,6 +325,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -258,6 +343,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -275,8 +361,9 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleG
 static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__VehicleGlobalPosition__rosidl_typesupport_introspection_c__VehicleGlobalPosition_message_members = {
   "px4_msgs__msg",  // message namespace
   "VehicleGlobalPosition",  // message name
-  14,  // number of fields
+  18,  // number of fields
   sizeof(px4_msgs__msg__VehicleGlobalPosition),
+  false,  // has_any_key_member_
   px4_msgs__msg__VehicleGlobalPosition__rosidl_typesupport_introspection_c__VehicleGlobalPosition_message_member_array,  // message members
   px4_msgs__msg__VehicleGlobalPosition__rosidl_typesupport_introspection_c__VehicleGlobalPosition_init_function,  // function to initialize message memory (memory has to be allocated)
   px4_msgs__msg__VehicleGlobalPosition__rosidl_typesupport_introspection_c__VehicleGlobalPosition_fini_function  // function to terminate message instance (will not free memory)
@@ -288,6 +375,9 @@ static rosidl_message_type_support_t px4_msgs__msg__VehicleGlobalPosition__rosid
   0,
   &px4_msgs__msg__VehicleGlobalPosition__rosidl_typesupport_introspection_c__VehicleGlobalPosition_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__VehicleGlobalPosition__get_type_hash,
+  &px4_msgs__msg__VehicleGlobalPosition__get_type_description,
+  &px4_msgs__msg__VehicleGlobalPosition__get_type_description_sources,
 };
 
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_px4_msgs

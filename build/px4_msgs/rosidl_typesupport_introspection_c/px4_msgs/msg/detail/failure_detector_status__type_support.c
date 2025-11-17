@@ -31,12 +31,13 @@ void px4_msgs__msg__FailureDetectorStatus__rosidl_typesupport_introspection_c__F
   px4_msgs__msg__FailureDetectorStatus__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureDetectorStatus__rosidl_typesupport_introspection_c__FailureDetectorStatus_message_member_array[11] = {
+static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureDetectorStatus__rosidl_typesupport_introspection_c__FailureDetectorStatus_message_member_array[12] = {
   {
     "timestamp",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -54,6 +55,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -71,6 +73,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -88,6 +91,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -105,6 +109,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -122,6 +127,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -139,6 +145,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -156,6 +163,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -173,6 +181,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -190,6 +199,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -207,10 +217,29 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__FailureDetectorStatus, motor_failure_mask),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "motor_stop_mask",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT16,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__FailureDetectorStatus, motor_stop_mask),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -224,8 +253,9 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__FailureD
 static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__FailureDetectorStatus__rosidl_typesupport_introspection_c__FailureDetectorStatus_message_members = {
   "px4_msgs__msg",  // message namespace
   "FailureDetectorStatus",  // message name
-  11,  // number of fields
+  12,  // number of fields
   sizeof(px4_msgs__msg__FailureDetectorStatus),
+  false,  // has_any_key_member_
   px4_msgs__msg__FailureDetectorStatus__rosidl_typesupport_introspection_c__FailureDetectorStatus_message_member_array,  // message members
   px4_msgs__msg__FailureDetectorStatus__rosidl_typesupport_introspection_c__FailureDetectorStatus_init_function,  // function to initialize message memory (memory has to be allocated)
   px4_msgs__msg__FailureDetectorStatus__rosidl_typesupport_introspection_c__FailureDetectorStatus_fini_function  // function to terminate message instance (will not free memory)
@@ -237,6 +267,9 @@ static rosidl_message_type_support_t px4_msgs__msg__FailureDetectorStatus__rosid
   0,
   &px4_msgs__msg__FailureDetectorStatus__rosidl_typesupport_introspection_c__FailureDetectorStatus_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__FailureDetectorStatus__get_type_hash,
+  &px4_msgs__msg__FailureDetectorStatus__get_type_description,
+  &px4_msgs__msg__FailureDetectorStatus__get_type_description_sources,
 };
 
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_px4_msgs

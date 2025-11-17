@@ -3,6 +3,9 @@
 // with input from px4_msgs:msg/VehicleStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_status.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_STATUS__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_STATUS__STRUCT_H_
 
@@ -15,19 +18,18 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
-/// Constant 'ARMING_STATE_INIT'.
+/// Constant 'MESSAGE_VERSION'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__ARMING_STATE_INIT = 0
+  px4_msgs__msg__VehicleStatus__MESSAGE_VERSION = 1ul
 };
 
-/// Constant 'ARMING_STATE_STANDBY'.
+/// Constant 'ARMING_STATE_DISARMED'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__ARMING_STATE_STANDBY = 1
+  px4_msgs__msg__VehicleStatus__ARMING_STATE_DISARMED = 1
 };
 
 /// Constant 'ARMING_STATE_ARMED'.
@@ -36,40 +38,16 @@ enum
   px4_msgs__msg__VehicleStatus__ARMING_STATE_ARMED = 2
 };
 
-/// Constant 'ARMING_STATE_STANDBY_ERROR'.
-enum
-{
-  px4_msgs__msg__VehicleStatus__ARMING_STATE_STANDBY_ERROR = 3
-};
-
-/// Constant 'ARMING_STATE_SHUTDOWN'.
-enum
-{
-  px4_msgs__msg__VehicleStatus__ARMING_STATE_SHUTDOWN = 4
-};
-
-/// Constant 'ARMING_STATE_IN_AIR_RESTORE'.
-enum
-{
-  px4_msgs__msg__VehicleStatus__ARMING_STATE_IN_AIR_RESTORE = 5
-};
-
-/// Constant 'ARMING_STATE_MAX'.
-enum
-{
-  px4_msgs__msg__VehicleStatus__ARMING_STATE_MAX = 6
-};
-
 /// Constant 'ARM_DISARM_REASON_TRANSITION_TO_STANDBY'.
 enum
 {
   px4_msgs__msg__VehicleStatus__ARM_DISARM_REASON_TRANSITION_TO_STANDBY = 0
 };
 
-/// Constant 'ARM_DISARM_REASON_RC_STICK'.
+/// Constant 'ARM_DISARM_REASON_STICK_GESTURE'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__ARM_DISARM_REASON_RC_STICK = 1
+  px4_msgs__msg__VehicleStatus__ARM_DISARM_REASON_STICK_GESTURE = 1
 };
 
 /// Constant 'ARM_DISARM_REASON_RC_SWITCH'.
@@ -198,22 +176,31 @@ enum
   px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_AUTO_RTL = 5
 };
 
-/// Constant 'NAVIGATION_STATE_UNUSED3'.
-/**
-  * Free slot
- */
+/// Constant 'NAVIGATION_STATE_POSITION_SLOW'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_UNUSED3 = 8
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_POSITION_SLOW = 6
 };
 
-/// Constant 'NAVIGATION_STATE_UNUSED'.
+/// Constant 'NAVIGATION_STATE_FREE5'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_FREE5 = 7
+};
+
+/// Constant 'NAVIGATION_STATE_ALTITUDE_CRUISE'.
 /**
-  * Free slot
+  * Altitude with Cruise mode
  */
 enum
 {
-  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_UNUSED = 9
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_ALTITUDE_CRUISE = 8
+};
+
+/// Constant 'NAVIGATION_STATE_FREE3'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_FREE3 = 9
 };
 
 /// Constant 'NAVIGATION_STATE_ACRO'.
@@ -225,13 +212,10 @@ enum
   px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_ACRO = 10
 };
 
-/// Constant 'NAVIGATION_STATE_UNUSED1'.
-/**
-  * Free slot
- */
+/// Constant 'NAVIGATION_STATE_FREE2'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_UNUSED1 = 11
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_FREE2 = 11
 };
 
 /// Constant 'NAVIGATION_STATE_DESCEND'.
@@ -267,13 +251,10 @@ enum
   px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_STAB = 15
 };
 
-/// Constant 'NAVIGATION_STATE_UNUSED2'.
-/**
-  * Free slot
- */
+/// Constant 'NAVIGATION_STATE_FREE1'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_UNUSED2 = 16
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_FREE1 = 16
 };
 
 /// Constant 'NAVIGATION_STATE_AUTO_TAKEOFF'.
@@ -330,10 +311,58 @@ enum
   px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_AUTO_VTOL_TAKEOFF = 22
 };
 
+/// Constant 'NAVIGATION_STATE_EXTERNAL1'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL1 = 23
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL2'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL2 = 24
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL3'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL3 = 25
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL4'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL4 = 26
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL5'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL5 = 27
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL6'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL6 = 28
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL7'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL7 = 29
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL8'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL8 = 30
+};
+
 /// Constant 'NAVIGATION_STATE_MAX'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_MAX = 23
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_MAX = 31
 };
 
 /// Constant 'FAILURE_NONE'.
@@ -426,10 +455,10 @@ enum
   px4_msgs__msg__VehicleStatus__HIL_STATE_ON = 1
 };
 
-/// Constant 'VEHICLE_TYPE_UNKNOWN'.
+/// Constant 'VEHICLE_TYPE_UNSPECIFIED'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__VEHICLE_TYPE_UNKNOWN = 0
+  px4_msgs__msg__VehicleStatus__VEHICLE_TYPE_UNSPECIFIED = 0
 };
 
 /// Constant 'VEHICLE_TYPE_ROTARY_WING'.
@@ -450,10 +479,25 @@ enum
   px4_msgs__msg__VehicleStatus__VEHICLE_TYPE_ROVER = 3
 };
 
-/// Constant 'VEHICLE_TYPE_AIRSHIP'.
+/// Constant 'FAILSAFE_DEFER_STATE_DISABLED'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__VEHICLE_TYPE_AIRSHIP = 4
+  px4_msgs__msg__VehicleStatus__FAILSAFE_DEFER_STATE_DISABLED = 0
+};
+
+/// Constant 'FAILSAFE_DEFER_STATE_ENABLED'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__FAILSAFE_DEFER_STATE_ENABLED = 1
+};
+
+/// Constant 'FAILSAFE_DEFER_STATE_WOULD_FAILSAFE'.
+/**
+  * Failsafes deferred, but would trigger a failsafe
+ */
+enum
+{
+  px4_msgs__msg__VehicleStatus__FAILSAFE_DEFER_STATE_WOULD_FAILSAFE = 2
 };
 
 /// Struct defined in msg/VehicleStatus in the package px4_msgs.
@@ -477,15 +521,23 @@ typedef struct px4_msgs__msg__VehicleStatus
   uint8_t nav_state_user_intention;
   /// Currently active mode
   uint8_t nav_state;
+  /// Current mode executor in charge (0=Autopilot)
+  uint8_t executor_in_charge;
+  /// Bitmask for all valid nav_state values
+  uint32_t valid_nav_states_mask;
+  /// Bitmask for all modes that a user can select
+  uint32_t can_set_nav_states_mask;
   /// Bitmask of detected failures
   uint16_t failure_detector_status;
   uint8_t hil_state;
-  /// If it's a VTOL, then the value will be VEHICLE_TYPE_ROTARY_WING while flying as a multicopter, and VEHICLE_TYPE_FIXED_WING when flying as a fixed-wing
+  /// Current vehicle locomotion method. A vehicle can have different methods (e.g. VTOL transitions from RW to FW method)
   uint8_t vehicle_type;
   /// true if system is in failsafe state (e.g.:RTL, Hover, Terminate, ...)
   bool failsafe;
   /// true if system is in failsafe state but the user took over control
   bool failsafe_and_user_took_over;
+  /// one of FAILSAFE_DEFER_STATE_*
+  uint8_t failsafe_defer_state;
   /// Link loss
   /// datalink to GCS lost
   bool gcs_connection_lost;
@@ -521,10 +573,6 @@ typedef struct px4_msgs__msg__VehicleStatus
   bool open_drone_id_system_healthy;
   bool parachute_system_present;
   bool parachute_system_healthy;
-  /// Set to true if avoidance system is enabled via COM_OBS_AVOID parameter
-  bool avoidance_system_required;
-  /// Status of the obstacle avoidance system
-  bool avoidance_system_valid;
   bool rc_calibration_in_progress;
   bool calibration_enabled;
   /// true if all checks necessary to arm pass

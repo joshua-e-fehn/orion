@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Wrapper to run CV predictor as a module so relative imports work
+export PYTHONPATH="/home/victor-tipkemper/hackathon/orion/src/orion_flight:${PYTHONPATH:-}"
+exec python3 -m orion_flight.predictors.cv.cv_predictor_node "$@"

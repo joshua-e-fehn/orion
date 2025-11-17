@@ -51,6 +51,9 @@ class PPPlannerNode(PlannerBase):
         self.use_predictor = self.get_parameter('use_predictor').value
         self.convergence_distance = self.get_parameter('convergence_distance').value
         
+        # Max acceleration for safety
+        self.MAX_ACCEL = 1.0  # m/s²
+        
         # Initialize PP algorithm
         self.algorithm = PurePursuitAlgorithm(params)
         
@@ -278,13 +281,6 @@ class PPPlannerNode(PlannerBase):
         # Build planner input
         planner_input = self._build_planner_input(self.interceptor_state, target, using_prediction)
         
-        # Debug logging (throttled)
-        if self.offboard_setpoint_counter % 20 == 0:
-            self.get_logger().info(
-                f'Interceptor: pos=[{self.interceptor_state.x:.2f}, {self.interceptor_state.y:.2f}, {self.interceptor_state.z:.2f}], '
-                f'Target: pos=[{target.x:.2f}, {target.y:.2f}, {target.z:.2f}]'
-            )
-        
         # Compute guidance
         planner_output = self.compute_guidance(planner_input)
         
@@ -317,9 +313,12 @@ class PPPlannerNode(PlannerBase):
             prediction_available=using_prediction
         )
     
+
+
+
     def compute_guidance(self, planner_input: PlannerInput) -> PlannerOutput:
         """
-        Compute Pure Pursuit guidance command.
+        Compute Pure Pursuit guidance command pointing directly toward the target.
         
         Args:
             planner_input: Current states
@@ -327,49 +326,86 @@ class PPPlannerNode(PlannerBase):
         Returns:
             PlannerOutput with commanded setpoints
         """
-        # Call PP algorithm
-        result = self.algorithm.compute_command(
-            p_i=planner_input.interceptor_position,
-            v_i=planner_input.interceptor_velocity,
-            p_t=planner_input.target_position,
-            v_t=planner_input.target_velocity
-        )
+        # Vector from interceptor to target
+        direction = planner_input.target_position - planner_input.interceptor_position
+        distance = np.linalg.norm(direction)
         
-        # Build output
+        if distance > 0.0:
+            direction_unit = direction / distance
+        else:
+            direction_unit = np.zeros(3)
+        
+        # Pure Pursuit acceleration command
+        acc_command = self.algorithm.G_pp * direction_unit
+        
+        # Clamp acceleration magnitude to MAX_ACCEL
+        acc_norm = np.linalg.norm(acc_command)
+        if acc_norm > self.MAX_ACCEL:
+            acc_command = acc_command / acc_norm * self.MAX_ACCEL
+        
+        # Optional: compute velocity command as smoothed approach toward target
+        desired_speed = min(np.linalg.norm(planner_input.interceptor_velocity) + 1.0, 5.0)  # m/s
+        vel_command = direction_unit * desired_speed
+        
+        # Position command: current position + small step toward target
+        pos_command = planner_input.interceptor_position + direction_unit * 0.5  # 0.5 m step
+        
+        # Time-to-go and miss distance for reporting
+        tgo = distance / max(np.linalg.norm(vel_command), 1e-3)
+        miss_distance = distance
+        
         return PlannerOutput(
             timestamp=planner_input.timestamp,
-            commanded_acceleration=result['acceleration'],
-            commanded_velocity=result['velocity'],
-            commanded_position=result['position'],
-            commanded_yaw=0.0,  # PP doesn't specify yaw
+            commanded_acceleration=acc_command,
+            commanded_velocity=vel_command,
+            commanded_position=pos_command,
+            commanded_yaw=0.0,
             commanded_yaw_rate=0.0,
-            time_to_go=result['tgo'],
-            closing_velocity=result['closing_velocity'],
-            miss_distance=result['miss_distance'],
+            time_to_go=tgo,
+            closing_velocity=np.dot(planner_input.target_velocity - planner_input.interceptor_velocity, direction_unit),
+            miss_distance=miss_distance,
             is_valid=True,
             guidance_active=True
         )
-    
-    def _publish_trajectory_setpoint(self, output: PlannerOutput):
-        """Publish trajectory setpoint to PX4 (adjusted to avoid JSON errors)."""
-        msg = TrajectorySetpoint()
-        msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
 
-        # Ensure all values are plain floats, and lists are the correct length
-        msg.position = [float(x) for x in output.commanded_position[:3]]  # NED
-        msg.velocity = [float(v) for v in output.commanded_velocity[:3]]  # NED
-        msg.acceleration = [float(a) for a in output.commanded_acceleration[:3]]  # NED
-        msg.yaw = float(output.commanded_yaw)
-        
-        # Debug logging (throttled)
+
+    def _publish_trajectory_setpoint(self, output: PlannerOutput):
+        """
+        Publish trajectory setpoint to PX4 with proper direction and clamped magnitude.
+        """
+        msg = TrajectorySetpoint()
+        now = self.get_clock().now()
+        msg.timestamp = int(now.nanoseconds / 1000)
+
+        # Position: move slightly toward target
+        msg.position = [
+            float(output.commanded_position[0]),  # add 0.5 m offset in x
+            float(output.commanded_position[1]),
+            float(output.commanded_position[2])
+        ]
+
+        # Velocity: direct toward target
+        msg.velocity = [float(v) for v in output.commanded_velocity[:3]]
+
+        # Acceleration: clamp vector magnitude
+        acc = np.array(output.commanded_acceleration[:3], dtype=float)
+        acc_norm = np.linalg.norm(acc)
+        if acc_norm > self.MAX_ACCEL:
+            acc = acc / acc_norm * self.MAX_ACCEL
+        msg.acceleration = acc.tolist()
+
+        # Yaw (optional, can keep 0)
+        msg.yaw = float(output.commanded_yaw) if output.commanded_yaw is not None else 0.0
+
+        # Publish
+        self.trajectory_pub.publish(msg)
+
+        # Debug logging every 20 commands
         if self.algorithm.get_command_count() % 20 == 0:
             self.get_logger().info(
-                f'Setpoint: pos=[{msg.position[0]:.2f}, {msg.position[1]:.2f}, {msg.position[2]:.2f}], '
-                f'vel=[{msg.velocity[0]:.2f}, {msg.velocity[1]:.2f}, {msg.velocity[2]:.2f}], '
-                f'accel=[{msg.acceleration[0]:.2f}, {msg.acceleration[1]:.2f}, {msg.acceleration[2]:.2f}]'
+                f'Setpoint -> pos: {msg.position}, vel: {msg.velocity}, accel: {msg.acceleration}'
             )
 
-        self.trajectory_pub.publish(msg)
 
     
     def _publish_offboard_heartbeat(self):
@@ -378,7 +414,7 @@ class PPPlannerNode(PlannerBase):
         msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
         msg.position = True
         msg.velocity = True
-        msg.acceleration = False
+        msg.acceleration = True
         msg.attitude = False
         msg.body_rate = False
         

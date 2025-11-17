@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/RateCtrlStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/rate_ctrl_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__RATE_CTRL_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__RATE_CTRL_STATUS__STRUCT_HPP_
 
@@ -42,7 +45,6 @@ struct RateCtrlStatus_
       this->rollspeed_integ = 0.0f;
       this->pitchspeed_integ = 0.0f;
       this->yawspeed_integ = 0.0f;
-      this->wheel_rate_integ = 0.0f;
     }
   }
 
@@ -56,7 +58,6 @@ struct RateCtrlStatus_
       this->rollspeed_integ = 0.0f;
       this->pitchspeed_integ = 0.0f;
       this->yawspeed_integ = 0.0f;
-      this->wheel_rate_integ = 0.0f;
     }
   }
 
@@ -73,9 +74,6 @@ struct RateCtrlStatus_
   using _yawspeed_integ_type =
     float;
   _yawspeed_integ_type yawspeed_integ;
-  using _wheel_rate_integ_type =
-    float;
-  _wheel_rate_integ_type wheel_rate_integ;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -100,12 +98,6 @@ struct RateCtrlStatus_
     const float & _arg)
   {
     this->yawspeed_integ = _arg;
-    return *this;
-  }
-  Type & set__wheel_rate_integ(
-    const float & _arg)
-  {
-    this->wheel_rate_integ = _arg;
     return *this;
   }
 
@@ -161,9 +153,6 @@ struct RateCtrlStatus_
       return false;
     }
     if (this->yawspeed_integ != other.yawspeed_integ) {
-      return false;
-    }
-    if (this->wheel_rate_integ != other.wheel_rate_integ) {
       return false;
     }
     return true;

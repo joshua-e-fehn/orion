@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/RateCtrlStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/rate_ctrl_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__RATE_CTRL_STATUS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__RATE_CTRL_STATUS__TRAITS_HPP_
 
@@ -50,13 +53,6 @@ inline void to_flow_style_yaml(
   {
     out << "yawspeed_integ: ";
     rosidl_generator_traits::value_to_yaml(msg.yawspeed_integ, out);
-    out << ", ";
-  }
-
-  // member: wheel_rate_integ
-  {
-    out << "wheel_rate_integ: ";
-    rosidl_generator_traits::value_to_yaml(msg.wheel_rate_integ, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -102,16 +98,6 @@ inline void to_block_style_yaml(
     }
     out << "yawspeed_integ: ";
     rosidl_generator_traits::value_to_yaml(msg.yawspeed_integ, out);
-    out << "\n";
-  }
-
-  // member: wheel_rate_integ
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "wheel_rate_integ: ";
-    rosidl_generator_traits::value_to_yaml(msg.wheel_rate_integ, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

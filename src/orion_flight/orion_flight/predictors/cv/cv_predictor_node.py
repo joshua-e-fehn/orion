@@ -8,6 +8,8 @@ assuming the target maintains constant velocity.
 
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
+
 from px4_msgs.msg import VehicleLocalPosition
 from visualization_msgs.msg import MarkerArray
 import numpy as np
@@ -38,14 +40,22 @@ class CVPredictorNode(Node):
         }
         
         self.cv_model = CVModel(process_noise, measurement_noise)
+         # QoS profile for PX4 topics (BEST_EFFORT reliability)
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=1
+        )
         
+
         # Create subscribers
-        target_topic = f'/{self.target_namespace}/fmu/out/vehicle_local_position'
+        target_topic = f'/{self.target_namespace}/fmu/out/vehicle_local_position_v1'
         self.target_sub = self.create_subscription(
             VehicleLocalPosition,
             target_topic,
             self.target_callback,
-            10
+            qos_profile
         )
         
         # Create publishers
@@ -90,7 +100,7 @@ class CVPredictorNode(Node):
         print("\n" + "="*70)
         print("  CV PREDICTOR NODE - DEBUG MODE")
         print("="*70)
-        print(f"  Subscribing to: /{self.target_namespace}/fmu/out/vehicle_local_position")
+        print(f"  Subscribing to: /{self.target_namespace}/fmu/out/vehicle_local_position_v1")
         print(f"  Publishing predictions to: /target/predicted_state")
         print(f"  Publishing markers to: /target/prediction_markers")
         print(f"  Waiting for first measurement from target drone...")
@@ -291,7 +301,11 @@ class CVPredictorNode(Node):
         predictions = []
         for horizon in self.prediction_horizons:
             try:
-                pos, vel, pos_cov, vel_cov = self.cv_model.predict(horizon)
+                pos, vel, full_cov = self.cv_model.predict(horizon)
+                
+                # Extract position and velocity covariances from full 6x6 covariance
+                pos_cov = full_cov[0:3, 0:3]
+                vel_cov = full_cov[3:6, 3:6]
                 
                 # Create PredictorOutput
                 pred_output = PredictorOutput(

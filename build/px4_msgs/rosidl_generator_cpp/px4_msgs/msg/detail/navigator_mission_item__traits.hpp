@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/NavigatorMissionItem.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/navigator_mission_item.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__NAVIGATOR_MISSION_ITEM__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__NAVIGATOR_MISSION_ITEM__TRAITS_HPP_
 
@@ -29,13 +32,6 @@ inline void to_flow_style_yaml(
   {
     out << "timestamp: ";
     rosidl_generator_traits::value_to_yaml(msg.timestamp, out);
-    out << ", ";
-  }
-
-  // member: instance_count
-  {
-    out << "instance_count: ";
-    rosidl_generator_traits::value_to_yaml(msg.instance_count, out);
     out << ", ";
   }
 
@@ -163,16 +159,6 @@ inline void to_block_style_yaml(
     }
     out << "timestamp: ";
     rosidl_generator_traits::value_to_yaml(msg.timestamp, out);
-    out << "\n";
-  }
-
-  // member: instance_count
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "instance_count: ";
-    rosidl_generator_traits::value_to_yaml(msg.instance_count, out);
     out << "\n";
   }
 

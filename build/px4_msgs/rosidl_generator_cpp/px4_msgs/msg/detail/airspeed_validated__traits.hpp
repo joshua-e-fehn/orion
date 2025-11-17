@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/AirspeedValidated.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/airspeed_validated.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__AIRSPEED_VALIDATED__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__AIRSPEED_VALIDATED__TRAITS_HPP_
 
@@ -53,6 +56,13 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: airspeed_source
+  {
+    out << "airspeed_source: ";
+    rosidl_generator_traits::value_to_yaml(msg.airspeed_source, out);
+    out << ", ";
+  }
+
   // member: calibrated_ground_minus_wind_m_s
   {
     out << "calibrated_ground_minus_wind_m_s: ";
@@ -60,24 +70,31 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: true_ground_minus_wind_m_s
+  // member: calibraded_airspeed_synth_m_s
   {
-    out << "true_ground_minus_wind_m_s: ";
-    rosidl_generator_traits::value_to_yaml(msg.true_ground_minus_wind_m_s, out);
+    out << "calibraded_airspeed_synth_m_s: ";
+    rosidl_generator_traits::value_to_yaml(msg.calibraded_airspeed_synth_m_s, out);
     out << ", ";
   }
 
-  // member: airspeed_sensor_measurement_valid
+  // member: airspeed_derivative_filtered
   {
-    out << "airspeed_sensor_measurement_valid: ";
-    rosidl_generator_traits::value_to_yaml(msg.airspeed_sensor_measurement_valid, out);
+    out << "airspeed_derivative_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.airspeed_derivative_filtered, out);
     out << ", ";
   }
 
-  // member: selected_airspeed_index
+  // member: throttle_filtered
   {
-    out << "selected_airspeed_index: ";
-    rosidl_generator_traits::value_to_yaml(msg.selected_airspeed_index, out);
+    out << "throttle_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.throttle_filtered, out);
+    out << ", ";
+  }
+
+  // member: pitch_filtered
+  {
+    out << "pitch_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.pitch_filtered, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -126,6 +143,16 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
+  // member: airspeed_source
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "airspeed_source: ";
+    rosidl_generator_traits::value_to_yaml(msg.airspeed_source, out);
+    out << "\n";
+  }
+
   // member: calibrated_ground_minus_wind_m_s
   {
     if (indentation > 0) {
@@ -136,33 +163,43 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: true_ground_minus_wind_m_s
+  // member: calibraded_airspeed_synth_m_s
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "true_ground_minus_wind_m_s: ";
-    rosidl_generator_traits::value_to_yaml(msg.true_ground_minus_wind_m_s, out);
+    out << "calibraded_airspeed_synth_m_s: ";
+    rosidl_generator_traits::value_to_yaml(msg.calibraded_airspeed_synth_m_s, out);
     out << "\n";
   }
 
-  // member: airspeed_sensor_measurement_valid
+  // member: airspeed_derivative_filtered
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "airspeed_sensor_measurement_valid: ";
-    rosidl_generator_traits::value_to_yaml(msg.airspeed_sensor_measurement_valid, out);
+    out << "airspeed_derivative_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.airspeed_derivative_filtered, out);
     out << "\n";
   }
 
-  // member: selected_airspeed_index
+  // member: throttle_filtered
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "selected_airspeed_index: ";
-    rosidl_generator_traits::value_to_yaml(msg.selected_airspeed_index, out);
+    out << "throttle_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.throttle_filtered, out);
+    out << "\n";
+  }
+
+  // member: pitch_filtered
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "pitch_filtered: ";
+    rosidl_generator_traits::value_to_yaml(msg.pitch_filtered, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

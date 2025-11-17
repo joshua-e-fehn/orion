@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/AutotuneAttitudeControlStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/autotune_attitude_control_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__AUTOTUNE_ATTITUDE_CONTROL_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__AUTOTUNE_ATTITUDE_CONTROL_STATUS__STRUCT_HPP_
 
@@ -226,30 +229,36 @@ struct AutotuneAttitudeControlStatus_
     0u;
   static constexpr uint8_t STATE_INIT =
     1u;
-  static constexpr uint8_t STATE_ROLL =
+  static constexpr uint8_t STATE_ROLL_AMPLITUDE_DETECTION =
     2u;
-  static constexpr uint8_t STATE_ROLL_PAUSE =
+  static constexpr uint8_t STATE_ROLL =
     3u;
-  static constexpr uint8_t STATE_PITCH =
+  static constexpr uint8_t STATE_ROLL_PAUSE =
     4u;
-  static constexpr uint8_t STATE_PITCH_PAUSE =
+  static constexpr uint8_t STATE_PITCH_AMPLITUDE_DETECTION =
     5u;
-  static constexpr uint8_t STATE_YAW =
+  static constexpr uint8_t STATE_PITCH =
     6u;
-  static constexpr uint8_t STATE_YAW_PAUSE =
+  static constexpr uint8_t STATE_PITCH_PAUSE =
     7u;
-  static constexpr uint8_t STATE_VERIFICATION =
+  static constexpr uint8_t STATE_YAW_AMPLITUDE_DETECTION =
     8u;
-  static constexpr uint8_t STATE_APPLY =
+  static constexpr uint8_t STATE_YAW =
     9u;
-  static constexpr uint8_t STATE_TEST =
+  static constexpr uint8_t STATE_YAW_PAUSE =
     10u;
-  static constexpr uint8_t STATE_COMPLETE =
+  static constexpr uint8_t STATE_VERIFICATION =
     11u;
-  static constexpr uint8_t STATE_FAIL =
+  static constexpr uint8_t STATE_APPLY =
     12u;
-  static constexpr uint8_t STATE_WAIT_FOR_DISARM =
+  static constexpr uint8_t STATE_TEST =
     13u;
+  static constexpr uint8_t STATE_COMPLETE =
+    14u;
+  static constexpr uint8_t STATE_FAIL =
+    15u;
+  static constexpr uint8_t STATE_WAIT_FOR_DISARM =
+    16u;
 
   // pointer types
   using RawPtr =
@@ -362,6 +371,11 @@ constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_INIT
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
+constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_ROLL_AMPLITUDE_DETECTION;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
 constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_ROLL;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
@@ -372,12 +386,22 @@ constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_ROLL
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
+constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_PITCH_AMPLITUDE_DETECTION;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
 constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_PITCH;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
 constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_PITCH_PAUSE;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint8_t AutotuneAttitudeControlStatus_<ContainerAllocator>::STATE_YAW_AMPLITUDE_DETECTION;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/PositionSetpoint.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -28,6 +35,8 @@ class Metaclass_PositionSetpoint(type):
         'SETPOINT_TYPE_TAKEOFF': 3,
         'SETPOINT_TYPE_LAND': 4,
         'SETPOINT_TYPE_IDLE': 5,
+        'LOITER_TYPE_ORBIT': 0,
+        'LOITER_TYPE_FIGUREEIGHT': 1,
     }
 
     @classmethod
@@ -62,6 +71,8 @@ class Metaclass_PositionSetpoint(type):
             'SETPOINT_TYPE_TAKEOFF': cls.__constants['SETPOINT_TYPE_TAKEOFF'],
             'SETPOINT_TYPE_LAND': cls.__constants['SETPOINT_TYPE_LAND'],
             'SETPOINT_TYPE_IDLE': cls.__constants['SETPOINT_TYPE_IDLE'],
+            'LOITER_TYPE_ORBIT': cls.__constants['LOITER_TYPE_ORBIT'],
+            'LOITER_TYPE_FIGUREEIGHT': cls.__constants['LOITER_TYPE_FIGUREEIGHT'],
         }
 
     @property
@@ -94,6 +105,16 @@ class Metaclass_PositionSetpoint(type):
         """Message constant 'SETPOINT_TYPE_IDLE'."""
         return Metaclass_PositionSetpoint.__constants['SETPOINT_TYPE_IDLE']
 
+    @property
+    def LOITER_TYPE_ORBIT(self):
+        """Message constant 'LOITER_TYPE_ORBIT'."""
+        return Metaclass_PositionSetpoint.__constants['LOITER_TYPE_ORBIT']
+
+    @property
+    def LOITER_TYPE_FIGUREEIGHT(self):
+        """Message constant 'LOITER_TYPE_FIGUREEIGHT'."""
+        return Metaclass_PositionSetpoint.__constants['LOITER_TYPE_FIGUREEIGHT']
+
 
 class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
     """
@@ -106,6 +127,8 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
       SETPOINT_TYPE_TAKEOFF
       SETPOINT_TYPE_LAND
       SETPOINT_TYPE_IDLE
+      LOITER_TYPE_ORBIT
+      LOITER_TYPE_FIGUREEIGHT
     """
 
     __slots__ = [
@@ -119,16 +142,17 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
         '_lon',
         '_alt',
         '_yaw',
-        '_yaw_valid',
-        '_yawspeed',
-        '_yawspeed_valid',
         '_loiter_radius',
+        '_loiter_minor_radius',
         '_loiter_direction_counter_clockwise',
+        '_loiter_orientation',
+        '_loiter_pattern',
         '_acceptance_radius',
+        '_alt_acceptance_radius',
         '_cruising_speed',
         '_gliding_enabled',
         '_cruising_throttle',
-        '_disable_weather_vane',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -142,18 +166,20 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
         'lon': 'double',
         'alt': 'float',
         'yaw': 'float',
-        'yaw_valid': 'boolean',
-        'yawspeed': 'float',
-        'yawspeed_valid': 'boolean',
         'loiter_radius': 'float',
+        'loiter_minor_radius': 'float',
         'loiter_direction_counter_clockwise': 'boolean',
+        'loiter_orientation': 'float',
+        'loiter_pattern': 'uint8',
         'acceptance_radius': 'float',
+        'alt_acceptance_radius': 'float',
         'cruising_speed': 'float',
         'gliding_enabled': 'boolean',
         'cruising_throttle': 'float',
-        'disable_weather_vane': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
@@ -165,22 +191,27 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.valid = kwargs.get('valid', bool())
         self.type = kwargs.get('type', int())
@@ -191,23 +222,23 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
         self.lon = kwargs.get('lon', float())
         self.alt = kwargs.get('alt', float())
         self.yaw = kwargs.get('yaw', float())
-        self.yaw_valid = kwargs.get('yaw_valid', bool())
-        self.yawspeed = kwargs.get('yawspeed', float())
-        self.yawspeed_valid = kwargs.get('yawspeed_valid', bool())
         self.loiter_radius = kwargs.get('loiter_radius', float())
+        self.loiter_minor_radius = kwargs.get('loiter_minor_radius', float())
         self.loiter_direction_counter_clockwise = kwargs.get('loiter_direction_counter_clockwise', bool())
+        self.loiter_orientation = kwargs.get('loiter_orientation', float())
+        self.loiter_pattern = kwargs.get('loiter_pattern', int())
         self.acceptance_radius = kwargs.get('acceptance_radius', float())
+        self.alt_acceptance_radius = kwargs.get('alt_acceptance_radius', float())
         self.cruising_speed = kwargs.get('cruising_speed', float())
         self.gliding_enabled = kwargs.get('gliding_enabled', bool())
         self.cruising_throttle = kwargs.get('cruising_throttle', float())
-        self.disable_weather_vane = kwargs.get('disable_weather_vane', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -221,11 +252,12 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -251,25 +283,25 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
             return False
         if self.yaw != other.yaw:
             return False
-        if self.yaw_valid != other.yaw_valid:
-            return False
-        if self.yawspeed != other.yawspeed:
-            return False
-        if self.yawspeed_valid != other.yawspeed_valid:
-            return False
         if self.loiter_radius != other.loiter_radius:
+            return False
+        if self.loiter_minor_radius != other.loiter_minor_radius:
             return False
         if self.loiter_direction_counter_clockwise != other.loiter_direction_counter_clockwise:
             return False
+        if self.loiter_orientation != other.loiter_orientation:
+            return False
+        if self.loiter_pattern != other.loiter_pattern:
+            return False
         if self.acceptance_radius != other.acceptance_radius:
+            return False
+        if self.alt_acceptance_radius != other.alt_acceptance_radius:
             return False
         if self.cruising_speed != other.cruising_speed:
             return False
         if self.gliding_enabled != other.gliding_enabled:
             return False
         if self.cruising_throttle != other.cruising_throttle:
-            return False
-        if self.disable_weather_vane != other.disable_weather_vane:
             return False
         return True
 
@@ -285,7 +317,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -300,7 +332,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @valid.setter
     def valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'valid' field must be of type 'bool'"
@@ -313,7 +345,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @type.setter  # noqa: A003
     def type(self, value):  # noqa: A003
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'type' field must be of type 'int'"
@@ -328,7 +360,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @vx.setter
     def vx(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'vx' field must be of type 'float'"
@@ -343,7 +375,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @vy.setter
     def vy(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'vy' field must be of type 'float'"
@@ -358,7 +390,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @vz.setter
     def vz(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'vz' field must be of type 'float'"
@@ -373,7 +405,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @lat.setter
     def lat(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'lat' field must be of type 'float'"
@@ -388,7 +420,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @lon.setter
     def lon(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'lon' field must be of type 'float'"
@@ -403,7 +435,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @alt.setter
     def alt(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'alt' field must be of type 'float'"
@@ -418,7 +450,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @yaw.setter
     def yaw(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'yaw' field must be of type 'float'"
@@ -427,54 +459,13 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
         self._yaw = value
 
     @builtins.property
-    def yaw_valid(self):
-        """Message field 'yaw_valid'."""
-        return self._yaw_valid
-
-    @yaw_valid.setter
-    def yaw_valid(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'yaw_valid' field must be of type 'bool'"
-        self._yaw_valid = value
-
-    @builtins.property
-    def yawspeed(self):
-        """Message field 'yawspeed'."""
-        return self._yawspeed
-
-    @yawspeed.setter
-    def yawspeed(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'yawspeed' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'yawspeed' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._yawspeed = value
-
-    @builtins.property
-    def yawspeed_valid(self):
-        """Message field 'yawspeed_valid'."""
-        return self._yawspeed_valid
-
-    @yawspeed_valid.setter
-    def yawspeed_valid(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'yawspeed_valid' field must be of type 'bool'"
-        self._yawspeed_valid = value
-
-    @builtins.property
     def loiter_radius(self):
         """Message field 'loiter_radius'."""
         return self._loiter_radius
 
     @loiter_radius.setter
     def loiter_radius(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'loiter_radius' field must be of type 'float'"
@@ -483,17 +474,62 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
         self._loiter_radius = value
 
     @builtins.property
+    def loiter_minor_radius(self):
+        """Message field 'loiter_minor_radius'."""
+        return self._loiter_minor_radius
+
+    @loiter_minor_radius.setter
+    def loiter_minor_radius(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'loiter_minor_radius' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'loiter_minor_radius' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._loiter_minor_radius = value
+
+    @builtins.property
     def loiter_direction_counter_clockwise(self):
         """Message field 'loiter_direction_counter_clockwise'."""
         return self._loiter_direction_counter_clockwise
 
     @loiter_direction_counter_clockwise.setter
     def loiter_direction_counter_clockwise(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'loiter_direction_counter_clockwise' field must be of type 'bool'"
         self._loiter_direction_counter_clockwise = value
+
+    @builtins.property
+    def loiter_orientation(self):
+        """Message field 'loiter_orientation'."""
+        return self._loiter_orientation
+
+    @loiter_orientation.setter
+    def loiter_orientation(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'loiter_orientation' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'loiter_orientation' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._loiter_orientation = value
+
+    @builtins.property
+    def loiter_pattern(self):
+        """Message field 'loiter_pattern'."""
+        return self._loiter_pattern
+
+    @loiter_pattern.setter
+    def loiter_pattern(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'loiter_pattern' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'loiter_pattern' field must be an unsigned integer in [0, 255]"
+        self._loiter_pattern = value
 
     @builtins.property
     def acceptance_radius(self):
@@ -502,7 +538,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @acceptance_radius.setter
     def acceptance_radius(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'acceptance_radius' field must be of type 'float'"
@@ -511,13 +547,28 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
         self._acceptance_radius = value
 
     @builtins.property
+    def alt_acceptance_radius(self):
+        """Message field 'alt_acceptance_radius'."""
+        return self._alt_acceptance_radius
+
+    @alt_acceptance_radius.setter
+    def alt_acceptance_radius(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'alt_acceptance_radius' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'alt_acceptance_radius' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._alt_acceptance_radius = value
+
+    @builtins.property
     def cruising_speed(self):
         """Message field 'cruising_speed'."""
         return self._cruising_speed
 
     @cruising_speed.setter
     def cruising_speed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'cruising_speed' field must be of type 'float'"
@@ -532,7 +583,7 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @gliding_enabled.setter
     def gliding_enabled(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'gliding_enabled' field must be of type 'bool'"
@@ -545,23 +596,10 @@ class PositionSetpoint(metaclass=Metaclass_PositionSetpoint):
 
     @cruising_throttle.setter
     def cruising_throttle(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'cruising_throttle' field must be of type 'float'"
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
                 "The 'cruising_throttle' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
         self._cruising_throttle = value
-
-    @builtins.property
-    def disable_weather_vane(self):
-        """Message field 'disable_weather_vane'."""
-        return self._disable_weather_vane
-
-    @disable_weather_vane.setter
-    def disable_weather_vane(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'disable_weather_vane' field must be of type 'bool'"
-        self._disable_weather_vane = value

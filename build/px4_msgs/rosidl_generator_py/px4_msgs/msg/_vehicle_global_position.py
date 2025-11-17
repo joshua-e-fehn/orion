@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/VehicleGlobalPosition.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -22,6 +29,7 @@ class Metaclass_VehicleGlobalPosition(type):
     _TYPE_SUPPORT = None
 
     __constants = {
+        'MESSAGE_VERSION': 0,
     }
 
     @classmethod
@@ -50,11 +58,22 @@ class Metaclass_VehicleGlobalPosition(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
+            'MESSAGE_VERSION': cls.__constants['MESSAGE_VERSION'],
         }
+
+    @property
+    def MESSAGE_VERSION(self):
+        """Message constant 'MESSAGE_VERSION'."""
+        return Metaclass_VehicleGlobalPosition.__constants['MESSAGE_VERSION']
 
 
 class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
-    """Message class 'VehicleGlobalPosition'."""
+    """
+    Message class 'VehicleGlobalPosition'.
+
+    Constants:
+      MESSAGE_VERSION
+    """
 
     __slots__ = [
         '_timestamp',
@@ -63,14 +82,19 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
         '_lon',
         '_alt',
         '_alt_ellipsoid',
+        '_lat_lon_valid',
+        '_alt_valid',
         '_delta_alt',
+        '_delta_terrain',
         '_lat_lon_reset_counter',
         '_alt_reset_counter',
+        '_terrain_reset_counter',
         '_eph',
         '_epv',
         '_terrain_alt',
         '_terrain_alt_valid',
         '_dead_reckoning',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -80,9 +104,13 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
         'lon': 'double',
         'alt': 'float',
         'alt_ellipsoid': 'float',
+        'lat_lon_valid': 'boolean',
+        'alt_valid': 'boolean',
         'delta_alt': 'float',
+        'delta_terrain': 'float',
         'lat_lon_reset_counter': 'uint8',
         'alt_reset_counter': 'uint8',
+        'terrain_reset_counter': 'uint8',
         'eph': 'float',
         'epv': 'float',
         'terrain_alt': 'float',
@@ -90,6 +118,8 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
         'dead_reckoning': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -97,7 +127,11 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -108,18 +142,27 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.lat = kwargs.get('lat', float())
         self.lon = kwargs.get('lon', float())
         self.alt = kwargs.get('alt', float())
         self.alt_ellipsoid = kwargs.get('alt_ellipsoid', float())
+        self.lat_lon_valid = kwargs.get('lat_lon_valid', bool())
+        self.alt_valid = kwargs.get('alt_valid', bool())
         self.delta_alt = kwargs.get('delta_alt', float())
+        self.delta_terrain = kwargs.get('delta_terrain', float())
         self.lat_lon_reset_counter = kwargs.get('lat_lon_reset_counter', int())
         self.alt_reset_counter = kwargs.get('alt_reset_counter', int())
+        self.terrain_reset_counter = kwargs.get('terrain_reset_counter', int())
         self.eph = kwargs.get('eph', float())
         self.epv = kwargs.get('epv', float())
         self.terrain_alt = kwargs.get('terrain_alt', float())
@@ -131,7 +174,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -145,11 +188,12 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -167,11 +211,19 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
             return False
         if self.alt_ellipsoid != other.alt_ellipsoid:
             return False
+        if self.lat_lon_valid != other.lat_lon_valid:
+            return False
+        if self.alt_valid != other.alt_valid:
+            return False
         if self.delta_alt != other.delta_alt:
+            return False
+        if self.delta_terrain != other.delta_terrain:
             return False
         if self.lat_lon_reset_counter != other.lat_lon_reset_counter:
             return False
         if self.alt_reset_counter != other.alt_reset_counter:
+            return False
+        if self.terrain_reset_counter != other.terrain_reset_counter:
             return False
         if self.eph != other.eph:
             return False
@@ -197,7 +249,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -212,7 +264,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -227,7 +279,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @lat.setter
     def lat(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'lat' field must be of type 'float'"
@@ -242,7 +294,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @lon.setter
     def lon(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'lon' field must be of type 'float'"
@@ -257,7 +309,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @alt.setter
     def alt(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'alt' field must be of type 'float'"
@@ -272,7 +324,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @alt_ellipsoid.setter
     def alt_ellipsoid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'alt_ellipsoid' field must be of type 'float'"
@@ -281,13 +333,39 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
         self._alt_ellipsoid = value
 
     @builtins.property
+    def lat_lon_valid(self):
+        """Message field 'lat_lon_valid'."""
+        return self._lat_lon_valid
+
+    @lat_lon_valid.setter
+    def lat_lon_valid(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, bool), \
+                "The 'lat_lon_valid' field must be of type 'bool'"
+        self._lat_lon_valid = value
+
+    @builtins.property
+    def alt_valid(self):
+        """Message field 'alt_valid'."""
+        return self._alt_valid
+
+    @alt_valid.setter
+    def alt_valid(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, bool), \
+                "The 'alt_valid' field must be of type 'bool'"
+        self._alt_valid = value
+
+    @builtins.property
     def delta_alt(self):
         """Message field 'delta_alt'."""
         return self._delta_alt
 
     @delta_alt.setter
     def delta_alt(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'delta_alt' field must be of type 'float'"
@@ -296,13 +374,28 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
         self._delta_alt = value
 
     @builtins.property
+    def delta_terrain(self):
+        """Message field 'delta_terrain'."""
+        return self._delta_terrain
+
+    @delta_terrain.setter
+    def delta_terrain(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'delta_terrain' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'delta_terrain' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._delta_terrain = value
+
+    @builtins.property
     def lat_lon_reset_counter(self):
         """Message field 'lat_lon_reset_counter'."""
         return self._lat_lon_reset_counter
 
     @lat_lon_reset_counter.setter
     def lat_lon_reset_counter(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'lat_lon_reset_counter' field must be of type 'int'"
@@ -317,7 +410,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @alt_reset_counter.setter
     def alt_reset_counter(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'alt_reset_counter' field must be of type 'int'"
@@ -326,13 +419,28 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
         self._alt_reset_counter = value
 
     @builtins.property
+    def terrain_reset_counter(self):
+        """Message field 'terrain_reset_counter'."""
+        return self._terrain_reset_counter
+
+    @terrain_reset_counter.setter
+    def terrain_reset_counter(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'terrain_reset_counter' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'terrain_reset_counter' field must be an unsigned integer in [0, 255]"
+        self._terrain_reset_counter = value
+
+    @builtins.property
     def eph(self):
         """Message field 'eph'."""
         return self._eph
 
     @eph.setter
     def eph(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'eph' field must be of type 'float'"
@@ -347,7 +455,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @epv.setter
     def epv(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'epv' field must be of type 'float'"
@@ -362,7 +470,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @terrain_alt.setter
     def terrain_alt(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'terrain_alt' field must be of type 'float'"
@@ -377,7 +485,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @terrain_alt_valid.setter
     def terrain_alt_valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'terrain_alt_valid' field must be of type 'bool'"
@@ -390,7 +498,7 @@ class VehicleGlobalPosition(metaclass=Metaclass_VehicleGlobalPosition):
 
     @dead_reckoning.setter
     def dead_reckoning(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'dead_reckoning' field must be of type 'bool'"

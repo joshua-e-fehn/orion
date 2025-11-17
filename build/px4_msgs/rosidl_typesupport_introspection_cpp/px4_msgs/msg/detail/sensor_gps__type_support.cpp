@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/sensor_gps__functions.h"
 #include "px4_msgs/msg/detail/sensor_gps__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -37,12 +38,13 @@ void SensorGps_fini_function(void * message_memory)
   typed_message->~SensorGps();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_message_member_array[33] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_message_member_array[37] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -60,6 +62,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -77,6 +80,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -90,14 +94,15 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     nullptr  // resize(index) function pointer
   },
   {
-    "lat",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    "latitude_deg",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::SensorGps, lat),  // bytes offset in struct
+    offsetof(px4_msgs::msg::SensorGps, latitude_deg),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -107,14 +112,15 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     nullptr  // resize(index) function pointer
   },
   {
-    "lon",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    "longitude_deg",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::SensorGps, lon),  // bytes offset in struct
+    offsetof(px4_msgs::msg::SensorGps, longitude_deg),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -124,14 +130,15 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     nullptr  // resize(index) function pointer
   },
   {
-    "alt",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    "altitude_msl_m",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::SensorGps, alt),  // bytes offset in struct
+    offsetof(px4_msgs::msg::SensorGps, altitude_msl_m),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -141,14 +148,15 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     nullptr  // resize(index) function pointer
   },
   {
-    "alt_ellipsoid",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    "altitude_ellipsoid_m",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::SensorGps, alt_ellipsoid),  // bytes offset in struct
+    offsetof(px4_msgs::msg::SensorGps, altitude_ellipsoid_m),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -162,6 +170,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -179,6 +188,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -196,6 +206,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -213,6 +224,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -230,6 +242,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -247,6 +260,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -264,6 +278,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -281,6 +296,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -298,6 +314,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -315,6 +332,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -332,6 +350,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -349,6 +368,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -362,10 +382,29 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     nullptr  // resize(index) function pointer
   },
   {
+    "authentication_state",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::SensorGps, authentication_state),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "vel_m_s",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -383,6 +422,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -400,6 +440,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -417,6 +458,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -434,6 +476,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -451,6 +494,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -468,6 +512,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -485,6 +530,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -502,6 +548,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -515,10 +562,29 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     nullptr  // resize(index) function pointer
   },
   {
+    "system_error",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::SensorGps, system_error),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "heading",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -536,6 +602,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -553,6 +620,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -570,6 +638,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -587,10 +656,47 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::SensorGps, selected_rtcm_instance),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "rtcm_crc_failed",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::SensorGps, rtcm_crc_failed),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "rtcm_msg_used",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::SensorGps, rtcm_msg_used),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -604,8 +710,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SensorGps_mes
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers SensorGps_message_members = {
   "px4_msgs::msg",  // message namespace
   "SensorGps",  // message name
-  33,  // number of fields
+  37,  // number of fields
   sizeof(px4_msgs::msg::SensorGps),
+  false,  // has_any_key_member_
   SensorGps_message_member_array,  // message members
   SensorGps_init_function,  // function to initialize message memory (memory has to be allocated)
   SensorGps_fini_function  // function to terminate message instance (will not free memory)
@@ -615,6 +722,9 @@ static const rosidl_message_type_support_t SensorGps_message_type_support_handle
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &SensorGps_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__SensorGps__get_type_hash,
+  &px4_msgs__msg__SensorGps__get_type_description,
+  &px4_msgs__msg__SensorGps__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

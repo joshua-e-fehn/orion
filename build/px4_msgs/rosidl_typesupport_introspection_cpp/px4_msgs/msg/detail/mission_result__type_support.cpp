@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/mission_result__functions.h"
 #include "px4_msgs/msg/detail/mission_result__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -37,12 +38,13 @@ void MissionResult_fini_function(void * message_memory)
   typed_message->~MissionResult();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult_message_member_array[13] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult_message_member_array[15] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -56,14 +58,51 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     nullptr  // resize(index) function pointer
   },
   {
-    "instance_count",  // name
+    "mission_id",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::MissionResult, instance_count),  // bytes offset in struct
+    offsetof(px4_msgs::msg::MissionResult, mission_id),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "geofence_id",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::MissionResult, geofence_id),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "home_position_counter",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT32,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::MissionResult, home_position_counter),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -77,6 +116,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -94,6 +134,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -111,6 +152,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -128,6 +170,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -145,6 +188,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -162,6 +206,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -179,6 +224,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -196,6 +242,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -213,6 +260,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -230,6 +278,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -247,6 +296,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -264,8 +314,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MissionResult
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers MissionResult_message_members = {
   "px4_msgs::msg",  // message namespace
   "MissionResult",  // message name
-  13,  // number of fields
+  15,  // number of fields
   sizeof(px4_msgs::msg::MissionResult),
+  false,  // has_any_key_member_
   MissionResult_message_member_array,  // message members
   MissionResult_init_function,  // function to initialize message memory (memory has to be allocated)
   MissionResult_fini_function  // function to terminate message instance (will not free memory)
@@ -275,6 +326,9 @@ static const rosidl_message_type_support_t MissionResult_message_type_support_ha
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &MissionResult_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__MissionResult__get_type_hash,
+  &px4_msgs__msg__MissionResult__get_type_description,
+  &px4_msgs__msg__MissionResult__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

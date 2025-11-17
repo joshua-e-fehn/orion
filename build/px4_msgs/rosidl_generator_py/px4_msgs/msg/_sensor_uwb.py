@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/SensorUwb.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -78,6 +85,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
         '_offset_x',
         '_offset_y',
         '_offset_z',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -104,6 +112,8 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
         'offset_z': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
@@ -129,9 +139,14 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.sessionid = kwargs.get('sessionid', int())
         self.time_offset = kwargs.get('time_offset', int())
@@ -159,7 +174,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -173,11 +188,12 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -239,7 +255,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -254,7 +270,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @sessionid.setter
     def sessionid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'sessionid' field must be of type 'int'"
@@ -269,7 +285,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @time_offset.setter
     def time_offset(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'time_offset' field must be of type 'int'"
@@ -284,7 +300,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @counter.setter
     def counter(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'counter' field must be of type 'int'"
@@ -299,7 +315,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @mac.setter
     def mac(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'mac' field must be of type 'int'"
@@ -314,7 +330,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @mac_dest.setter
     def mac_dest(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'mac_dest' field must be of type 'int'"
@@ -329,7 +345,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @status.setter
     def status(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'status' field must be of type 'int'"
@@ -344,7 +360,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @nlos.setter
     def nlos(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'nlos' field must be of type 'int'"
@@ -359,7 +375,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @distance.setter
     def distance(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'distance' field must be of type 'float'"
@@ -374,7 +390,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @aoa_azimuth_dev.setter
     def aoa_azimuth_dev(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aoa_azimuth_dev' field must be of type 'float'"
@@ -389,7 +405,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @aoa_elevation_dev.setter
     def aoa_elevation_dev(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aoa_elevation_dev' field must be of type 'float'"
@@ -404,7 +420,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @aoa_azimuth_resp.setter
     def aoa_azimuth_resp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aoa_azimuth_resp' field must be of type 'float'"
@@ -419,7 +435,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @aoa_elevation_resp.setter
     def aoa_elevation_resp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'aoa_elevation_resp' field must be of type 'float'"
@@ -434,7 +450,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @aoa_azimuth_fom.setter
     def aoa_azimuth_fom(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'aoa_azimuth_fom' field must be of type 'int'"
@@ -449,7 +465,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @aoa_elevation_fom.setter
     def aoa_elevation_fom(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'aoa_elevation_fom' field must be of type 'int'"
@@ -464,7 +480,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @aoa_dest_azimuth_fom.setter
     def aoa_dest_azimuth_fom(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'aoa_dest_azimuth_fom' field must be of type 'int'"
@@ -479,7 +495,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @aoa_dest_elevation_fom.setter
     def aoa_dest_elevation_fom(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'aoa_dest_elevation_fom' field must be of type 'int'"
@@ -494,7 +510,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @orientation.setter
     def orientation(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'orientation' field must be of type 'int'"
@@ -509,7 +525,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @offset_x.setter
     def offset_x(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'offset_x' field must be of type 'float'"
@@ -524,7 +540,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @offset_y.setter
     def offset_y(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'offset_y' field must be of type 'float'"
@@ -539,7 +555,7 @@ class SensorUwb(metaclass=Metaclass_SensorUwb):
 
     @offset_z.setter
     def offset_z(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'offset_z' field must be of type 'float'"

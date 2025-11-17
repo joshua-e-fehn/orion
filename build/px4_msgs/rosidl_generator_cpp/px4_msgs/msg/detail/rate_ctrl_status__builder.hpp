@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/RateCtrlStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/rate_ctrl_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__RATE_CTRL_STATUS__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__RATE_CTRL_STATUS__BUILDER_HPP_
 
@@ -21,32 +24,16 @@ namespace msg
 namespace builder
 {
 
-class Init_RateCtrlStatus_wheel_rate_integ
-{
-public:
-  explicit Init_RateCtrlStatus_wheel_rate_integ(::px4_msgs::msg::RateCtrlStatus & msg)
-  : msg_(msg)
-  {}
-  ::px4_msgs::msg::RateCtrlStatus wheel_rate_integ(::px4_msgs::msg::RateCtrlStatus::_wheel_rate_integ_type arg)
-  {
-    msg_.wheel_rate_integ = std::move(arg);
-    return std::move(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::RateCtrlStatus msg_;
-};
-
 class Init_RateCtrlStatus_yawspeed_integ
 {
 public:
   explicit Init_RateCtrlStatus_yawspeed_integ(::px4_msgs::msg::RateCtrlStatus & msg)
   : msg_(msg)
   {}
-  Init_RateCtrlStatus_wheel_rate_integ yawspeed_integ(::px4_msgs::msg::RateCtrlStatus::_yawspeed_integ_type arg)
+  ::px4_msgs::msg::RateCtrlStatus yawspeed_integ(::px4_msgs::msg::RateCtrlStatus::_yawspeed_integ_type arg)
   {
     msg_.yawspeed_integ = std::move(arg);
-    return Init_RateCtrlStatus_wheel_rate_integ(msg_);
+    return std::move(msg_);
   }
 
 private:

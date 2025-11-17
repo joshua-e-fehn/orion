@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/GimbalDeviceInformation.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -177,7 +184,8 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
         '_pitch_max',
         '_yaw_min',
         '_yaw_max',
-        '_gimbal_device_compid',
+        '_gimbal_device_id',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -196,9 +204,11 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
         'pitch_max': 'float',
         'yaw_min': 'float',
         'yaw_max': 'float',
-        'gimbal_device_compid': 'uint8',
+        'gimbal_device_id': 'uint8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 32),  # noqa: E501
@@ -219,25 +229,27 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         if 'vendor_name' not in kwargs:
             self.vendor_name = numpy.zeros(32, dtype=numpy.uint8)
         else:
-            self.vendor_name = numpy.array(kwargs.get('vendor_name'), dtype=numpy.uint8)
-            assert self.vendor_name.shape == (32, )
+            self.vendor_name = kwargs.get('vendor_name')
         if 'model_name' not in kwargs:
             self.model_name = numpy.zeros(32, dtype=numpy.uint8)
         else:
-            self.model_name = numpy.array(kwargs.get('model_name'), dtype=numpy.uint8)
-            assert self.model_name.shape == (32, )
+            self.model_name = kwargs.get('model_name')
         if 'custom_name' not in kwargs:
             self.custom_name = numpy.zeros(32, dtype=numpy.uint8)
         else:
-            self.custom_name = numpy.array(kwargs.get('custom_name'), dtype=numpy.uint8)
-            assert self.custom_name.shape == (32, )
+            self.custom_name = kwargs.get('custom_name')
         self.firmware_version = kwargs.get('firmware_version', int())
         self.hardware_version = kwargs.get('hardware_version', int())
         self.uid = kwargs.get('uid', int())
@@ -249,14 +261,14 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
         self.pitch_max = kwargs.get('pitch_max', float())
         self.yaw_min = kwargs.get('yaw_min', float())
         self.yaw_max = kwargs.get('yaw_max', float())
-        self.gimbal_device_compid = kwargs.get('gimbal_device_compid', int())
+        self.gimbal_device_id = kwargs.get('gimbal_device_id', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -270,11 +282,12 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -310,7 +323,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
             return False
         if self.yaw_max != other.yaw_max:
             return False
-        if self.gimbal_device_compid != other.gimbal_device_compid:
+        if self.gimbal_device_id != other.gimbal_device_id:
             return False
         return True
 
@@ -326,7 +339,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -341,14 +354,14 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @vendor_name.setter
     def vendor_name(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'vendor_name' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 32, \
-                "The 'vendor_name' numpy.ndarray() must have a size of 32"
-            self._vendor_name = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'vendor_name' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 32, \
+                    "The 'vendor_name' numpy.ndarray() must have a size of 32"
+                self._vendor_name = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -372,14 +385,14 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @model_name.setter
     def model_name(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'model_name' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 32, \
-                "The 'model_name' numpy.ndarray() must have a size of 32"
-            self._model_name = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'model_name' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 32, \
+                    "The 'model_name' numpy.ndarray() must have a size of 32"
+                self._model_name = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -403,14 +416,14 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @custom_name.setter
     def custom_name(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'custom_name' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 32, \
-                "The 'custom_name' numpy.ndarray() must have a size of 32"
-            self._custom_name = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'custom_name' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 32, \
+                    "The 'custom_name' numpy.ndarray() must have a size of 32"
+                self._custom_name = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -434,7 +447,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @firmware_version.setter
     def firmware_version(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'firmware_version' field must be of type 'int'"
@@ -449,7 +462,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @hardware_version.setter
     def hardware_version(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'hardware_version' field must be of type 'int'"
@@ -464,7 +477,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @uid.setter
     def uid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'uid' field must be of type 'int'"
@@ -479,7 +492,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @cap_flags.setter
     def cap_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'cap_flags' field must be of type 'int'"
@@ -494,7 +507,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @custom_cap_flags.setter
     def custom_cap_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'custom_cap_flags' field must be of type 'int'"
@@ -509,7 +522,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @roll_min.setter
     def roll_min(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'roll_min' field must be of type 'float'"
@@ -524,7 +537,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @roll_max.setter
     def roll_max(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'roll_max' field must be of type 'float'"
@@ -539,7 +552,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @pitch_min.setter
     def pitch_min(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'pitch_min' field must be of type 'float'"
@@ -554,7 +567,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @pitch_max.setter
     def pitch_max(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'pitch_max' field must be of type 'float'"
@@ -569,7 +582,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @yaw_min.setter
     def yaw_min(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'yaw_min' field must be of type 'float'"
@@ -584,7 +597,7 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
 
     @yaw_max.setter
     def yaw_max(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'yaw_max' field must be of type 'float'"
@@ -593,16 +606,16 @@ class GimbalDeviceInformation(metaclass=Metaclass_GimbalDeviceInformation):
         self._yaw_max = value
 
     @builtins.property
-    def gimbal_device_compid(self):
-        """Message field 'gimbal_device_compid'."""
-        return self._gimbal_device_compid
+    def gimbal_device_id(self):
+        """Message field 'gimbal_device_id'."""
+        return self._gimbal_device_id
 
-    @gimbal_device_compid.setter
-    def gimbal_device_compid(self, value):
-        if __debug__:
+    @gimbal_device_id.setter
+    def gimbal_device_id(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
-                "The 'gimbal_device_compid' field must be of type 'int'"
+                "The 'gimbal_device_id' field must be of type 'int'"
             assert value >= 0 and value < 256, \
-                "The 'gimbal_device_compid' field must be an unsigned integer in [0, 255]"
-        self._gimbal_device_compid = value
+                "The 'gimbal_device_id' field must be an unsigned integer in [0, 255]"
+        self._gimbal_device_id = value

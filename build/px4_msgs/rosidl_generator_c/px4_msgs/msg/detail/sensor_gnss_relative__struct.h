@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/SensorGnssRelative.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/sensor_gnss_relative.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__SENSOR_GNSS_RELATIVE__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__SENSOR_GNSS_RELATIVE__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -41,7 +43,9 @@ typedef struct px4_msgs__msg__SensorGnssRelative
   float heading;
   /// Accuracy of heading of the relative position vector (radians)
   float heading_accuracy;
+  /// Length of the position vector (m)
   float position_length;
+  /// Accuracy of the position length (m)
   float accuracy_length;
   /// GNSS valid fix (i.e within DOP & accuracy masks)
   bool gnss_fix_ok;

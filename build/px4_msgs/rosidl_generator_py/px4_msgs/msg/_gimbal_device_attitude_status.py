@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/GimbalDeviceAttitudeStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -113,7 +120,11 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
         '_angular_velocity_y',
         '_angular_velocity_z',
         '_failure_flags',
+        '_delta_yaw',
+        '_delta_yaw_velocity',
+        '_gimbal_device_id',
         '_received_from_mavlink',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -126,9 +137,14 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
         'angular_velocity_y': 'float',
         'angular_velocity_z': 'float',
         'failure_flags': 'uint32',
+        'delta_yaw': 'float',
+        'delta_yaw_velocity': 'float',
+        'gimbal_device_id': 'uint8',
         'received_from_mavlink': 'boolean',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
@@ -139,13 +155,21 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.target_system = kwargs.get('target_system', int())
         self.target_component = kwargs.get('target_component', int())
@@ -153,12 +177,14 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
         if 'q' not in kwargs:
             self.q = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.q = numpy.array(kwargs.get('q'), dtype=numpy.float32)
-            assert self.q.shape == (4, )
+            self.q = kwargs.get('q')
         self.angular_velocity_x = kwargs.get('angular_velocity_x', float())
         self.angular_velocity_y = kwargs.get('angular_velocity_y', float())
         self.angular_velocity_z = kwargs.get('angular_velocity_z', float())
         self.failure_flags = kwargs.get('failure_flags', int())
+        self.delta_yaw = kwargs.get('delta_yaw', float())
+        self.delta_yaw_velocity = kwargs.get('delta_yaw_velocity', float())
+        self.gimbal_device_id = kwargs.get('gimbal_device_id', int())
         self.received_from_mavlink = kwargs.get('received_from_mavlink', bool())
 
     def __repr__(self):
@@ -166,7 +192,7 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -180,11 +206,12 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -208,6 +235,12 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
             return False
         if self.failure_flags != other.failure_flags:
             return False
+        if self.delta_yaw != other.delta_yaw:
+            return False
+        if self.delta_yaw_velocity != other.delta_yaw_velocity:
+            return False
+        if self.gimbal_device_id != other.gimbal_device_id:
+            return False
         if self.received_from_mavlink != other.received_from_mavlink:
             return False
         return True
@@ -224,7 +257,7 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -239,7 +272,7 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
 
     @target_system.setter
     def target_system(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'target_system' field must be of type 'int'"
@@ -254,7 +287,7 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
 
     @target_component.setter
     def target_component(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'target_component' field must be of type 'int'"
@@ -269,7 +302,7 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
 
     @device_flags.setter
     def device_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'device_flags' field must be of type 'int'"
@@ -284,14 +317,14 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
 
     @q.setter
     def q(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'q' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'q' numpy.ndarray() must have a size of 4"
-            self._q = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'q' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'q' numpy.ndarray() must have a size of 4"
+                self._q = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -315,7 +348,7 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
 
     @angular_velocity_x.setter
     def angular_velocity_x(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'angular_velocity_x' field must be of type 'float'"
@@ -330,7 +363,7 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
 
     @angular_velocity_y.setter
     def angular_velocity_y(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'angular_velocity_y' field must be of type 'float'"
@@ -345,7 +378,7 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
 
     @angular_velocity_z.setter
     def angular_velocity_z(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'angular_velocity_z' field must be of type 'float'"
@@ -360,7 +393,7 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
 
     @failure_flags.setter
     def failure_flags(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'failure_flags' field must be of type 'int'"
@@ -369,13 +402,58 @@ class GimbalDeviceAttitudeStatus(metaclass=Metaclass_GimbalDeviceAttitudeStatus)
         self._failure_flags = value
 
     @builtins.property
+    def delta_yaw(self):
+        """Message field 'delta_yaw'."""
+        return self._delta_yaw
+
+    @delta_yaw.setter
+    def delta_yaw(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'delta_yaw' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'delta_yaw' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._delta_yaw = value
+
+    @builtins.property
+    def delta_yaw_velocity(self):
+        """Message field 'delta_yaw_velocity'."""
+        return self._delta_yaw_velocity
+
+    @delta_yaw_velocity.setter
+    def delta_yaw_velocity(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, float), \
+                "The 'delta_yaw_velocity' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'delta_yaw_velocity' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._delta_yaw_velocity = value
+
+    @builtins.property
+    def gimbal_device_id(self):
+        """Message field 'gimbal_device_id'."""
+        return self._gimbal_device_id
+
+    @gimbal_device_id.setter
+    def gimbal_device_id(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'gimbal_device_id' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'gimbal_device_id' field must be an unsigned integer in [0, 255]"
+        self._gimbal_device_id = value
+
+    @builtins.property
     def received_from_mavlink(self):
         """Message field 'received_from_mavlink'."""
         return self._received_from_mavlink
 
     @received_from_mavlink.setter
     def received_from_mavlink(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'received_from_mavlink' field must be of type 'bool'"

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/VehicleImu.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -101,6 +108,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
         '_delta_velocity_clipping',
         '_accel_calibration_count',
         '_gyro_calibration_count',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -110,14 +118,16 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
         'gyro_device_id': 'uint32',
         'delta_angle': 'float[3]',
         'delta_velocity': 'float[3]',
-        'delta_angle_dt': 'uint16',
-        'delta_velocity_dt': 'uint16',
+        'delta_angle_dt': 'uint32',
+        'delta_velocity_dt': 'uint32',
         'delta_angle_clipping': 'uint8',
         'delta_velocity_clipping': 'uint8',
         'accel_calibration_count': 'uint8',
         'gyro_calibration_count': 'uint8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -125,8 +135,8 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 3),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 3),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
@@ -134,9 +144,14 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.accel_device_id = kwargs.get('accel_device_id', int())
@@ -144,13 +159,11 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
         if 'delta_angle' not in kwargs:
             self.delta_angle = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.delta_angle = numpy.array(kwargs.get('delta_angle'), dtype=numpy.float32)
-            assert self.delta_angle.shape == (3, )
+            self.delta_angle = kwargs.get('delta_angle')
         if 'delta_velocity' not in kwargs:
             self.delta_velocity = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.delta_velocity = numpy.array(kwargs.get('delta_velocity'), dtype=numpy.float32)
-            assert self.delta_velocity.shape == (3, )
+            self.delta_velocity = kwargs.get('delta_velocity')
         self.delta_angle_dt = kwargs.get('delta_angle_dt', int())
         self.delta_velocity_dt = kwargs.get('delta_velocity_dt', int())
         self.delta_angle_clipping = kwargs.get('delta_angle_clipping', int())
@@ -163,7 +176,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -177,11 +190,12 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -225,7 +239,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -240,7 +254,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -255,7 +269,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @accel_device_id.setter
     def accel_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'accel_device_id' field must be of type 'int'"
@@ -270,7 +284,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @gyro_device_id.setter
     def gyro_device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'gyro_device_id' field must be of type 'int'"
@@ -285,14 +299,14 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @delta_angle.setter
     def delta_angle(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'delta_angle' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'delta_angle' numpy.ndarray() must have a size of 3"
-            self._delta_angle = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'delta_angle' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'delta_angle' numpy.ndarray() must have a size of 3"
+                self._delta_angle = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -316,14 +330,14 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @delta_velocity.setter
     def delta_velocity(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'delta_velocity' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'delta_velocity' numpy.ndarray() must have a size of 3"
-            self._delta_velocity = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'delta_velocity' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'delta_velocity' numpy.ndarray() must have a size of 3"
+                self._delta_velocity = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -347,12 +361,12 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @delta_angle_dt.setter
     def delta_angle_dt(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'delta_angle_dt' field must be of type 'int'"
-            assert value >= 0 and value < 65536, \
-                "The 'delta_angle_dt' field must be an unsigned integer in [0, 65535]"
+            assert value >= 0 and value < 4294967296, \
+                "The 'delta_angle_dt' field must be an unsigned integer in [0, 4294967295]"
         self._delta_angle_dt = value
 
     @builtins.property
@@ -362,12 +376,12 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @delta_velocity_dt.setter
     def delta_velocity_dt(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'delta_velocity_dt' field must be of type 'int'"
-            assert value >= 0 and value < 65536, \
-                "The 'delta_velocity_dt' field must be an unsigned integer in [0, 65535]"
+            assert value >= 0 and value < 4294967296, \
+                "The 'delta_velocity_dt' field must be an unsigned integer in [0, 4294967295]"
         self._delta_velocity_dt = value
 
     @builtins.property
@@ -377,7 +391,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @delta_angle_clipping.setter
     def delta_angle_clipping(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'delta_angle_clipping' field must be of type 'int'"
@@ -392,7 +406,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @delta_velocity_clipping.setter
     def delta_velocity_clipping(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'delta_velocity_clipping' field must be of type 'int'"
@@ -407,7 +421,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @accel_calibration_count.setter
     def accel_calibration_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'accel_calibration_count' field must be of type 'int'"
@@ -422,7 +436,7 @@ class VehicleImu(metaclass=Metaclass_VehicleImu):
 
     @gyro_calibration_count.setter
     def gyro_calibration_count(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'gyro_calibration_count' field must be of type 'int'"

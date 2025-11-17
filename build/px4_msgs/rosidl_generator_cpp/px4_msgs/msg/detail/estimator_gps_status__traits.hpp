@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/EstimatorGpsStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/estimator_gps_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ESTIMATOR_GPS_STATUS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__ESTIMATOR_GPS_STATUS__TRAITS_HPP_
 
@@ -113,6 +116,13 @@ inline void to_flow_style_yaml(
   {
     out << "check_fail_max_vert_spd_err: ";
     rosidl_generator_traits::value_to_yaml(msg.check_fail_max_vert_spd_err, out);
+    out << ", ";
+  }
+
+  // member: check_fail_spoofed_gps
+  {
+    out << "check_fail_spoofed_gps: ";
+    rosidl_generator_traits::value_to_yaml(msg.check_fail_spoofed_gps, out);
     out << ", ";
   }
 
@@ -269,6 +279,16 @@ inline void to_block_style_yaml(
     }
     out << "check_fail_max_vert_spd_err: ";
     rosidl_generator_traits::value_to_yaml(msg.check_fail_max_vert_spd_err, out);
+    out << "\n";
+  }
+
+  // member: check_fail_spoofed_gps
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "check_fail_spoofed_gps: ";
+    rosidl_generator_traits::value_to_yaml(msg.check_fail_spoofed_gps, out);
     out << "\n";
   }
 

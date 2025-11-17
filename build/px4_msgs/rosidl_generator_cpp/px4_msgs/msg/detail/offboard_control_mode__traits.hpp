@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/OffboardControlMode.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/offboard_control_mode.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__OFFBOARD_CONTROL_MODE__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__OFFBOARD_CONTROL_MODE__TRAITS_HPP_
 
@@ -67,10 +70,17 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: actuator
+  // member: thrust_and_torque
   {
-    out << "actuator: ";
-    rosidl_generator_traits::value_to_yaml(msg.actuator, out);
+    out << "thrust_and_torque: ";
+    rosidl_generator_traits::value_to_yaml(msg.thrust_and_torque, out);
+    out << ", ";
+  }
+
+  // member: direct_actuator
+  {
+    out << "direct_actuator: ";
+    rosidl_generator_traits::value_to_yaml(msg.direct_actuator, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -139,13 +149,23 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: actuator
+  // member: thrust_and_torque
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "actuator: ";
-    rosidl_generator_traits::value_to_yaml(msg.actuator, out);
+    out << "thrust_and_torque: ";
+    rosidl_generator_traits::value_to_yaml(msg.thrust_and_torque, out);
+    out << "\n";
+  }
+
+  // member: direct_actuator
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "direct_actuator: ";
+    rosidl_generator_traits::value_to_yaml(msg.direct_actuator, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

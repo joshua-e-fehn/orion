@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Wind.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/wind.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__WIND__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__WIND__STRUCT_HPP_
 
@@ -165,6 +168,8 @@ struct Wind_
   }
 
   // constant declarations
+  static constexpr uint32_t MESSAGE_VERSION =
+    0u;
 
   // pointer types
   using RawPtr =
@@ -249,6 +254,11 @@ using Wind =
   px4_msgs::msg::Wind_<std::allocator<void>>;
 
 // constant definitions
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t Wind_<ContainerAllocator>::MESSAGE_VERSION;
+#endif  // __cplusplus < 201703L
 
 }  // namespace msg
 

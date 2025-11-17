@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/SensorGps.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/sensor_gps.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__SENSOR_GPS__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__SENSOR_GPS__BUILDER_HPP_
 
@@ -21,16 +24,48 @@ namespace msg
 namespace builder
 {
 
+class Init_SensorGps_rtcm_msg_used
+{
+public:
+  explicit Init_SensorGps_rtcm_msg_used(::px4_msgs::msg::SensorGps & msg)
+  : msg_(msg)
+  {}
+  ::px4_msgs::msg::SensorGps rtcm_msg_used(::px4_msgs::msg::SensorGps::_rtcm_msg_used_type arg)
+  {
+    msg_.rtcm_msg_used = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::SensorGps msg_;
+};
+
+class Init_SensorGps_rtcm_crc_failed
+{
+public:
+  explicit Init_SensorGps_rtcm_crc_failed(::px4_msgs::msg::SensorGps & msg)
+  : msg_(msg)
+  {}
+  Init_SensorGps_rtcm_msg_used rtcm_crc_failed(::px4_msgs::msg::SensorGps::_rtcm_crc_failed_type arg)
+  {
+    msg_.rtcm_crc_failed = std::move(arg);
+    return Init_SensorGps_rtcm_msg_used(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::SensorGps msg_;
+};
+
 class Init_SensorGps_selected_rtcm_instance
 {
 public:
   explicit Init_SensorGps_selected_rtcm_instance(::px4_msgs::msg::SensorGps & msg)
   : msg_(msg)
   {}
-  ::px4_msgs::msg::SensorGps selected_rtcm_instance(::px4_msgs::msg::SensorGps::_selected_rtcm_instance_type arg)
+  Init_SensorGps_rtcm_crc_failed selected_rtcm_instance(::px4_msgs::msg::SensorGps::_selected_rtcm_instance_type arg)
   {
     msg_.selected_rtcm_instance = std::move(arg);
-    return std::move(msg_);
+    return Init_SensorGps_rtcm_crc_failed(msg_);
   }
 
 private:
@@ -101,16 +136,32 @@ private:
   ::px4_msgs::msg::SensorGps msg_;
 };
 
+class Init_SensorGps_system_error
+{
+public:
+  explicit Init_SensorGps_system_error(::px4_msgs::msg::SensorGps & msg)
+  : msg_(msg)
+  {}
+  Init_SensorGps_heading system_error(::px4_msgs::msg::SensorGps::_system_error_type arg)
+  {
+    msg_.system_error = std::move(arg);
+    return Init_SensorGps_heading(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::SensorGps msg_;
+};
+
 class Init_SensorGps_satellites_used
 {
 public:
   explicit Init_SensorGps_satellites_used(::px4_msgs::msg::SensorGps & msg)
   : msg_(msg)
   {}
-  Init_SensorGps_heading satellites_used(::px4_msgs::msg::SensorGps::_satellites_used_type arg)
+  Init_SensorGps_system_error satellites_used(::px4_msgs::msg::SensorGps::_satellites_used_type arg)
   {
     msg_.satellites_used = std::move(arg);
-    return Init_SensorGps_heading(msg_);
+    return Init_SensorGps_system_error(msg_);
   }
 
 private:
@@ -245,16 +296,32 @@ private:
   ::px4_msgs::msg::SensorGps msg_;
 };
 
+class Init_SensorGps_authentication_state
+{
+public:
+  explicit Init_SensorGps_authentication_state(::px4_msgs::msg::SensorGps & msg)
+  : msg_(msg)
+  {}
+  Init_SensorGps_vel_m_s authentication_state(::px4_msgs::msg::SensorGps::_authentication_state_type arg)
+  {
+    msg_.authentication_state = std::move(arg);
+    return Init_SensorGps_vel_m_s(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::SensorGps msg_;
+};
+
 class Init_SensorGps_spoofing_state
 {
 public:
   explicit Init_SensorGps_spoofing_state(::px4_msgs::msg::SensorGps & msg)
   : msg_(msg)
   {}
-  Init_SensorGps_vel_m_s spoofing_state(::px4_msgs::msg::SensorGps::_spoofing_state_type arg)
+  Init_SensorGps_authentication_state spoofing_state(::px4_msgs::msg::SensorGps::_spoofing_state_type arg)
   {
     msg_.spoofing_state = std::move(arg);
-    return Init_SensorGps_vel_m_s(msg_);
+    return Init_SensorGps_authentication_state(msg_);
   }
 
 private:
@@ -437,15 +504,15 @@ private:
   ::px4_msgs::msg::SensorGps msg_;
 };
 
-class Init_SensorGps_alt_ellipsoid
+class Init_SensorGps_altitude_ellipsoid_m
 {
 public:
-  explicit Init_SensorGps_alt_ellipsoid(::px4_msgs::msg::SensorGps & msg)
+  explicit Init_SensorGps_altitude_ellipsoid_m(::px4_msgs::msg::SensorGps & msg)
   : msg_(msg)
   {}
-  Init_SensorGps_s_variance_m_s alt_ellipsoid(::px4_msgs::msg::SensorGps::_alt_ellipsoid_type arg)
+  Init_SensorGps_s_variance_m_s altitude_ellipsoid_m(::px4_msgs::msg::SensorGps::_altitude_ellipsoid_m_type arg)
   {
-    msg_.alt_ellipsoid = std::move(arg);
+    msg_.altitude_ellipsoid_m = std::move(arg);
     return Init_SensorGps_s_variance_m_s(msg_);
   }
 
@@ -453,48 +520,48 @@ private:
   ::px4_msgs::msg::SensorGps msg_;
 };
 
-class Init_SensorGps_alt
+class Init_SensorGps_altitude_msl_m
 {
 public:
-  explicit Init_SensorGps_alt(::px4_msgs::msg::SensorGps & msg)
+  explicit Init_SensorGps_altitude_msl_m(::px4_msgs::msg::SensorGps & msg)
   : msg_(msg)
   {}
-  Init_SensorGps_alt_ellipsoid alt(::px4_msgs::msg::SensorGps::_alt_type arg)
+  Init_SensorGps_altitude_ellipsoid_m altitude_msl_m(::px4_msgs::msg::SensorGps::_altitude_msl_m_type arg)
   {
-    msg_.alt = std::move(arg);
-    return Init_SensorGps_alt_ellipsoid(msg_);
+    msg_.altitude_msl_m = std::move(arg);
+    return Init_SensorGps_altitude_ellipsoid_m(msg_);
   }
 
 private:
   ::px4_msgs::msg::SensorGps msg_;
 };
 
-class Init_SensorGps_lon
+class Init_SensorGps_longitude_deg
 {
 public:
-  explicit Init_SensorGps_lon(::px4_msgs::msg::SensorGps & msg)
+  explicit Init_SensorGps_longitude_deg(::px4_msgs::msg::SensorGps & msg)
   : msg_(msg)
   {}
-  Init_SensorGps_alt lon(::px4_msgs::msg::SensorGps::_lon_type arg)
+  Init_SensorGps_altitude_msl_m longitude_deg(::px4_msgs::msg::SensorGps::_longitude_deg_type arg)
   {
-    msg_.lon = std::move(arg);
-    return Init_SensorGps_alt(msg_);
+    msg_.longitude_deg = std::move(arg);
+    return Init_SensorGps_altitude_msl_m(msg_);
   }
 
 private:
   ::px4_msgs::msg::SensorGps msg_;
 };
 
-class Init_SensorGps_lat
+class Init_SensorGps_latitude_deg
 {
 public:
-  explicit Init_SensorGps_lat(::px4_msgs::msg::SensorGps & msg)
+  explicit Init_SensorGps_latitude_deg(::px4_msgs::msg::SensorGps & msg)
   : msg_(msg)
   {}
-  Init_SensorGps_lon lat(::px4_msgs::msg::SensorGps::_lat_type arg)
+  Init_SensorGps_longitude_deg latitude_deg(::px4_msgs::msg::SensorGps::_latitude_deg_type arg)
   {
-    msg_.lat = std::move(arg);
-    return Init_SensorGps_lon(msg_);
+    msg_.latitude_deg = std::move(arg);
+    return Init_SensorGps_longitude_deg(msg_);
   }
 
 private:
@@ -507,10 +574,10 @@ public:
   explicit Init_SensorGps_device_id(::px4_msgs::msg::SensorGps & msg)
   : msg_(msg)
   {}
-  Init_SensorGps_lat device_id(::px4_msgs::msg::SensorGps::_device_id_type arg)
+  Init_SensorGps_latitude_deg device_id(::px4_msgs::msg::SensorGps::_device_id_type arg)
   {
     msg_.device_id = std::move(arg);
-    return Init_SensorGps_lat(msg_);
+    return Init_SensorGps_latitude_deg(msg_);
   }
 
 private:

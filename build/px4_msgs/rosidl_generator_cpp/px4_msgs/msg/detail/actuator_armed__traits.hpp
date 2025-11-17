@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ActuatorArmed.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/actuator_armed.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ACTUATOR_ARMED__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__ACTUATOR_ARMED__TRAITS_HPP_
 
@@ -60,17 +63,17 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: manual_lockdown
+  // member: kill
   {
-    out << "manual_lockdown: ";
-    rosidl_generator_traits::value_to_yaml(msg.manual_lockdown, out);
+    out << "kill: ";
+    rosidl_generator_traits::value_to_yaml(msg.kill, out);
     out << ", ";
   }
 
-  // member: force_failsafe
+  // member: termination
   {
-    out << "force_failsafe: ";
-    rosidl_generator_traits::value_to_yaml(msg.force_failsafe, out);
+    out << "termination: ";
+    rosidl_generator_traits::value_to_yaml(msg.termination, out);
     out << ", ";
   }
 
@@ -136,23 +139,23 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: manual_lockdown
+  // member: kill
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "manual_lockdown: ";
-    rosidl_generator_traits::value_to_yaml(msg.manual_lockdown, out);
+    out << "kill: ";
+    rosidl_generator_traits::value_to_yaml(msg.kill, out);
     out << "\n";
   }
 
-  // member: force_failsafe
+  // member: termination
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "force_failsafe: ";
-    rosidl_generator_traits::value_to_yaml(msg.force_failsafe, out);
+    out << "termination: ";
+    rosidl_generator_traits::value_to_yaml(msg.termination, out);
     out << "\n";
   }
 

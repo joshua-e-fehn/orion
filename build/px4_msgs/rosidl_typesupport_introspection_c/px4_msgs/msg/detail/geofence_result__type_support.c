@@ -37,6 +37,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Geofence
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -50,31 +51,15 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Geofence
     NULL  // resize(index) function pointer
   },
   {
-    "geofence_violation_reason",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__GeofenceResult, geofence_violation_reason),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "primary_geofence_breached",  // name
+    "geofence_max_dist_triggered",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__GeofenceResult, primary_geofence_breached),  // bytes offset in struct
+    offsetof(px4_msgs__msg__GeofenceResult, geofence_max_dist_triggered),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -84,31 +69,51 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Geofence
     NULL  // resize(index) function pointer
   },
   {
-    "primary_geofence_action",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__GeofenceResult, primary_geofence_action),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "home_required",  // name
+    "geofence_max_alt_triggered",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__GeofenceResult, home_required),  // bytes offset in struct
+    offsetof(px4_msgs__msg__GeofenceResult, geofence_max_alt_triggered),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "geofence_custom_fence_triggered",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__GeofenceResult, geofence_custom_fence_triggered),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "geofence_action",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__GeofenceResult, geofence_action),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -124,6 +129,7 @@ static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__G
   "GeofenceResult",  // message name
   5,  // number of fields
   sizeof(px4_msgs__msg__GeofenceResult),
+  false,  // has_any_key_member_
   px4_msgs__msg__GeofenceResult__rosidl_typesupport_introspection_c__GeofenceResult_message_member_array,  // message members
   px4_msgs__msg__GeofenceResult__rosidl_typesupport_introspection_c__GeofenceResult_init_function,  // function to initialize message memory (memory has to be allocated)
   px4_msgs__msg__GeofenceResult__rosidl_typesupport_introspection_c__GeofenceResult_fini_function  // function to terminate message instance (will not free memory)
@@ -135,6 +141,9 @@ static rosidl_message_type_support_t px4_msgs__msg__GeofenceResult__rosidl_types
   0,
   &px4_msgs__msg__GeofenceResult__rosidl_typesupport_introspection_c__GeofenceResult_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__GeofenceResult__get_type_hash,
+  &px4_msgs__msg__GeofenceResult__get_type_description,
+  &px4_msgs__msg__GeofenceResult__get_type_description_sources,
 };
 
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_px4_msgs

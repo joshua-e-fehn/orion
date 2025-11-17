@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/AirspeedWind.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/airspeed_wind.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__AIRSPEED_WIND__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__AIRSPEED_WIND__STRUCT_H_
 
@@ -14,12 +17,11 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Constant 'SOURCE_AS_BETA_ONLY'.
 /**
-  * wind estimate only based on synthetic sideslip fusion
+  * Wind estimate only based on synthetic sideslip fusion
  */
 enum
 {
@@ -28,7 +30,7 @@ enum
 
 /// Constant 'SOURCE_AS_SENSOR_1'.
 /**
-  * combined synthetic sideslip and airspeed fusion (data from first airspeed sensor)
+  * Combined synthetic sideslip and airspeed fusion (data from first airspeed sensor)
  */
 enum
 {
@@ -37,7 +39,7 @@ enum
 
 /// Constant 'SOURCE_AS_SENSOR_2'.
 /**
-  * combined synthetic sideslip and airspeed fusion (data from second airspeed sensor)
+  * Combined synthetic sideslip and airspeed fusion (data from second airspeed sensor)
  */
 enum
 {
@@ -46,7 +48,7 @@ enum
 
 /// Constant 'SOURCE_AS_SENSOR_3'.
 /**
-  * combined synthetic sideslip and airspeed fusion (data from third airspeed sensor)
+  * Combined synthetic sideslip and airspeed fusion (data from third airspeed sensor)
  */
 enum
 {
@@ -54,19 +56,28 @@ enum
 };
 
 /// Struct defined in msg/AirspeedWind in the package px4_msgs.
+/**
+  * Wind estimate (from airspeed_selector)
+  *
+  * Contains wind estimation and airspeed innovation information estimated by the WindEstimator
+  * in the airspeed selector module.
+  *
+  * This message is published by the airspeed selector for debugging purposes, and is not
+  * subscribed to by any other modules.
+ */
 typedef struct px4_msgs__msg__AirspeedWind
 {
-  /// time since system start (microseconds)
+  /// Time since system start
   uint64_t timestamp;
-  /// the timestamp of the raw data (microseconds)
+  /// Timestamp of the raw data
   uint64_t timestamp_sample;
-  /// Wind component in north / X direction (m/sec)
+  /// Wind component in north / X direction
   float windspeed_north;
-  /// Wind component in east / Y direction (m/sec)
+  /// Wind component in east / Y direction
   float windspeed_east;
-  /// Wind estimate error variance in north / X direction (m/sec)**2 - set to zero (no uncertainty) if not estimated
+  /// [(m/s)^2] [@invalid 0 if not estimated] Wind estimate error variance in north / X direction
   float variance_north;
-  /// Wind estimate error variance in east / Y direction (m/sec)**2 - set to zero (no uncertainty) if not estimated
+  /// [(m/s)^2] [@invalid 0 if not estimated] Wind estimate error variance in east / Y direction
   float variance_east;
   /// True airspeed innovation
   float tas_innov;

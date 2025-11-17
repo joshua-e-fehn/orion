@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/Airspeed.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -61,8 +68,8 @@ class Airspeed(metaclass=Metaclass_Airspeed):
         '_timestamp_sample',
         '_indicated_airspeed_m_s',
         '_true_airspeed_m_s',
-        '_air_temperature_celsius',
         '_confidence',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -70,28 +77,32 @@ class Airspeed(metaclass=Metaclass_Airspeed):
         'timestamp_sample': 'uint64',
         'indicated_airspeed_m_s': 'float',
         'true_airspeed_m_s': 'float',
-        'air_temperature_celsius': 'float',
         'confidence': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.indicated_airspeed_m_s = kwargs.get('indicated_airspeed_m_s', float())
         self.true_airspeed_m_s = kwargs.get('true_airspeed_m_s', float())
-        self.air_temperature_celsius = kwargs.get('air_temperature_celsius', float())
         self.confidence = kwargs.get('confidence', float())
 
     def __repr__(self):
@@ -99,7 +110,7 @@ class Airspeed(metaclass=Metaclass_Airspeed):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -113,11 +124,12 @@ class Airspeed(metaclass=Metaclass_Airspeed):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -130,8 +142,6 @@ class Airspeed(metaclass=Metaclass_Airspeed):
         if self.indicated_airspeed_m_s != other.indicated_airspeed_m_s:
             return False
         if self.true_airspeed_m_s != other.true_airspeed_m_s:
-            return False
-        if self.air_temperature_celsius != other.air_temperature_celsius:
             return False
         if self.confidence != other.confidence:
             return False
@@ -149,7 +159,7 @@ class Airspeed(metaclass=Metaclass_Airspeed):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -164,7 +174,7 @@ class Airspeed(metaclass=Metaclass_Airspeed):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -179,7 +189,7 @@ class Airspeed(metaclass=Metaclass_Airspeed):
 
     @indicated_airspeed_m_s.setter
     def indicated_airspeed_m_s(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'indicated_airspeed_m_s' field must be of type 'float'"
@@ -194,7 +204,7 @@ class Airspeed(metaclass=Metaclass_Airspeed):
 
     @true_airspeed_m_s.setter
     def true_airspeed_m_s(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'true_airspeed_m_s' field must be of type 'float'"
@@ -203,28 +213,13 @@ class Airspeed(metaclass=Metaclass_Airspeed):
         self._true_airspeed_m_s = value
 
     @builtins.property
-    def air_temperature_celsius(self):
-        """Message field 'air_temperature_celsius'."""
-        return self._air_temperature_celsius
-
-    @air_temperature_celsius.setter
-    def air_temperature_celsius(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'air_temperature_celsius' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'air_temperature_celsius' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._air_temperature_celsius = value
-
-    @builtins.property
     def confidence(self):
         """Message field 'confidence'."""
         return self._confidence
 
     @confidence.setter
     def confidence(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'confidence' field must be of type 'float'"

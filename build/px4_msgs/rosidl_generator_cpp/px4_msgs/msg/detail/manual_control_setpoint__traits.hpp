@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ManualControlSetpoint.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/manual_control_setpoint.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__MANUAL_CONTROL_SETPOINT__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__MANUAL_CONTROL_SETPOINT__TRAITS_HPP_
 
@@ -134,6 +137,13 @@ inline void to_flow_style_yaml(
   {
     out << "sticks_moving: ";
     rosidl_generator_traits::value_to_yaml(msg.sticks_moving, out);
+    out << ", ";
+  }
+
+  // member: buttons
+  {
+    out << "buttons: ";
+    rosidl_generator_traits::value_to_yaml(msg.buttons, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -299,6 +309,16 @@ inline void to_block_style_yaml(
     }
     out << "sticks_moving: ";
     rosidl_generator_traits::value_to_yaml(msg.sticks_moving, out);
+    out << "\n";
+  }
+
+  // member: buttons
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "buttons: ";
+    rosidl_generator_traits::value_to_yaml(msg.buttons, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

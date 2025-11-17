@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/SensorGyroFft.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -76,6 +83,7 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
         '_peak_snr_x',
         '_peak_snr_y',
         '_peak_snr_z',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -92,6 +100,8 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
         'peak_snr_z': 'float[3]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
@@ -107,9 +117,14 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         self.device_id = kwargs.get('device_id', int())
@@ -118,40 +133,34 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
         if 'peak_frequencies_x' not in kwargs:
             self.peak_frequencies_x = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.peak_frequencies_x = numpy.array(kwargs.get('peak_frequencies_x'), dtype=numpy.float32)
-            assert self.peak_frequencies_x.shape == (3, )
+            self.peak_frequencies_x = kwargs.get('peak_frequencies_x')
         if 'peak_frequencies_y' not in kwargs:
             self.peak_frequencies_y = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.peak_frequencies_y = numpy.array(kwargs.get('peak_frequencies_y'), dtype=numpy.float32)
-            assert self.peak_frequencies_y.shape == (3, )
+            self.peak_frequencies_y = kwargs.get('peak_frequencies_y')
         if 'peak_frequencies_z' not in kwargs:
             self.peak_frequencies_z = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.peak_frequencies_z = numpy.array(kwargs.get('peak_frequencies_z'), dtype=numpy.float32)
-            assert self.peak_frequencies_z.shape == (3, )
+            self.peak_frequencies_z = kwargs.get('peak_frequencies_z')
         if 'peak_snr_x' not in kwargs:
             self.peak_snr_x = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.peak_snr_x = numpy.array(kwargs.get('peak_snr_x'), dtype=numpy.float32)
-            assert self.peak_snr_x.shape == (3, )
+            self.peak_snr_x = kwargs.get('peak_snr_x')
         if 'peak_snr_y' not in kwargs:
             self.peak_snr_y = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.peak_snr_y = numpy.array(kwargs.get('peak_snr_y'), dtype=numpy.float32)
-            assert self.peak_snr_y.shape == (3, )
+            self.peak_snr_y = kwargs.get('peak_snr_y')
         if 'peak_snr_z' not in kwargs:
             self.peak_snr_z = numpy.zeros(3, dtype=numpy.float32)
         else:
-            self.peak_snr_z = numpy.array(kwargs.get('peak_snr_z'), dtype=numpy.float32)
-            assert self.peak_snr_z.shape == (3, )
+            self.peak_snr_z = kwargs.get('peak_snr_z')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -165,11 +174,12 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -211,7 +221,7 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -226,7 +236,7 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -241,7 +251,7 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @device_id.setter
     def device_id(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'device_id' field must be of type 'int'"
@@ -256,7 +266,7 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @sensor_sample_rate_hz.setter
     def sensor_sample_rate_hz(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'sensor_sample_rate_hz' field must be of type 'float'"
@@ -271,7 +281,7 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @resolution_hz.setter
     def resolution_hz(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'resolution_hz' field must be of type 'float'"
@@ -286,14 +296,14 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @peak_frequencies_x.setter
     def peak_frequencies_x(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'peak_frequencies_x' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'peak_frequencies_x' numpy.ndarray() must have a size of 3"
-            self._peak_frequencies_x = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'peak_frequencies_x' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'peak_frequencies_x' numpy.ndarray() must have a size of 3"
+                self._peak_frequencies_x = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -317,14 +327,14 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @peak_frequencies_y.setter
     def peak_frequencies_y(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'peak_frequencies_y' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'peak_frequencies_y' numpy.ndarray() must have a size of 3"
-            self._peak_frequencies_y = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'peak_frequencies_y' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'peak_frequencies_y' numpy.ndarray() must have a size of 3"
+                self._peak_frequencies_y = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -348,14 +358,14 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @peak_frequencies_z.setter
     def peak_frequencies_z(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'peak_frequencies_z' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'peak_frequencies_z' numpy.ndarray() must have a size of 3"
-            self._peak_frequencies_z = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'peak_frequencies_z' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'peak_frequencies_z' numpy.ndarray() must have a size of 3"
+                self._peak_frequencies_z = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -379,14 +389,14 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @peak_snr_x.setter
     def peak_snr_x(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'peak_snr_x' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'peak_snr_x' numpy.ndarray() must have a size of 3"
-            self._peak_snr_x = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'peak_snr_x' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'peak_snr_x' numpy.ndarray() must have a size of 3"
+                self._peak_snr_x = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -410,14 +420,14 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @peak_snr_y.setter
     def peak_snr_y(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'peak_snr_y' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'peak_snr_y' numpy.ndarray() must have a size of 3"
-            self._peak_snr_y = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'peak_snr_y' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'peak_snr_y' numpy.ndarray() must have a size of 3"
+                self._peak_snr_y = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -441,14 +451,14 @@ class SensorGyroFft(metaclass=Metaclass_SensorGyroFft):
 
     @peak_snr_z.setter
     def peak_snr_z(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'peak_snr_z' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 3, \
-                "The 'peak_snr_z' numpy.ndarray() must have a size of 3"
-            self._peak_snr_z = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'peak_snr_z' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 3, \
+                    "The 'peak_snr_z' numpy.ndarray() must have a size of 3"
+                self._peak_snr_z = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

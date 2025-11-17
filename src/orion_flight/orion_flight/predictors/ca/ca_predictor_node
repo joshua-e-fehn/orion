@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Wrapper to run CA predictor as a module so absolute imports work
+export PYTHONPATH="/home/victor-tipkemper/hackathon/orion/src/orion_flight:${PYTHONPATH:-}"
+exec python3 -m orion_flight.predictors.ca.ca_predictor_node "$@"

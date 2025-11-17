@@ -5,6 +5,7 @@
 
 module px4_msgs {
   module msg {
+    typedef float float__25[25];
     typedef float float__24[24];
     struct EstimatorStates {
       @verbatim (language="comment", text=
@@ -17,7 +18,7 @@ module px4_msgs {
 
       @verbatim (language="comment", text=
         "Internal filter states")
-      float__24 states;
+      float__25 states;
 
       @verbatim (language="comment", text=
         "Number of states effectively used")

@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VtolVehicleStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vtol_vehicle_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VTOL_VEHICLE_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__VTOL_VEHICLE_STATUS__STRUCT_HPP_
 
@@ -88,6 +91,8 @@ struct VtolVehicleStatus_
   }
 
   // constant declarations
+  static constexpr uint32_t MESSAGE_VERSION =
+    0u;
   static constexpr uint8_t VEHICLE_VTOL_STATE_UNDEFINED =
     0u;
   static constexpr uint8_t VEHICLE_VTOL_STATE_TRANSITION_TO_FW =
@@ -161,6 +166,11 @@ using VtolVehicleStatus =
   px4_msgs::msg::VtolVehicleStatus_<std::allocator<void>>;
 
 // constant definitions
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t VtolVehicleStatus_<ContainerAllocator>::MESSAGE_VERSION;
+#endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>

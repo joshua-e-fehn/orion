@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/MissionResult.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -20,9 +27,6 @@ class Metaclass_MissionResult(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'MISSION_EXECUTION_MODE_NORMAL': 0,
-        'MISSION_EXECUTION_MODE_REVERSE': 1,
-        'MISSION_EXECUTION_MODE_FAST_FORWARD': 2,
     }
 
     @classmethod
@@ -51,40 +55,17 @@ class Metaclass_MissionResult(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'MISSION_EXECUTION_MODE_NORMAL': cls.__constants['MISSION_EXECUTION_MODE_NORMAL'],
-            'MISSION_EXECUTION_MODE_REVERSE': cls.__constants['MISSION_EXECUTION_MODE_REVERSE'],
-            'MISSION_EXECUTION_MODE_FAST_FORWARD': cls.__constants['MISSION_EXECUTION_MODE_FAST_FORWARD'],
         }
-
-    @property
-    def MISSION_EXECUTION_MODE_NORMAL(self):
-        """Message constant 'MISSION_EXECUTION_MODE_NORMAL'."""
-        return Metaclass_MissionResult.__constants['MISSION_EXECUTION_MODE_NORMAL']
-
-    @property
-    def MISSION_EXECUTION_MODE_REVERSE(self):
-        """Message constant 'MISSION_EXECUTION_MODE_REVERSE'."""
-        return Metaclass_MissionResult.__constants['MISSION_EXECUTION_MODE_REVERSE']
-
-    @property
-    def MISSION_EXECUTION_MODE_FAST_FORWARD(self):
-        """Message constant 'MISSION_EXECUTION_MODE_FAST_FORWARD'."""
-        return Metaclass_MissionResult.__constants['MISSION_EXECUTION_MODE_FAST_FORWARD']
 
 
 class MissionResult(metaclass=Metaclass_MissionResult):
-    """
-    Message class 'MissionResult'.
-
-    Constants:
-      MISSION_EXECUTION_MODE_NORMAL
-      MISSION_EXECUTION_MODE_REVERSE
-      MISSION_EXECUTION_MODE_FAST_FORWARD
-    """
+    """Message class 'MissionResult'."""
 
     __slots__ = [
         '_timestamp',
-        '_instance_count',
+        '_mission_id',
+        '_geofence_id',
+        '_home_position_counter',
         '_seq_reached',
         '_seq_current',
         '_seq_total',
@@ -96,11 +77,14 @@ class MissionResult(metaclass=Metaclass_MissionResult):
         '_item_changed_index',
         '_item_do_jump_remaining',
         '_execution_mode',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
-        'instance_count': 'uint32',
+        'mission_id': 'uint32',
+        'geofence_id': 'uint32',
+        'home_position_counter': 'uint32',
         'seq_reached': 'int32',
         'seq_current': 'uint16',
         'seq_total': 'uint16',
@@ -114,8 +98,12 @@ class MissionResult(metaclass=Metaclass_MissionResult):
         'execution_mode': 'uint8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
@@ -131,11 +119,18 @@ class MissionResult(metaclass=Metaclass_MissionResult):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
-        self.instance_count = kwargs.get('instance_count', int())
+        self.mission_id = kwargs.get('mission_id', int())
+        self.geofence_id = kwargs.get('geofence_id', int())
+        self.home_position_counter = kwargs.get('home_position_counter', int())
         self.seq_reached = kwargs.get('seq_reached', int())
         self.seq_current = kwargs.get('seq_current', int())
         self.seq_total = kwargs.get('seq_total', int())
@@ -153,7 +148,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -167,11 +162,12 @@ class MissionResult(metaclass=Metaclass_MissionResult):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -179,7 +175,11 @@ class MissionResult(metaclass=Metaclass_MissionResult):
             return False
         if self.timestamp != other.timestamp:
             return False
-        if self.instance_count != other.instance_count:
+        if self.mission_id != other.mission_id:
+            return False
+        if self.geofence_id != other.geofence_id:
+            return False
+        if self.home_position_counter != other.home_position_counter:
             return False
         if self.seq_reached != other.seq_reached:
             return False
@@ -217,7 +217,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -226,19 +226,49 @@ class MissionResult(metaclass=Metaclass_MissionResult):
         self._timestamp = value
 
     @builtins.property
-    def instance_count(self):
-        """Message field 'instance_count'."""
-        return self._instance_count
+    def mission_id(self):
+        """Message field 'mission_id'."""
+        return self._mission_id
 
-    @instance_count.setter
-    def instance_count(self, value):
-        if __debug__:
+    @mission_id.setter
+    def mission_id(self, value):
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
-                "The 'instance_count' field must be of type 'int'"
+                "The 'mission_id' field must be of type 'int'"
             assert value >= 0 and value < 4294967296, \
-                "The 'instance_count' field must be an unsigned integer in [0, 4294967295]"
-        self._instance_count = value
+                "The 'mission_id' field must be an unsigned integer in [0, 4294967295]"
+        self._mission_id = value
+
+    @builtins.property
+    def geofence_id(self):
+        """Message field 'geofence_id'."""
+        return self._geofence_id
+
+    @geofence_id.setter
+    def geofence_id(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'geofence_id' field must be of type 'int'"
+            assert value >= 0 and value < 4294967296, \
+                "The 'geofence_id' field must be an unsigned integer in [0, 4294967295]"
+        self._geofence_id = value
+
+    @builtins.property
+    def home_position_counter(self):
+        """Message field 'home_position_counter'."""
+        return self._home_position_counter
+
+    @home_position_counter.setter
+    def home_position_counter(self, value):
+        if self._check_fields:
+            assert \
+                isinstance(value, int), \
+                "The 'home_position_counter' field must be of type 'int'"
+            assert value >= 0 and value < 4294967296, \
+                "The 'home_position_counter' field must be an unsigned integer in [0, 4294967295]"
+        self._home_position_counter = value
 
     @builtins.property
     def seq_reached(self):
@@ -247,7 +277,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @seq_reached.setter
     def seq_reached(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'seq_reached' field must be of type 'int'"
@@ -262,7 +292,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @seq_current.setter
     def seq_current(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'seq_current' field must be of type 'int'"
@@ -277,7 +307,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @seq_total.setter
     def seq_total(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'seq_total' field must be of type 'int'"
@@ -292,7 +322,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @valid.setter
     def valid(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'valid' field must be of type 'bool'"
@@ -305,7 +335,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @warning.setter
     def warning(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'warning' field must be of type 'bool'"
@@ -318,7 +348,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @finished.setter
     def finished(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'finished' field must be of type 'bool'"
@@ -331,7 +361,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @failure.setter
     def failure(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'failure' field must be of type 'bool'"
@@ -344,7 +374,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @item_do_jump_changed.setter
     def item_do_jump_changed(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, bool), \
                 "The 'item_do_jump_changed' field must be of type 'bool'"
@@ -357,7 +387,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @item_changed_index.setter
     def item_changed_index(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'item_changed_index' field must be of type 'int'"
@@ -372,7 +402,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @item_do_jump_remaining.setter
     def item_do_jump_remaining(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'item_do_jump_remaining' field must be of type 'int'"
@@ -387,7 +417,7 @@ class MissionResult(metaclass=Metaclass_MissionResult):
 
     @execution_mode.setter
     def execution_mode(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'execution_mode' field must be of type 'int'"

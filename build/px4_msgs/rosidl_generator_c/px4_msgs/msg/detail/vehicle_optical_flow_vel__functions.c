@@ -21,10 +21,13 @@ px4_msgs__msg__VehicleOpticalFlowVel__init(px4_msgs__msg__VehicleOpticalFlowVel 
   // timestamp_sample
   // vel_body
   // vel_ne
-  // flow_uncompensated_integral
-  // flow_compensated_integral
+  // vel_body_filtered
+  // vel_ne_filtered
+  // flow_rate_uncompensated
+  // flow_rate_compensated
   // gyro_rate
-  // gyro_rate_integral
+  // gyro_bias
+  // ref_gyro
   return true;
 }
 
@@ -38,10 +41,13 @@ px4_msgs__msg__VehicleOpticalFlowVel__fini(px4_msgs__msg__VehicleOpticalFlowVel 
   // timestamp_sample
   // vel_body
   // vel_ne
-  // flow_uncompensated_integral
-  // flow_compensated_integral
+  // vel_body_filtered
+  // vel_ne_filtered
+  // flow_rate_uncompensated
+  // flow_rate_compensated
   // gyro_rate
-  // gyro_rate_integral
+  // gyro_bias
+  // ref_gyro
 }
 
 bool
@@ -70,15 +76,27 @@ px4_msgs__msg__VehicleOpticalFlowVel__are_equal(const px4_msgs__msg__VehicleOpti
       return false;
     }
   }
-  // flow_uncompensated_integral
+  // vel_body_filtered
   for (size_t i = 0; i < 2; ++i) {
-    if (lhs->flow_uncompensated_integral[i] != rhs->flow_uncompensated_integral[i]) {
+    if (lhs->vel_body_filtered[i] != rhs->vel_body_filtered[i]) {
       return false;
     }
   }
-  // flow_compensated_integral
+  // vel_ne_filtered
   for (size_t i = 0; i < 2; ++i) {
-    if (lhs->flow_compensated_integral[i] != rhs->flow_compensated_integral[i]) {
+    if (lhs->vel_ne_filtered[i] != rhs->vel_ne_filtered[i]) {
+      return false;
+    }
+  }
+  // flow_rate_uncompensated
+  for (size_t i = 0; i < 2; ++i) {
+    if (lhs->flow_rate_uncompensated[i] != rhs->flow_rate_uncompensated[i]) {
+      return false;
+    }
+  }
+  // flow_rate_compensated
+  for (size_t i = 0; i < 2; ++i) {
+    if (lhs->flow_rate_compensated[i] != rhs->flow_rate_compensated[i]) {
       return false;
     }
   }
@@ -88,9 +106,15 @@ px4_msgs__msg__VehicleOpticalFlowVel__are_equal(const px4_msgs__msg__VehicleOpti
       return false;
     }
   }
-  // gyro_rate_integral
+  // gyro_bias
   for (size_t i = 0; i < 3; ++i) {
-    if (lhs->gyro_rate_integral[i] != rhs->gyro_rate_integral[i]) {
+    if (lhs->gyro_bias[i] != rhs->gyro_bias[i]) {
+      return false;
+    }
+  }
+  // ref_gyro
+  for (size_t i = 0; i < 3; ++i) {
+    if (lhs->ref_gyro[i] != rhs->ref_gyro[i]) {
       return false;
     }
   }
@@ -117,27 +141,39 @@ px4_msgs__msg__VehicleOpticalFlowVel__copy(
   for (size_t i = 0; i < 2; ++i) {
     output->vel_ne[i] = input->vel_ne[i];
   }
-  // flow_uncompensated_integral
+  // vel_body_filtered
   for (size_t i = 0; i < 2; ++i) {
-    output->flow_uncompensated_integral[i] = input->flow_uncompensated_integral[i];
+    output->vel_body_filtered[i] = input->vel_body_filtered[i];
   }
-  // flow_compensated_integral
+  // vel_ne_filtered
   for (size_t i = 0; i < 2; ++i) {
-    output->flow_compensated_integral[i] = input->flow_compensated_integral[i];
+    output->vel_ne_filtered[i] = input->vel_ne_filtered[i];
+  }
+  // flow_rate_uncompensated
+  for (size_t i = 0; i < 2; ++i) {
+    output->flow_rate_uncompensated[i] = input->flow_rate_uncompensated[i];
+  }
+  // flow_rate_compensated
+  for (size_t i = 0; i < 2; ++i) {
+    output->flow_rate_compensated[i] = input->flow_rate_compensated[i];
   }
   // gyro_rate
   for (size_t i = 0; i < 3; ++i) {
     output->gyro_rate[i] = input->gyro_rate[i];
   }
-  // gyro_rate_integral
+  // gyro_bias
   for (size_t i = 0; i < 3; ++i) {
-    output->gyro_rate_integral[i] = input->gyro_rate_integral[i];
+    output->gyro_bias[i] = input->gyro_bias[i];
+  }
+  // ref_gyro
+  for (size_t i = 0; i < 3; ++i) {
+    output->ref_gyro[i] = input->ref_gyro[i];
   }
   return true;
 }
 
 px4_msgs__msg__VehicleOpticalFlowVel *
-px4_msgs__msg__VehicleOpticalFlowVel__create()
+px4_msgs__msg__VehicleOpticalFlowVel__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__VehicleOpticalFlowVel * msg = (px4_msgs__msg__VehicleOpticalFlowVel *)allocator.allocate(sizeof(px4_msgs__msg__VehicleOpticalFlowVel), allocator.state);

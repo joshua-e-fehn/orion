@@ -166,6 +166,51 @@ void px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__as
   *item = *value;
 }
 
+size_t px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__size_function__EstimatorAidSource3d__innovation_filtered(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_const_function__EstimatorAidSource3d__innovation_filtered(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_function__EstimatorAidSource3d__innovation_filtered(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__fetch_function__EstimatorAidSource3d__innovation_filtered(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_const_function__EstimatorAidSource3d__innovation_filtered(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__assign_function__EstimatorAidSource3d__innovation_filtered(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_function__EstimatorAidSource3d__innovation_filtered(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
 size_t px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__size_function__EstimatorAidSource3d__innovation_variance(
   const void * untyped_member)
 {
@@ -256,12 +301,58 @@ void px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__as
   *item = *value;
 }
 
-static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__EstimatorAidSource3d_message_member_array[13] = {
+size_t px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__size_function__EstimatorAidSource3d__test_ratio_filtered(
+  const void * untyped_member)
+{
+  (void)untyped_member;
+  return 3;
+}
+
+const void * px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_const_function__EstimatorAidSource3d__test_ratio_filtered(
+  const void * untyped_member, size_t index)
+{
+  const float * member =
+    (const float *)(untyped_member);
+  return &member[index];
+}
+
+void * px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_function__EstimatorAidSource3d__test_ratio_filtered(
+  void * untyped_member, size_t index)
+{
+  float * member =
+    (float *)(untyped_member);
+  return &member[index];
+}
+
+void px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__fetch_function__EstimatorAidSource3d__test_ratio_filtered(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const float * item =
+    ((const float *)
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_const_function__EstimatorAidSource3d__test_ratio_filtered(untyped_member, index));
+  float * value =
+    (float *)(untyped_value);
+  *value = *item;
+}
+
+void px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__assign_function__EstimatorAidSource3d__test_ratio_filtered(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  float * item =
+    ((float *)
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_function__EstimatorAidSource3d__test_ratio_filtered(untyped_member, index));
+  const float * value =
+    (const float *)(untyped_value);
+  *item = *value;
+}
+
+static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__EstimatorAidSource3d_message_member_array[14] = {
   {
     "timestamp",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -279,6 +370,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -296,6 +388,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -313,6 +406,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT32,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -330,6 +424,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -347,6 +442,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -364,6 +460,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -381,6 +478,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -394,10 +492,29 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     NULL  // resize(index) function pointer
   },
   {
+    "innovation_filtered",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is key
+    true,  // is array
+    3,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__EstimatorAidSource3d, innovation_filtered),  // bytes offset in struct
+    NULL,  // default value
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__size_function__EstimatorAidSource3d__innovation_filtered,  // size() function pointer
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_const_function__EstimatorAidSource3d__innovation_filtered,  // get_const(index) function pointer
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_function__EstimatorAidSource3d__innovation_filtered,  // get(index) function pointer
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__fetch_function__EstimatorAidSource3d__innovation_filtered,  // fetch(index, &value) function pointer
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__assign_function__EstimatorAidSource3d__innovation_filtered,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "innovation_variance",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -415,6 +532,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -428,20 +546,21 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     NULL  // resize(index) function pointer
   },
   {
-    "fusion_enabled",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    "test_ratio_filtered",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
+    false,  // is key
+    true,  // is array
+    3,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__EstimatorAidSource3d, fusion_enabled),  // bytes offset in struct
+    offsetof(px4_msgs__msg__EstimatorAidSource3d, test_ratio_filtered),  // bytes offset in struct
     NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__size_function__EstimatorAidSource3d__test_ratio_filtered,  // size() function pointer
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_const_function__EstimatorAidSource3d__test_ratio_filtered,  // get_const(index) function pointer
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__get_function__EstimatorAidSource3d__test_ratio_filtered,  // get(index) function pointer
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__fetch_function__EstimatorAidSource3d__test_ratio_filtered,  // fetch(index, &value) function pointer
+    px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__assign_function__EstimatorAidSource3d__test_ratio_filtered,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
   },
   {
@@ -449,6 +568,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -466,6 +586,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -483,8 +604,9 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Estimato
 static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__EstimatorAidSource3d_message_members = {
   "px4_msgs__msg",  // message namespace
   "EstimatorAidSource3d",  // message name
-  13,  // number of fields
+  14,  // number of fields
   sizeof(px4_msgs__msg__EstimatorAidSource3d),
+  false,  // has_any_key_member_
   px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__EstimatorAidSource3d_message_member_array,  // message members
   px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__EstimatorAidSource3d_init_function,  // function to initialize message memory (memory has to be allocated)
   px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__EstimatorAidSource3d_fini_function  // function to terminate message instance (will not free memory)
@@ -496,6 +618,9 @@ static rosidl_message_type_support_t px4_msgs__msg__EstimatorAidSource3d__rosidl
   0,
   &px4_msgs__msg__EstimatorAidSource3d__rosidl_typesupport_introspection_c__EstimatorAidSource3d_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__EstimatorAidSource3d__get_type_hash,
+  &px4_msgs__msg__EstimatorAidSource3d__get_type_description,
+  &px4_msgs__msg__EstimatorAidSource3d__get_type_description_sources,
 };
 
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_px4_msgs

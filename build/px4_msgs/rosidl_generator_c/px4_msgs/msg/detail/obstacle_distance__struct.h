@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ObstacleDistance.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/obstacle_distance.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__OBSTACLE_DISTANCE__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__OBSTACLE_DISTANCE__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -79,7 +81,7 @@ typedef struct px4_msgs__msg__ObstacleDistance
   uint16_t min_distance;
   /// Maximum distance the sensor can measure in centimeters.
   uint16_t max_distance;
-  /// Relative angle offset of the 0-index element in the distances array. Value of 0 corresponds to forward. Positive values are offsets to the right.
+  /// Relative angle offset of the 0-index element in the distances array. Value of 0 corresponds to forward. Positive is clockwise direction, negative is counter-clockwise.
   float angle_offset;
 } px4_msgs__msg__ObstacleDistance;
 

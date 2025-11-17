@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/HomePosition.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/home_position.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__HOME_POSITION__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__HOME_POSITION__STRUCT_H_
 
@@ -14,8 +17,13 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
+
+/// Constant 'MESSAGE_VERSION'.
+enum
+{
+  px4_msgs__msg__HomePosition__MESSAGE_VERSION = 1ul
+};
 
 /// Struct defined in msg/HomePosition in the package px4_msgs.
 /**
@@ -37,6 +45,10 @@ typedef struct px4_msgs__msg__HomePosition
   float y;
   /// Z coordinate in meters
   float z;
+  /// Pitch angle in radians
+  float roll;
+  /// Roll angle in radians
+  float pitch;
   /// Yaw angle in radians
   float yaw;
   /// true when the altitude has been set
@@ -47,6 +59,8 @@ typedef struct px4_msgs__msg__HomePosition
   bool valid_lpos;
   /// true when home position was set manually
   bool manual_home;
+  /// update counter of the home position
+  uint32_t update_count;
 } px4_msgs__msg__HomePosition;
 
 // Struct for a sequence of px4_msgs__msg__HomePosition.

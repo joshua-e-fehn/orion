@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/SensorCorrection.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/sensor_correction.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__SENSOR_CORRECTION__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__SENSOR_CORRECTION__STRUCT_HPP_
 
@@ -39,18 +42,24 @@ struct SensorCorrection_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->timestamp = 0ull;
-      std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->gyro_device_ids.begin(), this->gyro_device_ids.end(), 0ul);
-      std::fill<typename std::array<float, 4>::iterator, float>(this->gyro_temperature.begin(), this->gyro_temperature.end(), 0.0f);
-      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_0.begin(), this->gyro_offset_0.end(), 0.0f);
-      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_1.begin(), this->gyro_offset_1.end(), 0.0f);
-      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_2.begin(), this->gyro_offset_2.end(), 0.0f);
-      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_3.begin(), this->gyro_offset_3.end(), 0.0f);
       std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->accel_device_ids.begin(), this->accel_device_ids.end(), 0ul);
       std::fill<typename std::array<float, 4>::iterator, float>(this->accel_temperature.begin(), this->accel_temperature.end(), 0.0f);
       std::fill<typename std::array<float, 3>::iterator, float>(this->accel_offset_0.begin(), this->accel_offset_0.end(), 0.0f);
       std::fill<typename std::array<float, 3>::iterator, float>(this->accel_offset_1.begin(), this->accel_offset_1.end(), 0.0f);
       std::fill<typename std::array<float, 3>::iterator, float>(this->accel_offset_2.begin(), this->accel_offset_2.end(), 0.0f);
       std::fill<typename std::array<float, 3>::iterator, float>(this->accel_offset_3.begin(), this->accel_offset_3.end(), 0.0f);
+      std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->gyro_device_ids.begin(), this->gyro_device_ids.end(), 0ul);
+      std::fill<typename std::array<float, 4>::iterator, float>(this->gyro_temperature.begin(), this->gyro_temperature.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_0.begin(), this->gyro_offset_0.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_1.begin(), this->gyro_offset_1.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_2.begin(), this->gyro_offset_2.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_3.begin(), this->gyro_offset_3.end(), 0.0f);
+      std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->mag_device_ids.begin(), this->mag_device_ids.end(), 0ul);
+      std::fill<typename std::array<float, 4>::iterator, float>(this->mag_temperature.begin(), this->mag_temperature.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->mag_offset_0.begin(), this->mag_offset_0.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->mag_offset_1.begin(), this->mag_offset_1.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->mag_offset_2.begin(), this->mag_offset_2.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->mag_offset_3.begin(), this->mag_offset_3.end(), 0.0f);
       std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->baro_device_ids.begin(), this->baro_device_ids.end(), 0ul);
       std::fill<typename std::array<float, 4>::iterator, float>(this->baro_temperature.begin(), this->baro_temperature.end(), 0.0f);
       this->baro_offset_0 = 0.0f;
@@ -61,18 +70,24 @@ struct SensorCorrection_
   }
 
   explicit SensorCorrection_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : gyro_device_ids(_alloc),
-    gyro_temperature(_alloc),
-    gyro_offset_0(_alloc),
-    gyro_offset_1(_alloc),
-    gyro_offset_2(_alloc),
-    gyro_offset_3(_alloc),
-    accel_device_ids(_alloc),
+  : accel_device_ids(_alloc),
     accel_temperature(_alloc),
     accel_offset_0(_alloc),
     accel_offset_1(_alloc),
     accel_offset_2(_alloc),
     accel_offset_3(_alloc),
+    gyro_device_ids(_alloc),
+    gyro_temperature(_alloc),
+    gyro_offset_0(_alloc),
+    gyro_offset_1(_alloc),
+    gyro_offset_2(_alloc),
+    gyro_offset_3(_alloc),
+    mag_device_ids(_alloc),
+    mag_temperature(_alloc),
+    mag_offset_0(_alloc),
+    mag_offset_1(_alloc),
+    mag_offset_2(_alloc),
+    mag_offset_3(_alloc),
     baro_device_ids(_alloc),
     baro_temperature(_alloc)
   {
@@ -80,18 +95,24 @@ struct SensorCorrection_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->timestamp = 0ull;
-      std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->gyro_device_ids.begin(), this->gyro_device_ids.end(), 0ul);
-      std::fill<typename std::array<float, 4>::iterator, float>(this->gyro_temperature.begin(), this->gyro_temperature.end(), 0.0f);
-      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_0.begin(), this->gyro_offset_0.end(), 0.0f);
-      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_1.begin(), this->gyro_offset_1.end(), 0.0f);
-      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_2.begin(), this->gyro_offset_2.end(), 0.0f);
-      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_3.begin(), this->gyro_offset_3.end(), 0.0f);
       std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->accel_device_ids.begin(), this->accel_device_ids.end(), 0ul);
       std::fill<typename std::array<float, 4>::iterator, float>(this->accel_temperature.begin(), this->accel_temperature.end(), 0.0f);
       std::fill<typename std::array<float, 3>::iterator, float>(this->accel_offset_0.begin(), this->accel_offset_0.end(), 0.0f);
       std::fill<typename std::array<float, 3>::iterator, float>(this->accel_offset_1.begin(), this->accel_offset_1.end(), 0.0f);
       std::fill<typename std::array<float, 3>::iterator, float>(this->accel_offset_2.begin(), this->accel_offset_2.end(), 0.0f);
       std::fill<typename std::array<float, 3>::iterator, float>(this->accel_offset_3.begin(), this->accel_offset_3.end(), 0.0f);
+      std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->gyro_device_ids.begin(), this->gyro_device_ids.end(), 0ul);
+      std::fill<typename std::array<float, 4>::iterator, float>(this->gyro_temperature.begin(), this->gyro_temperature.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_0.begin(), this->gyro_offset_0.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_1.begin(), this->gyro_offset_1.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_2.begin(), this->gyro_offset_2.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->gyro_offset_3.begin(), this->gyro_offset_3.end(), 0.0f);
+      std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->mag_device_ids.begin(), this->mag_device_ids.end(), 0ul);
+      std::fill<typename std::array<float, 4>::iterator, float>(this->mag_temperature.begin(), this->mag_temperature.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->mag_offset_0.begin(), this->mag_offset_0.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->mag_offset_1.begin(), this->mag_offset_1.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->mag_offset_2.begin(), this->mag_offset_2.end(), 0.0f);
+      std::fill<typename std::array<float, 3>::iterator, float>(this->mag_offset_3.begin(), this->mag_offset_3.end(), 0.0f);
       std::fill<typename std::array<uint32_t, 4>::iterator, uint32_t>(this->baro_device_ids.begin(), this->baro_device_ids.end(), 0ul);
       std::fill<typename std::array<float, 4>::iterator, float>(this->baro_temperature.begin(), this->baro_temperature.end(), 0.0f);
       this->baro_offset_0 = 0.0f;
@@ -105,24 +126,6 @@ struct SensorCorrection_
   using _timestamp_type =
     uint64_t;
   _timestamp_type timestamp;
-  using _gyro_device_ids_type =
-    std::array<uint32_t, 4>;
-  _gyro_device_ids_type gyro_device_ids;
-  using _gyro_temperature_type =
-    std::array<float, 4>;
-  _gyro_temperature_type gyro_temperature;
-  using _gyro_offset_0_type =
-    std::array<float, 3>;
-  _gyro_offset_0_type gyro_offset_0;
-  using _gyro_offset_1_type =
-    std::array<float, 3>;
-  _gyro_offset_1_type gyro_offset_1;
-  using _gyro_offset_2_type =
-    std::array<float, 3>;
-  _gyro_offset_2_type gyro_offset_2;
-  using _gyro_offset_3_type =
-    std::array<float, 3>;
-  _gyro_offset_3_type gyro_offset_3;
   using _accel_device_ids_type =
     std::array<uint32_t, 4>;
   _accel_device_ids_type accel_device_ids;
@@ -141,6 +144,42 @@ struct SensorCorrection_
   using _accel_offset_3_type =
     std::array<float, 3>;
   _accel_offset_3_type accel_offset_3;
+  using _gyro_device_ids_type =
+    std::array<uint32_t, 4>;
+  _gyro_device_ids_type gyro_device_ids;
+  using _gyro_temperature_type =
+    std::array<float, 4>;
+  _gyro_temperature_type gyro_temperature;
+  using _gyro_offset_0_type =
+    std::array<float, 3>;
+  _gyro_offset_0_type gyro_offset_0;
+  using _gyro_offset_1_type =
+    std::array<float, 3>;
+  _gyro_offset_1_type gyro_offset_1;
+  using _gyro_offset_2_type =
+    std::array<float, 3>;
+  _gyro_offset_2_type gyro_offset_2;
+  using _gyro_offset_3_type =
+    std::array<float, 3>;
+  _gyro_offset_3_type gyro_offset_3;
+  using _mag_device_ids_type =
+    std::array<uint32_t, 4>;
+  _mag_device_ids_type mag_device_ids;
+  using _mag_temperature_type =
+    std::array<float, 4>;
+  _mag_temperature_type mag_temperature;
+  using _mag_offset_0_type =
+    std::array<float, 3>;
+  _mag_offset_0_type mag_offset_0;
+  using _mag_offset_1_type =
+    std::array<float, 3>;
+  _mag_offset_1_type mag_offset_1;
+  using _mag_offset_2_type =
+    std::array<float, 3>;
+  _mag_offset_2_type mag_offset_2;
+  using _mag_offset_3_type =
+    std::array<float, 3>;
+  _mag_offset_3_type mag_offset_3;
   using _baro_device_ids_type =
     std::array<uint32_t, 4>;
   _baro_device_ids_type baro_device_ids;
@@ -165,6 +204,42 @@ struct SensorCorrection_
     const uint64_t & _arg)
   {
     this->timestamp = _arg;
+    return *this;
+  }
+  Type & set__accel_device_ids(
+    const std::array<uint32_t, 4> & _arg)
+  {
+    this->accel_device_ids = _arg;
+    return *this;
+  }
+  Type & set__accel_temperature(
+    const std::array<float, 4> & _arg)
+  {
+    this->accel_temperature = _arg;
+    return *this;
+  }
+  Type & set__accel_offset_0(
+    const std::array<float, 3> & _arg)
+  {
+    this->accel_offset_0 = _arg;
+    return *this;
+  }
+  Type & set__accel_offset_1(
+    const std::array<float, 3> & _arg)
+  {
+    this->accel_offset_1 = _arg;
+    return *this;
+  }
+  Type & set__accel_offset_2(
+    const std::array<float, 3> & _arg)
+  {
+    this->accel_offset_2 = _arg;
+    return *this;
+  }
+  Type & set__accel_offset_3(
+    const std::array<float, 3> & _arg)
+  {
+    this->accel_offset_3 = _arg;
     return *this;
   }
   Type & set__gyro_device_ids(
@@ -203,40 +278,40 @@ struct SensorCorrection_
     this->gyro_offset_3 = _arg;
     return *this;
   }
-  Type & set__accel_device_ids(
+  Type & set__mag_device_ids(
     const std::array<uint32_t, 4> & _arg)
   {
-    this->accel_device_ids = _arg;
+    this->mag_device_ids = _arg;
     return *this;
   }
-  Type & set__accel_temperature(
+  Type & set__mag_temperature(
     const std::array<float, 4> & _arg)
   {
-    this->accel_temperature = _arg;
+    this->mag_temperature = _arg;
     return *this;
   }
-  Type & set__accel_offset_0(
+  Type & set__mag_offset_0(
     const std::array<float, 3> & _arg)
   {
-    this->accel_offset_0 = _arg;
+    this->mag_offset_0 = _arg;
     return *this;
   }
-  Type & set__accel_offset_1(
+  Type & set__mag_offset_1(
     const std::array<float, 3> & _arg)
   {
-    this->accel_offset_1 = _arg;
+    this->mag_offset_1 = _arg;
     return *this;
   }
-  Type & set__accel_offset_2(
+  Type & set__mag_offset_2(
     const std::array<float, 3> & _arg)
   {
-    this->accel_offset_2 = _arg;
+    this->mag_offset_2 = _arg;
     return *this;
   }
-  Type & set__accel_offset_3(
+  Type & set__mag_offset_3(
     const std::array<float, 3> & _arg)
   {
-    this->accel_offset_3 = _arg;
+    this->mag_offset_3 = _arg;
     return *this;
   }
   Type & set__baro_device_ids(
@@ -321,6 +396,24 @@ struct SensorCorrection_
     if (this->timestamp != other.timestamp) {
       return false;
     }
+    if (this->accel_device_ids != other.accel_device_ids) {
+      return false;
+    }
+    if (this->accel_temperature != other.accel_temperature) {
+      return false;
+    }
+    if (this->accel_offset_0 != other.accel_offset_0) {
+      return false;
+    }
+    if (this->accel_offset_1 != other.accel_offset_1) {
+      return false;
+    }
+    if (this->accel_offset_2 != other.accel_offset_2) {
+      return false;
+    }
+    if (this->accel_offset_3 != other.accel_offset_3) {
+      return false;
+    }
     if (this->gyro_device_ids != other.gyro_device_ids) {
       return false;
     }
@@ -339,22 +432,22 @@ struct SensorCorrection_
     if (this->gyro_offset_3 != other.gyro_offset_3) {
       return false;
     }
-    if (this->accel_device_ids != other.accel_device_ids) {
+    if (this->mag_device_ids != other.mag_device_ids) {
       return false;
     }
-    if (this->accel_temperature != other.accel_temperature) {
+    if (this->mag_temperature != other.mag_temperature) {
       return false;
     }
-    if (this->accel_offset_0 != other.accel_offset_0) {
+    if (this->mag_offset_0 != other.mag_offset_0) {
       return false;
     }
-    if (this->accel_offset_1 != other.accel_offset_1) {
+    if (this->mag_offset_1 != other.mag_offset_1) {
       return false;
     }
-    if (this->accel_offset_2 != other.accel_offset_2) {
+    if (this->mag_offset_2 != other.mag_offset_2) {
       return false;
     }
-    if (this->accel_offset_3 != other.accel_offset_3) {
+    if (this->mag_offset_3 != other.mag_offset_3) {
       return false;
     }
     if (this->baro_device_ids != other.baro_device_ids) {

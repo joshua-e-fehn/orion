@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Px4ioStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/px4io_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__PX4IO_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__PX4IO_STATUS__STRUCT_HPP_
 
@@ -61,7 +64,7 @@ struct Px4ioStatus_
       this->arming_failsafe_custom = false;
       this->arming_fmu_armed = false;
       this->arming_fmu_prearmed = false;
-      this->arming_force_failsafe = false;
+      this->arming_termination = false;
       this->arming_io_arm_ok = false;
       this->arming_lockdown = false;
       this->arming_termination_failsafe = false;
@@ -106,7 +109,7 @@ struct Px4ioStatus_
       this->arming_failsafe_custom = false;
       this->arming_fmu_armed = false;
       this->arming_fmu_prearmed = false;
-      this->arming_force_failsafe = false;
+      this->arming_termination = false;
       this->arming_io_arm_ok = false;
       this->arming_lockdown = false;
       this->arming_termination_failsafe = false;
@@ -188,9 +191,9 @@ struct Px4ioStatus_
   using _arming_fmu_prearmed_type =
     bool;
   _arming_fmu_prearmed_type arming_fmu_prearmed;
-  using _arming_force_failsafe_type =
+  using _arming_termination_type =
     bool;
-  _arming_force_failsafe_type arming_force_failsafe;
+  _arming_termination_type arming_termination;
   using _arming_io_arm_ok_type =
     bool;
   _arming_io_arm_ok_type arming_io_arm_ok;
@@ -355,10 +358,10 @@ struct Px4ioStatus_
     this->arming_fmu_prearmed = _arg;
     return *this;
   }
-  Type & set__arming_force_failsafe(
+  Type & set__arming_termination(
     const bool & _arg)
   {
-    this->arming_force_failsafe = _arg;
+    this->arming_termination = _arg;
     return *this;
   }
   Type & set__arming_io_arm_ok(
@@ -521,7 +524,7 @@ struct Px4ioStatus_
     if (this->arming_fmu_prearmed != other.arming_fmu_prearmed) {
       return false;
     }
-    if (this->arming_force_failsafe != other.arming_force_failsafe) {
+    if (this->arming_termination != other.arming_termination) {
       return false;
     }
     if (this->arming_io_arm_ok != other.arming_io_arm_ok) {

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/OnboardComputerStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -91,6 +98,7 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
         '_link_rx_rate',
         '_link_tx_max',
         '_link_rx_max',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -116,6 +124,8 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
         'link_rx_max': 'uint32[6]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
@@ -140,92 +150,83 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.uptime = kwargs.get('uptime', int())
         self.type = kwargs.get('type', int())
         if 'cpu_cores' not in kwargs:
             self.cpu_cores = numpy.zeros(8, dtype=numpy.uint8)
         else:
-            self.cpu_cores = numpy.array(kwargs.get('cpu_cores'), dtype=numpy.uint8)
-            assert self.cpu_cores.shape == (8, )
+            self.cpu_cores = kwargs.get('cpu_cores')
         if 'cpu_combined' not in kwargs:
             self.cpu_combined = numpy.zeros(10, dtype=numpy.uint8)
         else:
-            self.cpu_combined = numpy.array(kwargs.get('cpu_combined'), dtype=numpy.uint8)
-            assert self.cpu_combined.shape == (10, )
+            self.cpu_combined = kwargs.get('cpu_combined')
         if 'gpu_cores' not in kwargs:
             self.gpu_cores = numpy.zeros(4, dtype=numpy.uint8)
         else:
-            self.gpu_cores = numpy.array(kwargs.get('gpu_cores'), dtype=numpy.uint8)
-            assert self.gpu_cores.shape == (4, )
+            self.gpu_cores = kwargs.get('gpu_cores')
         if 'gpu_combined' not in kwargs:
             self.gpu_combined = numpy.zeros(10, dtype=numpy.uint8)
         else:
-            self.gpu_combined = numpy.array(kwargs.get('gpu_combined'), dtype=numpy.uint8)
-            assert self.gpu_combined.shape == (10, )
+            self.gpu_combined = kwargs.get('gpu_combined')
         self.temperature_board = kwargs.get('temperature_board', int())
         if 'temperature_core' not in kwargs:
             self.temperature_core = numpy.zeros(8, dtype=numpy.int8)
         else:
-            self.temperature_core = numpy.array(kwargs.get('temperature_core'), dtype=numpy.int8)
-            assert self.temperature_core.shape == (8, )
+            self.temperature_core = kwargs.get('temperature_core')
         if 'fan_speed' not in kwargs:
             self.fan_speed = numpy.zeros(4, dtype=numpy.int16)
         else:
-            self.fan_speed = numpy.array(kwargs.get('fan_speed'), dtype=numpy.int16)
-            assert self.fan_speed.shape == (4, )
+            self.fan_speed = kwargs.get('fan_speed')
         self.ram_usage = kwargs.get('ram_usage', int())
         self.ram_total = kwargs.get('ram_total', int())
         if 'storage_type' not in kwargs:
             self.storage_type = numpy.zeros(4, dtype=numpy.uint32)
         else:
-            self.storage_type = numpy.array(kwargs.get('storage_type'), dtype=numpy.uint32)
-            assert self.storage_type.shape == (4, )
+            self.storage_type = kwargs.get('storage_type')
         if 'storage_usage' not in kwargs:
             self.storage_usage = numpy.zeros(4, dtype=numpy.uint32)
         else:
-            self.storage_usage = numpy.array(kwargs.get('storage_usage'), dtype=numpy.uint32)
-            assert self.storage_usage.shape == (4, )
+            self.storage_usage = kwargs.get('storage_usage')
         if 'storage_total' not in kwargs:
             self.storage_total = numpy.zeros(4, dtype=numpy.uint32)
         else:
-            self.storage_total = numpy.array(kwargs.get('storage_total'), dtype=numpy.uint32)
-            assert self.storage_total.shape == (4, )
+            self.storage_total = kwargs.get('storage_total')
         if 'link_type' not in kwargs:
             self.link_type = numpy.zeros(6, dtype=numpy.uint32)
         else:
-            self.link_type = numpy.array(kwargs.get('link_type'), dtype=numpy.uint32)
-            assert self.link_type.shape == (6, )
+            self.link_type = kwargs.get('link_type')
         if 'link_tx_rate' not in kwargs:
             self.link_tx_rate = numpy.zeros(6, dtype=numpy.uint32)
         else:
-            self.link_tx_rate = numpy.array(kwargs.get('link_tx_rate'), dtype=numpy.uint32)
-            assert self.link_tx_rate.shape == (6, )
+            self.link_tx_rate = kwargs.get('link_tx_rate')
         if 'link_rx_rate' not in kwargs:
             self.link_rx_rate = numpy.zeros(6, dtype=numpy.uint32)
         else:
-            self.link_rx_rate = numpy.array(kwargs.get('link_rx_rate'), dtype=numpy.uint32)
-            assert self.link_rx_rate.shape == (6, )
+            self.link_rx_rate = kwargs.get('link_rx_rate')
         if 'link_tx_max' not in kwargs:
             self.link_tx_max = numpy.zeros(6, dtype=numpy.uint32)
         else:
-            self.link_tx_max = numpy.array(kwargs.get('link_tx_max'), dtype=numpy.uint32)
-            assert self.link_tx_max.shape == (6, )
+            self.link_tx_max = kwargs.get('link_tx_max')
         if 'link_rx_max' not in kwargs:
             self.link_rx_max = numpy.zeros(6, dtype=numpy.uint32)
         else:
-            self.link_rx_max = numpy.array(kwargs.get('link_rx_max'), dtype=numpy.uint32)
-            assert self.link_rx_max.shape == (6, )
+            self.link_rx_max = kwargs.get('link_rx_max')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -239,11 +240,12 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -303,7 +305,7 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -318,7 +320,7 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @uptime.setter
     def uptime(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'uptime' field must be of type 'int'"
@@ -333,7 +335,7 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @type.setter  # noqa: A003
     def type(self, value):  # noqa: A003
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'type' field must be of type 'int'"
@@ -348,14 +350,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @cpu_cores.setter
     def cpu_cores(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'cpu_cores' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 8, \
-                "The 'cpu_cores' numpy.ndarray() must have a size of 8"
-            self._cpu_cores = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'cpu_cores' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 8, \
+                    "The 'cpu_cores' numpy.ndarray() must have a size of 8"
+                self._cpu_cores = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -379,14 +381,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @cpu_combined.setter
     def cpu_combined(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'cpu_combined' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 10, \
-                "The 'cpu_combined' numpy.ndarray() must have a size of 10"
-            self._cpu_combined = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'cpu_combined' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 10, \
+                    "The 'cpu_combined' numpy.ndarray() must have a size of 10"
+                self._cpu_combined = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -410,14 +412,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @gpu_cores.setter
     def gpu_cores(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'gpu_cores' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 4, \
-                "The 'gpu_cores' numpy.ndarray() must have a size of 4"
-            self._gpu_cores = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'gpu_cores' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 4, \
+                    "The 'gpu_cores' numpy.ndarray() must have a size of 4"
+                self._gpu_cores = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -441,14 +443,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @gpu_combined.setter
     def gpu_combined(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'gpu_combined' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 10, \
-                "The 'gpu_combined' numpy.ndarray() must have a size of 10"
-            self._gpu_combined = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'gpu_combined' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 10, \
+                    "The 'gpu_combined' numpy.ndarray() must have a size of 10"
+                self._gpu_combined = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -472,7 +474,7 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @temperature_board.setter
     def temperature_board(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'temperature_board' field must be of type 'int'"
@@ -487,14 +489,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @temperature_core.setter
     def temperature_core(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.int8, \
-                "The 'temperature_core' numpy.ndarray() must have the dtype of 'numpy.int8'"
-            assert value.size == 8, \
-                "The 'temperature_core' numpy.ndarray() must have a size of 8"
-            self._temperature_core = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.int8, \
+                    "The 'temperature_core' numpy.ndarray() must have the dtype of 'numpy.int8'"
+                assert value.size == 8, \
+                    "The 'temperature_core' numpy.ndarray() must have a size of 8"
+                self._temperature_core = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -518,14 +520,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @fan_speed.setter
     def fan_speed(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.int16, \
-                "The 'fan_speed' numpy.ndarray() must have the dtype of 'numpy.int16'"
-            assert value.size == 4, \
-                "The 'fan_speed' numpy.ndarray() must have a size of 4"
-            self._fan_speed = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.int16, \
+                    "The 'fan_speed' numpy.ndarray() must have the dtype of 'numpy.int16'"
+                assert value.size == 4, \
+                    "The 'fan_speed' numpy.ndarray() must have a size of 4"
+                self._fan_speed = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -549,7 +551,7 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @ram_usage.setter
     def ram_usage(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'ram_usage' field must be of type 'int'"
@@ -564,7 +566,7 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @ram_total.setter
     def ram_total(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'ram_total' field must be of type 'int'"
@@ -579,14 +581,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @storage_type.setter
     def storage_type(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'storage_type' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 4, \
-                "The 'storage_type' numpy.ndarray() must have a size of 4"
-            self._storage_type = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'storage_type' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 4, \
+                    "The 'storage_type' numpy.ndarray() must have a size of 4"
+                self._storage_type = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -610,14 +612,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @storage_usage.setter
     def storage_usage(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'storage_usage' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 4, \
-                "The 'storage_usage' numpy.ndarray() must have a size of 4"
-            self._storage_usage = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'storage_usage' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 4, \
+                    "The 'storage_usage' numpy.ndarray() must have a size of 4"
+                self._storage_usage = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -641,14 +643,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @storage_total.setter
     def storage_total(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'storage_total' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 4, \
-                "The 'storage_total' numpy.ndarray() must have a size of 4"
-            self._storage_total = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'storage_total' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 4, \
+                    "The 'storage_total' numpy.ndarray() must have a size of 4"
+                self._storage_total = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -672,14 +674,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @link_type.setter
     def link_type(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'link_type' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 6, \
-                "The 'link_type' numpy.ndarray() must have a size of 6"
-            self._link_type = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'link_type' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 6, \
+                    "The 'link_type' numpy.ndarray() must have a size of 6"
+                self._link_type = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -703,14 +705,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @link_tx_rate.setter
     def link_tx_rate(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'link_tx_rate' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 6, \
-                "The 'link_tx_rate' numpy.ndarray() must have a size of 6"
-            self._link_tx_rate = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'link_tx_rate' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 6, \
+                    "The 'link_tx_rate' numpy.ndarray() must have a size of 6"
+                self._link_tx_rate = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -734,14 +736,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @link_rx_rate.setter
     def link_rx_rate(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'link_rx_rate' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 6, \
-                "The 'link_rx_rate' numpy.ndarray() must have a size of 6"
-            self._link_rx_rate = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'link_rx_rate' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 6, \
+                    "The 'link_rx_rate' numpy.ndarray() must have a size of 6"
+                self._link_rx_rate = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -765,14 +767,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @link_tx_max.setter
     def link_tx_max(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'link_tx_max' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 6, \
-                "The 'link_tx_max' numpy.ndarray() must have a size of 6"
-            self._link_tx_max = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'link_tx_max' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 6, \
+                    "The 'link_tx_max' numpy.ndarray() must have a size of 6"
+                self._link_tx_max = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -796,14 +798,14 @@ class OnboardComputerStatus(metaclass=Metaclass_OnboardComputerStatus):
 
     @link_rx_max.setter
     def link_rx_max(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'link_rx_max' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 6, \
-                "The 'link_rx_max' numpy.ndarray() must have a size of 6"
-            self._link_rx_max = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'link_rx_max' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 6, \
+                    "The 'link_rx_max' numpy.ndarray() must have a size of 6"
+                self._link_rx_max = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

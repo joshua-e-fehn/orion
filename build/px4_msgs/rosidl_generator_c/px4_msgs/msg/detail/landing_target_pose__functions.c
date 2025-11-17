@@ -185,7 +185,7 @@ px4_msgs__msg__LandingTargetPose__copy(
 }
 
 px4_msgs__msg__LandingTargetPose *
-px4_msgs__msg__LandingTargetPose__create()
+px4_msgs__msg__LandingTargetPose__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__LandingTargetPose * msg = (px4_msgs__msg__LandingTargetPose *)allocator.allocate(sizeof(px4_msgs__msg__LandingTargetPose), allocator.state);

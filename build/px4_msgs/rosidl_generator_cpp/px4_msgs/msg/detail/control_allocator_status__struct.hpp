@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/ControlAllocatorStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/control_allocator_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__CONTROL_ALLOCATOR_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__CONTROL_ALLOCATOR_STATUS__STRUCT_HPP_
 
@@ -45,6 +48,7 @@ struct ControlAllocatorStatus_
       std::fill<typename std::array<float, 3>::iterator, float>(this->unallocated_thrust.begin(), this->unallocated_thrust.end(), 0.0f);
       std::fill<typename std::array<int8_t, 16>::iterator, int8_t>(this->actuator_saturation.begin(), this->actuator_saturation.end(), 0);
       this->handled_motor_failure_mask = 0;
+      this->motor_stop_mask = 0;
     }
   }
 
@@ -63,6 +67,7 @@ struct ControlAllocatorStatus_
       std::fill<typename std::array<float, 3>::iterator, float>(this->unallocated_thrust.begin(), this->unallocated_thrust.end(), 0.0f);
       std::fill<typename std::array<int8_t, 16>::iterator, int8_t>(this->actuator_saturation.begin(), this->actuator_saturation.end(), 0);
       this->handled_motor_failure_mask = 0;
+      this->motor_stop_mask = 0;
     }
   }
 
@@ -88,6 +93,9 @@ struct ControlAllocatorStatus_
   using _handled_motor_failure_mask_type =
     uint16_t;
   _handled_motor_failure_mask_type handled_motor_failure_mask;
+  using _motor_stop_mask_type =
+    uint16_t;
+  _motor_stop_mask_type motor_stop_mask;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -130,6 +138,12 @@ struct ControlAllocatorStatus_
     const uint16_t & _arg)
   {
     this->handled_motor_failure_mask = _arg;
+    return *this;
+  }
+  Type & set__motor_stop_mask(
+    const uint16_t & _arg)
+  {
+    this->motor_stop_mask = _arg;
     return *this;
   }
 
@@ -204,6 +218,9 @@ struct ControlAllocatorStatus_
       return false;
     }
     if (this->handled_motor_failure_mask != other.handled_motor_failure_mask) {
+      return false;
+    }
+    if (this->motor_stop_mask != other.motor_stop_mask) {
       return false;
     }
     return true;

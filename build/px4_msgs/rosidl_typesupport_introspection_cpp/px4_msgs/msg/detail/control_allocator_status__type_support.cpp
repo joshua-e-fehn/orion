@@ -9,6 +9,7 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_typesupport_cpp/message_type_support.hpp"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/control_allocator_status__functions.h"
 #include "px4_msgs/msg/detail/control_allocator_status__struct.hpp"
 #include "rosidl_typesupport_introspection_cpp/field_types.hpp"
 #include "rosidl_typesupport_introspection_cpp/identifier.hpp"
@@ -151,12 +152,13 @@ void assign_function__ControlAllocatorStatus__actuator_saturation(
   item = value;
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember ControlAllocatorStatus_message_member_array[7] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember ControlAllocatorStatus_message_member_array[8] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -174,6 +176,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ControlAlloca
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -191,6 +194,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ControlAlloca
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -208,6 +212,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ControlAlloca
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
@@ -225,6 +230,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ControlAlloca
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
     3,  // array size
     false,  // is upper bound
@@ -242,6 +248,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ControlAlloca
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     true,  // is array
     16,  // array size
     false,  // is upper bound
@@ -259,10 +266,29 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ControlAlloca
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
+    false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs::msg::ControlAllocatorStatus, handled_motor_failure_mask),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "motor_stop_mask",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is key
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs::msg::ControlAllocatorStatus, motor_stop_mask),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -276,8 +302,9 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ControlAlloca
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers ControlAllocatorStatus_message_members = {
   "px4_msgs::msg",  // message namespace
   "ControlAllocatorStatus",  // message name
-  7,  // number of fields
+  8,  // number of fields
   sizeof(px4_msgs::msg::ControlAllocatorStatus),
+  false,  // has_any_key_member_
   ControlAllocatorStatus_message_member_array,  // message members
   ControlAllocatorStatus_init_function,  // function to initialize message memory (memory has to be allocated)
   ControlAllocatorStatus_fini_function  // function to terminate message instance (will not free memory)
@@ -287,6 +314,9 @@ static const rosidl_message_type_support_t ControlAllocatorStatus_message_type_s
   ::rosidl_typesupport_introspection_cpp::typesupport_identifier,
   &ControlAllocatorStatus_message_members,
   get_message_typesupport_handle_function,
+  &px4_msgs__msg__ControlAllocatorStatus__get_type_hash,
+  &px4_msgs__msg__ControlAllocatorStatus__get_type_description,
+  &px4_msgs__msg__ControlAllocatorStatus__get_type_description_sources,
 };
 
 }  // namespace rosidl_typesupport_introspection_cpp

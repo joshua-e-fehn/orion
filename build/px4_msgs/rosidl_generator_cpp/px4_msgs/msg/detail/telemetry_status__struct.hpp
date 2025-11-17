@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/TelemetryStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/telemetry_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__TELEMETRY_STATUS__STRUCT_HPP_
 #define PX4_MSGS__MSG__DETAIL__TELEMETRY_STATUS__STRUCT_HPP_
 
@@ -70,12 +73,10 @@ struct TelemetryStatus_
       this->heartbeat_component_telemetry_radio = false;
       this->heartbeat_component_log = false;
       this->heartbeat_component_osd = false;
-      this->heartbeat_component_obstacle_avoidance = false;
       this->heartbeat_component_vio = false;
       this->heartbeat_component_pairing_manager = false;
       this->heartbeat_component_udp_bridge = false;
       this->heartbeat_component_uart_bridge = false;
-      this->avoidance_system_healthy = false;
       this->open_drone_id_system_healthy = false;
       this->parachute_system_healthy = false;
     }
@@ -119,12 +120,10 @@ struct TelemetryStatus_
       this->heartbeat_component_telemetry_radio = false;
       this->heartbeat_component_log = false;
       this->heartbeat_component_osd = false;
-      this->heartbeat_component_obstacle_avoidance = false;
       this->heartbeat_component_vio = false;
       this->heartbeat_component_pairing_manager = false;
       this->heartbeat_component_udp_bridge = false;
       this->heartbeat_component_uart_bridge = false;
-      this->avoidance_system_healthy = false;
       this->open_drone_id_system_healthy = false;
       this->parachute_system_healthy = false;
     }
@@ -227,9 +226,6 @@ struct TelemetryStatus_
   using _heartbeat_component_osd_type =
     bool;
   _heartbeat_component_osd_type heartbeat_component_osd;
-  using _heartbeat_component_obstacle_avoidance_type =
-    bool;
-  _heartbeat_component_obstacle_avoidance_type heartbeat_component_obstacle_avoidance;
   using _heartbeat_component_vio_type =
     bool;
   _heartbeat_component_vio_type heartbeat_component_vio;
@@ -242,9 +238,6 @@ struct TelemetryStatus_
   using _heartbeat_component_uart_bridge_type =
     bool;
   _heartbeat_component_uart_bridge_type heartbeat_component_uart_bridge;
-  using _avoidance_system_healthy_type =
-    bool;
-  _avoidance_system_healthy_type avoidance_system_healthy;
   using _open_drone_id_system_healthy_type =
     bool;
   _open_drone_id_system_healthy_type open_drone_id_system_healthy;
@@ -445,12 +438,6 @@ struct TelemetryStatus_
     this->heartbeat_component_osd = _arg;
     return *this;
   }
-  Type & set__heartbeat_component_obstacle_avoidance(
-    const bool & _arg)
-  {
-    this->heartbeat_component_obstacle_avoidance = _arg;
-    return *this;
-  }
   Type & set__heartbeat_component_vio(
     const bool & _arg)
   {
@@ -473,12 +460,6 @@ struct TelemetryStatus_
     const bool & _arg)
   {
     this->heartbeat_component_uart_bridge = _arg;
-    return *this;
-  }
-  Type & set__avoidance_system_healthy(
-    const bool & _arg)
-  {
-    this->avoidance_system_healthy = _arg;
     return *this;
   }
   Type & set__open_drone_id_system_healthy(
@@ -644,9 +625,6 @@ struct TelemetryStatus_
     if (this->heartbeat_component_osd != other.heartbeat_component_osd) {
       return false;
     }
-    if (this->heartbeat_component_obstacle_avoidance != other.heartbeat_component_obstacle_avoidance) {
-      return false;
-    }
     if (this->heartbeat_component_vio != other.heartbeat_component_vio) {
       return false;
     }
@@ -657,9 +635,6 @@ struct TelemetryStatus_
       return false;
     }
     if (this->heartbeat_component_uart_bridge != other.heartbeat_component_uart_bridge) {
-      return false;
-    }
-    if (this->avoidance_system_healthy != other.avoidance_system_healthy) {
       return false;
     }
     if (this->open_drone_id_system_healthy != other.open_drone_id_system_healthy) {

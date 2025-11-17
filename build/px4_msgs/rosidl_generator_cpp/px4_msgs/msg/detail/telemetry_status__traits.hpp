@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/TelemetryStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/telemetry_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__TELEMETRY_STATUS__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__TELEMETRY_STATUS__TRAITS_HPP_
 
@@ -249,13 +252,6 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: heartbeat_component_obstacle_avoidance
-  {
-    out << "heartbeat_component_obstacle_avoidance: ";
-    rosidl_generator_traits::value_to_yaml(msg.heartbeat_component_obstacle_avoidance, out);
-    out << ", ";
-  }
-
   // member: heartbeat_component_vio
   {
     out << "heartbeat_component_vio: ";
@@ -281,13 +277,6 @@ inline void to_flow_style_yaml(
   {
     out << "heartbeat_component_uart_bridge: ";
     rosidl_generator_traits::value_to_yaml(msg.heartbeat_component_uart_bridge, out);
-    out << ", ";
-  }
-
-  // member: avoidance_system_healthy
-  {
-    out << "avoidance_system_healthy: ";
-    rosidl_generator_traits::value_to_yaml(msg.avoidance_system_healthy, out);
     out << ", ";
   }
 
@@ -630,16 +619,6 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: heartbeat_component_obstacle_avoidance
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "heartbeat_component_obstacle_avoidance: ";
-    rosidl_generator_traits::value_to_yaml(msg.heartbeat_component_obstacle_avoidance, out);
-    out << "\n";
-  }
-
   // member: heartbeat_component_vio
   {
     if (indentation > 0) {
@@ -677,16 +656,6 @@ inline void to_block_style_yaml(
     }
     out << "heartbeat_component_uart_bridge: ";
     rosidl_generator_traits::value_to_yaml(msg.heartbeat_component_uart_bridge, out);
-    out << "\n";
-  }
-
-  // member: avoidance_system_healthy
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "avoidance_system_healthy: ";
-    rosidl_generator_traits::value_to_yaml(msg.avoidance_system_healthy, out);
     out << "\n";
   }
 

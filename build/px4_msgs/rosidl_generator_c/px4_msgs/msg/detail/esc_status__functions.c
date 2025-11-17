@@ -128,7 +128,7 @@ px4_msgs__msg__EscStatus__copy(
 }
 
 px4_msgs__msg__EscStatus *
-px4_msgs__msg__EscStatus__create()
+px4_msgs__msg__EscStatus__create(void)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   px4_msgs__msg__EscStatus * msg = (px4_msgs__msg__EscStatus *)allocator.allocate(sizeof(px4_msgs__msg__EscStatus), allocator.state);

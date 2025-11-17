@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/VehicleOpticalFlow.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/vehicle_optical_flow.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__VEHICLE_OPTICAL_FLOW__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__VEHICLE_OPTICAL_FLOW__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -30,7 +32,7 @@ typedef struct px4_msgs__msg__VehicleOpticalFlow
   uint32_t device_id;
   /// (radians) accumulated optical flow in radians where a positive value is produced by a RH rotation about the body axis
   float pixel_flow[2];
-  /// (radians) accumulated gyro radians where a positive value is produced by a RH rotation about the body axis. (NAN if unavailable)
+  /// (radians) accumulated gyro radians where a positive value is produced by a RH rotation of the sensor about the body axis. (NAN if unavailable)
   float delta_angle[3];
   /// (meters) Distance to the center of the flow field (NAN if unavailable)
   float distance_m;

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/PositionControllerStatus.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -65,9 +72,8 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
         '_xtrack_error',
         '_wp_dist',
         '_acceptance_radius',
-        '_yaw_acceptance',
-        '_altitude_acceptance',
         '_type',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -79,15 +85,13 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
         'xtrack_error': 'float',
         'wp_dist': 'float',
         'acceptance_radius': 'float',
-        'yaw_acceptance': 'float',
-        'altitude_acceptance': 'float',
         'type': 'uint8',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -99,9 +103,14 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.nav_roll = kwargs.get('nav_roll', float())
         self.nav_pitch = kwargs.get('nav_pitch', float())
@@ -110,8 +119,6 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
         self.xtrack_error = kwargs.get('xtrack_error', float())
         self.wp_dist = kwargs.get('wp_dist', float())
         self.acceptance_radius = kwargs.get('acceptance_radius', float())
-        self.yaw_acceptance = kwargs.get('yaw_acceptance', float())
-        self.altitude_acceptance = kwargs.get('altitude_acceptance', float())
         self.type = kwargs.get('type', int())
 
     def __repr__(self):
@@ -119,7 +126,7 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -133,11 +140,12 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -159,10 +167,6 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
             return False
         if self.acceptance_radius != other.acceptance_radius:
             return False
-        if self.yaw_acceptance != other.yaw_acceptance:
-            return False
-        if self.altitude_acceptance != other.altitude_acceptance:
-            return False
         if self.type != other.type:
             return False
         return True
@@ -179,7 +183,7 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -194,7 +198,7 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
 
     @nav_roll.setter
     def nav_roll(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'nav_roll' field must be of type 'float'"
@@ -209,7 +213,7 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
 
     @nav_pitch.setter
     def nav_pitch(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'nav_pitch' field must be of type 'float'"
@@ -224,7 +228,7 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
 
     @nav_bearing.setter
     def nav_bearing(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'nav_bearing' field must be of type 'float'"
@@ -239,7 +243,7 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
 
     @target_bearing.setter
     def target_bearing(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'target_bearing' field must be of type 'float'"
@@ -254,7 +258,7 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
 
     @xtrack_error.setter
     def xtrack_error(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'xtrack_error' field must be of type 'float'"
@@ -269,7 +273,7 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
 
     @wp_dist.setter
     def wp_dist(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'wp_dist' field must be of type 'float'"
@@ -284,43 +288,13 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
 
     @acceptance_radius.setter
     def acceptance_radius(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'acceptance_radius' field must be of type 'float'"
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
                 "The 'acceptance_radius' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
         self._acceptance_radius = value
-
-    @builtins.property
-    def yaw_acceptance(self):
-        """Message field 'yaw_acceptance'."""
-        return self._yaw_acceptance
-
-    @yaw_acceptance.setter
-    def yaw_acceptance(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'yaw_acceptance' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'yaw_acceptance' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._yaw_acceptance = value
-
-    @builtins.property
-    def altitude_acceptance(self):
-        """Message field 'altitude_acceptance'."""
-        return self._altitude_acceptance
-
-    @altitude_acceptance.setter
-    def altitude_acceptance(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, float), \
-                "The 'altitude_acceptance' field must be of type 'float'"
-            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
-                "The 'altitude_acceptance' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
-        self._altitude_acceptance = value
 
     @builtins.property  # noqa: A003
     def type(self):  # noqa: A003
@@ -329,7 +303,7 @@ class PositionControllerStatus(metaclass=Metaclass_PositionControllerStatus):
 
     @type.setter  # noqa: A003
     def type(self, value):  # noqa: A003
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'type' field must be of type 'int'"

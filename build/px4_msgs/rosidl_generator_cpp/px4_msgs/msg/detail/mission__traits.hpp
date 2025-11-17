@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Mission.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/mission.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__MISSION__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__MISSION__TRAITS_HPP_
 
@@ -32,10 +35,24 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: dataman_id
+  // member: mission_dataman_id
   {
-    out << "dataman_id: ";
-    rosidl_generator_traits::value_to_yaml(msg.dataman_id, out);
+    out << "mission_dataman_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.mission_dataman_id, out);
+    out << ", ";
+  }
+
+  // member: fence_dataman_id
+  {
+    out << "fence_dataman_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.fence_dataman_id, out);
+    out << ", ";
+  }
+
+  // member: safepoint_dataman_id
+  {
+    out << "safepoint_dataman_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.safepoint_dataman_id, out);
     out << ", ";
   }
 
@@ -50,6 +67,41 @@ inline void to_flow_style_yaml(
   {
     out << "current_seq: ";
     rosidl_generator_traits::value_to_yaml(msg.current_seq, out);
+    out << ", ";
+  }
+
+  // member: land_start_index
+  {
+    out << "land_start_index: ";
+    rosidl_generator_traits::value_to_yaml(msg.land_start_index, out);
+    out << ", ";
+  }
+
+  // member: land_index
+  {
+    out << "land_index: ";
+    rosidl_generator_traits::value_to_yaml(msg.land_index, out);
+    out << ", ";
+  }
+
+  // member: mission_id
+  {
+    out << "mission_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.mission_id, out);
+    out << ", ";
+  }
+
+  // member: geofence_id
+  {
+    out << "geofence_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_id, out);
+    out << ", ";
+  }
+
+  // member: safe_points_id
+  {
+    out << "safe_points_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.safe_points_id, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -68,13 +120,33 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: dataman_id
+  // member: mission_dataman_id
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "dataman_id: ";
-    rosidl_generator_traits::value_to_yaml(msg.dataman_id, out);
+    out << "mission_dataman_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.mission_dataman_id, out);
+    out << "\n";
+  }
+
+  // member: fence_dataman_id
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "fence_dataman_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.fence_dataman_id, out);
+    out << "\n";
+  }
+
+  // member: safepoint_dataman_id
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "safepoint_dataman_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.safepoint_dataman_id, out);
     out << "\n";
   }
 
@@ -95,6 +167,56 @@ inline void to_block_style_yaml(
     }
     out << "current_seq: ";
     rosidl_generator_traits::value_to_yaml(msg.current_seq, out);
+    out << "\n";
+  }
+
+  // member: land_start_index
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "land_start_index: ";
+    rosidl_generator_traits::value_to_yaml(msg.land_start_index, out);
+    out << "\n";
+  }
+
+  // member: land_index
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "land_index: ";
+    rosidl_generator_traits::value_to_yaml(msg.land_index, out);
+    out << "\n";
+  }
+
+  // member: mission_id
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "mission_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.mission_id, out);
+    out << "\n";
+  }
+
+  // member: geofence_id
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "geofence_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_id, out);
+    out << "\n";
+  }
+
+  // member: safe_points_id
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "safe_points_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.safe_points_id, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

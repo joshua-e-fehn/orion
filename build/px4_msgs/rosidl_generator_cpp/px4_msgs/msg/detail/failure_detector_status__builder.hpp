@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/FailureDetectorStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/failure_detector_status.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__FAILURE_DETECTOR_STATUS__BUILDER_HPP_
 #define PX4_MSGS__MSG__DETAIL__FAILURE_DETECTOR_STATUS__BUILDER_HPP_
 
@@ -21,16 +24,32 @@ namespace msg
 namespace builder
 {
 
+class Init_FailureDetectorStatus_motor_stop_mask
+{
+public:
+  explicit Init_FailureDetectorStatus_motor_stop_mask(::px4_msgs::msg::FailureDetectorStatus & msg)
+  : msg_(msg)
+  {}
+  ::px4_msgs::msg::FailureDetectorStatus motor_stop_mask(::px4_msgs::msg::FailureDetectorStatus::_motor_stop_mask_type arg)
+  {
+    msg_.motor_stop_mask = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::FailureDetectorStatus msg_;
+};
+
 class Init_FailureDetectorStatus_motor_failure_mask
 {
 public:
   explicit Init_FailureDetectorStatus_motor_failure_mask(::px4_msgs::msg::FailureDetectorStatus & msg)
   : msg_(msg)
   {}
-  ::px4_msgs::msg::FailureDetectorStatus motor_failure_mask(::px4_msgs::msg::FailureDetectorStatus::_motor_failure_mask_type arg)
+  Init_FailureDetectorStatus_motor_stop_mask motor_failure_mask(::px4_msgs::msg::FailureDetectorStatus::_motor_failure_mask_type arg)
   {
     msg_.motor_failure_mask = std::move(arg);
-    return std::move(msg_);
+    return Init_FailureDetectorStatus_motor_stop_mask(msg_);
   }
 
 private:

@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/EstimatorStates.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -66,48 +73,54 @@ class EstimatorStates(metaclass=Metaclass_EstimatorStates):
         '_states',
         '_n_states',
         '_covariances',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
         'timestamp': 'uint64',
         'timestamp_sample': 'uint64',
-        'states': 'float[24]',
+        'states': 'float[25]',
         'n_states': 'uint8',
         'covariances': 'float[24]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
-        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 24),  # noqa: E501
+        rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 25),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('float'), 24),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.timestamp_sample = kwargs.get('timestamp_sample', int())
         if 'states' not in kwargs:
-            self.states = numpy.zeros(24, dtype=numpy.float32)
+            self.states = numpy.zeros(25, dtype=numpy.float32)
         else:
-            self.states = numpy.array(kwargs.get('states'), dtype=numpy.float32)
-            assert self.states.shape == (24, )
+            self.states = kwargs.get('states')
         self.n_states = kwargs.get('n_states', int())
         if 'covariances' not in kwargs:
             self.covariances = numpy.zeros(24, dtype=numpy.float32)
         else:
-            self.covariances = numpy.array(kwargs.get('covariances'), dtype=numpy.float32)
-            assert self.covariances.shape == (24, )
+            self.covariances = kwargs.get('covariances')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -121,11 +134,12 @@ class EstimatorStates(metaclass=Metaclass_EstimatorStates):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -155,7 +169,7 @@ class EstimatorStates(metaclass=Metaclass_EstimatorStates):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -170,7 +184,7 @@ class EstimatorStates(metaclass=Metaclass_EstimatorStates):
 
     @timestamp_sample.setter
     def timestamp_sample(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp_sample' field must be of type 'int'"
@@ -185,14 +199,14 @@ class EstimatorStates(metaclass=Metaclass_EstimatorStates):
 
     @states.setter
     def states(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'states' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 24, \
-                "The 'states' numpy.ndarray() must have a size of 24"
-            self._states = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'states' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 25, \
+                    "The 'states' numpy.ndarray() must have a size of 25"
+                self._states = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -203,10 +217,10 @@ class EstimatorStates(metaclass=Metaclass_EstimatorStates):
                   isinstance(value, UserList)) and
                  not isinstance(value, str) and
                  not isinstance(value, UserString) and
-                 len(value) == 24 and
+                 len(value) == 25 and
                  all(isinstance(v, float) for v in value) and
                  all(not (val < -3.402823466e+38 or val > 3.402823466e+38) or math.isinf(val) for val in value)), \
-                "The 'states' field must be a set or sequence with length 24 and each value of type 'float' and each float in [-340282346600000016151267322115014000640.000000, 340282346600000016151267322115014000640.000000]"
+                "The 'states' field must be a set or sequence with length 25 and each value of type 'float' and each float in [-340282346600000016151267322115014000640.000000, 340282346600000016151267322115014000640.000000]"
         self._states = numpy.array(value, dtype=numpy.float32)
 
     @builtins.property
@@ -216,7 +230,7 @@ class EstimatorStates(metaclass=Metaclass_EstimatorStates):
 
     @n_states.setter
     def n_states(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'n_states' field must be of type 'int'"
@@ -231,14 +245,14 @@ class EstimatorStates(metaclass=Metaclass_EstimatorStates):
 
     @covariances.setter
     def covariances(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'covariances' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 24, \
-                "The 'covariances' numpy.ndarray() must have a size of 24"
-            self._covariances = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'covariances' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 24, \
+                    "The 'covariances' numpy.ndarray() must have a size of 24"
+                self._covariances = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

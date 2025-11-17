@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Wrapper to run PP planner as a module so relative imports work
+export PYTHONPATH="/home/victor-tipkemper/hackathon/orion/src/orion_flight:${PYTHONPATH:-}"
+exec python3 -m orion_flight.planners.pp.pp_planner_node "$@"

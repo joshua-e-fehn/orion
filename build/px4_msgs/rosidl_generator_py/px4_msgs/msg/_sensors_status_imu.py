@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/SensorsStatusImu.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -76,6 +83,7 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
         '_gyro_inconsistency_rad_s',
         '_gyro_healthy',
         '_gyro_priority',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -92,6 +100,8 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
         'gyro_priority': 'uint8[4]',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
@@ -107,21 +117,24 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         self.accel_device_id_primary = kwargs.get('accel_device_id_primary', int())
         if 'accel_device_ids' not in kwargs:
             self.accel_device_ids = numpy.zeros(4, dtype=numpy.uint32)
         else:
-            self.accel_device_ids = numpy.array(kwargs.get('accel_device_ids'), dtype=numpy.uint32)
-            assert self.accel_device_ids.shape == (4, )
+            self.accel_device_ids = kwargs.get('accel_device_ids')
         if 'accel_inconsistency_m_s_s' not in kwargs:
             self.accel_inconsistency_m_s_s = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.accel_inconsistency_m_s_s = numpy.array(kwargs.get('accel_inconsistency_m_s_s'), dtype=numpy.float32)
-            assert self.accel_inconsistency_m_s_s.shape == (4, )
+            self.accel_inconsistency_m_s_s = kwargs.get('accel_inconsistency_m_s_s')
         self.accel_healthy = kwargs.get(
             'accel_healthy',
             [bool() for x in range(4)]
@@ -129,19 +142,16 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
         if 'accel_priority' not in kwargs:
             self.accel_priority = numpy.zeros(4, dtype=numpy.uint8)
         else:
-            self.accel_priority = numpy.array(kwargs.get('accel_priority'), dtype=numpy.uint8)
-            assert self.accel_priority.shape == (4, )
+            self.accel_priority = kwargs.get('accel_priority')
         self.gyro_device_id_primary = kwargs.get('gyro_device_id_primary', int())
         if 'gyro_device_ids' not in kwargs:
             self.gyro_device_ids = numpy.zeros(4, dtype=numpy.uint32)
         else:
-            self.gyro_device_ids = numpy.array(kwargs.get('gyro_device_ids'), dtype=numpy.uint32)
-            assert self.gyro_device_ids.shape == (4, )
+            self.gyro_device_ids = kwargs.get('gyro_device_ids')
         if 'gyro_inconsistency_rad_s' not in kwargs:
             self.gyro_inconsistency_rad_s = numpy.zeros(4, dtype=numpy.float32)
         else:
-            self.gyro_inconsistency_rad_s = numpy.array(kwargs.get('gyro_inconsistency_rad_s'), dtype=numpy.float32)
-            assert self.gyro_inconsistency_rad_s.shape == (4, )
+            self.gyro_inconsistency_rad_s = kwargs.get('gyro_inconsistency_rad_s')
         self.gyro_healthy = kwargs.get(
             'gyro_healthy',
             [bool() for x in range(4)]
@@ -149,15 +159,14 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
         if 'gyro_priority' not in kwargs:
             self.gyro_priority = numpy.zeros(4, dtype=numpy.uint8)
         else:
-            self.gyro_priority = numpy.array(kwargs.get('gyro_priority'), dtype=numpy.uint8)
-            assert self.gyro_priority.shape == (4, )
+            self.gyro_priority = kwargs.get('gyro_priority')
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -171,11 +180,12 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -217,7 +227,7 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -232,7 +242,7 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @accel_device_id_primary.setter
     def accel_device_id_primary(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'accel_device_id_primary' field must be of type 'int'"
@@ -247,14 +257,14 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @accel_device_ids.setter
     def accel_device_ids(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'accel_device_ids' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 4, \
-                "The 'accel_device_ids' numpy.ndarray() must have a size of 4"
-            self._accel_device_ids = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'accel_device_ids' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 4, \
+                    "The 'accel_device_ids' numpy.ndarray() must have a size of 4"
+                self._accel_device_ids = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -278,14 +288,14 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @accel_inconsistency_m_s_s.setter
     def accel_inconsistency_m_s_s(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'accel_inconsistency_m_s_s' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'accel_inconsistency_m_s_s' numpy.ndarray() must have a size of 4"
-            self._accel_inconsistency_m_s_s = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'accel_inconsistency_m_s_s' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'accel_inconsistency_m_s_s' numpy.ndarray() must have a size of 4"
+                self._accel_inconsistency_m_s_s = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -309,7 +319,7 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @accel_healthy.setter
     def accel_healthy(self, value):
-        if __debug__:
+        if self._check_fields:
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -333,14 +343,14 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @accel_priority.setter
     def accel_priority(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'accel_priority' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 4, \
-                "The 'accel_priority' numpy.ndarray() must have a size of 4"
-            self._accel_priority = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'accel_priority' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 4, \
+                    "The 'accel_priority' numpy.ndarray() must have a size of 4"
+                self._accel_priority = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -364,7 +374,7 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @gyro_device_id_primary.setter
     def gyro_device_id_primary(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'gyro_device_id_primary' field must be of type 'int'"
@@ -379,14 +389,14 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @gyro_device_ids.setter
     def gyro_device_ids(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint32, \
-                "The 'gyro_device_ids' numpy.ndarray() must have the dtype of 'numpy.uint32'"
-            assert value.size == 4, \
-                "The 'gyro_device_ids' numpy.ndarray() must have a size of 4"
-            self._gyro_device_ids = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint32, \
+                    "The 'gyro_device_ids' numpy.ndarray() must have the dtype of 'numpy.uint32'"
+                assert value.size == 4, \
+                    "The 'gyro_device_ids' numpy.ndarray() must have a size of 4"
+                self._gyro_device_ids = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -410,14 +420,14 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @gyro_inconsistency_rad_s.setter
     def gyro_inconsistency_rad_s(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.float32, \
-                "The 'gyro_inconsistency_rad_s' numpy.ndarray() must have the dtype of 'numpy.float32'"
-            assert value.size == 4, \
-                "The 'gyro_inconsistency_rad_s' numpy.ndarray() must have a size of 4"
-            self._gyro_inconsistency_rad_s = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.float32, \
+                    "The 'gyro_inconsistency_rad_s' numpy.ndarray() must have the dtype of 'numpy.float32'"
+                assert value.size == 4, \
+                    "The 'gyro_inconsistency_rad_s' numpy.ndarray() must have a size of 4"
+                self._gyro_inconsistency_rad_s = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -441,7 +451,7 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @gyro_healthy.setter
     def gyro_healthy(self, value):
-        if __debug__:
+        if self._check_fields:
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -465,14 +475,14 @@ class SensorsStatusImu(metaclass=Metaclass_SensorsStatusImu):
 
     @gyro_priority.setter
     def gyro_priority(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'gyro_priority' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 4, \
-                "The 'gyro_priority' numpy.ndarray() must have a size of 4"
-            self._gyro_priority = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'gyro_priority' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 4, \
+                    "The 'gyro_priority' numpy.ndarray() must have a size of 4"
+                self._gyro_priority = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList

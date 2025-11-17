@@ -2,6 +2,13 @@
 # with input from px4_msgs:msg/DebugKeyValue.idl
 # generated code does not contain a copyright notice
 
+# This is being done at the module level and not on the instance level to avoid looking
+# for the same variable multiple times on each instance. This variable is not supposed to
+# change during runtime so it makes sense to only look for it once.
+from os import getenv
+
+ros_python_check_fields = getenv('ROS_PYTHON_CHECK_FIELDS', default='')
+
 
 # Import statements for member types
 
@@ -63,6 +70,7 @@ class DebugKeyValue(metaclass=Metaclass_DebugKeyValue):
         '_timestamp',
         '_key',
         '_value',
+        '_check_fields',
     ]
 
     _fields_and_field_types = {
@@ -71,6 +79,8 @@ class DebugKeyValue(metaclass=Metaclass_DebugKeyValue):
         'value': 'float',
     }
 
+    # This attribute is used to store an rosidl_parser.definition variable
+    # related to the data type of each of the components the message.
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.Array(rosidl_parser.definition.BasicType('uint8'), 10),  # noqa: E501
@@ -78,15 +88,19 @@ class DebugKeyValue(metaclass=Metaclass_DebugKeyValue):
     )
 
     def __init__(self, **kwargs):
-        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
-            'Invalid arguments passed to constructor: %s' % \
-            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        if 'check_fields' in kwargs:
+            self._check_fields = kwargs['check_fields']
+        else:
+            self._check_fields = ros_python_check_fields == '1'
+        if self._check_fields:
+            assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+                'Invalid arguments passed to constructor: %s' % \
+                ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.timestamp = kwargs.get('timestamp', int())
         if 'key' not in kwargs:
             self.key = numpy.zeros(10, dtype=numpy.uint8)
         else:
-            self.key = numpy.array(kwargs.get('key'), dtype=numpy.uint8)
-            assert self.key.shape == (10, )
+            self.key = kwargs.get('key')
         self.value = kwargs.get('value', float())
 
     def __repr__(self):
@@ -94,7 +108,7 @@ class DebugKeyValue(metaclass=Metaclass_DebugKeyValue):
         typename.pop()
         typename.append(self.__class__.__name__)
         args = []
-        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+        for s, t in zip(self.get_fields_and_field_types().keys(), self.SLOT_TYPES):
             field = getattr(self, s)
             fieldstr = repr(field)
             # We use Python array type for fields that can be directly stored
@@ -108,11 +122,12 @@ class DebugKeyValue(metaclass=Metaclass_DebugKeyValue):
                 if len(field) == 0:
                     fieldstr = '[]'
                 else:
-                    assert fieldstr.startswith('array(')
+                    if self._check_fields:
+                        assert fieldstr.startswith('array(')
                     prefix = "array('X', "
                     suffix = ')'
                     fieldstr = fieldstr[len(prefix):-len(suffix)]
-            args.append(s[1:] + '=' + fieldstr)
+            args.append(s + '=' + fieldstr)
         return '%s(%s)' % ('.'.join(typename), ', '.join(args))
 
     def __eq__(self, other):
@@ -138,7 +153,7 @@ class DebugKeyValue(metaclass=Metaclass_DebugKeyValue):
 
     @timestamp.setter
     def timestamp(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, int), \
                 "The 'timestamp' field must be of type 'int'"
@@ -153,14 +168,14 @@ class DebugKeyValue(metaclass=Metaclass_DebugKeyValue):
 
     @key.setter
     def key(self, value):
-        if isinstance(value, numpy.ndarray):
-            assert value.dtype == numpy.uint8, \
-                "The 'key' numpy.ndarray() must have the dtype of 'numpy.uint8'"
-            assert value.size == 10, \
-                "The 'key' numpy.ndarray() must have a size of 10"
-            self._key = value
-            return
-        if __debug__:
+        if self._check_fields:
+            if isinstance(value, numpy.ndarray):
+                assert value.dtype == numpy.uint8, \
+                    "The 'key' numpy.ndarray() must have the dtype of 'numpy.uint8'"
+                assert value.size == 10, \
+                    "The 'key' numpy.ndarray() must have a size of 10"
+                self._key = value
+                return
             from collections.abc import Sequence
             from collections.abc import Set
             from collections import UserList
@@ -184,7 +199,7 @@ class DebugKeyValue(metaclass=Metaclass_DebugKeyValue):
 
     @value.setter
     def value(self, value):
-        if __debug__:
+        if self._check_fields:
             assert \
                 isinstance(value, float), \
                 "The 'value' field must be of type 'float'"

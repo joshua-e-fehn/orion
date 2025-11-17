@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/Airspeed.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/airspeed.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__AIRSPEED__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__AIRSPEED__TRAITS_HPP_
 
@@ -50,13 +53,6 @@ inline void to_flow_style_yaml(
   {
     out << "true_airspeed_m_s: ";
     rosidl_generator_traits::value_to_yaml(msg.true_airspeed_m_s, out);
-    out << ", ";
-  }
-
-  // member: air_temperature_celsius
-  {
-    out << "air_temperature_celsius: ";
-    rosidl_generator_traits::value_to_yaml(msg.air_temperature_celsius, out);
     out << ", ";
   }
 
@@ -109,16 +105,6 @@ inline void to_block_style_yaml(
     }
     out << "true_airspeed_m_s: ";
     rosidl_generator_traits::value_to_yaml(msg.true_airspeed_m_s, out);
-    out << "\n";
-  }
-
-  // member: air_temperature_celsius
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "air_temperature_celsius: ";
-    rosidl_generator_traits::value_to_yaml(msg.air_temperature_celsius, out);
     out << "\n";
   }
 

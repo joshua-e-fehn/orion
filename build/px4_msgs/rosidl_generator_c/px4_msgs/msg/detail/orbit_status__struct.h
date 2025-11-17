@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/OrbitStatus.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/orbit_status.h"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__ORBIT_STATUS__STRUCT_H_
 #define PX4_MSGS__MSG__DETAIL__ORBIT_STATUS__STRUCT_H_
 
@@ -13,7 +16,6 @@ extern "C"
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-
 
 // Constants defined in the message
 
@@ -45,6 +47,12 @@ enum
 enum
 {
   px4_msgs__msg__OrbitStatus__ORBIT_YAW_BEHAVIOUR_RC_CONTROLLED = 4
+};
+
+/// Constant 'ORBIT_YAW_BEHAVIOUR_UNCHANGED'.
+enum
+{
+  px4_msgs__msg__OrbitStatus__ORBIT_YAW_BEHAVIOUR_UNCHANGED = 5
 };
 
 /// Struct defined in msg/OrbitStatus in the package px4_msgs.

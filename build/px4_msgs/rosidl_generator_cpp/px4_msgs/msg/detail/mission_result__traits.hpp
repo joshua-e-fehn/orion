@@ -2,6 +2,9 @@
 // with input from px4_msgs:msg/MissionResult.idl
 // generated code does not contain a copyright notice
 
+// IWYU pragma: private, include "px4_msgs/msg/mission_result.hpp"
+
+
 #ifndef PX4_MSGS__MSG__DETAIL__MISSION_RESULT__TRAITS_HPP_
 #define PX4_MSGS__MSG__DETAIL__MISSION_RESULT__TRAITS_HPP_
 
@@ -32,10 +35,24 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: instance_count
+  // member: mission_id
   {
-    out << "instance_count: ";
-    rosidl_generator_traits::value_to_yaml(msg.instance_count, out);
+    out << "mission_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.mission_id, out);
+    out << ", ";
+  }
+
+  // member: geofence_id
+  {
+    out << "geofence_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_id, out);
+    out << ", ";
+  }
+
+  // member: home_position_counter
+  {
+    out << "home_position_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.home_position_counter, out);
     out << ", ";
   }
 
@@ -131,13 +148,33 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: instance_count
+  // member: mission_id
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "instance_count: ";
-    rosidl_generator_traits::value_to_yaml(msg.instance_count, out);
+    out << "mission_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.mission_id, out);
+    out << "\n";
+  }
+
+  // member: geofence_id
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "geofence_id: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_id, out);
+    out << "\n";
+  }
+
+  // member: home_position_counter
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "home_position_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.home_position_counter, out);
     out << "\n";
   }
 
