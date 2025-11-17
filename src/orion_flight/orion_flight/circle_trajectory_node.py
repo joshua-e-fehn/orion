@@ -31,6 +31,7 @@ class CircleTrajectoryNode(Node):
         super().__init__('circle_trajectory_node')
 
         # Declare parameters
+        self.declare_parameter('namespace', 'px4_1')  # Drone namespace
         self.declare_parameter('circle_radius', 4.0)  # meters
         self.declare_parameter('flight_height', -5.0)  # meters (NED frame, negative is up)
         self.declare_parameter('angular_velocity', 0.3)  # rad/s
@@ -38,50 +39,46 @@ class CircleTrajectoryNode(Node):
         self.declare_parameter('trail_length', 10)  # number of positions to show in trail
 
         # Get parameters
+        self.namespace = self.get_parameter('namespace').value
         self.circle_radius = self.get_parameter('circle_radius').value
         self.flight_height = self.get_parameter('flight_height').value
         self.angular_velocity = self.get_parameter('angular_velocity').value
         self.num_circles = self.get_parameter('num_circles').value
         self.trail_length = self.get_parameter('trail_length').value
 
-        # Configure QoS profile for publishing (match PX4's VOLATILE durability)
-        qos_profile_pub = QoSProfile(
+        # Configure QoS profile for publishing and subscribing
+        # PX4 uses BEST_EFFORT + VOLATILE, so we match that for compatibility
+        # Increased depth to 10 to handle larger message payloads
+        qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.VOLATILE,
             history=HistoryPolicy.KEEP_LAST,
-            depth=1
-        )
-        
-        # Configure QoS profile for subscribing (use TRANSIENT_LOCAL for receiving)
-        qos_profile_sub = QoSProfile(
-            reliability=ReliabilityPolicy.BEST_EFFORT,
-            durability=DurabilityPolicy.TRANSIENT_LOCAL,
-            history=HistoryPolicy.KEEP_LAST,
-            depth=1
+            depth=10
         )
 
-        # Create publishers
+        # Create publishers with namespaced topics
         self.offboard_control_mode_publisher = self.create_publisher(
-            OffboardControlMode, '/fmu/in/offboard_control_mode', qos_profile_pub)
+            OffboardControlMode, f'/{self.namespace}/fmu/in/offboard_control_mode', qos_profile)
         self.trajectory_setpoint_publisher = self.create_publisher(
-            TrajectorySetpoint, '/fmu/in/trajectory_setpoint', qos_profile_pub)
+            TrajectorySetpoint, f'/{self.namespace}/fmu/in/trajectory_setpoint', qos_profile)
         self.vehicle_command_publisher = self.create_publisher(
-            VehicleCommand, '/fmu/in/vehicle_command', qos_profile_pub)
+            VehicleCommand, f'/{self.namespace}/fmu/in/vehicle_command', qos_profile)
         
         # Publisher for visualization
         self.marker_publisher = self.create_publisher(
             MarkerArray, '/trajectory_markers', 10)
 
-        # Create subscribers
+        # Create subscribers with namespaced topics
+        # Note: PX4 v1.15+ uses versioned topics (_v1 suffix)
         self.vehicle_local_position_subscriber = self.create_subscription(
-            VehicleLocalPosition, '/fmu/out/vehicle_local_position_v1', 
-            self.vehicle_local_position_callback, qos_profile_sub)
+            VehicleLocalPosition, f'/{self.namespace}/fmu/out/vehicle_local_position_v1', 
+            self.vehicle_local_position_callback, qos_profile)
         self.vehicle_status_subscriber = self.create_subscription(
-            VehicleStatus, '/fmu/out/vehicle_status_v1', 
-            self.vehicle_status_callback, qos_profile_sub)
+            VehicleStatus, f'/{self.namespace}/fmu/out/vehicle_status_v1', 
+            self.vehicle_status_callback, qos_profile)
         self.vehicle_command_ack_subscriber = self.create_subscription(
-            VehicleCommandAck, '/fmu/out/vehicle_command_ack',
-            self.vehicle_command_ack_callback, qos_profile_sub)
+            VehicleCommandAck, f'/{self.namespace}/fmu/out/vehicle_command_ack',
+            self.vehicle_command_ack_callback, qos_profile)
 
         # Initialize variables
         self.offboard_setpoint_counter = 0
@@ -100,15 +97,28 @@ class CircleTrajectoryNode(Node):
         self.max_arm_retries = 10
         self.is_armed = False
         self.is_offboard = False
+        
+        # Smart initialization detection
+        self.initial_status_received = False
+        self.status_check_counter = 0
+        self.max_status_checks = 30  # Wait up to 3 seconds for status
 
         # Create a timer to publish control commands at 10Hz
         self.timer = self.create_timer(0.1, self.timer_callback)
         
         self.get_logger().info('Circle Trajectory Node Started!')
+        self.get_logger().info(f'Namespace: {self.namespace}')
         self.get_logger().info(f'Parameters: radius={self.circle_radius}m, '
                               f'height={-self.flight_height}m, '
                               f'angular_vel={self.angular_velocity}rad/s, '
                               f'circles={self.num_circles}')
+        self.get_logger().info(f'Subscribing to:')
+        self.get_logger().info(f'  - /{self.namespace}/fmu/out/vehicle_status_v1')
+        self.get_logger().info(f'  - /{self.namespace}/fmu/out/vehicle_local_position_v1')
+        self.get_logger().info(f'Publishing to:')
+        self.get_logger().info(f'  - /{self.namespace}/fmu/in/offboard_control_mode')
+        self.get_logger().info(f'  - /{self.namespace}/fmu/in/trajectory_setpoint')
+        self.get_logger().info(f'  - /{self.namespace}/fmu/in/vehicle_command')
 
     def vehicle_local_position_callback(self, vehicle_local_position):
         """Callback function for vehicle_local_position topic subscriber."""
@@ -133,6 +143,43 @@ class CircleTrajectoryNode(Node):
         self.is_armed = (vehicle_status.arming_state >= 2)  # STANDBY or ARMED
         # Accept OFFBOARD or AUTO_TAKEOFF (PX4 may refuse OFFBOARD from AUTO_TAKEOFF)
         self.is_offboard = (vehicle_status.nav_state == 7 or vehicle_status.nav_state == 14)  # OFFBOARD=7, AUTO_TAKEOFF=14
+        
+        # Smart initialization: Detect if already armed and in offboard mode
+        if not self.initial_status_received:
+            self.status_check_counter += 1
+            
+            # Check if we're already armed and in offboard mode (wait at least 5 status messages)
+            if self.status_check_counter >= 5:
+                if self.is_armed and self.is_offboard:
+                    self.initial_status_received = True
+                    
+                    # Check current altitude to decide phase
+                    current_z = self.vehicle_local_position.z if self.vehicle_local_position.z else 0.0
+                    target_z = self.flight_height
+                    altitude_error = abs(current_z - target_z)
+                    
+                    if altitude_error < 1.0:  # Already at altitude
+                        self.flight_phase = "CIRCLE"
+                        self.circle_start_time = self.get_clock().now()
+                        self.total_angle_traveled = 0.0
+                        self.last_update_time = self.get_clock().now()
+                        self.get_logger().info(
+                            f"🚀 SMART INIT: Drone already ARMED & OFFBOARD at altitude! "
+                            f"Skipping to CIRCLE phase. (z={current_z:.2f}m, target={target_z:.2f}m)"
+                        )
+                    else:
+                        self.flight_phase = "TAKEOFF"
+                        self.get_logger().info(
+                            f"🚀 SMART INIT: Drone already ARMED & OFFBOARD! "
+                            f"Skipping to TAKEOFF phase. (z={current_z:.2f}m, target={target_z:.2f}m)"
+                        )
+                elif self.status_check_counter >= self.max_status_checks:
+                    # No pre-arming detected after waiting, proceed normally
+                    self.initial_status_received = True
+                    self.get_logger().info(
+                        f"✓ Standard initialization: Drone not pre-armed. "
+                        f"Starting from INIT phase."
+                    )
         
         if self.offboard_setpoint_counter % 20 == 0:  # Log every 2 seconds
             nav_state_names = {
@@ -344,6 +391,28 @@ class CircleTrajectoryNode(Node):
         """Main control loop callback."""
         # Always publish offboard control mode heartbeat
         self.publish_offboard_control_heartbeat_signal()
+
+        # Wait for initial status check to complete
+        if not self.initial_status_received:
+            # Send neutral setpoints while waiting
+            self.publish_position_setpoint(0.0, 0.0, self.flight_height)
+            
+            # Also increment counter here as a timeout mechanism
+            # This ensures we don't wait forever if status messages aren't coming
+            if self.offboard_setpoint_counter % 10 == 0:
+                self.get_logger().info(
+                    f'Waiting for vehicle status messages... (timer ticks: {self.offboard_setpoint_counter})'
+                )
+            
+            self.offboard_setpoint_counter += 1
+            
+            # Timeout: if we've waited too long without status, assume standard init
+            if self.offboard_setpoint_counter >= 50:  # 5 seconds at 10Hz
+                self.initial_status_received = True
+                self.get_logger().warn(
+                    "⚠️ Timeout waiting for vehicle status. Proceeding with standard INIT."
+                )
+            return
 
         # State machine logic
         if self.flight_phase == "INIT":

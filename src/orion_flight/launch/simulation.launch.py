@@ -246,6 +246,23 @@ echo "✓ Cleaned up all simulation processes"
     )
     actions.append(safety_drone1)
     
+    # Enable OFFBOARD mode and ARM drone 1 (after safety disabled)
+    offboard_arm_drone1 = TimerAction(
+        period=11.0,  # Wait for safety to be disabled (8s + 3s buffer)
+        actions=[
+            ExecuteProcess(
+                cmd=[
+                    'python3',
+                    os.path.join(pkg_orion_flight, 'scripts', 'enable_offboard_and_arm.py'),
+                    '1'
+                ],
+                output='screen',
+                name='offboard_arm_drone1',
+            )
+        ]
+    )
+    actions.append(offboard_arm_drone1)
+    
     # Agent for drone 2 (port 8889)
     agent2 = TimerAction(
         period=15.0,  # Wait for drone 2 to start (10s + 5s buffer)
@@ -262,7 +279,7 @@ echo "✓ Cleaned up all simulation processes"
     
     # Disable safety for drone 2 (after agent starts)
     safety_drone2 = TimerAction(
-        period=18.0,  # Wait for agent 2 to connect
+        period=18.0,  # Wait for agent to connect
         actions=[
             ExecuteProcess(
                 cmd=[
@@ -276,6 +293,23 @@ echo "✓ Cleaned up all simulation processes"
         ]
     )
     actions.append(safety_drone2)
+    
+    # Enable OFFBOARD mode and ARM drone 2 (after safety disabled)
+    offboard_arm_drone2 = TimerAction(
+        period=21.0,  # Wait for safety to be disabled (18s + 3s buffer)
+        actions=[
+            ExecuteProcess(
+                cmd=[
+                    'python3',
+                    os.path.join(pkg_orion_flight, 'scripts', 'enable_offboard_and_arm.py'),
+                    '2'
+                ],
+                output='screen',
+                name='offboard_arm_drone2',
+            )
+        ]
+    )
+    actions.append(offboard_arm_drone2)
     
     # =========================================================================
     # RViz Visualization (optional)
@@ -345,9 +379,12 @@ echo "✓ Cleaned up all simulation processes"
     print(f"    t=5s   : Agent 1 starts")
     print(f"    t=8s   : Safety disabled for Drone 1")
     print(f"    t=10s  : Drone 2 starts (connects to Gazebo)")
+    print(f"    t=11s  : OFFBOARD enabled & Drone 1 ARMED")
     print(f"    t=15s  : Agent 2 + RViz start")
     print(f"    t=18s  : Safety disabled for Drone 2")
-    print(f"\n  Both drones will have safety features automatically disabled!")
+    print(f"    t=21s  : OFFBOARD enabled & Drone 2 ARMED")
+    print(f"\n  ✅ After ~25s, both drones armed and in OFFBOARD mode!")
+    print(f"  ✅ Ready to launch attacker/interceptor behavior nodes")
     print(f"  Press Ctrl+C to stop everything (all terminals will close)")
     print(f"{'='*70}\n")
     

@@ -78,12 +78,12 @@ class StraightLineNode(Node):
             self.waypoints = [(x, y, z) for x, y, z in zip(it, it, it)]
 
         # QoS profiles for PX4 communication
-        # Publisher QoS: Best effort, volatile, depth 1
+        # Publisher QoS: Best effort, volatile, increased depth for larger payloads
         qos_pub = QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.VOLATILE,
             history=HistoryPolicy.KEEP_LAST,
-            depth=1
+            depth=10
         )
         
         # Subscriber QoS: Best effort, volatile (matching PX4 publishers)
